@@ -69,3 +69,5 @@ QT += xml gui
 CONFIG += console
 
 links(qrutils)
+
+DEFINES += PRO_FILE_PWD=$$sprintf("\"\\\"%1\\\"\"", $$_PRO_FILE_PWD_)
