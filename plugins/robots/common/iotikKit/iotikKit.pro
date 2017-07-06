@@ -12,17 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-TEMPLATE = subdirs
+TARGET = robots-iotik-kit
 
-SUBDIRS = \
-	kitBase \
-	twoDModel \
-	nxtKit \
-	trikKit \
-	ev3Kit \
-    iotikKit
+include(../../../../global.pri)
 
-twoDModel.depends = kitBase
-nxtKit.depends = twoDModel
-trikKit.depends = twoDModel
-ev3Kit.depends = twoDModel
+TEMPLATE = lib
+
+include(iotikKit.pri)
+
+copyToDestdir(externalToolsConfig, now)
