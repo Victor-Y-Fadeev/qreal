@@ -179,7 +179,7 @@ void XmlCompiler::generatePluginHeader()
 
 	out() << "#pragma once\n"
 		<< "\n"
-		<< "#include <metaMetaModel/metamodel.h>\n"
+        << "#include \"" << PRO_FILE_PWD << "/../qrgui/plugins/metaMetaModel/include/metaMetaModel/metamodel.h\"\n"
 		<< "\n"
 		<< "class " << mPluginName << "Plugin : public QObject, public qReal::MetamodelLoaderInterface\n"
 		<< "{\n\tQ_OBJECT\n\tQ_INTERFACES(qReal::MetamodelLoaderInterface)\n"
