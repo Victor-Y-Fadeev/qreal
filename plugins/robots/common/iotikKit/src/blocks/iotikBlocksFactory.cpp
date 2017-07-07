@@ -13,6 +13,11 @@
 
  * limitations under the License. */
 
+#include "iotikKit/blocks/iotikBlocksFactory.h"
+
+#include <kitBase/blocksBase/common/enginesStopBlock.h>
+
+using namespace iotik::blocks;
 using namespace kitBase::blocksBase::common;
 
 qReal::interpretation::Block *IotikBlocksFactoryBase::produceBlock(const qReal::Id &element)
