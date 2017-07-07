@@ -1,4 +1,4 @@
-# Copyright 2016 Dmitry Mordvinov
+# Copyright 2017 QReal Research Group
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,5 +17,5 @@ HEADERS = $$PWD/generated/pluginInterface.h $$PWD/generated/elements.h
 SOURCES = $$PWD/generated/pluginInterface.cpp
 
 TRANSLATIONS = \
-	$$PWD/../../../../qrtranslations/ru/plugins/robots/trikMetamodel_ru.ts \
-	$$PWD/../../../../qrtranslations/fr/plugins/robots/trikMetamodel_fr.ts \
+        $$PWD/../../../../qrtranslations/ru/plugins/robots/iotikMetamodel_ru.ts \
+        $$PWD/../../../../qrtranslations/fr/plugins/robots/iotikMetamodel_fr.ts \
