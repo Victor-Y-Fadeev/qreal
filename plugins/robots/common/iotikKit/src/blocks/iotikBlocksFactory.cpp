@@ -15,16 +15,16 @@
 
 using namespace kitBase::blocksBase::common;
 
-qReal::interpretation::Block *TrikBlocksFactoryBase::produceBlock(const qReal::Id &element)
+qReal::interpretation::Block *IotikBlocksFactoryBase::produceBlock(const qReal::Id &element)
 {
 }
 
-qReal::IdList TrikBlocksFactoryBase::providedBlocks() const
+qReal::IdList IotikBlocksFactoryBase::providedBlocks() const
 {
 
 }
 
-qReal::IdList TrikBlocksFactoryBase::blocksToDisable() const
+qReal::IdList IotikBlocksFactoryBase::blocksToDisable() const
 {
 
 }
