@@ -1,4 +1,4 @@
-/* Copyright 2017 QReal Research Group
+/* Copyright 2017 QReal Research group
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,38 +15,47 @@
 #pragma once
 
 #include <kitBase/kitPluginInterface.h>
-#include "robotModel/iotikRobotModel.h"
+#include <iotikKit/blocks/iotikBlocksFactory.h>
 
-namespace iotikKitInterpreter {
+#include "robotModel/real/RealRobotModel.h"
+
+namespace iotik {
 
 class IotikKitInterpreterPlugin : public QObject, public kitBase::KitPluginInterface
 {
-	Q_OBJECT
-	Q_INTERFACES(kitBase::KitPluginInterface)
-    Q_PLUGIN_METADATA(IID "iotikKitInterpreter.IotikKitInterpreterPlugin")
+    Q_OBJECT
+    Q_INTERFACES(kitBase::KitPluginInterface)
+    Q_PLUGIN_METADATA(IID "iotik.IotikKitInterpreterPlugin")
 
 public:
     IotikKitInterpreterPlugin();
+    ~IotikKitInterpreterPlugin() override;
 
-	QString kitId() const override;
+    void init(const kitBase::KitPluginConfigurator &configurator) override;
 
-	QString friendlyKitName() const override;
+    QString kitId() const override;
+    QString friendlyKitName() const override;
 
-	QList<kitBase::robotModel::RobotModelInterface *> robotModels() override;
+    QList<kitBase::robotModel::RobotModelInterface *> robotModels() override;
+    kitBase::robotModel::RobotModelInterface *defaultRobotModel() override;
 
-	kitBase::blocksBase::BlocksFactoryInterface *blocksFactoryFor(
-			const kitBase::robotModel::RobotModelInterface *model) override;
+    kitBase::blocksBase::BlocksFactoryInterface *blocksFactoryFor(
+            const kitBase::robotModel::RobotModelInterface *model) override;
 
-	QList<kitBase::AdditionalPreferences *> settingsWidgets() override;
+    QList<qReal::ActionInfo> customActions() override;  // Transfers ownership of embedded QActions
+    QList<qReal::HotKeyActionInfo> hotKeyActions() override;
+    QString defaultSettingsFile() const override;
 
-	QList<qReal::ActionInfo> customActions() override;
-
-	QList<qReal::HotKeyActionInfo> hotKeyActions() override;
-
-	QIcon iconForFastSelector(const kitBase::robotModel::RobotModelInterface &robotModel) const override;
+    QWidget *quickPreferencesFor(const kitBase::robotModel::RobotModelInterface &model) override;
+    QIcon iconForFastSelector(const kitBase::robotModel::RobotModelInterface &robotModel) const override;
 
 private:
-    IotikRobotModel mRobotModel;
+    robotModel::real::RealRobotModel mRealRobotModel;
+
+    /// @todo Use shared pointers instead of this sh~.
+    blocks::IotikBlocksFactoryBase *mBlocksFactory = nullptr;  // Transfers ownership
+    bool mOwnsBlocksFactory = true;
+
 };
 
 }

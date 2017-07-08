@@ -15,15 +15,21 @@
 QT += widgets
 
 links(qrtext robots-kit-base)
-includes(plugins/robots/common/kitBase plugins/robots/utils qrtext)
+includes(plugins/robots/common/kitBase \
+         plugins/robots/utils \
+         qrtext \
+         plugins/robots/common/iotikKit \
+            )
 
 HEADERS += \
         $$PWD/iotikKitInterpreterPlugin.h \
-        $$PWD/robotModel/iotikRobotModel.h \
+        $$PWD/robotModel/real/realRobotModel.h \
 
 SOURCES += \
         $$PWD/iotikKitInterpreterPlugin.cpp \
-        $$PWD/robotModel/iotikRobotModel.cpp \
+        $$PWD/robotModel/real/realRobotModel.cpp \
+
+RESOURCES += $$PWD/../iotikKitInterpreter.qrc
 
 TRANSLATIONS = \ #TODO: translations for iotik Kit Interpreter
         $$PWD/../../../../../qrtranslations/ru/plugins/robots/iotikKitInterpreter_ru.ts \
