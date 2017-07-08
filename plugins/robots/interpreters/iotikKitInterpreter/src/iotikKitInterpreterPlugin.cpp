@@ -84,6 +84,7 @@ kitBase::robotModel::RobotModelInterface *IotikKitInterpreterPlugin::defaultRobo
 
 QWidget *IotikKitInterpreterPlugin::quickPreferencesFor(const kitBase::robotModel::RobotModelInterface &model)
 {
+    Q_UNUSED(model);
     return nullptr;
 }
 
@@ -105,5 +106,6 @@ QString IotikKitInterpreterPlugin::defaultSettingsFile() const
 QIcon IotikKitInterpreterPlugin::iconForFastSelector(
         const kitBase::robotModel::RobotModelInterface &robotModel) const
 {
+    Q_UNUSED(robotModel);
     return QIcon();
 }
