@@ -42,6 +42,7 @@ public:
     kitBase::blocksBase::BlocksFactoryInterface *blocksFactoryFor(
             const kitBase::robotModel::RobotModelInterface *model) override;
 
+    QList<kitBase::AdditionalPreferences *> settingsWidgets() override;
     QList<qReal::ActionInfo> customActions() override;  // Transfers ownership of embedded QActions
     QList<qReal::HotKeyActionInfo> hotKeyActions() override;
     QString defaultSettingsFile() const override;
@@ -53,7 +54,7 @@ private:
     robotModel::real::RealRobotModel mRealRobotModel;
 
     /// @todo Use shared pointers instead of this sh~.
-    blocks::IotikBlocksFactoryBase *mBlocksFactory = nullptr;  // Transfers ownership
+    blocks::IotikBlocksFactory *mBlocksFactory = nullptr;  // Transfers ownership
     bool mOwnsBlocksFactory = true;
 
 };

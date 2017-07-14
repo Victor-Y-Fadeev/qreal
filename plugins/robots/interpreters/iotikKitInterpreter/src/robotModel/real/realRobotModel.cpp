@@ -32,9 +32,24 @@ RealRobotModel::RealRobotModel(const QString &kitId, const QString &robotId
     mRobotCommunicator->setRobotCommunicationThreadObject(communicationThread);
 }
 
+QString RealRobotModel::name() const
+{
+    return "iotikKit";
+}
+
+QString RealRobotModel::friendlyName() const
+{
+    return tr("IoTik v1.0");
+}
+
 bool RealRobotModel::needsConnection() const
 {
     return true;
+}
+
+int RealRobotModel::priority() const
+{
+    return 0;
 }
 
 void RealRobotModel::connectToRobot()

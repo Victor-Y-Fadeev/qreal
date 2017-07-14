@@ -30,7 +30,10 @@ public:
     RealRobotModel(const QString &kitId, const QString &robotId
             , utils::robotCommunication::RobotCommunicationThreadInterface *communicationThread = nullptr);
 
+    QString name() const override;
+    QString friendlyName() const override;
     bool needsConnection() const override;
+    int priority() const override;
 
     void connectToRobot() override;
     void disconnectFromRobot() override;

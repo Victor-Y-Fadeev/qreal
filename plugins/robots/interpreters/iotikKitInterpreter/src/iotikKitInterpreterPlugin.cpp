@@ -1,4 +1,4 @@
-/* Copyright 2013-2016 CyberTech Labs Ltd.
+/* Copyright 2017 QReal Research Group
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,7 @@ const Id subprogramDiagramType = Id("RobotsMetamodel", "RobotsDiagram", "Subprog
 
 IotikKitInterpreterPlugin::IotikKitInterpreterPlugin()
     : mRealRobotModel(kitId(), "iotikKitRobot" ) // todo: somewhere generate robotId for each robot
- //   , mBlocksFactory(new blocks::IotikBlocksFactoryBase)
+    , mBlocksFactory(new blocks::IotikBlocksFactory)
 {
 
 }
@@ -61,7 +61,7 @@ QString IotikKitInterpreterPlugin::kitId() const
 
 QString IotikKitInterpreterPlugin::friendlyKitName() const
 {
-    return tr("Iotik");
+    return tr("IoTik v1.0");
 }
 
 QList<kitBase::robotModel::RobotModelInterface *> IotikKitInterpreterPlugin::robotModels()
@@ -86,6 +86,11 @@ QWidget *IotikKitInterpreterPlugin::quickPreferencesFor(const kitBase::robotMode
 {
     Q_UNUSED(model);
     return nullptr;
+}
+
+QList<kitBase::AdditionalPreferences *> IotikKitInterpreterPlugin::settingsWidgets()
+{
+    return {nullptr};
 }
 
 QList<qReal::ActionInfo> IotikKitInterpreterPlugin::customActions()
