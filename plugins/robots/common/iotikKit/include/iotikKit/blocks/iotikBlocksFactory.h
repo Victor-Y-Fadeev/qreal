@@ -20,7 +20,7 @@ namespace iotik {
 namespace blocks {
 
 /// Base class for block factory for all IoTik variants, creates common blocks.
-class IotikBlocksFactoryBase : public kitBase::blocksBase::CommonBlocksFactory
+class IotikBlocksFactory : public kitBase::blocksBase::CommonBlocksFactory
 {
 public:
     qReal::interpretation::Block *produceBlock(const qReal::Id &element) override;

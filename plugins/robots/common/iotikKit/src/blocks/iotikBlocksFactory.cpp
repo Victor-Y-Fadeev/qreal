@@ -20,16 +20,17 @@
 using namespace iotik::blocks;
 using namespace kitBase::blocksBase::common;
 
-qReal::interpretation::Block *IotikBlocksFactoryBase::produceBlock(const qReal::Id &element)
-{
-}
-
-qReal::IdList IotikBlocksFactoryBase::providedBlocks() const
+qReal::interpretation::Block *IotikBlocksFactory::produceBlock(const qReal::Id &element)
 {
 
 }
 
-qReal::IdList IotikBlocksFactoryBase::blocksToDisable() const
+qReal::IdList IotikBlocksFactory::providedBlocks() const
+{
+
+}
+
+qReal::IdList IotikBlocksFactory::blocksToDisable() const
 {
 
 }

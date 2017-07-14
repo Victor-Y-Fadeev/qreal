@@ -30,16 +30,7 @@ public:
     QList<kitBase::robotModel::PortInfo> configurablePorts() const override;
     QList<kitBase::robotModel::DeviceInfo> convertibleBases() const override;
 
-    QHash<QString, int> buttonCodes() const override;
-
-    /// Registers error reporter in a model.
-    virtual void setErrorReporter(qReal::ErrorReporterInterface &errorReporter) = 0;
-
-    /// Returns config file version that shall be on a robot to be able to use this model.
-    virtual QString robotConfigFileVersion() const = 0;
-
 protected:
-
 };
 
 }

@@ -20,26 +20,17 @@ using namespace kitBase::robotModel;
 IotikRobotModelBase::IotikRobotModelBase(const QString &kitId, const QString &robotId)
     : CommonRobotModel(kitId, robotId)
 {
-    QList<DeviceInfo> const analogPortConnections = {
-    };
+    QList<DeviceInfo> const inputPortConnections = {};
 }
 
 QList<PortInfo> IotikRobotModelBase::configurablePorts() const
 {
-    QList<PortInfo> const digitalPorts = {
-            };
+    QList<PortInfo> const digitalPorts = {};
 
     return CommonRobotModel::configurablePorts() + digitalPorts;
 }
 
 QList<DeviceInfo> IotikRobotModelBase::convertibleBases() const
 {
-    return {
-    };
-}
-
-QHash<QString, int> IotikRobotModelBase::buttonCodes() const
-{
-    QHash<QString, int> result;
-    return result;
+    return {};
 }
