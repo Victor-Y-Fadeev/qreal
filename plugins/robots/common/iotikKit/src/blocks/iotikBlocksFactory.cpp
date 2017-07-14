@@ -22,15 +22,17 @@ using namespace kitBase::blocksBase::common;
 
 qReal::interpretation::Block *IotikBlocksFactory::produceBlock(const qReal::Id &element)
 {
-
+    return nullptr;
 }
 
 qReal::IdList IotikBlocksFactory::providedBlocks() const
 {
-
+    return {};
 }
 
 qReal::IdList IotikBlocksFactory::blocksToDisable() const
 {
+    qReal::IdList result;
 
+    return result;
 }
