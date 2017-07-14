@@ -19,6 +19,7 @@ includes(plugins/robots/common/kitBase \
          plugins/robots/utils \
          qrtext \
          plugins/robots/common/iotikKit \
+         plugins/robots/interpreters/iotikKitInterpreter/src
             )
 
 HEADERS += \
