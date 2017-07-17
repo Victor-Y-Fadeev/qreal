@@ -1,4 +1,4 @@
-# Copyright 2007-2015 QReal Research Group
+# Copyright 2017 QReal Research Group
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,13 +14,16 @@
 
 QT += widgets
 
-links(qrtext robots-kit-base)
+links(qrkernel qrutils qrtext qrgui-preferences-dialog qrgui-tool-plugin-interface \
+                robots-utils robots-kit-base robots-2d-model robots-iotik-kit qslog \
+                )
+
 includes(plugins/robots/common/kitBase \
          plugins/robots/utils \
          qrtext \
          plugins/robots/common/iotikKit \
-         plugins/robots/interpreters/iotikKitInterpreter/src
-            )
+         plugins/robots/interpreters/iotikKitInterpreter/src \
+)
 
 HEADERS += \
         $$PWD/iotikKitInterpreterPlugin.h \
@@ -30,8 +33,8 @@ SOURCES += \
         $$PWD/iotikKitInterpreterPlugin.cpp \
         $$PWD/robotModel/real/realRobotModel.cpp \
 
-RESOURCES += $$PWD/../iotikKitInterpreter.qrc
-
-TRANSLATIONS = \ #TODO: translations for iotik Kit Interpreter
+TRANSLATIONS = \
         $$PWD/../../../../../qrtranslations/ru/plugins/robots/iotikKitInterpreter_ru.ts \
         $$PWD/../../../../../qrtranslations/fr/plugins/robots/iotikKitInterpreter_fr.ts \
+
+RESOURCES += $$PWD/../iotikKitInterpreter.qrc
