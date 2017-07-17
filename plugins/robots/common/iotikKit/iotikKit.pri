@@ -31,3 +31,7 @@ HEADERS += \
 SOURCES += \
         $$PWD/src/robotModel/iotikRobotModelBase.cpp \
         $$PWD/src/blocks/iotikBlocksFactory.cpp \
+
+TRANSLATIONS = \
+        $$PWD/../../../../qrtranslations/ru/plugins/robots/iotikKit_ru.ts \
+        $$PWD/../../../../qrtranslations/fr/plugins/robots/iotikKit_fr.ts \
