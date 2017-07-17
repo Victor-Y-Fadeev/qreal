@@ -18,19 +18,19 @@ using namespace iotik::robotModel;
 using namespace kitBase::robotModel;
 
 IotikRobotModelBase::IotikRobotModelBase(const QString &kitId, const QString &robotId)
-    : CommonRobotModel(kitId, robotId)
+	: CommonRobotModel(kitId, robotId)
 {
-    QList<DeviceInfo> const inputPortConnections = {};
+	QList<DeviceInfo> const inputPortConnections = {};
 }
 
 QList<PortInfo> IotikRobotModelBase::configurablePorts() const
 {
-    QList<PortInfo> const digitalPorts = {};
+	QList<PortInfo> const digitalPorts = {};
 
-    return CommonRobotModel::configurablePorts() + digitalPorts;
+	return CommonRobotModel::configurablePorts() + digitalPorts;
 }
 
 QList<DeviceInfo> IotikRobotModelBase::convertibleBases() const
 {
-    return {};
+	return {};
 }

@@ -22,13 +22,13 @@ namespace robotModel {
 
 class IotikRobotModelBase : public kitBase::robotModel::CommonRobotModel
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-    IotikRobotModelBase(const QString &kitId, const QString &robotId);
+	IotikRobotModelBase(const QString &kitId, const QString &robotId);
 
-    QList<kitBase::robotModel::PortInfo> configurablePorts() const override;
-    QList<kitBase::robotModel::DeviceInfo> convertibleBases() const override;
+	QList<kitBase::robotModel::PortInfo> configurablePorts() const override;
+	QList<kitBase::robotModel::DeviceInfo> convertibleBases() const override;
 
 protected:
 };

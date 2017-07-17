@@ -23,9 +23,9 @@ namespace blocks {
 class IotikBlocksFactory : public kitBase::blocksBase::CommonBlocksFactory
 {
 public:
-    qReal::interpretation::Block *produceBlock(const qReal::Id &element) override;
-    qReal::IdList providedBlocks() const override;
-    qReal::IdList blocksToDisable() const override;
+	qReal::interpretation::Block *produceBlock(const qReal::Id &element) override;
+	qReal::IdList providedBlocks() const override;
+	qReal::IdList blocksToDisable() const override;
 };
 
 }

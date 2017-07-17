@@ -15,26 +15,26 @@
 QT += widgets
 
 links(qrkernel qrutils qrtext qrgui-preferences-dialog qrgui-tool-plugin-interface \
-                robots-utils robots-kit-base robots-2d-model robots-iotik-kit qslog \
-                )
+		robots-utils robots-kit-base robots-2d-model robots-iotik-kit qslog \
+		)
 
 includes(plugins/robots/common/kitBase \
-         plugins/robots/utils \
-         qrtext \
-         plugins/robots/common/iotikKit \
-         plugins/robots/interpreters/iotikKitInterpreter/src \
+		plugins/robots/utils \
+		qrtext \
+		plugins/robots/common/iotikKit \
+		plugins/robots/interpreters/iotikKitInterpreter/src \
 )
 
 HEADERS += \
-        $$PWD/iotikKitInterpreterPlugin.h \
-        $$PWD/robotModel/real/realRobotModel.h \
+	$$PWD/iotikKitInterpreterPlugin.h \
+	$$PWD/robotModel/real/realRobotModel.h \
 
 SOURCES += \
-        $$PWD/iotikKitInterpreterPlugin.cpp \
-        $$PWD/robotModel/real/realRobotModel.cpp \
+	$$PWD/iotikKitInterpreterPlugin.cpp \
+	$$PWD/robotModel/real/realRobotModel.cpp \
 
 TRANSLATIONS = \
-        $$PWD/../../../../../qrtranslations/ru/plugins/robots/iotikKitInterpreter_ru.ts \
-        $$PWD/../../../../../qrtranslations/fr/plugins/robots/iotikKitInterpreter_fr.ts \
+	$$PWD/../../../../../qrtranslations/ru/plugins/robots/iotikKitInterpreter_ru.ts \
+	$$PWD/../../../../../qrtranslations/fr/plugins/robots/iotikKitInterpreter_fr.ts \
 
 RESOURCES += $$PWD/../iotikKitInterpreter.qrc

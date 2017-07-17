@@ -23,39 +23,39 @@ namespace iotik {
 
 class IotikKitInterpreterPlugin : public QObject, public kitBase::KitPluginInterface
 {
-    Q_OBJECT
-    Q_INTERFACES(kitBase::KitPluginInterface)
-    Q_PLUGIN_METADATA(IID "iotik.IotikKitInterpreterPlugin")
+	Q_OBJECT
+	Q_INTERFACES(kitBase::KitPluginInterface)
+	Q_PLUGIN_METADATA(IID "iotik.IotikKitInterpreterPlugin")
 
 public:
-    IotikKitInterpreterPlugin();
-    ~IotikKitInterpreterPlugin() override;
+	IotikKitInterpreterPlugin();
+	~IotikKitInterpreterPlugin() override;
 
-    void init(const kitBase::KitPluginConfigurator &configurator) override;
+	void init(const kitBase::KitPluginConfigurator &configurator) override;
 
-    QString kitId() const override;
-    QString friendlyKitName() const override;
+	QString kitId() const override;
+	QString friendlyKitName() const override;
 
-    QList<kitBase::robotModel::RobotModelInterface *> robotModels() override;
-    kitBase::robotModel::RobotModelInterface *defaultRobotModel() override;
+	QList<kitBase::robotModel::RobotModelInterface *> robotModels() override;
+	kitBase::robotModel::RobotModelInterface *defaultRobotModel() override;
 
-    kitBase::blocksBase::BlocksFactoryInterface *blocksFactoryFor(
-            const kitBase::robotModel::RobotModelInterface *model) override;
+	kitBase::blocksBase::BlocksFactoryInterface *blocksFactoryFor(
+			const kitBase::robotModel::RobotModelInterface *model) override;
 
-    QList<kitBase::AdditionalPreferences *> settingsWidgets() override;
-    QList<qReal::ActionInfo> customActions() override;  // Transfers ownership of embedded QActions
-    QList<qReal::HotKeyActionInfo> hotKeyActions() override;
-    QString defaultSettingsFile() const override;
+	QList<kitBase::AdditionalPreferences *> settingsWidgets() override;
+	QList<qReal::ActionInfo> customActions() override;  // Transfers ownership of embedded QActions
+	QList<qReal::HotKeyActionInfo> hotKeyActions() override;
+	QString defaultSettingsFile() const override;
 
-    QWidget *quickPreferencesFor(const kitBase::robotModel::RobotModelInterface &model) override;
-    QIcon iconForFastSelector(const kitBase::robotModel::RobotModelInterface &robotModel) const override;
+	QWidget *quickPreferencesFor(const kitBase::robotModel::RobotModelInterface &model) override;
+	QIcon iconForFastSelector(const kitBase::robotModel::RobotModelInterface &robotModel) const override;
 
 private:
-    robotModel::real::RealRobotModel mRealRobotModel;
+	robotModel::real::RealRobotModel mRealRobotModel;
 
-    /// @todo Use shared pointers instead of this sh~.
-    blocks::IotikBlocksFactory *mBlocksFactory = nullptr;  // Transfers ownership
-    bool mOwnsBlocksFactory = true;
+	/// @todo Use shared pointers instead of this sh~.
+	blocks::IotikBlocksFactory *mBlocksFactory = nullptr;  // Transfers ownership
+	bool mOwnsBlocksFactory = true;
 
 };
 

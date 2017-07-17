@@ -25,92 +25,92 @@ const Id robotDiagramType = Id("RobotsMetamodel", "RobotsDiagram", "RobotsDiagra
 const Id subprogramDiagramType = Id("RobotsMetamodel", "RobotsDiagram", "SubprogramDiagram");
 
 IotikKitInterpreterPlugin::IotikKitInterpreterPlugin()
-    : mRealRobotModel(kitId(), "iotikKitRobot" ) // todo: somewhere generate robotId for each robot
-    , mBlocksFactory(new blocks::IotikBlocksFactory)
+	: mRealRobotModel(kitId(), "iotikKitRobot" ) // todo: somewhere generate robotId for each robot
+	, mBlocksFactory(new blocks::IotikBlocksFactory)
 {
 
 }
 
 IotikKitInterpreterPlugin::~IotikKitInterpreterPlugin()
 {
-    if (mOwnsBlocksFactory) {
-        delete mBlocksFactory;
-    }
+	if (mOwnsBlocksFactory) {
+		delete mBlocksFactory;
+	}
 }
 
 void IotikKitInterpreterPlugin::init(const kitBase::KitPluginConfigurator &configurator)
 {
 
-    qReal::gui::MainWindowInterpretersInterface &interpretersInterface
-            = configurator.qRealConfigurator().mainWindowInterpretersInterface();
-    connect(&mRealRobotModel, &robotModel::real::RealRobotModel::errorOccured
-            , [&interpretersInterface](const QString &message) {
-                interpretersInterface.errorReporter()->addError(message);
-    });
-    connect(&mRealRobotModel, &robotModel::real::RealRobotModel::messageArrived
-            , [&interpretersInterface](const QString &message) {
-                interpretersInterface.errorReporter()->addInformation(message);
-    });
+	qReal::gui::MainWindowInterpretersInterface &interpretersInterface
+			= configurator.qRealConfigurator().mainWindowInterpretersInterface();
+	connect(&mRealRobotModel, &robotModel::real::RealRobotModel::errorOccured
+			, [&interpretersInterface](const QString &message) {
+				interpretersInterface.errorReporter()->addError(message);
+	});
+	connect(&mRealRobotModel, &robotModel::real::RealRobotModel::messageArrived
+			, [&interpretersInterface](const QString &message) {
+				interpretersInterface.errorReporter()->addInformation(message);
+	});
 
 }
 
 QString IotikKitInterpreterPlugin::kitId() const
 {
-    return "iotikKit";
+	return "iotikKit";
 }
 
 QString IotikKitInterpreterPlugin::friendlyKitName() const
 {
-    return tr("IoTik v1.0");
+	return tr("IoTik v1.0");
 }
 
 QList<kitBase::robotModel::RobotModelInterface *> IotikKitInterpreterPlugin::robotModels()
 {
-    return {&mRealRobotModel};
+	return {&mRealRobotModel};
 }
 
 kitBase::blocksBase::BlocksFactoryInterface *IotikKitInterpreterPlugin::blocksFactoryFor(
-        const kitBase::robotModel::RobotModelInterface *model)
+		const kitBase::robotModel::RobotModelInterface *model)
 {
-    Q_UNUSED(model);
-    mOwnsBlocksFactory = false;
-    return mBlocksFactory;
+	Q_UNUSED(model);
+	mOwnsBlocksFactory = false;
+	return mBlocksFactory;
 }
 
 kitBase::robotModel::RobotModelInterface *IotikKitInterpreterPlugin::defaultRobotModel()
 {
-    return &mRealRobotModel;
+	return &mRealRobotModel;
 }
 
 QWidget *IotikKitInterpreterPlugin::quickPreferencesFor(const kitBase::robotModel::RobotModelInterface &model)
 {
-    Q_UNUSED(model);
-    return nullptr;
+	Q_UNUSED(model);
+	return nullptr;
 }
 
 QList<kitBase::AdditionalPreferences *> IotikKitInterpreterPlugin::settingsWidgets()
 {
-    return {nullptr};
+	return {nullptr};
 }
 
 QList<qReal::ActionInfo> IotikKitInterpreterPlugin::customActions()
 {
-    return {};
+	return {};
 }
 
 QList<HotKeyActionInfo> IotikKitInterpreterPlugin::hotKeyActions()
 {
-    return {};
+	return {};
 }
 
 QString IotikKitInterpreterPlugin::defaultSettingsFile() const
 {
-    return ":/iotikDefaultSettings.ini";
+	return ":/iotikDefaultSettings.ini";
 }
 
 QIcon IotikKitInterpreterPlugin::iconForFastSelector(
-        const kitBase::robotModel::RobotModelInterface &robotModel) const
+		const kitBase::robotModel::RobotModelInterface &robotModel) const
 {
-    Q_UNUSED(robotModel);
-    return QIcon();
+	Q_UNUSED(robotModel);
+	return QIcon();
 }

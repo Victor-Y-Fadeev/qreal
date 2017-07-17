@@ -22,7 +22,7 @@ SUBDIRS = \
 	trikV6KitInterpreter \
 	trikV62KitInterpreter \
 	ev3KitInterpreter \
-        iotikKitInterpreter \
+	iotikKitInterpreter \
 	robotsPlugin \
 
 robotsPlugin.depends = interpreterCore

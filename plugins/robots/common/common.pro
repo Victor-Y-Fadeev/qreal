@@ -20,7 +20,7 @@ SUBDIRS = \
 	nxtKit \
 	trikKit \
 	ev3Kit \
-        iotikKit \
+	iotikKit \
 
 twoDModel.depends = kitBase
 nxtKit.depends = twoDModel

@@ -20,32 +20,32 @@ using namespace iotik::robotModel::real;
 using namespace kitBase::robotModel;
 
 RealRobotModel::RealRobotModel(const QString &kitId, const QString &robotId)
-    : IotikRobotModelBase(kitId, robotId)
+	: IotikRobotModelBase(kitId, robotId)
 {
 
 }
 
 QString RealRobotModel::name() const
 {
-    return "iotikKit";
+	return "iotikKit";
 }
 
 QString RealRobotModel::friendlyName() const
 {
-    return tr("IoTik v1.0");
+	return tr("IoTik v1.0");
 }
 
 bool RealRobotModel::needsConnection() const
 {
-    return true;
+	return true;
 }
 
 int RealRobotModel::priority() const
 {
-    return 0;
+	return 0;
 }
 
 robotParts::Device *RealRobotModel::createDevice(const PortInfo &port, const DeviceInfo &deviceInfo)
 {
-    return IotikRobotModelBase::createDevice(port, deviceInfo);
+	return IotikRobotModelBase::createDevice(port, deviceInfo);
 }
