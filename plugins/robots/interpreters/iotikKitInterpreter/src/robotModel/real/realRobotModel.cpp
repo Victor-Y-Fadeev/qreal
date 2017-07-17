@@ -17,19 +17,12 @@
 #include <qrkernel/settingsManager.h>
 
 using namespace iotik::robotModel::real;
-using namespace utils::robotCommunication;
 using namespace kitBase::robotModel;
 
-RealRobotModel::RealRobotModel(const QString &kitId, const QString &robotId
-        , utils::robotCommunication::RobotCommunicationThreadInterface *communicationThread)
+RealRobotModel::RealRobotModel(const QString &kitId, const QString &robotId)
     : IotikRobotModelBase(kitId, robotId)
-    , mRobotCommunicator(new RobotCommunicator(this))
 {
-    connect(mRobotCommunicator, &RobotCommunicator::connected, this, &RealRobotModel::connected);
-    connect(mRobotCommunicator, &RobotCommunicator::disconnected, this, &RealRobotModel::disconnected);
-    connect(mRobotCommunicator, &RobotCommunicator::errorOccured, this, &RealRobotModel::errorOccured);
-    connect(mRobotCommunicator, &RobotCommunicator::messageArrived, this, &RealRobotModel::messageArrived);
-    mRobotCommunicator->setRobotCommunicationThreadObject(communicationThread);
+
 }
 
 QString RealRobotModel::name() const
@@ -50,16 +43,6 @@ bool RealRobotModel::needsConnection() const
 int RealRobotModel::priority() const
 {
     return 0;
-}
-
-void RealRobotModel::connectToRobot()
-{
-    mRobotCommunicator->connect();
-}
-
-void RealRobotModel::disconnectFromRobot()
-{
-    mRobotCommunicator->disconnect();
 }
 
 robotParts::Device *RealRobotModel::createDevice(const PortInfo &port, const DeviceInfo &deviceInfo)

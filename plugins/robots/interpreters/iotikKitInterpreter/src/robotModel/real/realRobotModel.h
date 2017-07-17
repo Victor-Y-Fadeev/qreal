@@ -15,7 +15,6 @@
 #pragma once
 
 #include <iotikKit/robotModel/iotikRobotModelBase.h>
-#include <utils/robotCommunication/robotCommunicator.h>
 
 namespace iotik {
 namespace robotModel {
@@ -27,16 +26,12 @@ class RealRobotModel : public IotikRobotModelBase
 
 public:
     /// Takes ownership on communication thread
-    RealRobotModel(const QString &kitId, const QString &robotId
-            , utils::robotCommunication::RobotCommunicationThreadInterface *communicationThread = nullptr);
+    RealRobotModel(const QString &kitId, const QString &robotId);
 
     QString name() const override;
     QString friendlyName() const override;
     bool needsConnection() const override;
     int priority() const override;
-
-    void connectToRobot() override;
-    void disconnectFromRobot() override;
 
 signals:
     /// Emitted when communicator throws an error to be displayed with error reporter.
@@ -50,8 +45,6 @@ private:
             const kitBase::robotModel::PortInfo &port
             , const kitBase::robotModel::DeviceInfo &deviceInfo) override;
 
-    // WARNING: This class must be disposed in the last turn so do not make it storing by value.
-    utils::robotCommunication::RobotCommunicator *mRobotCommunicator;  // Takes ownership
 };
 
 }
