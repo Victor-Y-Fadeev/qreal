@@ -2,14 +2,14 @@
 
 #include <generatorBase/simpleGenerators/bindingGenerator.h>
 
-namespace trik {
+namespace iotik {
 namespace simple {
 
 /// Generator for 'EnginesForward', 'EnginesBackward' and 'AngularServo' block
-class TrikEnginesGenerator : public generatorBase::simple::BindingGenerator
+class IotikEnginesGenerator : public generatorBase::simple::BindingGenerator
 {
 public:
-	TrikEnginesGenerator(qrRepo::RepoApi const &repo
+	IotikEnginesGenerator(qrRepo::RepoApi const &repo
 			, generatorBase::GeneratorCustomizer &customizer
 			, qReal::Id const &id
 			, QString const &engineType

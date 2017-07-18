@@ -12,12 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. */
 
-#include "trikGeneratorBase/trikMasterGeneratorBase.h"
-#include "trikGeneratorCustomizer.h"
+#include "iotikGeneratorBase/iotikMasterGeneratorBase.h"
+#include "iotikGeneratorCustomizer.h"
 
-using namespace trik;
+using namespace iotik;
 
-TrikMasterGeneratorBase::TrikMasterGeneratorBase(qrRepo::RepoApi const &repo
+IotikMasterGeneratorBase::IotikMasterGeneratorBase(qrRepo::RepoApi const &repo
 		, qReal::ErrorReporterInterface &errorReporter
 		, interpreterBase::robotModel::RobotModelManagerInterface const &robotModelManager
 		, qrtext::LanguageToolboxInterface &textLanguage
@@ -28,8 +28,8 @@ TrikMasterGeneratorBase::TrikMasterGeneratorBase(qrRepo::RepoApi const &repo
 {
 }
 
-generatorBase::GeneratorCustomizer *TrikMasterGeneratorBase::createCustomizer()
+generatorBase::GeneratorCustomizer *IotikMasterGeneratorBase::createCustomizer()
 {
-	return new TrikGeneratorCustomizer(mRepo, mErrorReporter
+	return new IotikGeneratorCustomizer(mRepo, mErrorReporter
 			, mRobotModelManager, *createLuaProcessor(), mGeneratorName);
 }

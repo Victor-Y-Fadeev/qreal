@@ -12,20 +12,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. */
 
-#include "trikGeneratorBase/trikGeneratorPluginBase.h"
+#include "iotikGeneratorBase/trikGeneratorPluginBase.h"
 
-using namespace trik;
+using namespace iotik;
 
-TrikGeneratorPluginBase::TrikGeneratorPluginBase()
+IoitkGeneratorPluginBase::IotikGeneratorPluginBase()
 {
 }
 
-QString TrikGeneratorPluginBase::kitId() const
+QString IotikGeneratorPluginBase::kitId() const
 {
-	return "trikKit";
+	return "iotikKit";
 }
 
-void TrikGeneratorPluginBase::regenerateExtraFiles(QFileInfo const &newFileInfo)
+void IotikGeneratorPluginBase::regenerateExtraFiles(QFileInfo const &newFileInfo)
 {
 	Q_UNUSED(newFileInfo);
 }

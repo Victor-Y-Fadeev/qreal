@@ -2,10 +2,10 @@
 
 #include <generatorBase/converters/dynamicPathConverter.h>
 
-namespace trik {
+namespace iotik {
 namespace converters {
 
-/// Converts LED color enum values to method names of Led class in TRIK runtime.
+/// Converts LED color enum values to method names of Led class in iotik runtime.
 class LedColorConverter : public generatorBase::converters::DynamicPathConverter
 {
 public:

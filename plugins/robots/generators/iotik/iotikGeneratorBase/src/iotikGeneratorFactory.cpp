@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. */
 
-#include "trikGeneratorFactory.h"
+#include "iotikGeneratorFactory.h"
 
 #include <generatorBase/converters/regexpMultiConverter.h>
 #include <generatorBase/simpleGenerators/waitForButtonGenerator.h>
@@ -37,17 +37,17 @@
 #include "simpleGenerators/setBackgroundGenerator.h"
 #include "simpleGenerators/smileGenerator.h"
 #include "simpleGenerators/systemGenerator.h"
-#include "simpleGenerators/trikEnginesGenerator.h"
+#include "simpleGenerators/iotikEnginesGenerator.h"
 #include "simpleGenerators/waitForInfraredSensorGenerator.h"
 #include "simpleGenerators/waitForMotionGenerator.h"
-#include "parts/trikDeviceVariables.h"
+#include "parts/iotikDeviceVariables.h"
 
-using namespace trik;
-using namespace trik::simple;
+using namespace iotik;
+using namespace iotik::simple;
 using namespace generatorBase;
 using namespace generatorBase::simple;
 
-TrikGeneratorFactory::TrikGeneratorFactory(qrRepo::RepoApi const &repo
+IotikGeneratorFactory::IotikGeneratorFactory(qrRepo::RepoApi const &repo
 		, qReal::ErrorReporterInterface &errorReporter
 		, interpreterBase::robotModel::RobotModelManagerInterface const &robotModelManager
 		, lua::LuaProcessor &luaProcessor
@@ -57,11 +57,11 @@ TrikGeneratorFactory::TrikGeneratorFactory(qrRepo::RepoApi const &repo
 {
 }
 
-TrikGeneratorFactory::~TrikGeneratorFactory()
+IotikGeneratorFactory::~IotikGeneratorFactory()
 {
 }
 
-AbstractSimpleGenerator *TrikGeneratorFactory::simpleGenerator(qReal::Id const &id
+AbstractSimpleGenerator *IotikGeneratorFactory::simpleGenerator(qReal::Id const &id
 		, GeneratorCustomizer &customizer)
 {
 	QString const elementType = id.element();
@@ -69,72 +69,20 @@ AbstractSimpleGenerator *TrikGeneratorFactory::simpleGenerator(qReal::Id const &
 			|| elementType.contains("EnginesBackward")
 			|| elementType.contains("AngularServo"))
 	{
-		return new TrikEnginesGenerator(mRepo, customizer, id, elementType, this);
-	} else if (elementType.contains("TrikPlayTone")) {
-		return new PlayToneGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "TrikDrawLine") {
-		return new DrawLineGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "TrikDrawPixel") {
-		return new DrawPixelGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "TrikDrawRect") {
-		return new DrawRectGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "TrikDrawEllipse") {
-		return new DrawEllipseGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "TrikDrawArc") {
-		return new DrawArcGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "TrikSetPainterWidth") {
-		return new SetPainterWidthGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "TrikSetPainterColor") {
-		return new SetPainterColorGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "TrikSmile") {
-		return new SmileGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "TrikSadSmile") {
-		return new SadSmileGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "TrikSay") {
-		return new SayGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "TrikSendMessage") {
-		return new SendMessageGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "TrikWaitForMessage") {
-		return new WaitForMessageGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "TrikSetBackground") {
-		return new SetBackgroundGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "TrikSystem") {
-		return new SystemGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "TrikLed") {
-		return new LedGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "TrikDetect") {
-		return new DetectGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "TrikInitCamera") {
-		return new InitCameraGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "TrikDetectorToVariable") {
-		return new DetectorToVariableGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "TrikWaitForEnter") {
-		return new WaitForButtonGenerator(mRepo, customizer, id, "buttons/waitForEnter.t", this);
-	} else if (elementType == "TrikWaitForLeft") {
-		return new WaitForButtonGenerator(mRepo, customizer, id, "buttons/waitForLeft.t", this);
-	} else if (elementType == "TrikWaitForRight") {
-		return new WaitForButtonGenerator(mRepo, customizer, id, "buttons/waitForRight.t", this);
-	} else if (elementType == "TrikWaitForUp") {
-		return new WaitForButtonGenerator(mRepo, customizer, id, "buttons/waitForUp.t", this);
-	} else if (elementType == "TrikWaitForDown") {
-		return new WaitForButtonGenerator(mRepo, customizer, id, "buttons/waitForDown.t", this);
-	} else if (elementType == "TrikWaitForPower") {
-		return new WaitForButtonGenerator(mRepo, customizer, id, "buttons/waitForPower.t", this);
-	} else if (elementType == "TrikWaitForMotion") {
-		return new WaitForMotionGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "TrikWaitForIRDistance") {
+		return new IotikEnginesGenerator(mRepo, customizer, id, elementType, this);
+	}	 else if (elementType == "TrikWaitForIRDistance") {
 		return new WaitForInfraredSensorGenerator(mRepo, customizer, id, this);
 	}
 
 	return GeneratorFactoryBase::simpleGenerator(id, customizer);
 }
 
-QString TrikGeneratorFactory::pathToTemplates() const
+QString IotikGeneratorFactory::pathToTemplates() const
 {
 	return ":/" + mGeneratorName + "/templates";
 }
 
-generatorBase::parts::DeviceVariables *TrikGeneratorFactory::deviceVariables() const
+generatorBase::parts::DeviceVariables *IotikGeneratorFactory::deviceVariables() const
 {
-	return new trik::parts::TrikDeviceVariables();
+	return new trik::parts::IotikDeviceVariables();
 }

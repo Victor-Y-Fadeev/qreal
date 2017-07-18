@@ -16,19 +16,19 @@
 
 #include <generatorBase/generatorFactoryBase.h>
 
-namespace trik {
+namespace iotik {
 
 /// Generator factory implemtation for TRIK platform
-class TrikGeneratorFactory : public generatorBase::GeneratorFactoryBase
+class IotikGeneratorFactory : public generatorBase::GeneratorFactoryBase
 {
 public:
-	TrikGeneratorFactory(qrRepo::RepoApi const &repo
+	IotikGeneratorFactory(qrRepo::RepoApi const &repo
 			, qReal::ErrorReporterInterface &errorReporter
 			, interpreterBase::robotModel::RobotModelManagerInterface const &robotModelManager
 			, generatorBase::lua::LuaProcessor &luaProcessor
 			, QString const &generatorName);
 
-	~TrikGeneratorFactory() override;
+	~IotikGeneratorFactory() override;
 
 	generatorBase::simple::AbstractSimpleGenerator *simpleGenerator(qReal::Id const &id
 			, generatorBase::GeneratorCustomizer &customizer) override;
