@@ -36,6 +36,7 @@ SUBDIRS = \
 	nxtRussianCGenerator \
 	ev3GeneratorBase \
 	ev3RbfGenerator \
+	iotikGeneratorBase \
 	iotikRuCGenerator \
 
 trikGeneratorBase.subdir = $$PWD/trik/trikGeneratorBase
@@ -58,6 +59,7 @@ nxtOsekCGenerator.subdir = $$PWD/nxt/nxtOsekCGenerator
 nxtRussianCGenerator.subdir = $$PWD/nxt/nxtRussianCGenerator
 ev3GeneratorBase.subdir = $$PWD/ev3/ev3GeneratorBase
 ev3RbfGenerator.subdir = $$PWD/ev3/ev3RbfGenerator
+iotikGeneratorBase.subdir = $$PWD/iotik/iotikGeneratorBase
 iotikRuCGenerator.subdir = $$PWD/iotik/iotikRuCGenerator
 
 trikGeneratorBase.depends = generatorBase
@@ -77,4 +79,5 @@ nxtOsekCGenerator.depends = nxtGeneratorBase
 nxtRussianCGenerator.depends = nxtGeneratorBase
 ev3GeneratorBase.depends = generatorBase
 ev3RbfGenerator.depends = ev3GeneratorBase
-iotikRuCGenerator.depends = iotikRuCGenerator
+iotikGeneratorBase.depends = generatorBase
+iotikRuCGenerator.depends = iotikGeneratorBase
