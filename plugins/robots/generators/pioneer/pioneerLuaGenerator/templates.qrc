@@ -95,5 +95,7 @@
 		<file>templates/variables/randomInitialization.t</file>
 		<file>templates/variables/variableDeclaration.t</file>
 		<file>templates/wait/timer.t</file>
+		<file>templates/quadcopterCommands/magnetOff.t</file>
+		<file>templates/quadcopterCommands/magnetOn.t</file>
 	</qresource>
 </RCC>

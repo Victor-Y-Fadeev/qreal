@@ -2,6 +2,8 @@
 -- local ap = require "ap.lua"
 -- local Ev = require "Ev.lua"
 
+local magnet = Gpio.new(Gpio.A, 1, Gpio.OUTPUT)
+
 @@SUBPROGRAMS_FORWARDING@@
 
 @@THREADS_FORWARDING@@
@@ -24,6 +26,8 @@ function callback(event)
 	end
 
 	if (event == Ev.COPTER_LANDED) then
+		ap.push(Ev.ENGINES_DISARM)
+		sleep(2)
 		action[curr_state]()
 	end
 
@@ -34,5 +38,5 @@ end
 
 math.randomseed(@@RAND_SEED@@)
 
-ap.push(Ev.ENGINES_ARM)
+ap.push(Ev.MCE_PREFLIGHT)
 action[curr_state]()

@@ -14,40 +14,35 @@
 
 #include "communicator/httpCommunicator.h"
 
-#include <QtCore/QProcess>
-#include <QtCore/QDir>
-#include <QtCore/QTextCodec>
+#include <QtCore/QFileInfo>
+#include <QtCore/QTimer>
 #include <QtNetwork/QNetworkAccessManager>
 #include <QtNetwork/QNetworkRequest>
 #include <QtNetwork/QNetworkReply>
-#include <QtWidgets/QApplication>
 
 #include <qrkernel/settingsManager.h>
 #include <qrgui/plugins/toolPluginInterface/usedInterfaces/errorReporterInterface.h>
 #include <pioneerKit/constants.h>
-#include <kitBase/robotModel/robotModelManagerInterface.h>
 
 using namespace pioneer;
 using namespace pioneer::lua;
 using namespace qReal;
 
+/// API part in URLs for HTTP requests.
 const QString apiLevel = "v0.1";
 
-HttpCommunicator::HttpCommunicator(
-		qReal::ErrorReporterInterface &errorReporter
-		, const kitBase::robotModel::RobotModelManagerInterface &robotModelManager
-		)
-	: mCompileProcess(new QProcess)
-	, mNetworkManager(new QNetworkAccessManager)
-	, mErrorReporter(errorReporter)
-	, mRobotModelManager(robotModelManager)
-{
-	connect(mCompileProcess.data()
-			, static_cast<void(QProcess::*)(int, QProcess::ExitStatus)>(&QProcess::finished)
-			, this
-			, &HttpCommunicator::onCompilationDone);
+/// Timeout for HTTP reply (in milliseconds).
+const int timeout = 3000;
 
+HttpCommunicator::HttpCommunicator(qReal::ErrorReporterInterface &errorReporter)
+	: mNetworkManager(new QNetworkAccessManager)
+	, mErrorReporter(errorReporter)
+	, mRequestTimeoutTimer(new QTimer)
+{
 	connect(mNetworkManager.data(), &QNetworkAccessManager::finished, this, &HttpCommunicator::onPostRequestFinished);
+	connect(mRequestTimeoutTimer.data(), &QTimer::timeout, this, &HttpCommunicator::onTimeout);
+	mRequestTimeoutTimer->setInterval(timeout);
+	mRequestTimeoutTimer->setSingleShot(true);
 }
 
 HttpCommunicator::~HttpCommunicator()
@@ -57,57 +52,45 @@ HttpCommunicator::~HttpCommunicator()
 
 void HttpCommunicator::uploadProgram(const QFileInfo &program)
 {
-	mCurrentAction = Action::uploading;
-	doUploadProgram(program);
-}
-
-void HttpCommunicator::doUploadProgram(const QFileInfo &program)
-{
-	mCurrentProgram = program;
-
-#ifdef Q_OS_WIN
-	const QString processName = QApplication::applicationDirPath() + "/pioneerCompile.bat";
-#else
-	const QString processName = QApplication::applicationDirPath() + "/pioneerCompile.sh";
-#endif
-
-	const QString pathToLuac = mRobotModelManager.model().name() == modelNames::realCopter
-			? QApplication::applicationDirPath()
-					+ "/"
-					+ SettingsManager::value(settings::pioneerRealCopterLuaPath, "").toString()
-			: SettingsManager::value(settings::pioneerSimulatorLuaPath, "").toString();
-
-	mCompileProcess->start(processName, { program.absoluteFilePath(), pathToLuac });
-
-	mCompileProcess->waitForStarted();
-	if (mCompileProcess->state() != QProcess::Running) {
-		mErrorReporter.addError(tr("Unable to execute compilation script"));
-		QStringList errors = QString(mCompileProcess->readAllStandardError()).split("\n", QString::SkipEmptyParts);
-		for (const auto &error : errors) {
-			mErrorReporter.addInformation(error);
-		}
-
-		done();
-	} else {
-		mErrorReporter.addInformation(tr("Uploading started, please wait..."));
+	const QString ip = SettingsManager::value(settings::pioneerBaseStationIP).toString();
+	if (ip.isEmpty()) {
+		mErrorReporter.addError(tr("Pioneer base station IP address is not set. It can be set in Settings window."));
+		return;
 	}
+
+	const QString port = SettingsManager::value(settings::pioneerBaseStationPort).toString();
+	if (port.isEmpty()) {
+		mErrorReporter.addError(tr("Pioneer base station port is not set. It can be set in Settings window."));
+		return;
+	}
+
+	QFile programFile(program.canonicalFilePath());
+	if (!programFile.open(QIODevice::ReadOnly)) {
+		mErrorReporter.addError(tr("Generation failed, upload aborted."));
+		emit uploadCompleted(false);
+		return;
+	}
+
+	QByteArray programData = programFile.readAll();
+	programFile.close();
+
+	if (programData.isEmpty()) {
+		mErrorReporter.addError(tr("Generation failed, upload aborted."));
+		emit uploadCompleted(false);
+		return;
+	}
+
+	const QString url = QString("http://%1:%2/pioneer/%3/upload").arg(ip).arg(port).arg(apiLevel);
+	mErrorReporter.addInformation(QString(tr("Uploading to: %1, please wait...")).arg(url));
+
+	QNetworkRequest request(url);
+	request.setHeader(QNetworkRequest::ContentTypeHeader, "text/plain");
+
+	mCurrentReply= mNetworkManager->post(request, programData);
+	mRequestTimeoutTimer->start();
 }
 
-void HttpCommunicator::runProgram(const QFileInfo &program)
-{
-	mCurrentAction = Action::starting;
-	mCurrentProgram = program;
-	uploadProgram(program);
-}
-
-void HttpCommunicator::stopProgram()
-{
-	mCurrentAction = Action::stopping;
-	mErrorReporter.addError(tr("Stopping program is not supported for HTTP communication mode."));
-	done();
-}
-
-void HttpCommunicator::onCompilationDone()
+void HttpCommunicator::startProgram()
 {
 	const QString ip = SettingsManager::value(settings::pioneerBaseStationIP).toString();
 	if (ip.isEmpty()) {
@@ -121,88 +104,49 @@ void HttpCommunicator::onCompilationDone()
 		return;
 	}
 
-	QFileInfo compiledProgram = mCurrentProgram.canonicalPath() + "/" + mCurrentProgram.baseName() + ".luac";
-	QFile programFile(compiledProgram.canonicalFilePath());
-	if (!programFile.open(QIODevice::ReadOnly)) {
-		mErrorReporter.addError(tr("Generation or compilation failed, upload aborted."));
-		done();
-		return;
-	}
+	const QString url = QString("http://%1:%2/pioneer/%3/start").arg(ip).arg(port).arg(apiLevel);
+	mErrorReporter.addInformation(QString(tr("Starting program. Senging request to: %1, please wait...")).arg(url));
+	QNetworkRequest request(url);
+	request.setHeader(QNetworkRequest::ContentTypeHeader, "text/plain");
 
-	QByteArray program = programFile.readAll();
-	programFile.close();
+	mCurrentReply = mNetworkManager->post(request, QByteArray());
+	mRequestTimeoutTimer->start();
+}
 
-	if (program.isEmpty()) {
-		mErrorReporter.addError(tr("Generation or compilation failed, upload aborted."));
-		done();
-		return;
-	}
-
-	QNetworkRequest request(QString("http://%1:%2/pioneer/%3/upload").arg(ip).arg(port).arg(apiLevel));
-	request.setHeader(QNetworkRequest::ContentTypeHeader, "application/octet-stream");
-
-	mNetworkManager->post(request, program);
+void HttpCommunicator::stopProgram()
+{
+	mErrorReporter.addError(tr("Stopping program is not supported for HTTP communication mode."));
+	emit stopCompleted(false);
 }
 
 void HttpCommunicator::onPostRequestFinished(QNetworkReply *reply)
 {
+	mRequestTimeoutTimer->stop();
+
 	if (reply->url().toString().endsWith("/upload")) {
 		if (reply->error() != QNetworkReply::NoError) {
 			mErrorReporter.addError(reply->errorString());
-			done();
-			return;
-		}
-
-		if (mCurrentAction == Action::starting) {
-			doRunProgram();
+			emit uploadCompleted(false);
 		} else {
-			done();
+			emit uploadCompleted(true);
 		}
 	} else if (reply->url().toString().endsWith("/start")) {
 		if (reply->error() != QNetworkReply::NoError) {
 			mErrorReporter.addError(reply->errorString());
+			emit startCompleted(false);
+		} else {
+			emit startCompleted(true);
 		}
-
-		done();
 	}
 
 	reply->deleteLater();
 }
 
-void HttpCommunicator::done()
+void HttpCommunicator::onTimeout()
 {
-	switch (mCurrentAction) {
-	case Action::none:
-		return;
-	case Action::starting:
-		emit runCompleted();
-		break;
-	case Action::stopping:
-		emit stopCompleted();
-		break;
-	case Action::uploading:
-		emit uploadCompleted();
+	if (mCurrentReply) {
+		mErrorReporter.addError(tr("Pioneer base station took too long to respond. Request aborted."));
+		mCurrentReply->abort();
+		mCurrentReply = nullptr;
 	}
-
-	mCurrentAction = Action::none;
-}
-
-void HttpCommunicator::doRunProgram()
-{
-	const QString ip = SettingsManager::value(settings::pioneerBaseStationIP).toString();
-	if (ip.isEmpty()) {
-		mErrorReporter.addError(tr("Pioneer base station IP address is not set. It can be set in Settings window."));
-		return;
-	}
-
-	const QString port = SettingsManager::value(settings::pioneerBaseStationPort).toString();
-	if (port.isEmpty()) {
-		mErrorReporter.addError(tr("Pioneer base station port is not set. It can be set in Settings window."));
-		return;
-	}
-
-	QNetworkRequest request(QString("http://%1:%2/pioneer/%3/start").arg(ip).arg(port).arg(apiLevel));
-	request.setHeader(QNetworkRequest::ContentTypeHeader, "application/octet-stream");
-
-	mNetworkManager->post(request, QByteArray());
 }

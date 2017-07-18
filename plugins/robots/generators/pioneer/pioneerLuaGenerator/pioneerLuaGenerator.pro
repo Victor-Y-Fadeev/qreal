@@ -63,14 +63,16 @@ HEADERS += \
 	$$PWD/pioneerLuaGeneratorFactory.h \
 	$$PWD/pioneerLuaGeneratorPlugin.h \
 	$$PWD/pioneerLuaMasterGenerator.h \
+	$$PWD/communicator/communicatorInterface.h \
+	$$PWD/communicator/communicationManager.h \
 	$$PWD/communicator/controllerCommunicator.h \
 	$$PWD/communicator/httpCommunicator.h \
-	$$PWD/communicator/communicatorInterface.h \
 	$$PWD/generators/pioneerStateMachineGenerator.h \
 	$$PWD/robotModel/pioneerGeneratorRobotModel.h \
 	$$PWD/simpleGenerators/geoLandingGenerator.h \
 	$$PWD/simpleGenerators/geoTakeoffGenerator.h \
 	$$PWD/simpleGenerators/goToPointGenerator.h \
+	$$PWD/simpleGenerators/pioneerMagnetGenerator.h \
 	$$PWD/simpleGenerators/initialNodeGenerator.h \
 	$$PWD/simpleGenerators/pioneerPrintGenerator.h \
 	$$PWD/simpleGenerators/pioneerSystemGenerator.h \
@@ -81,6 +83,7 @@ SOURCES += \
 	$$PWD/pioneerLuaGeneratorFactory.cpp \
 	$$PWD/pioneerLuaGeneratorPlugin.cpp \
 	$$PWD/pioneerLuaMasterGenerator.cpp \
+	$$PWD/communicator/communicationManager.cpp \
 	$$PWD/communicator/controllerCommunicator.cpp \
 	$$PWD/communicator/httpCommunicator.cpp \
 	$$PWD/generators/pioneerStateMachineGenerator.cpp \
@@ -88,6 +91,7 @@ SOURCES += \
 	$$PWD/simpleGenerators/geoLandingGenerator.cpp \
 	$$PWD/simpleGenerators/geoTakeoffGenerator.cpp \
 	$$PWD/simpleGenerators/goToPointGenerator.cpp \
+	$$PWD/simpleGenerators/pioneerMagnetGenerator.cpp \
 	$$PWD/simpleGenerators/initialNodeGenerator.cpp \
 	$$PWD/simpleGenerators/pioneerPrintGenerator.cpp \
 	$$PWD/simpleGenerators/pioneerSystemGenerator.cpp \
@@ -103,8 +107,6 @@ RESOURCES += \
 OTHER_FILES += \
 	$$PWD/scripts/pioneerStartStop.sh \
 	$$PWD/scripts/pioneerUpload.sh \
-	$$PWD/scripts/pioneerCompile.sh \
 	$$PWD/scripts/pioneerStartStop.bat \
 	$$PWD/scripts/pioneerUpload.bat \
-	$$PWD/scripts/pioneerCompile.bat \
 	$$PWD/pioneerLuaDefaultSettings.ini \

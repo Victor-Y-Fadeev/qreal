@@ -17,6 +17,7 @@
 #include "communicator/communicatorInterface.h"
 
 class QProcess;
+class QTimer;
 
 namespace qReal {
 class ErrorReporterInterface;
@@ -46,7 +47,7 @@ public:
 
 	void uploadProgram(const QFileInfo &program) override;
 
-	void runProgram(const QFileInfo &program) override;
+	void startProgram() override;
 
 	void stopProgram() override;
 
@@ -60,30 +61,16 @@ private slots:
 	/// Called by program stop process when it is done.
 	void onStopCompleted();
 
+	/// Called when some process took too long to finish.
+	void onTimeout();
+
 private:
-	/// Enum with possible actions of communicator.
-	enum class Action {
-		none
-		, uploading
-		, starting
-		, stopping
-	};
-
-	/// Initiates asynchronous execution of "upload program" script.
-	void doUploadProgram(const QFileInfo &program);
-
-	/// Initiates asynchronous execution of "start program" script.
-	void doRunProgram();
-
 	/// Helper method that correctly converts given console output into unicode string.
 	QString toUnicode(const QByteArray &str);
 
 	/// Returns address to which requests for uploading or running program shall be sent. Respects COM/IP settings.
 	/// Reports error and returns empty string if settings are incorrect.
 	QString address();
-
-	/// Mark current procerss as done, emitting appropriate signal.
-	void done();
 
 	/// Sends process output and process error stream to error reporter.
 	void reportOutput(QProcess &process);
@@ -104,8 +91,14 @@ private:
 	/// Provides information about currently selected robot model.
 	const kitBase::robotModel::RobotModelManagerInterface &mRobotModelManager;
 
-	/// Current action of a communicator.
-	Action mCurrentAction = Action::none;
+	/// Keeps Upload operation from taking too long, killing the process if needed.
+	QScopedPointer<QTimer> mUploadTimeoutTimer;
+
+	/// Keeps Start operation from taking too long, killing the process if needed.
+	QScopedPointer<QTimer> mStartTimeoutTimer;
+
+	/// Keeps Stop operation from taking too long, killing the process if needed.
+	QScopedPointer<QTimer> mStopTimeoutTimer;
 };
 
 }
