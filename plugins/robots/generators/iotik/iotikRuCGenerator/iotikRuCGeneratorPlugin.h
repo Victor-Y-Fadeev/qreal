@@ -20,19 +20,19 @@ namespace utils {
 class TcpRobotCommunicator;
 }
 
-namespace trik {
+namespace iotik {
 namespace ruc {
 
 /// Generation of QtScript program for TRIK, uploading and execution of a program.
 /// Uses setting "tcpServer" from RobotsInterpreter.
-class TrikRuCGeneratorPlugin : public TrikGeneratorPluginBase
+class IotikRuCGeneratorPlugin : public IotikGeneratorPluginBase
 {
 	Q_OBJECT
-	Q_PLUGIN_METADATA(IID "trik.TrikRuCGeneratorPlugin")
+	Q_PLUGIN_METADATA(IID "iotik.IotikRuCGeneratorPlugin")
 
 public:
-	TrikRuCGeneratorPlugin();
-	~TrikRuCGeneratorPlugin() override;
+	IotikRuCGeneratorPlugins();
+	~IotikRuCGeneratorPlugin() override;
 
 	QList<qReal::ActionInfo> actions() override;
 

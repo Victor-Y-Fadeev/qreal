@@ -14,24 +14,24 @@
 
 #include "iotikRuCMasterGenerator.h"
 
-using namespace trik::ruc;
+using namespace ::ruc;
 
-TrikRuCMasterGenerator::TrikRuCMasterGenerator(qrRepo::RepoApi const &repo
+IotikRuCMasterGenerator::IotikRuCMasterGenerator(qrRepo::RepoApi const &repo
         , qReal::ErrorReporterInterface &errorReporter
         , interpreterBase::robotModel::RobotModelManagerInterface const &robotModelManager
         , qrtext::LanguageToolboxInterface &textLanguage
         , qReal::Id const &diagramId
         , QString const &generatorName)
-    : TrikMasterGeneratorBase(repo, errorReporter, robotModelManager, textLanguage, diagramId, generatorName)
+	: IotikMasterGeneratorBase(repo, errorReporter, robotModelManager, textLanguage, diagramId, generatorName)
 {
 }
 
-QString TrikRuCMasterGenerator::targetPath()
+QString IotikRuCMasterGenerator::targetPath()
 {
     return QString("%1/%2.c").arg(mProjectDir, mProjectName);
 }
 
-bool TrikRuCMasterGenerator::supportsGotoGeneration() const
+bool IotikRuCMasterGenerator::supportsGotoGeneration() const
 {
     return false;
 }

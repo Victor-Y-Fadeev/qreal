@@ -23,10 +23,10 @@
 
 #include "iotikRuCMasterGenerator.h"
 
-using namespace trik::ruc;
+using namespace ::ruc;
 using namespace qReal;
 
-TrikRuCGeneratorPlugin::TrikRuCGeneratorPlugin()
+IotikRuCGeneratorPlugin::IotikRuCGeneratorPlugin()
 	: mGenerateCodeAction(new QAction(nullptr))
 	, mUploadProgramAction(new QAction(nullptr))
 	, mRunProgramAction(new QAction(nullptr))
@@ -35,21 +35,21 @@ TrikRuCGeneratorPlugin::TrikRuCGeneratorPlugin()
 {
 }
 
-TrikRuCGeneratorPlugin::~TrikRuCGeneratorPlugin()
+IotikRuCGeneratorPlugin::~IotikRuCGeneratorPlugin()
 {
 	delete mCommunicator;
 }
 
-void TrikRuCGeneratorPlugin::init(qReal::PluginConfigurator const &configurator
+void IotikRuCGeneratorPlugin::init(qReal::PluginConfigurator const &configurator
 		, interpreterBase::robotModel::RobotModelManagerInterface const &robotModelManager
 		, qrtext::LanguageToolboxInterface &textLanguage)
 {
 	RobotsGeneratorPluginBase::init(configurator, robotModelManager, textLanguage);
-	mCommunicator = new utils::TcpRobotCommunicator("TrikTcpServer");
+	mCommunicator = new utils::TcpRobotCommunicator("IotikTcpServer");
 	mCommunicator->setErrorReporter(configurator.mainWindowInterpretersInterface().errorReporter());
 }
 
-QList<ActionInfo> TrikRuCGeneratorPlugin::actions()
+QList<ActionInfo> IotikRuCGeneratorPlugin::actions()
 {
 	QAction *separator = new QAction(this);
 	separator->setSeparator(true);
@@ -80,9 +80,9 @@ QList<ActionInfo> TrikRuCGeneratorPlugin::actions()
 	return {generateCodeActionInfo, uploadProgramActionInfo, runProgramActionInfo, stopRobotActionInfo, separatorInfo};
 }
 
-generatorBase::MasterGeneratorBase *TrikRuCGeneratorPlugin::masterGenerator()
+generatorBase::MasterGeneratorBase *IotikRuCGeneratorPlugin::masterGenerator()
 {
-	return new TrikRuCMasterGenerator(*mRepo
+	return new IotikRuCMasterGenerator(*mRepo
 			, *mMainWindowInterface->errorReporter()
 			, *mRobotModelManager
 			, *mTextLanguage
@@ -90,22 +90,22 @@ generatorBase::MasterGeneratorBase *TrikRuCGeneratorPlugin::masterGenerator()
 			, generatorName());
 }
 
-QString TrikRuCGeneratorPlugin::defaultFilePath(QString const &projectName) const
+QString IotikRuCGeneratorPlugin::defaultFilePath(QString const &projectName) const
 {
 	return QString("trik/%1/%1.c").arg(projectName);
 }
 
-text::LanguageInfo TrikRuCGeneratorPlugin::language() const
+text::LanguageInfo IotikRuCGeneratorPlugin::language() const
 {
 	return qReal::text::Languages::c();
 }
 
-QString TrikRuCGeneratorPlugin::generatorName() const
+QString IotikRuCGeneratorPlugin::generatorName() const
 {
    return "trikRuC";
 }
 
-bool TrikRuCGeneratorPlugin::uploadProgram()
+bool IotikRuCGeneratorPlugin::uploadProgram()
 {
 	QFileInfo const fileInfo = generateCodeForProcessing();
 
@@ -122,7 +122,7 @@ bool TrikRuCGeneratorPlugin::uploadProgram()
 	}
 }
 
-void TrikRuCGeneratorPlugin::runProgram()
+void IotikRuCGeneratorPlugin::runProgram()
 {
 	if (uploadProgram()) {
 		QFileInfo const fileInfo = generateCodeForProcessing();
@@ -132,7 +132,7 @@ void TrikRuCGeneratorPlugin::runProgram()
 	}
 }
 
-void TrikRuCGeneratorPlugin::stopRobot()
+void IotikRuCGeneratorPlugin::stopRobot()
 {
 	if (!mCommunicator->stopRobot()) {
 		mMainWindowInterface->errorReporter()->addError(tr("No connection to robot"));

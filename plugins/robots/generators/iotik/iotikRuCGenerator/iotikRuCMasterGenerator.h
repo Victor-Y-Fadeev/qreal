@@ -16,14 +16,14 @@
 
 #include <iotikGeneratorBase/iotikMasterGeneratorBase.h>
 
-namespace trik {
+namespace  iotik{
 namespace ruc {
 
 /// Master generator implementation for generator into QtScript for TRIK platform
-class TrikRuCMasterGenerator : public TrikMasterGeneratorBase
+class IotikRuCMasterGenerator : public IotikMasterGeneratorBase
 {
 public:
-    TrikRuCMasterGenerator(qrRepo::RepoApi const &repo
+	IotikRuCMasterGenerator(qrRepo::RepoApi const &repo
             , qReal::ErrorReporterInterface &errorReporter
             , interpreterBase::robotModel::RobotModelManagerInterface const &robotModelManager
             , qrtext::LanguageToolboxInterface &textLanguage

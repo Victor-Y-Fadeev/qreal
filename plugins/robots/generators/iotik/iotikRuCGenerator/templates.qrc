@@ -1,31 +1,5 @@
 <RCC>
     <qresource prefix="/trikRuC">
-        <file>templates/accelerometer/accelerometerX.t</file>
-        <file>templates/accelerometer/accelerometerY.t</file>
-        <file>templates/accelerometer/accelerometerZ.t</file>
-        <file>templates/backgroundColors/black.t</file>
-        <file>templates/backgroundColors/blue.t</file>
-        <file>templates/backgroundColors/cyan.t</file>
-        <file>templates/backgroundColors/darkBlue.t</file>
-        <file>templates/backgroundColors/darkCyan.t</file>
-        <file>templates/backgroundColors/darkGray.t</file>
-        <file>templates/backgroundColors/darkGreen.t</file>
-        <file>templates/backgroundColors/darkMagenta.t</file>
-        <file>templates/backgroundColors/darkRed.t</file>
-        <file>templates/backgroundColors/darkYellow.t</file>
-        <file>templates/backgroundColors/gray.t</file>
-        <file>templates/backgroundColors/green.t</file>
-        <file>templates/backgroundColors/lightGray.t</file>
-        <file>templates/backgroundColors/magenta.t</file>
-        <file>templates/backgroundColors/red.t</file>
-        <file>templates/backgroundColors/white.t</file>
-        <file>templates/backgroundColors/yellow.t</file>
-        <file>templates/buttons/waitForDown.t</file>
-        <file>templates/buttons/waitForEnter.t</file>
-        <file>templates/buttons/waitForLeft.t</file>
-        <file>templates/buttons/waitForPower.t</file>
-        <file>templates/buttons/waitForRight.t</file>
-        <file>templates/buttons/waitForUp.t</file>
         <file>templates/conditional/doWhile.t</file>
         <file>templates/conditional/for.t</file>
         <file>templates/conditional/if.t</file>
@@ -33,21 +7,8 @@
         <file>templates/conditional/infinite.t</file>
         <file>templates/conditional/negation.t</file>
         <file>templates/conditional/whileDo.t</file>
-        <file>templates/drawing/clearScreen.t</file>
-        <file>templates/drawing/drawArc.t</file>
-        <file>templates/drawing/drawEllipse.t</file>
-        <file>templates/drawing/drawLine.t</file>
-        <file>templates/drawing/drawPixel.t</file>
-        <file>templates/drawing/drawRect.t</file>
-        <file>templates/drawing/printText.t</file>
-        <file>templates/drawing/sadSmile.t</file>
-        <file>templates/drawing/setBackground.t</file>
-        <file>templates/drawing/setPainterColor.t</file>
-        <file>templates/drawing/setPainterWidth.t</file>
-        <file>templates/drawing/smile.t</file>
         <file>templates/engines/backward.t</file>
         <file>templates/engines/forward.t</file>
-        <file>templates/engines/nullifyEncoder.t</file>
         <file>templates/engines/stop.t</file>
         <file>templates/functions/abs.t</file>
         <file>templates/functions/acos.t</file>
@@ -64,13 +25,6 @@
         <file>templates/functions/sin.t</file>
         <file>templates/functions/sqrt.t</file>
         <file>templates/functions/time.t</file>
-        <file>templates/gyroscope/gyroscopeX.t</file>
-        <file>templates/gyroscope/gyroscopeY.t</file>
-        <file>templates/gyroscope/gyroscopeZ.t</file>
-        <file>templates/ledColors/green.t</file>
-        <file>templates/ledColors/off.t</file>
-        <file>templates/ledColors/orange.t</file>
-        <file>templates/ledColors/red.t</file>
         <file>templates/luaPrinting/addition.t</file>
         <file>templates/luaPrinting/argumentsSeparator.t</file>
         <file>templates/luaPrinting/assignment.t</file>
@@ -114,8 +68,6 @@
         <file>templates/luaPrinting/tableConstructor.t</file>
         <file>templates/luaPrinting/true.t</file>
         <file>templates/luaPrinting/unaryMinus.t</file>
-        <file>templates/messages/sendMessage.t</file>
-        <file>templates/messages/waitForMessage.t</file>
         <file>templates/sensors/Down.t</file>
         <file>templates/sensors/encoder.t</file>
         <file>templates/sensors/Enter.t</file>
@@ -155,18 +107,7 @@
         <file>templates/types/string.t</file>
         <file>templates/variables/constantDeclaration.t</file>
         <file>templates/variables/variableDeclaration.t</file>
-        <file>templates/videosensors/ColorSensorB.t</file>
-        <file>templates/videosensors/ColorSensorG.t</file>
-        <file>templates/videosensors/ColorSensorR.t</file>
-        <file>templates/videosensors/detectline.t</file>
-        <file>templates/videosensors/initcolorSensor.t</file>
-        <file>templates/videosensors/initlineSensor.t</file>
-        <file>templates/videosensors/initobjectSensor.t</file>
-        <file>templates/videosensors/LineSensorCrossroads.t</file>
-        <file>templates/videosensors/LineSensorSize.t</file>
-        <file>templates/videosensors/LineSensorX.t</file>
         <file>templates/wait/encoder.t</file>
-        <file>templates/wait/gyroscope.t</file>
         <file>templates/wait/infrared.t</file>
         <file>templates/wait/light.t</file>
         <file>templates/wait/motion.t</file>
@@ -174,7 +115,6 @@
         <file>templates/wait/timer.t</file>
         <file>templates/beep.t</file>
         <file>templates/break.t</file>
-        <file>templates/comment.t</file>
         <file>templates/continue.t</file>
         <file>templates/finalNodeMain.t</file>
         <file>templates/finalNodeSubprogram.t</file>
@@ -183,8 +123,6 @@
         <file>templates/led.t</file>
         <file>templates/main.t</file>
         <file>templates/nativeCode.t</file>
-        <file>templates/playTone.t</file>
         <file>templates/say.t</file>
-        <file>templates/system.t</file>
     </qresource>
 </RCC>

@@ -1,1 +1,0 @@
-brick.objectSensor().read()[0]
