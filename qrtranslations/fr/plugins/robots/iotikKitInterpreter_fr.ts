@@ -2,7 +2,7 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
-    <name>nxt::IotikKitInterpreterPlugin</name>
+    <name>iotik::IotikKitInterpreterPlugin</name>
     <message>
         <location filename="../../../../plugins/robots/interpreters/iotikKitInterpreter/src/iotikKitInterpreterPlugin.cpp" line="64"/>
         <source>IoTik v1.0</source>
