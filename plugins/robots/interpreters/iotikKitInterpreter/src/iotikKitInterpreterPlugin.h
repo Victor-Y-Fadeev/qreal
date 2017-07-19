@@ -17,7 +17,7 @@
 #include <kitBase/kitPluginInterface.h>
 #include <iotikKit/blocks/iotikBlocksFactory.h>
 
-#include "robotModel/real/RealRobotModel.h"
+#include "robotModel/real/realRobotModel.h"
 
 namespace iotik {
 
