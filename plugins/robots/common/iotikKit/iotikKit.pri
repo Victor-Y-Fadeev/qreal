@@ -28,10 +28,16 @@ links(qrkernel qrutils qrtext qrgui-preferences-dialog qrgui-tool-plugin-interfa
 HEADERS += \
 	$$PWD/include/iotikKit/robotModel/iotikRobotModelBase.h \
 	$$PWD/include/iotikKit/blocks/iotikBlocksFactory.h \
+	$$PWD/include/iotikKit/robotModel/parts/iotikMotor.h \
+	$$PWD/src/blocks/details/iotikEnginesBackwardBlock.h \
+	$$PWD/src/blocks/details/iotikEnginesForwardBlock.h \
 
 SOURCES += \
 	$$PWD/src/robotModel/iotikRobotModelBase.cpp \
 	$$PWD/src/blocks/iotikBlocksFactory.cpp \
+	$$PWD/src/robotModel/parts/iotikMotor.cpp \
+	$$PWD/src/blocks/details/iotikEnginesBackwardBlock.cpp \
+	$$PWD/src/blocks/details/iotikEnginesForwardBlock.cpp \
 
 TRANSLATIONS = \
 	$$PWD/../../../../qrtranslations/ru/plugins/robots/iotikKit_ru.ts \
