@@ -23,6 +23,7 @@ includes(plugins/robots/common/kitBase \
 		qrtext \
 		plugins/robots/common/iotikKit \
 		plugins/robots/interpreters/iotikKitInterpreter/src \
+		thirdparty/qscintilla/Qt4Qt5 \
 )
 
 HEADERS += \
