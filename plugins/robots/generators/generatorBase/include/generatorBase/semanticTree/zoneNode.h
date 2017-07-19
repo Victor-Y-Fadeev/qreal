@@ -16,11 +16,13 @@
 
 #include "semanticNode.h"
 
+#include "generatorBase/robotsGeneratorDeclSpec.h"
+
 namespace generatorBase {
 namespace semantics {
 
 /// Stores a list of semantic nodes. In fact an analogue of block operator in c++
-class ZoneNode : public SemanticNode
+class ROBOTS_GENERATOR_EXPORT ZoneNode : public SemanticNode
 {
 public:
 	explicit ZoneNode(QObject *parent = 0);
@@ -35,7 +37,7 @@ public:
 	void appendChildren(QLinkedList<SemanticNode *> const &nodes);
 
 	/// Adds given node into the child list after the given otherNode node
-	void insertAfrer(SemanticNode *after, SemanticNode *node);
+	void insertAfter(SemanticNode *after, SemanticNode *node);
 
 	/// Removes given node from children list without deleting the child itself
 	void removeChild(SemanticNode *node);
