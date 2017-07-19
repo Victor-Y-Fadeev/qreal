@@ -2,11 +2,18 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
-    <name>iotik::iotikKitInterpreterPlugin</name>
+    <name>nxt::IotikKitInterpreterPlugin</name>
     <message>
         <location filename="../../../../plugins/robots/interpreters/iotikKitInterpreter/src/iotikKitInterpreterPlugin.cpp" line="64"/>
         <source>IoTik v1.0</source>
         <translation>IoTik v1.0</translation>
+    </message>
+</context>
+<context>
+    <name>iotikKitInterpreter::IotikKitInterpreterPlugin</name>
+    <message>
+        <source>IoTik v1.0</source>
+        <translation type="vanished">IoTik v1.0</translation>
     </message>
 </context>
 <context>
