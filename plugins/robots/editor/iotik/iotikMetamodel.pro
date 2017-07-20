@@ -1,4 +1,4 @@
-# Copyright 2012-2016 Yurii Litvinov, Dmitry Mordvinov
+# Copyright 2017 QReal Research Group
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,26 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Here must be the call to QRMC console generator
+QREAL_XML = iotikMetamodel.xml
+QREAL_XML_DEPENDS =  \
+		$$PWD/../common/robotsMetamodel.xml \
 
-TEMPLATE = subdirs
+QREAL_EDITOR_PATH = robots/editor/iotik
+ROOT = ../../../..
 
-SUBDIRS = \
-	doc \
-	images \
-	common \
-	nxt \
-	ev3 \
-	trik \
-        iotik \
-
-common.file = $$PWD/common/robotsMetamodel.pro
-nxt.file = $$PWD/nxt/nxtMetamodel.pro
-ev3.file = $$PWD/ev3/ev3Metamodel.pro
-trik.file = $$PWD/trik/trikMetamodel.pro
-iotik.file = $$PWD/iotik/iotikMetamodel.pro
-
-nxt.depends = common
-ev3.depends = common
-trik.depends = common
-iotik.depends = common
+include($$PWD/../../../editorsSdk/editorsCommon.pri)
