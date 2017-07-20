@@ -14,7 +14,7 @@
 
 #include "iotikRuCMasterGenerator.h"
 
-using namespace ::ruc;
+using namespace iotik::ruc;
 
 IotikRuCMasterGenerator::IotikRuCMasterGenerator(qrRepo::RepoApi const &repo
         , qReal::ErrorReporterInterface &errorReporter

@@ -23,7 +23,7 @@
 
 #include "iotikRuCMasterGenerator.h"
 
-using namespace ::ruc;
+using namespace iotik::ruc;
 using namespace qReal;
 
 IotikRuCGeneratorPlugin::IotikRuCGeneratorPlugin()
