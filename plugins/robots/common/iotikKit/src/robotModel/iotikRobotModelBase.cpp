@@ -30,10 +30,10 @@ IotikRobotModelBase::IotikRobotModelBase(const QString &kitId, const QString &ro
 		infraredSensorInfo()
 	};
 
-	addAllowedConnection(PortInfo("A1", input, { "А1" }, "sensorA1"), analogPortConnections);
-
 	addAllowedConnection(PortInfo("M1", output, { "М1" }), { motorInfo() });
 	addAllowedConnection(PortInfo("M2", output, { "М2" }), { motorInfo() });
+
+	addAllowedConnection(PortInfo("A1", input, { "А1" }, "sensorA1"), analogPortConnections);
 
 	addAllowedConnection(PortInfo("D1", input, {}, "sensorD1"), { sonarSensorInfo() });
 }
@@ -41,7 +41,7 @@ IotikRobotModelBase::IotikRobotModelBase(const QString &kitId, const QString &ro
 QList<PortInfo> IotikRobotModelBase::configurablePorts() const
 {
 	QList<PortInfo> const digitalPorts = {
-			  PortInfo("D1", input, {}, "sensorD1")
+				PortInfo("D1", input, {}, "sensorD1")
 	};
 
 	return CommonRobotModel::configurablePorts() + digitalPorts;

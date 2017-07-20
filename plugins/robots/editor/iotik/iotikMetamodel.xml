@@ -4,6 +4,9 @@
 	<namespace>UML 2.0</namespace>
 	<diagram name="RobotsDiagram">
 		<nonGraphicTypes>
+			<enum name="IotikDigitalSensorPort">
+				<value name="D1"/>
+			</enum>
 			<enum name="IotikAnalogSensorPort">
 				<value name="A1"/>
 			</enum>
