@@ -13,6 +13,12 @@
  * limitations under the License. */
 
 #include "iotikKit/robotModel/iotikRobotModelBase.h"
+#include <kitBase/robotModel/robotParts/rangeSensor.h>
+
+#include "iotikKit/robotModel/parts/iotikMotor.h"
+
+#include "iotikKit/robotModel/parts/iotikInfraredSensor.h"
+#include "iotikKit/robotModel/parts/iotikSonarSensor.h"
 
 using namespace iotik::robotModel;
 using namespace kitBase::robotModel;
@@ -20,17 +26,46 @@ using namespace kitBase::robotModel;
 IotikRobotModelBase::IotikRobotModelBase(const QString &kitId, const QString &robotId)
 	: CommonRobotModel(kitId, robotId)
 {
-	QList<DeviceInfo> const inputPortConnections = {};
+	QList<DeviceInfo> const analogPortConnections = {
+		infraredSensorInfo()
+	};
+
+	addAllowedConnection(PortInfo("A1", input, { "А1" }, "sensorA1"), analogPortConnections);
+
+	addAllowedConnection(PortInfo("M1", output, { "М1" }), { motorInfo() });
+	addAllowedConnection(PortInfo("M2", output, { "М2" }), { motorInfo() });
+
+	addAllowedConnection(PortInfo("D1", input, {}, "sensorD1"), { sonarSensorInfo() });
 }
 
 QList<PortInfo> IotikRobotModelBase::configurablePorts() const
 {
-	QList<PortInfo> const digitalPorts = {};
+	QList<PortInfo> const digitalPorts = {
+			  PortInfo("D1", input, {}, "sensorD1")
+	};
 
 	return CommonRobotModel::configurablePorts() + digitalPorts;
 }
 
 QList<DeviceInfo> IotikRobotModelBase::convertibleBases() const
 {
-	return {};
+	return { DeviceInfo::create<parts::IotikInfraredSensor>()
+		, DeviceInfo::create<parts::IotikSonarSensor>()
+	};
 }
+
+DeviceInfo IotikRobotModelBase::infraredSensorInfo() const
+{
+	return DeviceInfo::create<parts::IotikInfraredSensor>();
+}
+
+DeviceInfo IotikRobotModelBase::motorInfo() const
+{
+	return DeviceInfo::create<iotik::robotModel::parts::IotikMotor>();
+}
+
+DeviceInfo IotikRobotModelBase::sonarSensorInfo() const
+{
+	return DeviceInfo::create<parts::IotikSonarSensor>();
+}
+

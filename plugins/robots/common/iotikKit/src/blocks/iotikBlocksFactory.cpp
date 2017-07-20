@@ -14,20 +14,56 @@
  * limitations under the License. */
 
 #include "iotikKit/blocks/iotikBlocksFactory.h"
+#include "iotikKit/robotModel/parts/iotikInfraredSensor.h"
+#include "iotikKit/robotModel/parts/iotikSonarSensor.h"
 
+#include <kitBase/robotModel/robotParts/rangeSensor.h>
 #include <kitBase/blocksBase/common/enginesStopBlock.h>
+#include <kitBase/blocksBase/common/waitForSonarDistanceBlock.h>
+
+
+
+#include <qrutils/interpreter/blocks/emptyBlock.h>
+
+#include "details/iotikEnginesBackwardBlock.h"
+#include "details/iotikEnginesForwardBlock.h"
+
 
 using namespace iotik::blocks;
+using namespace iotik::blocks::details;
 using namespace kitBase::blocksBase::common;
 
 qReal::interpretation::Block *IotikBlocksFactory::produceBlock(const qReal::Id &element)
 {
+	if (elementMetatypeIs(element, "IotikWaitForIRDistance")) {
+			return new WaitForSonarDistanceBlock(mRobotModelManager->model()
+					, kitBase::robotModel::DeviceInfo::create<robotModel::parts::IotikInfraredSensor>());
+	} else if (elementMetatypeIs(element, "IotikEnginesForward")) {
+		return new details::IotikEnginesForwardBlock(mRobotModelManager->model());
+	} else if (elementMetatypeIs(element, "IotikEnginesBackward")) {
+		return new details::IotikEnginesBackwardBlock(mRobotModelManager->model());
+	} else if (elementMetatypeIs(element, "IotikEnginesStop")) {
+		return new EnginesStopBlock(mRobotModelManager->model());
+	} else if (elementMetatypeIs(element, "IotikWaitForSonarDistance")) {
+		return new WaitForSonarDistanceBlock(mRobotModelManager->model()
+				, kitBase::robotModel::DeviceInfo::create<robotModel::parts::IotikSonarSensor>());
+	}
 	return nullptr;
 }
 
 qReal::IdList IotikBlocksFactory::providedBlocks() const
 {
-	return {};
+	qReal::IdList result;
+	result
+			<< id("IotikEnginesBackward")
+			<< id("IotikEnginesForward")
+			<< id("IotikEnginesStop")
+			;
+	result
+			<< id("IotikWaitForIRDistance")
+			<< id("TrikWaitForSonarDistance")
+			;
+	return result;
 }
 
 qReal::IdList IotikBlocksFactory::blocksToDisable() const

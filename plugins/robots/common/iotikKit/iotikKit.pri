@@ -29,15 +29,20 @@ HEADERS += \
 	$$PWD/include/iotikKit/robotModel/iotikRobotModelBase.h \
 	$$PWD/include/iotikKit/blocks/iotikBlocksFactory.h \
 	$$PWD/include/iotikKit/robotModel/parts/iotikMotor.h \
+	$$PWD/include/iotikKit/robotModel/parts/iotikInfraredSensor.h \
+	$$PWD/include/iotikKit/robotModel/parts/iotikSonarSensor.h \
 	$$PWD/src/blocks/details/iotikEnginesBackwardBlock.h \
 	$$PWD/src/blocks/details/iotikEnginesForwardBlock.h \
 
 SOURCES += \
 	$$PWD/src/robotModel/iotikRobotModelBase.cpp \
-	$$PWD/src/blocks/iotikBlocksFactory.cpp \
 	$$PWD/src/robotModel/parts/iotikMotor.cpp \
+	$$PWD/src/robotModel/parts/iotikInfraredSensor.cpp \
+	$$PWD/src/robotModel/parts/iotikSonarSensor.cpp \
+	$$PWD/src/blocks/iotikBlocksFactory.cpp \
 	$$PWD/src/blocks/details/iotikEnginesBackwardBlock.cpp \
 	$$PWD/src/blocks/details/iotikEnginesForwardBlock.cpp \
+
 
 TRANSLATIONS = \
 	$$PWD/../../../../qrtranslations/ru/plugins/robots/iotikKit_ru.ts \

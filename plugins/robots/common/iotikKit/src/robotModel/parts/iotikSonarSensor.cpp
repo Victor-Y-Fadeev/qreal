@@ -1,4 +1,4 @@
-/* Copyright 2017 QReal Research Group
+/* Copyright 2007-2015 QReal Research Group
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,22 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. */
 
-#pragma once
+#include "iotikKit/robotModel/parts/iotikSonarSensor.h"
 
-#include <kitBase/blocksBase/common/waitForSonarDistanceBlock.h>
-#include <kitBase/blocksBase/commonBlocksFactory.h>
+using namespace iotik::robotModel::parts;
+using namespace kitBase::robotModel;
 
-namespace iotik {
-namespace blocks {
-
-/// Base class for block factory for all IoTik variants, creates common blocks.
-class IotikBlocksFactory : public kitBase::blocksBase::CommonBlocksFactory
+IotikSonarSensor::IotikSonarSensor(const DeviceInfo &info, const PortInfo &port)
+	: kitBase::robotModel::robotParts::RangeSensor(info, port)
 {
-public:
-	qReal::interpretation::Block *produceBlock(const qReal::Id &element) override;
-	qReal::IdList providedBlocks() const override;
-	qReal::IdList blocksToDisable() const override;
-};
-
-}
 }
