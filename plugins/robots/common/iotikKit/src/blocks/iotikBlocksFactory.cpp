@@ -35,40 +35,61 @@ using namespace kitBase::blocksBase::common;
 
 qReal::interpretation::Block *IotikBlocksFactory::produceBlock(const qReal::Id &element)
 {
-	if (elementMetatypeIs(element, "IotikWaitForIRDistance")) {
-			return new WaitForSonarDistanceBlock(mRobotModelManager->model()
-					, kitBase::robotModel::DeviceInfo::create<robotModel::parts::IotikInfraredSensor>());
-	} else if (elementMetatypeIs(element, "IotikEnginesForward")) {
+	if (elementMetatypeIs(element, "IotikEnginesForward")) {
 		return new details::IotikEnginesForwardBlock(mRobotModelManager->model());
 	} else if (elementMetatypeIs(element, "IotikEnginesBackward")) {
 		return new details::IotikEnginesBackwardBlock(mRobotModelManager->model());
 	} else if (elementMetatypeIs(element, "IotikEnginesStop")) {
 		return new EnginesStopBlock(mRobotModelManager->model());
+
+	} else if (elementMetatypeIs(element, "IotikWaitForIRDistance")) {
+		return new WaitForSonarDistanceBlock(mRobotModelManager->model()
+				, kitBase::robotModel::DeviceInfo::create<robotModel::parts::IotikInfraredSensor>());
 	} else if (elementMetatypeIs(element, "IotikWaitForSonarDistance")) {
 		return new WaitForSonarDistanceBlock(mRobotModelManager->model()
 				, kitBase::robotModel::DeviceInfo::create<robotModel::parts::IotikSonarSensor>());
 	}
+
 	return nullptr;
 }
 
 qReal::IdList IotikBlocksFactory::providedBlocks() const
 {
-	qReal::IdList result;
-	result
-			<< id("IotikEnginesBackward")
-			<< id("IotikEnginesForward")
-			<< id("IotikEnginesStop")
-			;
-	result
-			<< id("IotikWaitForIRDistance")
-			<< id("TrikWaitForSonarDistance")
-			;
-	return result;
+	return {
+				id("IotikEnginesBackward")
+				, id("IotikEnginesForward")
+				, id("IotikEnginesStop")
+
+				, id("IotikWaitForIRDistance")
+				, id("IotikWaitForSonarDistance")
+	};
 }
 
 qReal::IdList IotikBlocksFactory::blocksToDisable() const
 {
-	qReal::IdList result;
+	return {};
+}
 
-	return result;
+qReal::IdList IotikBlocksFactory::blocksToHide() const
+{
+	return {
+				id("Function")
+				, id("IfBlock")
+				, id("FiBlock")
+				, id("SwitchBlock")
+				, id("Loop")
+				, id("Subprogram")
+				, id("Fork")
+				, id("Join")
+				, id("KillThread")
+
+				, id("SendMessageThreads")
+
+				, id("ReceiveMessageThreads")
+
+				, id("PrintText")
+				, id("ClearScreen")
+				, id("MarkerDown")
+				, id("MarkerUp")
+	};
 }

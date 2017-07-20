@@ -26,7 +26,7 @@
 					</generalizations>
 				</logic>
 			</node>
-			<node displayedName="Motors Backward" name="IotikEnginesBackward" path="111, 224 : 0, 113 :  | 113, 0 : 0, 113 :  | 0, 113 : 287, 113 : " description="Enables motors on the given ports in reverse mode with the given power. Ports are specified in accordance with Trik controller notations (for example M1, E2) and divided by commas. The power is specified in percents with the number from -100 to 100, if negative number is specified then the motor is enabled in the usual mode.">
+			<node displayedName="Motors Backward" name="IotikEnginesBackward" path="111, 224 : 0, 113 :  | 113, 0 : 0, 113 :  | 0, 113 : 287, 113 : " description="Enables motors on the given ports in reverse mode with the given power. Ports are specified in accordance with Iotik controller notations (for example M1, E2) and divided by commas. The power is specified in percents with the number from -100 to 100, if negative number is specified then the motor is enabled in the usual mode.">
 				<graphics>
 					<picture sizex="50" sizey="50">
 						<image y1="0" name="images/enginesBackwardBlock.png" x1="0" y2="50" x2="50"/>
@@ -44,7 +44,7 @@
 					</generalizations>
 				</logic>
 			</node>
-			<node displayedName="Motors Forward" name="IotikEnginesForward" path="185, 207 : 287, 105 :  | 287, 105 : 182, 0 :  | 0, 105 : 287, 105 : " description="Enables motors on the given ports with the given power. Ports are specified in accordance with Trik controller notations (for example M1, E2) and divided by commas. The power is specified in percents with the number from -100 to 100, if negative number is specified then the motor is enabled in the reverse mode.">
+			<node displayedName="Motors Forward" name="IotikEnginesForward" path="185, 207 : 287, 105 :  | 287, 105 : 182, 0 :  | 0, 105 : 287, 105 : " description="Enables motors on the given ports with the given power. Ports are specified in accordance with Ioitk controller notations (for example M1, E2) and divided by commas. The power is specified in percents with the number from -100 to 100, if negative number is specified then the motor is enabled in the reverse mode.">
 				<graphics>
 					<picture sizex="50" sizey="50">
 						<image y1="0" name="images/enginesForwardBlock.png" x1="0" y2="50" x2="50"/>
@@ -85,27 +85,67 @@
 				</logic>
 			</node>
 			<node name="IotikSensorBlock">
-							<logic>
-								<container/>
-								<properties/>
-								<generalizations>
-									<parent parentName="AbstractNode"/>
-								</generalizations>
-							</logic>
-						</node>
+				<logic>
+					<container/>
+					<properties/>
+					<generalizations>
+						<parent parentName="AbstractNode"/>
+					</generalizations>
+				</logic>
+			</node>
 			<node name="IotikAnalogSensorBlock">
-							<logic>
-								<container/>
-								<properties>
-									<property displayedName="Port" type="IotikAnalogSensorPort" name="Port">
-										<default>A1</default>
-									</property>
-								</properties>
-								<generalizations>
-									<parent parentName="IotikSensorBlock"/>
-								</generalizations>
-							</logic>
-						</node>
+				<logic>
+					<container/>
+					<properties>
+						<property displayedName="Port" type="IotikAnalogSensorPort" name="Port">
+							<default>A1</default>
+						</property>
+					</properties>
+					<generalizations>
+						<parent parentName="IotikSensorBlock"/>
+					</generalizations>
+				</logic>
+			</node>
+			<node name="IotikDigitalSensorBlock">
+				<logic>
+					<container/>
+					<properties>
+						<property displayedName="Port" type="IotikDigitalSensorPort" name="Port">
+							<default>D1</default>
+						</property>
+					</properties>
+					<generalizations>
+						<parent parentName="IotikSensorBlock"/>
+					</generalizations>
+				</logic>
+			</node>
+			<node displayedName="Wait for Ultrasonic Distance" name="IotikWaitForSonarDistance" description="Waits till the value returned by the ultrasonic sensor on the given port will be greater or less than the given in the 'Distance' parameter value (the distance is specified in centimeters, from 0 to 300).">
+				<graphics>
+					<picture sizex="50" sizey="50">
+						<image y1="0" name="images/waitForSonarDistanceBlock.png" x1="0" y2="50" x2="50"/>
+					</picture>
+					<labels>
+						<label x="40" y="-35" textBinded="Port" hard="true" prefix="Port:"/>
+						<label x="55" y="60" textBinded="Distance" prefix="Distance:"/>
+						<label x="55" y="90" textBinded="Sign" prefix="Sign:"/>
+					</labels>
+					<nonResizeable/>
+				</graphics>
+				<logic>
+					<container/>
+					<properties>
+						<property displayedName="Distance" type="string" name="Distance">
+							<default>0</default>
+						</property>
+						<property displayedName="Sign" type="DistanceSign" name="Sign">
+							<default>greater</default>
+						</property>
+					</properties>
+					<generalizations>
+						<parent parentName="IotikDigitalSensorBlock"/>
+					</generalizations>
+				</logic>
+			</node>
 			<node displayedName="Wait for Infrared Distance" name="IotikWaitForIRDistance" path="190, 162 : 219, 122 :  | 219, 122 : 190, 86 :  | 120, 122 : 219, 122 :  | 12, 118 : 118, 12 :  | 12, 118 : 118, 224 :  | 118, 12 : 118, 224 : " description="Waits till the value returned by the infrared sensor on the given port will be greater or less than the given in the 'Distance' parameter value. By default on ports A1 and A2 the distance is specified in centimeters (from 0 to 100). It is not recommended to plug IR sensor into other ports because its raw value will be processed by software on robot with expectation of another sensor type.">
 				<graphics>
 					<picture sizex="50" sizey="50">
