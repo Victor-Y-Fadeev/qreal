@@ -61,7 +61,7 @@ qReal::IdList IotikBlocksFactory::providedBlocks() const
 				, id("IotikEnginesStop")
 
 				, id("IotikWaitForIRDistance")
-				, id("IotikWaitForSonarDistance")
+				, id("TrikWaitForSonarDistance")
 	};
 }
 
@@ -82,6 +82,8 @@ qReal::IdList IotikBlocksFactory::blocksToHide() const
 				, id("Fork")
 				, id("Join")
 				, id("KillThread")
+				, id("VariableInit")
+				, id("Randomizer")
 
 				, id("SendMessageThreads")
 
