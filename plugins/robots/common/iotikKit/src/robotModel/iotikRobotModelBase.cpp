@@ -27,6 +27,7 @@ IotikRobotModelBase::IotikRobotModelBase(const QString &kitId, const QString &ro
 	: CommonRobotModel(kitId, robotId)
 {
 	QList<DeviceInfo> const analogPortConnections = {
+		infraredSensorInfo(),
 		infraredSensorInfo()
 	};
 
