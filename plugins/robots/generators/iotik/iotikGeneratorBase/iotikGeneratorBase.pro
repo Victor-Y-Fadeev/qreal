@@ -54,9 +54,10 @@ TRANSLATIONS = \
 	$$PWD/../../../../../qrtranslations/fr/plugins/robots/iotikGeneratorBase_fr.ts \
 
 HEADERS += \
-	$$PWD/include/iotikGeneratorBase/trikGeneratorBaseDeclSpec.h \
-	$$PWD/include/iotikGeneratorBase/trikGeneratorPluginBase.h \
-	$$PWD/include/iotikGeneratorBase/trikMasterGeneratorBase.h \
+	$$PWD/include/iotikGeneratorBase/iotikGeneratorBaseDeclSpec.h \
+	$$PWD/include/iotikGeneratorBase/iotikGeneratorPluginBase.h \
+	$$PWD/include/iotikGeneratorBase/iotikMasterGeneratorBase.h \
+	$$PWD/src/iotikGeneratorCustomizer.h \
 	$$PWD/src/iotikGeneratorFactory.h \
 	$$PWD/src/simpleGenerators/iotikEnginesGenerator.h \
 	$$PWD/src/simpleGenerators/waitForInfraredSensorGenerator.h \

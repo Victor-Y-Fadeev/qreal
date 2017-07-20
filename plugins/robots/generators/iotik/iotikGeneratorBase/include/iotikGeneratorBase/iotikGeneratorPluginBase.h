@@ -2,17 +2,17 @@
 
 #include <generatorBase/robotsGeneratorPluginBase.h>
 
-#include "trikGeneratorBase/trikGeneratorBaseDeclSpec.h"
+#include "iotikGeneratorBase/iotikGeneratorBaseDeclSpec.h"
 
-namespace trik {
+namespace iotik {
 
 /// A base class for every generator from the TRIK kit.
-class ROBOTS_TRIK_GENERATOR_BASE_EXPORT TrikGeneratorPluginBase : public generatorBase::RobotsGeneratorPluginBase
+class ROBOTS_IOTIK_GENERATOR_BASE_EXPORT IotikGeneratorPluginBase : public generatorBase::RobotsGeneratorPluginBase
 {
 	Q_OBJECT
 
 public:
-	TrikGeneratorPluginBase();
+	IotikGeneratorPluginBase();
 
 	QString kitId() const override;
 

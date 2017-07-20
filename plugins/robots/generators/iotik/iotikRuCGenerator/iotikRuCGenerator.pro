@@ -30,7 +30,7 @@ RCC_DIR = .moc
 OBJECTS_DIR = .obj
 
 LIBS += -L$$PWD/../../../../../bin -lqrkernel -lqslog -lqrutils -lqrrepo -lqscintilla2 \
-                -lrobots-generator-base -lrobots-trik-generator-base -lrobots-utils \
+		-lrobots-generator-base -lrobots-iotik-generator-base -lrobots-utils \
 
 INCLUDEPATH += \
 	$$PWD/../iotikGeneratorBase/include/ \

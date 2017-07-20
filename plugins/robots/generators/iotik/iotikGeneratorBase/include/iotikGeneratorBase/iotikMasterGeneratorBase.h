@@ -2,15 +2,15 @@
 
 #include <generatorBase/masterGeneratorBase.h>
 
-#include "trikGeneratorBase/trikGeneratorBaseDeclSpec.h"
+#include "iotikGeneratorBase/iotikGeneratorBaseDeclSpec.h"
 
-namespace trik {
+namespace iotik {
 
-/// Master generator base implementation for every generator from TRIK kit
-class ROBOTS_TRIK_GENERATOR_BASE_EXPORT TrikMasterGeneratorBase : public generatorBase::MasterGeneratorBase
+/// Master generator base implementation for every generator from IoTik kit
+class ROBOTS_IOTIK_GENERATOR_BASE_EXPORT IotikMasterGeneratorBase : public generatorBase::MasterGeneratorBase
 {
 public:
-	TrikMasterGeneratorBase(qrRepo::RepoApi const &repo
+	IotikMasterGeneratorBase(qrRepo::RepoApi const &repo
 			, qReal::ErrorReporterInterface &errorReporter
 			, interpreterBase::robotModel::RobotModelManagerInterface const &robotModelManager
 			, qrtext::LanguageToolboxInterface &textLanguage

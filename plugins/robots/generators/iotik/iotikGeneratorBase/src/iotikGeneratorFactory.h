@@ -18,7 +18,7 @@
 
 namespace iotik {
 
-/// Generator factory implemtation for TRIK platform
+/// Generator factory implemtation for IoTik platform
 class IotikGeneratorFactory : public generatorBase::GeneratorFactoryBase
 {
 public:
