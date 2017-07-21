@@ -25,4 +25,12 @@
         <translation>Ультразвуковой сенсор</translation>
     </message>
 </context>
+<context>
+    <name>iotik::robotModel::parts::IotikLineSensor</name>
+    <message>
+        <location filename="../../../../plugins/robots/common/iotikKit/include/iotikKit/robotModel/parts/iotikLineSensor.h" line="28"/>
+        <source>Line Sensor</source>
+        <translation>Сенсор линии</translation>
+    </message>
+</context>
 </TS>
