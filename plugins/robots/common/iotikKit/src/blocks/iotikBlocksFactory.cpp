@@ -21,8 +21,6 @@
 #include <kitBase/blocksBase/common/enginesStopBlock.h>
 #include <kitBase/blocksBase/common/waitForSonarDistanceBlock.h>
 
-
-
 #include <qrutils/interpreter/blocks/emptyBlock.h>
 
 #include "details/iotikEnginesBackwardBlock.h"
@@ -61,7 +59,7 @@ qReal::IdList IotikBlocksFactory::providedBlocks() const
 				, id("IotikEnginesStop")
 
 				, id("IotikWaitForIRDistance")
-				, id("TrikWaitForSonarDistance")
+				, id("IotikWaitForSonarDistance")
 	};
 }
 

@@ -181,9 +181,8 @@
 				<element name="IotikEnginesStop"/>
 			</group>
 			<group name="Wait">
-
 				<element name="IotikWaitForIRDistance"/>
-				<element name="IotikWaitPadPress" />
+				<element name="IotikWaitForSonarDistance" />
 			</group>
 		</palette>
 	</diagram>
