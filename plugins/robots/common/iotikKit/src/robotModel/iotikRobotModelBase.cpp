@@ -19,6 +19,7 @@
 
 #include "iotikKit/robotModel/parts/iotikInfraredSensor.h"
 #include "iotikKit/robotModel/parts/iotikSonarSensor.h"
+#include "iotikKit/robotModel/parts/iotikLineSensor.h"
 
 using namespace iotik::robotModel;
 using namespace kitBase::robotModel;
@@ -28,7 +29,7 @@ IotikRobotModelBase::IotikRobotModelBase(const QString &kitId, const QString &ro
 {
 	QList<DeviceInfo> const analogPortConnections = {
 		infraredSensorInfo(),
-		infraredSensorInfo()
+		lineSensorInfo()
 	};
 
 	addAllowedConnection(PortInfo("M1", output, { "М1" }), { motorInfo() });
@@ -52,12 +53,8 @@ QList<DeviceInfo> IotikRobotModelBase::convertibleBases() const
 {
 	return { DeviceInfo::create<parts::IotikInfraredSensor>()
 		, DeviceInfo::create<parts::IotikSonarSensor>()
+		, DeviceInfo::create<parts::IotikLineSensor>()
 	};
-}
-
-DeviceInfo IotikRobotModelBase::infraredSensorInfo() const
-{
-	return DeviceInfo::create<parts::IotikInfraredSensor>();
 }
 
 DeviceInfo IotikRobotModelBase::motorInfo() const
@@ -65,8 +62,17 @@ DeviceInfo IotikRobotModelBase::motorInfo() const
 	return DeviceInfo::create<iotik::robotModel::parts::IotikMotor>();
 }
 
+DeviceInfo IotikRobotModelBase::infraredSensorInfo() const
+{
+	return DeviceInfo::create<parts::IotikInfraredSensor>();
+}
+
 DeviceInfo IotikRobotModelBase::sonarSensorInfo() const
 {
 	return DeviceInfo::create<parts::IotikSonarSensor>();
 }
 
+DeviceInfo IotikRobotModelBase::lineSensorInfo() const
+{
+	return DeviceInfo::create<parts::IotikLineSensor>();
+}
