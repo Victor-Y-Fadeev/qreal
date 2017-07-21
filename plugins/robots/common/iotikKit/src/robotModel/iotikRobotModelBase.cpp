@@ -38,6 +38,7 @@ IotikRobotModelBase::IotikRobotModelBase(const QString &kitId, const QString &ro
 	addAllowedConnection(PortInfo("A1", input, { "А1" }, "sensorA1"), analogPortConnections);
 
 	addAllowedConnection(PortInfo("D1", input, {}, "sensorD1"), { sonarSensorInfo() });
+
 }
 
 QList<PortInfo> IotikRobotModelBase::configurablePorts() const

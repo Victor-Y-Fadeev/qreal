@@ -12,12 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. */
 
-#include "trikKit/robotModel/parts/trikLineSensor.h"
+#include "iotikKit/robotModel/parts/iotikLineSensor.h"
 
-using namespace trik::robotModel::parts;
+using namespace iotik::robotModel::parts;
 using namespace kitBase::robotModel;
 
-TrikLineSensor::TrikLineSensor(const DeviceInfo &info, const PortInfo &port)
+IotikLineSensor::IotikLineSensor(const DeviceInfo &info, const PortInfo &port)
 	: kitBase::robotModel::robotParts::VectorSensor(info, port)
 {
 }

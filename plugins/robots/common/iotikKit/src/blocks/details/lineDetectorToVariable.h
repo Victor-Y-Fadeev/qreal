@@ -16,7 +16,7 @@
 
 #include <qrutils/interpreter/block.h>
 
-namespace trik {
+namespace iotik {
 namespace blocks {
 namespace details {
 

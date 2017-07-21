@@ -1,4 +1,4 @@
-/* Copyright 2007-2015 QReal Research Group
+/* Copyright 2017 QReal Research Group
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,20 +16,19 @@
 
 #include <kitBase/robotModel/robotParts/vectorSensor.h>
 
-namespace trik {
+namespace iotik {
 namespace robotModel {
 namespace parts {
 
-/// Device representing TRIK camera line detector.
-class TrikLineSensor : public kitBase::robotModel::robotParts::VectorSensor
+/// Device representing IoTik camera line detector.
+class IotikLineSensor : public kitBase::robotModel::robotParts::VectorSensor
 {
 	Q_OBJECT
-	Q_CLASSINFO("name", "trikLineSensor")
+	Q_CLASSINFO("name", "iotikLineSensor")
 	Q_CLASSINFO("friendlyName", tr("Line Sensor"))
 
 public:
-	TrikLineSensor(const kitBase::robotModel::DeviceInfo &info
-			, const kitBase::robotModel::PortInfo &port);
+	IotikLineSensor(const kitBase::robotModel::DeviceInfo &info, const kitBase::robotModel::PortInfo &port);
 
 	/// Turns camera on and prepares a sensor.
 	virtual void init() = 0;
