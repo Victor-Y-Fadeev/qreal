@@ -31,6 +31,10 @@ public:
 	QList<kitBase::robotModel::DeviceInfo> convertibleBases() const override;
 
 protected:
+	virtual kitBase::robotModel::DeviceInfo motorInfo() const;
+	virtual kitBase::robotModel::DeviceInfo infraredSensorInfo() const;
+	virtual kitBase::robotModel::DeviceInfo sonarSensorInfo() const;
+	virtual kitBase::robotModel::DeviceInfo lineSensorInfo() const;
 };
 
 }

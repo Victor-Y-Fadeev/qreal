@@ -14,6 +14,7 @@
 
 #pragma once
 
+#include <kitBase/blocksBase/common/waitForSonarDistanceBlock.h>
 #include <kitBase/blocksBase/commonBlocksFactory.h>
 
 namespace iotik {
@@ -26,6 +27,7 @@ public:
 	qReal::interpretation::Block *produceBlock(const qReal::Id &element) override;
 	qReal::IdList providedBlocks() const override;
 	qReal::IdList blocksToDisable() const override;
+	qReal::IdList blocksToHide() const override;
 };
 
 }

@@ -14,25 +14,84 @@
  * limitations under the License. */
 
 #include "iotikKit/blocks/iotikBlocksFactory.h"
+#include "iotikKit/robotModel/parts/iotikInfraredSensor.h"
+#include "iotikKit/robotModel/parts/iotikSonarSensor.h"
 
+#include <kitBase/robotModel/robotParts/rangeSensor.h>
 #include <kitBase/blocksBase/common/enginesStopBlock.h>
+#include <kitBase/blocksBase/common/waitForSonarDistanceBlock.h>
+
+#include <qrutils/interpreter/blocks/emptyBlock.h>
+
+#include "details/iotikEnginesBackwardBlock.h"
+#include "details/iotikEnginesForwardBlock.h"
+#include "details/lineDetectorToVariable.h"
+
 
 using namespace iotik::blocks;
+using namespace iotik::blocks::details;
 using namespace kitBase::blocksBase::common;
 
 qReal::interpretation::Block *IotikBlocksFactory::produceBlock(const qReal::Id &element)
 {
+	if (elementMetatypeIs(element, "IotikEnginesForward")) {
+		return new details::IotikEnginesForwardBlock(mRobotModelManager->model());
+	} else if (elementMetatypeIs(element, "IotikEnginesBackward")) {
+		return new details::IotikEnginesBackwardBlock(mRobotModelManager->model());
+	} else if (elementMetatypeIs(element, "IotikEnginesStop")) {
+		return new EnginesStopBlock(mRobotModelManager->model());
+	} else if (elementMetatypeIs(element, "IotikDetectorToVariable")) {
+		return new LineDetectorToVariableBlock();
+
+	} else if (elementMetatypeIs(element, "IotikWaitForIRDistance")) {
+		return new WaitForSonarDistanceBlock(mRobotModelManager->model()
+				, kitBase::robotModel::DeviceInfo::create<robotModel::parts::IotikInfraredSensor>());
+	} else if (elementMetatypeIs(element, "IotikWaitForSonarDistance")) {
+		return new WaitForSonarDistanceBlock(mRobotModelManager->model()
+				, kitBase::robotModel::DeviceInfo::create<robotModel::parts::IotikSonarSensor>());
+	}
+
 	return nullptr;
 }
 
 qReal::IdList IotikBlocksFactory::providedBlocks() const
 {
-	return {};
+	return {
+				id("IotikEnginesBackward")
+				, id("IotikEnginesForward")
+				, id("IotikEnginesStop")
+				, id("IotikDetectorToVariable")
+
+				, id("IotikWaitForIRDistance")
+				, id("IotikWaitForSonarDistance")
+	};
 }
 
 qReal::IdList IotikBlocksFactory::blocksToDisable() const
 {
-	qReal::IdList result;
+	return {};
+}
 
-	return result;
+qReal::IdList IotikBlocksFactory::blocksToHide() const
+{
+	return {
+				id("Function")
+				, id("IfBlock")
+				, id("FiBlock")
+				, id("SwitchBlock")
+				, id("Loop")
+				, id("Subprogram")
+				, id("Fork")
+				, id("Join")
+				, id("KillThread")
+
+				, id("SendMessageThreads")
+
+				, id("ReceiveMessageThreads")
+
+				, id("PrintText")
+				, id("ClearScreen")
+				, id("MarkerDown")
+				, id("MarkerUp")
+	};
 }
