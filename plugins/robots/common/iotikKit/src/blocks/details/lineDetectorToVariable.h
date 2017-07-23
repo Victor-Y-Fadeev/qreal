@@ -14,21 +14,21 @@
 
 #pragma once
 
-#include <kitBase/blocksBase/common/waitForSonarDistanceBlock.h>
-#include <kitBase/blocksBase/commonBlocksFactory.h>
+#include <qrutils/interpreter/block.h>
 
 namespace iotik {
 namespace blocks {
+namespace details {
 
-/// Base class for block factory for all IoTik variants, creates common blocks.
-class IotikBlocksFactory : public kitBase::blocksBase::CommonBlocksFactory
+/// Interpreter implementation for "Line Detector into Variable" block.
+class LineDetectorToVariableBlock : public qReal::interpretation::Block
 {
 public:
-	qReal::interpretation::Block *produceBlock(const qReal::Id &element) override;
-	qReal::IdList providedBlocks() const override;
-	qReal::IdList blocksToDisable() const override;
-	qReal::IdList blocksToHide() const override;
+	LineDetectorToVariableBlock();
+
+	void run() override;
 };
 
+}
 }
 }

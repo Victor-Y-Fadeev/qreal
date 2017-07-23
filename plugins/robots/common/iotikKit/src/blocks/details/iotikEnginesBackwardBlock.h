@@ -14,21 +14,22 @@
 
 #pragma once
 
-#include <kitBase/blocksBase/common/waitForSonarDistanceBlock.h>
-#include <kitBase/blocksBase/commonBlocksFactory.h>
+#include <kitBase/blocksBase/common/engineCommandBlock.h>
 
 namespace iotik {
 namespace blocks {
+namespace details {
 
-/// Base class for block factory for all IoTik variants, creates common blocks.
-class IotikBlocksFactory : public kitBase::blocksBase::CommonBlocksFactory
+class IotikEnginesBackwardBlock : public kitBase::blocksBase::common::EngineCommandBlock
 {
+	Q_OBJECT
+
 public:
-	qReal::interpretation::Block *produceBlock(const qReal::Id &element) override;
-	qReal::IdList providedBlocks() const override;
-	qReal::IdList blocksToDisable() const override;
-	qReal::IdList blocksToHide() const override;
+	explicit IotikEnginesBackwardBlock(kitBase::robotModel::RobotModelInterface &robotModel);
+
+	void run() override;
 };
 
+}
 }
 }

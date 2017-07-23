@@ -12,23 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. */
 
-#pragma once
+#include "iotikKit/robotModel/parts/iotikLineSensor.h"
 
-#include <kitBase/blocksBase/common/waitForSonarDistanceBlock.h>
-#include <kitBase/blocksBase/commonBlocksFactory.h>
+using namespace iotik::robotModel::parts;
+using namespace kitBase::robotModel;
 
-namespace iotik {
-namespace blocks {
-
-/// Base class for block factory for all IoTik variants, creates common blocks.
-class IotikBlocksFactory : public kitBase::blocksBase::CommonBlocksFactory
+IotikLineSensor::IotikLineSensor(const DeviceInfo &info, const PortInfo &port)
+	: kitBase::robotModel::robotParts::VectorSensor(info, port)
 {
-public:
-	qReal::interpretation::Block *produceBlock(const qReal::Id &element) override;
-	qReal::IdList providedBlocks() const override;
-	qReal::IdList blocksToDisable() const override;
-	qReal::IdList blocksToHide() const override;
-};
-
-}
 }

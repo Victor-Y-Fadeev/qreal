@@ -14,21 +14,31 @@
 
 #pragma once
 
-#include <kitBase/blocksBase/common/waitForSonarDistanceBlock.h>
-#include <kitBase/blocksBase/commonBlocksFactory.h>
+#include <kitBase/robotModel/robotParts/motor.h>
 
 namespace iotik {
-namespace blocks {
+namespace robotModel {
+namespace parts {
 
-/// Base class for block factory for all IoTik variants, creates common blocks.
-class IotikBlocksFactory : public kitBase::blocksBase::CommonBlocksFactory
+class IotikMotor : public kitBase::robotModel::robotParts::Motor
 {
+	Q_OBJECT
+	Q_CLASSINFO("name", "iotikMotor")
+	Q_CLASSINFO("friendlyName", tr("Motor"))
+	Q_CLASSINFO("direction", "output")
+
 public:
-	qReal::interpretation::Block *produceBlock(const qReal::Id &element) override;
-	qReal::IdList providedBlocks() const override;
-	qReal::IdList blocksToDisable() const override;
-	qReal::IdList blocksToHide() const override;
+	IotikMotor(const kitBase::robotModel::DeviceInfo &info, const kitBase::robotModel::PortInfo &port);
+
+	void on(int speed) override;
+	void stop() override;
+	void off() override;
+
+	virtual void on(int speed, bool breakMode);
+	virtual void on(int speed, long unsigned int degrees, bool breakMode);
+	virtual void stop(bool breakMode);
 };
 
+}
 }
 }

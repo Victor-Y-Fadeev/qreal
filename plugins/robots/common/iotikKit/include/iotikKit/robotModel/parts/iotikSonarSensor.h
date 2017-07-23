@@ -14,21 +14,22 @@
 
 #pragma once
 
-#include <kitBase/blocksBase/common/waitForSonarDistanceBlock.h>
-#include <kitBase/blocksBase/commonBlocksFactory.h>
+#include <kitBase/robotModel/robotParts/rangeSensor.h>
 
 namespace iotik {
-namespace blocks {
+namespace robotModel {
+namespace parts {
 
-/// Base class for block factory for all IoTik variants, creates common blocks.
-class IotikBlocksFactory : public kitBase::blocksBase::CommonBlocksFactory
+class IotikSonarSensor : public kitBase::robotModel::robotParts::RangeSensor
 {
+	Q_OBJECT
+	Q_CLASSINFO("friendlyName", tr("Sonic Sensor"))
+
 public:
-	qReal::interpretation::Block *produceBlock(const qReal::Id &element) override;
-	qReal::IdList providedBlocks() const override;
-	qReal::IdList blocksToDisable() const override;
-	qReal::IdList blocksToHide() const override;
+	IotikSonarSensor(const kitBase::robotModel::DeviceInfo &info
+			, const kitBase::robotModel::PortInfo &port);
 };
 
+}
 }
 }

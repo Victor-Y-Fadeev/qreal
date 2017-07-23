@@ -12,23 +12,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. */
 
-#pragma once
+#include "lineDetectorToVariable.h"
 
-#include <kitBase/blocksBase/common/waitForSonarDistanceBlock.h>
-#include <kitBase/blocksBase/commonBlocksFactory.h>
+using namespace iotik::blocks::details;
 
-namespace iotik {
-namespace blocks {
-
-/// Base class for block factory for all IoTik variants, creates common blocks.
-class IotikBlocksFactory : public kitBase::blocksBase::CommonBlocksFactory
+LineDetectorToVariableBlock::LineDetectorToVariableBlock()
 {
-public:
-	qReal::interpretation::Block *produceBlock(const qReal::Id &element) override;
-	qReal::IdList providedBlocks() const override;
-	qReal::IdList blocksToDisable() const override;
-	qReal::IdList blocksToHide() const override;
-};
-
 }
+
+void LineDetectorToVariableBlock::run()
+{
+	evalCode(stringProperty("Variable") + " = lineSensor[0]");
+	emit done(mNextBlockId);
 }

@@ -14,21 +14,29 @@
 
 #pragma once
 
-#include <kitBase/blocksBase/common/waitForSonarDistanceBlock.h>
-#include <kitBase/blocksBase/commonBlocksFactory.h>
+#include <kitBase/robotModel/robotParts/vectorSensor.h>
 
 namespace iotik {
-namespace blocks {
+namespace robotModel {
+namespace parts {
 
-/// Base class for block factory for all IoTik variants, creates common blocks.
-class IotikBlocksFactory : public kitBase::blocksBase::CommonBlocksFactory
+/// Device representing IoTik camera line detector.
+class IotikLineSensor : public kitBase::robotModel::robotParts::VectorSensor
 {
+	Q_OBJECT
+	Q_CLASSINFO("name", "iotikLineSensor")
+	Q_CLASSINFO("friendlyName", tr("Line Sensor"))
+
 public:
-	qReal::interpretation::Block *produceBlock(const qReal::Id &element) override;
-	qReal::IdList providedBlocks() const override;
-	qReal::IdList blocksToDisable() const override;
-	qReal::IdList blocksToHide() const override;
+	IotikLineSensor(const kitBase::robotModel::DeviceInfo &info, const kitBase::robotModel::PortInfo &port);
+
+	/// Turns camera on and prepares a sensor.
+	virtual void init() = 0;
+
+	/// Locks dominant color at center of a field of view of a camera as line color and begins tracking it.
+	virtual void detectLine() = 0;
 };
 
+}
 }
 }
