@@ -20,10 +20,10 @@
 using namespace iotik::simple;
 using namespace generatorBase::simple;
 
-IotikEnginesGenerator::IotikEnginesGenerator(qrRepo::RepoApi const &repo
+IotikEnginesGenerator::IotikEnginesGenerator(const qrRepo::RepoApi &repo
 		, generatorBase::GeneratorCustomizer &customizer
-		, qReal::Id const &id
-		, QString const &engineType
+		, const qReal::Id &id
+		, const QString &engineType
 		, QObject *parent)
 	: BindingGenerator(repo, customizer, id
 			, engineType.contains("EnginesBackward") ? "engines/backward.t" : "engines/forward.t"

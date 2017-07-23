@@ -19,9 +19,9 @@
 using namespace iotik::simple;
 using namespace generatorBase::simple;
 
-SystemGenerator::SystemGenerator(qrRepo::RepoApi const &repo
+SystemGenerator::SystemGenerator(const qrRepo::RepoApi &repo
 		, generatorBase::GeneratorCustomizer &customizer
-		, qReal::Id const &id
+		, const qReal::Id &id
 		, QObject *parent)
 	: BindingGenerator(repo, customizer, id
 			, repo.property(id, "Code").toBool() ? "nativeCode.t" : "system.t"

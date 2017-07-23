@@ -17,19 +17,20 @@
 
 using namespace iotik;
 
-IotikMasterGeneratorBase::IotikMasterGeneratorBase(qrRepo::RepoApi const &repo
+IotikMasterGeneratorBase::IotikMasterGeneratorBase(const qrRepo::RepoApi &repo
 		, qReal::ErrorReporterInterface &errorReporter
-		, interpreterBase::robotModel::RobotModelManagerInterface const &robotModelManager
+		, const utils::ParserErrorReporter &parserErrorReporter
+		, const kitBase::robotModel::RobotModelManagerInterface &robotModelManager
 		, qrtext::LanguageToolboxInterface &textLanguage
-		, qReal::Id const &diagramId
-		, QString const &generatorName)
-	: MasterGeneratorBase(repo, errorReporter, robotModelManager, textLanguage, diagramId)
-	, mGeneratorName(generatorName)
+		, const qReal::Id &diagramId
+		, const QStringList &pathsToTemplates)
+	: MasterGeneratorBase(repo, errorReporter, robotModelManager, textLanguage, parserErrorReporter, diagramId)
+	, mPathsToTemplates(pathsToTemplates)
 {
 }
 
 generatorBase::GeneratorCustomizer *IotikMasterGeneratorBase::createCustomizer()
 {
 	return new IotikGeneratorCustomizer(mRepo, mErrorReporter
-			, mRobotModelManager, *createLuaProcessor(), mGeneratorName);
+			, mRobotModelManager, *createLuaProcessor(), mPathsToTemplates);
 }

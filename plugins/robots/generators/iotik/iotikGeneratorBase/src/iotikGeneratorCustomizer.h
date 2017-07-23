@@ -23,11 +23,11 @@ namespace iotik {
 class IotikGeneratorCustomizer : public generatorBase::GeneratorCustomizer
 {
 public:
-	IotikGeneratorCustomizer(qrRepo::RepoApi const &repo
+	IotikGeneratorCustomizer(const qrRepo::RepoApi &repo
 			, qReal::ErrorReporterInterface &errorReporter
-			, interpreterBase::robotModel::RobotModelManagerInterface const &robotModelManager
+			, const kitBase::robotModel::RobotModelManagerInterface &robotModelManager
 			, generatorBase::lua::LuaProcessor &luaProcessor
-			, QString const &generatorName);
+			, const QStringList &pathsToTemplates);
 
 	generatorBase::GeneratorFactoryBase *factory() override;
 

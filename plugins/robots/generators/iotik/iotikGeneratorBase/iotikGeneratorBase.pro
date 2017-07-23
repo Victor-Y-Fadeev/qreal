@@ -18,36 +18,19 @@ include(../../../../../global.pri)
 
 QT += widgets
 
-CONFIG += c++11
-
 TEMPLATE = lib
-CONFIG += plugin
 
-DESTDIR = $$PWD/../../../../../bin/
+includes(plugins/robots/generators/generatorBase \
+		plugins/robots/common/kitBase \
+		plugins/robots/common/iotikKit \
+		plugins/robots/utils \
+		qrtext \
+		thirdparty/qscintilla/Qt4Qt5 \
+)
 
-MOC_DIR = .moc
-RCC_DIR = .moc
-OBJECTS_DIR = .obj
-
-LIBS += -L$$PWD/../../../../../bin -lqrkernel -lqslog -lqrutils -lqrrepo \
-		-lrobots-generator-base -lrobots-interpreter-base \
+links(qrkernel qslog qrutils qrrepo robots-generator-base robots-kit-base robots-iotik-kit)
 
 DEFINES += ROBOTS_IOTIK_GENERATOR_BASE_LIBRARY
-
-INCLUDEPATH += \
-	$$PWD/include \
-	$$PWD/../../generatorBase/include/ \
-	$$PWD/../../../interpreters/interpreterBase/include \
-	$$PWD/../../../../../ \
-	$$PWD/../../../../../qrgui \
-	$$PWD/../../../../../qrtext/include \
-
-# workaround for http://bugreports.qt.nokia.com/browse/QTBUG-8110
-# when fixed it would become possible to use QMAKE_LFLAGS_RPATH
-!macx {
-	QMAKE_LFLAGS += -Wl,-O1,-rpath,$$PWD/../../../../../bin/
-	QMAKE_LFLAGS += -Wl,-rpath,$$PWD/../../../../../bin/plugins/
-}
 
 TRANSLATIONS = \
 	$$PWD/../../../../../qrtranslations/ru/plugins/robots/iotikGeneratorBase_ru.ts \

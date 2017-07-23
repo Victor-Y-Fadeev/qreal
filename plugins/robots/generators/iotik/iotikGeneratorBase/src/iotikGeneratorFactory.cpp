@@ -18,24 +18,9 @@
 #include <generatorBase/simpleGenerators/waitForButtonGenerator.h>
 #include <generatorBase/lua/luaProcessor.h>
 
-#include "simpleGenerators/detectGenerator.h"
 #include "simpleGenerators/detectorToVariableGenerator.h"
-#include "simpleGenerators/drawLineGenerator.h"
-#include "simpleGenerators/drawPixelGenerator.h"
-#include "simpleGenerators/drawRectGenerator.h"
-#include "simpleGenerators/drawEllipseGenerator.h"
-#include "simpleGenerators/drawArcGenerator.h"
-#include "simpleGenerators/initCameraGenerator.h"
-#include "simpleGenerators/ledGenerator.h"
-#include "simpleGenerators/playToneGenerator.h"
 #include "simpleGenerators/waitForMessageGenerator.h"
-#include "simpleGenerators/sadSmileGenerator.h"
-#include "simpleGenerators/sayGenerator.h"
 #include "simpleGenerators/sendMessageGenerator.h"
-#include "simpleGenerators/setPainterWidthGenerator.h"
-#include "simpleGenerators/setPainterColorGenerator.h"
-#include "simpleGenerators/setBackgroundGenerator.h"
-#include "simpleGenerators/smileGenerator.h"
 #include "simpleGenerators/systemGenerator.h"
 #include "simpleGenerators/iotikEnginesGenerator.h"
 #include "simpleGenerators/waitForInfraredSensorGenerator.h"
@@ -47,13 +32,13 @@ using namespace iotik::simple;
 using namespace generatorBase;
 using namespace generatorBase::simple;
 
-IotikGeneratorFactory::IotikGeneratorFactory(qrRepo::RepoApi const &repo
+IotikGeneratorFactory::IotikGeneratorFactory(const qrRepo::RepoApi &repo
 		, qReal::ErrorReporterInterface &errorReporter
-		, interpreterBase::robotModel::RobotModelManagerInterface const &robotModelManager
+		, const kitBase::robotModel::RobotModelManagerInterface &robotModelManager
 		, lua::LuaProcessor &luaProcessor
-		, QString const &generatorName)
+		, const QStringList &pathsToTemplates)
 	: GeneratorFactoryBase(repo, errorReporter, robotModelManager, luaProcessor)
-	, mGeneratorName(generatorName)
+	, mPathsToTemplates(pathsToTemplates)
 {
 }
 
@@ -61,7 +46,7 @@ IotikGeneratorFactory::~IotikGeneratorFactory()
 {
 }
 
-AbstractSimpleGenerator *IotikGeneratorFactory::simpleGenerator(qReal::Id const &id
+AbstractSimpleGenerator *IotikGeneratorFactory::simpleGenerator(const qReal::Id &id
 		, GeneratorCustomizer &customizer)
 {
 	QString const elementType = id.element();
@@ -87,12 +72,12 @@ AbstractSimpleGenerator *IotikGeneratorFactory::simpleGenerator(qReal::Id const 
 	return GeneratorFactoryBase::simpleGenerator(id, customizer);
 }
 
-QString IotikGeneratorFactory::pathToTemplates() const
+QStringList IotikGeneratorFactory::pathsToTemplates() const
 {
-	return ":/" + mGeneratorName + "/templates";
+	return mPathsToTemplates; //{":/" + mGeneratorName + "/templates"};
 }
 
 generatorBase::parts::DeviceVariables *IotikGeneratorFactory::deviceVariables() const
 {
-	return new trik::parts::IotikDeviceVariables();
+	return new iotik::parts::IotikDeviceVariables();
 }

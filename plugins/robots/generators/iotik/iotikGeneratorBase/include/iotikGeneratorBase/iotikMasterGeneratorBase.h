@@ -24,18 +24,19 @@ namespace iotik {
 class ROBOTS_IOTIK_GENERATOR_BASE_EXPORT IotikMasterGeneratorBase : public generatorBase::MasterGeneratorBase
 {
 public:
-	IotikMasterGeneratorBase(qrRepo::RepoApi const &repo
+	IotikMasterGeneratorBase(const qrRepo::RepoApi &repo
 			, qReal::ErrorReporterInterface &errorReporter
-			, interpreterBase::robotModel::RobotModelManagerInterface const &robotModelManager
+			, const utils::ParserErrorReporter &parserErrorReporter
+			, const kitBase::robotModel::RobotModelManagerInterface &robotModelManager
 			, qrtext::LanguageToolboxInterface &textLanguage
-			, qReal::Id const &diagramId
-			, QString const &generatorName);
+			, const qReal::Id &diagramId
+			, const QStringList &pathsToTemplates);
 
 protected:
 	generatorBase::GeneratorCustomizer *createCustomizer() override;
 
 private:
-	QString const mGeneratorName;
+	const QStringList mPathsToTemplates;
 };
 
 }

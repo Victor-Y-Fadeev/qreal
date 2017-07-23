@@ -22,23 +22,23 @@ namespace iotik {
 class IotikGeneratorFactory : public generatorBase::GeneratorFactoryBase
 {
 public:
-	IotikGeneratorFactory(qrRepo::RepoApi const &repo
+	IotikGeneratorFactory(const qrRepo::RepoApi &repo
 			, qReal::ErrorReporterInterface &errorReporter
-			, interpreterBase::robotModel::RobotModelManagerInterface const &robotModelManager
+			, const kitBase::robotModel::RobotModelManagerInterface &robotModelManager
 			, generatorBase::lua::LuaProcessor &luaProcessor
-			, QString const &generatorName);
+			, const QStringList &pathsToTemplates);
 
 	~IotikGeneratorFactory() override;
 
-	generatorBase::simple::AbstractSimpleGenerator *simpleGenerator(qReal::Id const &id
+	generatorBase::simple::AbstractSimpleGenerator *simpleGenerator(const qReal::Id &id
 			, generatorBase::GeneratorCustomizer &customizer) override;
 
-	QString pathToTemplates() const override;
+	QStringList pathsToTemplates() const override;
 
 	generatorBase::parts::DeviceVariables *deviceVariables() const override;
 
 private:
-	QString const mGeneratorName;
+	const QStringList mPathsToTemplates;
 };
 
 }

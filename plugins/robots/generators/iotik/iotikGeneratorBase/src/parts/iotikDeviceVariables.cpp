@@ -18,8 +18,8 @@
 
 using namespace iotik::parts;
 
-QString IotikDeviceVariables::variableTemplatePath(interpreterBase::robotModel::DeviceInfo const &device
-		, interpreterBase::robotModel::PortInfo const &port) const
+QString IotikDeviceVariables::variableTemplatePath(const kitBase::robotModel::DeviceInfo &device
+		, const kitBase::robotModel::PortInfo &port) const
 {
 	return generatorBase::parts::DeviceVariables::variableTemplatePath(device, port);
 }

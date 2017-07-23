@@ -16,7 +16,7 @@
 
 using namespace iotik;
 
-IoitkGeneratorPluginBase::IotikGeneratorPluginBase()
+IotikGeneratorPluginBase::IotikGeneratorPluginBase()
 {
 }
 
@@ -25,7 +25,7 @@ QString IotikGeneratorPluginBase::kitId() const
 	return "iotikKit";
 }
 
-void IotikGeneratorPluginBase::regenerateExtraFiles(QFileInfo const &newFileInfo)
+void IotikGeneratorPluginBase::regenerateExtraFiles(const QFileInfo &newFileInfo)
 {
 	Q_UNUSED(newFileInfo);
 }

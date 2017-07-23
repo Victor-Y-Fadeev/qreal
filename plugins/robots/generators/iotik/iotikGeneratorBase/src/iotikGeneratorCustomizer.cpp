@@ -16,12 +16,12 @@
 
 using namespace iotik;
 
-IotikGeneratorCustomizer::IotikGeneratorCustomizer(qrRepo::RepoApi const &repo
+IotikGeneratorCustomizer::IotikGeneratorCustomizer(const qrRepo::RepoApi &repo
 		, qReal::ErrorReporterInterface &errorReporter
-		, interpreterBase::robotModel::RobotModelManagerInterface const &robotModelManager
+		, const kitBase::robotModel::RobotModelManagerInterface &robotModelManager
 		, generatorBase::lua::LuaProcessor &luaProcessor
-		, QString const &generatorName)
-	: mFactory(repo, errorReporter, robotModelManager, luaProcessor, generatorName)
+		, const QStringList &pathsToTemplates)
+	: mFactory(repo, errorReporter, robotModelManager, luaProcessor, pathsToTemplates)
 {
 }
 
