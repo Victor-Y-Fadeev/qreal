@@ -69,20 +69,18 @@ AbstractSimpleGenerator *IotikGeneratorFactory::simpleGenerator(qReal::Id const 
 			|| elementType.contains("EnginesBackward")
 			|| elementType.contains("AngularServo"))
 	{
-		return new TrikEnginesGenerator(mRepo, customizer, id, elementType, this);
-	} else if (elementType == "TrikSendMessage") {
+		return new IotikEnginesGenerator(mRepo, customizer, id, elementType, this);
+	/*} else if (elementType == "IotikSendMessage") {
 		return new SendMessageGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "TrikWaitForMessage") {
+	} else if (elementType == "IotikWaitForMessage") {
 		return new WaitForMessageGenerator(mRepo, customizer, id, this);
-	}else if (elementType == "TrikSystem") {
+	*/} else if (elementType == "IotikSystem") {
 		return new SystemGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "TrikDetect") {
-		return new DetectGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "TrikDetectorToVariable") {
+	} else if (elementType == "IotikDetectorToVariable") {
 		return new DetectorToVariableGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "TrikWaitForMotion") {
+	} else if (elementType == "IotikWaitForMotion") {
 		return new WaitForMotionGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "TrikWaitForIRDistance") {
+	} else if (elementType == "IotikWaitForIRDistance") {
 		return new WaitForInfraredSensorGenerator(mRepo, customizer, id, this);
 	}
 
