@@ -74,16 +74,10 @@ AbstractSimpleGenerator *IotikGeneratorFactory::simpleGenerator(qReal::Id const 
 		return new SendMessageGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "TrikWaitForMessage") {
 		return new WaitForMessageGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "TrikSetBackground") {
-		return new SetBackgroundGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "TrikSystem") {
+	}else if (elementType == "TrikSystem") {
 		return new SystemGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "TrikLed") {
-		return new LedGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "TrikDetect") {
 		return new DetectGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "TrikInitCamera") {
-		return new InitCameraGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "TrikDetectorToVariable") {
 		return new DetectorToVariableGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "TrikWaitForMotion") {

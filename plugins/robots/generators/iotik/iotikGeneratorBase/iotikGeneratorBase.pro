@@ -61,25 +61,11 @@ HEADERS += \
 	$$PWD/src/iotikGeneratorFactory.h \
 	$$PWD/src/parts/iotikDeviceVariables.h \
 	$$PWD/src/simpleGenerators/detectGenerator.h \
-	$$PWD/src/simpleGenerators/initCameraGenerator.h \
-	$$PWD/src/simpleGenerators/ledGenerator.h \
 	$$PWD/src/simpleGenerators/detectorToVariableGenerator.h \
-	$$PWD/src/simpleGenerators/playToneGenerator.h \
-	$$PWD/src/simpleGenerators/sadSmileGenerator.h \
-	$$PWD/src/simpleGenerators/sayGenerator.h \
 	$$PWD/src/simpleGenerators/systemGenerator.h \
-	$$PWD/src/simpleGenerators/setBackgroundGenerator.h \
-	$$PWD/src/simpleGenerators/smileGenerator.h \
 	$$PWD/src/simpleGenerators/trikEnginesGenerator.h \
 	$$PWD/src/simpleGenerators/waitForInfraredSensorGenerator.h \
 	$$PWD/src/simpleGenerators/waitForMotionGenerator.h \
-	$$PWD/src/simpleGenerators/drawLineGenerator.h \
-	$$PWD/src/simpleGenerators/drawPixelGenerator.h \
-	$$PWD/src/simpleGenerators/drawRectGenerator.h \
-	$$PWD/src/simpleGenerators/drawEllipseGenerator.h \
-	$$PWD/src/simpleGenerators/drawArcGenerator.h \
-	$$PWD/src/simpleGenerators/setPainterWidthGenerator.h \
-	$$PWD/src/simpleGenerators/setPainterColorGenerator.h \
 	$$PWD/src/simpleGenerators/sendMessageGenerator.h \
 	$$PWD/src/simpleGenerators/waitForMessageGenerator.h \
 
@@ -90,24 +76,10 @@ SOURCES += \
 	$$PWD/src/iotikGeneratorFactory.cpp \
 	$$PWD/src/parts/iotikDeviceVariables.cpp \
 	$$PWD/src/simpleGenerators/detectGenerator.cpp \
-	$$PWD/src/simpleGenerators/initCameraGenerator.cpp \
-	$$PWD/src/simpleGenerators/ledGenerator.cpp \
 	$$PWD/src/simpleGenerators/detectorToVariableGenerator.cpp \
-	$$PWD/src/simpleGenerators/playToneGenerator.cpp \
-	$$PWD/src/simpleGenerators/sadSmileGenerator.cpp \
-	$$PWD/src/simpleGenerators/sayGenerator.cpp \
 	$$PWD/src/simpleGenerators/systemGenerator.cpp \
-	$$PWD/src/simpleGenerators/setBackgroundGenerator.cpp \
-	$$PWD/src/simpleGenerators/smileGenerator.cpp \
 	$$PWD/src/simpleGenerators/trikEnginesGenerator.cpp \
 	$$PWD/src/simpleGenerators/waitForInfraredSensorGenerator.cpp \
 	$$PWD/src/simpleGenerators/waitForMotionGenerator.cpp \
-	$$PWD/src/simpleGenerators/drawLineGenerator.cpp \
-	$$PWD/src/simpleGenerators/drawPixelGenerator.cpp \
-	$$PWD/src/simpleGenerators/drawRectGenerator.cpp \
-	$$PWD/src/simpleGenerators/drawEllipseGenerator.cpp \
-	$$PWD/src/simpleGenerators/drawArcGenerator.cpp \
-	$$PWD/src/simpleGenerators/setPainterWidthGenerator.cpp \
-	$$PWD/src/simpleGenerators/setPainterColorGenerator.cpp \
 	$$PWD/src/simpleGenerators/sendMessageGenerator.cpp \
 	$$PWD/src/simpleGenerators/waitForMessageGenerator.cpp \
