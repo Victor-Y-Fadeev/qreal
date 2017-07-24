@@ -26,7 +26,7 @@ IotikRuCGeneratorPlugin::IotikRuCGeneratorPlugin()
 	, mGenerateCodeAction(new QAction(nullptr))
 {
 	mGenerateCodeAction->setText(tr("Generate to RuC"));
-	mGenerateCodeAction->setIcon(QIcon(":/ioitk/ruc/images/generateRuCCode.svg"));
+	mGenerateCodeAction->setIcon(QIcon(":/iotik/ruc/images/generateRuCCode.svg"));
 	mGenerateCodeAction->setShortcut(QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_G));
 	connect(mGenerateCodeAction, SIGNAL(triggered()), this, SLOT(generateCode()));
 }
@@ -45,7 +45,7 @@ QList<qReal::HotKeyActionInfo> IotikRuCGeneratorPlugin::hotKeyActions()
 QIcon IotikRuCGeneratorPlugin::iconForFastSelector(const kitBase::robotModel::RobotModelInterface &robotModel) const
 {
 	Q_UNUSED(robotModel)
-	return QIcon(":/iotik/rus/images/switch-to-iotik-ruc.svg");
+	return QIcon(":/iotik/ruc/images/switch-to-iotik-ruc.svg");
 }
 
 QString IotikRuCGeneratorPlugin::defaultFilePath(const QString &projectName) const

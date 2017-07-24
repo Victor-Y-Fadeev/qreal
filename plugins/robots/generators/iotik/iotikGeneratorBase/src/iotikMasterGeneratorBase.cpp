@@ -32,5 +32,6 @@ IotikMasterGeneratorBase::IotikMasterGeneratorBase(const qrRepo::RepoApi &repo
 
 generatorBase::GeneratorCustomizer *IotikMasterGeneratorBase::createCustomizer()
 {
-	return new IotikGeneratorCustomizer(mRepo, mErrorReporter, mRobotModelManager, *createLuaProcessor(), mGeneratorName);
+	return new IotikGeneratorCustomizer(mRepo, mErrorReporter
+			, mRobotModelManager, *createLuaProcessor(), mGeneratorName);
 }
