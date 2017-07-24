@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="/trikRuC">
+    <qresource prefix="/iotikRuC">
         <file>templates/conditional/doWhile.t</file>
         <file>templates/conditional/for.t</file>
         <file>templates/conditional/if.t</file>
