@@ -31,25 +31,25 @@ NxtKitInterpreterPlugin::NxtKitInterpreterPlugin()
 	, mTwoDRobotModel(mUsbRealRobotModel)
 	, mBlocksFactory(new blocks::NxtBlocksFactory)
 {
-//	mAdditionalPreferences = new NxtAdditionalPreferences(mBluetoothRealRobotModel.name());
+	mAdditionalPreferences = new NxtAdditionalPreferences(mBluetoothRealRobotModel.name());
 
 	auto modelEngine = new twoDModel::engine::TwoDModelEngineFacade(mTwoDRobotModel);
 
 	mTwoDRobotModel.setEngine(modelEngine->engine());
 	mTwoDModel.reset(modelEngine);
 
-/*	connect(mAdditionalPreferences, &NxtAdditionalPreferences::settingsChanged
+	connect(mAdditionalPreferences, &NxtAdditionalPreferences::settingsChanged
 			, &mUsbRealRobotModel, &robotModel::real::RealRobotModel::rereadSettings);
 	connect(mAdditionalPreferences, &NxtAdditionalPreferences::settingsChanged
 			, &mBluetoothRealRobotModel, &robotModel::real::RealRobotModel::rereadSettings);
 	connect(mAdditionalPreferences, &NxtAdditionalPreferences::settingsChanged
-			, &mTwoDRobotModel, &robotModel::twoD::TwoDRobotModel::rereadSettings);*/
+			, &mTwoDRobotModel, &robotModel::twoD::TwoDRobotModel::rereadSettings);
 }
 
 NxtKitInterpreterPlugin::~NxtKitInterpreterPlugin()
 {
 	if (mOwnsAdditionalPreferences) {
-//		delete mAdditionalPreferences;
+		delete mAdditionalPreferences;
 	}
 
 	if (mOwnsBlocksFactory) {

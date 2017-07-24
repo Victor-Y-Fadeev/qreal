@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. */
 
-//#include "nxtAdditionalPreferences.h"
+#include "nxtAdditionalPreferences.h"
 #include "ui_nxtAdditionalPreferences.h"
 
 #include <qrkernel/settingsManager.h>

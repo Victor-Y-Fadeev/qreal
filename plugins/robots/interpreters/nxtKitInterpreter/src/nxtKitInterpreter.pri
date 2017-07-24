@@ -30,7 +30,7 @@ includes(plugins/robots/common/kitBase \
 copyToDestdir(../icons/nxt-robot.png, now, images/)
 
 HEADERS += \
-	#$$PWD/nxtAdditionalPreferences.h \
+	$$PWD/nxtAdditionalPreferences.h \
 	$$PWD/nxtDisplayWidget.h \
 	$$PWD/nxtKitInterpreterPlugin.h \
 	$$PWD/robotModel/real/realRobotModel.h \
@@ -59,7 +59,7 @@ HEADERS += \
 	$$PWD/robotModel/twoD/parts/twoDMotor.h \
 
 SOURCES += \
-	#$$PWD/nxtAdditionalPreferences.cpp \
+	$$PWD/nxtAdditionalPreferences.cpp \
 	$$PWD/nxtDisplayWidget.cpp \
 	$$PWD/nxtKitInterpreterPlugin.cpp \
 	$$PWD/robotModel/real/realRobotModel.cpp \
@@ -88,7 +88,7 @@ SOURCES += \
 	$$PWD/robotModel/twoD/parts/twoDMotor.cpp \
 
 FORMS += \
-	#$$PWD/nxtAdditionalPreferences.ui \
+	$$PWD/nxtAdditionalPreferences.ui \
 	$$PWD/nxtDisplayWidget.ui \
 
 TRANSLATIONS = \
