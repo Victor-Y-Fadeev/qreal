@@ -43,6 +43,7 @@ HEADERS += \
 	$$PWD/src/iotikGeneratorCustomizer.h \
 	$$PWD/src/iotikGeneratorFactory.h \
 	$$PWD/src/parts/iotikDeviceVariables.h \
+	$$PWD/src/robotModel/iotikGeneratorRobotModel.h \
 	$$PWD/src/simpleGenerators/detectorToVariableGenerator.h \
 	$$PWD/src/simpleGenerators/systemGenerator.h \
 	$$PWD/src/simpleGenerators/iotikEnginesGenerator.h \
@@ -57,6 +58,7 @@ SOURCES += \
 	$$PWD/src/iotikGeneratorCustomizer.cpp \
 	$$PWD/src/iotikGeneratorFactory.cpp \
 	$$PWD/src/parts/iotikDeviceVariables.cpp \
+	$$PWD/src/robotModel/iotikGeneratorRobotModel.cpp \
 	$$PWD/src/simpleGenerators/detectorToVariableGenerator.cpp \
 	$$PWD/src/simpleGenerators/systemGenerator.cpp \
 	$$PWD/src/simpleGenerators/iotikEnginesGenerator.cpp \

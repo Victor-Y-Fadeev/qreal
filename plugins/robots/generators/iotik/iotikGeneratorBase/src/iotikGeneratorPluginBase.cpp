@@ -16,8 +16,32 @@
 
 using namespace iotik;
 
-IotikGeneratorPluginBase::IotikGeneratorPluginBase()
+IotikGeneratorPluginBase::IotikGeneratorPluginBase(kitBase::robotModel::RobotModelInterface * const robotModel
+		, kitBase::blocksBase::BlocksFactoryInterface * const blocksFactory)
+	: mRobotModel(robotModel)
+	, mBlocksFactory(blocksFactory)
 {
+}
+
+IotikGeneratorPluginBase::~IotikGeneratorPluginBase()
+{
+}
+
+QList<kitBase::robotModel::RobotModelInterface *> IotikGeneratorPluginBase::robotModels()
+{
+	return { mRobotModel.data() };
+}
+
+kitBase::blocksBase::BlocksFactoryInterface *IotikGeneratorPluginBase::blocksFactoryFor(
+		const kitBase::robotModel::RobotModelInterface *model)
+{
+	Q_UNUSED(model)
+	return mBlocksFactory;
+}
+
+QList<kitBase::AdditionalPreferences *> IotikGeneratorPluginBase::settingsWidgets()
+{
+	return {};
 }
 
 QString IotikGeneratorPluginBase::kitId() const

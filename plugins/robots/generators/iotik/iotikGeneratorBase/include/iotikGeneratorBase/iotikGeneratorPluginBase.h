@@ -14,11 +14,21 @@
 
 #pragma once
 
+#include <QtCore/QScopedPointer>
+
 #include <generatorBase/robotsGeneratorPluginBase.h>
 
 #include "iotikGeneratorBase/iotikGeneratorBaseDeclSpec.h"
 
 namespace iotik {
+
+namespace robotModel {
+class IotikGeneratorRobotModel;
+}
+
+namespace blocks {
+class IotikBlocksFactory;
+}
 
 /// A base class for every generator from the TRIK kit.
 class ROBOTS_IOTIK_GENERATOR_BASE_EXPORT IotikGeneratorPluginBase : public generatorBase::RobotsGeneratorPluginBase
@@ -26,12 +36,30 @@ class ROBOTS_IOTIK_GENERATOR_BASE_EXPORT IotikGeneratorPluginBase : public gener
 	Q_OBJECT
 
 public:
-	IotikGeneratorPluginBase();
+	IotikGeneratorPluginBase(kitBase::robotModel::RobotModelInterface * const robotModel
+			, kitBase::blocksBase::BlocksFactoryInterface * const blocksFactory
+			);
+
+	~IotikGeneratorPluginBase() override;
+
+	QList<kitBase::robotModel::RobotModelInterface *> robotModels() override;
+
+	kitBase::blocksBase::BlocksFactoryInterface *blocksFactoryFor(
+			const kitBase::robotModel::RobotModelInterface *model) override;
+
+	QList<kitBase::AdditionalPreferences *> settingsWidgets() override;
 
 	QString kitId() const override;
 
 protected:
 	void regenerateExtraFiles(const QFileInfo &newFileInfo) override;
+
+private:
+	/// Robot model that is used to query information about various robot devices.
+	QScopedPointer<kitBase::robotModel::RobotModelInterface> mRobotModel;
+
+	/// Does not have ownership.
+	kitBase::blocksBase::BlocksFactoryInterface *mBlocksFactory;
 };
 
 }

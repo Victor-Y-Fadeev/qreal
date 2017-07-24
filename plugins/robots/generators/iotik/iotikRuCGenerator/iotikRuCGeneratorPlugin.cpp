@@ -16,81 +16,112 @@
 
 #include <QtWidgets/QApplication>
 #include <QtCore/QFileInfo>
-#include <QtCore/QDebug>
+#include <QtCore/QStateMachine>
+#include <QtCore/QState>
+#include <QtCore/QFinalState>
 
+#include <qrkernel/logging.h>
 #include <iotikGeneratorBase/iotikGeneratorPluginBase.h>
-#include <utils/tcpRobotCommunicator.h>
+#include <iotikGeneratorBase/robotModel/iotikGeneratorRobotModel.h>
+#include <iotikKit/robotModel/iotikRobotModelBase.h>
+//#include <utils/tcpRobotCommunicator.h>
 
 #include "iotikRuCMasterGenerator.h"
 
 using namespace iotik::ruc;
+using namespace kitBase::robotModel;
 using namespace qReal;
 
-IotikRuCGeneratorPlugin::IotikRuCGeneratorPlugin()
-	: mGenerateCodeAction(new QAction(nullptr))
+IotikRuCGeneratorPlugin::IotikRuCGeneratorPlugin(
+		 iotik::robotModel::IotikRobotModelBase * const robotModel
+		, kitBase::blocksBase::BlocksFactoryInterface * const blocksFactory
+		, const QStringList &pathsToTemplates)
+	: IotikGeneratorPluginBase(robotModel, blocksFactory)
+	, mGenerateCodeAction(new QAction(nullptr))
 	, mUploadProgramAction(new QAction(nullptr))
 	, mRunProgramAction(new QAction(nullptr))
 	, mStopRobotAction(new QAction(nullptr))
-	, mCommunicator(nullptr)
+	, mRobotModel(*robotModel)
+	, mPathsToTemplates(pathsToTemplates)
 {
 }
 
 IotikRuCGeneratorPlugin::~IotikRuCGeneratorPlugin()
 {
-	delete mCommunicator;
+	//delete mCommunicator;
 }
 
-void IotikRuCGeneratorPlugin::init(qReal::PluginConfigurator const &configurator
-		, interpreterBase::robotModel::RobotModelManagerInterface const &robotModelManager
-		, qrtext::LanguageToolboxInterface &textLanguage)
+void IotikRuCGeneratorPlugin::init(const kitBase::KitPluginConfigurator &configurer)
 {
-	RobotsGeneratorPluginBase::init(configurator, robotModelManager, textLanguage);
-	mCommunicator = new utils::TcpRobotCommunicator("IotikTcpServer");
-	mCommunicator->setErrorReporter(configurator.mainWindowInterpretersInterface().errorReporter());
+	RobotsGeneratorPluginBase::init(configurer);
+	//mCommunicator = new utils::TcpRobotCommunicator("IotikTcpServer");
+	//mCommunicator->setErrorReporter(configurator.mainWindowInterpretersInterface().errorReporter());
 }
 
-QList<ActionInfo> IotikRuCGeneratorPlugin::actions()
+QList<ActionInfo> IotikRuCGeneratorPlugin::customActions()
 {
-	QAction *separator = new QAction(this);
-	separator->setSeparator(true);
-	qReal::ActionInfo separatorInfo(separator, "generators", "tools");
-
+	mGenerateCodeAction->setObjectName("generateRuCCode");
 	mGenerateCodeAction->setText(tr("Generate RuC code"));
 	mGenerateCodeAction->setIcon(QIcon(":/images/generateQtsCode.svg"));
 	ActionInfo generateCodeActionInfo(mGenerateCodeAction, "generators", "tools");
 	connect(mGenerateCodeAction, SIGNAL(triggered()), this, SLOT(generateCode()), Qt::UniqueConnection);
 
-	mUploadProgramAction->setText(tr("Upload RuC program"));
+	mUploadProgramAction->setObjectName("uploadProgram");
+	mUploadProgramAction->setText(tr("Upload program"));
 	mUploadProgramAction->setIcon(QIcon(":/images/uploadProgram.svg"));
 	ActionInfo uploadProgramActionInfo(mUploadProgramAction, "generators", "tools");
 	connect(mUploadProgramAction, SIGNAL(triggered()), this, SLOT(uploadProgram()), Qt::UniqueConnection);
 
-	mRunProgramAction->setText(tr("Run RuC program"));
+	mRunProgramAction->setObjectName("runProgram");
+	mRunProgramAction->setText(tr("Run program"));
 	mRunProgramAction->setIcon(QIcon(":/images/uploadAndExecuteProgram.svg"));
 	ActionInfo runProgramActionInfo(mRunProgramAction, "generators", "tools");
 	connect(mRunProgramAction, SIGNAL(triggered()), this, SLOT(runProgram()), Qt::UniqueConnection);
 
-	/* Exclude */
+	mStopRobotAction->setObjectName("stopRobot");
 	mStopRobotAction->setText(tr("Stop robot"));
 	mStopRobotAction->setIcon(QIcon(":/images/stopRobot.svg"));
 	ActionInfo stopRobotActionInfo(mStopRobotAction, "generators", "tools");
 	connect(mStopRobotAction, SIGNAL(triggered()), this, SLOT(stopRobot()), Qt::UniqueConnection);
 
 
-	return {generateCodeActionInfo, uploadProgramActionInfo, runProgramActionInfo, stopRobotActionInfo, separatorInfo};
+	return {generateCodeActionInfo, uploadProgramActionInfo, runProgramActionInfo, stopRobotActionInfo};
+}
+
+QList<HotKeyActionInfo> IotikRuCGeneratorPlugin::hotKeyActions()
+{
+	mGenerateCodeAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_G));
+	mUploadProgramAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_U));
+	mRunProgramAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_F5));
+	mStopRobotAction->setShortcut(QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_F5));
+
+	HotKeyActionInfo generateCodeInfo("Generator.GenerateRuc", tr("Generate RuC Code"), mGenerateCodeAction);
+	HotKeyActionInfo uploadProgramInfo("Generator.UploadRuc", tr("Upload Program"), mUploadProgramAction);
+	HotKeyActionInfo runProgramInfo("Generator.RunRuc", tr("Run Program"), mRunProgramAction);
+	HotKeyActionInfo stopRobotInfo("Generator.StopRuc", tr("Stop Robot"), mStopRobotAction);
+
+	return {generateCodeInfo, uploadProgramInfo, runProgramInfo, stopRobotInfo};
+}
+
+QIcon IotikRuCGeneratorPlugin::iconForFastSelector(const RobotModelInterface &robotModel) const
+{
+	Q_UNUSED(robotModel)
+
+	return QIcon(":/iotik/rus/images/switch-to-iotik-ruc.svg");
 }
 
 generatorBase::MasterGeneratorBase *IotikRuCGeneratorPlugin::masterGenerator()
 {
 	return new IotikRuCMasterGenerator(*mRepo
 			, *mMainWindowInterface->errorReporter()
+			, *mParserErrorReporter
 			, *mRobotModelManager
 			, *mTextLanguage
 			, mMainWindowInterface->activeDiagram()
-			, generatorName());
+			, mPathsToTemplates);
 }
 
-QString IotikRuCGeneratorPlugin::defaultFilePath(QString const &projectName) const
+QString IotikRuCGeneratorPlugin::defaultFilePath(const QString &projectName) const
 {
 	return QString("trik/%1/%1.c").arg(projectName);
 }
@@ -102,46 +133,53 @@ text::LanguageInfo IotikRuCGeneratorPlugin::language() const
 
 QString IotikRuCGeneratorPlugin::generatorName() const
 {
-   return "trikRuC";
+   return "iotikRuC";
 }
 
-bool IotikRuCGeneratorPlugin::uploadProgram()
+void IotikRuCGeneratorPlugin::uploadProgram()
 {
-	QFileInfo const fileInfo = generateCodeForProcessing();
+	const QFileInfo fileInfo = generateCodeForProcessing();
 
 	if (fileInfo != QFileInfo() && !fileInfo.absoluteFilePath().isEmpty()) {
-		bool const result = mCommunicator->uploadProgram(fileInfo.absoluteFilePath());
-		if (!result) {
-			mMainWindowInterface->errorReporter()->addError(tr("No connection to robot"));
-		}
-
-		return result;
+		disableButtons();
+		//mUploadProgramProtocol->run(fileInfo);
 	} else {
-		qDebug() << "Code generation failed, aborting";
-		return false;
+		QLOG_ERROR() << "Code generation failed, aborting";
 	}
 }
 
 void IotikRuCGeneratorPlugin::runProgram()
 {
-	if (uploadProgram()) {
-		QFileInfo const fileInfo = generateCodeForProcessing();
-		mCommunicator->runRuCProgram(fileInfo.fileName());
+	const QFileInfo fileInfo = generateCodeForProcessing();
+
+	if (fileInfo != QFileInfo() && !fileInfo.absoluteFilePath().isEmpty()) {
+		/*if (mRunProgramProtocol) {
+			disableButtons();
+			mRunProgramProtocol->run(fileInfo);
+		} else {
+			QLOG_ERROR() << "Run program protocol is not initialized";
+		}*/
 	} else {
-		qDebug() << "Program upload failed, aborting";
+		QLOG_ERROR() << "Code generation failed, aborting";
 	}
 }
 
 void IotikRuCGeneratorPlugin::stopRobot()
 {
-	if (!mCommunicator->stopRobot()) {
-		mMainWindowInterface->errorReporter()->addError(tr("No connection to robot"));
-	}
+	/*if (mStopRobotProtocol) {
+		disableButtons();
+		mStopRobotProtocol->run(
+				"script.system(\"killall aplay\"); \n"
+				"script.system(\"killall vlc\");"
+				);
+	} else {*/
+		QLOG_ERROR() << "Stop robot protocol is not initialized";
+	//}
+}
 
-	mCommunicator->runDirectCommand(
-			"brick.system(\"killall aplay\"); \n"
-			"brick.system(\"killall vlc\"); \n"
-			"brick.system(\"killall rover-cv\");"
-			, true
-			);
+void IotikRuCGeneratorPlugin::disableButtons()
+{
+	mUploadProgramAction->setEnabled(false);
+	mRunProgramAction->setEnabled(false);
+	mStopRobotAction->setEnabled(false);
 }
