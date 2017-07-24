@@ -27,12 +27,12 @@ RealRobotModel::RealRobotModel(const QString &kitId, const QString &robotId)
 
 QString RealRobotModel::name() const
 {
-	return "iotikKit";
+	return "IotikRealRobotModel";
 }
 
 QString RealRobotModel::friendlyName() const
 {
-	return tr("IoTik v1.0");
+	return tr("Interpretation");
 }
 
 bool RealRobotModel::needsConnection() const
