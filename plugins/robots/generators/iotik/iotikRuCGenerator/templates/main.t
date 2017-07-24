@@ -1,18 +1,18 @@
-@@VARIABLES@@
+﻿@@VARIABLES@@
 
-цел M1 = 1;
-цел M2 = 2;
-цел M3 = 3;
-цел M4 = 4;
-цел A1 = 1;
-цел A2 = 2;
-цел A3 = 3;
-цел A4 = 4;
-цел A5 = 5;
-цел A6 = 6;
-цел D1 = 1;
-цел D2 = 2;
-цел F1 = 3;
+int M1 = 1;
+int M2 = 2;
+int M3 = 3;
+int M4 = 4;
+int A1 = 1;
+int A2 = 2;
+int A3 = 3;
+int A4 = 4;
+int A5 = 5;
+int A6 = 6;
+int D1 = 1;
+int D2 = 2;
+int F1 = 3;
 
 @@SUBPROGRAMS_FORWARDING@@
 
@@ -26,8 +26,8 @@
 @@THREADS@@
 */
 
-цел главная()
+int main()
 {
 @@MAIN_CODE@@
-	возврат 0;
+	return 0;
 }

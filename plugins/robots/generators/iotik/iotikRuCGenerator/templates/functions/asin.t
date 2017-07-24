@@ -1,1 +1,1 @@
-асин(@@ARGUMENT@@)
+﻿asin(@@ARGUMENT@@)

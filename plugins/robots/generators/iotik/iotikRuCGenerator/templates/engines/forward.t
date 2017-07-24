@@ -1,1 +1,1 @@
-мотор(@@PORT@@, @@POWER@@);
+﻿setmotor(@@PORT@@, @@POWER@@);

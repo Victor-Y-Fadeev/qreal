@@ -1,1 +1,1 @@
-асин(@@ARGUMENT@@ / квкор(@@ARGUMENT@@ * @@ARGUMENT@@ + 1))
+﻿atan(@@ARGUMENT@@ / sqrt(@@ARGUMENT@@ * @@ARGUMENT@@ + 1))

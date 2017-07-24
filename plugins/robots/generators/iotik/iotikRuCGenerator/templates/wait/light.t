@@ -1,3 +1,3 @@
-пока (!(аналогдатчик(@@PORT@@) @@SIGN@@ @@PERCENTS@@)) {
-	спать(1);
+﻿while (!(getansensor(@@PORT@@) @@SIGN@@ @@PERCENTS@@)) {
+	sleep(1);
 }

@@ -1,5 +1,5 @@
-если (@@CONDITION@@) {
+﻿if (@@CONDITION@@) {
 @@THEN_BODY@@
-} иначе {
+} else {
 @@ELSE_BODY@@
 }

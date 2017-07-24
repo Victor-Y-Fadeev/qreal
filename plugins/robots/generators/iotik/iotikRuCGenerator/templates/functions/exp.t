@@ -1,1 +1,1 @@
-эксп(@@ARGUMENT@@)
+﻿exp(@@ARGUMENT@@)

@@ -1,1 +1,1 @@
-квкор(@@ARGUMENT@@)
+﻿sqrt(@@ARGUMENT@@)

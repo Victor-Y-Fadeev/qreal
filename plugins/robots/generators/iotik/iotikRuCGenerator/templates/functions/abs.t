@@ -1,1 +1,1 @@
-абс(@@ARGUMENT@@)
+﻿abs(@@ARGUMENT@@)

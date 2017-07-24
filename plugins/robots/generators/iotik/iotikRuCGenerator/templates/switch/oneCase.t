@@ -1,1 +1,1 @@
-случай @@VALUE@@:
+﻿case @@VALUE@@:

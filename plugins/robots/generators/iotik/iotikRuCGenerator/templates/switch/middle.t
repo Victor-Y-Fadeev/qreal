@@ -1,3 +1,3 @@
-@@CONDITION@@
+﻿@@CONDITION@@
 @@BODY@@
-	выход;
+	break;

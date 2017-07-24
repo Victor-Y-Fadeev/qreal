@@ -1,1 +1,1 @@
-цифрдатчик(@@PORT@@)
+﻿getdigsensor(@@PORT@@)

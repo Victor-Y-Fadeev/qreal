@@ -1,1 +1,1 @@
-син(@@ARGUMENT@@)
+﻿sin(@@ARGUMENT@@)

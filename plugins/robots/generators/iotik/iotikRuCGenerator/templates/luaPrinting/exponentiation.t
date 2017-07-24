@@ -1,1 +1,1 @@
-эксп(лог(@@LEFT@@) * @@RIGHT@@)
+﻿exp(log(@@LEFT@@) * @@RIGHT@@)

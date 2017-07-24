@@ -1,1 +1,1 @@
-аналогдатчик(@@PORT@@)
+﻿getansensor(@@PORT@@)

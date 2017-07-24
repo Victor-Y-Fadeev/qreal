@@ -1,3 +1,3 @@
-пока (!(аналогдатчик(@@PORT@@) @@SIGN@@ @@DISTANCE@@)) {
-	спать(1);
+﻿while (!(getansensor(@@PORT@@) @@SIGN@@ @@DISTANCE@@)) {
+	sleep(1);
 }
