@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
 <TS version="2.1" language="ru_RU">
 <context>
@@ -16,6 +16,15 @@
         <translation type="vanished">ЙоТик v1.0</translation>
     </message>
 </context>
+<context>
+    <name>iotik::robotModel::real::RealRobotModel</name>
+    <message>
+        <location filename="../../../../plugins/robots/interpreters/iotikKitInterpreter/src/robotModel/real/realRobotModel.cpp" line="35"/>
+        <source>Interpretation</source>
+        <translation>Интерпретация</translation>
+    </message>
+</context>
+
 <context>
     <name>iotikKitInterpreter::robotModel::real::RealRobotModel</name>
     <message>
