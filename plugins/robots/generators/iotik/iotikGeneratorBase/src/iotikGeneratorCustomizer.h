@@ -27,7 +27,7 @@ public:
 			, qReal::ErrorReporterInterface &errorReporter
 			, const kitBase::robotModel::RobotModelManagerInterface &robotModelManager
 			, generatorBase::lua::LuaProcessor &luaProcessor
-			, const QStringList &pathsToTemplates);
+			, const QString &generatorName);
 
 	generatorBase::GeneratorFactoryBase *factory() override;
 

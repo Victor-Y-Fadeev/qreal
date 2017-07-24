@@ -14,11 +14,9 @@
 
 #pragma once
 
-#include <QtCore/QScopedPointer>
-
 #include <generatorBase/robotsGeneratorPluginBase.h>
 
-#include "iotikGeneratorBase/iotikGeneratorBaseDeclSpec.h"
+#include "iotikGeneratorBaseDeclSpec.h"
 
 namespace iotik {
 
@@ -30,26 +28,22 @@ namespace blocks {
 class IotikBlocksFactory;
 }
 
-/// A base class for every generator from the TRIK kit.
+/// A base class for every generator from the IoTik kit.
 class ROBOTS_IOTIK_GENERATOR_BASE_EXPORT IotikGeneratorPluginBase : public generatorBase::RobotsGeneratorPluginBase
 {
 	Q_OBJECT
 
 public:
-	IotikGeneratorPluginBase(kitBase::robotModel::RobotModelInterface * const robotModel
-			, kitBase::blocksBase::BlocksFactoryInterface * const blocksFactory
-			);
-
+	IotikGeneratorPluginBase(const QString &robotName, const QString &robotFriendlyName, int priority);
 	~IotikGeneratorPluginBase() override;
 
-	QList<kitBase::robotModel::RobotModelInterface *> robotModels() override;
+	QString kitId() const override;
 
+	QList<kitBase::robotModel::RobotModelInterface *> robotModels() override;
 	kitBase::blocksBase::BlocksFactoryInterface *blocksFactoryFor(
 			const kitBase::robotModel::RobotModelInterface *model) override;
 
 	QList<kitBase::AdditionalPreferences *> settingsWidgets() override;
-
-	QString kitId() const override;
 
 protected:
 	void regenerateExtraFiles(const QFileInfo &newFileInfo) override;

@@ -20,7 +20,8 @@ QT += widgets
 
 TEMPLATE = lib
 
-includes(plugins/robots/generators/generatorBase \
+includes(plugins/robots/generators/iotik/iotikGeneratorBase \
+		plugins/robots/generators/generatorBase \
 		plugins/robots/common/kitBase \
 		plugins/robots/common/iotikKit \
 		plugins/robots/utils \
@@ -28,7 +29,7 @@ includes(plugins/robots/generators/generatorBase \
 		thirdparty/qscintilla/Qt4Qt5 \
 )
 
-links(qrkernel qslog qrutils qrrepo robots-generator-base robots-kit-base robots-iotik-kit)
+links(qrkernel qslog qrutils qrrepo robots-generator-base robots-iotik-kit robots-kit-base)
 
 DEFINES += ROBOTS_IOTIK_GENERATOR_BASE_LIBRARY
 

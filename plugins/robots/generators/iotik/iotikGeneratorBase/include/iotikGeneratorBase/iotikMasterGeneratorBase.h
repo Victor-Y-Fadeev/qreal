@@ -16,7 +16,7 @@
 
 #include <generatorBase/masterGeneratorBase.h>
 
-#include "iotikGeneratorBase/iotikGeneratorBaseDeclSpec.h"
+#include "iotikGeneratorBaseDeclSpec.h"
 
 namespace iotik {
 
@@ -30,13 +30,13 @@ public:
 			, const kitBase::robotModel::RobotModelManagerInterface &robotModelManager
 			, qrtext::LanguageToolboxInterface &textLanguage
 			, const qReal::Id &diagramId
-			, const QStringList &pathsToTemplates);
+			, const QString &generatorName);
 
 protected:
 	generatorBase::GeneratorCustomizer *createCustomizer() override;
 
 private:
-	const QStringList mPathsToTemplates;
+	const QString mGeneratorName;
 };
 
 }

@@ -17,23 +17,23 @@
 using namespace iotik::ruc;
 
 IotikRuCMasterGenerator::IotikRuCMasterGenerator(const qrRepo::RepoApi &repo
-        , qReal::ErrorReporterInterface &errorReporter
+		, qReal::ErrorReporterInterface &errorReporter
 		, const utils::ParserErrorReporter &parserErrorReporter
 		, const kitBase::robotModel::RobotModelManagerInterface &robotModelManager
-        , qrtext::LanguageToolboxInterface &textLanguage
+		, qrtext::LanguageToolboxInterface &textLanguage
 		, const qReal::Id &diagramId
-		, const QStringList &pathsToTemplates)
-	: IotikMasterGeneratorBase(repo, errorReporter, parserErrorReporter, robotModelManager, textLanguage
-							   , diagramId, pathsToTemplates)
+		, const QString &generatorName)
+	: IotikMasterGeneratorBase(repo, errorReporter, parserErrorReporter
+			, robotModelManager, textLanguage, diagramId, generatorName)
 {
 }
 
 QString IotikRuCMasterGenerator::targetPath()
 {
-    return QString("%1/%2.c").arg(mProjectDir, mProjectName);
+	return QString("%1/%2.c").arg(mProjectDir, mProjectName);
 }
 
 bool IotikRuCMasterGenerator::supportsGotoGeneration() const
 {
-    return false;
+	return false;
 }

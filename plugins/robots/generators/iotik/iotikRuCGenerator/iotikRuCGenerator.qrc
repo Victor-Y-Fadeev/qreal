@@ -1,8 +1,6 @@
 <RCC>
-    <qresource prefix="/">
-        <file>images/generateQtsCode.svg</file>
-        <file>images/stopRobot.svg</file>
-        <file>images/uploadAndExecuteProgram.svg</file>
-        <file>images/uploadProgram.svg</file>
+    <qresource prefix="/iotik/ruc">
+        <file>images/generateRuCCode.svg</file>
+        <file>images/switch-to-iotik-ruc.svg</file>
     </qresource>
 </RCC>

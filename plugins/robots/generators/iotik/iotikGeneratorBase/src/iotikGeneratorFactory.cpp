@@ -14,9 +14,7 @@
 
 #include "iotikGeneratorFactory.h"
 
-#include <generatorBase/converters/regexpMultiConverter.h>
 #include <generatorBase/simpleGenerators/waitForButtonGenerator.h>
-#include <generatorBase/lua/luaProcessor.h>
 
 #include "simpleGenerators/detectorToVariableGenerator.h"
 #include "simpleGenerators/waitForMessageGenerator.h"
@@ -29,16 +27,15 @@
 
 using namespace iotik;
 using namespace iotik::simple;
-using namespace generatorBase;
 using namespace generatorBase::simple;
 
 IotikGeneratorFactory::IotikGeneratorFactory(const qrRepo::RepoApi &repo
 		, qReal::ErrorReporterInterface &errorReporter
 		, const kitBase::robotModel::RobotModelManagerInterface &robotModelManager
-		, lua::LuaProcessor &luaProcessor
-		, const QStringList &pathsToTemplates)
+		, generatorBase::lua::LuaProcessor &luaProcessor
+		, const QString &generatorName)
 	: GeneratorFactoryBase(repo, errorReporter, robotModelManager, luaProcessor)
-	, mPathsToTemplates(pathsToTemplates)
+	, mGeneratorName(generatorName)
 {
 }
 
@@ -46,8 +43,8 @@ IotikGeneratorFactory::~IotikGeneratorFactory()
 {
 }
 
-AbstractSimpleGenerator *IotikGeneratorFactory::simpleGenerator(const qReal::Id &id
-		, GeneratorCustomizer &customizer)
+generatorBase::simple::AbstractSimpleGenerator *IotikGeneratorFactory::simpleGenerator(const qReal::Id &id
+		, generatorBase::GeneratorCustomizer &customizer)
 {
 	QString const elementType = id.element();
 	if (elementType.contains("EnginesForward")
@@ -74,7 +71,7 @@ AbstractSimpleGenerator *IotikGeneratorFactory::simpleGenerator(const qReal::Id 
 
 QStringList IotikGeneratorFactory::pathsToTemplates() const
 {
-	return mPathsToTemplates; //{":/" + mGeneratorName + "/templates"};
+	return {":/" + mGeneratorName + "/templates"};
 }
 
 generatorBase::parts::DeviceVariables *IotikGeneratorFactory::deviceVariables() const

@@ -24,16 +24,16 @@ class IotikRuCMasterGenerator : public IotikMasterGeneratorBase
 {
 public:
 	IotikRuCMasterGenerator(const qrRepo::RepoApi &repo
-            , qReal::ErrorReporterInterface &errorReporter
+			, qReal::ErrorReporterInterface &errorReporter
 			, const utils::ParserErrorReporter &parserErrorReporter
 			, const kitBase::robotModel::RobotModelManagerInterface &robotModelManager
-            , qrtext::LanguageToolboxInterface &textLanguage
+			, qrtext::LanguageToolboxInterface &textLanguage
 			, const qReal::Id &diagramId
-			, const QStringList &pathsToTemplates);
+			, const QString &generatorName);
 
 protected:
-    QString targetPath() override;
-    bool supportsGotoGeneration() const override;
+	QString targetPath() override;
+	bool supportsGotoGeneration() const override;
 };
 
 }

@@ -14,17 +14,27 @@
 
 #include "iotikGeneratorBase/iotikGeneratorPluginBase.h"
 
+#include <iotikKit/blocks/iotikBlocksFactory.h>
+
+#include "src/robotModel/iotikGeneratorRobotModel.h"
+
 using namespace iotik;
 
-IotikGeneratorPluginBase::IotikGeneratorPluginBase(kitBase::robotModel::RobotModelInterface * const robotModel
-		, kitBase::blocksBase::BlocksFactoryInterface * const blocksFactory)
-	: mRobotModel(robotModel)
-	, mBlocksFactory(blocksFactory)
+IotikGeneratorPluginBase::IotikGeneratorPluginBase(const QString &robotName, const QString &robotFriendlyName
+	   , int priority)
+	: mRobotModel(new robotModel::IotikGeneratorRobotModel(kitId()
+		   , "iotikGeneratorRobot", robotName, robotFriendlyName, priority))
+	, mBlocksFactory(new blocks::IotikBlocksFactory)
 {
 }
 
 IotikGeneratorPluginBase::~IotikGeneratorPluginBase()
 {
+}
+
+QString IotikGeneratorPluginBase::kitId() const
+{
+	return "iotikKit";
 }
 
 QList<kitBase::robotModel::RobotModelInterface *> IotikGeneratorPluginBase::robotModels()
@@ -42,11 +52,6 @@ kitBase::blocksBase::BlocksFactoryInterface *IotikGeneratorPluginBase::blocksFac
 QList<kitBase::AdditionalPreferences *> IotikGeneratorPluginBase::settingsWidgets()
 {
 	return {};
-}
-
-QString IotikGeneratorPluginBase::kitId() const
-{
-	return "iotikKit";
 }
 
 void IotikGeneratorPluginBase::regenerateExtraFiles(const QFileInfo &newFileInfo)
