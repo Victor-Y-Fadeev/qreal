@@ -22,7 +22,6 @@ using namespace kitBase::robotModel;
 RealRobotModel::RealRobotModel(const QString &kitId, const QString &robotId)
 	: IotikRobotModelBase(kitId, robotId)
 {
-
 }
 
 QString RealRobotModel::name() const

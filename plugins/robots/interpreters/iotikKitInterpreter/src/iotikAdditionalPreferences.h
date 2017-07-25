@@ -1,4 +1,4 @@
-/* Copyright 2007-2015 QReal Research Group
+/* Copyright 2017 QReal Research Group
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ class IotikAdditionalPreferences;
 }
 
 namespace iotik {
+
 class IotikAdditionalPreferences : public kitBase::AdditionalPreferences
 {
 	Q_OBJECT
@@ -39,10 +40,11 @@ signals:
 private slots:
 	void manualComPortCheckboxChecked(bool state);
 
-
 private:
 	QString selectedPortName() const;
+
 	Ui::IotikAdditionalPreferences *mUi;
+	const QString mRealRobotName;
 };
 
 }

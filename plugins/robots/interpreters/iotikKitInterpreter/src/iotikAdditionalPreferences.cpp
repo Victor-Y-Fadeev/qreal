@@ -1,4 +1,4 @@
-/* Copyright 2007-2015 QReal Research Group
+/* Copyright 2017 QReal Research Group
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,12 +19,12 @@
 #include <utils/widgets/comPortPicker.h>
 
 using namespace iotik;
-
 using namespace qReal;
 
 IotikAdditionalPreferences::IotikAdditionalPreferences(const QString &realRobotName, QWidget *parent)
 	: AdditionalPreferences(parent)
 	, mUi(new Ui::IotikAdditionalPreferences)
+	, mRealRobotName(realRobotName)
 {
 	mUi->setupUi(this);
 	mUi->robotImagePicker->configure("iotikRobot2DImage", tr("2D robot image:"));
@@ -39,13 +39,15 @@ IotikAdditionalPreferences::~IotikAdditionalPreferences()
 
 void IotikAdditionalPreferences::save()
 {
-	SettingsManager::setValue("NxtManualComPortCheckboxChecked", mUi->manualComPortCheckbox->isChecked());
+	SettingsManager::setValue("IotikUsbPortName", selectedPortName());
+	SettingsManager::setValue("IotikManualComPortCheckboxChecked", mUi->manualComPortCheckbox->isChecked());
 	mUi->robotImagePicker->save();
 	emit settingsChanged();
 }
 
 void IotikAdditionalPreferences::restoreSettings()
 {
+	ui::ComPortPicker::populate(*mUi->comPortComboBox, "IotikUsbPortName");
 	mUi->robotImagePicker->restore();
 
 	if (mUi->comPortComboBox->count() == 0) {
@@ -55,6 +57,7 @@ void IotikAdditionalPreferences::restoreSettings()
 		mUi->noComPortsFoundLabel->show();
 		mUi->directInputComPortLabel->show();
 		mUi->directInputComPortLineEdit->show();
+		mUi->directInputComPortLineEdit->setText(SettingsManager::value("IotikUsbPortName").toString());
 	} else {
 		mUi->comPortComboBox->show();
 		mUi->comPortLabel->show();
@@ -67,8 +70,15 @@ void IotikAdditionalPreferences::restoreSettings()
 	}
 }
 
+void IotikAdditionalPreferences::onRobotModelChanged(kitBase::robotModel::RobotModelInterface * const robotModel)
+{
+	mUi->usbSettingsGroupBox->setVisible(robotModel->name() == mRealRobotName);
+}
+
 void IotikAdditionalPreferences::manualComPortCheckboxChecked(bool state)
 {
+	const QString defaultPortName = SettingsManager::value("IotikUsbPortName").toString();
+
 	if (state) {
 		mUi->comPortComboBox->hide();
 		mUi->comPortLabel->hide();
@@ -90,8 +100,3 @@ QString IotikAdditionalPreferences::selectedPortName() const
 			? mUi->comPortComboBox->currentText()
 			: mUi->directInputComPortLineEdit->text();
 }
-
-
-
-
-
