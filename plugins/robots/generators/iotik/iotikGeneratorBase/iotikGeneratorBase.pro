@@ -50,8 +50,6 @@ HEADERS += \
 	$$PWD/src/simpleGenerators/iotikEnginesGenerator.h \
 	$$PWD/src/simpleGenerators/waitForInfraredSensorGenerator.h \
 	$$PWD/src/simpleGenerators/waitForMotionGenerator.h \
-	#$$PWD/src/simpleGenerators/sendMessageGenerator.h \
-	#$$PWD/src/simpleGenerators/waitForMessageGenerator.h \
 
 SOURCES += \
 	$$PWD/src/iotikGeneratorPluginBase.cpp \
@@ -65,5 +63,3 @@ SOURCES += \
 	$$PWD/src/simpleGenerators/iotikEnginesGenerator.cpp \
 	$$PWD/src/simpleGenerators/waitForInfraredSensorGenerator.cpp \
 	$$PWD/src/simpleGenerators/waitForMotionGenerator.cpp \
-	#$$PWD/src/simpleGenerators/sendMessageGenerator.cpp \
-	#$$PWD/src/simpleGenerators/waitForMessageGenerator.cpp \

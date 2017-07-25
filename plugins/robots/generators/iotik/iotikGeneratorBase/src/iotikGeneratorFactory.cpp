@@ -17,8 +17,6 @@
 #include <generatorBase/simpleGenerators/waitForButtonGenerator.h>
 
 #include "simpleGenerators/detectorToVariableGenerator.h"
-#include "simpleGenerators/waitForMessageGenerator.h"
-#include "simpleGenerators/sendMessageGenerator.h"
 #include "simpleGenerators/systemGenerator.h"
 #include "simpleGenerators/iotikEnginesGenerator.h"
 #include "simpleGenerators/waitForInfraredSensorGenerator.h"
