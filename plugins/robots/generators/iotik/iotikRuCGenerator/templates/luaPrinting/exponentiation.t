@@ -1,0 +1,1 @@
+﻿exp(log(@@LEFT@@) * @@RIGHT@@)

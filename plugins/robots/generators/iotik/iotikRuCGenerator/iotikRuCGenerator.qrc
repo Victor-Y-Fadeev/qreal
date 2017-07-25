@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/iotik/ruc">
+        <file>images/generateRuCCode.svg</file>
+        <file>images/switch-to-iotik-ruc.svg</file>
+    </qresource>
+</RCC>

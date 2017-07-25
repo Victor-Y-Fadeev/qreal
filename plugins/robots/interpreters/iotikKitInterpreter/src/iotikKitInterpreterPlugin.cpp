@@ -112,5 +112,5 @@ QIcon IotikKitInterpreterPlugin::iconForFastSelector(
 		const kitBase::robotModel::RobotModelInterface &robotModel) const
 {
 	Q_UNUSED(robotModel);
-	return QIcon();
+	return QIcon(":/icons/switch-real-iotik.svg");
 }
