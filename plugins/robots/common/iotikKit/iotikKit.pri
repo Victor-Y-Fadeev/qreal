@@ -31,21 +31,17 @@ HEADERS += \
 	$$PWD/include/iotikKit/robotModel/parts/iotikMotor.h \
 	$$PWD/include/iotikKit/robotModel/parts/iotikInfraredSensor.h \
 	$$PWD/include/iotikKit/robotModel/parts/iotikSonarSensor.h \
-	$$PWD/include/iotikKit/robotModel/parts/iotikLineSensor.h \
 	$$PWD/src/blocks/details/iotikEnginesBackwardBlock.h \
 	$$PWD/src/blocks/details/iotikEnginesForwardBlock.h \
-	$$PWD/src/blocks/details/lineDetectorToVariable.h \
 
 SOURCES += \
 	$$PWD/src/robotModel/iotikRobotModelBase.cpp \
 	$$PWD/src/robotModel/parts/iotikMotor.cpp \
 	$$PWD/src/robotModel/parts/iotikInfraredSensor.cpp \
 	$$PWD/src/robotModel/parts/iotikSonarSensor.cpp \
-	$$PWD/src/robotModel/parts/iotikLineSensor.cpp \
 	$$PWD/src/blocks/iotikBlocksFactory.cpp \
 	$$PWD/src/blocks/details/iotikEnginesBackwardBlock.cpp \
 	$$PWD/src/blocks/details/iotikEnginesForwardBlock.cpp \
-	$$PWD/src/blocks/details/lineDetectorToVariable.cpp \
 
 
 TRANSLATIONS = \
