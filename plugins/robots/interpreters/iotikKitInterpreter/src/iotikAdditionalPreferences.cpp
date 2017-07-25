@@ -39,7 +39,7 @@ IotikAdditionalPreferences::~IotikAdditionalPreferences()
 
 void IotikAdditionalPreferences::save()
 {
-	SettingsManager::setValue("IotikUsbPortName", selectedPortName());
+	SettingsManager::setValue("IotikPortName", selectedPortName());
 	SettingsManager::setValue("IotikManualComPortCheckboxChecked", mUi->manualComPortCheckbox->isChecked());
 	mUi->robotImagePicker->save();
 	emit settingsChanged();
@@ -47,7 +47,7 @@ void IotikAdditionalPreferences::save()
 
 void IotikAdditionalPreferences::restoreSettings()
 {
-	ui::ComPortPicker::populate(*mUi->comPortComboBox, "IotikUsbPortName");
+	ui::ComPortPicker::populate(*mUi->comPortComboBox, "IotikPortName");
 	mUi->robotImagePicker->restore();
 
 	if (mUi->comPortComboBox->count() == 0) {
@@ -57,7 +57,7 @@ void IotikAdditionalPreferences::restoreSettings()
 		mUi->noComPortsFoundLabel->show();
 		mUi->directInputComPortLabel->show();
 		mUi->directInputComPortLineEdit->show();
-		mUi->directInputComPortLineEdit->setText(SettingsManager::value("IotikUsbPortName").toString());
+		mUi->directInputComPortLineEdit->setText(SettingsManager::value("IotikPortName").toString());
 	} else {
 		mUi->comPortComboBox->show();
 		mUi->comPortLabel->show();
@@ -77,7 +77,7 @@ void IotikAdditionalPreferences::onRobotModelChanged(kitBase::robotModel::RobotM
 
 void IotikAdditionalPreferences::manualComPortCheckboxChecked(bool state)
 {
-	const QString defaultPortName = SettingsManager::value("IotikUsbPortName").toString();
+	const QString defaultPortName = SettingsManager::value("IotikPortName").toString();
 
 	if (state) {
 		mUi->comPortComboBox->hide();
