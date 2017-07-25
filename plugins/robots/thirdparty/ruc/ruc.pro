@@ -1,4 +1,4 @@
-# Copyright 2015 QReal Research Group
+# Copyright 2016 QReal Research Group
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,10 +12,27 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-TEMPLATE = subdirs
+TARGET = ruc
 
-SUBDIRS += \
-	qextserialport \
-	libusb-1.0.19 \
-	trikRuntime \
-	ruc \
+include(../../../../global.pri)
+
+TEMPLATE = lib
+#CONFIG += plugin
+
+
+HEADERS += \
+	$$PWD/include/ruc.h \
+	$$PWD/src/Defs.h \
+	$$PWD/src/global_vars.h \
+
+SOURCES += \
+	$$PWD/src/codegen.c \
+	$$PWD/src/codes.c \
+	$$PWD/src/error.c \
+	$$PWD/src/extdecl.c \
+	$$PWD/src/import.c \
+	$$PWD/src/ruc.c \
+	$$PWD/src/scaner.c \
+
+RESOURCES += \
+	$$PWD/keywords.txt \
