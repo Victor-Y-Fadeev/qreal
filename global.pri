@@ -1,4 +1,4 @@
-# Copyright 2016 Iakov Kirilenko, 2007-2017 QReal Research Group
+# 2017 QReal Research Group
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
