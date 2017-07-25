@@ -21,5 +21,28 @@ class IotikAdditionalPreferences;
 }
 
 namespace iotik {
+class IotikAdditionalPreferences : public kitBase::AdditionalPreferences
+{
+	Q_OBJECT
+
+public:
+	explicit IotikAdditionalPreferences(const QString &realRobotName, QWidget *parent = 0);
+	~IotikAdditionalPreferences();
+
+	void save() override;
+	void restoreSettings() override;
+	void onRobotModelChanged(kitBase::robotModel::RobotModelInterface * const robotModel) override;
+
+signals:
+	void settingsChanged();
+
+private slots:
+	void manualComPortCheckboxChecked(bool state);
+
+
+private:
+	QString selectedPortName() const;
+	Ui::IotikAdditionalPreferences *mUi;
+};
 
 }

@@ -17,3 +17,81 @@
 
 #include <qrkernel/settingsManager.h>
 #include <utils/widgets/comPortPicker.h>
+
+using namespace iotik;
+
+using namespace qReal;
+
+IotikAdditionalPreferences::IotikAdditionalPreferences(const QString &realRobotName, QWidget *parent)
+	: AdditionalPreferences(parent)
+	, mUi(new Ui::IotikAdditionalPreferences)
+{
+	mUi->setupUi(this);
+	mUi->robotImagePicker->configure("iotikRobot2DImage", tr("2D robot image:"));
+	connect(mUi->manualComPortCheckbox, &QCheckBox::toggled
+			, this, &IotikAdditionalPreferences::manualComPortCheckboxChecked);
+}
+
+IotikAdditionalPreferences::~IotikAdditionalPreferences()
+{
+	delete mUi;
+}
+
+void IotikAdditionalPreferences::save()
+{
+	SettingsManager::setValue("NxtManualComPortCheckboxChecked", mUi->manualComPortCheckbox->isChecked());
+	mUi->robotImagePicker->save();
+	emit settingsChanged();
+}
+
+void IotikAdditionalPreferences::restoreSettings()
+{
+	mUi->robotImagePicker->restore();
+
+	if (mUi->comPortComboBox->count() == 0) {
+		mUi->comPortComboBox->hide();
+		mUi->comPortLabel->hide();
+		mUi->manualComPortCheckbox->hide();
+		mUi->noComPortsFoundLabel->show();
+		mUi->directInputComPortLabel->show();
+		mUi->directInputComPortLineEdit->show();
+	} else {
+		mUi->comPortComboBox->show();
+		mUi->comPortLabel->show();
+		mUi->manualComPortCheckbox->show();
+		mUi->directInputComPortLabel->hide();
+		mUi->directInputComPortLineEdit->hide();
+		mUi->noComPortsFoundLabel->hide();
+		mUi->manualComPortCheckbox->setChecked(false);
+		mUi->manualComPortCheckbox->setChecked(SettingsManager::value("IotikManualComPortCheckboxChecked").toBool());
+	}
+}
+
+void IotikAdditionalPreferences::manualComPortCheckboxChecked(bool state)
+{
+	if (state) {
+		mUi->comPortComboBox->hide();
+		mUi->comPortLabel->hide();
+		mUi->directInputComPortLabel->show();
+		mUi->directInputComPortLineEdit->show();
+		mUi->directInputComPortLineEdit->setText(defaultPortName);
+	} else {
+		mUi->comPortComboBox->show();
+		mUi->comPortLabel->show();
+		mUi->directInputComPortLabel->hide();
+		mUi->directInputComPortLineEdit->hide();
+		mUi->noComPortsFoundLabel->hide();
+	}
+}
+
+QString IotikAdditionalPreferences::selectedPortName() const
+{
+	return mUi->comPortComboBox->isVisible()
+			? mUi->comPortComboBox->currentText()
+			: mUi->directInputComPortLineEdit->text();
+}
+
+
+
+
+
