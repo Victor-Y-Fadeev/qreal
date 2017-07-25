@@ -1,3 +1,3 @@
 ﻿while (!(getdigsensor(@@PORT@@) @@SIGN@@ @@DISTANCE@@)) {
-	sleep(1);
+	//sleep(1);
 }
