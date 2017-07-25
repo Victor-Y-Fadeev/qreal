@@ -52,7 +52,7 @@ public:
 	QIcon iconForFastSelector(const kitBase::robotModel::RobotModelInterface &robotModel) const override;
 
 private:
-	QWidget *produceUsbPortConfigurer();  // Transfers ownership
+	QWidget *producePortConfigurer();  // Transfers ownership
 
 	robotModel::real::RealRobotModel mRealRobotModel;
 

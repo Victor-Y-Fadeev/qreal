@@ -99,7 +99,7 @@ QList<kitBase::AdditionalPreferences *> IotikKitInterpreterPlugin::settingsWidge
 QWidget *IotikKitInterpreterPlugin::quickPreferencesFor(const kitBase::robotModel::RobotModelInterface &model)
 {
 	//Q_UNUSED(model);
-	return produceUsbPortConfigurer(); //nullptr;
+	return producePortConfigurer(); //nullptr;
 }
 
 QList<qReal::ActionInfo> IotikKitInterpreterPlugin::customActions()
@@ -124,9 +124,9 @@ QIcon IotikKitInterpreterPlugin::iconForFastSelector(
 	return QIcon(":/icons/switch-real-iotik.svg");
 }
 
-QWidget *IotikKitInterpreterPlugin::produceUsbPortConfigurer()
+QWidget *IotikKitInterpreterPlugin::producePortConfigurer()
 {
-	QWidget * const result = new ui::ComPortPicker("IotikUsbPortName", this);
+	QWidget * const result = new ui::ComPortPicker("IotikPortName", this);
 	connect(this, &QObject::destroyed, [result]() { delete result; });
 	return result;
 }
