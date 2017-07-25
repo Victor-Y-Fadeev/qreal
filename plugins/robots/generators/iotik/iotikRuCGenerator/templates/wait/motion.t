@@ -1,3 +1,3 @@
-﻿while (getdigsensor(3)= == 0) {
+﻿while (getansensor(@@PORT@@) == 0) {
 	sleep(1);
 }

@@ -68,17 +68,9 @@
         <file>templates/luaPrinting/tableConstructor.t</file>
         <file>templates/luaPrinting/true.t</file>
         <file>templates/luaPrinting/unaryMinus.t</file>
-        <file>templates/sensors/Down.t</file>
-        <file>templates/sensors/encoder.t</file>
-        <file>templates/sensors/Enter.t</file>
         <file>templates/sensors/infrared.t</file>
-        <file>templates/sensors/Left.t</file>
-        <file>templates/sensors/light.t</file>
         <file>templates/sensors/motion.t</file>
-        <file>templates/sensors/Power.t</file>
-        <file>templates/sensors/Right.t</file>
         <file>templates/sensors/sonar.t</file>
-        <file>templates/sensors/Up.t</file>
         <file>templates/signs/equals.t</file>
         <file>templates/signs/greater.t</file>
         <file>templates/signs/less.t</file>
@@ -107,22 +99,19 @@
         <file>templates/types/string.t</file>
         <file>templates/variables/constantDeclaration.t</file>
         <file>templates/variables/variableDeclaration.t</file>
-        <file>templates/wait/encoder.t</file>
         <file>templates/wait/infrared.t</file>
-        <file>templates/wait/light.t</file>
         <file>templates/wait/motion.t</file>
         <file>templates/wait/sonar.t</file>
         <file>templates/wait/timer.t</file>
-        <file>templates/beep.t</file>
         <file>templates/break.t</file>
+        <file>templates/comment.t</file>
         <file>templates/continue.t</file>
         <file>templates/finalNodeMain.t</file>
         <file>templates/finalNodeSubprogram.t</file>
         <file>templates/function.t</file>
         <file>templates/initialNode.t</file>
-        <file>templates/led.t</file>
         <file>templates/main.t</file>
         <file>templates/nativeCode.t</file>
-        <file>templates/say.t</file>
+        <file>templates/system.t</file>
     </qresource>
 </RCC>

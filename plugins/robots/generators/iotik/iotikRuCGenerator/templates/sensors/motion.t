@@ -1,1 +1,1 @@
-﻿getdigsensor(3)
+﻿getansensor(@@PORT@@)
