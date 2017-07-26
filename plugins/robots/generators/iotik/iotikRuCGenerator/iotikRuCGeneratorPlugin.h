@@ -16,6 +16,10 @@
 
 #include <iotikGeneratorBase/iotikGeneratorPluginBase.h>
 
+#include "../iotikGeneratorBase/src/robotModel/iotikGeneratorRobotModel.h"
+
+#include <iotikRuCAdditionalPreferences.h>
+
 namespace iotik {
 namespace ruc {
 
@@ -42,6 +46,8 @@ protected:
 private:
 	/// Action that launches code generator
 	QAction *mGenerateCodeAction;  // Doesn't have ownership; may be disposed by GUI.
+	robotModel::real::RealRobotModel mRealRobotModel;
+	IotikAdditionalPreferences *mAdditionalPreferences = nullptr;
 };
 
 }

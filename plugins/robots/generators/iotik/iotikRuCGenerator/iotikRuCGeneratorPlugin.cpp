@@ -19,12 +19,20 @@
 
 #include "iotikRuCMasterGenerator.h"
 
+//#include "iotikKitInterpreterPlugin.h"
+
 using namespace iotik::ruc;
 
 IotikRuCGeneratorPlugin::IotikRuCGeneratorPlugin()
 	: IotikGeneratorPluginBase("IotikRuCGeneratorRobotModel", tr("Generation (RuC)"), 7 /* Last order */)
+	, mRealRobotModel(kitId(), "iotikKitRobot")
 	, mGenerateCodeAction(new QAction(nullptr))
 {
+	mAdditionalPreferences = new IotikAdditionalPreferences(mRealRobotModel.name());
+
+	connect(mAdditionalPreferences, &IotikAdditionalPreferences::settingsChanged
+			, &mRealRobotModel, &robotModel::real::RealRobotModel::rereadSettings);
+
 	mGenerateCodeAction->setText(tr("Generate to RuC"));
 	mGenerateCodeAction->setIcon(QIcon(":/iotik/ruc/images/generateRuCCode.svg"));
 	mGenerateCodeAction->setShortcut(QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_G));
