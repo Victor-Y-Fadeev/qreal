@@ -48,16 +48,19 @@ private slots:
 	/// by runCommand. Program is stored on robot as a file next to scriptRunner and named
 	/// as <qReal save name>.c.
 	void uploadProgram();
+	QWidget *producePortConfigurer();  // Transfers ownership
 
 private:
 	/// Action that launches code generator
 	QAction *mGenerateCodeAction;  // Doesn't have ownership; may be disposed by GUI.
 
-	robotModel::real::RealRobotModel mRealRobotModel;
+
 	IotikAdditionalPreferences *mAdditionalPreferences = nullptr;
 
 	/// Action that generates and uploads program on a robot
 	QAction *mUploadProgramAction;  // Doesn't have ownership; may be disposed by GUI.
+
+	robotModel::real::RealRobotModel mRealRobotModel;
 
 };
 

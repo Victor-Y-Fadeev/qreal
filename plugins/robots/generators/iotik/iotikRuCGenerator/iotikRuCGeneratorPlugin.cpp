@@ -19,7 +19,14 @@
 
 #include "iotikRuCMasterGenerator.h"
 
+#include <utils/widgets/comPortPicker.h>
+
 using namespace iotik::ruc;
+
+using namespace qReal;
+
+const Id robotDiagramType = Id("RobotsMetamodel", "RobotsDiagram", "RobotsDiagramNode");
+const Id subprogramDiagramType = Id("RobotsMetamodel", "RobotsDiagram", "SubprogramDiagram");
 
 IotikRuCGeneratorPlugin::IotikRuCGeneratorPlugin()
 	: IotikGeneratorPluginBase("IotikRuCGeneratorRobotModel", tr("Generation (RuC)"), 7 /* Last order */)
@@ -97,4 +104,11 @@ QString IotikRuCGeneratorPlugin::generatorName() const
 void IotikRuCGeneratorPlugin::uploadProgram()
 {
 	mMainWindowInterface->errorReporter()->addError(tr("Code uploading failed, aborting"));
+}
+
+QWidget *IotikRuCGeneratorPlugin::producePortConfigurer()
+{
+	QWidget * const result = new ui::ComPortPicker("IotikPortName", this);
+	connect(this, &QObject::destroyed, [result]() { delete result; });
+	return result;
 }
