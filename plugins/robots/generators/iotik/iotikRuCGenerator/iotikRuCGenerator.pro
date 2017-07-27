@@ -39,6 +39,7 @@ TRANSLATIONS = \
 HEADERS += \
 	$$PWD/iotikRuCGeneratorPlugin.h \
 	$$PWD/iotikRuCMasterGenerator.h \
+	$$PWD/iotikRuCCompiler.h \
 
 SOURCES += \
 	$$PWD/iotikRuCGeneratorPlugin.cpp \

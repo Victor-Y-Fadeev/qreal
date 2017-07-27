@@ -65,7 +65,7 @@ int main(int argc, const char * argv[])
         exit(1);
     }
 
-    output = fopen("tree", "wt");
+    output = fopen("tree.txt", "wt");
 
     getnext();
     nextch();
@@ -100,7 +100,7 @@ int main(int argc, const char * argv[])
     lines[line+1] = charnum;
     tablesandtree();
     fclose(output);
-    output = fopen("codes", "wt");
+    output = fopen("codes.txt", "wt");
     
     codegen();
     
@@ -109,7 +109,7 @@ int main(int argc, const char * argv[])
     fclose(input);
     fclose(output);
     
-    output = fopen("export", "wt");
+    output = fopen("export.txt", "wt");
     fprintf(output, "%i %i %i %i %i %i %i\n", pc, funcnum, id, rp, md, maxdisplg, wasmain);
     
     for (i=0; i<pc; i++)
