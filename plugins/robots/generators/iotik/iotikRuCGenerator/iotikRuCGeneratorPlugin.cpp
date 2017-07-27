@@ -19,8 +19,6 @@
 
 #include "iotikRuCMasterGenerator.h"
 
-//#include "iotikKitInterpreterPlugin.h"
-
 using namespace iotik::ruc;
 
 IotikRuCGeneratorPlugin::IotikRuCGeneratorPlugin()
