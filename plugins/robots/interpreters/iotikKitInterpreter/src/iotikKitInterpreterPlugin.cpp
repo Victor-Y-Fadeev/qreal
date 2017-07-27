@@ -29,10 +29,18 @@ IotikKitInterpreterPlugin::IotikKitInterpreterPlugin()
 	, mBlocksFactory(new blocks::IotikBlocksFactory)
 {
 
+	mAdditionalPreferences = new IotikAdditionalPreferences(mRealRobotModel.name());
+
+	connect(mAdditionalPreferences, &IotikAdditionalPreferences::settingsChanged
+			, &mRealRobotModel, &robotModel::real::RealRobotModel::rereadSettings);
 }
 
 IotikKitInterpreterPlugin::~IotikKitInterpreterPlugin()
 {
+	if (mOwnsAdditionalPreferences) {
+		delete mAdditionalPreferences;
+	}
+
 	if (mOwnsBlocksFactory) {
 		delete mBlocksFactory;
 	}
@@ -82,15 +90,16 @@ kitBase::robotModel::RobotModelInterface *IotikKitInterpreterPlugin::defaultRobo
 	return &mRealRobotModel;
 }
 
-QWidget *IotikKitInterpreterPlugin::quickPreferencesFor(const kitBase::robotModel::RobotModelInterface &model)
-{
-	Q_UNUSED(model);
-	return nullptr;
-}
-
 QList<kitBase::AdditionalPreferences *> IotikKitInterpreterPlugin::settingsWidgets()
 {
-	return {nullptr};
+	mOwnsAdditionalPreferences = false;
+	return {mAdditionalPreferences};
+}
+
+QWidget *IotikKitInterpreterPlugin::quickPreferencesFor(const kitBase::robotModel::RobotModelInterface &model)
+{
+	//Q_UNUSED(model);
+	return producePortConfigurer(); //nullptr;
 }
 
 QList<qReal::ActionInfo> IotikKitInterpreterPlugin::customActions()
@@ -113,4 +122,11 @@ QIcon IotikKitInterpreterPlugin::iconForFastSelector(
 {
 	Q_UNUSED(robotModel);
 	return QIcon(":/icons/switch-real-iotik.svg");
+}
+
+QWidget *IotikKitInterpreterPlugin::producePortConfigurer()
+{
+	QWidget * const result = new ui::ComPortPicker("IotikPortName", this);
+	connect(this, &QObject::destroyed, [result]() { delete result; });
+	return result;
 }
