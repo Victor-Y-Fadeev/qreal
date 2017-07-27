@@ -16,14 +16,13 @@ TARGET = ruc
 
 include(../../../../global.pri)
 
-TEMPLATE = lib
-#CONFIG += plugin
+TEMPLATE = app
+QMAKE_CXXFLAGS += -lm -DROBOTS
 
 
 HEADERS += \
 	$$PWD/RuC/Defs.h \
 	$$PWD/RuC/global_vars.h \
-	$$PWD/RuC/ruc.h \
 
 SOURCES += \
 	$$PWD/RuC/codegen.c \
@@ -31,8 +30,10 @@ SOURCES += \
 	$$PWD/RuC/error.c \
 	$$PWD/RuC/extdecl.c \
 	$$PWD/RuC/import.c \
-	$$PWD/RuC/ruc.c \
+	$$PWD/RuC/main.c \
 	$$PWD/RuC/scaner.c \
 
 RESOURCES += \
 	$$PWD/keywords.txt \
+
+copyToDestdir(keywords.txt, NOW)

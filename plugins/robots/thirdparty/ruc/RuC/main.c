@@ -48,7 +48,7 @@ extern void error(int ernum);
 extern void codegen();
 extern void ext_decl();
 
-void ruc_compile(const char * name)
+int main(int argc, const char * argv[])
 {
     int i;
     
@@ -73,20 +73,21 @@ void ruc_compile(const char * name)
         ;
     fclose(input);
     
-	 if (name == NULL) {
+     if (argc < 2) {
         printf(" не указан входной файл\n");
         exit(1);
     }
 
-	input =  fopen(name, "r");
+    const char * name = argv[1];
+    input =  fopen(name, "r");
     if (input == NULL)
     {
-		printf(" не найден файл %s\n", name);
+        printf(" не найден файл %s\n", name);
         exit(1);
     }
     modetab[1] = 0;
     keywordsnum = 0;
-	lines[line = 1] = 1;
+    lines[line = 1] = 1;
     charnum = 1;
     kw = 1;
     tc = 0;

@@ -16,6 +16,7 @@
 
 #include <QtWidgets/QApplication>
 #include <QtCore/QDir>
+#include <QtCore/QProcess>
 
 #include "iotikRuCMasterGenerator.h"
 
@@ -91,5 +92,11 @@ QString IotikRuCGeneratorPlugin::generatorName() const
 
 void IotikRuCGeneratorPlugin::uploadProgram()
 {
-	mMainWindowInterface->errorReporter()->addError(tr("Code uploading failed, aborting"));
+	const QFileInfo fileInfo = generateCodeForProcessing();
+
+	QString path = fileInfo.absoluteFilePath();
+
+	QProcess::execute("ruc-d.exe", {path});
+
+	mMainWindowInterface->errorReporter()->addError(path);//tr("Code uploading failed, aborting"));
 }
