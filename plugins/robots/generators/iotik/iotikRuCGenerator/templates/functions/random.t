@@ -1,1 +1,1 @@
-42
+rand() % @@ARGUMENT@@

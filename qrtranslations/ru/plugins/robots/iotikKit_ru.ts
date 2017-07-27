@@ -10,11 +10,26 @@
     </message>
 </context>
 <context>
-    <name>iotik::robotModel::parts::IotikPowerMotor</name>
+    <name>iotik::robotModel::parts::IotikLineSensor</name>
+    <message>
+        <location filename="../../../../plugins/robots/common/iotikKit/include/iotikKit/robotModel/parts/iotikLineSensor.h" line="28"/>
+        <source>Line Sensor</source>
+        <translation>Сенсор линии</translation>
+    </message>
+</context>
+<context>
+    <name>iotik::robotModel::parts::IotikMotor</name>
     <message>
         <location filename="../../../../plugins/robots/common/iotikKit/include/iotikKit/robotModel/parts/iotikMotor.h" line="27"/>
         <source>Motor</source>
         <translation>Мотор</translation>
+    </message>
+</context>
+<context>
+    <name>iotik::robotModel::parts::IotikPowerMotor</name>
+    <message>
+        <source>Motor</source>
+        <translation type="vanished">Мотор</translation>
     </message>
 </context>
 <context>
@@ -23,14 +38,6 @@
         <location filename="../../../../plugins/robots/common/iotikKit/include/iotikKit/robotModel/parts/iotikSonarSensor.h" line="26"/>
         <source>Sonic Sensor</source>
         <translation>Ультразвуковой сенсор</translation>
-    </message>
-</context>
-<context>
-    <name>iotik::robotModel::parts::IotikLineSensor</name>
-    <message>
-        <location filename="../../../../plugins/robots/common/iotikKit/include/iotikKit/robotModel/parts/iotikLineSensor.h" line="28"/>
-        <source>Line Sensor</source>
-        <translation>Сенсор линии</translation>
     </message>
 </context>
 </TS>

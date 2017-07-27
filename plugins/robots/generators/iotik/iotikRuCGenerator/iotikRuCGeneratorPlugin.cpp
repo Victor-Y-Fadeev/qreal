@@ -27,33 +27,58 @@ IotikRuCGeneratorPlugin::IotikRuCGeneratorPlugin()
 	: IotikGeneratorPluginBase("IotikRuCGeneratorRobotModel", tr("Generation (RuC)"), 7 /* Last order */)
 	, mRealRobotModel(kitId(), "iotikKitRobot")
 	, mGenerateCodeAction(new QAction(nullptr))
+	, mUploadProgramAction(new QAction(nullptr))
 {
 	mAdditionalPreferences = new IotikAdditionalPreferences(mRealRobotModel.name());
 
 	connect(mAdditionalPreferences, &IotikAdditionalPreferences::settingsChanged
 			, &mRealRobotModel, &robotModel::real::RealRobotModel::rereadSettings);
-
-	mGenerateCodeAction->setText(tr("Generate to RuC"));
-	mGenerateCodeAction->setIcon(QIcon(":/iotik/ruc/images/generateRuCCode.svg"));
-	mGenerateCodeAction->setShortcut(QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_G));
-	connect(mGenerateCodeAction, SIGNAL(triggered()), this, SLOT(generateCode()));
 }
 
 QList<qReal::ActionInfo> IotikRuCGeneratorPlugin::customActions()
 {
-	return { qReal::ActionInfo(mGenerateCodeAction, "generators", "tools") };
+	mGenerateCodeAction->setObjectName("generateRuCCode");
+	mGenerateCodeAction->setText(tr("Generate RuC code"));
+	mGenerateCodeAction->setIcon(QIcon(":/iotik/ruc/images/generateRuCCode.svg"));
+	qReal::ActionInfo generateCodeActionInfo(mGenerateCodeAction, "generators", "tools");
+	connect(mGenerateCodeAction, SIGNAL(triggered()), this, SLOT(generateCode()), Qt::UniqueConnection);
+
+	mUploadProgramAction->setObjectName("uploadProgram");
+	mUploadProgramAction->setText(tr("Upload program"));
+	mUploadProgramAction->setIcon(QIcon(":/iotik/ruc/images/uploadProgram.svg"));
+	qReal::ActionInfo uploadProgramActionInfo(mUploadProgramAction, "generators", "tools");
+	connect(mUploadProgramAction, SIGNAL(triggered()), this, SLOT(uploadProgram()), Qt::UniqueConnection);
+
+	return {generateCodeActionInfo, uploadProgramActionInfo};
 }
 
 QList<qReal::HotKeyActionInfo> IotikRuCGeneratorPlugin::hotKeyActions()
 {
-	return { qReal::HotKeyActionInfo("Generator.GenerateIotikRuC"
-			, tr("Generate RuC Code"), mGenerateCodeAction) };
+	mGenerateCodeAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_G));
+	mUploadProgramAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_U));
+
+	qReal::HotKeyActionInfo generateCodeInfo("Generator.GenerateRuC", tr("Generate RuC Code"), mGenerateCodeAction);
+	qReal::HotKeyActionInfo uploadProgramInfo("Generator.UploadRuC", tr("Upload RuC Program"), mUploadProgramAction);
+
+	return {generateCodeInfo, uploadProgramInfo};
 }
 
 QIcon IotikRuCGeneratorPlugin::iconForFastSelector(const kitBase::robotModel::RobotModelInterface &robotModel) const
 {
 	Q_UNUSED(robotModel)
+
 	return QIcon(":/iotik/ruc/images/switch-to-iotik-ruc.svg");
+}
+
+generatorBase::MasterGeneratorBase *IotikRuCGeneratorPlugin::masterGenerator()
+{
+	return new IotikRuCMasterGenerator(*mRepo
+			, *mMainWindowInterface->errorReporter()
+			, *mParserErrorReporter
+			, *mRobotModelManager
+			, *mTextLanguage
+			, mMainWindowInterface->activeDiagram()
+			, generatorName());
 }
 
 QString IotikRuCGeneratorPlugin::defaultFilePath(const QString &projectName) const
@@ -71,13 +96,7 @@ QString IotikRuCGeneratorPlugin::generatorName() const
 	return "iotikRuC";
 }
 
-generatorBase::MasterGeneratorBase *IotikRuCGeneratorPlugin::masterGenerator()
+void IotikRuCGeneratorPlugin::uploadProgram()
 {
-	return new IotikRuCMasterGenerator(*mRepo
-			, *mMainWindowInterface->errorReporter()
-			, *mParserErrorReporter
-			, *mRobotModelManager
-			, *mTextLanguage
-			, mMainWindowInterface->activeDiagram()
-			, generatorName());
+	mMainWindowInterface->errorReporter()->addError(tr("Code uploading failed, aborting"));
 }

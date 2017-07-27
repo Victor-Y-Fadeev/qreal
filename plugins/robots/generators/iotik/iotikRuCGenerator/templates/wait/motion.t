@@ -1,3 +1,3 @@
 ﻿while (getansensor(@@PORT@@) == 0) {
-	sleep(1);
+	//sleep(1);
 }
