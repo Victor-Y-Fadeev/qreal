@@ -74,7 +74,7 @@ QString IotikKitInterpreterPlugin::friendlyKitName() const
 
 QList<kitBase::robotModel::RobotModelInterface *> IotikKitInterpreterPlugin::robotModels()
 {
-	return {&mRealRobotModel};
+	return {};
 }
 
 kitBase::blocksBase::BlocksFactoryInterface *IotikKitInterpreterPlugin::blocksFactoryFor(
