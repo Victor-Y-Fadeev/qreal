@@ -21,18 +21,18 @@ TEMPLATE = lib
 
 
 HEADERS += \
-	$$PWD/include/ruc.h \
-	$$PWD/src/Defs.h \
-	$$PWD/src/global_vars.h \
+	$$PWD/RuC/Defs.h \
+	$$PWD/RuC/global_vars.h \
+	$$PWD/RuC/ruc.h \
 
 SOURCES += \
-	$$PWD/src/codegen.c \
-	$$PWD/src/codes.c \
-	$$PWD/src/error.c \
-	$$PWD/src/extdecl.c \
-	$$PWD/src/import.c \
-	$$PWD/src/ruc.c \
-	$$PWD/src/scaner.c \
+	$$PWD/RuC/codegen.c \
+	$$PWD/RuC/codes.c \
+	$$PWD/RuC/error.c \
+	$$PWD/RuC/extdecl.c \
+	$$PWD/RuC/import.c \
+	$$PWD/RuC/ruc.c \
+	$$PWD/RuC/scaner.c \
 
 RESOURCES += \
 	$$PWD/keywords.txt \

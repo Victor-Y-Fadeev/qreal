@@ -8,4 +8,4 @@
 
 #pragma once
 
-int ruc(int argc, const char * argv[]);
+void ruc_compile(const char * name);

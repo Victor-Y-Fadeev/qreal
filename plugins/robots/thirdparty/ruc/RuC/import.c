@@ -370,7 +370,8 @@ void interpreter(int numthr)
     while (flagstop)
     {
         memcpy(&rf, &mem[x-1], sizeof(double));
-            //    printf("pc=%i mem[pc]=%i rf=%f\n", pc, mem[pc], rf);
+                printf("pc=%i mem[pc]=%i rf=%f\n", pc, mem[pc], rf);
+        sleep(1);
         
         switch (mem[pc++])
         {
@@ -1307,7 +1308,7 @@ void import()
     system("i2cset -y 2 0x48 0x13 0x1000 w");
 #endif
     
-    input = fopen("export.txt", "r");
+    input = fopen("export", "r");
     
     fscanf(input, "%i %i %i %i %i %i %i\n", &pc, &funcnum, &id, &rp, &md, &maxdisplg, &wasmain);
 

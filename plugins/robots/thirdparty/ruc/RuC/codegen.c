@@ -558,7 +558,7 @@ void Declid_gen()
                 else
                 {
                     tocode(ARRINIT);        // ARRINIT N d all displ
-					//tocode(abs(N));
+                    tocode(abs(N));
                     tocode(element_len);
                     tocode(all);
                     tocode(olddispl);

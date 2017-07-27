@@ -6,8 +6,6 @@
 // http://www.lysator.liu.se/c/ANSI-C-grammar-y.html
 #define _CRT_SECURE_NO_WARNINGS
 
-#include "ruc.h"
-
 #include <stdio.h>
 #include <string.h>
 #include <wchar.h>
@@ -50,7 +48,7 @@ extern void error(int ernum);
 extern void codegen();
 extern void ext_decl();
 
-int ruc(int argc, const char * argv[])
+void ruc_compile(const char * name)
 {
     int i;
     
@@ -67,7 +65,7 @@ int ruc(int argc, const char * argv[])
         exit(1);
     }
 
-    output = fopen("tree.txt", "wt");
+    output = fopen("tree", "wt");
 
     getnext();
     nextch();
@@ -75,21 +73,20 @@ int ruc(int argc, const char * argv[])
         ;
     fclose(input);
     
-	 if (argc < 2) {
+	 if (name == NULL) {
         printf(" не указан входной файл\n");
         exit(1);
-	}
+    }
 
-	const char * name = argv[1];
-    input =  fopen(name, "r");
+	input =  fopen(name, "r");
     if (input == NULL)
     {
-        printf(" не найден файл %s\n", name);
+		printf(" не найден файл %s\n", name);
         exit(1);
     }
     modetab[1] = 0;
     keywordsnum = 0;
-    lines[line = 1] = 1;
+	lines[line = 1] = 1;
     charnum = 1;
     kw = 1;
     tc = 0;
@@ -102,7 +99,7 @@ int ruc(int argc, const char * argv[])
     lines[line+1] = charnum;
     tablesandtree();
     fclose(output);
-    output = fopen("codes.txt", "wt");
+    output = fopen("codes", "wt");
     
     codegen();
     
@@ -111,7 +108,7 @@ int ruc(int argc, const char * argv[])
     fclose(input);
     fclose(output);
     
-    output = fopen("export.txt", "wt");
+    output = fopen("export", "wt");
     fprintf(output, "%i %i %i %i %i %i %i\n", pc, funcnum, id, rp, md, maxdisplg, wasmain);
     
     for (i=0; i<pc; i++)
@@ -136,8 +133,8 @@ int ruc(int argc, const char * argv[])
     fclose(output);
    
     if (notrobot)
-		import();
-
-	return 0;
+        import();
+    
+    return 0;
 }
 
