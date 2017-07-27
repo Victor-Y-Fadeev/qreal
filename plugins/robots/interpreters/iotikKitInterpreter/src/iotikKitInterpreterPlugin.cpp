@@ -16,25 +16,17 @@
 
 #include <QtWidgets/QApplication>
 
-#include <utils/widgets/comPortPicker.h>
+//#include <utils/widgets/comPortPicker.h>
 
 using namespace iotik;
-using namespace qReal;
 
-const Id robotDiagramType = Id("RobotsMetamodel", "RobotsDiagram", "RobotsDiagramNode");
-const Id subprogramDiagramType = Id("RobotsMetamodel", "RobotsDiagram", "SubprogramDiagram");
+//const Id robotDiagramType = Id("RobotsMetamodel", "RobotsDiagram", "RobotsDiagramNode");
+//const Id subprogramDiagramType = Id("RobotsMetamodel", "RobotsDiagram", "SubprogramDiagram");
 
 IotikKitInterpreterPlugin::IotikKitInterpreterPlugin()
-	: mRealRobotModel(kitId(), "iotikKitRobot" ) // todo: somewhere generate robotId for each robot
-	, mBlocksFactory(new blocks::IotikBlocksFactory)
 {
-
-	mAdditionalPreferences = new IotikAdditionalPreferences(mRealRobotModel.name());
-
-	connect(mAdditionalPreferences, &IotikAdditionalPreferences::settingsChanged
-			, &mRealRobotModel, &robotModel::real::RealRobotModel::rereadSettings);
 }
-
+/*
 IotikKitInterpreterPlugin::~IotikKitInterpreterPlugin()
 {
 	if (mOwnsAdditionalPreferences) {
@@ -44,8 +36,8 @@ IotikKitInterpreterPlugin::~IotikKitInterpreterPlugin()
 	if (mOwnsBlocksFactory) {
 		delete mBlocksFactory;
 	}
-}
-
+}*/
+/*
 void IotikKitInterpreterPlugin::init(const kitBase::KitPluginConfigurator &configurator)
 {
 
@@ -60,7 +52,7 @@ void IotikKitInterpreterPlugin::init(const kitBase::KitPluginConfigurator &confi
 				interpretersInterface.errorReporter()->addInformation(message);
 	});
 
-}
+}*/
 
 QString IotikKitInterpreterPlugin::kitId() const
 {
@@ -81,52 +73,50 @@ kitBase::blocksBase::BlocksFactoryInterface *IotikKitInterpreterPlugin::blocksFa
 		const kitBase::robotModel::RobotModelInterface *model)
 {
 	Q_UNUSED(model);
-	mOwnsBlocksFactory = false;
-	return mBlocksFactory;
+	return mBlocksFactory; //was without &
 }
-
+/*
 kitBase::robotModel::RobotModelInterface *IotikKitInterpreterPlugin::defaultRobotModel()
 {
 	return &mRealRobotModel;
-}
+}*/
 
 QList<kitBase::AdditionalPreferences *> IotikKitInterpreterPlugin::settingsWidgets()
 {
-	mOwnsAdditionalPreferences = false;
-	return {mAdditionalPreferences};
+	return { nullptr };
 }
-
+/*
 QWidget *IotikKitInterpreterPlugin::quickPreferencesFor(const kitBase::robotModel::RobotModelInterface &model)
 {
 	//Q_UNUSED(model);
 	return producePortConfigurer(); //nullptr;
-}
+}*/
 
 QList<qReal::ActionInfo> IotikKitInterpreterPlugin::customActions()
 {
 	return {};
 }
 
-QList<HotKeyActionInfo> IotikKitInterpreterPlugin::hotKeyActions()
+QList<qReal::HotKeyActionInfo> IotikKitInterpreterPlugin::hotKeyActions()
 {
 	return {};
 }
-
+/*
 QString IotikKitInterpreterPlugin::defaultSettingsFile() const
 {
 	return ":/iotikDefaultSettings.ini";
-}
+}*/
 
 QIcon IotikKitInterpreterPlugin::iconForFastSelector(
 		const kitBase::robotModel::RobotModelInterface &robotModel) const
 {
 	Q_UNUSED(robotModel);
-	return QIcon(":/icons/switch-real-iotik.svg");
+	return QIcon(/*":/icons/switch-real-iotik.svg"*/);
 }
-
+/*
 QWidget *IotikKitInterpreterPlugin::producePortConfigurer()
 {
 	QWidget * const result = new ui::ComPortPicker("IotikPortName", this);
 	connect(this, &QObject::destroyed, [result]() { delete result; });
 	return result;
-}
+}*/
