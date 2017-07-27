@@ -69,7 +69,26 @@ qReal::IdList IotikBlocksFactory::providedBlocks() const
 
 qReal::IdList IotikBlocksFactory::blocksToDisable() const
 {
-	return {};
+	return {
+				id("Function")
+				, id("IfBlock")
+				, id("FiBlock")
+				, id("SwitchBlock")
+				, id("Loop")
+				, id("Subprogram")
+				, id("Fork")
+				, id("Join")
+				, id("KillThread")
+
+				, id("SendMessageThreads")
+
+				, id("ReceiveMessageThreads")
+
+				, id("PrintText")
+				, id("ClearScreen")
+				, id("MarkerDown")
+				, id("MarkerUp")
+	};
 }
 
 qReal::IdList IotikBlocksFactory::blocksToHide() const

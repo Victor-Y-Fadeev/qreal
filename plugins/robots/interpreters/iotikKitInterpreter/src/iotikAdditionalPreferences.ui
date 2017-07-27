@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>IotikAdditionalPreferences</class>
+ <widget class="QWidget" name="IotikAdditionalPreferences">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>414</width>
+    <height>164</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="qReal::ui::ImagePicker" name="robotImagePicker" native="true"/>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="usbSettingsGroupBox">
+     <property name="title">
+      <string>USB Settings</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_4">
+      <item row="1" column="0">
+       <widget class="QLabel" name="comPortLabel">
+        <property name="text">
+         <string>COM Port:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QComboBox" name="comPortComboBox">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="directInputComPortLabel">
+        <property name="text">
+         <string>COM Port:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="directInputComPortLineEdit"/>
+      </item>
+      <item row="0" column="0" colspan="2">
+       <widget class="QLabel" name="noComPortsFoundLabel">
+        <property name="text">
+         <string>No COM ports found. If you have a USB connection with active virtual COM port, please enter its name. Example: COM3</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0" colspan="2">
+       <widget class="QCheckBox" name="manualComPortCheckbox">
+        <property name="text">
+         <string>Specify COM port manually</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>qReal::ui::ImagePicker</class>
+   <extends>QWidget</extends>
+   <header>qrutils/widgets/imagePicker.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
