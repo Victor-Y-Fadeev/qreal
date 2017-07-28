@@ -53,7 +53,7 @@ private slots:
 
 
 private:
-	robotModel::real::RealRobotModel mRealRobotModel;
+	robotModel::real::RealRobotModel mRobotModel;
 
 	QWidget *producePortConfigurer();  // Transfers ownership
 	/// Action that launches code generator
