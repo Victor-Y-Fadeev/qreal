@@ -17,6 +17,8 @@
 #include <QtWidgets/QApplication>
 #include <QtCore/QDir>
 
+#include <qrkernel/settingsManager.h>
+
 #include "iotikRuCMasterGenerator.h"
 
 #include <utils/widgets/comPortPicker.h>
@@ -114,7 +116,9 @@ QString IotikRuCGeneratorPlugin::generatorName() const
 
 void IotikRuCGeneratorPlugin::uploadProgram()
 {
-	mMainWindowInterface->errorReporter()->addError(tr("Code uploading failed, aborting"));
+	QString com = SettingsManager::value("IotikPortName").toString();
+
+	mMainWindowInterface->errorReporter()->addError(com);
 }
 
 QWidget *IotikRuCGeneratorPlugin::producePortConfigurer()
