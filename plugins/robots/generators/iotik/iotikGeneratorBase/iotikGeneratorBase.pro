@@ -24,7 +24,6 @@ includes(plugins/robots/generators/iotik/iotikGeneratorBase \
 		plugins/robots/generators/generatorBase \
 		plugins/robots/common/kitBase \
 		plugins/robots/common/iotikKit \
-		plugins/robots/interpreters/iotikKitInterpreter/src \
 		plugins/robots/utils \
 		qrtext \
 		thirdparty/qscintilla/Qt4Qt5 \
