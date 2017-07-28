@@ -16,9 +16,9 @@
 
 #include <iotikGeneratorBase/iotikGeneratorPluginBase.h>
 
-#include <iotikRuCAdditionalPreferences.h>
+#include <widgets/iotikAdditionalPreferences.h>
 
-#include "robotModel/RobotModel.h"
+#include "robotModel/robotModel.h"
 
 namespace iotik {
 namespace ruc {

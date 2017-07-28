@@ -12,8 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. */
 
-#include "iotikRuCAdditionalPreferences.h"
-#include "ui_iotikRuCAdditionalPreferences.h"
+#include "iotikAdditionalPreferences.h"
+#include "ui_iotikAdditionalPreferences.h"
 
 #include <qrkernel/settingsManager.h>
 #include <utils/widgets/comPortPicker.h>

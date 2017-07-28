@@ -27,7 +27,7 @@ includes(plugins/robots/generators/iotik/iotikGeneratorBase \
 		plugins/robots/generators/generatorBase \
 		plugins/robots/common/kitBase \
 		plugins/robots/common/iotikKit \
-		plugins/robots/utils/include \
+		plugins/robots/utils \
 		qrtext \
 		thirdparty/qscintilla/Qt4Qt5 \
 )
@@ -41,20 +41,19 @@ TRANSLATIONS = \
 	$$PWD/../../../../../qrtranslations/fr/plugins/robots/iotikRuCGenerator_fr.ts \
 
 HEADERS += \
-	$$PWD/iotikRuCAdditionalPreferences.h \
 	$$PWD/iotikRuCGeneratorPlugin.h \
 	$$PWD/iotikRuCMasterGenerator.h \
 	$$PWD/robotModel/robotModel.h \
+	$$PWD/widgets/iotikAdditionalPreferences.h \
 
 SOURCES += \
-	$$PWD/iotikRuCAdditionalPreferences.cpp \
 	$$PWD/iotikRuCGeneratorPlugin.cpp \
 	$$PWD/iotikRuCMasterGenerator.cpp \
 	$$PWD/robotModel/robotModel.cpp \
+	$$PWD/widgets/iotikAdditionalPreferences.cpp \
 
 FORMS += \
-	$$PWD/iotikRuCAdditionalPreferences.ui \
-
+	$$PWD/widgets/iotikAdditionalPreferences.ui \
 
 RESOURCES += \
 	$$PWD/iotikRuCGenerator.qrc \
