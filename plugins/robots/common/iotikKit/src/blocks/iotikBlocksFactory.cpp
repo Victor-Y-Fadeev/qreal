@@ -81,6 +81,7 @@ qReal::IdList IotikBlocksFactory::blocksToDisable() const
 				, id("KillThread")
 
 				, id("SendMessageThreads")
+				, id("IotikDetectorToVariable")
 
 				, id("ReceiveMessageThreads")
 
@@ -105,6 +106,7 @@ qReal::IdList IotikBlocksFactory::blocksToHide() const
 				, id("KillThread")
 
 				, id("SendMessageThreads")
+				, id("IotikDetectorToVariable")
 
 				, id("ReceiveMessageThreads")
 
