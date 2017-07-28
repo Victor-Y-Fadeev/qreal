@@ -16,7 +16,6 @@
 
 #include <generatorBase/simpleGenerators/waitForButtonGenerator.h>
 
-#include "simpleGenerators/detectorToVariableGenerator.h"
 #include "simpleGenerators/systemGenerator.h"
 #include "simpleGenerators/iotikEnginesGenerator.h"
 #include "simpleGenerators/waitForInfraredSensorGenerator.h"
@@ -56,8 +55,6 @@ generatorBase::simple::AbstractSimpleGenerator *IotikGeneratorFactory::simpleGen
 		return new WaitForMessageGenerator(mRepo, customizer, id, this);
 	*/} else if (elementType == "IotikSystem") {
 		return new SystemGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "IotikDetectorToVariable") {
-		return new DetectorToVariableGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "IotikWaitForMotion") {
 		return new WaitForMotionGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "IotikWaitForIRDistance") {

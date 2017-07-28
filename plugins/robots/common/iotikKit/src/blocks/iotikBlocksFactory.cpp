@@ -25,7 +25,6 @@
 
 #include "details/iotikEnginesBackwardBlock.h"
 #include "details/iotikEnginesForwardBlock.h"
-#include "details/lineDetectorToVariable.h"
 
 
 using namespace iotik::blocks;
@@ -40,8 +39,6 @@ qReal::interpretation::Block *IotikBlocksFactory::produceBlock(const qReal::Id &
 		return new details::IotikEnginesBackwardBlock(mRobotModelManager->model());
 	} else if (elementMetatypeIs(element, "IotikEnginesStop")) {
 		return new EnginesStopBlock(mRobotModelManager->model());
-	} else if (elementMetatypeIs(element, "IotikDetectorToVariable")) {
-		return new LineDetectorToVariableBlock();
 
 	} else if (elementMetatypeIs(element, "IotikWaitForIRDistance")) {
 		return new WaitForSonarDistanceBlock(mRobotModelManager->model()
@@ -60,7 +57,6 @@ qReal::IdList IotikBlocksFactory::providedBlocks() const
 				id("IotikEnginesBackward")
 				, id("IotikEnginesForward")
 				, id("IotikEnginesStop")
-				, id("IotikDetectorToVariable")
 
 				, id("IotikWaitForIRDistance")
 				, id("IotikWaitForSonarDistance")
@@ -83,6 +79,8 @@ qReal::IdList IotikBlocksFactory::blocksToDisable() const
 				, id("SendMessageThreads")
 
 				, id("ReceiveMessageThreads")
+
+				, id("IotikDetectorToVariable")
 
 				, id("PrintText")
 				, id("ClearScreen")
@@ -107,6 +105,8 @@ qReal::IdList IotikBlocksFactory::blocksToHide() const
 				, id("SendMessageThreads")
 
 				, id("ReceiveMessageThreads")
+
+				, id("IotikDetectorToVariable")
 
 				, id("PrintText")
 				, id("ClearScreen")
