@@ -19,11 +19,9 @@ links(qrkernel qrutils qrtext qrgui-preferences-dialog qrgui-tool-plugin-interfa
 		)
 
 includes(plugins/robots/common/kitBase \
-		plugins/robots/common/iotikKit \
 		plugins/robots/utils \
 		qrtext \
 		plugins/robots/common/iotikKit \
-		plugins/robots/interpreters/iotikKitInterpreter/src \
 		thirdparty/qscintilla/Qt4Qt5 \
 )
 
