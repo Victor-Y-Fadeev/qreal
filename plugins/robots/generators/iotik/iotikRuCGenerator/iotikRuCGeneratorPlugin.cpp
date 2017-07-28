@@ -124,7 +124,7 @@ void IotikRuCGeneratorPlugin::compileCode(const QFileInfo fileInfo)
 	if (QFile::exists(rootPath + "/export.txt")) {
 		QFile::rename(rootPath + "/export.txt", rootPath + "/export");
 	} else {
-		mMainWindowInterface->errorReporter()->addError(tr("Code compiling failed, aborting"));//tr("Code uploading failed, aborting"));
+		mMainWindowInterface->errorReporter()->addError(tr("Code compiling failed, aborting"));
 	}
 }
 

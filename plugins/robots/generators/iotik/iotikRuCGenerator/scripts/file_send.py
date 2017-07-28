@@ -17,8 +17,7 @@ except getopt.GetoptError as err:
 for opt, arg in opts:
 	if opt == "-d":
 		device = arg
-		
-#Вот здесь вот
+
 tty = serial.Serial(device, 115200)
 
 def sendFile(filename):
