@@ -26,7 +26,6 @@
 #include "iotikRuCGeneratorDefs.h"
 
 using namespace iotik::ruc;
-
 using namespace qReal;
 
 const Id robotDiagramType = Id("RobotsMetamodel", "RobotsDiagram", "RobotsDiagramNode");
@@ -46,6 +45,9 @@ IotikRuCGeneratorPlugin::IotikRuCGeneratorPlugin()
 
 IotikRuCGeneratorPlugin::~IotikRuCGeneratorPlugin()
 {
+	if (mOwnsAdditionalPreferences) {
+		delete mAdditionalPreferences;
+	}
 }
 
 QList<qReal::ActionInfo> IotikRuCGeneratorPlugin::customActions()
@@ -74,11 +76,6 @@ QList<qReal::HotKeyActionInfo> IotikRuCGeneratorPlugin::hotKeyActions()
 	qReal::HotKeyActionInfo uploadProgramInfo("Generator.UploadRuC", tr("Upload RuC Program"), mUploadProgramAction);
 
 	return {generateCodeInfo, uploadProgramInfo};
-}
-
-QList<kitBase::robotModel::RobotModelInterface *> IotikRuCGeneratorPlugin::robotModels()
-{
-	return {&mRobotModel};
 }
 
 QIcon IotikRuCGeneratorPlugin::iconForFastSelector(const kitBase::robotModel::RobotModelInterface &robotModel) const
@@ -114,10 +111,25 @@ QString IotikRuCGeneratorPlugin::generatorName() const
 	return "iotikRuC";
 }
 
+QList<kitBase::robotModel::RobotModelInterface *> IotikRuCGeneratorPlugin::robotModels()
+{
+	return {&mRobotModel};
+}
+
+kitBase::robotModel::RobotModelInterface *IotikRuCGeneratorPlugin::defaultRobotModel()
+{
+	return &mRobotModel;
+}
+
 QList<kitBase::AdditionalPreferences *> IotikRuCGeneratorPlugin::settingsWidgets()
 {
 	mOwnsAdditionalPreferences = false;
 	return {mAdditionalPreferences};
+}
+
+QWidget *IotikRuCGeneratorPlugin::quickPreferencesFor(const kitBase::robotModel::RobotModelInterface &model)
+{
+	return producePortConfigurer();
 }
 
 QWidget *IotikRuCGeneratorPlugin::producePortConfigurer()

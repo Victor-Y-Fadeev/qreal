@@ -34,7 +34,6 @@ public:
 
 	int priority() const override;
 
-private:
 };
 
 }

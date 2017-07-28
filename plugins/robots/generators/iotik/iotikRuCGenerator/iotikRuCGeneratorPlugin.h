@@ -37,10 +37,13 @@ class IotikRuCGeneratorPlugin : public IotikGeneratorPluginBase
 
 public:
 	IotikRuCGeneratorPlugin();
-	~IotikRuCGeneratorPlugin();
+	~IotikRuCGeneratorPlugin() override;
 
 	QList<kitBase::robotModel::RobotModelInterface *> robotModels() override;
+	kitBase::robotModel::RobotModelInterface *defaultRobotModel() override;
+
 	QList<kitBase::AdditionalPreferences *> settingsWidgets() override;
+	QWidget *quickPreferencesFor(const kitBase::robotModel::RobotModelInterface &model) override;
 
 	QList<qReal::ActionInfo> customActions() override;
 	QList<qReal::HotKeyActionInfo> hotKeyActions() override;
