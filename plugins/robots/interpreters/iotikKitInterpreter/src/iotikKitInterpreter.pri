@@ -26,20 +26,11 @@ includes(plugins/robots/common/kitBase \
 )
 
 HEADERS += \
-	$$PWD/iotikAdditionalPreferences.h \
 	$$PWD/iotikKitInterpreterPlugin.h \
-	$$PWD/robotModel/real/realRobotModel.h \
 
 SOURCES += \
-	$$PWD/iotikAdditionalPreferences.cpp \
 	$$PWD/iotikKitInterpreterPlugin.cpp \
-	$$PWD/robotModel/real/realRobotModel.cpp \
-
-FORMS += \
-	$$PWD/iotikAdditionalPreferences.ui \
 
 TRANSLATIONS = \
 	$$PWD/../../../../../qrtranslations/ru/plugins/robots/iotikKitInterpreter_ru.ts \
 	$$PWD/../../../../../qrtranslations/fr/plugins/robots/iotikKitInterpreter_fr.ts \
-
-RESOURCES += $$PWD/../iotikKitInterpreter.qrc

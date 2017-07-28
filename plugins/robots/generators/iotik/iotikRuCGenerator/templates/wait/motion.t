@@ -1,3 +1,4 @@
-﻿while (getansensor(@@PORT@@) == 0) {
-	//sleep(1);
+﻿while (1) {
+	int sensor = getansensor(@@PORT@@);
+	if (sensor != 0) break;
 }

@@ -16,11 +16,14 @@
 
 #include <QtWidgets/QApplication>
 #include <QtCore/QDir>
+#include <QtCore/QFile>
+#include <QtCore/QProcess>
 
 #include <qrkernel/settingsManager.h>
 #include <utils/widgets/comPortPicker.h>
 
 #include "iotikRuCMasterGenerator.h"
+#include "iotikRuCGeneratorDefs.h"
 
 using namespace iotik::ruc;
 
@@ -116,7 +119,55 @@ QWidget *IotikRuCGeneratorPlugin::producePortConfigurer()
 
 void IotikRuCGeneratorPlugin::uploadProgram()
 {
-	QString com = SettingsManager::value("IotikPortName").toString();
+	const QString comPort = SettingsManager::value("IotikPortName").toString();
+	const QFileInfo fileInfo = generateCodeForProcessing();
+	const QString rootPath = QDir::current().absolutePath();
 
-	mMainWindowInterface->errorReporter()->addError(com);
+	compileCode(fileInfo);
+	configureSensors();
+
+	QProcess::execute(PYTHON , {rootPath + "/file_send.py", "-d", comPort});
+
+	QFile::remove(rootPath + "/export");
+	QFile::remove(rootPath + "/sensors");
+}
+
+void IotikRuCGeneratorPlugin::compileCode(const QFileInfo fileInfo)
+{
+	const QString rootPath = QDir::current().absolutePath();
+	const QString filePath = fileInfo.absoluteFilePath();
+
+
+	if (QFile::exists(RUC_COMPILER)) {
+		QProcess::execute(RUC_COMPILER, {filePath});
+	} else {
+		QProcess::execute(RUC_DEBUG_COMPILER, {filePath});
+	}
+
+	QFile::remove(rootPath + "/tree.txt");
+	QFile::remove(rootPath + "/codes.txt");
+
+	if (QFile::exists(rootPath + "/export.txt")) {
+		QFile::rename(rootPath + "/export.txt", rootPath + "/export");
+	} else {
+		mMainWindowInterface->errorReporter()->addError(tr("Code compiling failed, aborting"));
+	}
+}
+
+void IotikRuCGeneratorPlugin::configureSensors()
+{
+	const QString rootPath = QDir::current().absolutePath();
+
+
+	QFile sensors(rootPath + "/sensors");
+	sensors.open(QIODevice::WriteOnly);
+	QTextStream out(&sensors);
+
+	out << "servos 5 12 4 13\n";
+	out << "digital 1\n";
+	out << "0 1 14 15\n";
+	out << "analog 1\n";
+	out << "0 1\n";
+
+	sensors.close();
 }

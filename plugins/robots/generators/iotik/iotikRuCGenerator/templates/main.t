@@ -16,4 +16,7 @@ int D1 = 1;
 int main()
 {
 @@MAIN_CODE@@
+
+	return 0;
+
 }

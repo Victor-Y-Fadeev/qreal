@@ -1,3 +1,4 @@
-﻿while (!(getdigsensor(@@PORT@@) @@SIGN@@ @@DISTANCE@@)) {
-	//sleep(1);
+﻿while (1) {
+	int sensor = getdigsensor(@@PORT@@);
+	if (sensor @@SIGN@@ @@DISTANCE@@) break;
 }
