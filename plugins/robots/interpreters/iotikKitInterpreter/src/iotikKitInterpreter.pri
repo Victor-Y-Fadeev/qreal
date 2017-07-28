@@ -34,5 +34,3 @@ SOURCES += \
 TRANSLATIONS = \
 	$$PWD/../../../../../qrtranslations/ru/plugins/robots/iotikKitInterpreter_ru.ts \
 	$$PWD/../../../../../qrtranslations/fr/plugins/robots/iotikKitInterpreter_fr.ts \
-
-#RESOURCES += $$PWD/../iotikKitInterpreter.qrc
