@@ -12,19 +12,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. */
 
+#pragma once
+
 #include <QtGlobal>
 
 #ifdef Q_OS_WIN
 	#define RUC_COMPILER "ruc.exe"
 	#define RUC_DEBUG_COMPILER "ruc-d"
+	#define PYTHON "C:/Users/victo/AppData/Local/Programs/Python/Python36/python.exe"
 #endif
 
 #ifdef Q_OS_LINUX
 	#define RUC_COMPILER "ruc"
 	#define RUC_DEBUG_COMPILER "ruc-d"
+	#define PYTHON "python"
 #endif
 
 #ifdef Q_OS_MACOS
 	#define RUC_COMPILER "ruc"
 	#define RUC_DEBUG_COMPILER "ruc-d"
+	#define PYTHON "python"
 #endif

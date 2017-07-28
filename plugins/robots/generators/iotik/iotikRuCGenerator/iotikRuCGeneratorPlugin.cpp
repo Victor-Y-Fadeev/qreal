@@ -16,10 +16,11 @@
 
 #include <QtWidgets/QApplication>
 #include <QtCore/QDir>
+#include <QtCore/QFile>
 #include <QtCore/QProcess>
 
 #include "iotikRuCMasterGenerator.h"
-#include "iotikRuCCompiler.h"
+#include "iotikRuCGeneratorDefs.h"
 
 using namespace iotik::ruc;
 
@@ -94,10 +95,61 @@ QString IotikRuCGeneratorPlugin::generatorName() const
 void IotikRuCGeneratorPlugin::uploadProgram()
 {
 	const QFileInfo fileInfo = generateCodeForProcessing();
+	//const QString rootPath = QDir::current().absolutePath();
+	const QString dirPath = fileInfo.absolutePath();
 
-	QString path = fileInfo.absoluteFilePath();
+	compileCode(fileInfo);
+	configureSensors(fileInfo);
 
-	QProcess::execute(RUC_COMPILER, {path});
+	QProcess::execute(PYTHON , {dirPath + "/file_send.py", "-d", "COM4"});
+	mMainWindowInterface->errorReporter()->addError(PYTHON);
+	mMainWindowInterface->errorReporter()->addError(dirPath + "/file_send.py " + "-d " + " COM4");//tr("Code uploading failed, aborting"));
 
-	mMainWindowInterface->errorReporter()->addError(path);//tr("Code uploading failed, aborting"));
+	//QFile::remove(dirPath + "/file_send.py");
+	//QFile::remove(dirPath + "/export");
+	//QFile::remove(dirPath + "/sensors");
+}
+
+void IotikRuCGeneratorPlugin::compileCode(const QFileInfo fileInfo)
+{
+	const QString rootPath = QDir::current().absolutePath();
+	const QString filePath = fileInfo.absoluteFilePath();
+	const QString dirPath = fileInfo.absolutePath();
+
+
+	if (QFile::exists(RUC_COMPILER)) {
+		QProcess::execute(RUC_COMPILER, {filePath});
+	} else {
+		QProcess::execute(RUC_DEBUG_COMPILER, {filePath});
+	}
+
+	QFile::remove(rootPath + "/tree.txt");
+	QFile::remove(rootPath + "/codes.txt");
+
+	if (QFile::exists(rootPath + "/export.txt")) {
+		QFile::rename(rootPath + "/export.txt", dirPath + "/export");
+	} else {
+		mMainWindowInterface->errorReporter()->addError(tr("Code compiling failed, aborting"));//tr("Code uploading failed, aborting"));
+	}
+}
+
+void IotikRuCGeneratorPlugin::configureSensors(const QFileInfo fileInfo)
+{
+	const QString rootPath = QDir::current().absolutePath();
+	const QString dirPath = fileInfo.absolutePath();
+
+
+	QFile sensors(dirPath + "/sensors");
+	sensors.open(QIODevice::WriteOnly);
+	QTextStream out(&sensors);
+
+	out << "servos 5 12 4 13\n";
+	out << "digital 1\n";
+	out << "0 1 14 15\n";
+	out << "analog 1\n";
+	out << "0 1\n";
+
+	sensors.close();
+
+	QFile::copy(rootPath + "/file_send.py", dirPath + "/file_send.py");
 }

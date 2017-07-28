@@ -16,12 +16,13 @@ TARGET = ruc
 
 include(../../../../global.pri)
 
+copyToDestdir(keywords.txt, NOW)
+
 TEMPLATE = app
 
 CONFIG(clang) {
 	QMAKE_CXXFLAGS += -lm -DROBOTS
 }
-
 
 HEADERS += \
 	$$PWD/RuC/Defs.h \
@@ -38,6 +39,3 @@ SOURCES += \
 
 RESOURCES += \
 	$$PWD/keywords.txt \
-
-
-copyToDestdir(keywords.txt, NOW)

@@ -52,6 +52,9 @@ private:
 	/// Action that generates and uploads program on a robot
 	QAction *mUploadProgramAction;  // Doesn't have ownership; may be disposed by GUI.
 
+	void compileCode(const QFileInfo fileInfo);
+	void configureSensors(const QFileInfo fileInfo);
+
 };
 
 }

@@ -16,6 +16,8 @@ TARGET = robots-iotik-ruc-generator
 
 include(../../../../../global.pri)
 
+copyToDestdir(scripts/file_send.py, now)
+
 QT += widgets
 
 TEMPLATE = lib
@@ -39,7 +41,7 @@ TRANSLATIONS = \
 HEADERS += \
 	$$PWD/iotikRuCGeneratorPlugin.h \
 	$$PWD/iotikRuCMasterGenerator.h \
-	$$PWD/iotikRuCCompiler.h \
+	$$PWD/iotikRuCGeneratorDefs.h \
 
 SOURCES += \
 	$$PWD/iotikRuCGeneratorPlugin.cpp \
@@ -48,3 +50,6 @@ SOURCES += \
 RESOURCES += \
 	$$PWD/iotikRuCGenerator.qrc \
 	$$PWD/templates.qrc \
+
+OTHER_FILES += \
+	$$PWD/scripts/file_send.py \
