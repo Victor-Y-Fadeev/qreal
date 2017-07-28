@@ -18,7 +18,7 @@
 
 #ifdef Q_OS_WIN
 	#define RUC_COMPILER "ruc.exe"
-	#define RUC_DEBUG_COMPILER "ruc-d"
+	#define RUC_DEBUG_COMPILER "ruc-d.exe"
 	#define PYTHON "python.exe"
 #endif
 
