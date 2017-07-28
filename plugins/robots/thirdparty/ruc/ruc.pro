@@ -1,4 +1,4 @@
-# Copyright 2015 QReal Research Group
+# Copyright 2017 QReal Research Group
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,10 +12,30 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-TEMPLATE = subdirs
+TARGET = ruc
 
-SUBDIRS += \
-	qextserialport \
-	libusb-1.0.19 \
-	trikRuntime \
-	ruc \
+include(../../../../global.pri)
+
+copyToDestdir(keywords.txt, NOW)
+
+TEMPLATE = app
+
+CONFIG(clang) {
+	QMAKE_CXXFLAGS += -lm -DROBOTS
+}
+
+HEADERS += \
+	$$PWD/RuC/Defs.h \
+	$$PWD/RuC/global_vars.h \
+
+SOURCES += \
+	$$PWD/RuC/codegen.c \
+	$$PWD/RuC/codes.c \
+	$$PWD/RuC/error.c \
+	$$PWD/RuC/extdecl.c \
+	$$PWD/RuC/import.c \
+	$$PWD/RuC/main.c \
+	$$PWD/RuC/scaner.c \
+
+RESOURCES += \
+	$$PWD/keywords.txt \
