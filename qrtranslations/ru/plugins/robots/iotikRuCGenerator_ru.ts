@@ -71,7 +71,7 @@
     <message>
         <location filename="../../../../plugins/robots/generators/iotik/iotikRuCGenerator/iotikRuCGeneratorPlugin.cpp" line="175"/>
         <source>Code compiling failed, aborting</source>
-        <translation>Ошибка закгрузки кода, отмена</translation>
+        <translation>Ошибка компиляции кода, отмена</translation>
     </message>
     <message>
         <source>Code uploading failed, aborting</source>
