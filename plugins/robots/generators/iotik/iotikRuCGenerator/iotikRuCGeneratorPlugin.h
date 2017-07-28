@@ -53,7 +53,7 @@ private:
 	QAction *mUploadProgramAction;  // Doesn't have ownership; may be disposed by GUI.
 
 	void compileCode(const QFileInfo fileInfo);
-	void configureSensors(const QFileInfo fileInfo);
+	void configureSensors();
 
 };
 

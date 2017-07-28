@@ -95,26 +95,21 @@ QString IotikRuCGeneratorPlugin::generatorName() const
 void IotikRuCGeneratorPlugin::uploadProgram()
 {
 	const QFileInfo fileInfo = generateCodeForProcessing();
-	//const QString rootPath = QDir::current().absolutePath();
-	const QString dirPath = fileInfo.absolutePath();
+	const QString rootPath = QDir::current().absolutePath();
 
 	compileCode(fileInfo);
-	configureSensors(fileInfo);
+	configureSensors();
 
-	QProcess::execute(PYTHON , {dirPath + "/file_send.py", "-d", "COM4"});
-	mMainWindowInterface->errorReporter()->addError(PYTHON);
-	mMainWindowInterface->errorReporter()->addError(dirPath + "/file_send.py " + "-d " + " COM4");//tr("Code uploading failed, aborting"));
+	QProcess::execute(PYTHON , {rootPath + "/file_send.py", "-d", "COM4"});
 
-	//QFile::remove(dirPath + "/file_send.py");
-	//QFile::remove(dirPath + "/export");
-	//QFile::remove(dirPath + "/sensors");
+	QFile::remove(rootPath + "/export");
+	QFile::remove(rootPath + "/sensors");
 }
 
 void IotikRuCGeneratorPlugin::compileCode(const QFileInfo fileInfo)
 {
 	const QString rootPath = QDir::current().absolutePath();
 	const QString filePath = fileInfo.absoluteFilePath();
-	const QString dirPath = fileInfo.absolutePath();
 
 
 	if (QFile::exists(RUC_COMPILER)) {
@@ -127,19 +122,18 @@ void IotikRuCGeneratorPlugin::compileCode(const QFileInfo fileInfo)
 	QFile::remove(rootPath + "/codes.txt");
 
 	if (QFile::exists(rootPath + "/export.txt")) {
-		QFile::rename(rootPath + "/export.txt", dirPath + "/export");
+		QFile::rename(rootPath + "/export.txt", rootPath + "/export");
 	} else {
 		mMainWindowInterface->errorReporter()->addError(tr("Code compiling failed, aborting"));//tr("Code uploading failed, aborting"));
 	}
 }
 
-void IotikRuCGeneratorPlugin::configureSensors(const QFileInfo fileInfo)
+void IotikRuCGeneratorPlugin::configureSensors()
 {
 	const QString rootPath = QDir::current().absolutePath();
-	const QString dirPath = fileInfo.absolutePath();
 
 
-	QFile sensors(dirPath + "/sensors");
+	QFile sensors(rootPath + "/sensors");
 	sensors.open(QIODevice::WriteOnly);
 	QTextStream out(&sensors);
 
@@ -150,6 +144,4 @@ void IotikRuCGeneratorPlugin::configureSensors(const QFileInfo fileInfo)
 	out << "0 1\n";
 
 	sensors.close();
-
-	QFile::copy(rootPath + "/file_send.py", dirPath + "/file_send.py");
 }

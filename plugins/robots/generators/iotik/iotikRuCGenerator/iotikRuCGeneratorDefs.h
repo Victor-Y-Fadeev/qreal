@@ -19,7 +19,7 @@
 #ifdef Q_OS_WIN
 	#define RUC_COMPILER "ruc.exe"
 	#define RUC_DEBUG_COMPILER "ruc-d"
-	#define PYTHON "C:/Users/victo/AppData/Local/Programs/Python/Python36/python.exe"
+	#define PYTHON "python.exe"
 #endif
 
 #ifdef Q_OS_LINUX
