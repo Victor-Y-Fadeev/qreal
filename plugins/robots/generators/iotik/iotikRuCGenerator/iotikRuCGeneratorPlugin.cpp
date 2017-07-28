@@ -17,15 +17,29 @@
 #include <QtWidgets/QApplication>
 #include <QtCore/QDir>
 
+#include <qrkernel/settingsManager.h>
+
 #include "iotikRuCMasterGenerator.h"
+
+#include <utils/widgets/comPortPicker.h>
 
 using namespace iotik::ruc;
 
+using namespace qReal;
+
+const Id robotDiagramType = Id("RobotsMetamodel", "RobotsDiagram", "RobotsDiagramNode");
+const Id subprogramDiagramType = Id("RobotsMetamodel", "RobotsDiagram", "SubprogramDiagram");
+
 IotikRuCGeneratorPlugin::IotikRuCGeneratorPlugin()
 	: IotikGeneratorPluginBase("IotikRuCGeneratorRobotModel", tr("Generation (RuC)"), 7 /* Last order */)
+	, mRealRobotModel(kitId(), "iotikRobot")
 	, mGenerateCodeAction(new QAction(nullptr))
 	, mUploadProgramAction(new QAction(nullptr))
 {
+	mAdditionalPreferences = new IotikAdditionalPreferences(mRealRobotModel.name());
+
+	connect(mAdditionalPreferences, &IotikAdditionalPreferences::settingsChanged
+			, &mRealRobotModel, &robotModel::real::RealRobotModel::rereadSettings);
 }
 
 QList<qReal::ActionInfo> IotikRuCGeneratorPlugin::customActions()
@@ -54,6 +68,11 @@ QList<qReal::HotKeyActionInfo> IotikRuCGeneratorPlugin::hotKeyActions()
 	qReal::HotKeyActionInfo uploadProgramInfo("Generator.UploadRuC", tr("Upload RuC Program"), mUploadProgramAction);
 
 	return {generateCodeInfo, uploadProgramInfo};
+}
+
+QList<kitBase::robotModel::RobotModelInterface *> IotikRuCGeneratorPlugin::robotModels()
+{
+	return {&mRealRobotModel};
 }
 
 QIcon IotikRuCGeneratorPlugin::iconForFastSelector(const kitBase::robotModel::RobotModelInterface &robotModel) const
@@ -91,5 +110,14 @@ QString IotikRuCGeneratorPlugin::generatorName() const
 
 void IotikRuCGeneratorPlugin::uploadProgram()
 {
-	mMainWindowInterface->errorReporter()->addError(tr("Code uploading failed, aborting"));
+	QString com = SettingsManager::value("IotikPortName").toString();
+
+	mMainWindowInterface->errorReporter()->addError(com);
+}
+
+QWidget *IotikRuCGeneratorPlugin::producePortConfigurer()
+{
+	QWidget * const result = new ui::ComPortPicker("IotikPortName", this);
+	connect(this, &QObject::destroyed, [result]() { delete result; });
+	return result;
 }

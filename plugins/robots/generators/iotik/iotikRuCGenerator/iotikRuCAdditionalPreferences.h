@@ -14,32 +14,37 @@
 
 #pragma once
 
-#include <robotModel/real/realRobotModel.h>
+#include <kitBase/additionalPreferences.h>
+
+namespace Ui {
+class IotikAdditionalPreferences;
+}
 
 namespace iotik {
-namespace robotModel {
 
-class IotikGeneratorRobotModel : public IotikRobotModelBase
+class IotikAdditionalPreferences : public kitBase::AdditionalPreferences
 {
 	Q_OBJECT
 
 public:
-	IotikGeneratorRobotModel(const QString &kitId, const QString &robotId
-			, const QString &name, const QString &friendlyName, int priority);
+	explicit IotikAdditionalPreferences(const QString &realRobotName, QWidget *parent = 0);
+	~IotikAdditionalPreferences();
 
-	QString name() const override;
-	QString friendlyName() const override;
+	void save() override;
+	void restoreSettings() override;
+	void onRobotModelChanged(kitBase::robotModel::RobotModelInterface * const robotModel) override;
 
-	bool needsConnection() const override;
-	bool interpretedModel() const override;
+signals:
+	void settingsChanged();
 
-	int priority() const override;
+private slots:
+	void manualComPortCheckboxChecked(bool state);
 
 private:
-	const QString mName;
-	const QString mFriendlyName;
-	const int mPriority;
+	QString selectedPortName() const;
+
+	Ui::IotikAdditionalPreferences *mUi;
+	const QString mRobotName;
 };
 
-}
 }
