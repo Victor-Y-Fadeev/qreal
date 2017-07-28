@@ -16,43 +16,11 @@
 
 #include <QtWidgets/QApplication>
 
-//#include <utils/widgets/comPortPicker.h>
-
 using namespace iotik;
-
-//const Id robotDiagramType = Id("RobotsMetamodel", "RobotsDiagram", "RobotsDiagramNode");
-//const Id subprogramDiagramType = Id("RobotsMetamodel", "RobotsDiagram", "SubprogramDiagram");
 
 IotikKitInterpreterPlugin::IotikKitInterpreterPlugin()
 {
 }
-/*
-IotikKitInterpreterPlugin::~IotikKitInterpreterPlugin()
-{
-	if (mOwnsAdditionalPreferences) {
-		delete mAdditionalPreferences;
-	}
-
-	if (mOwnsBlocksFactory) {
-		delete mBlocksFactory;
-	}
-}*/
-/*
-void IotikKitInterpreterPlugin::init(const kitBase::KitPluginConfigurator &configurator)
-{
-
-	qReal::gui::MainWindowInterpretersInterface &interpretersInterface
-			= configurator.qRealConfigurator().mainWindowInterpretersInterface();
-	connect(&mRealRobotModel, &robotModel::real::RealRobotModel::errorOccured
-			, [&interpretersInterface](const QString &message) {
-				interpretersInterface.errorReporter()->addError(message);
-	});
-	connect(&mRealRobotModel, &robotModel::real::RealRobotModel::messageArrived
-			, [&interpretersInterface](const QString &message) {
-				interpretersInterface.errorReporter()->addInformation(message);
-	});
-
-}*/
 
 QString IotikKitInterpreterPlugin::kitId() const
 {
@@ -73,24 +41,13 @@ kitBase::blocksBase::BlocksFactoryInterface *IotikKitInterpreterPlugin::blocksFa
 		const kitBase::robotModel::RobotModelInterface *model)
 {
 	Q_UNUSED(model);
-	return mBlocksFactory; //was without &
+	return mBlocksFactory;
 }
-/*
-kitBase::robotModel::RobotModelInterface *IotikKitInterpreterPlugin::defaultRobotModel()
-{
-	return &mRealRobotModel;
-}*/
 
 QList<kitBase::AdditionalPreferences *> IotikKitInterpreterPlugin::settingsWidgets()
 {
-	return { nullptr };
+	return {};
 }
-/*
-QWidget *IotikKitInterpreterPlugin::quickPreferencesFor(const kitBase::robotModel::RobotModelInterface &model)
-{
-	//Q_UNUSED(model);
-	return producePortConfigurer(); //nullptr;
-}*/
 
 QList<qReal::ActionInfo> IotikKitInterpreterPlugin::customActions()
 {
@@ -101,22 +58,10 @@ QList<qReal::HotKeyActionInfo> IotikKitInterpreterPlugin::hotKeyActions()
 {
 	return {};
 }
-/*
-QString IotikKitInterpreterPlugin::defaultSettingsFile() const
-{
-	return ":/iotikDefaultSettings.ini";
-}*/
 
 QIcon IotikKitInterpreterPlugin::iconForFastSelector(
 		const kitBase::robotModel::RobotModelInterface &robotModel) const
 {
 	Q_UNUSED(robotModel);
-	return QIcon(/*":/icons/switch-real-iotik.svg"*/);
+	return QIcon();
 }
-/*
-QWidget *IotikKitInterpreterPlugin::producePortConfigurer()
-{
-	QWidget * const result = new ui::ComPortPicker("IotikPortName", this);
-	connect(this, &QObject::destroyed, [result]() { delete result; });
-	return result;
-}*/

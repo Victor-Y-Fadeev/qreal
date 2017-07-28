@@ -1,6 +1,0 @@
-<RCC>
-    <qresource prefix="/">
-        <file>iotikDefaultSettings.ini</file>
-        <file>icons/switch-real-iotik.svg</file>
-    </qresource>
-</RCC>
