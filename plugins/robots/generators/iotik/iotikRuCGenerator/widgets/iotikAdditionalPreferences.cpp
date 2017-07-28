@@ -27,7 +27,6 @@ IotikAdditionalPreferences::IotikAdditionalPreferences(const QString &RobotName,
 	, mRobotName(RobotName)
 {
 	mUi->setupUi(this);
-	mUi->robotImagePicker->configure("iotikRobot2DImage", tr("2D robot image:"));
 	connect(mUi->manualComPortCheckbox, &QCheckBox::toggled
 			, this, &IotikAdditionalPreferences::manualComPortCheckboxChecked);
 }

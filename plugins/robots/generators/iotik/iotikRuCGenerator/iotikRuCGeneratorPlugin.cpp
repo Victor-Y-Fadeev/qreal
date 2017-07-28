@@ -18,10 +18,9 @@
 #include <QtCore/QDir>
 
 #include <qrkernel/settingsManager.h>
+#include <utils/widgets/comPortPicker.h>
 
 #include "iotikRuCMasterGenerator.h"
-
-#include <utils/widgets/comPortPicker.h>
 
 using namespace iotik::ruc;
 
@@ -39,7 +38,7 @@ IotikRuCGeneratorPlugin::IotikRuCGeneratorPlugin()
 	mAdditionalPreferences = new IotikAdditionalPreferences(mRobotModel.name());
 
 	connect(mAdditionalPreferences, &IotikAdditionalPreferences::settingsChanged
-			, &mRobotModel, &robotModel::real::RealRobotModel::rereadSettings);
+			, &mRobotModel, &robotModel::RobotModel::rereadSettings);
 }
 
 QList<qReal::ActionInfo> IotikRuCGeneratorPlugin::customActions()
@@ -108,16 +107,16 @@ QString IotikRuCGeneratorPlugin::generatorName() const
 	return "iotikRuC";
 }
 
-void IotikRuCGeneratorPlugin::uploadProgram()
-{
-	QString com = SettingsManager::value("IotikPortName").toString();
-
-	mMainWindowInterface->errorReporter()->addError(com);
-}
-
 QWidget *IotikRuCGeneratorPlugin::producePortConfigurer()
 {
 	QWidget * const result = new ui::ComPortPicker("IotikPortName", this);
 	connect(this, &QObject::destroyed, [result]() { delete result; });
 	return result;
+}
+
+void IotikRuCGeneratorPlugin::uploadProgram()
+{
+	QString com = SettingsManager::value("IotikPortName").toString();
+
+	mMainWindowInterface->errorReporter()->addError(com);
 }

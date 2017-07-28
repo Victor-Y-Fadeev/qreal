@@ -53,17 +53,17 @@ private slots:
 
 
 private:
-	robotModel::real::RealRobotModel mRobotModel;
+	robotModel::RobotModel mRobotModel;
 
 	QWidget *producePortConfigurer();  // Transfers ownership
-	/// Action that launches code generator
-	QAction *mGenerateCodeAction;  // Doesn't have ownership; may be disposed by GUI.
-
-	QAction *mUploadProgramAction;  // Doesn't have ownership; may be disposed by GUI.
 
 	IotikAdditionalPreferences *mAdditionalPreferences = nullptr;
 
+	/// Action that launches code generator
+	QAction *mGenerateCodeAction;  // Doesn't have ownership; may be disposed by GUI.
+
 	/// Action that generates and uploads program on a robot
+	QAction *mUploadProgramAction;  // Doesn't have ownership; may be disposed by GUI.
 
 };
 

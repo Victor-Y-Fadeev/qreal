@@ -16,35 +16,35 @@
 
 #include <qrkernel/settingsManager.h>
 
-using namespace iotik::robotModel::real;
+using namespace iotik::robotModel;
 using namespace kitBase::robotModel;
 
-RealRobotModel::RealRobotModel(const QString &kitId, const QString &robotId)
+RobotModel::RobotModel(const QString &kitId, const QString &robotId)
 	: IotikRobotModelBase(kitId, robotId)
 {
 }
 
-QString RealRobotModel::name() const
+QString RobotModel::name() const
 {
-	return "IotikRealRobotModel";
+	return "IotikRobotModel";
 }
 
-QString RealRobotModel::friendlyName() const
+QString RobotModel::friendlyName() const
 {
-	return tr("Interpretation");
+	return tr("IoTik v1.0");
 }
 
-bool RealRobotModel::needsConnection() const
+bool RobotModel::needsConnection() const
 {
 	return true;
 }
 
-int RealRobotModel::priority() const
+int RobotModel::priority() const
 {
 	return 0;
 }
 
-robotParts::Device *RealRobotModel::createDevice(const PortInfo &port, const DeviceInfo &deviceInfo)
+robotParts::Device *RobotModel::createDevice(const PortInfo &port, const DeviceInfo &deviceInfo)
 {
 	return IotikRobotModelBase::createDevice(port, deviceInfo);
 }

@@ -18,15 +18,14 @@
 
 namespace iotik {
 namespace robotModel {
-namespace real {
 
-class RealRobotModel : public IotikRobotModelBase
+class RobotModel : public IotikRobotModelBase
 {
 	Q_OBJECT
 
 public:
 	/// Takes ownership on communication thread
-	RealRobotModel(const QString &kitId, const QString &robotId);
+	RobotModel(const QString &kitId, const QString &robotId);
 
 	QString name() const override;
 	QString friendlyName() const override;
@@ -47,6 +46,5 @@ private:
 
 };
 
-}
 }
 }
