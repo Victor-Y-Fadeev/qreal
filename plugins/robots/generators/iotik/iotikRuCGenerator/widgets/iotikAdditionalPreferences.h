@@ -27,7 +27,7 @@ class IotikAdditionalPreferences : public kitBase::AdditionalPreferences
 	Q_OBJECT
 
 public:
-	explicit IotikAdditionalPreferences(const QString &realRobotName, QWidget *parent = 0);
+	explicit IotikAdditionalPreferences(const QString &generatorRobotName, QWidget *parent = 0);
 	~IotikAdditionalPreferences();
 
 	void save() override;
@@ -44,7 +44,7 @@ private:
 	QString selectedPortName() const;
 
 	Ui::IotikAdditionalPreferences *mUi;
-	const QString mRobotName;
+	const QString mGeneratorRobotName;
 };
 
 }

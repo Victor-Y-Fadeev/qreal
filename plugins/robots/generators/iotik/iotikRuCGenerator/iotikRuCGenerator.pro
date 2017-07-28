@@ -46,13 +46,13 @@ HEADERS += \
 	$$PWD/iotikRuCGeneratorPlugin.h \
 	$$PWD/iotikRuCMasterGenerator.h \
 	$$PWD/iotikRuCGeneratorDefs.h \
-	$$PWD/robotModel/robotModel.h \
+	$$PWD/robotModel/generatorRobotModel.h \
 	$$PWD/widgets/iotikAdditionalPreferences.h \
 
 SOURCES += \
 	$$PWD/iotikRuCGeneratorPlugin.cpp \
 	$$PWD/iotikRuCMasterGenerator.cpp \
-	$$PWD/robotModel/robotModel.cpp \
+	$$PWD/robotModel/generatorRobotModel.cpp \
 	$$PWD/widgets/iotikAdditionalPreferences.cpp \
 
 FORMS += \

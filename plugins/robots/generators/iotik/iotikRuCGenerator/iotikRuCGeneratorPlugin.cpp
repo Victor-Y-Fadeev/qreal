@@ -34,14 +34,18 @@ const Id subprogramDiagramType = Id("RobotsMetamodel", "RobotsDiagram", "Subprog
 
 IotikRuCGeneratorPlugin::IotikRuCGeneratorPlugin()
 	: IotikGeneratorPluginBase("IotikRuCGeneratorRobotModel", tr("Generation (RuC)"), 7 /* Last order */)
-	, mRobotModel(kitId(), "iotikRobot")
+	, mRobotModel(kitId(), "generatorRobot")
 	, mGenerateCodeAction(new QAction(nullptr))
 	, mUploadProgramAction(new QAction(nullptr))
 {
 	mAdditionalPreferences = new IotikAdditionalPreferences(mRobotModel.name());
 
 	connect(mAdditionalPreferences, &IotikAdditionalPreferences::settingsChanged
-			, &mRobotModel, &robotModel::RobotModel::rereadSettings);
+			, &mRobotModel, &iotik::robotModel::GeneratorRobotModel::rereadSettings);
+}
+
+IotikRuCGeneratorPlugin::~IotikRuCGeneratorPlugin()
+{
 }
 
 QList<qReal::ActionInfo> IotikRuCGeneratorPlugin::customActions()
@@ -108,6 +112,12 @@ qReal::text::LanguageInfo IotikRuCGeneratorPlugin::language() const
 QString IotikRuCGeneratorPlugin::generatorName() const
 {
 	return "iotikRuC";
+}
+
+QList<kitBase::AdditionalPreferences *> IotikRuCGeneratorPlugin::settingsWidgets()
+{
+	mOwnsAdditionalPreferences = false;
+	return {mAdditionalPreferences};
 }
 
 QWidget *IotikRuCGeneratorPlugin::producePortConfigurer()

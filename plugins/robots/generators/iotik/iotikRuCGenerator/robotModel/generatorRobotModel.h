@@ -19,31 +19,22 @@
 namespace iotik {
 namespace robotModel {
 
-class RobotModel : public IotikRobotModelBase
+class GeneratorRobotModel : public IotikRobotModelBase
 {
 	Q_OBJECT
 
 public:
-	/// Takes ownership on communication thread
-	RobotModel(const QString &kitId, const QString &robotId);
+	GeneratorRobotModel(const QString &kitId, const QString &robotId);
 
 	QString name() const override;
 	QString friendlyName() const override;
+
 	bool needsConnection() const override;
+	bool interpretedModel() const override;
+
 	int priority() const override;
 
-signals:
-	/// Emitted when communicator throws an error to be displayed with error reporter.
-	void errorOccured(const QString &text);
-
-	/// Emitted when communicator wants to display user some informational message.
-	void messageArrived(const QString &text);
-
 private:
-	kitBase::robotModel::robotParts::Device *createDevice(
-			const kitBase::robotModel::PortInfo &port
-			, const kitBase::robotModel::DeviceInfo &deviceInfo) override;
-
 };
 
 }

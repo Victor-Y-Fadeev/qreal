@@ -12,39 +12,37 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. */
 
-#include "robotModel.h"
-
-#include <qrkernel/settingsManager.h>
+#include "generatorRobotModel.h"
 
 using namespace iotik::robotModel;
-using namespace kitBase::robotModel;
 
-RobotModel::RobotModel(const QString &kitId, const QString &robotId)
+GeneratorRobotModel::GeneratorRobotModel(const QString &kitId
+		, const QString &robotId)
 	: IotikRobotModelBase(kitId, robotId)
 {
 }
 
-QString RobotModel::name() const
+QString GeneratorRobotModel::name() const
 {
-	return "IotikRobotModel";
+	return "generatorRobotModel";
 }
 
-QString RobotModel::friendlyName() const
+QString GeneratorRobotModel::friendlyName() const
 {
-	return tr("IoTik v1.0");
+	return tr("Generation (RuC)");
 }
 
-bool RobotModel::needsConnection() const
+bool GeneratorRobotModel::needsConnection() const
 {
-	return true;
+	return false;
 }
 
-int RobotModel::priority() const
+bool GeneratorRobotModel::interpretedModel() const
+{
+	return false;
+}
+
+int GeneratorRobotModel::priority() const
 {
 	return 0;
-}
-
-robotParts::Device *RobotModel::createDevice(const PortInfo &port, const DeviceInfo &deviceInfo)
-{
-	return IotikRobotModelBase::createDevice(port, deviceInfo);
 }

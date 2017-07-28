@@ -21,12 +21,13 @@
 using namespace iotik;
 using namespace qReal;
 
-IotikAdditionalPreferences::IotikAdditionalPreferences(const QString &RobotName, QWidget *parent)
+IotikAdditionalPreferences::IotikAdditionalPreferences(const QString &generatorRobotName, QWidget *parent)
 	: AdditionalPreferences(parent)
 	, mUi(new Ui::IotikAdditionalPreferences)
-	, mRobotName(RobotName)
+	, mGeneratorRobotName(generatorRobotName)
 {
 	mUi->setupUi(this);
+
 	connect(mUi->manualComPortCheckbox, &QCheckBox::toggled
 			, this, &IotikAdditionalPreferences::manualComPortCheckboxChecked);
 }
@@ -71,7 +72,7 @@ void IotikAdditionalPreferences::restoreSettings()
 
 void IotikAdditionalPreferences::onRobotModelChanged(kitBase::robotModel::RobotModelInterface * const robotModel)
 {
-	mUi->usbSettingsGroupBox->setVisible(robotModel->name() == mRobotName);
+	mUi->usbSettingsGroupBox->setVisible(robotModel->name() == mGeneratorRobotName);
 }
 
 void IotikAdditionalPreferences::manualComPortCheckboxChecked(bool state)
