@@ -27,7 +27,7 @@ includes(plugins/robots/generators/iotik/iotikGeneratorBase \
 		plugins/robots/generators/generatorBase \
 		plugins/robots/common/kitBase \
 		plugins/robots/common/iotikKit \
-		plugins/robots/utils \
+		plugins/robots/utils/include \
 		qrtext \
 		thirdparty/qscintilla/Qt4Qt5 \
 )

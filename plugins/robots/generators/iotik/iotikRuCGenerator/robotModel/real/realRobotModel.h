@@ -14,8 +14,6 @@
 
 #pragma once
 
-//#include <../../../../common/iotikKit/include/iotikKit/robotModel/iotikRobotModelBase.h>
-
 #include <iotikKit/robotModel/iotikRobotModelBase.h>
 
 namespace iotik {

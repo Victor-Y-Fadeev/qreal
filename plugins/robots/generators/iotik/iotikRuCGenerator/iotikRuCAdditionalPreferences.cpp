@@ -16,7 +16,7 @@
 #include "ui_iotikRuCAdditionalPreferences.h"
 
 #include <qrkernel/settingsManager.h>
-#include <../utils/include/utils/widgets/comPortPicker.h>
+#include <utils/widgets/comPortPicker.h>
 
 using namespace iotik;
 using namespace qReal;
