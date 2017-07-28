@@ -14,21 +14,19 @@
 
 #pragma once
 
-#include <../iotikKit/include/iotikKit/robotModel/iotikRobotModelBase.h>
-
-//#include <iotikKit/robotModel/iotikRobotModelBase.h>
+#include <kitBase/robotModel/commonRobotModel.h>
 
 namespace iotik {
-namespace robotModel {
-namespace real {
+namespace ruc {
 
-class RealRobotModel : public IotikRobotModelBase
+
+class IotikGeneratorRobotModel : public kitBase::robotModel::CommonRobotModel
 {
 	Q_OBJECT
 
 public:
 	/// Takes ownership on communication thread
-	RealRobotModel(const QString &kitId, const QString &robotId);
+	IotikGeneratorRobotModel(const QString &kitId, const QString &robotId);
 
 	QString name() const override;
 	QString friendlyName() const override;
@@ -47,8 +45,11 @@ private:
 			const kitBase::robotModel::PortInfo &port
 			, const kitBase::robotModel::DeviceInfo &deviceInfo) override;
 
+	const QString mName;
+	const QString mFriendlyName;
+	const int mPriority;
+
 };
 
-}
 }
 }

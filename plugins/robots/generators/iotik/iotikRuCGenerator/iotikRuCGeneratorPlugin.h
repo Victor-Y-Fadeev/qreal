@@ -33,8 +33,11 @@ class IotikRuCGeneratorPlugin : public IotikGeneratorPluginBase
 public:
 	IotikRuCGeneratorPlugin();
 
+	QList<kitBase::robotModel::RobotModelInterface *> robotModels() override;
+
 	QList<qReal::ActionInfo> customActions() override;
 	QList<qReal::HotKeyActionInfo> hotKeyActions() override;
+	//QList<kitBase::AdditionalPreferences *> settingsWidgets() override;
 	QIcon iconForFastSelector(const kitBase::robotModel::RobotModelInterface &robotModel) const override;
 
 protected:
@@ -48,19 +51,20 @@ private slots:
 	/// by runCommand. Program is stored on robot as a file next to scriptRunner and named
 	/// as <qReal save name>.c.
 	void uploadProgram();
-	QWidget *producePortConfigurer();  // Transfers ownership
+
 
 private:
+	robotModel::real::RealRobotModel mRealRobotModel;
+
+	QWidget *producePortConfigurer();  // Transfers ownership
 	/// Action that launches code generator
 	QAction *mGenerateCodeAction;  // Doesn't have ownership; may be disposed by GUI.
 
+	QAction *mUploadProgramAction;  // Doesn't have ownership; may be disposed by GUI.
 
 	IotikAdditionalPreferences *mAdditionalPreferences = nullptr;
 
 	/// Action that generates and uploads program on a robot
-	QAction *mUploadProgramAction;  // Doesn't have ownership; may be disposed by GUI.
-
-	robotModel::real::RealRobotModel mRealRobotModel;
 
 };
 

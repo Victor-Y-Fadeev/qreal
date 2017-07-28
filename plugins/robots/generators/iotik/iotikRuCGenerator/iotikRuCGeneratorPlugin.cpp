@@ -30,7 +30,7 @@ const Id subprogramDiagramType = Id("RobotsMetamodel", "RobotsDiagram", "Subprog
 
 IotikRuCGeneratorPlugin::IotikRuCGeneratorPlugin()
 	: IotikGeneratorPluginBase("IotikRuCGeneratorRobotModel", tr("Generation (RuC)"), 7 /* Last order */)
-	, mRealRobotModel(kitId(), "iotikKitRobot")
+	, mRealRobotModel(kitId(), "iotikRobot")
 	, mGenerateCodeAction(new QAction(nullptr))
 	, mUploadProgramAction(new QAction(nullptr))
 {
@@ -66,6 +66,17 @@ QList<qReal::HotKeyActionInfo> IotikRuCGeneratorPlugin::hotKeyActions()
 	qReal::HotKeyActionInfo uploadProgramInfo("Generator.UploadRuC", tr("Upload RuC Program"), mUploadProgramAction);
 
 	return {generateCodeInfo, uploadProgramInfo};
+}
+
+/*QList<kitBase::AdditionalPreferences *> IotikRuCGeneratorPlugin::settingsWidgets()
+{
+	mOwnsAdditionalPreferences = false;
+	return {mAdditionalPreferences};
+}*/
+
+QList<kitBase::robotModel::RobotModelInterface *> IotikRuCGeneratorPlugin::robotModels()
+{
+	return {&mRealRobotModel};
 }
 
 QIcon IotikRuCGeneratorPlugin::iconForFastSelector(const kitBase::robotModel::RobotModelInterface &robotModel) const
