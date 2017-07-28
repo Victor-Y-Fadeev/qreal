@@ -21,10 +21,10 @@
 using namespace iotik;
 using namespace qReal;
 
-IotikAdditionalPreferences::IotikAdditionalPreferences(const QString &realRobotName, QWidget *parent)
+IotikAdditionalPreferences::IotikAdditionalPreferences(const QString &RobotName, QWidget *parent)
 	: AdditionalPreferences(parent)
 	, mUi(new Ui::IotikAdditionalPreferences)
-	, mRealRobotName(realRobotName)
+	, mRobotName(RobotName)
 {
 	mUi->setupUi(this);
 	mUi->robotImagePicker->configure("iotikRobot2DImage", tr("2D robot image:"));
@@ -72,7 +72,7 @@ void IotikAdditionalPreferences::restoreSettings()
 
 void IotikAdditionalPreferences::onRobotModelChanged(kitBase::robotModel::RobotModelInterface * const robotModel)
 {
-	mUi->usbSettingsGroupBox->setVisible(robotModel->name() == mRealRobotName);
+	mUi->usbSettingsGroupBox->setVisible(robotModel->name() == mRobotName);
 }
 
 void IotikAdditionalPreferences::manualComPortCheckboxChecked(bool state)

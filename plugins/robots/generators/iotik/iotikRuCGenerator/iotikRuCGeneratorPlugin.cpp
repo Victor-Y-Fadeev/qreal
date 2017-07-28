@@ -70,12 +70,6 @@ QList<qReal::HotKeyActionInfo> IotikRuCGeneratorPlugin::hotKeyActions()
 	return {generateCodeInfo, uploadProgramInfo};
 }
 
-/*QList<kitBase::AdditionalPreferences *> IotikRuCGeneratorPlugin::settingsWidgets()
-{
-	mOwnsAdditionalPreferences = false;
-	return {mAdditionalPreferences};
-}*/
-
 QList<kitBase::robotModel::RobotModelInterface *> IotikRuCGeneratorPlugin::robotModels()
 {
 	return {&mRealRobotModel};

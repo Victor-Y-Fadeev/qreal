@@ -18,7 +18,7 @@
 
 #include <iotikRuCAdditionalPreferences.h>
 
-#include "robotModel/real/realRobotModel.h"
+#include "robotModel/RobotModel.h"
 
 namespace iotik {
 namespace ruc {
@@ -37,7 +37,6 @@ public:
 
 	QList<qReal::ActionInfo> customActions() override;
 	QList<qReal::HotKeyActionInfo> hotKeyActions() override;
-	//QList<kitBase::AdditionalPreferences *> settingsWidgets() override;
 	QIcon iconForFastSelector(const kitBase::robotModel::RobotModelInterface &robotModel) const override;
 
 protected:

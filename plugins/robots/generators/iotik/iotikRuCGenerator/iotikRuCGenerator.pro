@@ -44,13 +44,13 @@ HEADERS += \
 	$$PWD/iotikRuCAdditionalPreferences.h \
 	$$PWD/iotikRuCGeneratorPlugin.h \
 	$$PWD/iotikRuCMasterGenerator.h \
-	$$PWD/robotModel/real/realRobotModel.h \
+	$$PWD/robotModel/RobotModel.h \
 
 SOURCES += \
 	$$PWD/iotikRuCAdditionalPreferences.cpp \
 	$$PWD/iotikRuCGeneratorPlugin.cpp \
 	$$PWD/iotikRuCMasterGenerator.cpp \
-	$$PWD/robotModel/real/realRobotModel.cpp \
+	$$PWD/robotModel/RobotModel.cpp \
 
 FORMS += \
 	$$PWD/iotikRuCAdditionalPreferences.ui \

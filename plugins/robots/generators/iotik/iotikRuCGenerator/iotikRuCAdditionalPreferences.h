@@ -44,7 +44,7 @@ private:
 	QString selectedPortName() const;
 
 	Ui::IotikAdditionalPreferences *mUi;
-	const QString mRealRobotName;
+	const QString mRobotName;
 };
 
 }
