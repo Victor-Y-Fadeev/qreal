@@ -16,7 +16,16 @@
 
 #include <iotikGeneratorBase/iotikGeneratorPluginBase.h>
 
+#include <widgets/iotikAdditionalPreferences.h>
+
+#include "robotModel/generatorRobotModel.h"
+
 namespace iotik {
+
+namespace robotModel {
+class IotikGeneratorRobotModel;
+}
+
 namespace ruc {
 
 /// Generation of QtScript program for IoTik, uploading and execution of a program.
@@ -28,6 +37,13 @@ class IotikRuCGeneratorPlugin : public IotikGeneratorPluginBase
 
 public:
 	IotikRuCGeneratorPlugin();
+	~IotikRuCGeneratorPlugin() override;
+
+	QList<kitBase::robotModel::RobotModelInterface *> robotModels() override;
+	kitBase::robotModel::RobotModelInterface *defaultRobotModel() override;
+
+	QList<kitBase::AdditionalPreferences *> settingsWidgets() override;
+	QWidget *quickPreferencesFor(const kitBase::robotModel::RobotModelInterface &model) override;
 
 	QList<qReal::ActionInfo> customActions() override;
 	QList<qReal::HotKeyActionInfo> hotKeyActions() override;
@@ -45,7 +61,15 @@ private slots:
 	/// as <qReal save name>.c.
 	void uploadProgram();
 
+
 private:
+	robotModel::GeneratorRobotModel mRobotModel;
+
+	QWidget *producePortConfigurer();  // Transfers ownership
+
+	IotikAdditionalPreferences *mAdditionalPreferences = nullptr;
+	bool mOwnsAdditionalPreferences = true;
+
 	/// Action that launches code generator
 	QAction *mGenerateCodeAction;  // Doesn't have ownership; may be disposed by GUI.
 

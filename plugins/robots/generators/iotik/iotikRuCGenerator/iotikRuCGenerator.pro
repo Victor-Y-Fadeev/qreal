@@ -28,11 +28,15 @@ DESTDIR = $$DESTDIR/plugins/tools/kitPlugins/
 includes(plugins/robots/generators/iotik/iotikGeneratorBase \
 		plugins/robots/generators/generatorBase \
 		plugins/robots/common/kitBase \
+		plugins/robots/common/iotikKit \
+		plugins/robots/utils \
 		qrtext \
 		thirdparty/qscintilla/Qt4Qt5 \
 )
 
-links(qrkernel qrutils qrrepo qscintilla2 robots-generator-base robots-iotik-generator-base)
+links(qrkernel qslog qrutils qrrepo qscintilla2 robots-generator-base robots-iotik-generator-base robots-utils \
+		qrgui-preferences-dialog robots-kit-base robots-iotik-kit \
+)
 
 TRANSLATIONS = \
 	$$PWD/../../../../../qrtranslations/ru/plugins/robots/iotikRuCGenerator_ru.ts \
@@ -42,10 +46,17 @@ HEADERS += \
 	$$PWD/iotikRuCGeneratorPlugin.h \
 	$$PWD/iotikRuCMasterGenerator.h \
 	$$PWD/iotikRuCGeneratorDefs.h \
+	$$PWD/robotModel/generatorRobotModel.h \
+	$$PWD/widgets/iotikAdditionalPreferences.h \
 
 SOURCES += \
 	$$PWD/iotikRuCGeneratorPlugin.cpp \
 	$$PWD/iotikRuCMasterGenerator.cpp \
+	$$PWD/robotModel/generatorRobotModel.cpp \
+	$$PWD/widgets/iotikAdditionalPreferences.cpp \
+
+FORMS += \
+	$$PWD/widgets/iotikAdditionalPreferences.ui \
 
 RESOURCES += \
 	$$PWD/iotikRuCGenerator.qrc \

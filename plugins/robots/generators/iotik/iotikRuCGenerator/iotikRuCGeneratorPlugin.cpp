@@ -19,16 +19,35 @@
 #include <QtCore/QFile>
 #include <QtCore/QProcess>
 
+#include <qrkernel/settingsManager.h>
+#include <utils/widgets/comPortPicker.h>
+
 #include "iotikRuCMasterGenerator.h"
 #include "iotikRuCGeneratorDefs.h"
 
 using namespace iotik::ruc;
+using namespace qReal;
+
+const Id robotDiagramType = Id("RobotsMetamodel", "RobotsDiagram", "RobotsDiagramNode");
+const Id subprogramDiagramType = Id("RobotsMetamodel", "RobotsDiagram", "SubprogramDiagram");
 
 IotikRuCGeneratorPlugin::IotikRuCGeneratorPlugin()
 	: IotikGeneratorPluginBase("IotikRuCGeneratorRobotModel", tr("Generation (RuC)"), 7 /* Last order */)
+	, mRobotModel(kitId(), "generatorRobot")
 	, mGenerateCodeAction(new QAction(nullptr))
 	, mUploadProgramAction(new QAction(nullptr))
 {
+	mAdditionalPreferences = new IotikAdditionalPreferences(mRobotModel.name());
+
+	connect(mAdditionalPreferences, &IotikAdditionalPreferences::settingsChanged
+			, &mRobotModel, &iotik::robotModel::GeneratorRobotModel::rereadSettings);
+}
+
+IotikRuCGeneratorPlugin::~IotikRuCGeneratorPlugin()
+{
+	if (mOwnsAdditionalPreferences) {
+		delete mAdditionalPreferences;
+	}
 }
 
 QList<qReal::ActionInfo> IotikRuCGeneratorPlugin::customActions()
@@ -92,15 +111,44 @@ QString IotikRuCGeneratorPlugin::generatorName() const
 	return "iotikRuC";
 }
 
+QList<kitBase::robotModel::RobotModelInterface *> IotikRuCGeneratorPlugin::robotModels()
+{
+	return {&mRobotModel};
+}
+
+kitBase::robotModel::RobotModelInterface *IotikRuCGeneratorPlugin::defaultRobotModel()
+{
+	return &mRobotModel;
+}
+
+QList<kitBase::AdditionalPreferences *> IotikRuCGeneratorPlugin::settingsWidgets()
+{
+	mOwnsAdditionalPreferences = false;
+	return {mAdditionalPreferences};
+}
+
+QWidget *IotikRuCGeneratorPlugin::quickPreferencesFor(const kitBase::robotModel::RobotModelInterface &model)
+{
+	return producePortConfigurer();
+}
+
+QWidget *IotikRuCGeneratorPlugin::producePortConfigurer()
+{
+	QWidget * const result = new ui::ComPortPicker("IotikPortName", this);
+	connect(this, &QObject::destroyed, [result]() { delete result; });
+	return result;
+}
+
 void IotikRuCGeneratorPlugin::uploadProgram()
 {
+	const QString comPort = SettingsManager::value("IotikPortName").toString();
 	const QFileInfo fileInfo = generateCodeForProcessing();
 	const QString rootPath = QDir::current().absolutePath();
 
 	compileCode(fileInfo);
 	configureSensors();
 
-	QProcess::execute(PYTHON , {rootPath + "/file_send.py", "-d", "COM4"});
+	QProcess::execute(PYTHON , {rootPath + "/file_send.py", "-d", comPort});
 
 	QFile::remove(rootPath + "/export");
 	QFile::remove(rootPath + "/sensors");
