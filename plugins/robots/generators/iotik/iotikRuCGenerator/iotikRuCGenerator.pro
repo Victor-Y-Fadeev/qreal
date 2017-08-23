@@ -19,6 +19,7 @@ include(../../../../../global.pri)
 copyToDestdir(scripts/file_send.py, now)
 
 QT += widgets
+QT += serialport
 
 TEMPLATE = lib
 CONFIG += plugin

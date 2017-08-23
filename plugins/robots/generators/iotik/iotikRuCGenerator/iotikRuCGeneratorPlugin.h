@@ -14,6 +14,8 @@
 
 #pragma once
 
+#include <QtSerialPort/QSerialPort>
+
 #include <iotikGeneratorBase/iotikGeneratorPluginBase.h>
 
 #include <widgets/iotikAdditionalPreferences.h>
@@ -78,6 +80,7 @@ private:
 
 	void compileCode(const QFileInfo fileInfo);
 	void configureSensors();
+	void sendFile(const QString filename, QSerialPort &tty);
 
 };
 

@@ -14,10 +14,12 @@
 
 #include "iotikRuCGeneratorPlugin.h"
 
+#include <QtSerialPort/QSerialPort>
 #include <QtWidgets/QApplication>
 #include <QtCore/QDir>
 #include <QtCore/QFile>
 #include <QtCore/QProcess>
+#include <QtCore/QThread>
 
 #include <qrkernel/settingsManager.h>
 #include <utils/widgets/comPortPicker.h>
@@ -148,7 +150,20 @@ void IotikRuCGeneratorPlugin::uploadProgram()
 	compileCode(fileInfo);
 	configureSensors();
 
-	QProcess::execute(PYTHON , {rootPath + "/file_send.py", "-d", comPort});
+	QSerialPort tty;
+	tty.setPortName(comPort);
+	tty.setBaudRate(QSerialPort::Baud115200);
+
+	tty.open(QIODevice::ReadWrite);
+	tty.write("cd /flash\n");
+	sendFile("sensors", tty);
+	sendFile("export", tty);
+	tty.close();
+
+	tty.open(QIODevice::ReadWrite);
+	tty.write("ruc export sensors\n");
+	tty.flush();
+	tty.close();
 
 	QFile::remove(rootPath + "/export");
 	QFile::remove(rootPath + "/sensors");
@@ -192,4 +207,27 @@ void IotikRuCGeneratorPlugin::configureSensors()
 	out << "0 1\n";
 
 	sensors.close();
+}
+
+void IotikRuCGeneratorPlugin::sendFile(const QString filename, QSerialPort &tty)
+{
+	QFile sfile(filename);
+	sfile.open(QIODevice::ReadOnly);
+
+	const int block = 32;
+	int size = sfile.size();
+
+	QString command = "file_receive " +  QString::number(size) + " " + filename + "\n";
+	tty.write(QByteArray::fromStdString(command.toStdString()));
+	QThread::msleep(1000);
+
+	while (size > 0) {
+		QByteArray data = sfile.read(size > block ? block : size);
+		tty.write(data);
+		QThread::msleep(25);
+		size -= block;
+	}
+
+	tty.flush();
+	sfile.close();
 }
