@@ -147,14 +147,19 @@ void IotikRuCGeneratorPlugin::uploadProgram()
 	const QFileInfo fileInfo = generateCodeForProcessing();
 	const QString rootPath = QDir::current().absolutePath();
 
-	compileCode(fileInfo);
 	configureSensors();
+	compileCode(fileInfo);
 
 	QSerialPort tty;
 	tty.setPortName(comPort);
-	tty.setBaudRate(QSerialPort::Baud115200);
-
 	tty.open(QIODevice::ReadWrite);
+	tty.setBaudRate(QSerialPort::Baud115200);
+	tty.setParity(QSerialPort::NoParity);
+	tty.setDataBits(QSerialPort::Data8);
+	tty.setStopBits(QSerialPort::OneStop);
+	tty.setFlowControl(QSerialPort::NoFlowControl);
+
+	/*tty.open(QIODevice::ReadWrite);
 	tty.write("cd /flash\n");
 	sendFile("sensors", tty);
 	sendFile("export", tty);
@@ -163,10 +168,23 @@ void IotikRuCGeneratorPlugin::uploadProgram()
 	tty.open(QIODevice::ReadWrite);
 	tty.write("ruc export sensors\n");
 	tty.flush();
+	tty.close();*/
+
+	tty.write("cd /flash\n");
+	tty.flush();
+	sendFile("sensors", tty);
+	sendFile("export", tty);
+	tty.write("ruc export sensors\n");
+	tty.flush();
 	tty.close();
 
-	QFile::remove(rootPath + "/export");
-	QFile::remove(rootPath + "/sensors");
+	/*sendCommand("cd /flash\n" ,tty);
+	sendFile("/sensors", tty);
+	sendFile("/export", tty);
+	sendCommand("ruc export sensors\n" ,tty);*/
+
+	//QFile::remove(rootPath + "/sensors");
+	//QFile::remove(rootPath + "/export");
 }
 
 void IotikRuCGeneratorPlugin::compileCode(const QFileInfo fileInfo)
@@ -209,6 +227,14 @@ void IotikRuCGeneratorPlugin::configureSensors()
 	sensors.close();
 }
 
+void IotikRuCGeneratorPlugin::sendCommand(const QString command, QSerialPort &tty)
+{
+	tty.open(QIODevice::ReadWrite);
+	tty.write(QByteArray::fromStdString(command.toStdString()));
+	tty.flush();
+	tty.close();
+}
+
 void IotikRuCGeneratorPlugin::sendFile(const QString filename, QSerialPort &tty)
 {
 	QFile sfile(filename);
@@ -219,6 +245,9 @@ void IotikRuCGeneratorPlugin::sendFile(const QString filename, QSerialPort &tty)
 
 	QString command = "file_receive " +  QString::number(size) + " " + filename + "\n";
 	tty.write(QByteArray::fromStdString(command.toStdString()));
+	//sendCommand(command, tty);
+
+	//tty.open(QIODevice::ReadWrite);
 	QThread::msleep(1000);
 
 	while (size > 0) {
@@ -229,5 +258,6 @@ void IotikRuCGeneratorPlugin::sendFile(const QString filename, QSerialPort &tty)
 	}
 
 	tty.flush();
+	//tty.close();
 	sfile.close();
 }

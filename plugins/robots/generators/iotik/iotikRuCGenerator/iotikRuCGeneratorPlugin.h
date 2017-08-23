@@ -80,6 +80,7 @@ private:
 
 	void compileCode(const QFileInfo fileInfo);
 	void configureSensors();
+	void sendCommand(const QString command, QSerialPort &tty);
 	void sendFile(const QString filename, QSerialPort &tty);
 
 };
