@@ -62,7 +62,7 @@ macx-clang {
 	QMAKE_LFLAGS_SONAME = -Wl,-install_name,@rpath/
 }
 
-!clang:!win32:gcc:*-g++*:system($$QMAKE_CXX --version | grep -oe \'\\<5\\.[0-9]\\+\\.\' ){ CONFIG += gcc5 }
+!clang:!win32:gcc:*-g++*:system($$QMAKE_CXX --version | grep -oe \'\\<[5-6]\\.[0-9]\\+\\.\' ){ CONFIG += gcc5 }
 !clang:!win32:gcc:*-g++*:system($$QMAKE_CXX --version | grep -oe \'\\<4\\.[0-9]\\+\\.\' ){ CONFIG += gcc4 }
 
 unix:!CONFIG(nosanitizers) {
@@ -174,7 +174,7 @@ defineTest(copyToDestdir) {
 
 		isEmpty(NOW) {
 			# In case this is directory add "*" to copy contents of a directory instead of directory itself under linux.
-			!win32:equals(AFTER_SLASH, ""):FILE = $$FILE* #looks like inconsisten behaviour
+			!win32:equals(AFTER_SLASH, ""):FILE = $$FILE* #looks like inconsistent behaviour
 			QMAKE_POST_LINK += $(COPY_DIR) $$quote($$FILE) $$quote($$DDIR) $$escape_expand(\\n\\t)
 		} else {
 			win32 {

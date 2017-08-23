@@ -16,13 +16,21 @@
 
 #include <generatorBase/simpleGenerators/waitForButtonGenerator.h>
 
+#include "parts/ledPart.h"
+#include "parts/magnetPart.h"
+#include "parts/randomGeneratorPart.h"
 #include "simpleGenerators/geoLandingGenerator.h"
 #include "simpleGenerators/geoTakeoffGenerator.h"
+#include "simpleGenerators/gotoGenerator.h"
 #include "simpleGenerators/goToPointGenerator.h"
 #include "simpleGenerators/initialNodeGenerator.h"
+#include "simpleGenerators/labelGenerator.h"
 #include "simpleGenerators/pioneerMagnetGenerator.h"
 #include "simpleGenerators/pioneerPrintGenerator.h"
 #include "simpleGenerators/pioneerSystemGenerator.h"
+#include "simpleGenerators/pioneerLedGenerator.h"
+#include "simpleGenerators/pioneerYawGenerator.h"
+#include "simpleGenerators/randomInitGenerator.h"
 
 using namespace pioneer::lua;
 using namespace generatorBase::simple;
@@ -31,9 +39,11 @@ PioneerLuaGeneratorFactory::PioneerLuaGeneratorFactory(const qrRepo::RepoApi &re
 		, qReal::ErrorReporterInterface &errorReporter
 		, const kitBase::robotModel::RobotModelManagerInterface &robotModelManager
 		, generatorBase::lua::LuaProcessor &luaProcessor
-		, const QString &generatorName)
+		, const QString &generatorName
+		, GotoLabelManager &gotoLabelManager)
 	: GeneratorFactoryBase(repo, errorReporter, robotModelManager, luaProcessor)
 	, mGeneratorName(generatorName)
+	, mGotoLabelManager(gotoLabelManager)
 {
 }
 
@@ -59,6 +69,12 @@ generatorBase::simple::AbstractSimpleGenerator *PioneerLuaGeneratorFactory::simp
 		return new PioneerPrintGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "PioneerSystem") {
 		return new PioneerSystemGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "PioneerLed") {
+		return new PioneerLedGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "PioneerYaw") {
+		return new PioneerYawGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "Randomizer") {
+		return new RandomInitGenerator(mRepo, customizer, id, this);
 	}
 
 	return GeneratorFactoryBase::simpleGenerator(id, customizer);
@@ -67,4 +83,46 @@ generatorBase::simple::AbstractSimpleGenerator *PioneerLuaGeneratorFactory::simp
 QStringList PioneerLuaGeneratorFactory::pathsToTemplates() const
 {
 	return {":/" + mGeneratorName + "/templates"};
+}
+
+void PioneerLuaGeneratorFactory::initialize()
+{
+	generatorBase::GeneratorFactoryBase::initialize();
+	mLedPart.reset(new LedPart(pathsToTemplates()));
+	mMagnetPart.reset(new MagnetPart(pathsToTemplates()));
+	mRandomGeneratorPart.reset(new RandomGeneratorPart(pathsToTemplates()));
+}
+
+LedPart& PioneerLuaGeneratorFactory::ledPart()
+{
+	return *mLedPart;
+}
+
+MagnetPart& PioneerLuaGeneratorFactory::magnetPart()
+{
+	return *mMagnetPart;
+}
+
+RandomGeneratorPart& PioneerLuaGeneratorFactory::randomGeneratorPart()
+{
+	return *mRandomGeneratorPart;
+}
+
+generatorBase::simple::AbstractSimpleGenerator *PioneerLuaGeneratorFactory::labelGenerator(const qReal::Id &id
+		, generatorBase::GeneratorCustomizer &customizer)
+{
+	return new LabelGenerator(mRepo, customizer, id, this, mGotoLabelManager);
+}
+
+generatorBase::simple::AbstractSimpleGenerator *PioneerLuaGeneratorFactory::gotoSimpleGenerator(const qReal::Id &id
+		, generatorBase::GeneratorCustomizer &customizer)
+{
+	return new GotoGenerator(mRepo, customizer, id, this, mGotoLabelManager);
+}
+
+QList<generatorBase::parts::InitTerminateCodeGenerator *> PioneerLuaGeneratorFactory::initTerminateGenerators()
+{
+	auto result = generatorBase::GeneratorFactoryBase::initTerminateGenerators();
+	result << mRandomGeneratorPart.data() << mMagnetPart.data() << mLedPart.data();
+	return result;
 }

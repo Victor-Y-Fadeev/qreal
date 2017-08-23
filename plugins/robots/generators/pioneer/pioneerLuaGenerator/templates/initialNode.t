@@ -1,4 +1,6 @@
-local curr_state = "@@ID@@"
+-- переменная текущего состояния
+local curr_state = "START"
 
+-- таблица функций, вызываемых в зависимости от состояния
 action = {
-	["@@ID@@"] = function(x) 
+	["START"] = function(x)

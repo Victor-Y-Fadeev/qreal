@@ -1,12 +1,10 @@
--- Uncomment this for execution against debug stub.
--- local ap = require "ap.lua"
--- local Ev = require "Ev.lua"
-
-local magnet = Gpio.new(Gpio.A, 1, Gpio.OUTPUT)
-
 @@SUBPROGRAMS_FORWARDING@@
 
 @@THREADS_FORWARDING@@
+
+@@VARIABLES@@
+
+@@INITHOOKS@@
 
 @@SUBPROGRAMS@@
 
@@ -15,6 +13,7 @@ local magnet = Gpio.new(Gpio.A, 1, Gpio.OUTPUT)
 @@MAIN_CODE@@
 }
 
+-- функция обработки событий, автоматически вызывается автопилотом
 function callback(event)
 	print(event)
 	if (event == Ev.ALTITUDE_REACHED) then
@@ -33,10 +32,9 @@ function callback(event)
 
 end
 
+-- бесконечный цикл, автоматически вызывается автопилотом
 function loop()
 end
 
-math.randomseed(@@RAND_SEED@@)
-
-ap.push(Ev.MCE_PREFLIGHT)
+-- вызов функции из таблицы состояний, соответствующей первому состоянию
 action[curr_state]()
