@@ -28,12 +28,16 @@ include(../../../global.pri)
 
 TEMPLATE = lib
 CONFIG += qt warn_off thread exceptions hide_symbols
-INCLUDEPATH += . ../include ../lexlib ../src
+#INCLUDEPATH = . $$PWD/../include $$PWD/../lexlib $$PWD/../src
+INCLUDEPATH += $$PWD $$PWD/../include $$PWD/../lexlib $$PWD/../src
+
+DEFINES = STATIC_BUILD QT SCI_LEXER
+DEFINES += SCINTILLA_QT SCI_LEXER
+
 
 !CONFIG(staticlib) {
     DEFINES += QSCINTILLA_MAKE_DLL
 }
-DEFINES += SCINTILLA_QT SCI_LEXER
 
 greaterThan(QT_MAJOR_VERSION, 4) {
 	QT += widgets printsupport
@@ -86,7 +90,7 @@ HEADERS = \
 	./Qsci/qscicommand.h \
 	./Qsci/qscicommandset.h \
 	./Qsci/qscidocument.h \
-	./Qsci/qscilexer.h \
+        ./Qsci/qscilexer.h \
 	./Qsci/qscilexeravs.h \
 	./Qsci/qscilexerbash.h \
 	./Qsci/qscilexerbatch.h \
@@ -125,7 +129,7 @@ HEADERS = \
 	./Qsci/qscilexerverilog.h \
 	./Qsci/qscilexervhdl.h \
 	./Qsci/qscilexerxml.h \
-	./Qsci/qscilexeryaml.h \
+        ./Qsci/qscilexeryaml.h \
 	./Qsci/qscimacro.h \
 	./Qsci/qsciprinter.h \
 	./Qsci/qscistyle.h \
@@ -195,7 +199,7 @@ SOURCES = \
 	qscicommand.cpp \
 	qscicommandset.cpp \
 	qscidocument.cpp \
-	qscilexer.cpp \
+        qscilexer.cpp \
 	qscilexeravs.cpp \
 	qscilexerbash.cpp \
 	qscilexerbatch.cpp \
@@ -234,17 +238,17 @@ SOURCES = \
 	qscilexerverilog.cpp \
 	qscilexervhdl.cpp \
 	qscilexerxml.cpp \
-	qscilexeryaml.cpp \
+        qscilexeryaml.cpp \
 	qscimacro.cpp \
 	qsciprinter.cpp \
 	qscistyle.cpp \
-	qscistyledtext.cpp \
-    MacPasteboardMime.cpp \
-    InputMethod.cpp \
+        qscistyledtext.cpp \
+	MacPasteboardMime.cpp \
+        InputMethod.cpp \
 	SciClasses.cpp \
 	ListBoxQt.cpp \
 	PlatQt.cpp \
-	ScintillaQt.cpp \
+        ScintillaQt.cpp \
 	../lexers/LexA68k.cpp \
 	../lexers/LexAbaqus.cpp \
 	../lexers/LexAda.cpp \
@@ -348,7 +352,7 @@ SOURCES = \
 	../lexers/LexVerilog.cpp \
 	../lexers/LexVHDL.cpp \
 	../lexers/LexVisualProlog.cpp \
-	../lexers/LexYAML.cpp \
+        ../lexers/LexYAML.cpp \
 	../lexlib/Accessor.cpp \
 	../lexlib/CharacterCategory.cpp \
 	../lexlib/CharacterSet.cpp \
@@ -374,15 +378,15 @@ SOURCES = \
 	../src/EditView.cpp \
 	../src/ExternalLexer.cpp \
 	../src/Indicator.cpp \
-    ../src/KeyMap.cpp \
+        ../src/KeyMap.cpp \
 	../src/LineMarker.cpp \
 	../src/MarginView.cpp \
 	../src/PerLine.cpp \
 	../src/PositionCache.cpp \
-    ../src/RESearch.cpp \
+        ../src/RESearch.cpp \
 	../src/RunStyles.cpp \
-    ../src/ScintillaBase.cpp \
-    ../src/Selection.cpp \
+        ../src/ScintillaBase.cpp \
+        ../src/Selection.cpp \
 	../src/Style.cpp \
 	../src/UniConversion.cpp \
 	../src/ViewStyle.cpp \
@@ -392,6 +396,6 @@ TRANSLATIONS = \
 	qscintilla_cs.ts \
 	qscintilla_de.ts \
 	qscintilla_es.ts \
-	qscintilla_fr.ts \
+        qscintilla_fr.ts \
 	qscintilla_pt_br.ts \
-	qscintilla_ru.ts \
+        qscintilla_ru.ts \
