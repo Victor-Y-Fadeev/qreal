@@ -279,7 +279,7 @@ void RepoApi::copyProperties(const Id &dest, const Id &src)
 	mRepository->copyProperties(dest, src);
 }
 
-QMap<QString, QVariant> RepoApi::properties(const Id &id)
+QMap<QString, QVariant> RepoApi::properties(const Id &id) const
 {
 	return mRepository->properties(id);
 }
@@ -316,6 +316,7 @@ void RepoApi::setFrom(const Id &id, const Id &from)
 		Id prev = mRepository->property(id, "from").value<Id>();
 		removeFromList(prev, "links", id, "from");
 	}
+
 	mRepository->setProperty(id, "from", from.toVariant());
 	addToIdList(from, "links", id, "from");
 }

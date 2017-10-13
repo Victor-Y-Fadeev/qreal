@@ -56,7 +56,7 @@ public:
 
 	virtual ~GeneratorFactoryBase();
 
-	void initialize();
+	virtual void initialize();
 
 	/// Sets an id of the root diagram for obtaining sensors configuration.
 	void setMainDiagramId(const qReal::Id &diagramId);
@@ -153,9 +153,6 @@ public:
 	/// Returns a pointer to a code generator for blocks with final-blocks semantics
 	virtual simple::AbstractSimpleGenerator *finalNodeGenerator(const qReal::Id &id
 			, GeneratorCustomizer &customizer, bool fromMainGenerator);
-
-	/// Returns a pointer to a code generator that replaces all @@RANDOM_ID@@ occurences to random c++ identifier string
-	virtual simple::AbstractSimpleGenerator *randomIdGenerator(simple::AbstractSimpleGenerator *other);
 
 	/// Implementation must return a list of paths to folders containing templates for
 	/// customizing concrete generator. List must be sorted by folder priority --- generator looks for template
