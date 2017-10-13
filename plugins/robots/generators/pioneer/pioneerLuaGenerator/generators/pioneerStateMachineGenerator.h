@@ -21,6 +21,8 @@
 
 #include <generatorBase/gotoControlFlowGenerator.h>
 
+#include "semanticTreeManager.h"
+
 namespace pioneer {
 namespace lua {
 
@@ -46,38 +48,56 @@ public:
 			, QObject *parent = 0
 			, bool isThisDiagramMain = true);
 
+	/// Registers a function that will be called when generator visits a node with given id.
+	/// Allows to collect additional information during generation.
 	void registerNodeHook(std::function<void(const qReal::Id)> hook);
 
 private:
+	void performGeneration() override;
+
 	void visitRegular(const qReal::Id &id, const QList<generatorBase::LinkInfo> &links) override;
+
+	void visitConditional(const qReal::Id &id, const QList<generatorBase::LinkInfo> &links) override;
+
+	void visitFinal(const qReal::Id &id, const QList<generatorBase::LinkInfo> &links) override;
 
 	void visit(const qReal::Id &nodeId, QList<utils::DeepFirstSearcher::LinkInfo> &links) override;
 
 	/// Copies a linear fragment starting from semantic node with id @p from and pastes it into semantic tree as a
 	/// sibling of @p after node.
-	void copySynchronousFragment(generatorBase::semantics::SemanticNode *after, const qReal::Id from, bool withLabel);
-
-	/// Copies right siblings of the @p node until first labeled node, or until end.
-	const QLinkedList<generatorBase::semantics::SemanticNode *> copyRightSiblingsUntilAsynchronous(
-			generatorBase::semantics::NonZoneNode *node);
-
-	/// Creates node with label for a given id. Does not transfer ownership.
-	generatorBase::semantics::NonZoneNode *produceLabeledNode(const qReal::Id block);
+	/// @returns node that ends copied synchronous fragment (goto node) or nullptr if there was error.
+	generatorBase::semantics::SemanticNode * copySynchronousFragment(
+			generatorBase::semantics::SemanticNode *after
+			, const qReal::Id &from
+			, bool withLabel);
 
 	/// Returns true if this node is asynchronous.
 	bool isAsynchronous(const generatorBase::semantics::SemanticNode * const node) const;
 
-	/// Returns true if this node is synthetic, i.e. does not have corresponding block on a diagram.
-	bool isSynthetic(const generatorBase::semantics::SemanticNode * const node) const;
+	/// Creates synthetic node that denotes end of asynchronous handler.
+	generatorBase::semantics::SemanticNode *produceEndOfHandlerNode();
 
-	/// Finds first sibling of a given node that corresponds to asynchronous block. Returns nullptr if there is no
-	/// such node.
-	generatorBase::semantics::SemanticNode * findAsynchronousSibling(
-			generatorBase::semantics::NonZoneNode *node) const;
+	/// Logs an error and flags that there were errors.
+	void reportError(const QString &message);
 
-	/// Returns first non-synthetic right sibling of a given node. Returns nullptr if there is no such sibling.
-	generatorBase::semantics::SemanticNode *findRightSibling(
-			generatorBase::semantics::NonZoneNode * const node) const;
+	/// Return true if this is an If node.
+	static bool isIf(const generatorBase::semantics::SemanticNode * const node);
+
+	/// Returns true if this is an end-of-handler node.
+	static bool isEndOfHandler(const generatorBase::semantics::SemanticNode * const node);
+
+	/// Returns nearest right end-of-handler sibling of a given node or nullptr if no such node exists.
+	generatorBase::semantics::NonZoneNode *findEndOfHandler(generatorBase::semantics::SemanticNode * const from) const;
+
+	/// Processes deferred goto generation requests (if any). Deferred goto generation is caused by trying to generate
+	/// goto for asynchronous node that has not been visited yet, so we had no idea where to transfer control.
+	void doDeferredGotoGeneration(const qReal::Id &nodeId, const qReal::Id &targetId);
+
+	/// Visits parcitular node in a semantic tree.
+	void processNode(generatorBase::semantics::NonZoneNode *thisNode, const qReal::Id &target);
+
+	/// Logs given message if trace mode is on.
+	static void trace(const QString &message);
 
 	/// Node types that have asynchronous semantics: send a command to autopilot and continue execution when this
 	/// command is completed (e.g. "GoToPoint").
@@ -91,6 +111,17 @@ private:
 
 	/// A list of functions that shall be called on visiting each node.
 	QList<std::function<void(const qReal::Id)>> mNodeHooks;
+
+	/// Helper object for more convenient work with semantic tree.
+	QScopedPointer<SemanticTreeManager> mSemanticTreeManager;
+
+	/// A storage for nodes that are waiting for generation of Goto statements when their target will be known.
+	QMultiHash<qReal::Id, generatorBase::semantics::NonZoneNode *> mDeferredGotoNodes;
+
+	/// Set to keep track of visited nodes by itself, because stock DFSer can visit some nodes twice (when node
+	/// is a target for two non-trivial If branches, for example). Shall fix it in upstream DFS algorithm, but this
+	/// can be  breaking change.
+	QSet<qReal::Id> mVisitedNodes;
 };
 
 }
