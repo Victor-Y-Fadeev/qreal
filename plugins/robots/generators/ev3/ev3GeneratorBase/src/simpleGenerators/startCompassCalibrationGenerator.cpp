@@ -14,6 +14,7 @@
 
 #include "startCompassCalibrationGenerator.h"
 
+#include <qrkernel/exception/exception.h>
 #include <generatorBase/generatorCustomizer.h>
 
 #include "ev3GeneratorBase/ev3GeneratorFactory.h"
