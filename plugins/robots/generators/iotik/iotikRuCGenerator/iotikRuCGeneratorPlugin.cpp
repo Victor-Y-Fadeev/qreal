@@ -163,11 +163,11 @@ void IotikRuCGeneratorPlugin::uploadProgram()
     tty->write("cd /flash\n");
     sendFile("sensors", tty);
     sendFile("export", tty);
-    //tty->write("ruc export sensors\n");
+    tty->write("ruc export sensors\n");
     tty->close();
 
-    //QFile::remove(rootPath + "/sensors");
-    //QFile::remove(rootPath + "/export");
+    QFile::remove(rootPath + "/sensors");
+    QFile::remove(rootPath + "/export");
 }
 
 void IotikRuCGeneratorPlugin::compileCode(const QFileInfo fileInfo)
