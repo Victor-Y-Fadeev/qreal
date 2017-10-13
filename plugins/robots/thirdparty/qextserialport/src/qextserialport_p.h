@@ -116,10 +116,11 @@ public:
     }
 
     inline void chop(int size) {
-        if (size >= len)
+        if (size >= len) {
             clear();
-        else
+        } else {
             len -= size;
+        }
     }
 
     inline void squeeze() {
