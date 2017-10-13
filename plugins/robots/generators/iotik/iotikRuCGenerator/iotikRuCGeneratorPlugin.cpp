@@ -14,7 +14,6 @@
 
 #include "iotikRuCGeneratorPlugin.h"
 
-#include <QtSerialPort/QSerialPort>
 #include <QtWidgets/QApplication>
 #include <QtCore/QDir>
 #include <QtCore/QFile>
@@ -23,6 +22,8 @@
 
 #include <qrkernel/settingsManager.h>
 #include <utils/widgets/comPortPicker.h>
+
+#include "qextserialport.h"
 
 #include "iotikRuCMasterGenerator.h"
 #include "iotikRuCGeneratorDefs.h"
@@ -100,12 +101,12 @@ generatorBase::MasterGeneratorBase *IotikRuCGeneratorPlugin::masterGenerator()
 
 QString IotikRuCGeneratorPlugin::defaultFilePath(const QString &projectName) const
 {
-	return QString("ruc/%1/%1.c").arg(projectName);
+    return QString("ruc/%1/%1.c").arg(projectName);
 }
 
 qReal::text::LanguageInfo IotikRuCGeneratorPlugin::language() const
 {
-	return qReal::text::Languages::c();
+    return qReal::text::Languages::c();
 }
 
 QString IotikRuCGeneratorPlugin::generatorName() const
@@ -150,41 +151,23 @@ void IotikRuCGeneratorPlugin::uploadProgram()
 	configureSensors();
 	compileCode(fileInfo);
 
-	QSerialPort tty;
-	tty.setPortName(comPort);
-	tty.open(QIODevice::ReadWrite);
-	tty.setBaudRate(QSerialPort::Baud115200);
-	tty.setParity(QSerialPort::NoParity);
-	tty.setDataBits(QSerialPort::Data8);
-	tty.setStopBits(QSerialPort::OneStop);
-	tty.setFlowControl(QSerialPort::NoFlowControl);
+    QextSerialPort *tty = new QextSerialPort(comPort);
+    tty->setBaudRate(BAUD115200);
+    tty->setFlowControl(FLOW_OFF);
+    tty->setParity(PAR_NONE);
+    tty->setDataBits(DATA_8);
+    tty->setStopBits(STOP_1);
+    tty->setTimeout(0);
 
-	/*tty.open(QIODevice::ReadWrite);
-	tty.write("cd /flash\n");
-	sendFile("sensors", tty);
-	sendFile("export", tty);
-	tty.close();
+    tty->open(QIODevice::WriteOnly | QIODevice::Unbuffered);
+    tty->write("cd /flash\n");
+    sendFile("/sensors", tty);
+    sendFile("/export", tty);
+    tty->write("ruc export sensors\n");
+    tty->close();
 
-	tty.open(QIODevice::ReadWrite);
-	tty.write("ruc export sensors\n");
-	tty.flush();
-	tty.close();*/
-
-	tty.write("cd /flash\n");
-	tty.flush();
-	sendFile("sensors", tty);
-	sendFile("export", tty);
-	tty.write("ruc export sensors\n");
-	tty.flush();
-	tty.close();
-
-	/*sendCommand("cd /flash\n" ,tty);
-	sendFile("/sensors", tty);
-	sendFile("/export", tty);
-	sendCommand("ruc export sensors\n" ,tty);*/
-
-	//QFile::remove(rootPath + "/sensors");
-	//QFile::remove(rootPath + "/export");
+    QFile::remove(rootPath + "/sensors");
+    QFile::remove(rootPath + "/export");
 }
 
 void IotikRuCGeneratorPlugin::compileCode(const QFileInfo fileInfo)
@@ -227,37 +210,24 @@ void IotikRuCGeneratorPlugin::configureSensors()
 	sensors.close();
 }
 
-void IotikRuCGeneratorPlugin::sendCommand(const QString command, QSerialPort &tty)
+void IotikRuCGeneratorPlugin::sendFile(const QString filename, QextSerialPort *tty)
 {
-	tty.open(QIODevice::ReadWrite);
-	tty.write(QByteArray::fromStdString(command.toStdString()));
-	tty.flush();
-	tty.close();
-}
+    QFile sfile(filename);
+    sfile.open(QIODevice::ReadOnly);
 
-void IotikRuCGeneratorPlugin::sendFile(const QString filename, QSerialPort &tty)
-{
-	QFile sfile(filename);
-	sfile.open(QIODevice::ReadOnly);
+    const int block = 32;
+    int size = sfile.size();
 
-	const int block = 32;
-	int size = sfile.size();
+    QString command = "file_receive " +  QString::number(size) + " " + filename + "\n";
+    tty->write(QByteArray::fromStdString(command.toStdString()));
+    QThread::msleep(1000);
 
-	QString command = "file_receive " +  QString::number(size) + " " + filename + "\n";
-	tty.write(QByteArray::fromStdString(command.toStdString()));
-	//sendCommand(command, tty);
+    while (size > 0) {
+        QByteArray data = sfile.read(size > block ? block : size);
+        tty->write(data);
+        QThread::msleep(25);
+        size -= block;
+    }
 
-	//tty.open(QIODevice::ReadWrite);
-	QThread::msleep(1000);
-
-	while (size > 0) {
-		QByteArray data = sfile.read(size > block ? block : size);
-		tty.write(data);
-		QThread::msleep(25);
-		size -= block;
-	}
-
-	tty.flush();
-	//tty.close();
-	sfile.close();
+    sfile.close();
 }

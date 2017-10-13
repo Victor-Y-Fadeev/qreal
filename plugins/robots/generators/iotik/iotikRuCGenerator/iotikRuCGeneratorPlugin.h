@@ -20,6 +20,8 @@
 
 #include <widgets/iotikAdditionalPreferences.h>
 
+#include "qextserialport.h"
+
 #include "robotModel/generatorRobotModel.h"
 
 namespace iotik {
@@ -79,9 +81,8 @@ private:
 	QAction *mUploadProgramAction;  // Doesn't have ownership; may be disposed by GUI.
 
 	void compileCode(const QFileInfo fileInfo);
-	void configureSensors();
-	void sendCommand(const QString command, QSerialPort &tty);
-	void sendFile(const QString filename, QSerialPort &tty);
+    void configureSensors();
+    void sendFile(const QString filename, QextSerialPort *tty);
 
 };
 
