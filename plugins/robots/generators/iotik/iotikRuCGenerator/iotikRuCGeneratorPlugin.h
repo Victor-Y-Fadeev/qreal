@@ -20,7 +20,7 @@
 
 #include <widgets/iotikAdditionalPreferences.h>
 
-#include "qextserialport.h"
+#include <plugins/robots/thirdparty/qextserialport/src/qextserialport.h>
 
 #include "robotModel/generatorRobotModel.h"
 

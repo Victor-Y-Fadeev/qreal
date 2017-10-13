@@ -15,14 +15,12 @@
 TARGET = robots-iotik-ruc-generator
 
 include(../../../../../global.pri)
-include(../../../thirdparty/qextserialport/src/qextserialport.pri)
 
 QT += widgets
 QT += serialport
 
 TEMPLATE = lib
 CONFIG += plugin
-CONFIG += extserialport
 
 DESTDIR = $$DESTDIR/plugins/tools/kitPlugins/
 

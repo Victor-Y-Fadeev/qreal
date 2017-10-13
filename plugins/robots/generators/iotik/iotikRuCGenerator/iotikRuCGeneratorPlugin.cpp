@@ -23,7 +23,7 @@
 #include <qrkernel/settingsManager.h>
 #include <utils/widgets/comPortPicker.h>
 
-#include "qextserialport.h"
+#include <plugins/robots/thirdparty/qextserialport/src/qextserialport.h>
 
 #include "iotikRuCMasterGenerator.h"
 #include "iotikRuCGeneratorDefs.h"
@@ -161,13 +161,13 @@ void IotikRuCGeneratorPlugin::uploadProgram()
 
     tty->open(QIODevice::WriteOnly | QIODevice::Unbuffered);
     tty->write("cd /flash\n");
-    sendFile("/sensors", tty);
-    sendFile("/export", tty);
-    tty->write("ruc export sensors\n");
+    sendFile("sensors", tty);
+    sendFile("export", tty);
+    //tty->write("ruc export sensors\n");
     tty->close();
 
-    QFile::remove(rootPath + "/sensors");
-    QFile::remove(rootPath + "/export");
+    //QFile::remove(rootPath + "/sensors");
+    //QFile::remove(rootPath + "/export");
 }
 
 void IotikRuCGeneratorPlugin::compileCode(const QFileInfo fileInfo)
