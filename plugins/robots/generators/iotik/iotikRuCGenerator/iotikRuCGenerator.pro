@@ -16,9 +16,8 @@ TARGET = robots-iotik-ruc-generator
 
 include(../../../../../global.pri)
 
-copyToDestdir(scripts/file_send.py, now)
-
 QT += widgets
+QT += serialport
 
 TEMPLATE = lib
 CONFIG += plugin
@@ -31,11 +30,11 @@ includes(plugins/robots/generators/iotik/iotikGeneratorBase \
 		plugins/robots/common/iotikKit \
 		plugins/robots/utils \
 		qrtext \
-		thirdparty/qscintilla/Qt4Qt5 \
+                thirdparty/qscintilla/Qt4Qt5 \
 )
 
 links(qrkernel qslog qrutils qrrepo qscintilla2 robots-generator-base robots-iotik-generator-base robots-utils \
-		qrgui-preferences-dialog robots-kit-base robots-iotik-kit \
+                qrgui-preferences-dialog robots-kit-base robots-iotik-kit qextserialport \
 )
 
 TRANSLATIONS = \
@@ -61,6 +60,3 @@ FORMS += \
 RESOURCES += \
 	$$PWD/iotikRuCGenerator.qrc \
 	$$PWD/templates.qrc \
-
-OTHER_FILES += \
-	$$PWD/scripts/file_send.py \

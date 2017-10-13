@@ -14,9 +14,13 @@
 
 #pragma once
 
+#include <QtSerialPort/QSerialPort>
+
 #include <iotikGeneratorBase/iotikGeneratorPluginBase.h>
 
 #include <widgets/iotikAdditionalPreferences.h>
+
+#include <plugins/robots/thirdparty/qextserialport/src/qextserialport.h>
 
 #include "robotModel/generatorRobotModel.h"
 
@@ -77,7 +81,8 @@ private:
 	QAction *mUploadProgramAction;  // Doesn't have ownership; may be disposed by GUI.
 
 	void compileCode(const QFileInfo fileInfo);
-	void configureSensors();
+    void configureSensors();
+    void sendFile(const QString filename, QextSerialPort *tty);
 
 };
 
