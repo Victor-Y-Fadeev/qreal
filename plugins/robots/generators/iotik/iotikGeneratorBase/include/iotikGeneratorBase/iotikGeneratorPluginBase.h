@@ -16,7 +16,11 @@
 
 #include <generatorBase/robotsGeneratorPluginBase.h>
 
+#include <widgets/iotikAdditionalPreferences.h>
+
 #include "iotikGeneratorBaseDeclSpec.h"
+
+#include "src/robotModel/iotikGeneratorRobotModel.h"
 
 namespace iotik {
 
@@ -43,14 +47,22 @@ public:
 	kitBase::blocksBase::BlocksFactoryInterface *blocksFactoryFor(
 			const kitBase::robotModel::RobotModelInterface *model) override;
 
+	kitBase::robotModel::RobotModelInterface *defaultRobotModel() override;
+
 	QList<kitBase::AdditionalPreferences *> settingsWidgets() override;
+	QWidget *quickPreferencesFor(const kitBase::robotModel::RobotModelInterface &model) override;
 
 protected:
 	void regenerateExtraFiles(const QFileInfo &newFileInfo) override;
 
 private:
 	/// Robot model that is used to query information about various robot devices.
-	QScopedPointer<kitBase::robotModel::RobotModelInterface> mRobotModel;
+	robotModel::IotikGeneratorRobotModel mRobotModel;
+
+	QWidget *producePortConfigurer();  // Transfers ownership
+
+	IotikAdditionalPreferences *mAdditionalPreferences = nullptr;
+	bool mOwnsAdditionalPreferences = true;
 
 	/// Does not have ownership.
 	kitBase::blocksBase::BlocksFactoryInterface *mBlocksFactory;

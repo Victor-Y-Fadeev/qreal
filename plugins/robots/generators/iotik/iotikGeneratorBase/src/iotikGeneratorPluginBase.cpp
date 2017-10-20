@@ -16,20 +16,29 @@
 
 #include <iotikKit/blocks/iotikBlocksFactory.h>
 
+#include <utils/widgets/comPortPicker.h>
+
 #include "src/robotModel/iotikGeneratorRobotModel.h"
 
 using namespace iotik;
+using namespace qReal;
 
 IotikGeneratorPluginBase::IotikGeneratorPluginBase(const QString &robotName, const QString &robotFriendlyName
 	   , int priority)
-	: mRobotModel(new robotModel::IotikGeneratorRobotModel(kitId()
-		   , "iotikGeneratorRobot", robotName, robotFriendlyName, priority))
+	: mRobotModel(kitId(), "iotikGeneratorRobot", robotName, robotFriendlyName, priority)
 	, mBlocksFactory(new blocks::IotikBlocksFactory)
 {
+	mAdditionalPreferences = new IotikAdditionalPreferences(mRobotModel.name());
+
+	connect(mAdditionalPreferences, &IotikAdditionalPreferences::settingsChanged
+			, &mRobotModel, &iotik::robotModel::IotikGeneratorRobotModel::rereadSettings);
 }
 
 IotikGeneratorPluginBase::~IotikGeneratorPluginBase()
 {
+	if (mOwnsAdditionalPreferences) {
+		delete mAdditionalPreferences;
+	}
 }
 
 QString IotikGeneratorPluginBase::kitId() const
@@ -39,7 +48,12 @@ QString IotikGeneratorPluginBase::kitId() const
 
 QList<kitBase::robotModel::RobotModelInterface *> IotikGeneratorPluginBase::robotModels()
 {
-	return { mRobotModel.data() };
+	return {&mRobotModel};
+}
+
+kitBase::robotModel::RobotModelInterface *IotikGeneratorPluginBase::defaultRobotModel()
+{
+	return &mRobotModel;
 }
 
 kitBase::blocksBase::BlocksFactoryInterface *IotikGeneratorPluginBase::blocksFactoryFor(
@@ -51,7 +65,20 @@ kitBase::blocksBase::BlocksFactoryInterface *IotikGeneratorPluginBase::blocksFac
 
 QList<kitBase::AdditionalPreferences *> IotikGeneratorPluginBase::settingsWidgets()
 {
-	return {};
+	mOwnsAdditionalPreferences = false;
+	return {mAdditionalPreferences};
+}
+
+QWidget *IotikGeneratorPluginBase::quickPreferencesFor(const kitBase::robotModel::RobotModelInterface &model)
+{
+	return producePortConfigurer();
+}
+
+QWidget *IotikGeneratorPluginBase::producePortConfigurer()
+{
+	QWidget * const result = new ui::ComPortPicker("IotikPortName", this);
+	connect(this, &QObject::destroyed, [result]() { delete result; });
+	return result;
 }
 
 void IotikGeneratorPluginBase::regenerateExtraFiles(const QFileInfo &newFileInfo)

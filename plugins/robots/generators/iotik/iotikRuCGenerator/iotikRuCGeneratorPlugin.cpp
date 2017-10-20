@@ -21,8 +21,6 @@
 #include <QtCore/QThread>
 
 #include <qrkernel/settingsManager.h>
-#include <utils/widgets/comPortPicker.h>
-
 #include <plugins/robots/thirdparty/qextserialport/src/qextserialport.h>
 
 #include "iotikRuCMasterGenerator.h"
@@ -36,21 +34,13 @@ const Id subprogramDiagramType = Id("RobotsMetamodel", "RobotsDiagram", "Subprog
 
 IotikRuCGeneratorPlugin::IotikRuCGeneratorPlugin()
 	: IotikGeneratorPluginBase("IotikRuCGeneratorRobotModel", tr("Generation (RuC)"), 7 /* Last order */)
-	, mRobotModel(kitId(), "iotikGeneratorRobot", "iotikGeneratorRobot", tr("Generation (RuC)"), 0)
 	, mGenerateCodeAction(new QAction(nullptr))
 	, mUploadProgramAction(new QAction(nullptr))
 {
-	mAdditionalPreferences = new IotikAdditionalPreferences(mRobotModel.name());
-
-	connect(mAdditionalPreferences, &IotikAdditionalPreferences::settingsChanged
-			, &mRobotModel, &iotik::robotModel::IotikGeneratorRobotModel::rereadSettings);
 }
 
 IotikRuCGeneratorPlugin::~IotikRuCGeneratorPlugin()
 {
-	if (mOwnsAdditionalPreferences) {
-		delete mAdditionalPreferences;
-	}
 }
 
 QList<qReal::ActionInfo> IotikRuCGeneratorPlugin::customActions()
@@ -112,34 +102,6 @@ qReal::text::LanguageInfo IotikRuCGeneratorPlugin::language() const
 QString IotikRuCGeneratorPlugin::generatorName() const
 {
 	return "iotikRuC";
-}
-
-QList<kitBase::robotModel::RobotModelInterface *> IotikRuCGeneratorPlugin::robotModels()
-{
-	return {&mRobotModel};
-}
-
-kitBase::robotModel::RobotModelInterface *IotikRuCGeneratorPlugin::defaultRobotModel()
-{
-	return &mRobotModel;
-}
-
-QList<kitBase::AdditionalPreferences *> IotikRuCGeneratorPlugin::settingsWidgets()
-{
-	mOwnsAdditionalPreferences = false;
-	return {mAdditionalPreferences};
-}
-
-QWidget *IotikRuCGeneratorPlugin::quickPreferencesFor(const kitBase::robotModel::RobotModelInterface &model)
-{
-	return producePortConfigurer();
-}
-
-QWidget *IotikRuCGeneratorPlugin::producePortConfigurer()
-{
-	QWidget * const result = new ui::ComPortPicker("IotikPortName", this);
-	connect(this, &QObject::destroyed, [result]() { delete result; });
-	return result;
 }
 
 void IotikRuCGeneratorPlugin::uploadProgram()

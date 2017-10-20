@@ -14,15 +14,9 @@
 
 #pragma once
 
-#include <QtSerialPort/QSerialPort>
-
 #include <iotikGeneratorBase/iotikGeneratorPluginBase.h>
 
-#include <widgets/iotikAdditionalPreferences.h>
-
 #include <plugins/robots/thirdparty/qextserialport/src/qextserialport.h>
-
-#include "src/robotModel/iotikGeneratorRobotModel.h"
 
 namespace iotik {
 
@@ -43,12 +37,6 @@ public:
 	IotikRuCGeneratorPlugin();
 	~IotikRuCGeneratorPlugin() override;
 
-	QList<kitBase::robotModel::RobotModelInterface *> robotModels() override;
-	kitBase::robotModel::RobotModelInterface *defaultRobotModel() override;
-
-	QList<kitBase::AdditionalPreferences *> settingsWidgets() override;
-	QWidget *quickPreferencesFor(const kitBase::robotModel::RobotModelInterface &model) override;
-
 	QList<qReal::ActionInfo> customActions() override;
 	QList<qReal::HotKeyActionInfo> hotKeyActions() override;
 	QIcon iconForFastSelector(const kitBase::robotModel::RobotModelInterface &robotModel) const override;
@@ -65,15 +53,7 @@ private slots:
 	/// as <qReal save name>.c.
 	void uploadProgram();
 
-
 private:
-	robotModel::IotikGeneratorRobotModel mRobotModel;
-
-	QWidget *producePortConfigurer();  // Transfers ownership
-
-	IotikAdditionalPreferences *mAdditionalPreferences = nullptr;
-	bool mOwnsAdditionalPreferences = true;
-
 	/// Action that launches code generator
 	QAction *mGenerateCodeAction;  // Doesn't have ownership; may be disposed by GUI.
 
