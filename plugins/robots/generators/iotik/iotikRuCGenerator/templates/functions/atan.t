@@ -1,1 +1,1 @@
-﻿atan(@@ARGUMENT@@ / sqrt(@@ARGUMENT@@ * @@ARGUMENT@@ + 1))
+﻿asin(@@ARGUMENT@@ / sqrt(@@ARGUMENT@@ * @@ARGUMENT@@ + 1))
