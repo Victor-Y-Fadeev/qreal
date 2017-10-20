@@ -27,6 +27,7 @@ CONFIG(clang) {
 HEADERS += \
 	$$PWD/RuC/Defs.h \
 	$$PWD/RuC/global_vars.h \
+	$$PWD/RuC/th_static.h \
 
 SOURCES += \
 	$$PWD/RuC/codegen.c \
@@ -35,7 +36,9 @@ SOURCES += \
 	$$PWD/RuC/extdecl.c \
 	$$PWD/RuC/import.c \
 	$$PWD/RuC/main.c \
+	$$PWD/RuC/preprocessor.c \
 	$$PWD/RuC/scaner.c \
+	$$PWD/RuC/threads.c \
 
 RESOURCES += \
 	$$PWD/keywords.txt \
