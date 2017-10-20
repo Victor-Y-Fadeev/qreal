@@ -16,20 +16,10 @@
 
 #include <QtGlobal>
 
-#ifdef Q_OS_WIN
-	#define RUC_COMPILER "ruc.exe"
-	#define RUC_DEBUG_COMPILER "ruc-d.exe"
-	#define PYTHON "python.exe"
-#endif
-
-#ifdef Q_OS_LINUX
-	#define RUC_COMPILER "ruc"
-	#define RUC_DEBUG_COMPILER "ruc-d"
-	#define PYTHON "python"
-#endif
-
-#ifdef Q_OS_MACOS
-	#define RUC_COMPILER "ruc"
-	#define RUC_DEBUG_COMPILER "ruc-d"
-	#define PYTHON "python"
+#if defined Q_OS_WIN
+#	define RUC_COMPILER "ruc.exe"
+#	define RUC_DEBUG_COMPILER "ruc-d.exe"
+#else
+#	define RUC_COMPILER "ruc"
+#	define RUC_DEBUG_COMPILER "ruc-d"
 #endif

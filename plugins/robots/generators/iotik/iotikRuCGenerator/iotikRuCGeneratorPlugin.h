@@ -22,7 +22,7 @@
 
 #include <plugins/robots/thirdparty/qextserialport/src/qextserialport.h>
 
-#include "../iotikGeneratorBase/src/robotModel/iotikGeneratorRobotModel.h"
+#include "src/robotModel/iotikGeneratorRobotModel.h"
 
 namespace iotik {
 
