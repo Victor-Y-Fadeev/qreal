@@ -81,8 +81,8 @@ private:
 	QAction *mUploadProgramAction;  // Doesn't have ownership; may be disposed by GUI.
 
 	void compileCode(const QFileInfo fileInfo);
-    void configureSensors();
-    void sendFile(const QString filename, QextSerialPort *tty);
+	void configureSensors();
+	void sendFile(const QString filename, QextSerialPort *tty);
 
 };
 

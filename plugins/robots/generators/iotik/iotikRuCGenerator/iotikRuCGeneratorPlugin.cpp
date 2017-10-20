@@ -101,12 +101,12 @@ generatorBase::MasterGeneratorBase *IotikRuCGeneratorPlugin::masterGenerator()
 
 QString IotikRuCGeneratorPlugin::defaultFilePath(const QString &projectName) const
 {
-    return QString("ruc/%1/%1.c").arg(projectName);
+	return QString("ruc/%1/%1.c").arg(projectName);
 }
 
 qReal::text::LanguageInfo IotikRuCGeneratorPlugin::language() const
 {
-    return qReal::text::Languages::c();
+	return qReal::text::Languages::c();
 }
 
 QString IotikRuCGeneratorPlugin::generatorName() const
@@ -151,23 +151,23 @@ void IotikRuCGeneratorPlugin::uploadProgram()
 	configureSensors();
 	compileCode(fileInfo);
 
-    QextSerialPort *tty = new QextSerialPort(comPort);
-    tty->setBaudRate(BAUD115200);
-    tty->setFlowControl(FLOW_OFF);
-    tty->setParity(PAR_NONE);
-    tty->setDataBits(DATA_8);
-    tty->setStopBits(STOP_1);
-    tty->setTimeout(0);
+	QextSerialPort *tty = new QextSerialPort(comPort);
+	tty->setBaudRate(BAUD115200);
+	tty->setFlowControl(FLOW_OFF);
+	tty->setParity(PAR_NONE);
+	tty->setDataBits(DATA_8);
+	tty->setStopBits(STOP_1);
+	tty->setTimeout(0);
 
-    tty->open(QIODevice::WriteOnly | QIODevice::Unbuffered);
-    tty->write("cd /flash\n");
-    sendFile("sensors", tty);
-    sendFile("export", tty);
-    tty->write("ruc export sensors\n");
-    tty->close();
+	tty->open(QIODevice::WriteOnly | QIODevice::Unbuffered);
+	tty->write("cd /flash\n");
+	sendFile("sensors", tty);
+	sendFile("export", tty);
+	tty->write("ruc export sensors\n");
+	tty->close();
 
-    QFile::remove(rootPath + "/sensors");
-    QFile::remove(rootPath + "/export");
+	QFile::remove(rootPath + "/sensors");
+	QFile::remove(rootPath + "/export");
 }
 
 void IotikRuCGeneratorPlugin::compileCode(const QFileInfo fileInfo)
@@ -212,22 +212,22 @@ void IotikRuCGeneratorPlugin::configureSensors()
 
 void IotikRuCGeneratorPlugin::sendFile(const QString filename, QextSerialPort *tty)
 {
-    QFile sfile(filename);
-    sfile.open(QIODevice::ReadOnly);
+	QFile sfile(filename);
+	sfile.open(QIODevice::ReadOnly);
 
-    const int block = 32;
-    int size = sfile.size();
+	const int block = 32;
+	int size = sfile.size();
 
-    QString command = "file_receive " +  QString::number(size) + " " + filename + "\n";
-    tty->write(QByteArray::fromStdString(command.toStdString()));
-    QThread::msleep(1000);
+	QString command = "file_receive " +  QString::number(size) + " " + filename + "\n";
+	tty->write(QByteArray::fromStdString(command.toStdString()));
+	QThread::msleep(1000);
 
-    while (size > 0) {
-        QByteArray data = sfile.read(size > block ? block : size);
-        tty->write(data);
-        QThread::msleep(25);
-        size -= block;
-    }
+	while (size > 0) {
+		QByteArray data = sfile.read(size > block ? block : size);
+		tty->write(data);
+		QThread::msleep(25);
+		size -= block;
+	}
 
-    sfile.close();
+	sfile.close();
 }
