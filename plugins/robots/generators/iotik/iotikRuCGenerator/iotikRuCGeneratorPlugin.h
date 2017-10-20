@@ -22,7 +22,7 @@
 
 #include <plugins/robots/thirdparty/qextserialport/src/qextserialport.h>
 
-#include "robotModel/generatorRobotModel.h"
+#include "../iotikGeneratorBase/src/robotModel/iotikGeneratorRobotModel.h"
 
 namespace iotik {
 
@@ -67,7 +67,7 @@ private slots:
 
 
 private:
-	robotModel::GeneratorRobotModel mRobotModel;
+	robotModel::IotikGeneratorRobotModel mRobotModel;
 
 	QWidget *producePortConfigurer();  // Transfers ownership
 

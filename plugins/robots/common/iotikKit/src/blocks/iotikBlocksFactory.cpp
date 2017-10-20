@@ -60,7 +60,7 @@ qReal::IdList IotikBlocksFactory::providedBlocks() const
 				id("IotikEnginesBackward")
 				, id("IotikEnginesForward")
 				, id("IotikEnginesStop")
-				, id("IotikDetectorToVariable")
+				//, id("IotikDetectorToVariable")
 
 				, id("IotikWaitForIRDistance")
 				, id("IotikWaitForSonarDistance")

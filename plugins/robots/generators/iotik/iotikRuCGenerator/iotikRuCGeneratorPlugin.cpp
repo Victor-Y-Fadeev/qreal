@@ -36,14 +36,14 @@ const Id subprogramDiagramType = Id("RobotsMetamodel", "RobotsDiagram", "Subprog
 
 IotikRuCGeneratorPlugin::IotikRuCGeneratorPlugin()
 	: IotikGeneratorPluginBase("IotikRuCGeneratorRobotModel", tr("Generation (RuC)"), 7 /* Last order */)
-	, mRobotModel(kitId(), "generatorRobot")
+	, mRobotModel(kitId(), "iotikGeneratorRobot", "iotikGeneratorRobot", tr("Generation (RuC)"), 0)
 	, mGenerateCodeAction(new QAction(nullptr))
 	, mUploadProgramAction(new QAction(nullptr))
 {
 	mAdditionalPreferences = new IotikAdditionalPreferences(mRobotModel.name());
 
 	connect(mAdditionalPreferences, &IotikAdditionalPreferences::settingsChanged
-			, &mRobotModel, &iotik::robotModel::GeneratorRobotModel::rereadSettings);
+			, &mRobotModel, &iotik::robotModel::IotikGeneratorRobotModel::rereadSettings);
 }
 
 IotikRuCGeneratorPlugin::~IotikRuCGeneratorPlugin()
