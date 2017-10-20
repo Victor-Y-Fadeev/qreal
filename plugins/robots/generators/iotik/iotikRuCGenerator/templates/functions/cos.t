@@ -1,1 +1,1 @@
-﻿cos(@@ARGUMENT@@)
+﻿кос(@@ARGUMENT@@)

@@ -1,4 +1,4 @@
-﻿switch (@@EXPRESSION@@) {
+﻿выбор (@@EXPRESSION@@) {
 @@CONDITION@@
 @@BODY@@
-	break;
+	выход;

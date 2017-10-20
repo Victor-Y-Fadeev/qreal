@@ -1,3 +1,3 @@
-﻿if (@@CONDITION@@) {
+﻿если (@@CONDITION@@) {
 @@THEN_BODY@@
 }

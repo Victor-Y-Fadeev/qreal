@@ -1,4 +1,4 @@
-﻿while (1) {
-	int sensor = getansensor(@@PORT@@);
-	if (sensor != 0) break;
+﻿пока (1) {
+	цел сенсор = аналогдатчик(@@PORT@@);
+	если (сенсор != 0) выход;
 }

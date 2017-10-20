@@ -1,3 +1,3 @@
-﻿while (@@CONDITION@@) {
+﻿пока (@@CONDITION@@) {
 @@BODY@@
 }

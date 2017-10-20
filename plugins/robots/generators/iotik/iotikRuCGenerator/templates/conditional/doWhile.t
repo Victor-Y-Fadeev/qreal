@@ -1,3 +1,3 @@
-﻿do {
+﻿цикл {
 @@BODY@@
-} while (@@CONDITION@@);
+} пока (@@CONDITION@@);

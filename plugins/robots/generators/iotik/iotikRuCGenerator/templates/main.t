@@ -1,9 +1,9 @@
 ﻿@@VARIABLES@@
 
-int M1 = 1;
-int M2 = 2;
-int A1 = 1;
-int D1 = 1;
+цел M1 = 1;
+цел M2 = 2;
+цел A1 = 1;
+цел D1 = 1;
 
 @@SUBPROGRAMS_FORWARDING@@
 
@@ -13,10 +13,10 @@ int D1 = 1;
 
 @@THREADS@@
 
-int main()
+цел главная()
 {
 @@MAIN_CODE@@
 
-	return 0;
+	возврат 0;
 
 }

@@ -1,1 +1,1 @@
-﻿log(@@ARGUMENT@@)
+﻿лог(@@ARGUMENT@@)

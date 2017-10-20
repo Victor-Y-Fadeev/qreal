@@ -1,4 +1,4 @@
-﻿while (1) {
-	int sensor = getdigsensor(@@PORT@@);
-	if (sensor @@SIGN@@ @@DISTANCE@@) break;
+﻿пока (1) {
+	цел сенсор = цифрдатчик(@@PORT@@);
+	если (сенсор @@SIGN@@ @@DISTANCE@@) выход;
 }

@@ -1,1 +1,1 @@
-rand() % @@ARGUMENT@@
+случ() % @@ARGUMENT@@

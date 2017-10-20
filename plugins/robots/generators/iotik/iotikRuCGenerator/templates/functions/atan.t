@@ -1,1 +1,1 @@
-﻿asin(@@ARGUMENT@@ / sqrt(@@ARGUMENT@@ * @@ARGUMENT@@ + 1))
+﻿асин(@@ARGUMENT@@ / квкор(@@ARGUMENT@@ * @@ARGUMENT@@ + 1))
