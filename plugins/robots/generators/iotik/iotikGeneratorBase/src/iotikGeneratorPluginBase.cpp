@@ -27,11 +27,15 @@ IotikGeneratorPluginBase::IotikGeneratorPluginBase(const QString &robotName, con
 	   , int priority)
 	: mRobotModel(kitId(), "iotikGeneratorRobot", robotName, robotFriendlyName, priority)
 	, mBlocksFactory(new blocks::IotikBlocksFactory)
+	, mActivateAction(new QAction(nullptr))
+	, mSeparator(nullptr)
 {
 	mAdditionalPreferences = new IotikAdditionalPreferences(mRobotModel.name());
 
 	connect(mAdditionalPreferences, &IotikAdditionalPreferences::settingsChanged
 			, &mRobotModel, &iotik::robotModel::IotikGeneratorRobotModel::rereadSettings);
+
+	mSeparator.setSeparator(true);
 }
 
 IotikGeneratorPluginBase::~IotikGeneratorPluginBase()
@@ -39,6 +43,22 @@ IotikGeneratorPluginBase::~IotikGeneratorPluginBase()
 	if (mOwnsAdditionalPreferences) {
 		delete mAdditionalPreferences;
 	}
+}
+
+QList<qReal::ActionInfo> IotikGeneratorPluginBase::activateActions()
+{
+	mActivateAction->setObjectName("activate");
+	mActivateAction->setText(tr("Аctivate IoTik v1.0"));
+	mActivateAction->setIcon(QIcon(":/images/activate.svg"));
+	qReal::ActionInfo activateActionInfo(mActivateAction, "generators", "tools");
+	connect(mActivateAction, SIGNAL(triggered()), this, SLOT(activate()), Qt::UniqueConnection);
+
+	return {qReal::ActionInfo(&mSeparator, "generators", "tools"), activateActionInfo};
+}
+
+void IotikGeneratorPluginBase::activate()
+{
+	mMainWindowInterface->errorReporter()->addError(tr("Activator is not released yet"));
 }
 
 QString IotikGeneratorPluginBase::kitId() const

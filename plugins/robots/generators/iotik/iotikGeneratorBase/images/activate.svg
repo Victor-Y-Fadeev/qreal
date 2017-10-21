@@ -2,6 +2,7 @@
 <!-- Creator: CorelDRAW X6 -->
 
 <svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -16,7 +17,7 @@
    style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
    viewBox="0 0 15000 15000"
    id="svg4521"
-   sodipodi:docname="uploadProgramSmal.svg"
+   sodipodi:docname="activate.svg"
    inkscape:version="0.92.1 r15371"><metadata
    id="metadata4525"><rdf:RDF><cc:Work
        rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
@@ -34,15 +35,20 @@
    id="namedview4523"
    showgrid="false"
    showguides="false"
-   inkscape:zoom="5.56"
-   inkscape:cx="75"
-   inkscape:cy="75"
-   inkscape:window-x="-8"
+   inkscape:zoom="2.78"
+   inkscape:cx="131.64725"
+   inkscape:cy="104.50577"
+   inkscape:window-x="1016"
    inkscape:window-y="-8"
    inkscape:window-maximized="1"
    inkscape:current-layer="Layer_x0020_1" />
  <defs
-   id="defs4509">
+   id="defs4509"><linearGradient
+   id="linearGradient13019"
+   osb:paint="solid"><stop
+     style="stop-color:#d1c313;stop-opacity:1;"
+     offset="0"
+     id="stop13017" /></linearGradient>
   <style
    type="text/css"
    id="style4485">
@@ -123,30 +129,31 @@
    style="stop-color:#E6E6E6"
    id="stop4506" />
   </linearGradient>
- </defs>
+ <clipPath
+   id="id0-6"><path
+     inkscape:connector-curvature="0"
+     d="m 1613,9377 h 6795 c 524,0 952,-428 952,-952 V 1630 c 0,-524 -428,-952 -952,-952 H 1613 c -524,0 -952,428 -952,952 v 6795 c 0,524 428,952 952,952 z"
+     id="path8356" /></clipPath></defs>
  <g
    id="Layer_x0020_1">
   <metadata
    id="CorelCorpID_0Corel-Layer" />
-  <polygon
-   class="fil0 str0"
-   points="2462,640 12517,640 12517,11554 11100,12326 9802,13945 9686,13975 2462,13975 "
-   id="polygon4512" />
-  <path
-   class="fil1 str0"
-   d="M9753 13964c998,-173 2410,-1536 2767,-2393 0,0 -2662,3 -2702,30 -40,26 -64,2363 -64,2363z"
-   id="path4514" />
-  <rect
-   class="fil2"
-   x="2738"
-   y="784"
-   width="9525"
-   height="1005"
-   id="rect4516" />
-  <path
-   class="fil3 str1"
-   d="M8369 11233l-1753 2c-156,0 -283,-127 -283,-282l-6 -4568 -1513 6c-625,3 -577,63 -122,-364 746,-697 1491,-1393 2237,-2090 551,-515 375,-529 921,-25 765,706 1530,1406 2296,2115 451,418 397,340 -213,343l-1287 5 6 4575c0,156 -127,283 -282,283z"
-   id="path4518"
-   style="stroke:#666666;stroke-opacity:0" />
- </g>
+  
+  
+  
+  
+ <g
+   id="g13026"><path
+     inkscape:connector-curvature="0"
+     id="path9792"
+     d="M 8534.2367,6396.0128 C 9322.6854,4834.4681 9286.5156,3100.4016 7982.3227,1795.9484 6272.1958,85.821564 3444.1893,174.29435 1849.8577,2061.8872 464.2178,3702.2767 584.95713,6193.0458 2112.4137,7702.0272 3274.2695,8849.8314 4876.1474,9102.7595 6326.0602,8603.9291 l 735.8853,750.7176 H 8370.0417 V 10395.503 H 9410.898 v 1040.856 h 1301.07 v 1301.071 h 780.643 v 722.354 c 0,209.993 10.148,272.184 143.377,405.153 100.964,100.963 234.714,162.634 377.051,173.563 h 2081.712 V 11696.573 Z M 4854.2894,4556.0391 c -508.1981,508.1981 -1331.7756,508.1981 -1839.9737,0 -508.1981,-508.1981 -508.1981,-1331.7756 0,-1839.9737 508.1981,-508.1981 1331.7756,-508.1981 1839.9737,0 507.9378,507.9378 507.9378,1331.7756 0,1839.9737 z"
+     style="fill:#fbe805;fill-opacity:1;stroke:#d1c313;stroke-opacity:1;stroke-width:500;stroke-miterlimit:4;stroke-dasharray:none" /><path
+     inkscape:connector-curvature="0"
+     id="path9794"
+     d="m 7849.8737,7533.1482 -1460.0611,1135.5742 672.3932,685.9243 h 1308.0961 v 1040.8563 h 1040.8563 v 1040.856 h 1301.0708 v 1301.071 h 780.642 v 722.354 c 0,209.993 10.148,272.184 143.378,405.153 100.963,100.963 234.713,162.634 377.05,173.563 h 2081.712 v -260.214 z"
+     style="fill:#d1c313;fill-opacity:1" /><path
+     inkscape:connector-curvature="0"
+     id="path9796"
+     d="m 3946.6627,1808.4387 c -1005.9876,0 -1821.4985,815.5109 -1821.4985,1821.4985 0,1005.9876 815.5109,1821.4985 1821.4985,1821.4985 1005.9876,0 1821.4985,-815.5109 1821.4985,-1821.4985 0,-1005.9876 -815.5109,-1821.4985 -1821.4985,-1821.4985 z m 0,3122.5688 c -718.4511,0 -1301.0704,-582.6193 -1301.0704,-1301.0703 0,-718.451 582.6193,-1301.0704 1301.0704,-1301.0704 718.451,0 1301.0703,582.6194 1301.0703,1301.0704 0,718.451 -582.359,1301.0703 -1301.0703,1301.0703 z"
+     style="fill:#d1c313;fill-opacity:1" /></g></g>
 </svg>

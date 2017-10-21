@@ -70,3 +70,6 @@ SOURCES += \
 
 FORMS += \
 	$$PWD/widgets/iotikAdditionalPreferences.ui \
+
+RESOURCES += \
+	$$PWD/iotikGeneratorBase.qrc \

@@ -35,7 +35,8 @@ const Id subprogramDiagramType = Id("RobotsMetamodel", "RobotsDiagram", "Subprog
 IotikRuCGeneratorPlugin::IotikRuCGeneratorPlugin()
 	: IotikGeneratorPluginBase("IotikRuCGeneratorRobotModel", tr("Generation (RuC)"), 7 /* Last order */)
 	, mGenerateCodeAction(new QAction(nullptr))
-	, mUploadProgramAction(new QAction(nullptr))
+	, mUsbUploadAction(new QAction(nullptr))
+	, mWifiUploadAction(new QAction(nullptr))
 {
 }
 
@@ -51,24 +52,35 @@ QList<qReal::ActionInfo> IotikRuCGeneratorPlugin::customActions()
 	qReal::ActionInfo generateCodeActionInfo(mGenerateCodeAction, "generators", "tools");
 	connect(mGenerateCodeAction, SIGNAL(triggered()), this, SLOT(generateCode()), Qt::UniqueConnection);
 
-	mUploadProgramAction->setObjectName("uploadProgram");
-	mUploadProgramAction->setText(tr("Upload program"));
-	mUploadProgramAction->setIcon(QIcon(":/iotik/ruc/images/uploadProgram.svg"));
-	qReal::ActionInfo uploadProgramActionInfo(mUploadProgramAction, "generators", "tools");
-	connect(mUploadProgramAction, SIGNAL(triggered()), this, SLOT(uploadProgram()), Qt::UniqueConnection);
+	mUsbUploadAction->setObjectName("usbUpload");
+	mUsbUploadAction->setText(tr("Upload program by USB"));
+	mUsbUploadAction->setIcon(QIcon(":/images/usbUpload.svg"));
+	qReal::ActionInfo usbUploadActionInfo(mUsbUploadAction, "generators", "tools");
+	connect(mUsbUploadAction, SIGNAL(triggered()), this, SLOT(usbUpload()), Qt::UniqueConnection);
 
-	return {generateCodeActionInfo, uploadProgramActionInfo};
+	mWifiUploadAction->setObjectName("wifiUpload");
+	mWifiUploadAction->setText(tr("Upload program by Wi-Fi"));
+	mWifiUploadAction->setIcon(QIcon(":/images/wifiUpload.svg"));
+	qReal::ActionInfo wifiUploadActionInfo(mWifiUploadAction, "generators", "tools");
+	connect(mWifiUploadAction, SIGNAL(triggered()), this, SLOT(wifiUpload()), Qt::UniqueConnection);
+
+	QList<qReal::ActionInfo> result = {generateCodeActionInfo, usbUploadActionInfo, wifiUploadActionInfo};
+	result.append(activateActions());
+
+	return result;
 }
 
 QList<qReal::HotKeyActionInfo> IotikRuCGeneratorPlugin::hotKeyActions()
 {
 	mGenerateCodeAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_G));
-	mUploadProgramAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_U));
+	mUsbUploadAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_U));
+	mWifiUploadAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_W));
 
 	qReal::HotKeyActionInfo generateCodeInfo("Generator.GenerateRuC", tr("Generate RuC Code"), mGenerateCodeAction);
-	qReal::HotKeyActionInfo uploadProgramInfo("Generator.UploadRuC", tr("Upload RuC Program"), mUploadProgramAction);
+	qReal::HotKeyActionInfo usbUploadInfo("Generator.UsbUploadRuC", tr("Upload RuC Program by USB"), mUsbUploadAction);
+	qReal::HotKeyActionInfo wifiUploadInfo("Generator.WifiUploadRuC", tr("Upload RuC Program by Wi-Fi"), mWifiUploadAction);
 
-	return {generateCodeInfo, uploadProgramInfo};
+	return {generateCodeInfo, usbUploadInfo, wifiUploadInfo};
 }
 
 QIcon IotikRuCGeneratorPlugin::iconForFastSelector(const kitBase::robotModel::RobotModelInterface &robotModel) const
@@ -104,7 +116,12 @@ QString IotikRuCGeneratorPlugin::generatorName() const
 	return "iotikRuC";
 }
 
-void IotikRuCGeneratorPlugin::uploadProgram()
+void IotikRuCGeneratorPlugin::wifiUpload()
+{
+	mMainWindowInterface->errorReporter()->addError(tr("Wi-Fi is not released yet"));
+}
+
+void IotikRuCGeneratorPlugin::usbUpload()
 {
 	const QString comPort = SettingsManager::value("IotikPortName").toString();
 	const QFileInfo fileInfo = generateCodeForProcessing();

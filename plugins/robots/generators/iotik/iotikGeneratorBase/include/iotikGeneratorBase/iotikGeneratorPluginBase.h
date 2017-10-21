@@ -55,6 +55,11 @@ public:
 protected:
 	void regenerateExtraFiles(const QFileInfo &newFileInfo) override;
 
+	QList<qReal::ActionInfo> activateActions();
+
+private slots:
+	void activate();
+
 private:
 	/// Robot model that is used to query information about various robot devices.
 	robotModel::IotikGeneratorRobotModel mRobotModel;
@@ -66,6 +71,9 @@ private:
 
 	/// Does not have ownership.
 	kitBase::blocksBase::BlocksFactoryInterface *mBlocksFactory;
+
+	QAction *mActivateAction;
+	QAction mSeparator;
 };
 
 }
