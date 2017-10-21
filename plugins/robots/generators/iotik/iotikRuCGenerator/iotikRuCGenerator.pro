@@ -33,7 +33,7 @@ includes(plugins/robots/generators/iotik/iotikGeneratorBase \
 )
 
 links(qrkernel qslog qrutils qrrepo qscintilla2 robots-generator-base robots-iotik-generator-base \
-		robots-kit-base robots-iotik-kit qextserialport \
+		robots-kit-base robots-iotik-kit \
 )
 
 TRANSLATIONS = \

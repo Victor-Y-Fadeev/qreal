@@ -18,14 +18,14 @@
 #include <QtCore/QDir>
 #include <QtCore/QFile>
 #include <QtCore/QProcess>
-#include <QtCore/QThread>
 
 #include <qrkernel/settingsManager.h>
-#include <plugins/robots/thirdparty/qextserialport/src/qextserialport.h>
+#include <iotikKit/communication/usbRobotCommunicationThread.h>
 
 #include "iotikRuCMasterGenerator.h"
 #include "iotikRuCGeneratorDefs.h"
 
+using namespace iotik::communication;
 using namespace iotik::ruc;
 using namespace qReal;
 
@@ -37,6 +37,7 @@ IotikRuCGeneratorPlugin::IotikRuCGeneratorPlugin()
 	, mGenerateCodeAction(new QAction(nullptr))
 	, mUsbUploadAction(new QAction(nullptr))
 	, mWifiUploadAction(new QAction(nullptr))
+	, mUsbCommunicator(new UsbRobotCommunicationThread())
 {
 }
 
@@ -123,33 +124,26 @@ void IotikRuCGeneratorPlugin::wifiUpload()
 
 void IotikRuCGeneratorPlugin::usbUpload()
 {
-	const QString comPort = SettingsManager::value("IotikPortName").toString();
 	const QFileInfo fileInfo = generateCodeForProcessing();
 	const QString rootPath = QDir::current().absolutePath();
 
+	if (!compileCode(fileInfo)) {
+		return;
+	}
 	configureSensors();
-	compileCode(fileInfo);
 
-	QextSerialPort *tty = new QextSerialPort(comPort);
-	tty->setBaudRate(BAUD115200);
-	tty->setFlowControl(FLOW_OFF);
-	tty->setParity(PAR_NONE);
-	tty->setDataBits(DATA_8);
-	tty->setStopBits(STOP_1);
-	tty->setTimeout(0);
-
-	tty->open(QIODevice::WriteOnly | QIODevice::Unbuffered);
-	tty->write("cd /flash\n");
-	sendFile("sensors", tty);
-	sendFile("export", tty);
-	tty->write("ruc export sensors\n");
-	tty->close();
+	mUsbCommunicator->connect();
+	mUsbCommunicator->sendCommand("cd flash\n");
+	mUsbCommunicator->sendFile("sensors");
+	mUsbCommunicator->sendFile("export");
+	mUsbCommunicator->sendCommand("ruc export sensors\n");
+	mUsbCommunicator->disconnect();
 
 	QFile::remove(rootPath + "/sensors");
 	QFile::remove(rootPath + "/export");
 }
 
-void IotikRuCGeneratorPlugin::compileCode(const QFileInfo fileInfo)
+bool IotikRuCGeneratorPlugin::compileCode(const QFileInfo fileInfo)
 {
 	const QString rootPath = QDir::current().absolutePath();
 	const QString filePath = fileInfo.absoluteFilePath();
@@ -168,7 +162,10 @@ void IotikRuCGeneratorPlugin::compileCode(const QFileInfo fileInfo)
 		QFile::rename(rootPath + "/export.txt", rootPath + "/export");
 	} else {
 		mMainWindowInterface->errorReporter()->addError(tr("Code compiling failed, aborting"));
+		return false;
 	}
+
+	return true;
 }
 
 void IotikRuCGeneratorPlugin::configureSensors()
@@ -187,26 +184,4 @@ void IotikRuCGeneratorPlugin::configureSensors()
 	out << "0 1\n";
 
 	sensors.close();
-}
-
-void IotikRuCGeneratorPlugin::sendFile(const QString filename, QextSerialPort *tty)
-{
-	QFile sfile(filename);
-	sfile.open(QIODevice::ReadOnly);
-
-	const int block = 32;
-	int size = sfile.size();
-
-	QString command = "file_receive " +  QString::number(size) + " " + filename + "\n";
-	tty->write(QByteArray::fromStdString(command.toStdString()));
-	QThread::msleep(1000);
-
-	while (size > 0) {
-		QByteArray data = sfile.read(size > block ? block : size);
-		tty->write(data);
-		QThread::msleep(25);
-		size -= block;
-	}
-
-	sfile.close();
 }

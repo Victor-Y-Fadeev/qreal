@@ -16,7 +16,7 @@
 
 #include <iotikGeneratorBase/iotikGeneratorPluginBase.h>
 
-#include <plugins/robots/thirdparty/qextserialport/src/qextserialport.h>
+#include <iotikKit/communication/usbRobotCommunicationThread.h>
 
 namespace iotik {
 
@@ -62,9 +62,10 @@ private:
 	QAction *mUsbUploadAction;  // Doesn't have ownership; may be disposed by GUI.
 	QAction *mWifiUploadAction;
 
-	void compileCode(const QFileInfo fileInfo);
+	communication::UsbRobotCommunicationThread *mUsbCommunicator;
+
+	bool compileCode(const QFileInfo fileInfo);
 	void configureSensors();
-	void sendFile(const QString filename, QextSerialPort *tty);
 
 };
 
