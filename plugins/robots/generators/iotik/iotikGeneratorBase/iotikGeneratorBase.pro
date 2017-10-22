@@ -19,9 +19,8 @@ include(../../../../../global.pri)
 QT += widgets
 
 TEMPLATE = lib
-
-includes(plugins/robots/generators/iotik/iotikGeneratorBase \
-		plugins/robots/generators/generatorBase \
+#plugins/robots/generators/iotik/iotikGeneratorBase \
+includes(plugins/robots/generators/generatorBase \
 		plugins/robots/common/kitBase \
 		plugins/robots/common/iotikKit \
 		plugins/robots/utils \
@@ -29,9 +28,11 @@ includes(plugins/robots/generators/iotik/iotikGeneratorBase \
 		thirdparty/qscintilla/Qt4Qt5 \
 )
 
-links(qrkernel qslog qrutils qrrepo robots-generator-base robots-iotik-kit robots-kit-base \
-		qrgui-preferences-dialog robots-utils \
-)
+links(qrkernel qslog qrutils qrrepo robots-generator-base robots-kit-base robots-iotik-kit)
+
+#links(qrkernel qslog qrutils qrrepo robots-generator-base robots-iotik-kit robots-kit-base \
+#		qrgui-preferences-dialog robots-utils \
+#)
 
 DEFINES += ROBOTS_IOTIK_GENERATOR_BASE_LIBRARY
 
@@ -52,7 +53,7 @@ HEADERS += \
 	$$PWD/src/simpleGenerators/iotikEnginesGenerator.h \
 	$$PWD/src/simpleGenerators/waitForInfraredSensorGenerator.h \
 	$$PWD/src/simpleGenerators/waitForMotionGenerator.h \
-	$$PWD/widgets/iotikAdditionalPreferences.h \
+#	$$PWD/widgets/iotikAdditionalPreferences.h \
 
 SOURCES += \
 	$$PWD/src/iotikGeneratorPluginBase.cpp \
@@ -66,10 +67,10 @@ SOURCES += \
 	$$PWD/src/simpleGenerators/iotikEnginesGenerator.cpp \
 	$$PWD/src/simpleGenerators/waitForInfraredSensorGenerator.cpp \
 	$$PWD/src/simpleGenerators/waitForMotionGenerator.cpp \
-	$$PWD/widgets/iotikAdditionalPreferences.cpp \
+#	$$PWD/widgets/iotikAdditionalPreferences.cpp \
 
-FORMS += \
-	$$PWD/widgets/iotikAdditionalPreferences.ui \
+#FORMS += \
+#	$$PWD/widgets/iotikAdditionalPreferences.ui \
 
-RESOURCES += \
-	$$PWD/iotikGeneratorBase.qrc \
+#RESOURCES += \
+#	$$PWD/iotikGeneratorBase.qrc \

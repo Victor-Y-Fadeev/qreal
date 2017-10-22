@@ -25,15 +25,16 @@
 
 using namespace iotik;
 using namespace iotik::simple;
+using namespace generatorBase;
 using namespace generatorBase::simple;
 
 IotikGeneratorFactory::IotikGeneratorFactory(const qrRepo::RepoApi &repo
 		, qReal::ErrorReporterInterface &errorReporter
 		, const kitBase::robotModel::RobotModelManagerInterface &robotModelManager
-		, generatorBase::lua::LuaProcessor &luaProcessor
-		, const QString &generatorName)
+		, lua::LuaProcessor &luaProcessor
+		, const QStringList &pathsToTemplates)
 	: GeneratorFactoryBase(repo, errorReporter, robotModelManager, luaProcessor)
-	, mGeneratorName(generatorName)
+	, mPathsToTemplates(pathsToTemplates)
 {
 }
 
@@ -41,8 +42,8 @@ IotikGeneratorFactory::~IotikGeneratorFactory()
 {
 }
 
-generatorBase::simple::AbstractSimpleGenerator *IotikGeneratorFactory::simpleGenerator(const qReal::Id &id
-		, generatorBase::GeneratorCustomizer &customizer)
+AbstractSimpleGenerator *IotikGeneratorFactory::simpleGenerator(const qReal::Id &id
+		, GeneratorCustomizer &customizer)
 {
 	QString const elementType = id.element();
 	if (elementType.contains("EnginesForward")
@@ -69,7 +70,7 @@ generatorBase::simple::AbstractSimpleGenerator *IotikGeneratorFactory::simpleGen
 
 QStringList IotikGeneratorFactory::pathsToTemplates() const
 {
-	return {":/" + mGeneratorName + "/templates"};
+	return mPathsToTemplates; //{":/" + mGeneratorName + "/templates"};
 }
 
 generatorBase::parts::DeviceVariables *IotikGeneratorFactory::deviceVariables() const

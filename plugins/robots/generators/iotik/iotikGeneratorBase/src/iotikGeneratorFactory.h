@@ -16,19 +16,18 @@
 
 #include <generatorBase/generatorFactoryBase.h>
 
-#include "iotikGeneratorBase/iotikGeneratorBaseDeclSpec.h"
-
 namespace iotik {
 
 /// Generator factory implemtation for IoTik platform
-class ROBOTS_IOTIK_GENERATOR_BASE_EXPORT IotikGeneratorFactory : public generatorBase::GeneratorFactoryBase
+class IotikGeneratorFactory : public generatorBase::GeneratorFactoryBase
 {
 public:
 	IotikGeneratorFactory(const qrRepo::RepoApi &repo
 			, qReal::ErrorReporterInterface &errorReporter
 			, const kitBase::robotModel::RobotModelManagerInterface &robotModelManager
 			, generatorBase::lua::LuaProcessor &luaProcessor
-			, const QString &generatorName);
+			, const QStringList &pathsToTemplates);
+
 	~IotikGeneratorFactory() override;
 
 	generatorBase::simple::AbstractSimpleGenerator *simpleGenerator(const qReal::Id &id
@@ -39,7 +38,7 @@ public:
 	generatorBase::parts::DeviceVariables *deviceVariables() const override;
 
 private:
-	const QString mGeneratorName;
+	const QStringList mPathsToTemplates;
 };
 
 }

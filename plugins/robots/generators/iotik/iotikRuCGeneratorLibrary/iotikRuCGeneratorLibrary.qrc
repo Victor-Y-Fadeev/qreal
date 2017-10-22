@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/iotik/ruc">
+        <file>images/generateRuCCode.svg</file>
+        <file>images/switch-to-iotik-ruc.svg</file>
+        <file>images/usbUpload.svg</file>
+        <file>images/wifiUpload.svg</file>
+        <file>images/activate.svg</file>
+    </qresource>
+</RCC>

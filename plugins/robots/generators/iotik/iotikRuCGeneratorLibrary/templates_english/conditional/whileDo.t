@@ -1,0 +1,3 @@
+﻿while (@@CONDITION@@) {
+@@BODY@@
+}

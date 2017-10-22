@@ -13,7 +13,6 @@
  * limitations under the License. */
 
 #include "iotikGeneratorBase/iotikMasterGeneratorBase.h"
-
 #include "iotikGeneratorCustomizer.h"
 
 using namespace iotik;
@@ -24,14 +23,14 @@ IotikMasterGeneratorBase::IotikMasterGeneratorBase(const qrRepo::RepoApi &repo
 		, const kitBase::robotModel::RobotModelManagerInterface &robotModelManager
 		, qrtext::LanguageToolboxInterface &textLanguage
 		, const qReal::Id &diagramId
-		, const QString &generatorName)
+		, const QStringList &pathsToTemplates)
 	: MasterGeneratorBase(repo, errorReporter, robotModelManager, textLanguage, parserErrorReporter, diagramId)
-	, mGeneratorName(generatorName)
+	, mPathsToTemplates(pathsToTemplates)
 {
 }
 
 generatorBase::GeneratorCustomizer *IotikMasterGeneratorBase::createCustomizer()
 {
 	return new IotikGeneratorCustomizer(mRepo, mErrorReporter
-			, mRobotModelManager, *createLuaProcessor(), mGeneratorName);
+			, mRobotModelManager, *createLuaProcessor(), mPathsToTemplates);
 }
