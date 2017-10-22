@@ -19,9 +19,6 @@ include(../../../../../global.pri)
 QT += widgets
 
 TEMPLATE = lib
-#CONFIG += plugin
-
-#DESTDIR = $$DESTDIR/plugins/tools/kitPlugins/
 
 includes(plugins/robots/generators/iotik/iotikGeneratorBase \
 		plugins/robots/generators/generatorBase \

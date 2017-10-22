@@ -16,68 +16,39 @@
 
 #include <qrutils/inFile.h>
 
-//#include <iotikKit/blocks/iotikBlocksFactory.h>
-
-//#include <utils/widgets/comPortPicker.h>
-
-//#include "src/robotModel/iotikGeneratorRobotModel.h"
+#include <utils/widgets/comPortPicker.h>
 
 using namespace iotik;
-//using namespace qReal;
+using namespace qReal;
 
 IotikGeneratorPluginBase::IotikGeneratorPluginBase(kitBase::robotModel::RobotModelInterface * const robotModel
 		, kitBase::blocksBase::BlocksFactoryInterface * const blocksFactory)
 	: mRobotModel(robotModel)
 	, mBlocksFactory(blocksFactory)
-	/*, mActivateAction(new QAction(nullptr))
-	, mSeparator(nullptr)*/
 {
-	/*mAdditionalPreferences = new IotikAdditionalPreferences(mRobotModel.name());
+	mAdditionalPreferences = new IotikAdditionalPreferences(mRobotModel.data()->name());
 
-	connect(mAdditionalPreferences, &IotikAdditionalPreferences::settingsChanged
-			, &mRobotModel, &iotik::robotModel::IotikGeneratorRobotModel::rereadSettings);
-
-	mSeparator.setSeparator(true);*/
+	/*connect(mAdditionalPreferences, &IotikAdditionalPreferences::settingsChanged
+			, &mRobotModel, &iotik::robotModel::IotikGeneratorRobotModel::rereadSettings);*/
 }
 
 IotikGeneratorPluginBase::~IotikGeneratorPluginBase()
 {
-	/*if (mOwnsAdditionalPreferences) {
+	if (mOwnsAdditionalPreferences) {
 		delete mAdditionalPreferences;
-	}*/
-}
-/*
-QList<qReal::ActionInfo> IotikGeneratorPluginBase::activateActions()
-{
-	mActivateAction->setObjectName("activate");
-	mActivateAction->setText(tr("Аctivate IoTik v1.0"));
-	mActivateAction->setIcon(QIcon(":/images/activate.svg"));
-	qReal::ActionInfo activateActionInfo(mActivateAction, "generators", "tools");
-	connect(mActivateAction, SIGNAL(triggered()), this, SLOT(activate()), Qt::UniqueConnection);
-
-	return {qReal::ActionInfo(&mSeparator, "generators", "tools"), activateActionInfo};
+	}
 }
 
-void IotikGeneratorPluginBase::activate()
-{
-	mMainWindowInterface->errorReporter()->addError(tr("Activator is not released yet"));
-}
-
-QString IotikGeneratorPluginBase::kitId() const
-{
-	return "iotikKit";
-}
-*/
 QList<kitBase::robotModel::RobotModelInterface *> IotikGeneratorPluginBase::robotModels()
 {
 	return { mRobotModel.data() };
 }
-/*
+
 kitBase::robotModel::RobotModelInterface *IotikGeneratorPluginBase::defaultRobotModel()
 {
-	return &mRobotModel;
+	return mRobotModel.data();
 }
-*/
+
 kitBase::blocksBase::BlocksFactoryInterface *IotikGeneratorPluginBase::blocksFactoryFor(
 		const kitBase::robotModel::RobotModelInterface *model)
 {
@@ -87,10 +58,10 @@ kitBase::blocksBase::BlocksFactoryInterface *IotikGeneratorPluginBase::blocksFac
 
 QList<kitBase::AdditionalPreferences *> IotikGeneratorPluginBase::settingsWidgets()
 {
-	//mOwnsAdditionalPreferences = false;
-	return {};//{mAdditionalPreferences};
+	mOwnsAdditionalPreferences = false;
+	return {mAdditionalPreferences};
 }
-/*
+
 QWidget *IotikGeneratorPluginBase::quickPreferencesFor(const kitBase::robotModel::RobotModelInterface &model)
 {
 	return producePortConfigurer();
@@ -102,7 +73,7 @@ QWidget *IotikGeneratorPluginBase::producePortConfigurer()
 	connect(this, &QObject::destroyed, [result]() { delete result; });
 	return result;
 }
-*/
+
 void IotikGeneratorPluginBase::regenerateExtraFiles(const QFileInfo &newFileInfo)
 {
 	Q_UNUSED(newFileInfo);
