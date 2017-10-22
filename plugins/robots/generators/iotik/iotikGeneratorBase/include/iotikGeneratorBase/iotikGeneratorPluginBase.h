@@ -67,8 +67,6 @@ private:
 	/// Does not have ownership.
 	kitBase::blocksBase::BlocksFactoryInterface *mBlocksFactory;
 
-	QWidget *producePortConfigurer();  // Transfers ownership
-
 	IotikAdditionalPreferences *mAdditionalPreferences = nullptr;
 	bool mOwnsAdditionalPreferences = true;
 };

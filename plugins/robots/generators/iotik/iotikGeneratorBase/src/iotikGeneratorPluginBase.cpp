@@ -16,8 +16,6 @@
 
 #include <qrutils/inFile.h>
 
-#include <utils/widgets/comPortPicker.h>
-
 using namespace iotik;
 using namespace qReal;
 
@@ -27,9 +25,6 @@ IotikGeneratorPluginBase::IotikGeneratorPluginBase(kitBase::robotModel::RobotMod
 	, mBlocksFactory(blocksFactory)
 {
 	mAdditionalPreferences = new IotikAdditionalPreferences(mRobotModel.data()->name());
-
-	/*connect(mAdditionalPreferences, &IotikAdditionalPreferences::settingsChanged
-			, &mRobotModel, &iotik::robotModel::IotikGeneratorRobotModel::rereadSettings);*/
 }
 
 IotikGeneratorPluginBase::~IotikGeneratorPluginBase()
@@ -64,14 +59,7 @@ QList<kitBase::AdditionalPreferences *> IotikGeneratorPluginBase::settingsWidget
 
 QWidget *IotikGeneratorPluginBase::quickPreferencesFor(const kitBase::robotModel::RobotModelInterface &model)
 {
-	return producePortConfigurer();
-}
-
-QWidget *IotikGeneratorPluginBase::producePortConfigurer()
-{
-	QWidget * const result = new ui::ComPortPicker("IotikPortName", this);
-	connect(this, &QObject::destroyed, [result]() { delete result; });
-	return result;
+	return nullptr;
 }
 
 void IotikGeneratorPluginBase::regenerateExtraFiles(const QFileInfo &newFileInfo)
