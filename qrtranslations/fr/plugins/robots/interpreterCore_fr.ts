@@ -230,22 +230,22 @@
         <translation>Configuration de capteurs</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/managers/uiManager.cpp" line="115"/>
+        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/managers/uiManager.cpp" line="116"/>
         <source>Sensors state</source>
         <translation>État des capteurs</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/textLanguage/robotsBlockParser.cpp" line="30"/>
+        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/textLanguage/robotsBlockParser.cpp" line="34"/>
         <source>sensor</source>
         <translation>capteur</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/textLanguage/robotsBlockParser.cpp" line="31"/>
+        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/textLanguage/robotsBlockParser.cpp" line="35"/>
         <source>encoder</source>
         <translation>encodeur</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/textLanguage/robotsBlockParser.cpp" line="32"/>
+        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/textLanguage/robotsBlockParser.cpp" line="36"/>
         <source>time</source>
         <translation>temps</translation>
     </message>
@@ -270,12 +270,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/managers/actionsManager.cpp" line="286"/>
+        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/managers/actionsManager.cpp" line="277"/>
         <source>Real robot</source>
         <translation>Robot réel</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/managers/actionsManager.cpp" line="287"/>
+        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/managers/actionsManager.cpp" line="278"/>
         <source>2D model</source>
         <translation>Modèle 2D</translation>
     </message>
@@ -291,17 +291,17 @@
 <context>
     <name>interpreterCore::RobotsPluginFacade</name>
     <message>
-        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/robotsPluginFacade.cpp" line="146"/>
+        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/robotsPluginFacade.cpp" line="147"/>
         <source>Robots</source>
         <translation>Robots</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/robotsPluginFacade.cpp" line="280"/>
+        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/robotsPluginFacade.cpp" line="281"/>
         <source>No saved js code found in the qrs file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/robotsPluginFacade.cpp" line="380"/>
+        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/robotsPluginFacade.cpp" line="374"/>
         <source>Toggle robot console panel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -329,17 +329,17 @@
         <translation>mode de débogage</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/managers/uiManager.cpp" line="246"/>
+        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/managers/uiManager.cpp" line="247"/>
         <source>Edit mode</source>
         <translation>Mode d&apos;édition</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/managers/uiManager.cpp" line="249"/>
+        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/managers/uiManager.cpp" line="250"/>
         <source>Debug mode</source>
         <translation>Mode de débogage</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/managers/uiManager.cpp" line="355"/>
+        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/managers/uiManager.cpp" line="356"/>
         <source>Modes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -473,7 +473,7 @@
         <translation>Aucune extension n&apos;est chargée</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/ui/robotsSettingsPage.cpp" line="205"/>
+        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/ui/robotsSettingsPage.cpp" line="212"/>
         <source>No robot models available for </source>
         <translation>Modèle de robot n&apos;est pas défini dans l&apos;extension</translation>
     </message>

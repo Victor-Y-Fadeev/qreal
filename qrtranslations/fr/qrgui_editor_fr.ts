@@ -176,23 +176,23 @@
 <context>
     <name>qReal::gui::editor::EditorViewScene</name>
     <message>
-        <location filename="../../qrgui/editor/editorViewScene.cpp" line="291"/>
+        <location filename="../../qrgui/editor/editorViewScene.cpp" line="292"/>
         <source>Create new element</source>
         <translation type="unfinished">Créer un nouvel élement</translation>
     </message>
     <message>
-        <location filename="../../qrgui/editor/editorViewScene.cpp" line="353"/>
-        <location filename="../../qrgui/editor/editorViewScene.cpp" line="362"/>
+        <location filename="../../qrgui/editor/editorViewScene.cpp" line="354"/>
+        <location filename="../../qrgui/editor/editorViewScene.cpp" line="363"/>
         <source>Connect with the current item</source>
         <translation type="unfinished">Relier avec l&apos;élement courant</translation>
     </message>
     <message>
-        <location filename="../../qrgui/editor/editorViewScene.cpp" line="866"/>
+        <location filename="../../qrgui/editor/editorViewScene.cpp" line="859"/>
         <source>Add child</source>
         <translation type="unfinished">Rajouter un élement</translation>
     </message>
     <message>
-        <location filename="../../qrgui/editor/editorViewScene.cpp" line="1322"/>
+        <location filename="../../qrgui/editor/editorViewScene.cpp" line="1315"/>
         <source>Delete</source>
         <translation type="unfinished">Supprimer</translation>
     </message>
@@ -242,12 +242,12 @@
 <context>
     <name>qReal::gui::editor::PropertyEditorView</name>
     <message>
-        <location filename="../../qrgui/editor/propertyEditorView.cpp" line="220"/>
+        <location filename="../../qrgui/editor/propertyEditorView.cpp" line="310"/>
         <source>Specify directory:</source>
         <translation type="unfinished">Choisissez le répertoire :</translation>
     </message>
     <message>
-        <location filename="../../qrgui/editor/propertyEditorView.cpp" line="227"/>
+        <location filename="../../qrgui/editor/propertyEditorView.cpp" line="317"/>
         <source>Select file:</source>
         <translation type="unfinished">Choisissez le fichier :</translation>
     </message>

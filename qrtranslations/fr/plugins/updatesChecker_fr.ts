@@ -27,17 +27,17 @@
 <context>
     <name>updatesChecker::UpdatesCheckerPlugin</name>
     <message>
-        <location filename="../../../plugins/tools/updatesChecker/updatesCheckerPlugin.cpp" line="31"/>
+        <location filename="../../../plugins/tools/updatesChecker/updatesCheckerPlugin.cpp" line="33"/>
         <source>Check for updates</source>
         <translation>Vérifier si des mises à jour sont disponibles</translation>
     </message>
     <message>
-        <location filename="../../../plugins/tools/updatesChecker/updatesCheckerPlugin.cpp" line="72"/>
+        <location filename="../../../plugins/tools/updatesChecker/updatesCheckerPlugin.cpp" line="74"/>
         <source>No updates available</source>
         <translation>Pas de mises à jour disponibles</translation>
     </message>
     <message>
-        <location filename="../../../plugins/tools/updatesChecker/updatesCheckerPlugin.cpp" line="83"/>
+        <location filename="../../../plugins/tools/updatesChecker/updatesCheckerPlugin.cpp" line="85"/>
         <source>Check for updates on start</source>
         <translation>Vérifier si des mises à jour sont disponibles à chaque lancement du programme</translation>
     </message>

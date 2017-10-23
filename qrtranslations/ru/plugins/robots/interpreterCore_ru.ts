@@ -512,7 +512,7 @@ p, li { white-space: pre-wrap; }
         <translation>Настройки сенсоров</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/managers/uiManager.cpp" line="115"/>
+        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/managers/uiManager.cpp" line="116"/>
         <source>Sensors state</source>
         <translation>Графики</translation>
     </message>
@@ -535,19 +535,19 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Конфигурация сенсоров противоречива. Проверьте, что в указанные в программе используются два разных сенсора на одном порту</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/textLanguage/robotsBlockParser.cpp" line="30"/>
+        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/textLanguage/robotsBlockParser.cpp" line="34"/>
         <source>sensor</source>
         <oldsource>Sensor</oldsource>
         <translation>sensor</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/textLanguage/robotsBlockParser.cpp" line="31"/>
+        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/textLanguage/robotsBlockParser.cpp" line="35"/>
         <source>encoder</source>
         <oldsource>Encoder</oldsource>
         <translation>encoder</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/textLanguage/robotsBlockParser.cpp" line="32"/>
+        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/textLanguage/robotsBlockParser.cpp" line="36"/>
         <source>time</source>
         <translation>time</translation>
     </message>
@@ -808,12 +808,12 @@ p, li { white-space: pre-wrap; }
         <translation>На главную</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/managers/actionsManager.cpp" line="286"/>
+        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/managers/actionsManager.cpp" line="277"/>
         <source>Real robot</source>
         <translation>Реальный робот</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/managers/actionsManager.cpp" line="287"/>
+        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/managers/actionsManager.cpp" line="278"/>
         <source>2D model</source>
         <translation>2D модель</translation>
     </message>
@@ -836,17 +836,17 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>interpreterCore::RobotsPluginFacade</name>
     <message>
-        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/robotsPluginFacade.cpp" line="146"/>
+        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/robotsPluginFacade.cpp" line="147"/>
         <source>Robots</source>
         <translation>Роботы</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/robotsPluginFacade.cpp" line="280"/>
+        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/robotsPluginFacade.cpp" line="281"/>
         <source>No saved js code found in the qrs file</source>
         <translation>В qrs не найден сохраннёный js код</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/robotsPluginFacade.cpp" line="380"/>
+        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/robotsPluginFacade.cpp" line="374"/>
         <source>Toggle robot console panel</source>
         <translation>Показать/спрятать панель консоли</translation>
     </message>
@@ -874,17 +874,17 @@ p, li { white-space: pre-wrap; }
         <translation>режим отладки</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/managers/uiManager.cpp" line="246"/>
+        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/managers/uiManager.cpp" line="247"/>
         <source>Edit mode</source>
         <translation>Режим редактирования</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/managers/uiManager.cpp" line="249"/>
+        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/managers/uiManager.cpp" line="250"/>
         <source>Debug mode</source>
         <translation>Режим отладки</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/managers/uiManager.cpp" line="355"/>
+        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/managers/uiManager.cpp" line="356"/>
         <source>Modes</source>
         <translation>Режимы</translation>
     </message>
@@ -1183,7 +1183,7 @@ p, li { white-space: pre-wrap; }
         <translation>Не загружено ни одного плагина с описанием робоплатформы</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/ui/robotsSettingsPage.cpp" line="205"/>
+        <location filename="../../../../plugins/robots/interpreters/interpreterCore/src/ui/robotsSettingsPage.cpp" line="212"/>
         <source>No robot models available for </source>
         <translation>Ни одной модели робота не найдено в плагине </translation>
     </message>

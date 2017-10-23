@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="fr_FR">
+<TS version="2.1" language="fr_FR">
 <context>
     <name>AddNodeDialog</name>
     <message>
@@ -595,23 +595,23 @@
         <translation type="unfinished">Erreur</translation>
     </message>
     <message>
-        <location filename="../../qrgui/dialogs/subprogram/dynamicPropertiesDialog.cpp" line="337"/>
+        <location filename="../../qrgui/dialogs/subprogram/dynamicPropertiesDialog.cpp" line="339"/>
         <source>Name is not filled in row %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qrgui/dialogs/subprogram/dynamicPropertiesDialog.cpp" line="348"/>
+        <location filename="../../qrgui/dialogs/subprogram/dynamicPropertiesDialog.cpp" line="350"/>
         <source>Value in row %1 is not integer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qrgui/dialogs/subprogram/dynamicPropertiesDialog.cpp" line="358"/>
+        <location filename="../../qrgui/dialogs/subprogram/dynamicPropertiesDialog.cpp" line="360"/>
         <source>Duplicate names</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../qrgui/dialogs/subprogram/dynamicPropertiesDialog.cpp" line="118"/>
-        <location filename="../../qrgui/dialogs/subprogram/dynamicPropertiesDialog.cpp" line="366"/>
+        <location filename="../../qrgui/dialogs/subprogram/dynamicPropertiesDialog.cpp" line="368"/>
         <source>Delete</source>
         <translation type="unfinished">Supprimer</translation>
     </message>

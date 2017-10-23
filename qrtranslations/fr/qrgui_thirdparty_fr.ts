@@ -4,30 +4,46 @@
 <context>
     <name>QtBoolEdit</name>
     <message>
+        <source>True</source>
+        <translation type="vanished">Vrai</translation>
+    </message>
+    <message>
+        <source>False</source>
+        <translation type="vanished">Faux</translation>
+    </message>
+    <message>
         <location filename="../../qrgui/thirdparty/qtpropertybrowser/src/qtpropertybrowserutils.cpp" line="233"/>
         <location filename="../../qrgui/thirdparty/qtpropertybrowser/src/qtpropertybrowserutils.cpp" line="243"/>
         <location filename="../../qrgui/thirdparty/qtpropertybrowser/src/qtpropertybrowserutils.cpp" line="268"/>
-        <source>True</source>
-        <translation>Vrai</translation>
+        <source>true</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../qrgui/thirdparty/qtpropertybrowser/src/qtpropertybrowserutils.cpp" line="243"/>
         <location filename="../../qrgui/thirdparty/qtpropertybrowser/src/qtpropertybrowserutils.cpp" line="268"/>
-        <source>False</source>
-        <translation>Faux</translation>
+        <source>false</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>QtBoolPropertyManager</name>
     <message>
-        <location filename="../../qrgui/thirdparty/qtpropertybrowser/src/qtpropertymanager.cpp" line="1678"/>
         <source>True</source>
-        <translation>Vrai</translation>
+        <translation type="vanished">Vrai</translation>
+    </message>
+    <message>
+        <source>False</source>
+        <translation type="vanished">Faux</translation>
+    </message>
+    <message>
+        <location filename="../../qrgui/thirdparty/qtpropertybrowser/src/qtpropertymanager.cpp" line="1678"/>
+        <source>true</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../qrgui/thirdparty/qtpropertybrowser/src/qtpropertymanager.cpp" line="1679"/>
-        <source>False</source>
-        <translation>Faux</translation>
+        <source>false</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
