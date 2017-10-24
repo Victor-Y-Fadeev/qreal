@@ -85,7 +85,8 @@ QList<qReal::ActionInfo> IotikRuCGeneratorPluginBase::customActions()
 	qReal::ActionInfo activateActionInfo(mActivateAction, "generators", "tools");
 	connect(mActivateAction, SIGNAL(triggered()), this, SLOT(activate()), Qt::UniqueConnection);
 
-	return {generateCodeActionInfo, usbUploadActionInfo, wifiUploadActionInfo, separatorActionInfo, activateActionInfo};
+	return {generateCodeActionInfo, usbUploadActionInfo, wifiUploadActionInfo,
+				separatorActionInfo, activateActionInfo};
 }
 
 QList<qReal::HotKeyActionInfo> IotikRuCGeneratorPluginBase::hotKeyActions()
@@ -94,9 +95,14 @@ QList<qReal::HotKeyActionInfo> IotikRuCGeneratorPluginBase::hotKeyActions()
 	mUsbUploadAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_U));
 	mWifiUploadAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_W));
 
-	qReal::HotKeyActionInfo generateCodeInfo("Generator.GenerateRuC", tr("Generate RuC Code"), mGenerateCodeAction);
-	qReal::HotKeyActionInfo usbUploadInfo("Generator.UsbUploadRuC", tr("Upload RuC Program by USB"), mUsbUploadAction);
-	qReal::HotKeyActionInfo wifiUploadInfo("Generator.WifiUploadRuC", tr("Upload RuC Program by Wi-Fi"), mWifiUploadAction);
+	qReal::HotKeyActionInfo generateCodeInfo("Generator.GenerateRuC", tr("Generate RuC Code"),
+											 mGenerateCodeAction);
+
+	qReal::HotKeyActionInfo usbUploadInfo("Generator.UsbUploadRuC", tr("Upload RuC Program by USB"),
+										  mUsbUploadAction);
+
+	qReal::HotKeyActionInfo wifiUploadInfo("Generator.WifiUploadRuC", tr("Upload RuC Program by Wi-Fi"),
+										   mWifiUploadAction);
 
 	return {generateCodeInfo, usbUploadInfo, wifiUploadInfo};
 }
