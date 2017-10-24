@@ -333,7 +333,32 @@ const char *QsciLexerCPP::keywords(int set) const
             "reinterpret_cast return short signed sizeof static "
             "static_cast struct switch template this throw true "
             "try typedef typeid typename union unsigned using "
-            "virtual void volatile wchar_t while xor xor_eq";
+			"virtual void volatile wchar_t while xor xor_eq "
+
+			"INT int ЦЕЛ цел "
+			"CHAR char ЛИТЕРА литера "
+			"FLOAT float ВЕЩ вещ "
+			"LONG long ДЛИН длин "
+			"DOUBLE double ДВОЙНОЙ двойной "
+			"VOID void ПУСТО пусто "
+			"BREAK break ВЫХОД выход "
+			"CASE case СЛУЧАЙ случай "
+			"CONTINUE continue ПРОДОЛЖИТЬ продолжить "
+			"DEFAULT default УМОЛЧАНИЕ умолчание "
+			"DO do ЦИКЛ цикл "
+			"ELSE else ИНАЧЕ иначе "
+			"ENUM enum ПЕРЕЧЕНЬ перечень "
+			"STRUCT struct СТРУКТУРА структура "
+			"TYPEDEF typedef ОПРТИПА опртипа "
+			"FOR for ДЛЯ для "
+			"GOTO goto ПЕРЕХОД переход "
+			"IF if ЕСЛИ если "
+			"RETURN return ВОЗВРАТ возврат "
+			"SIZEOF sizeof РАЗМЕР размер "
+			"SWITCH switch ВЫБОР выбор "
+			"WHILE while ПОКА пока";
+
+	// Add RuC keywords
 
     if (set == 3)
         return

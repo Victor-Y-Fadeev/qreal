@@ -14,22 +14,22 @@
         <translation>Установка драйвера TRIK Studio отменета. Пожалуйста, имейте в виду, что TRIK Studio также поддерживает официальный &lt;a href=&apos;%1&apos;&gt;драйвер Lego Fantom&lt;/a&gt;, Вы можете скачать и установить его.</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/common/nxtKit/src/communication/nxtUsbDriverInstaller.cpp" line="82"/>
+        <location filename="../../../../plugins/robots/common/nxtKit/src/communication/nxtUsbDriverInstaller.cpp" line="84"/>
         <source>An attempt to attach TRIK Studio driver failed. No panic! Driver can be still installed manually, see documentation, chapter &quot;Installing NXT driver manually.&quot;. Also TRIK Studio supports &lt;a href=&apos;%1&apos;&gt;Lego Fantom driver&lt;/a&gt;, you can just download and install it.</source>
         <translation>Попытка установить драйвера TRIK Studio не удалась. Без паники! Драйвер все еще может быть установлен вручную, см. документацию, раздер &quot;установка драйвера NXT вручную&quot;. Также TRIK Studio совместима с &lt;a href=&apos;%1&apos;&gt;драйвером Lego Fantom&lt;/a&gt;, Вы можете скачать и установить его.</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/common/nxtKit/src/communication/nxtUsbDriverInstaller.cpp" line="107"/>
+        <location filename="../../../../plugins/robots/common/nxtKit/src/communication/nxtUsbDriverInstaller.cpp" line="109"/>
         <source>NXT drivers not found</source>
         <translation>Драйвер NXT не найден</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/common/nxtKit/src/communication/nxtUsbDriverInstaller.cpp" line="108"/>
+        <location filename="../../../../plugins/robots/common/nxtKit/src/communication/nxtUsbDriverInstaller.cpp" line="110"/>
         <source>Drivers for LEGO NXT brick are not installed. TRIK Studio can install own drivers to communicate with NXT. Do you want to do it?</source>
         <translation>Драйвер для Lego NXT не установлен. TRIK Studio может попытаться установить свой драйвер для взаимодействия с NXT. Вы хотите продолжить?</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/common/nxtKit/src/communication/nxtUsbDriverInstaller.cpp" line="110"/>
+        <location filename="../../../../plugins/robots/common/nxtKit/src/communication/nxtUsbDriverInstaller.cpp" line="112"/>
         <source>TRIK Studio drivers are not officially registered, so two red warning messages will be shown by Windows. Confirm them to proceed installation.</source>
         <translation>Драйвер TRIK Studio не зарегистрирован в Microsoft, поэтому сейчас Windows покажет два красных окна. Подтвердите в них согласие, чтобы продолжить установку.</translation>
     </message>

@@ -14,32 +14,34 @@
 
 #include "iotikGeneratorBase/iotikGeneratorPluginBase.h"
 
-#include <iotikKit/blocks/iotikBlocksFactory.h>
-
-#include "src/robotModel/iotikGeneratorRobotModel.h"
+#include <qrutils/inFile.h>
 
 using namespace iotik;
+using namespace qReal;
 
-IotikGeneratorPluginBase::IotikGeneratorPluginBase(const QString &robotName, const QString &robotFriendlyName
-	   , int priority)
-	: mRobotModel(new robotModel::IotikGeneratorRobotModel(kitId()
-		   , "iotikGeneratorRobot", robotName, robotFriendlyName, priority))
-	, mBlocksFactory(new blocks::IotikBlocksFactory)
+IotikGeneratorPluginBase::IotikGeneratorPluginBase(kitBase::robotModel::RobotModelInterface * const robotModel
+		, kitBase::blocksBase::BlocksFactoryInterface * const blocksFactory)
+	: mRobotModel(robotModel)
+	, mBlocksFactory(blocksFactory)
 {
+	mAdditionalPreferences = new IotikAdditionalPreferences(mRobotModel.data()->name());
 }
 
 IotikGeneratorPluginBase::~IotikGeneratorPluginBase()
 {
-}
-
-QString IotikGeneratorPluginBase::kitId() const
-{
-	return "iotikKit";
+	if (mOwnsAdditionalPreferences) {
+		delete mAdditionalPreferences;
+	}
 }
 
 QList<kitBase::robotModel::RobotModelInterface *> IotikGeneratorPluginBase::robotModels()
 {
 	return { mRobotModel.data() };
+}
+
+kitBase::robotModel::RobotModelInterface *IotikGeneratorPluginBase::defaultRobotModel()
+{
+	return mRobotModel.data();
 }
 
 kitBase::blocksBase::BlocksFactoryInterface *IotikGeneratorPluginBase::blocksFactoryFor(
@@ -51,10 +53,21 @@ kitBase::blocksBase::BlocksFactoryInterface *IotikGeneratorPluginBase::blocksFac
 
 QList<kitBase::AdditionalPreferences *> IotikGeneratorPluginBase::settingsWidgets()
 {
-	return {};
+	mOwnsAdditionalPreferences = false;
+	return {mAdditionalPreferences};
+}
+
+QWidget *IotikGeneratorPluginBase::quickPreferencesFor(const kitBase::robotModel::RobotModelInterface &model)
+{
+	return nullptr;
 }
 
 void IotikGeneratorPluginBase::regenerateExtraFiles(const QFileInfo &newFileInfo)
 {
 	Q_UNUSED(newFileInfo);
+}
+
+kitBase::robotModel::RobotModelInterface &IotikGeneratorPluginBase::robotModel() const
+{
+	return *mRobotModel.data();
 }

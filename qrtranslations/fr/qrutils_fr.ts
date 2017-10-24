@@ -69,7 +69,7 @@
         <translation>Division entière par zéro</translation>
     </message>
     <message>
-        <location filename="../../qrutils/graphicsUtils/abstractItem.cpp" line="515"/>
+        <location filename="../../qrutils/graphicsUtils/abstractItem.cpp" line="525"/>
         <source>Remove</source>
         <translation>Supprimer</translation>
     </message>
@@ -334,6 +334,14 @@
     </message>
 </context>
 <context>
+    <name>qReal::ui::ConsoleDock</name>
+    <message>
+        <location filename="../../qrutils/widgets/consoleDock.cpp" line="36"/>
+        <source>Reset shell</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>qReal::ui::ImagePicker</name>
     <message>
         <location filename="../../qrutils/widgets/imagePicker.cpp" line="35"/>
@@ -341,12 +349,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qrutils/widgets/imagePicker.cpp" line="65"/>
+        <location filename="../../qrutils/widgets/imagePicker.cpp" line="68"/>
         <source>Select image</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qrutils/widgets/imagePicker.cpp" line="66"/>
+        <location filename="../../qrutils/widgets/imagePicker.cpp" line="70"/>
         <source>Images (*.png *.svg *.jpg *.gif *.bmp);;All files (*.*)</source>
         <translation type="unfinished"></translation>
     </message>

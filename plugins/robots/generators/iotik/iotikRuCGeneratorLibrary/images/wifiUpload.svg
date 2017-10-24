@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Creator: CorelDRAW X6 -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xml:space="preserve"
+   width="150px"
+   height="150px"
+   version="1.1"
+   style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+   viewBox="0 0 15000 15000"
+   id="svg4521"
+   sodipodi:docname="wifiUpload.svg"
+   inkscape:version="0.92.1 r15371"><metadata
+   id="metadata4525"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1920"
+   inkscape:window-height="1017"
+   id="namedview4523"
+   showgrid="false"
+   showguides="false"
+   inkscape:zoom="2.78"
+   inkscape:cx="131.64725"
+   inkscape:cy="104.50577"
+   inkscape:window-x="1016"
+   inkscape:window-y="-8"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="Layer_x0020_1" />
+ <defs
+   id="defs4509">
+  <style
+   type="text/css"
+   id="style4485">
+   <![CDATA[
+    .str1 {stroke:#8BB832;stroke-width:79.375}
+    .str0 {stroke:#666666;stroke-width:127}
+    .fil2 {fill:url(#id0)}
+    .fil0 {fill:url(#id1)}
+    .fil3 {fill:url(#id2)}
+    .fil1 {fill:url(#id3)}
+   ]]>
+  </style>
+  <linearGradient
+   id="id0"
+   gradientUnits="userSpaceOnUse"
+   x1="2737.98"
+   y1="1286.61"
+   x2="12263"
+   y2="1286.61">
+   <stop
+   offset="0"
+   style="stop-color:#6699FF"
+   id="stop4487" />
+   <stop
+   offset="1"
+   style="stop-color:#6666CC"
+   id="stop4489" />
+  </linearGradient>
+  <linearGradient
+   id="id1"
+   gradientUnits="userSpaceOnUse"
+   x1="7489.56"
+   y1="13975.2"
+   x2="7489.56"
+   y2="640.185">
+   <stop
+   offset="0"
+   style="stop-color:#E6E6E6"
+   id="stop4492" />
+   <stop
+   offset="1"
+   style="stop-color:white"
+   id="stop4494" />
+  </linearGradient>
+  <linearGradient
+   id="id2"
+   gradientUnits="userSpaceOnUse"
+   x1="7396.82"
+   y1="12287.2"
+   x2="7396.82"
+   y2="2489.91">
+   <stop
+   offset="0"
+   style="stop-color:#666666;stop-opacity:1"
+   id="stop4497" />
+   <stop
+   offset="1"
+   style="stop-color:#666666;stop-opacity:1"
+   id="stop4499" />
+  </linearGradient>
+  <linearGradient
+   id="id3"
+   gradientUnits="userSpaceOnUse"
+   x1="11970.7"
+   y1="13958.4"
+   x2="10302.5"
+   y2="11576">
+   <stop
+   offset="0"
+   style="stop-color:#B3B3B3"
+   id="stop4502" />
+   <stop
+   offset="0.568627"
+   style="stop-color:#E6E6E6"
+   id="stop4504" />
+   <stop
+   offset="1"
+   style="stop-color:#E6E6E6"
+   id="stop4506" />
+  </linearGradient>
+ </defs>
+ <g
+   id="Layer_x0020_1">
+  <metadata
+   id="CorelCorpID_0Corel-Layer" />
+  <polygon
+   class="fil0 str0"
+   points="2462,640 12517,640 12517,11554 11100,12326 9802,13945 9686,13975 2462,13975 "
+   id="polygon4512" />
+  <path
+   class="fil1 str0"
+   d="M9753 13964c998,-173 2410,-1536 2767,-2393 0,0 -2662,3 -2702,30 -40,26 -64,2363 -64,2363z"
+   id="path4514" />
+  <rect
+   class="fil2"
+   x="2738"
+   y="784"
+   width="9525"
+   height="1005"
+   id="rect4516" />
+  
+ <g
+   transform="matrix(24.884265,0,0,24.8833,3535.2659,3528.6339)"
+   id="g6819"
+   style="fill:#666666;fill-opacity:1;stroke:#666666;stroke-width:4.01868165;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"><path
+     inkscape:connector-curvature="0"
+     d="m 185.475,246.104 c 0,16.759 -13.562,30.321 -30.322,30.321 -16.762,0 -30.326,-13.562 -30.326,-30.321 0,-16.765 13.564,-30.327 30.326,-30.327 16.759,0 30.322,13.562 30.322,30.327 z m -100.128,-58.376 23.249,19.494 c 23.188,-27.694 69.98,-27.694 93.138,0.023 l 23.279,-19.43 c -17.385,-20.782 -42.853,-32.69 -69.861,-32.69 -27.01,0 -52.448,11.876 -69.805,32.603 z m -42.582,-43.441 22.477,20.376 c 22.951,-25.351 55.704,-39.861 89.911,-39.861 34.178,0 66.931,14.51 89.884,39.801 l 22.448,-20.376 C 238.783,112.598 197.852,94.476 155.153,94.476 112.418,94.475 71.46,112.658 42.765,144.287 Z M 0,101.2 22.15,121.901 c 34.293,-36.697 82.775,-57.753 133.002,-57.753 50.97,0 98.172,20.496 132.942,57.692 l 22.154,-20.733 C 270.265,58.347 213.728,33.824 155.151,33.824 96.543,33.824 40.009,58.375 0,101.2 Z"
+     id="path6817"
+     style="fill:#666666;fill-opacity:1;stroke:#666666;stroke-width:4.01868165;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" /></g></g>
+</svg>

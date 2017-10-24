@@ -96,7 +96,7 @@ QColor QsciLexerLua::defaultColor(int style) const
     case Number:
         return QColor(0x00,0x7f,0x7f);
 
-    case Keyword:
+	case Keyword:
     case BasicFunctions:
     case StringTableMathsFunctions:
     case CoroutinesIOSystemFacilities:

@@ -14,7 +14,11 @@
 
 #pragma once
 
+#include <QtCore/QScopedPointer>
+
 #include <generatorBase/robotsGeneratorPluginBase.h>
+
+#include <widgets/iotikAdditionalPreferences.h>
 
 #include "iotikGeneratorBaseDeclSpec.h"
 
@@ -34,19 +38,27 @@ class ROBOTS_IOTIK_GENERATOR_BASE_EXPORT IotikGeneratorPluginBase : public gener
 	Q_OBJECT
 
 public:
-	IotikGeneratorPluginBase(const QString &robotName, const QString &robotFriendlyName, int priority);
+	IotikGeneratorPluginBase(kitBase::robotModel::RobotModelInterface * const robotModel
+			, kitBase::blocksBase::BlocksFactoryInterface * const blocksFactory
+			);
+
 	~IotikGeneratorPluginBase() override;
 
-	QString kitId() const override;
-
 	QList<kitBase::robotModel::RobotModelInterface *> robotModels() override;
+
 	kitBase::blocksBase::BlocksFactoryInterface *blocksFactoryFor(
 			const kitBase::robotModel::RobotModelInterface *model) override;
 
+	kitBase::robotModel::RobotModelInterface *defaultRobotModel() override;
+
 	QList<kitBase::AdditionalPreferences *> settingsWidgets() override;
+	QWidget *quickPreferencesFor(const kitBase::robotModel::RobotModelInterface &model) override;
 
 protected:
 	void regenerateExtraFiles(const QFileInfo &newFileInfo) override;
+
+	/// Provides access to robot model to descendant classes.
+	kitBase::robotModel::RobotModelInterface &robotModel() const;
 
 private:
 	/// Robot model that is used to query information about various robot devices.
@@ -54,6 +66,9 @@ private:
 
 	/// Does not have ownership.
 	kitBase::blocksBase::BlocksFactoryInterface *mBlocksFactory;
+
+	IotikAdditionalPreferences *mAdditionalPreferences = nullptr;
+	bool mOwnsAdditionalPreferences = true;
 };
 
 }

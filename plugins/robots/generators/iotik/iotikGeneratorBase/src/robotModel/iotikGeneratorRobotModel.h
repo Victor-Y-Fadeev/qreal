@@ -16,10 +16,12 @@
 
 #include <iotikKit/robotModel/iotikRobotModelBase.h>
 
+#include "iotikGeneratorBase/iotikGeneratorBaseDeclSpec.h"
+
 namespace iotik {
 namespace robotModel {
 
-class IotikGeneratorRobotModel : public IotikRobotModelBase
+class ROBOTS_IOTIK_GENERATOR_BASE_EXPORT IotikGeneratorRobotModel : public IotikRobotModelBase
 {
 	Q_OBJECT
 

@@ -395,18 +395,29 @@ int scan()
         }
         case '\"':
         {
-            int n = 0;
+            int n = 0, flag = 1;
             instring = 1;
             nextch();
-            while (curchar != '\"' && n < MAXSTRINGL)
+            while (flag)
             {
-                next_string_elem();
-                lexstr[n++] = num;
+                while (curchar != '\"' && n < MAXSTRINGL)
+                {
+                    next_string_elem();
+                    lexstr[n++] = num;
+                }
+                if (n == MAXSTRINGL)
+                    error(too_long_string);
+                nextch();
+                while (curchar == ' ' || curchar == '\t' || curchar == '\n')
+                    nextch();
+                if (curchar == '\"')
+                    nextch();
+                else
+                    flag = 0;
             }
-            if (n == MAXSTRINGL)
-                error(too_long_string);
+            printf("11 %i %c %i %c\n", curchar, curchar, nextchar, nextchar);
+
             lexstr[n] = 0;
-            nextch();
             instring = 0;
             return STRING;
         }
@@ -551,12 +562,21 @@ int scan()
         }
             
         default:
-            if (letter())
+            if (letter() || curchar == '#')
             {
                 int oldrepr, r;
                 oldrepr = rp;
                 rp+=2;
                 hash = 0;
+                
+                // решетка на 1 месте -- значит, ключевое слово препроцессора
+                if (curchar == '#')
+                {
+                    hash += curchar;
+                    reprtab[rp++] = curchar;
+                    nextch();
+                }
+
                 do
                 {
                     

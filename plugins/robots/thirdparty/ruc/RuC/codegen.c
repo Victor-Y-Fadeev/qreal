@@ -4,6 +4,7 @@
 //  Created by Andrey Terekhov on 3/10/15.
 //  Copyright (c) 2015 Andrey Terekhov. All rights reserved.
 //
+#include <stdlib.h>
 #include "global_vars.h"
 
 extern void error(int err);
@@ -83,12 +84,12 @@ void finalop()
                     tocode(tree[tc++]);   // d1
                     tocode(tree[tc++]);   // длина
                 }
-                else if (c == COPY10)
+                else if (c == COPY10 || c == COPY10V)
                 {
                     tocode(tree[tc++]);   // d2
                     tocode(tree[tc++]);   // длина
                 }
-                else if (c == COPY11)
+                else if (c == COPY11 || c == COPY11V)
                     tocode(-tree[tc++]);  // длина
                 else if (c == COPY0ST)
                 {
@@ -103,7 +104,7 @@ void finalop()
                     tocode(tree[tc++]);   // d1
                     tocode(tree[tc++]);   // длина
                 }
-                else if (c == COPY1STASS)
+                else if (c == COPY1STASS || c== COPY1STASSV)
                     tocode(tree[tc++]);   // длина
 
                 else if((c >= REMASS && c <= DIVASS)    || (c >= REMASSV && c <= DIVASSV) ||
@@ -273,12 +274,11 @@ void Stmt_gen()
         case NOP:
             break;
             
-        case TCREATE:
-            tocode(CREATEC);
-            tocode(++curth);
+        case CREATEDIRECTC:
+            tocode(CREATEDIRECTC);
             break;
             
-        case TEXIT:
+        case EXITC:
             tocode(EXITC);
             break;
             
@@ -479,6 +479,12 @@ void Stmt_gen()
         {
             tocode(PRINTID);
             tocode(tree[tc++]);  // ссылка в identtab
+        }
+            break;
+        case TPrintf:
+        {
+            tocode(PRINTF);
+            tocode(tree[tc++]);  // общий размекр того, что надо вывести
         }
             break;
         case TGetid:

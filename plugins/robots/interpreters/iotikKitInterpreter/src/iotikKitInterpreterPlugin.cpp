@@ -40,7 +40,7 @@ QList<kitBase::robotModel::RobotModelInterface *> IotikKitInterpreterPlugin::rob
 kitBase::blocksBase::BlocksFactoryInterface *IotikKitInterpreterPlugin::blocksFactoryFor(
 		const kitBase::robotModel::RobotModelInterface *model)
 {
-    Q_UNUSED(model);
+	Q_UNUSED(model);
 	return mBlocksFactory;
 }
 

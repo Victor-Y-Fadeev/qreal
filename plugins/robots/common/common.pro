@@ -26,4 +26,4 @@ twoDModel.depends = kitBase
 nxtKit.depends = twoDModel
 trikKit.depends = twoDModel
 ev3Kit.depends = twoDModel
-iotikKit.depends = kitBase
+iotikKit.depends = twoDModel

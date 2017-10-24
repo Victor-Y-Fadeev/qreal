@@ -118,7 +118,7 @@
         <translation type="obsolete">Обнаружено более 1 исходящей связи!</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/generatorBase/src/masterGeneratorBase.cpp" line="73"/>
+        <location filename="../../../../plugins/robots/generators/generatorBase/src/masterGeneratorBase.cpp" line="77"/>
         <source>There is no opened diagram</source>
         <translation>Сначала откройте диаграмму </translation>
     </message>
@@ -164,17 +164,17 @@
         <translation type="obsolete">Данная диаграмма слишком сложна для генерации.</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/generatorBase/src/parts/subprograms.cpp" line="72"/>
+        <location filename="../../../../plugins/robots/generators/generatorBase/src/parts/subprograms.cpp" line="82"/>
         <source>Graphical diagram instance not found</source>
         <translation>Графическая модель диаграммы с подпрограммой не найдена</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/generatorBase/src/parts/subprograms.cpp" line="152"/>
+        <location filename="../../../../plugins/robots/generators/generatorBase/src/parts/subprograms.cpp" line="207"/>
         <source>Please enter valid c-style name for subprogram &quot;</source>
         <translation>Введите корректный идентификатор подпрограммы &quot;</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/generatorBase/src/parts/subprograms.cpp" line="158"/>
+        <location filename="../../../../plugins/robots/generators/generatorBase/src/parts/subprograms.cpp" line="213"/>
         <source>Duplicate identifier: </source>
         <translation>Такой идентификатор уже используется: </translation>
     </message>
@@ -211,17 +211,17 @@
 <context>
     <name>generatorBase::MasterGeneratorBase</name>
     <message>
-        <location filename="../../../../plugins/robots/generators/generatorBase/src/masterGeneratorBase.cpp" line="109"/>
+        <location filename="../../../../plugins/robots/generators/generatorBase/src/masterGeneratorBase.cpp" line="115"/>
         <source>This diagram cannot be generated into the structured code. Generating it into the code with &apos;goto&apos; statements.</source>
         <translation>Данная диаграмма не может быть сгенерирована в структурированный код. Генерирую код с &apos;goto&apos;.</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/generatorBase/src/masterGeneratorBase.cpp" line="124"/>
+        <location filename="../../../../plugins/robots/generators/generatorBase/src/masterGeneratorBase.cpp" line="130"/>
         <source>This diagram cannot be even generated into the code with &apos;goto&apos;statements. Please contact the developers (WTF did you do?)</source>
         <translation>Данная диаграмма не может быть сгенерирована даже в код с &apos;goto&apos;. Обратитесь к разработчикам (что вы там понаписали :)?)</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/generatorBase/src/masterGeneratorBase.cpp" line="126"/>
+        <location filename="../../../../plugins/robots/generators/generatorBase/src/masterGeneratorBase.cpp" line="132"/>
         <source>This diagram cannot be generated into the structured code.</source>
         <translation>Данная диаграмма не может быть сгенерирована в структурированный код.</translation>
     </message>

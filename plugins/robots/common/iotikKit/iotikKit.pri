@@ -22,7 +22,7 @@ includes(plugins/robots/common/iotikKit \
 )
 
 links(qrkernel qrutils qrtext qrgui-preferences-dialog qrgui-tool-plugin-interface \
-		robots-utils robots-kit-base qslog \
+		robots-utils robots-kit-base qextserialport qslog \
 )
 
 HEADERS += \
@@ -32,6 +32,7 @@ HEADERS += \
 	$$PWD/include/iotikKit/robotModel/parts/iotikInfraredSensor.h \
 	$$PWD/include/iotikKit/robotModel/parts/iotikSonarSensor.h \
 	$$PWD/include/iotikKit/robotModel/parts/iotikLineSensor.h \
+	$$PWD/include/iotikKit/communication/usbRobotCommunicationThread.h \
 	$$PWD/src/blocks/details/iotikEnginesBackwardBlock.h \
 	$$PWD/src/blocks/details/iotikEnginesForwardBlock.h \
 	$$PWD/src/blocks/details/lineDetectorToVariable.h \
@@ -46,6 +47,7 @@ SOURCES += \
 	$$PWD/src/blocks/details/iotikEnginesBackwardBlock.cpp \
 	$$PWD/src/blocks/details/iotikEnginesForwardBlock.cpp \
 	$$PWD/src/blocks/details/lineDetectorToVariable.cpp \
+	$$PWD/src/communication/usbRobotCommunicationThread.cpp \
 
 
 TRANSLATIONS = \
