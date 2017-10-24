@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. */
 
-#include "IotikRuCEnglishGeneratorPlugin.h"
+#include "iotikRuCEnglishGeneratorPlugin.h"
 
 #include <iotikKit/blocks/iotikBlocksFactory.h>
 #include <src/robotModel/iotikGeneratorRobotModel.h>

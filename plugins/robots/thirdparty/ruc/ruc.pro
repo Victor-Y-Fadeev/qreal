@@ -41,4 +41,4 @@ SOURCES += \
 	$$PWD/RuC/threads.c \
 
 RESOURCES += \
-	$$PWD/keywords.txt \
+	$$PWD/ruc.qrc \
