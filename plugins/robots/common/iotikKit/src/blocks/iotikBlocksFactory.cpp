@@ -70,7 +70,7 @@ qReal::IdList IotikBlocksFactory::providedBlocks() const
 qReal::IdList IotikBlocksFactory::blocksToDisable() const
 {
 	return {
-				id("Function")
+				/*id("Function")
 				, id("IfBlock")
 				, id("FiBlock")
 				, id("SwitchBlock")
@@ -78,12 +78,12 @@ qReal::IdList IotikBlocksFactory::blocksToDisable() const
 				, id("Subprogram")
 				, id("Fork")
 				, id("Join")
-				, id("KillThread")
+				, id("KillThread")*/
 
-				, id("SendMessageThreads")
-				, id("IotikDetectorToVariable")
+				//, id("SendMessageThreads")
+				id("IotikDetectorToVariable")
 
-				, id("ReceiveMessageThreads")
+				//, id("ReceiveMessageThreads")
 
 				, id("PrintText")
 				, id("ClearScreen")
@@ -95,7 +95,7 @@ qReal::IdList IotikBlocksFactory::blocksToDisable() const
 qReal::IdList IotikBlocksFactory::blocksToHide() const
 {
 	return {
-				id("Function")
+				/*id("Function")
 				, id("IfBlock")
 				, id("FiBlock")
 				, id("SwitchBlock")
@@ -103,12 +103,12 @@ qReal::IdList IotikBlocksFactory::blocksToHide() const
 				, id("Subprogram")
 				, id("Fork")
 				, id("Join")
-				, id("KillThread")
+				, id("KillThread")*/
 
-				, id("SendMessageThreads")
-				, id("IotikDetectorToVariable")
+				//, id("SendMessageThreads")
+				id("IotikDetectorToVariable")
 
-				, id("ReceiveMessageThreads")
+				//, id("ReceiveMessageThreads")
 
 				, id("PrintText")
 				, id("ClearScreen")
