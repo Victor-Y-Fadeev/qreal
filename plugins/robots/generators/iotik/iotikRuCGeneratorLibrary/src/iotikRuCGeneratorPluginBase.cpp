@@ -147,7 +147,18 @@ void IotikRuCGeneratorPluginBase::activate()
 
 void IotikRuCGeneratorPluginBase::wifiUpload()
 {
+	const QFileInfo fileInfo = generateCodeForProcessing();
+	const QString rootPath = QDir::current().absolutePath();
+
+	if (!compileCode(fileInfo)) {
+		return;
+	}
+	configureSensors();
+
 	mMainWindowInterface->errorReporter()->addError(tr("Wi-Fi is not released yet"));
+
+	QFile::remove(rootPath + "/sensors");
+	QFile::remove(rootPath + "/export");
 }
 
 void IotikRuCGeneratorPluginBase::usbUpload()
