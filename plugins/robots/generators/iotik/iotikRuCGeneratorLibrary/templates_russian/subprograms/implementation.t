@@ -1,4 +1,4 @@
-@@NAME@@ = function()
+﻿пусто @@NAME@@()
 {
 @@BODY@@
 }

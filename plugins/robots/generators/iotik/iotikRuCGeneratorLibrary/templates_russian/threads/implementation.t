@@ -1,4 +1,4 @@
-//TASK_@@NAME@@ = function()
-//{
-//@@BODY@@
-//}
+﻿пусто @@NAME@@()
+{
+@@BODY@@
+}

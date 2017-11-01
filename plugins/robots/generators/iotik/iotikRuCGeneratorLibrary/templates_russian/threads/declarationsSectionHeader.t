@@ -1,1 +1,1 @@
-/* Threads declarations */
+﻿/* Объявления потоков */

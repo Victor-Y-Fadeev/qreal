@@ -1,1 +1,1 @@
-/* Subprograms implementations */
+﻿/* Реализация подпрограмм */

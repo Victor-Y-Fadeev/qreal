@@ -1,1 +1,1 @@
-var @@NAME@@;
+﻿void @@NAME@@();

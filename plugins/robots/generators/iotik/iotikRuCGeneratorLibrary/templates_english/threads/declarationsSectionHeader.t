@@ -1,1 +1,1 @@
-/* Threads declarations */
+﻿/* Threads declarations */

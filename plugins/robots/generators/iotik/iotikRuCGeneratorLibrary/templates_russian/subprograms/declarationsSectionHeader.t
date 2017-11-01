@@ -1,1 +1,1 @@
-/* Subprograms declarations */
+﻿/* Объявления подпрограмм */

@@ -1,1 +1,1 @@
-//Threading.start("TASK_@@NAME@@");
+﻿//t_init(@@NAME@@());

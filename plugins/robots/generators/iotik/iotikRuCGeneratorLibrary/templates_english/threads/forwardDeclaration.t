@@ -1,1 +1,1 @@
-//var TASK_@@NAME@@;
+﻿void @@NAME@@();

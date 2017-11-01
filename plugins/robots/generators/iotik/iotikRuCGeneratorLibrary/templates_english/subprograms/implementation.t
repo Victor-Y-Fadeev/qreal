@@ -1,4 +1,4 @@
-@@NAME@@ = function()
+﻿void @@NAME@@()
 {
 @@BODY@@
 }

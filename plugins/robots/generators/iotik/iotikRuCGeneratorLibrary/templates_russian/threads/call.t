@@ -1,1 +1,1 @@
-//Threading.start("TASK_@@NAME@@");
+﻿//н_начать(@@NAME@@());
