@@ -1,1 +1,1 @@
-rand() % @@ARGUMENT@@
+﻿rand() % @@ARGUMENT@@
