@@ -1,1 +1,1 @@
-@@ELEMENT_TYPE@@ *
+﻿@@ELEMENT_TYPE@@ *

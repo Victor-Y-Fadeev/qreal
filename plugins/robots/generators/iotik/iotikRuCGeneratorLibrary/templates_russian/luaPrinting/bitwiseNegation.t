@@ -1,1 +1,1 @@
-~@@OPERAND@@
+﻿~@@OPERAND@@

@@ -1,1 +1,1 @@
-!(@@CONDITION@@)
+﻿!(@@CONDITION@@)
