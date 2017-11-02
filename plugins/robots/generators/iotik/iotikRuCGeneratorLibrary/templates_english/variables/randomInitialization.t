@@ -1,1 +1,1 @@
-﻿@@VARIABLE@@ = @@FROM@@ + rand() % (@@TO@@ - @@FROM@@);
+﻿@@VARIABLE@@ = @@FROM@@ + round(rand() * 32767) % (@@TO@@ - @@FROM@@);

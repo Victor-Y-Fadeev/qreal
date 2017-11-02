@@ -1,1 +1,1 @@
-﻿//t_sleep((@@DELAY@@) / 1000);
+﻿//t_sleep(@@DELAY@@);

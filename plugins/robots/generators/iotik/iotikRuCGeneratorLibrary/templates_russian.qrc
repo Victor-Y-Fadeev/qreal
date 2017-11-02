@@ -98,6 +98,7 @@
         <file>templates_russian/types/int.t</file>
         <file>templates_russian/types/string.t</file>
         <file>templates_russian/variables/constantDeclaration.t</file>
+        <file>templates_russian/variables/randomInitialization.t</file>
         <file>templates_russian/variables/variableDeclaration.t</file>
         <file>templates_russian/wait/infrared.t</file>
         <file>templates_russian/wait/motion.t</file>

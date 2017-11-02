@@ -98,6 +98,7 @@
         <file>templates_english/types/int.t</file>
         <file>templates_english/types/string.t</file>
         <file>templates_english/variables/constantDeclaration.t</file>
+        <file>templates_english/variables/randomInitialization.t</file>
         <file>templates_english/variables/variableDeclaration.t</file>
         <file>templates_english/wait/infrared.t</file>
         <file>templates_english/wait/motion.t</file>
