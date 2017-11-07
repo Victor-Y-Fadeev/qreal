@@ -21,6 +21,7 @@
 #include "simpleGenerators/iotikEnginesGenerator.h"
 #include "simpleGenerators/waitForInfraredSensorGenerator.h"
 #include "simpleGenerators/waitForMotionGenerator.h"
+#include "simpleGenerators/forLoopGenerator.h"
 #include "parts/iotikDeviceVariables.h"
 
 using namespace iotik;
@@ -40,6 +41,12 @@ IotikGeneratorFactory::IotikGeneratorFactory(const qrRepo::RepoApi &repo
 
 IotikGeneratorFactory::~IotikGeneratorFactory()
 {
+}
+
+AbstractSimpleGenerator *IotikGeneratorFactory::forLoopGenerator(const qReal::Id &id
+		, GeneratorCustomizer &customizer)
+{
+	return new ForLoopGenerator(++mLoopGeneratorIndex, mRepo, customizer, id, this);
 }
 
 AbstractSimpleGenerator *IotikGeneratorFactory::simpleGenerator(const qReal::Id &id

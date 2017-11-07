@@ -30,6 +30,10 @@ public:
 
 	~IotikGeneratorFactory() override;
 
+	/// Returns a pointer to a code generator for loops in 'for' form
+	virtual generatorBase::simple::AbstractSimpleGenerator *forLoopGenerator(const qReal::Id &id
+			, generatorBase::GeneratorCustomizer &customizer);
+
 	generatorBase::simple::AbstractSimpleGenerator *simpleGenerator(const qReal::Id &id
 			, generatorBase::GeneratorCustomizer &customizer) override;
 

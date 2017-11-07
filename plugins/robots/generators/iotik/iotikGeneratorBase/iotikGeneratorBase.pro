@@ -51,6 +51,7 @@ HEADERS += \
 	$$PWD/src/simpleGenerators/iotikEnginesGenerator.h \
 	$$PWD/src/simpleGenerators/waitForInfraredSensorGenerator.h \
 	$$PWD/src/simpleGenerators/waitForMotionGenerator.h \
+	$$PWD/src/simpleGenerators/forLoopGenerator.h \
 	$$PWD/widgets/iotikAdditionalPreferences.h \
 
 SOURCES += \
@@ -65,6 +66,7 @@ SOURCES += \
 	$$PWD/src/simpleGenerators/iotikEnginesGenerator.cpp \
 	$$PWD/src/simpleGenerators/waitForInfraredSensorGenerator.cpp \
 	$$PWD/src/simpleGenerators/waitForMotionGenerator.cpp \
+	$$PWD/src/simpleGenerators/forLoopGenerator.cpp \
 	$$PWD/widgets/iotikAdditionalPreferences.cpp \
 
 FORMS += \
