@@ -58,11 +58,7 @@ AbstractSimpleGenerator *IotikGeneratorFactory::simpleGenerator(const qReal::Id 
 			|| elementType.contains("AngularServo"))
 	{
 		return new IotikEnginesGenerator(mRepo, customizer, id, elementType, this);
-	/*} else if (elementType == "IotikSendMessage") {
-		return new SendMessageGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "IotikWaitForMessage") {
-		return new WaitForMessageGenerator(mRepo, customizer, id, this);
-	*/} else if (elementType == "IotikSystem") {
+	} else if (elementType == "IotikSystem") {
 		return new SystemGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "IotikDetectorToVariable") {
 		return new DetectorToVariableGenerator(mRepo, customizer, id, this);

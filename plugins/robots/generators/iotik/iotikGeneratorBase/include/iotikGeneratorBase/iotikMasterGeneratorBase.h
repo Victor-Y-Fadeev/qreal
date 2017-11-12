@@ -34,8 +34,11 @@ public:
 
 protected:
 	generatorBase::GeneratorCustomizer *createCustomizer() override;
+	void afterGeneration() override;
 
 private:
+	void renameThreads(QString &code);
+
 	const QStringList mPathsToTemplates;
 };
 

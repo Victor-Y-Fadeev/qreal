@@ -1,1 +1,1 @@
-﻿//t_init(@@NAME@@());
+﻿t_create(@@@@NAME@@@@, @@@@THREAD_ID@@@@);

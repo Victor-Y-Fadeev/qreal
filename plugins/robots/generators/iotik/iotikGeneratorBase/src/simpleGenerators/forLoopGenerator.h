@@ -16,16 +16,16 @@
 
 #include "generatorBase/simpleGenerators/bindingGenerator.h"
 
-namespace generatorBase {
+namespace iotik {
 namespace simple {
 
 /// Generator for 'for' loops
-class ForLoopGenerator : public BindingGenerator
+class ForLoopGenerator : public generatorBase::simple::BindingGenerator
 {
 public:
 	ForLoopGenerator(int index
 			, const qrRepo::RepoApi &repo
-			, GeneratorCustomizer &customizer
+			, generatorBase::GeneratorCustomizer &customizer
 			, const qReal::Id &id
 			, QObject *parent = 0);
 };

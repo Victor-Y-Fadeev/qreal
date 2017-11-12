@@ -12,6 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. */
 
+#include <QtCore/QFile>
+#include <QRegExp>
+
 #include "iotikGeneratorBase/iotikMasterGeneratorBase.h"
 #include "iotikGeneratorCustomizer.h"
 
@@ -33,4 +36,40 @@ generatorBase::GeneratorCustomizer *IotikMasterGeneratorBase::createCustomizer()
 {
 	return new IotikGeneratorCustomizer(mRepo, mErrorReporter
 			, mRobotModelManager, *createLuaProcessor(), mPathsToTemplates);
+}
+
+void IotikMasterGeneratorBase::afterGeneration()
+{
+	QFile file(targetPath());
+	file.open(QIODevice::ReadOnly);
+	QString resultCode = file.readAll();
+	file.close();
+
+	renameThreads(resultCode);
+
+	file.open(QIODevice::WriteOnly);
+	file.write(QByteArray::fromStdString(resultCode.toStdString()));
+	file.close();
+}
+
+void IotikMasterGeneratorBase::renameThreads(QString &code)
+{
+	const QString threadName = "thread_";
+	QRegExp definition("@@[\\w]+@@,\\s@@[\\w]+@@");
+
+	QString string;
+	QStringList list;
+	int index = 1;
+
+	while (definition.indexIn(code) != -1) {
+		string = definition.cap(0);
+		list = string.split(", ");
+		code.replace(string, threadName + QString::number(index) + ", 0");
+		code.replace(list.at(0), threadName + QString::number(index));
+		code.replace(list.at(1), QString::number(index));
+		index++;
+	}
+
+	code.replace("@@main@@", "0");
+	code.replace("@@", "");
 }

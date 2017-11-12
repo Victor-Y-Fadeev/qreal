@@ -91,6 +91,10 @@
         <file>templates_english/threads/forwardDeclaration.t</file>
         <file>templates_english/threads/implementation.t</file>
         <file>templates_english/threads/implementationsSectionHeader.t</file>
+        <file>templates_english/threads/join.t</file>
+        <file>templates_english/threads/killThread.t</file>
+        <file>templates_english/threads/receiveMessage.t</file>
+        <file>templates_english/threads/sendMessage.t</file>
         <file>templates_english/types/array.t</file>
         <file>templates_english/types/bool.t</file>
         <file>templates_english/types/cast.t</file>

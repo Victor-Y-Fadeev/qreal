@@ -1,1 +1,1 @@
-﻿//t_sleep(@@DELAY@@);
+﻿t_sleep(@@DELAY@@);

@@ -15,6 +15,7 @@
 #include "forLoopGenerator.h"
 #include "generatorBase/generatorCustomizer.h"
 
+using namespace iotik::simple;
 using namespace generatorBase::simple;
 using namespace qReal;
 
@@ -22,7 +23,7 @@ const QString iteratorName = "iter_";
 
 ForLoopGenerator::ForLoopGenerator(int index
 		, const qrRepo::RepoApi &repo
-		, GeneratorCustomizer &customizer
+		, generatorBase::GeneratorCustomizer &customizer
 		, const Id &id
 		, QObject *parent)
 	: BindingGenerator(repo, customizer, id, "conditional/for.t", QList<Binding *>()
