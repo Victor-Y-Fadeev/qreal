@@ -1,1 +1,1 @@
-﻿t_destroy(@@@@THREAD_ID@@@@);
+﻿t_destroy(@@THREAD_ID@@);

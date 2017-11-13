@@ -1,1 +1,1 @@
-﻿t_join(@@@@THREAD_ID@@@@);
+﻿t_join(@@THREAD_ID@@);

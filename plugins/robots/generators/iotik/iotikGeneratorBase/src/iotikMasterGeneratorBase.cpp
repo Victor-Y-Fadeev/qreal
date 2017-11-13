@@ -55,7 +55,7 @@ void IotikMasterGeneratorBase::afterGeneration()
 void IotikMasterGeneratorBase::renameThreads(QString &code)
 {
 	const QString threadName = "thread_";
-	QRegExp definition("@@[\\w]+@@,\\s@@[\\w]+@@");
+	QRegExp definition("[\\w]{32,32},\\s[\\w]+");
 
 	QString string;
 	QStringList list;
@@ -70,6 +70,5 @@ void IotikMasterGeneratorBase::renameThreads(QString &code)
 		index++;
 	}
 
-	code.replace("@@main@@", "0");
-	code.replace("@@", "");
+	code.replace("(main)", "(0)");
 }
