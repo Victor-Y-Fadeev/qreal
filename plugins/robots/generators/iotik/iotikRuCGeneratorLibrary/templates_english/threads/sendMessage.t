@@ -1,1 +1,1 @@
-﻿t_msg_send({@@THREAD_ID@@, @@MESSAGE@@});
+﻿t_msg_send({ @@THREAD_ID@@, @@MESSAGE@@ });

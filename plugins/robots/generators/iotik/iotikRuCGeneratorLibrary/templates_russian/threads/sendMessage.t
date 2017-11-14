@@ -1,1 +1,1 @@
-﻿н_послать({@@THREAD_ID@@, @@MESSAGE@@});
+﻿н_послать({ @@THREAD_ID@@, @@MESSAGE@@ });

@@ -37,7 +37,15 @@ protected:
 	void afterGeneration() override;
 
 private:
+	const QString inputCode(const QString &path);
+	const QStringList findExpression(const QString text, const QRegExp expression);
 	void renameThreads(QString &code);
+	void normalizeArrays(QString &code);
+	const int countDimension(const QString definition);
+	void normalizeArray(QString &code, const QString definition);
+	void updateConcrete(QVector<int> &concrete, QString use);
+	void updateUse(QString &code, const QVector<int> concrete, const QString use);
+	const QString getElement(const QVector<int> concrete, const int current, const QString simple);
 
 	const QStringList mPathsToTemplates;
 };
