@@ -6,6 +6,10 @@
 // http://www.lysator.liu.se/c/ANSI-C-grammar-y.html
 #define _CRT_SECURE_NO_WARNINGS
 
+const char * name = "../../../tests/roboterr.c";
+             /*"../../../tests/Golovan/dining_philosophers.c";*/
+
+
 #include <stdio.h>
 #include <string.h>
 #include <wchar.h>
@@ -91,12 +95,6 @@ int main(int argc, const char * argv[])
         ;
     fclose(input);
     
-     if (argc < 2) {
-        printf(" не указан входной файл\n");
-        exit(1);
-    }
-
-    const char * name = argv[1];
 /*    input  = fopen(name, "r");        //   исходный текст
     output = fopen("macro.txt", "wt");
 
@@ -143,10 +141,16 @@ int main(int argc, const char * argv[])
 
     input  = fopen("macro.txt", "r");
  */
-    input = fopen(name, "r");
+    
+    if (argc < 2) {
+        input = fopen(name, "r");
+    } else {
+        input = fopen(argv[1], "r");
+    }
+    
     if (input == NULL)
     {
-        printf(" файл %s не найден\n", name);
+        printf("файл %s не найден\n", name);
     }
 
     output = fopen("tree.txt", "wt");
@@ -193,8 +197,9 @@ int main(int argc, const char * argv[])
     
     fclose(output);
    
-    if (notrobot)
+    if (notrobot && (argc < 2))
         import();
     
     return 0;
 }
+

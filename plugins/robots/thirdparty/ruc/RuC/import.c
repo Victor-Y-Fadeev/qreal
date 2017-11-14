@@ -374,7 +374,7 @@ int dsp(int di, int l)
 
 void* interpreter(void* pcPnt)
 {
-    int l, x, pc = *((int*) pcPnt), numTh;// = t_getThNum();
+    int l, x, pc = *((int*) pcPnt), numTh = t_getThNum();
     int N, bounds[100], d,from, prtype, cur0;
     int i,r, flagstop = 1, entry, di, di1, len;
     double lf, rf;
@@ -390,23 +390,22 @@ void* interpreter(void* pcPnt)
     while (flagstop)
     {
         memcpy(&rf, &mem[x-1], sizeof(double));
-            //    printf("pc=%i mem[pc]=%i rf=%f\n", pc, mem[pc], rf);
+        printf("pc=%i mem[pc]=%i\n", pc, mem[pc]);
         
-        //printf("running th #%i, cmd=%i\n", t_getThNum(), mem[pc]);
+        printf("running th #%i\n", t_getThNum());
         switch (mem[pc++])
         {
-
             case STOP:
                 flagstop = 0;
                 threads[numTh+2] = x;
                 break;
-/*
+
             case CREATEDIRECTC:
                t_create(interpreter, (void*)&pc);
                 flagstop = 1;
                 break;
             case CREATEC:
-                i = mem[x];
+                i = mem[x--];
                 entry = functions[i > 0 ? i : mem[l-i]];
                 pc = entry + 3;
                 t_create(interpreter, (void*)&pc);
@@ -462,8 +461,8 @@ void* interpreter(void* pcPnt)
                 m.numTh = mem[x--];
                 t_msg_send(m);
             }
-                break;*/
-
+                break;
+               
     #ifdef ROBOT
 
             case SETMOTORC:
@@ -1529,9 +1528,9 @@ void import()
     mem[x+1] = l;
     mem[x+2] = x;
     pc = 4;
-    //t_init();
+    t_init();
     interpreter(&pc);                      // номер нити главной программы 0
-    //t_destroy();
+    t_destroy();
  
 #ifdef ROBOT
     system("i2cset -y 2 0x48 0x10 0 w");   // отключение силовых моторов
@@ -1541,5 +1540,6 @@ void import()
     fclose(f1);
     fclose(f2);
 #endif
+    
     
 }

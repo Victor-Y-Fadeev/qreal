@@ -21,7 +21,7 @@ copyToDestdir(keywords.txt, NOW)
 TEMPLATE = app
 
 CONFIG(clang) {
-	QMAKE_CXXFLAGS += -lm -DROBOTS
+	QMAKE_CXXFLAGS += -DROBOTS -lm -lpthread
 }
 
 HEADERS += \
