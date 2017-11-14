@@ -14,17 +14,29 @@
 
 #pragma once
 
-#include <generatorBase/parts/deviceVariables.h>
+#include <QtCore/QMetaClassInfo>
 
 namespace iotik {
 namespace parts {
 
-/// Customizer for generator of IoTik sensor reading code.
-class IotikDeviceVariables : public generatorBase::parts::DeviceVariables
+class IotikVariablesNormalizer
 {
 public:
-	QString variableTemplatePath(const kitBase::robotModel::DeviceInfo &device
-			, const kitBase::robotModel::PortInfo &port) const override;
+	IotikVariablesNormalizer(QString &code);
+
+	void normalizeArrays();
+
+private:
+	const QStringList findExpression(const QString text, const QRegExp expression);
+	const int countDimension(const QString definition);
+	const QString getElement(const QVector<int> concrete, const int current, const QString simple);
+
+	void normalizeArray(const QString definition);
+
+	void updateConcrete(QVector<int> &concrete, QString use);
+	void updateUse(const QVector<int> concrete, const QString use);
+
+	QString &mCode;
 };
 
 }

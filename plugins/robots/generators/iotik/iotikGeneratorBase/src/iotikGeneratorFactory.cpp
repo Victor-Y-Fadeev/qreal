@@ -22,7 +22,6 @@
 #include "simpleGenerators/waitForInfraredSensorGenerator.h"
 #include "simpleGenerators/waitForMotionGenerator.h"
 #include "simpleGenerators/forLoopGenerator.h"
-#include "parts/iotikDeviceVariables.h"
 
 using namespace iotik;
 using namespace iotik::simple;
@@ -74,9 +73,4 @@ AbstractSimpleGenerator *IotikGeneratorFactory::simpleGenerator(const qReal::Id 
 QStringList IotikGeneratorFactory::pathsToTemplates() const
 {
 	return mPathsToTemplates; //{":/" + mGeneratorName + "/templates"};
-}
-
-generatorBase::parts::DeviceVariables *IotikGeneratorFactory::deviceVariables() const
-{
-	return new iotik::parts::IotikDeviceVariables();
 }
