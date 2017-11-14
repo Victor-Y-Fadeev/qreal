@@ -76,7 +76,8 @@ protected:
 
 	QStringList mPathsToTemplates;
 
-	bool compileCode(const QFileInfo fileInfo);
+	void addDeviceVariables(const QFileInfo fileInfo);
+	bool compileCode();
 	void configureSensors();
 };
 

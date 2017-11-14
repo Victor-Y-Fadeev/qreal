@@ -150,7 +150,8 @@ void IotikRuCGeneratorPluginBase::wifiUpload()
 	const QFileInfo fileInfo = generateCodeForProcessing();
 	const QString rootPath = QDir::current().absolutePath();
 
-	if (!compileCode(fileInfo)) {
+	addDeviceVariables(fileInfo);
+	if (!compileCode()) {
 		return;
 	}
 	configureSensors();
@@ -166,7 +167,8 @@ void IotikRuCGeneratorPluginBase::usbUpload()
 	const QFileInfo fileInfo = generateCodeForProcessing();
 	const QString rootPath = QDir::current().absolutePath();
 
-	if (!compileCode(fileInfo)) {
+	addDeviceVariables(fileInfo);
+	if (!compileCode()) {
 		return;
 	}
 	configureSensors();
@@ -182,18 +184,17 @@ void IotikRuCGeneratorPluginBase::usbUpload()
 	QFile::remove(rootPath + "/export");
 }
 
-bool IotikRuCGeneratorPluginBase::compileCode(const QFileInfo fileInfo)
+bool IotikRuCGeneratorPluginBase::compileCode()
 {
 	const QString rootPath = QDir::current().absolutePath();
-	const QString filePath = fileInfo.absoluteFilePath();
-
 
 	if (QFile::exists(RUC_COMPILER)) {
-		QProcess::execute(RUC_COMPILER, {filePath});
+		QProcess::execute(RUC_COMPILER, {rootPath + "/import.c"});
 	} else {
-		QProcess::execute(RUC_DEBUG_COMPILER, {filePath});
+		QProcess::execute(RUC_DEBUG_COMPILER, {rootPath + "/import.c"});
 	}
 
+	QFile::remove(rootPath + "/import.c");
 	QFile::remove(rootPath + "/tree.txt");
 	QFile::remove(rootPath + "/codes.txt");
 
@@ -207,10 +208,30 @@ bool IotikRuCGeneratorPluginBase::compileCode(const QFileInfo fileInfo)
 	return true;
 }
 
+void IotikRuCGeneratorPluginBase::addDeviceVariables(const QFileInfo fileInfo)
+{
+	QString variables = "int M1 = 1;";
+	variables += "int M2 = 2;";
+	variables += "int A1 = 1;";
+	variables += "int D1 = 1;";
+
+	const QString rootPath = QDir::current().absolutePath();
+	const QString filePath = fileInfo.absoluteFilePath();
+
+	QFile file(filePath);
+	file.open(QIODevice::ReadOnly);
+	QString code = file.readAll();
+	file.close();
+
+	file.setFileName(rootPath + "/import.c");
+	file.open(QIODevice::WriteOnly);
+	file.write(QByteArray::fromStdString((variables + code).toStdString()));
+	file.close();
+}
+
 void IotikRuCGeneratorPluginBase::configureSensors()
 {
 	const QString rootPath = QDir::current().absolutePath();
-
 
 	QFile sensors(rootPath + "/sensors");
 	sensors.open(QIODevice::WriteOnly);
