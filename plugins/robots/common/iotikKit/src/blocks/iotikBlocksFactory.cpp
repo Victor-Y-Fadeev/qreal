@@ -14,19 +14,27 @@
  * limitations under the License. */
 
 #include "iotikKit/blocks/iotikBlocksFactory.h"
+#include "iotikKit/robotModel/parts/iotikMosfet.h"
+#include "iotikKit/robotModel/parts/iotikLed.h"
+#include "iotikKit/robotModel/parts/iotikLineSensor.h"
 #include "iotikKit/robotModel/parts/iotikInfraredSensor.h"
 #include "iotikKit/robotModel/parts/iotikSonarSensor.h"
+#include "iotikKit/robotModel/parts/iotikFlameSensor.h"
 
 #include <kitBase/robotModel/robotParts/rangeSensor.h>
 #include <kitBase/blocksBase/common/enginesStopBlock.h>
+#include <kitBase/blocksBase/common/waitForTouchSensorBlock.h>
 #include <kitBase/blocksBase/common/waitForSonarDistanceBlock.h>
+#include <kitBase/blocksBase/common/waitForSoundSensorBlock.h>
 
 #include <qrutils/interpreter/blocks/emptyBlock.h>
 
 #include "details/iotikEnginesBackwardBlock.h"
 #include "details/iotikEnginesForwardBlock.h"
+#include "details/mosfetBlock.h"
+#include "details/ledBlock.h"
 #include "details/lineDetectorToVariable.h"
-
+#include "details/waitForFlameSensorBlock.h"
 
 using namespace iotik::blocks;
 using namespace iotik::blocks::details;
@@ -40,15 +48,26 @@ qReal::interpretation::Block *IotikBlocksFactory::produceBlock(const qReal::Id &
 		return new details::IotikEnginesBackwardBlock(mRobotModelManager->model());
 	} else if (elementMetatypeIs(element, "IotikEnginesStop")) {
 		return new EnginesStopBlock(mRobotModelManager->model());
+	} else if (elementMetatypeIs(element, "IotikMosfet")) {
+		return new MosfetBlock(mRobotModelManager->model());
+	} else if (elementMetatypeIs(element, "IotikLed")) {
+		return new LedBlock(mRobotModelManager->model());
 	} else if (elementMetatypeIs(element, "IotikDetectorToVariable")) {
 		return new LineDetectorToVariableBlock();
 
+	} else if (elementMetatypeIs(element, "IotikWaitForTouchSensor")) {
+		return new WaitForTouchSensorBlock(mRobotModelManager->model());
 	} else if (elementMetatypeIs(element, "IotikWaitForIRDistance")) {
 		return new WaitForSonarDistanceBlock(mRobotModelManager->model()
 				, kitBase::robotModel::DeviceInfo::create<robotModel::parts::IotikInfraredSensor>());
 	} else if (elementMetatypeIs(element, "IotikWaitForSonarDistance")) {
 		return new WaitForSonarDistanceBlock(mRobotModelManager->model()
 				, kitBase::robotModel::DeviceInfo::create<robotModel::parts::IotikSonarSensor>());
+	} else if (elementMetatypeIs(element, "IotikWaitForFlame")) {
+		return new WaitForFlameSensorBlock(mRobotModelManager->model()
+				, kitBase::robotModel::DeviceInfo::create<robotModel::parts::IotikFlameSensor>());
+	} else if (elementMetatypeIs(element, "IotikWaitForSound")) {
+		return new WaitForSoundSensorBlock(mRobotModelManager->model());
 	}
 
 	return nullptr;
@@ -60,32 +79,22 @@ qReal::IdList IotikBlocksFactory::providedBlocks() const
 				id("IotikEnginesBackward")
 				, id("IotikEnginesForward")
 				, id("IotikEnginesStop")
-				//, id("IotikDetectorToVariable")
+				, id("IotikMosfet")
+				, id("IotikLed")
+				, id("IotikDetectorToVariable")
 
+				, id("IotikWaitForTouchSensor")
 				, id("IotikWaitForIRDistance")
 				, id("IotikWaitForSonarDistance")
+				, id("IotikWaitForFlame")
+				, id("IotikWaitForSound")
 	};
 }
 
 qReal::IdList IotikBlocksFactory::blocksToDisable() const
 {
 	return {
-				/*id("Function")
-				, id("IfBlock")
-				, id("FiBlock")
-				, id("SwitchBlock")
-				, id("Loop")
-				, id("Subprogram")
-				, id("Fork")
-				, id("Join")
-				, id("KillThread")*/
-
-				//, id("SendMessageThreads")
-				id("IotikDetectorToVariable")
-
-				//, id("ReceiveMessageThreads")
-
-				, id("PrintText")
+				id("PrintText")
 				, id("ClearScreen")
 				, id("MarkerDown")
 				, id("MarkerUp")
@@ -95,22 +104,7 @@ qReal::IdList IotikBlocksFactory::blocksToDisable() const
 qReal::IdList IotikBlocksFactory::blocksToHide() const
 {
 	return {
-				/*id("Function")
-				, id("IfBlock")
-				, id("FiBlock")
-				, id("SwitchBlock")
-				, id("Loop")
-				, id("Subprogram")
-				, id("Fork")
-				, id("Join")
-				, id("KillThread")*/
-
-				//, id("SendMessageThreads")
-				id("IotikDetectorToVariable")
-
-				//, id("ReceiveMessageThreads")
-
-				, id("PrintText")
+				id("PrintText")
 				, id("ClearScreen")
 				, id("MarkerDown")
 				, id("MarkerUp")

@@ -12,27 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. */
 
-#pragma once
+#include "iotikKit/robotModel/parts/iotikFlameSensor.h"
 
-#include <qrgui/plugins/toolPluginInterface/usedInterfaces/errorReporterInterface.h>
-#include <kitBase/robotModel/commonRobotModel.h>
+using namespace iotik::robotModel::parts;
+using namespace kitBase::robotModel;
 
-namespace iotik {
-namespace robotModel {
-
-class IotikRobotModelBase : public kitBase::robotModel::CommonRobotModel
+IotikFlameSensor::IotikFlameSensor(const DeviceInfo &info, const PortInfo &port)
+	: kitBase::robotModel::robotParts::RangeSensor(info, port)
 {
-	Q_OBJECT
-
-public:
-	IotikRobotModelBase(const QString &kitId, const QString &robotId);
-
-	QList<kitBase::robotModel::PortInfo> configurablePorts() const override;
-	QList<kitBase::robotModel::DeviceInfo> convertibleBases() const override;
-
-protected:
-	virtual kitBase::robotModel::DeviceInfo motorInfo() const;
-};
-
-}
 }

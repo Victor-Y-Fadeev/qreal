@@ -210,10 +210,25 @@ bool IotikRuCGeneratorPluginBase::compileCode()
 
 void IotikRuCGeneratorPluginBase::addDeviceVariables(const QFileInfo fileInfo)
 {
-	QString variables = "int M1 = 1;";
-	variables += "int M2 = 2;";
-	variables += "int A1 = 1;";
-	variables += "int D1 = 1;";
+	const QString variables =
+			"int M0 = 0;\n"
+			"int M1 = 1;\n"
+			"int A0 = -1;\n"
+			"int A1 = -2;\n"
+			"int A2 = -3;\n"
+			"int A3 = -4;\n"
+			"int A4 = -5;\n"
+			"int A5 = -6;\n"
+			"int A6 = -7;\n"
+			"int A7 = -8;\n"
+			"int D0 = 0;\n"
+			"int D1 = 1;\n"
+			"int D2 = 2;\n"
+			"int D3 = 3;\n"
+			"int D4 = 4;\n"
+			"int D5 = 5;\n"
+			"int D6 = 6;\n"
+			"int D7 = 7;\n";
 
 	const QString rootPath = QDir::current().absolutePath();
 	const QString filePath = fileInfo.absoluteFilePath();

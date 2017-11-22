@@ -14,25 +14,22 @@
 
 #pragma once
 
-#include <qrgui/plugins/toolPluginInterface/usedInterfaces/errorReporterInterface.h>
-#include <kitBase/robotModel/commonRobotModel.h>
+#include <kitBase/robotModel/robotParts/rangeSensor.h>
 
 namespace iotik {
 namespace robotModel {
+namespace parts {
 
-class IotikRobotModelBase : public kitBase::robotModel::CommonRobotModel
+class IotikFlameSensor : public kitBase::robotModel::robotParts::RangeSensor
 {
 	Q_OBJECT
+	Q_CLASSINFO("friendlyName", tr("Flame Sensor"))
 
 public:
-	IotikRobotModelBase(const QString &kitId, const QString &robotId);
-
-	QList<kitBase::robotModel::PortInfo> configurablePorts() const override;
-	QList<kitBase::robotModel::DeviceInfo> convertibleBases() const override;
-
-protected:
-	virtual kitBase::robotModel::DeviceInfo motorInfo() const;
+	IotikFlameSensor(const kitBase::robotModel::DeviceInfo &info
+			, const kitBase::robotModel::PortInfo &port);
 };
 
+}
 }
 }
