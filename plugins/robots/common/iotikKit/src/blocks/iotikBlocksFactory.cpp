@@ -16,6 +16,8 @@
 #include "iotikKit/blocks/iotikBlocksFactory.h"
 #include "iotikKit/robotModel/parts/iotikMosfet.h"
 #include "iotikKit/robotModel/parts/iotikLed.h"
+#include "iotikKit/robotModel/parts/iotikColorSensor.h"
+#include "iotikKit/robotModel/parts/iotikCompass.h"
 #include "iotikKit/robotModel/parts/iotikLineSensor.h"
 #include "iotikKit/robotModel/parts/iotikInfraredSensor.h"
 #include "iotikKit/robotModel/parts/iotikSonarSensor.h"
@@ -33,6 +35,8 @@
 #include "details/iotikEnginesForwardBlock.h"
 #include "details/mosfetBlock.h"
 #include "details/ledBlock.h"
+#include "details/colorSensorToVariable.h"
+#include "details/compassToVariable.h"
 #include "details/lineDetectorToVariable.h"
 #include "details/waitForFlameSensorBlock.h"
 
@@ -52,8 +56,13 @@ qReal::interpretation::Block *IotikBlocksFactory::produceBlock(const qReal::Id &
 		return new MosfetBlock(mRobotModelManager->model());
 	} else if (elementMetatypeIs(element, "IotikLed")) {
 		return new LedBlock(mRobotModelManager->model());
-	} else if (elementMetatypeIs(element, "IotikDetectorToVariable")) {
+	} else if (elementMetatypeIs(element, "IotikColorSensorToVariable")) {
+		return new ColorSensorToVariableBlock();
+	} else if (elementMetatypeIs(element, "IotikCompassToVariable")) {
+		return new CompassToVariableBlock();
+	} else if (elementMetatypeIs(element, "IotikLineDetectorToVariable")) {
 		return new LineDetectorToVariableBlock();
+
 
 	} else if (elementMetatypeIs(element, "IotikWaitForTouchSensor")) {
 		return new WaitForTouchSensorBlock(mRobotModelManager->model());
@@ -81,7 +90,9 @@ qReal::IdList IotikBlocksFactory::providedBlocks() const
 				, id("IotikEnginesStop")
 				, id("IotikMosfet")
 				, id("IotikLed")
-				, id("IotikDetectorToVariable")
+				, id("IotikColorSensorToVariable")
+				, id("IotikCompassToVariable")
+				, id("IotikLineDetectorToVariable")
 
 				, id("IotikWaitForTouchSensor")
 				, id("IotikWaitForIRDistance")
