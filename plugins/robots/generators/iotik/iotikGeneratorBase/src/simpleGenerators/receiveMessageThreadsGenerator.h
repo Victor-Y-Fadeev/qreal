@@ -14,16 +14,16 @@
 
 #pragma once
 
-#include "generatorBase/simpleGenerators/bindingGenerator.h"
+#include <generatorBase/simpleGenerators/bindingGenerator.h>
 
 namespace iotik {
 namespace simple {
 
-/// Generator for 'WaitForIRDistance' block
-class WaitForInfraredSensorGenerator : public generatorBase::simple::BindingGenerator
+/// Generates receiving a message sent to this thread by another one.
+class ReceiveMessageThreadsGenerator : public generatorBase::simple::BindingGenerator
 {
 public:
-	WaitForInfraredSensorGenerator(const qrRepo::RepoApi &repo
+	ReceiveMessageThreadsGenerator(const qrRepo::RepoApi &repo
 			, generatorBase::GeneratorCustomizer &customizer
 			, const qReal::Id &id
 			, QObject *parent = 0);

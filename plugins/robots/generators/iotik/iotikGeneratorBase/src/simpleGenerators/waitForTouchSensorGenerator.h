@@ -1,4 +1,4 @@
-/* Copyright 2017 QReal Research Group
+/* Copyright 2007-2015 QReal Research Group
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,11 +19,11 @@
 namespace iotik {
 namespace simple {
 
-/// Generator for 'WaitForIRDistance' block
-class WaitForInfraredSensorGenerator : public generatorBase::simple::BindingGenerator
+/// Generator for 'WaitForTouch' block
+class WaitForTouchSensorGenerator : public generatorBase::simple::BindingGenerator
 {
 public:
-	WaitForInfraredSensorGenerator(const qrRepo::RepoApi &repo
+	WaitForTouchSensorGenerator(const qrRepo::RepoApi &repo
 			, generatorBase::GeneratorCustomizer &customizer
 			, const qReal::Id &id
 			, QObject *parent = 0);

@@ -46,11 +46,18 @@ HEADERS += \
 	$$PWD/src/iotikGeneratorFactory.h \
 	$$PWD/src/parts/iotikVariablesNormalizer.h \
 	$$PWD/src/robotModel/iotikGeneratorRobotModel.h \
-	$$PWD/src/simpleGenerators/detectorToVariableGenerator.h \
-	$$PWD/src/simpleGenerators/systemGenerator.h \
 	$$PWD/src/simpleGenerators/iotikEnginesGenerator.h \
+	$$PWD/src/simpleGenerators/mosfetGenerator.h \
+	$$PWD/src/simpleGenerators/ledGenerator.h \
+	$$PWD/src/simpleGenerators/colorSensorToVariableGenerator.h \
+	$$PWD/src/simpleGenerators/compassToVariableGenerator.h \
+	$$PWD/src/simpleGenerators/lineDetectorToVariableGenerator.h \
+	$$PWD/src/simpleGenerators/waitForTouchSensorGenerator.h \
 	$$PWD/src/simpleGenerators/waitForInfraredSensorGenerator.h \
-	$$PWD/src/simpleGenerators/waitForMotionGenerator.h \
+	$$PWD/src/simpleGenerators/waitForUltrasonicSensorGenerator.h \
+	$$PWD/src/simpleGenerators/waitForFlameSensorGenerator.h \
+	$$PWD/src/simpleGenerators/waitForSoundSensorGenerator.h \
+	$$PWD/src/simpleGenerators/receiveMessageThreadsGenerator.h \
 	$$PWD/src/simpleGenerators/forLoopGenerator.h \
 	$$PWD/widgets/iotikAdditionalPreferences.h \
 
@@ -61,11 +68,18 @@ SOURCES += \
 	$$PWD/src/iotikGeneratorFactory.cpp \
 	$$PWD/src/parts/iotikVariablesNormalizer.cpp \
 	$$PWD/src/robotModel/iotikGeneratorRobotModel.cpp \
-	$$PWD/src/simpleGenerators/detectorToVariableGenerator.cpp \
-	$$PWD/src/simpleGenerators/systemGenerator.cpp \
 	$$PWD/src/simpleGenerators/iotikEnginesGenerator.cpp \
+	$$PWD/src/simpleGenerators/mosfetGenerator.cpp \
+	$$PWD/src/simpleGenerators/ledGenerator.cpp \
+	$$PWD/src/simpleGenerators/colorSensorToVariableGenerator.cpp \
+	$$PWD/src/simpleGenerators/compassToVariableGenerator.cpp \
+	$$PWD/src/simpleGenerators/lineDetectorToVariableGenerator.cpp \
+	$$PWD/src/simpleGenerators/waitForTouchSensorGenerator.cpp \
 	$$PWD/src/simpleGenerators/waitForInfraredSensorGenerator.cpp \
-	$$PWD/src/simpleGenerators/waitForMotionGenerator.cpp \
+	$$PWD/src/simpleGenerators/waitForUltrasonicSensorGenerator.cpp \
+	$$PWD/src/simpleGenerators/waitForFlameSensorGenerator.cpp \
+	$$PWD/src/simpleGenerators/waitForSoundSensorGenerator.cpp \
+	$$PWD/src/simpleGenerators/receiveMessageThreadsGenerator.cpp \
 	$$PWD/src/simpleGenerators/forLoopGenerator.cpp \
 	$$PWD/widgets/iotikAdditionalPreferences.cpp \
 

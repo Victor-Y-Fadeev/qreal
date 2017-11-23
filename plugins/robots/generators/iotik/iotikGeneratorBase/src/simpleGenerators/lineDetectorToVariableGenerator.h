@@ -19,11 +19,11 @@
 namespace iotik {
 namespace simple {
 
-/// Generator for 'WaitForIRDistance' block
-class WaitForInfraredSensorGenerator : public generatorBase::simple::BindingGenerator
+/// Generator for "line detector reading to variable" block.
+class LineDetectorToVariableGenerator : public generatorBase::simple::BindingGenerator
 {
 public:
-	WaitForInfraredSensorGenerator(const qrRepo::RepoApi &repo
+	LineDetectorToVariableGenerator(const qrRepo::RepoApi &repo
 			, generatorBase::GeneratorCustomizer &customizer
 			, const qReal::Id &id
 			, QObject *parent = 0);

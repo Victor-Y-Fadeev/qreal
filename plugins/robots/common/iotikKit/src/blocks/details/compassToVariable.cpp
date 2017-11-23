@@ -22,6 +22,6 @@ CompassToVariableBlock::CompassToVariableBlock()
 
 void CompassToVariableBlock::run()
 {
-	evalCode(stringProperty("Variable") + " = compass[0]");
+	//evalCode(stringProperty("Variable") + " = compass[0]");
 	emit done(mNextBlockId);
 }

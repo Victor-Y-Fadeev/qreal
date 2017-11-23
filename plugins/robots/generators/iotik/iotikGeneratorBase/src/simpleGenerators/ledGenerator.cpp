@@ -12,23 +12,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. */
 
-#include "waitForInfraredSensorGenerator.h"
+#include "ledGenerator.h"
 #include "generatorBase/generatorCustomizer.h"
 
 using namespace iotik::simple;
 using namespace generatorBase::simple;
 using namespace qReal;
 
-WaitForInfraredSensorGenerator::WaitForInfraredSensorGenerator(const qrRepo::RepoApi &repo
+LedGenerator::LedGenerator(const qrRepo::RepoApi &repo
 		, generatorBase::GeneratorCustomizer &customizer
 		, const Id &id
 		, QObject *parent)
-	: BindingGenerator(repo, customizer, id, "wait/analogPort.t", QList<Binding *>()
-			<< Binding::createStatic("@@DRIVER@@", "INFARED")
+	: BindingGenerator(repo, customizer, id, "sensors/voltagePort.t", QList<Binding *>()
 			<< Binding::createConverting("@@PORT@@", "Port", customizer.factory()->portNameConverter())
-			<< Binding::createConverting("@@VALUE@@", "Distance"
-					, customizer.factory()->intPropertyConverter(id, "Distance"))
-			<< Binding::createConverting("@@SIGN@@", "Sign", customizer.factory()->inequalitySignConverter())
+			<< Binding::createConverting("@@VALUE@@", "Status"
+					, customizer.factory()->boolPropertyConverter(id, "Status", false))
 			, parent)
 {
 }

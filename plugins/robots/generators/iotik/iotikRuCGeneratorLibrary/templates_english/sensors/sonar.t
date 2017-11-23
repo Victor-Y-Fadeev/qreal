@@ -1,1 +1,0 @@
-﻿getdigsensor(@@PORT@@)

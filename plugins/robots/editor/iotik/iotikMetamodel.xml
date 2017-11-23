@@ -325,7 +325,7 @@
 				</logic>
 			</node>
 
-			<node displayedName="Receive Message From Thread" name="ReceiveMessageThreads" description="Receive a message sent to a thread from which this block is called.">
+			<node displayedName="Receive Message From Thread" name="IotikReceiveMessageThreads" description="Receive a message sent to a thread from which this block is called.">
 				<graphics>
 					<picture sizex="50" sizey="50">
 						<image y1="0" name="images/receiveMessageThreadsBlock.png" x1="0" y2="50" x2="50"/>
@@ -493,6 +493,7 @@
 				<element name="IotikLineDetectorToVariable" />
 			</group>
 			<group name="Wait">
+				<element name="IotikReceiveMessageThreads"/>
 				<element name="IotikWaitForTouchSensor"/>
 				<element name="IotikWaitForIRDistance"/>
 				<element name="IotikWaitForSonarDistance" />

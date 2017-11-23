@@ -14,19 +14,19 @@
 
 #pragma once
 
-#include <generatorBase/simpleGenerators/bindingGenerator.h>
+#include "generatorBase/simpleGenerators/bindingGenerator.h"
 
 namespace iotik {
 namespace simple {
 
-/// Generator for "line detector reading to variable" block.
-class DetectorToVariableGenerator : public generatorBase::simple::BindingGenerator
+/// Generator for 'IotikWaitForSound' block
+class WaitForSoundSensorGenerator : public generatorBase::simple::BindingGenerator
 {
 public:
-	DetectorToVariableGenerator(const qrRepo::RepoApi &repo
+	WaitForSoundSensorGenerator(const qrRepo::RepoApi &repo
 			, generatorBase::GeneratorCustomizer &customizer
 			, const qReal::Id &id
-			, QObject *parent);
+			, QObject *parent = 0);
 };
 
 }

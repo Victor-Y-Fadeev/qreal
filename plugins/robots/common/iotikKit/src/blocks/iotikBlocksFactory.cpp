@@ -63,7 +63,6 @@ qReal::interpretation::Block *IotikBlocksFactory::produceBlock(const qReal::Id &
 	} else if (elementMetatypeIs(element, "IotikLineDetectorToVariable")) {
 		return new LineDetectorToVariableBlock();
 
-
 	} else if (elementMetatypeIs(element, "IotikWaitForTouchSensor")) {
 		return new WaitForTouchSensorBlock(mRobotModelManager->model());
 	} else if (elementMetatypeIs(element, "IotikWaitForIRDistance")) {
@@ -94,6 +93,7 @@ qReal::IdList IotikBlocksFactory::providedBlocks() const
 				, id("IotikCompassToVariable")
 				, id("IotikLineDetectorToVariable")
 
+				, id("IotikReceiveMessageThreads")
 				, id("IotikWaitForTouchSensor")
 				, id("IotikWaitForIRDistance")
 				, id("IotikWaitForSonarDistance")
@@ -105,7 +105,9 @@ qReal::IdList IotikBlocksFactory::providedBlocks() const
 qReal::IdList IotikBlocksFactory::blocksToDisable() const
 {
 	return {
-				id("PrintText")
+				id("ReceiveMessageThreads")
+
+				, id("PrintText")
 				, id("ClearScreen")
 				, id("MarkerDown")
 				, id("MarkerUp")
@@ -115,7 +117,9 @@ qReal::IdList IotikBlocksFactory::blocksToDisable() const
 qReal::IdList IotikBlocksFactory::blocksToHide() const
 {
 	return {
-				id("PrintText")
+				id("ReceiveMessageThreads")
+
+				, id("PrintText")
 				, id("ClearScreen")
 				, id("MarkerDown")
 				, id("MarkerUp")

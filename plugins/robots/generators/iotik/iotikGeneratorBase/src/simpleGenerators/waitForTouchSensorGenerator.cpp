@@ -1,4 +1,4 @@
-/* Copyright 2017 QReal Research Group
+/* Copyright 2007-2015 QReal Research Group
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,23 +12,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. */
 
-#include "waitForInfraredSensorGenerator.h"
+#include "waitForTouchSensorGenerator.h"
 #include "generatorBase/generatorCustomizer.h"
 
 using namespace iotik::simple;
 using namespace generatorBase::simple;
 using namespace qReal;
 
-WaitForInfraredSensorGenerator::WaitForInfraredSensorGenerator(const qrRepo::RepoApi &repo
+WaitForTouchSensorGenerator::WaitForTouchSensorGenerator(const qrRepo::RepoApi &repo
 		, generatorBase::GeneratorCustomizer &customizer
 		, const Id &id
 		, QObject *parent)
-	: BindingGenerator(repo, customizer, id, "wait/analogPort.t", QList<Binding *>()
-			<< Binding::createStatic("@@DRIVER@@", "INFARED")
+	: BindingGenerator(repo, customizer, id, "wait/oneDigitalPort.t", QList<Binding *>()
+			<< Binding::createStatic("@@DRIVER@@", "TOUCH")
 			<< Binding::createConverting("@@PORT@@", "Port", customizer.factory()->portNameConverter())
-			<< Binding::createConverting("@@VALUE@@", "Distance"
-					, customizer.factory()->intPropertyConverter(id, "Distance"))
-			<< Binding::createConverting("@@SIGN@@", "Sign", customizer.factory()->inequalitySignConverter())
+			<< Binding::createStatic("@@VALUE@@", "0")
+			<< Binding::createStatic("@@SIGN@@", ">")
 			, parent)
 {
 }

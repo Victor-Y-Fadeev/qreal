@@ -14,19 +14,19 @@
 
 #pragma once
 
-#include <generatorBase/simpleGenerators/bindingGenerator.h>
+#include "generatorBase/simpleGenerators/bindingGenerator.h"
 
 namespace iotik {
 namespace simple {
 
-/// Generator for 'System' block.
-class SystemGenerator : public generatorBase::simple::BindingGenerator
+/// Generator for "compass reading to variable" block.
+class CompassToVariableGenerator : public generatorBase::simple::BindingGenerator
 {
 public:
-	SystemGenerator(const qrRepo::RepoApi &repo
+	CompassToVariableGenerator(const qrRepo::RepoApi &repo
 			, generatorBase::GeneratorCustomizer &customizer
 			, const qReal::Id &id
-			, QObject *parent);
+			, QObject *parent = 0);
 };
 
 }

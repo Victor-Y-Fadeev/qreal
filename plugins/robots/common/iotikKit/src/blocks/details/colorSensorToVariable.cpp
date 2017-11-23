@@ -22,6 +22,6 @@ ColorSensorToVariableBlock::ColorSensorToVariableBlock()
 
 void ColorSensorToVariableBlock::run()
 {
-	evalCode(stringProperty("Variable") + " = colorSensor[0]");
+	//evalCode(stringProperty("Variable") + " = colorSensor[0]");
 	emit done(mNextBlockId);
 }

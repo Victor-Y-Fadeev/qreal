@@ -19,11 +19,11 @@
 namespace iotik {
 namespace simple {
 
-/// Generator for 'WaitForIRDistance' block
-class WaitForInfraredSensorGenerator : public generatorBase::simple::BindingGenerator
+/// Generator for 'WaitForSonarDistance' block
+class WaitForUltrasonicSensorGenerator : public generatorBase::simple::BindingGenerator
 {
 public:
-	WaitForInfraredSensorGenerator(const qrRepo::RepoApi &repo
+	WaitForUltrasonicSensorGenerator(const qrRepo::RepoApi &repo
 			, generatorBase::GeneratorCustomizer &customizer
 			, const qReal::Id &id
 			, QObject *parent = 0);

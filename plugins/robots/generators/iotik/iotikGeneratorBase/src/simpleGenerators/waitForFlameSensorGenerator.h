@@ -16,15 +16,15 @@
 
 #include "generatorBase/simpleGenerators/bindingGenerator.h"
 
-namespace generatorBase {
+namespace iotik {
 namespace simple {
 
-/// Generator for 'WaitForMotion' block
-class WaitForMotionGenerator : public BindingGenerator
+/// Generator for 'IotikWaitForFlame' block
+class WaitForFlameSensorGenerator : public generatorBase::simple::BindingGenerator
 {
 public:
-	WaitForMotionGenerator(const qrRepo::RepoApi &repo
-			, GeneratorCustomizer &customizer
+	WaitForFlameSensorGenerator(const qrRepo::RepoApi &repo
+			, generatorBase::GeneratorCustomizer &customizer
 			, const qReal::Id &id
 			, QObject *parent = 0);
 };

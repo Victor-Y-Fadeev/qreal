@@ -12,21 +12,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. */
 
-#include "systemGenerator.h"
-
-#include <generatorBase/generatorCustomizer.h>
+#include "mosfetGenerator.h"
+#include "generatorBase/generatorCustomizer.h"
 
 using namespace iotik::simple;
 using namespace generatorBase::simple;
+using namespace qReal;
 
-SystemGenerator::SystemGenerator(const qrRepo::RepoApi &repo
+MosfetGenerator::MosfetGenerator(const qrRepo::RepoApi &repo
 		, generatorBase::GeneratorCustomizer &customizer
-		, const qReal::Id &id
+		, const Id &id
 		, QObject *parent)
-	: BindingGenerator(repo, customizer, id
-			, repo.property(id, "Code").toBool() ? "nativeCode.t" : "system.t"
-			, QList<Binding *>()
-					<< Binding::createDirect("@@COMMAND@@", "Command")
+	: BindingGenerator(repo, customizer, id, "sensors/voltagePort.t", QList<Binding *>()
+			<< Binding::createConverting("@@PORT@@", "Port", customizer.factory()->portNameConverter())
+			<< Binding::createConverting("@@VALUE@@", "Status"
+					, customizer.factory()->intPropertyConverter(id, "Status"))
 			, parent)
 {
 }

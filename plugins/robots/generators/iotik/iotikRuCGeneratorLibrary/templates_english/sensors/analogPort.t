@@ -1,0 +1,1 @@
+﻿@@VARIABLE@@ = getansensor(@@DRIVER@@, @@PORT@@);
