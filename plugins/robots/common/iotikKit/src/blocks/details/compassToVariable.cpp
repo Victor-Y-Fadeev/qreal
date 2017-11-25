@@ -12,27 +12,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. */
 
-#pragma once
+#include "compassToVariable.h"
 
-#include <qrgui/plugins/toolPluginInterface/usedInterfaces/errorReporterInterface.h>
-#include <kitBase/robotModel/commonRobotModel.h>
+using namespace iotik::blocks::details;
 
-namespace iotik {
-namespace robotModel {
-
-class IotikRobotModelBase : public kitBase::robotModel::CommonRobotModel
+CompassToVariableBlock::CompassToVariableBlock()
 {
-	Q_OBJECT
-
-public:
-	IotikRobotModelBase(const QString &kitId, const QString &robotId);
-
-	QList<kitBase::robotModel::PortInfo> configurablePorts() const override;
-	QList<kitBase::robotModel::DeviceInfo> convertibleBases() const override;
-
-protected:
-	virtual kitBase::robotModel::DeviceInfo motorInfo() const;
-};
-
 }
+
+void CompassToVariableBlock::run()
+{
+	//evalCode(stringProperty("Variable") + " = compass[0]");
+	emit done(mNextBlockId);
 }

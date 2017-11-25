@@ -12,27 +12,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. */
 
-#pragma once
+#include "ledBlock.h"
 
-#include <qrgui/plugins/toolPluginInterface/usedInterfaces/errorReporterInterface.h>
-#include <kitBase/robotModel/commonRobotModel.h>
+using namespace iotik;
+using namespace blocks;
+using namespace details;
+using namespace kitBase::robotModel;
 
-namespace iotik {
-namespace robotModel {
-
-class IotikRobotModelBase : public kitBase::robotModel::CommonRobotModel
+LedBlock::LedBlock(RobotModelInterface &robotModel)
+	: kitBase::blocksBase::common::DeviceBlock<robotModel::parts::IotikLed>(robotModel)
 {
-	Q_OBJECT
-
-public:
-	IotikRobotModelBase(const QString &kitId, const QString &robotId);
-
-	QList<kitBase::robotModel::PortInfo> configurablePorts() const override;
-	QList<kitBase::robotModel::DeviceInfo> convertibleBases() const override;
-
-protected:
-	virtual kitBase::robotModel::DeviceInfo motorInfo() const;
-};
-
 }
+
+void LedBlock::doJob(robotModel::parts::IotikLed &led)
+{
+	emit done(mNextBlockId);
 }

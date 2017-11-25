@@ -1,1 +1,0 @@
-﻿getansensor(@@PORT@@)

@@ -14,25 +14,25 @@
 
 #pragma once
 
-#include <qrgui/plugins/toolPluginInterface/usedInterfaces/errorReporterInterface.h>
-#include <kitBase/robotModel/commonRobotModel.h>
+#include "kitBase/blocksBase/common/deviceBlock.h"
+#include "iotikKit/robotModel/parts/iotikMosfet.h"
 
 namespace iotik {
-namespace robotModel {
+namespace blocks {
+namespace details {
 
-class IotikRobotModelBase : public kitBase::robotModel::CommonRobotModel
+/// An interpreter`s implementation for MOSFET block.
+class MosfetBlock : public kitBase::blocksBase::common::DeviceBlock<robotModel::parts::IotikMosfet>
 {
 	Q_OBJECT
 
 public:
-	IotikRobotModelBase(const QString &kitId, const QString &robotId);
+	explicit MosfetBlock(kitBase::robotModel::RobotModelInterface &robotModel);
 
-	QList<kitBase::robotModel::PortInfo> configurablePorts() const override;
-	QList<kitBase::robotModel::DeviceInfo> convertibleBases() const override;
-
-protected:
-	virtual kitBase::robotModel::DeviceInfo motorInfo() const;
+private:
+	void doJob(robotModel::parts::IotikMosfet &mosfet) override;
 };
 
+}
 }
 }

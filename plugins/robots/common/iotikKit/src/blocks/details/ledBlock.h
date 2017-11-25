@@ -14,25 +14,25 @@
 
 #pragma once
 
-#include <qrgui/plugins/toolPluginInterface/usedInterfaces/errorReporterInterface.h>
-#include <kitBase/robotModel/commonRobotModel.h>
+#include "kitBase/blocksBase/common/deviceBlock.h"
+#include "iotikKit/robotModel/parts/iotikLed.h"
 
 namespace iotik {
-namespace robotModel {
+namespace blocks {
+namespace details {
 
-class IotikRobotModelBase : public kitBase::robotModel::CommonRobotModel
+/// An interpreter`s implementation for LED block.
+class LedBlock : public kitBase::blocksBase::common::DeviceBlock<robotModel::parts::IotikLed>
 {
 	Q_OBJECT
 
 public:
-	IotikRobotModelBase(const QString &kitId, const QString &robotId);
+	explicit LedBlock(kitBase::robotModel::RobotModelInterface &robotModel);
 
-	QList<kitBase::robotModel::PortInfo> configurablePorts() const override;
-	QList<kitBase::robotModel::DeviceInfo> convertibleBases() const override;
-
-protected:
-	virtual kitBase::robotModel::DeviceInfo motorInfo() const;
+private:
+	void doJob(robotModel::parts::IotikLed &led) override;
 };
 
+}
 }
 }

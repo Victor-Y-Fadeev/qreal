@@ -1,0 +1,1 @@
+﻿setvoltage(@@PORT@@, @@VALUE@@);

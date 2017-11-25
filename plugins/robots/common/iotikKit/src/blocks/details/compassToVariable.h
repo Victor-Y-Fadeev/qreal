@@ -14,25 +14,21 @@
 
 #pragma once
 
-#include <qrgui/plugins/toolPluginInterface/usedInterfaces/errorReporterInterface.h>
-#include <kitBase/robotModel/commonRobotModel.h>
+#include <qrutils/interpreter/block.h>
 
 namespace iotik {
-namespace robotModel {
+namespace blocks {
+namespace details {
 
-class IotikRobotModelBase : public kitBase::robotModel::CommonRobotModel
+/// Interpreter implementation for "Compass into Variable" block.
+class CompassToVariableBlock : public qReal::interpretation::Block
 {
-	Q_OBJECT
-
 public:
-	IotikRobotModelBase(const QString &kitId, const QString &robotId);
+	CompassToVariableBlock();
 
-	QList<kitBase::robotModel::PortInfo> configurablePorts() const override;
-	QList<kitBase::robotModel::DeviceInfo> convertibleBases() const override;
-
-protected:
-	virtual kitBase::robotModel::DeviceInfo motorInfo() const;
+	void run() override;
 };
 
+}
 }
 }

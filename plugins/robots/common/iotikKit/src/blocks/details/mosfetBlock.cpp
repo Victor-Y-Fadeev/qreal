@@ -12,27 +12,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. */
 
-#pragma once
+#include "mosfetBlock.h"
 
-#include <qrgui/plugins/toolPluginInterface/usedInterfaces/errorReporterInterface.h>
-#include <kitBase/robotModel/commonRobotModel.h>
+using namespace iotik;
+using namespace blocks;
+using namespace details;
+using namespace kitBase::robotModel;
 
-namespace iotik {
-namespace robotModel {
-
-class IotikRobotModelBase : public kitBase::robotModel::CommonRobotModel
+MosfetBlock::MosfetBlock(RobotModelInterface &robotModel)
+	: kitBase::blocksBase::common::DeviceBlock<robotModel::parts::IotikMosfet>(robotModel)
 {
-	Q_OBJECT
-
-public:
-	IotikRobotModelBase(const QString &kitId, const QString &robotId);
-
-	QList<kitBase::robotModel::PortInfo> configurablePorts() const override;
-	QList<kitBase::robotModel::DeviceInfo> convertibleBases() const override;
-
-protected:
-	virtual kitBase::robotModel::DeviceInfo motorInfo() const;
-};
-
 }
+
+void MosfetBlock::doJob(robotModel::parts::IotikMosfet &mosfet)
+{
+	emit done(mNextBlockId);
 }

@@ -29,24 +29,44 @@ HEADERS += \
 	$$PWD/include/iotikKit/robotModel/iotikRobotModelBase.h \
 	$$PWD/include/iotikKit/blocks/iotikBlocksFactory.h \
 	$$PWD/include/iotikKit/robotModel/parts/iotikMotor.h \
+	$$PWD/include/iotikKit/robotModel/parts/iotikMosfet.h \
+	$$PWD/include/iotikKit/robotModel/parts/iotikLed.h \
+	$$PWD/include/iotikKit/robotModel/parts/iotikColorSensor.h \
+	$$PWD/include/iotikKit/robotModel/parts/iotikCompass.h \
+	$$PWD/include/iotikKit/robotModel/parts/iotikLineSensor.h \
 	$$PWD/include/iotikKit/robotModel/parts/iotikInfraredSensor.h \
 	$$PWD/include/iotikKit/robotModel/parts/iotikSonarSensor.h \
-	$$PWD/include/iotikKit/robotModel/parts/iotikLineSensor.h \
+	$$PWD/include/iotikKit/robotModel/parts/iotikFlameSensor.h \
 	$$PWD/include/iotikKit/communication/usbRobotCommunicationThread.h \
 	$$PWD/src/blocks/details/iotikEnginesBackwardBlock.h \
 	$$PWD/src/blocks/details/iotikEnginesForwardBlock.h \
+	$$PWD/src/blocks/details/mosfetBlock.h \
+	$$PWD/src/blocks/details/ledBlock.h \
+	$$PWD/src/blocks/details/colorSensorToVariable.h \
+	$$PWD/src/blocks/details/compassToVariable.h \
 	$$PWD/src/blocks/details/lineDetectorToVariable.h \
+	$$PWD/src/blocks/details/waitForFlameSensorBlock.h \
 
 SOURCES += \
 	$$PWD/src/robotModel/iotikRobotModelBase.cpp \
 	$$PWD/src/robotModel/parts/iotikMotor.cpp \
+	$$PWD/src/robotModel/parts/iotikMosfet.cpp \
+	$$PWD/src/robotModel/parts/iotikLed.cpp \
+	$$PWD/src/robotModel/parts/iotikColorSensor.cpp \
+	$$PWD/src/robotModel/parts/iotikCompass.cpp \
+	$$PWD/src/robotModel/parts/iotikLineSensor.cpp \
 	$$PWD/src/robotModel/parts/iotikInfraredSensor.cpp \
 	$$PWD/src/robotModel/parts/iotikSonarSensor.cpp \
-	$$PWD/src/robotModel/parts/iotikLineSensor.cpp \
+	$$PWD/src/robotModel/parts/iotikFlameSensor.cpp \
 	$$PWD/src/blocks/iotikBlocksFactory.cpp \
 	$$PWD/src/blocks/details/iotikEnginesBackwardBlock.cpp \
 	$$PWD/src/blocks/details/iotikEnginesForwardBlock.cpp \
+	$$PWD/src/blocks/details/mosfetBlock.cpp \
+	$$PWD/src/blocks/details/ledBlock.cpp \
+	$$PWD/src/blocks/details/colorSensorToVariable.cpp \
+	$$PWD/src/blocks/details/compassToVariable.cpp \
 	$$PWD/src/blocks/details/lineDetectorToVariable.cpp \
+	$$PWD/src/blocks/details/waitForFlameSensorBlock.cpp \
 	$$PWD/src/communication/usbRobotCommunicationThread.cpp \
 
 

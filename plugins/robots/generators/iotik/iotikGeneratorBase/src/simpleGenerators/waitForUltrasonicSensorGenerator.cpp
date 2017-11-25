@@ -12,20 +12,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. */
 
-#include "waitForInfraredSensorGenerator.h"
+#include "waitForUltrasonicSensorGenerator.h"
 #include "generatorBase/generatorCustomizer.h"
 
 using namespace iotik::simple;
 using namespace generatorBase::simple;
 using namespace qReal;
 
-WaitForInfraredSensorGenerator::WaitForInfraredSensorGenerator(const qrRepo::RepoApi &repo
+WaitForUltrasonicSensorGenerator::WaitForUltrasonicSensorGenerator(const qrRepo::RepoApi &repo
 		, generatorBase::GeneratorCustomizer &customizer
 		, const Id &id
 		, QObject *parent)
-	: BindingGenerator(repo, customizer, id, "wait/analogPort.t", QList<Binding *>()
-			<< Binding::createStatic("@@DRIVER@@", "INFARED")
-			<< Binding::createConverting("@@PORT@@", "Port", customizer.factory()->portNameConverter())
+	: BindingGenerator(repo, customizer, id, "wait/twoDigitalPort.t", QList<Binding *>()
+			<< Binding::createStatic("@@DRIVER@@", "ULTRASONIC")
+			<< Binding::createConverting("@@PORT@@", "Trig", customizer.factory()->portNameConverter())
+			<< Binding::createConverting("@@PORT_2@@", "Echo", customizer.factory()->portNameConverter())
 			<< Binding::createConverting("@@VALUE@@", "Distance"
 					, customizer.factory()->intPropertyConverter(id, "Distance"))
 			<< Binding::createConverting("@@SIGN@@", "Sign", customizer.factory()->inequalitySignConverter())

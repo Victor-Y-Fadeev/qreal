@@ -14,25 +14,21 @@
 
 #pragma once
 
-#include <qrgui/plugins/toolPluginInterface/usedInterfaces/errorReporterInterface.h>
-#include <kitBase/robotModel/commonRobotModel.h>
+#include <qrutils/interpreter/block.h>
 
 namespace iotik {
-namespace robotModel {
+namespace blocks {
+namespace details {
 
-class IotikRobotModelBase : public kitBase::robotModel::CommonRobotModel
+/// Interpreter implementation for "Color Sensor into Variable" block.
+class ColorSensorToVariableBlock : public qReal::interpretation::Block
 {
-	Q_OBJECT
-
 public:
-	IotikRobotModelBase(const QString &kitId, const QString &robotId);
+	ColorSensorToVariableBlock();
 
-	QList<kitBase::robotModel::PortInfo> configurablePorts() const override;
-	QList<kitBase::robotModel::DeviceInfo> convertibleBases() const override;
-
-protected:
-	virtual kitBase::robotModel::DeviceInfo motorInfo() const;
+	void run() override;
 };
 
+}
 }
 }

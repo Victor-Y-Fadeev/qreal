@@ -14,13 +14,20 @@
 
 #include "iotikGeneratorFactory.h"
 
-#include <generatorBase/simpleGenerators/waitForButtonGenerator.h>
+#include "src/simpleGenerators/receiveMessageThreadsGenerator.h"
 
-#include "simpleGenerators/detectorToVariableGenerator.h"
-#include "simpleGenerators/systemGenerator.h"
 #include "simpleGenerators/iotikEnginesGenerator.h"
+#include "simpleGenerators/mosfetGenerator.h"
+#include "simpleGenerators/ledGenerator.h"
+#include "simpleGenerators/colorSensorToVariableGenerator.h"
+#include "simpleGenerators/compassToVariableGenerator.h"
+#include "simpleGenerators/lineDetectorToVariableGenerator.h"
+#include "simpleGenerators/waitForTouchSensorGenerator.h"
 #include "simpleGenerators/waitForInfraredSensorGenerator.h"
-#include "simpleGenerators/waitForMotionGenerator.h"
+#include "simpleGenerators/waitForUltrasonicSensorGenerator.h"
+#include "simpleGenerators/waitForFlameSensorGenerator.h"
+#include "simpleGenerators/waitForSoundSensorGenerator.h"
+#include "simpleGenerators/receiveMessageThreadsGenerator.h"
 #include "simpleGenerators/forLoopGenerator.h"
 
 using namespace iotik;
@@ -57,14 +64,29 @@ AbstractSimpleGenerator *IotikGeneratorFactory::simpleGenerator(const qReal::Id 
 			|| elementType.contains("AngularServo"))
 	{
 		return new IotikEnginesGenerator(mRepo, customizer, id, elementType, this);
-	} else if (elementType == "IotikSystem") {
-		return new SystemGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "IotikDetectorToVariable") {
-		return new DetectorToVariableGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "IotikWaitForMotion") {
-		return new WaitForMotionGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikMosfet") {
+		return new MosfetGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikLed") {
+		return new LedGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikColorSensorToVariable") {
+		return new ColorSensorToVariableGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikCompassToVariable") {
+		return new CompassToVariableGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikLineDetectorToVariable") {
+		return new LineDetectorToVariableGenerator(mRepo, customizer, id, this);
+
+	} else if (elementType == "IotikReceiveMessageThreads") {
+		return new ReceiveMessageThreadsGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikWaitForTouchSensor") {
+		return new WaitForTouchSensorGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "IotikWaitForIRDistance") {
 		return new WaitForInfraredSensorGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikWaitForSonarDistance") {
+		return new WaitForUltrasonicSensorGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikWaitForFlame") {
+		return new WaitForFlameSensorGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikWaitForSound") {
+		return new WaitForSoundSensorGenerator(mRepo, customizer, id, this);
 	}
 
 	return GeneratorFactoryBase::simpleGenerator(id, customizer);

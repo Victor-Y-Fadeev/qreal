@@ -16,15 +16,15 @@
 
 #include "generatorBase/simpleGenerators/bindingGenerator.h"
 
-namespace generatorBase {
+namespace iotik {
 namespace simple {
 
 /// Generator for 'WaitForIRDistance' block
-class WaitForInfraredSensorGenerator : public BindingGenerator
+class WaitForInfraredSensorGenerator : public generatorBase::simple::BindingGenerator
 {
 public:
 	WaitForInfraredSensorGenerator(const qrRepo::RepoApi &repo
-			, GeneratorCustomizer &customizer
+			, generatorBase::GeneratorCustomizer &customizer
 			, const qReal::Id &id
 			, QObject *parent = 0);
 };

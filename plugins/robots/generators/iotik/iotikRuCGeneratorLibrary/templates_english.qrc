@@ -68,9 +68,11 @@
         <file>templates_english/luaPrinting/tableConstructor.t</file>
         <file>templates_english/luaPrinting/true.t</file>
         <file>templates_english/luaPrinting/unaryMinus.t</file>
-        <file>templates_english/sensors/infrared.t</file>
-        <file>templates_english/sensors/motion.t</file>
-        <file>templates_english/sensors/sonar.t</file>
+        <file>templates_english/sensors/analogPort.t</file>
+        <file>templates_english/sensors/oneVariableOneDigitalPort.t</file>
+        <file>templates_english/sensors/threeVariableTwoDigitalPort.t</file>
+        <file>templates_english/sensors/threeVariableFiveDigitalPort.t</file>
+        <file>templates_english/sensors/voltagePort.t</file>
         <file>templates_english/signs/equals.t</file>
         <file>templates_english/signs/greater.t</file>
         <file>templates_english/signs/less.t</file>
@@ -104,9 +106,9 @@
         <file>templates_english/variables/constantDeclaration.t</file>
         <file>templates_english/variables/randomInitialization.t</file>
         <file>templates_english/variables/variableDeclaration.t</file>
-        <file>templates_english/wait/infrared.t</file>
-        <file>templates_english/wait/motion.t</file>
-        <file>templates_english/wait/sonar.t</file>
+        <file>templates_english/wait/analogPort.t</file>
+        <file>templates_english/wait/oneDigitalPort.t</file>
+        <file>templates_english/wait/twoDigitalPort.t</file>
         <file>templates_english/wait/timer.t</file>
         <file>templates_english/break.t</file>
         <file>templates_english/comment.t</file>
@@ -117,6 +119,5 @@
         <file>templates_english/initialNode.t</file>
         <file>templates_english/main.t</file>
         <file>templates_english/nativeCode.t</file>
-        <file>templates_english/system.t</file>
     </qresource>
 </RCC>

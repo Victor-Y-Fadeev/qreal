@@ -1,4 +1,4 @@
-/* Copyright 2017 QReal Research Group
+/* Copyright 2007-2015 QReal Research Group
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,24 +14,19 @@
 
 #pragma once
 
-#include <qrgui/plugins/toolPluginInterface/usedInterfaces/errorReporterInterface.h>
-#include <kitBase/robotModel/commonRobotModel.h>
+#include "generatorBase/simpleGenerators/bindingGenerator.h"
 
 namespace iotik {
-namespace robotModel {
+namespace simple {
 
-class IotikRobotModelBase : public kitBase::robotModel::CommonRobotModel
+/// Generator for 'WaitForTouch' block
+class WaitForTouchSensorGenerator : public generatorBase::simple::BindingGenerator
 {
-	Q_OBJECT
-
 public:
-	IotikRobotModelBase(const QString &kitId, const QString &robotId);
-
-	QList<kitBase::robotModel::PortInfo> configurablePorts() const override;
-	QList<kitBase::robotModel::DeviceInfo> convertibleBases() const override;
-
-protected:
-	virtual kitBase::robotModel::DeviceInfo motorInfo() const;
+	WaitForTouchSensorGenerator(const qrRepo::RepoApi &repo
+			, generatorBase::GeneratorCustomizer &customizer
+			, const qReal::Id &id
+			, QObject *parent = 0);
 };
 
 }

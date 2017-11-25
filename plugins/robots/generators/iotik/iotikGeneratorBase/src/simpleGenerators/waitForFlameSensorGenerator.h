@@ -14,24 +14,19 @@
 
 #pragma once
 
-#include <qrgui/plugins/toolPluginInterface/usedInterfaces/errorReporterInterface.h>
-#include <kitBase/robotModel/commonRobotModel.h>
+#include "generatorBase/simpleGenerators/bindingGenerator.h"
 
 namespace iotik {
-namespace robotModel {
+namespace simple {
 
-class IotikRobotModelBase : public kitBase::robotModel::CommonRobotModel
+/// Generator for 'IotikWaitForFlame' block
+class WaitForFlameSensorGenerator : public generatorBase::simple::BindingGenerator
 {
-	Q_OBJECT
-
 public:
-	IotikRobotModelBase(const QString &kitId, const QString &robotId);
-
-	QList<kitBase::robotModel::PortInfo> configurablePorts() const override;
-	QList<kitBase::robotModel::DeviceInfo> convertibleBases() const override;
-
-protected:
-	virtual kitBase::robotModel::DeviceInfo motorInfo() const;
+	WaitForFlameSensorGenerator(const qrRepo::RepoApi &repo
+			, generatorBase::GeneratorCustomizer &customizer
+			, const qReal::Id &id
+			, QObject *parent = 0);
 };
 
 }

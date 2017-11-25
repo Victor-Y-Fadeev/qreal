@@ -1,0 +1,1 @@
+﻿@@VARIABLE@@ = getdigsensor(@@DRIVER@@, { @@PORT@@ });

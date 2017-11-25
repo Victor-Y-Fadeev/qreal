@@ -14,25 +14,24 @@
 
 #pragma once
 
-#include <qrgui/plugins/toolPluginInterface/usedInterfaces/errorReporterInterface.h>
-#include <kitBase/robotModel/commonRobotModel.h>
+#include <kitBase/robotModel/robotParts/vectorSensor.h>
 
 namespace iotik {
 namespace robotModel {
+namespace parts {
 
-class IotikRobotModelBase : public kitBase::robotModel::CommonRobotModel
+class IotikColorSensor : public kitBase::robotModel::robotParts::VectorSensor
 {
 	Q_OBJECT
+	Q_CLASSINFO("name", "iotikColorSensor")
+	Q_CLASSINFO("friendlyName", tr("Color"))
 
 public:
-	IotikRobotModelBase(const QString &kitId, const QString &robotId);
+	IotikColorSensor(const kitBase::robotModel::DeviceInfo &info, const kitBase::robotModel::PortInfo &port);
 
-	QList<kitBase::robotModel::PortInfo> configurablePorts() const override;
-	QList<kitBase::robotModel::DeviceInfo> convertibleBases() const override;
-
-protected:
-	virtual kitBase::robotModel::DeviceInfo motorInfo() const;
+	virtual void init() = 0;
 };
 
+}
 }
 }
