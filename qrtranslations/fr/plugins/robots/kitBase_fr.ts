@@ -12,17 +12,17 @@
 <context>
     <name>kitBase::DevicesConfigurationWidget</name>
     <message>
-        <location filename="../../../../plugins/robots/common/kitBase/src/devicesConfigurationWidget.cpp" line="108"/>
+        <location filename="../../../../plugins/robots/common/kitBase/src/devicesConfigurationWidget.cpp" line="101"/>
         <source>%1:</source>
         <translation>%1 :</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/common/kitBase/src/devicesConfigurationWidget.cpp" line="108"/>
+        <location filename="../../../../plugins/robots/common/kitBase/src/devicesConfigurationWidget.cpp" line="101"/>
         <source>Port %1:</source>
         <translation>Port %1 :</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/common/kitBase/src/devicesConfigurationWidget.cpp" line="119"/>
+        <location filename="../../../../plugins/robots/common/kitBase/src/devicesConfigurationWidget.cpp" line="112"/>
         <source>Unused</source>
         <translation>Pas utilisé</translation>
     </message>
@@ -38,28 +38,34 @@
 <context>
     <name>kitBase::blocksBase::common::WaitForColorBlock</name>
     <message>
+        <location filename="../../../../plugins/robots/common/kitBase/src/blocksBase/common/waitForColorBlock.cpp" line="32"/>
         <source>Black</source>
-        <translation type="vanished">Noir</translation>
+        <translation>Noir</translation>
     </message>
     <message>
+        <location filename="../../../../plugins/robots/common/kitBase/src/blocksBase/common/waitForColorBlock.cpp" line="34"/>
         <source>Blue</source>
-        <translation type="vanished">Bleu</translation>
+        <translation>Bleu</translation>
     </message>
     <message>
+        <location filename="../../../../plugins/robots/common/kitBase/src/blocksBase/common/waitForColorBlock.cpp" line="36"/>
         <source>Green</source>
-        <translation type="vanished">Vert</translation>
+        <translation>Vert</translation>
     </message>
     <message>
+        <location filename="../../../../plugins/robots/common/kitBase/src/blocksBase/common/waitForColorBlock.cpp" line="38"/>
         <source>Yellow</source>
-        <translation type="vanished">Jaune</translation>
+        <translation>Jaune</translation>
     </message>
     <message>
+        <location filename="../../../../plugins/robots/common/kitBase/src/blocksBase/common/waitForColorBlock.cpp" line="40"/>
         <source>Red</source>
-        <translation type="vanished">Rouge</translation>
+        <translation>Rouge</translation>
     </message>
     <message>
+        <location filename="../../../../plugins/robots/common/kitBase/src/blocksBase/common/waitForColorBlock.cpp" line="42"/>
         <source>White</source>
-        <translation type="vanished">Blanc</translation>
+        <translation>Blanc</translation>
     </message>
 </context>
 <context>
@@ -73,7 +79,7 @@
 <context>
     <name>kitBase::robotModel::robotParts::AccelerometerSensor</name>
     <message>
-        <location filename="../../../../plugins/robots/common/kitBase/include/kitBase/robotModel/robotParts/accelerometerSensor.h" line="29"/>
+        <location filename="../../../../plugins/robots/common/kitBase/include/kitBase/robotModel/robotParts/accelerometerSensor.h" line="30"/>
         <source>Accelerometer</source>
         <translation>Accéléromètre</translation>
     </message>
@@ -172,14 +178,6 @@
         <location filename="../../../../plugins/robots/common/kitBase/include/kitBase/robotModel/robotParts/motor.h" line="29"/>
         <source>Motor</source>
         <translation>Moteur</translation>
-    </message>
-</context>
-<context>
-    <name>kitBase::robotModel::robotParts::MotorsAggregator</name>
-    <message>
-        <location filename="../../../../plugins/robots/common/kitBase/include/kitBase/robotModel/robotParts/motorsAggregator.h" line="29"/>
-        <source>Motors aggregator</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

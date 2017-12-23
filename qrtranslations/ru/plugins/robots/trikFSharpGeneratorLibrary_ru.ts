@@ -162,17 +162,17 @@
         <translation>Пожалуйста, заполните путь до WinSCP в диалоге настроек.</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/trik/trikFSharpGeneratorLibrary/src/trikFSharpGeneratorPluginBase.cpp" line="195"/>
+        <location filename="../../../../plugins/robots/generators/trik/trikFSharpGeneratorLibrary/src/trikFSharpGeneratorPluginBase.cpp" line="193"/>
         <source>Unable to launch WinSCP</source>
         <translation>Не удалось запустить WinSCP, проверьте настройки</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/trik/trikFSharpGeneratorLibrary/src/trikFSharpGeneratorPluginBase.cpp" line="200"/>
+        <location filename="../../../../plugins/robots/generators/trik/trikFSharpGeneratorLibrary/src/trikFSharpGeneratorPluginBase.cpp" line="198"/>
         <source>After downloading the program, enter &apos;exit&apos; or close the window</source>
         <translation>После окончания загрузки программы введите &apos;exit&apos; или закройте окно</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/trik/trikFSharpGeneratorLibrary/src/trikFSharpGeneratorPluginBase.cpp" line="209"/>
+        <location filename="../../../../plugins/robots/generators/trik/trikFSharpGeneratorLibrary/src/trikFSharpGeneratorPluginBase.cpp" line="207"/>
         <source>Attention, the robot starts about a half-minute</source>
         <translation>Внимание, робот запустится примерно через полминуты</translation>
     </message>

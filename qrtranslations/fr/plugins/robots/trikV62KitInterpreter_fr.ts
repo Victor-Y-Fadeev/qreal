@@ -4,15 +4,15 @@
 <context>
     <name>trik::TrikV62KitInterpreterPlugin</name>
     <message>
-        <location filename="../../../../plugins/robots/interpreters/trikV62KitInterpreter/src/trikV62KitInterpreterPlugin.cpp" line="47"/>
-        <source>TRIK (model-2015)</source>
+        <location filename="../../../../plugins/robots/interpreters/trikV62KitInterpreter/src/trikV62KitInterpreterPlugin.cpp" line="42"/>
+        <source>TRIK (new case)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>trik::robotModel::real::RealRobotModel</name>
     <message>
-        <location filename="../../../../plugins/robots/interpreters/trikV62KitInterpreter/src/robotModel/real/trikV62RealRobotModel.cpp" line="69"/>
+        <location filename="../../../../plugins/robots/interpreters/trikV62KitInterpreter/src/robotModel/real/trikV62RealRobotModel.cpp" line="65"/>
         <source>Interpretation (Wi-Fi)</source>
         <translation type="unfinished"></translation>
     </message>

@@ -14,22 +14,22 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/common/nxtKit/src/communication/nxtUsbDriverInstaller.cpp" line="84"/>
+        <location filename="../../../../plugins/robots/common/nxtKit/src/communication/nxtUsbDriverInstaller.cpp" line="82"/>
         <source>An attempt to attach TRIK Studio driver failed. No panic! Driver can be still installed manually, see documentation, chapter &quot;Installing NXT driver manually.&quot;. Also TRIK Studio supports &lt;a href=&apos;%1&apos;&gt;Lego Fantom driver&lt;/a&gt;, you can just download and install it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/common/nxtKit/src/communication/nxtUsbDriverInstaller.cpp" line="109"/>
+        <location filename="../../../../plugins/robots/common/nxtKit/src/communication/nxtUsbDriverInstaller.cpp" line="107"/>
         <source>NXT drivers not found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/common/nxtKit/src/communication/nxtUsbDriverInstaller.cpp" line="110"/>
+        <location filename="../../../../plugins/robots/common/nxtKit/src/communication/nxtUsbDriverInstaller.cpp" line="108"/>
         <source>Drivers for LEGO NXT brick are not installed. TRIK Studio can install own drivers to communicate with NXT. Do you want to do it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/common/nxtKit/src/communication/nxtUsbDriverInstaller.cpp" line="112"/>
+        <location filename="../../../../plugins/robots/common/nxtKit/src/communication/nxtUsbDriverInstaller.cpp" line="110"/>
         <source>TRIK Studio drivers are not officially registered, so two red warning messages will be shown by Windows. Confirm them to proceed installation.</source>
         <translation type="unfinished"></translation>
     </message>

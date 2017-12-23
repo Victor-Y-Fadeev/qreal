@@ -12,8 +12,8 @@
 <context>
     <name>trik::robotModel::TrikRobotModelBase</name>
     <message>
-        <location filename="../../../../plugins/robots/common/trikKit/src/robotModel/trikRobotModelBase.cpp" line="91"/>
-        <location filename="../../../../plugins/robots/common/trikKit/src/robotModel/trikRobotModelBase.cpp" line="134"/>
+        <location filename="../../../../plugins/robots/common/trikKit/src/robotModel/trikRobotModelBase.cpp" line="89"/>
+        <location filename="../../../../plugins/robots/common/trikKit/src/robotModel/trikRobotModelBase.cpp" line="132"/>
         <source>Line sensor</source>
         <translation>Capteur de ligne</translation>
     </message>
@@ -96,14 +96,6 @@
         <location filename="../../../../plugins/robots/common/trikKit/include/trikKit/robotModel/parts/trikMotionSensor.h" line="27"/>
         <source>Motion Sensor</source>
         <translation>Capteur de mouvement</translation>
-    </message>
-</context>
-<context>
-    <name>trik::robotModel::parts::TrikMotorsAggregator</name>
-    <message>
-        <location filename="../../../../plugins/robots/common/trikKit/include/trikKit/robotModel/parts/trikMotorsAggregator.h" line="27"/>
-        <source>Trik Motors Aggregator</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

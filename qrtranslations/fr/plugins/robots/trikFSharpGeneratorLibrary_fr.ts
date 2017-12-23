@@ -91,17 +91,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/trik/trikFSharpGeneratorLibrary/src/trikFSharpGeneratorPluginBase.cpp" line="195"/>
+        <location filename="../../../../plugins/robots/generators/trik/trikFSharpGeneratorLibrary/src/trikFSharpGeneratorPluginBase.cpp" line="193"/>
         <source>Unable to launch WinSCP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/trik/trikFSharpGeneratorLibrary/src/trikFSharpGeneratorPluginBase.cpp" line="200"/>
+        <location filename="../../../../plugins/robots/generators/trik/trikFSharpGeneratorLibrary/src/trikFSharpGeneratorPluginBase.cpp" line="198"/>
         <source>After downloading the program, enter &apos;exit&apos; or close the window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/trik/trikFSharpGeneratorLibrary/src/trikFSharpGeneratorPluginBase.cpp" line="209"/>
+        <location filename="../../../../plugins/robots/generators/trik/trikFSharpGeneratorLibrary/src/trikFSharpGeneratorPluginBase.cpp" line="207"/>
         <source>Attention, the robot starts about a half-minute</source>
         <translation type="unfinished"></translation>
     </message>

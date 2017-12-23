@@ -180,23 +180,23 @@
 <context>
     <name>qReal::gui::editor::EditorViewScene</name>
     <message>
-        <location filename="../../qrgui/editor/editorViewScene.cpp" line="292"/>
+        <location filename="../../qrgui/editor/editorViewScene.cpp" line="291"/>
         <source>Create new element</source>
         <translation type="unfinished">Создать новый элемент</translation>
     </message>
     <message>
-        <location filename="../../qrgui/editor/editorViewScene.cpp" line="354"/>
-        <location filename="../../qrgui/editor/editorViewScene.cpp" line="363"/>
+        <location filename="../../qrgui/editor/editorViewScene.cpp" line="353"/>
+        <location filename="../../qrgui/editor/editorViewScene.cpp" line="362"/>
         <source>Connect with the current item</source>
         <translation type="unfinished">Соединить с данным элементом</translation>
     </message>
     <message>
-        <location filename="../../qrgui/editor/editorViewScene.cpp" line="859"/>
+        <location filename="../../qrgui/editor/editorViewScene.cpp" line="866"/>
         <source>Add child</source>
         <translation type="unfinished">Добавить элемент</translation>
     </message>
     <message>
-        <location filename="../../qrgui/editor/editorViewScene.cpp" line="1315"/>
+        <location filename="../../qrgui/editor/editorViewScene.cpp" line="1322"/>
         <source>Delete</source>
         <translation type="unfinished">Удалить</translation>
     </message>
@@ -246,12 +246,12 @@
 <context>
     <name>qReal::gui::editor::PropertyEditorView</name>
     <message>
-        <location filename="../../qrgui/editor/propertyEditorView.cpp" line="310"/>
+        <location filename="../../qrgui/editor/propertyEditorView.cpp" line="220"/>
         <source>Specify directory:</source>
         <translation type="unfinished">Выберите каталог:</translation>
     </message>
     <message>
-        <location filename="../../qrgui/editor/propertyEditorView.cpp" line="317"/>
+        <location filename="../../qrgui/editor/propertyEditorView.cpp" line="227"/>
         <source>Select file:</source>
         <translation type="unfinished">Выберите файл:</translation>
     </message>

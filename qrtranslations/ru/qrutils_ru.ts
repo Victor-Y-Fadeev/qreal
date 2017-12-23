@@ -88,7 +88,7 @@
         <translation>Целичисленное деление на ноль</translation>
     </message>
     <message>
-        <location filename="../../qrutils/graphicsUtils/abstractItem.cpp" line="525"/>
+        <location filename="../../qrutils/graphicsUtils/abstractItem.cpp" line="515"/>
         <source>Remove</source>
         <translation>Удалить</translation>
     </message>
@@ -381,14 +381,6 @@
     </message>
 </context>
 <context>
-    <name>qReal::ui::ConsoleDock</name>
-    <message>
-        <location filename="../../qrutils/widgets/consoleDock.cpp" line="36"/>
-        <source>Reset shell</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>qReal::ui::ImagePicker</name>
     <message>
         <location filename="../../qrutils/widgets/imagePicker.cpp" line="35"/>
@@ -396,12 +388,12 @@
         <translation>Обзор...</translation>
     </message>
     <message>
-        <location filename="../../qrutils/widgets/imagePicker.cpp" line="68"/>
+        <location filename="../../qrutils/widgets/imagePicker.cpp" line="65"/>
         <source>Select image</source>
         <translation>Выберите изображение</translation>
     </message>
     <message>
-        <location filename="../../qrutils/widgets/imagePicker.cpp" line="70"/>
+        <location filename="../../qrutils/widgets/imagePicker.cpp" line="66"/>
         <source>Images (*.png *.svg *.jpg *.gif *.bmp);;All files (*.*)</source>
         <translation>Картинки (*.png *.svg *.jpg *.gif *.bmp);;Все файлы (*.*)</translation>
     </message>

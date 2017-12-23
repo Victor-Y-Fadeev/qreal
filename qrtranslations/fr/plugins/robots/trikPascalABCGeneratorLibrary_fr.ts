@@ -109,42 +109,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/trik/trikPascalABCGeneratorLibrary/src/trikPascalABCGeneratorPluginBase.cpp" line="243"/>
-        <source>Compile completed</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../plugins/robots/generators/trik/trikPascalABCGeneratorLibrary/src/trikPascalABCGeneratorPluginBase.cpp" line="248"/>
+        <location filename="../../../../plugins/robots/generators/trik/trikPascalABCGeneratorLibrary/src/trikPascalABCGeneratorPluginBase.cpp" line="246"/>
         <source>Please provide path to the WinSCP in Settings dialog.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/trik/trikPascalABCGeneratorLibrary/src/trikPascalABCGeneratorPluginBase.cpp" line="289"/>
+        <location filename="../../../../plugins/robots/generators/trik/trikPascalABCGeneratorLibrary/src/trikPascalABCGeneratorPluginBase.cpp" line="254"/>
         <source>Uploading... Please wait for about 20 seconds.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/trik/trikPascalABCGeneratorLibrary/src/trikPascalABCGeneratorPluginBase.cpp" line="299"/>
-        <source>Cant&apos;t start download process</source>
+        <location filename="../../../../plugins/robots/generators/trik/trikPascalABCGeneratorLibrary/src/trikPascalABCGeneratorPluginBase.cpp" line="274"/>
+        <source>Unable to launch WinSCP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/trik/trikPascalABCGeneratorLibrary/src/trikPascalABCGeneratorPluginBase.cpp" line="304"/>
+        <location filename="../../../../plugins/robots/generators/trik/trikPascalABCGeneratorLibrary/src/trikPascalABCGeneratorPluginBase.cpp" line="279"/>
         <source>After downloading the program, enter &apos;exit&apos; or close the window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/trik/trikPascalABCGeneratorLibrary/src/trikPascalABCGeneratorPluginBase.cpp" line="310"/>
-        <source>Failed to download program. Check connection</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../plugins/robots/generators/trik/trikPascalABCGeneratorLibrary/src/trikPascalABCGeneratorPluginBase.cpp" line="315"/>
-        <source>Download completed</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../plugins/robots/generators/trik/trikPascalABCGeneratorLibrary/src/trikPascalABCGeneratorPluginBase.cpp" line="328"/>
+        <location filename="../../../../plugins/robots/generators/trik/trikPascalABCGeneratorLibrary/src/trikPascalABCGeneratorPluginBase.cpp" line="296"/>
         <source>Running... Attention, program execution will start after about ten seconds</source>
         <translation type="unfinished"></translation>
     </message>
