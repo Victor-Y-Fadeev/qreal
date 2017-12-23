@@ -211,6 +211,20 @@ bool IotikRuCGeneratorPluginBase::compileCode()
 void IotikRuCGeneratorPluginBase::addDeviceVariables(const QFileInfo fileInfo)
 {
 	const QString variables =
+			"int RED_COLOR = 0;\n"
+			"int GREEN_COLOR = 0;\n"
+			"int BLUE_COLOR = 0;\n"
+			"int X_COMPASS = 0;\n"
+			"int Y_COMPASS = 0;\n"
+			"int Z_COMPASS = 0;\n"
+
+			"int LINE = 0;\n"
+			"int FLAME = 0;\n"
+			"int INFARED = 0;\n"
+			"int SOUND = 0;\n"
+			"int TOUC = 0;\n"
+			"int ULTRASONIC = 0;\n"
+
 			"int M0 = 0;\n"
 			"int M1 = 1;\n"
 			"int A0 = -1;\n"
