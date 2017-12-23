@@ -58,7 +58,7 @@
 					</generalizations>
 				</logic>
 			</node>
-			<node displayedName="Motors Backward" name="IotikEnginesBackward" path="111, 224 : 0, 113 :  | 113, 0 : 0, 113 :  | 0, 113 : 287, 113 : " description="Enables motors on the given ports in reverse mode with the given power. Ports are specified in accordance with IoTik v1.0 controller notations (for example M0, M1) and divided by commas. The power is specified in percents with the number from -100 to 100, if negative number is specified then the motor is enabled in the usual mode.">
+			<node displayedName="Motors Backward" name="IotikEnginesBackward" path="111, 224 : 0, 113 :  | 113, 0 : 0, 113 :  | 0, 113 : 287, 113 : " description="Enables motors on the given ports in reverse mode with the given power. Ports are specified in accordance with IoTik controller notations (for example M0, M1) and divided by commas. The power is specified in percents with the number from -100 to 100, if negative number is specified then the motor is enabled in the usual mode.">
 				<graphics>
 					<picture sizex="50" sizey="50">
 						<image y1="0" name="images/enginesBackwardBlock.svg" x1="0" y2="50" x2="50"/>
@@ -76,7 +76,7 @@
 					</generalizations>
 				</logic>
 			</node>
-			<node displayedName="Motors Forward" name="IotikEnginesForward" path="185, 207 : 287, 105 :  | 287, 105 : 182, 0 :  | 0, 105 : 287, 105 : " description="Enables motors on the given ports with the given power. Ports are specified in accordance with IoTik v1.0 controller notations (for example M0, M1) and divided by commas. The power is specified in percents with the number from -100 to 100, if negative number is specified then the motor is enabled in the reverse mode.">
+			<node displayedName="Motors Forward" name="IotikEnginesForward" path="185, 207 : 287, 105 :  | 287, 105 : 182, 0 :  | 0, 105 : 287, 105 : " description="Enables motors on the given ports with the given power. Ports are specified in accordance with IoTik controller notations (for example M0, M1) and divided by commas. The power is specified in percents with the number from -100 to 100, if negative number is specified then the motor is enabled in the reverse mode.">
 				<graphics>
 					<picture sizex="50" sizey="50">
 						<image y1="0" name="images/enginesForwardBlock.svg" x1="0" y2="50" x2="50"/>
@@ -167,7 +167,7 @@
 				</logic>
 			</node>
 
-			<node displayedName="Mosfet" name="IotikMosfet" description="">
+			<node displayedName="MOSFET" name="IotikMosfet" description="">
 				<graphics>
 					<picture sizex="50" sizey="50">
 						<image y1="0" name="images/mosfetBlock.svg" x1="0" y2="50" x2="50"/>
@@ -325,27 +325,6 @@
 				</logic>
 			</node>
 
-			<node displayedName="Receive Message From Thread" name="IotikReceiveMessageThreads" description="Receive a message sent to a thread from which this block is called.">
-				<graphics>
-					<picture sizex="50" sizey="50">
-						<image y1="0" name="images/receiveMessageThreadsBlock.png" x1="0" y2="50" x2="50"/>
-					</picture>
-					<labels>
-						<label x="30" y="60" textBinded="Variable" background="white" prefix="Variable:"/>
-					</labels>
-					<nonResizeable/>
-				</graphics>
-				<logic>
-					<container/>
-					<properties>
-						<property name="Variable" displayedName="Variable" type="string"/>
-					</properties>
-					<generalizations>
-						<parent parentName="AbstractNode"/>
-					</generalizations>
-				</logic>
-			</node>
-
 			<!-- Waiting for sensors blocks -->
 			<node displayedName="Wait for Touch Sensor" name="IotikWaitForTouchSensor" path="12, 123 : 174, 123 :  | 174, 12 : 358, 12 : 358, 234 : 174, 234 : 174, 12 : " description="">
 				<graphics>
@@ -493,7 +472,6 @@
 				<element name="IotikLineDetectorToVariable" />
 			</group>
 			<group name="Wait">
-				<element name="IotikReceiveMessageThreads"/>
 				<element name="IotikWaitForTouchSensor"/>
 				<element name="IotikWaitForIRDistance"/>
 				<element name="IotikWaitForSonarDistance" />

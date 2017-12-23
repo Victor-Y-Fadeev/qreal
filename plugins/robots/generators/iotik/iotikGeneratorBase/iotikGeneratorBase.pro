@@ -57,7 +57,6 @@ HEADERS += \
 	$$PWD/src/simpleGenerators/waitForUltrasonicSensorGenerator.h \
 	$$PWD/src/simpleGenerators/waitForFlameSensorGenerator.h \
 	$$PWD/src/simpleGenerators/waitForSoundSensorGenerator.h \
-	$$PWD/src/simpleGenerators/receiveMessageThreadsGenerator.h \
 	$$PWD/src/simpleGenerators/forLoopGenerator.h \
 	$$PWD/widgets/iotikAdditionalPreferences.h \
 
@@ -79,7 +78,6 @@ SOURCES += \
 	$$PWD/src/simpleGenerators/waitForUltrasonicSensorGenerator.cpp \
 	$$PWD/src/simpleGenerators/waitForFlameSensorGenerator.cpp \
 	$$PWD/src/simpleGenerators/waitForSoundSensorGenerator.cpp \
-	$$PWD/src/simpleGenerators/receiveMessageThreadsGenerator.cpp \
 	$$PWD/src/simpleGenerators/forLoopGenerator.cpp \
 	$$PWD/widgets/iotikAdditionalPreferences.cpp \
 

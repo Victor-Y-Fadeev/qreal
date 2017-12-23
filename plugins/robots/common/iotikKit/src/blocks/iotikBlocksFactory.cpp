@@ -93,7 +93,6 @@ qReal::IdList IotikBlocksFactory::providedBlocks() const
 				, id("IotikCompassToVariable")
 				, id("IotikLineDetectorToVariable")
 
-				, id("IotikReceiveMessageThreads")
 				, id("IotikWaitForTouchSensor")
 				, id("IotikWaitForIRDistance")
 				, id("IotikWaitForSonarDistance")
@@ -105,9 +104,7 @@ qReal::IdList IotikBlocksFactory::providedBlocks() const
 qReal::IdList IotikBlocksFactory::blocksToDisable() const
 {
 	return {
-				id("ReceiveMessageThreads")
-
-				, id("PrintText")
+				id("PrintText")
 				, id("ClearScreen")
 				, id("MarkerDown")
 				, id("MarkerUp")
@@ -117,9 +114,7 @@ qReal::IdList IotikBlocksFactory::blocksToDisable() const
 qReal::IdList IotikBlocksFactory::blocksToHide() const
 {
 	return {
-				id("ReceiveMessageThreads")
-
-				, id("PrintText")
+				id("PrintText")
 				, id("ClearScreen")
 				, id("MarkerDown")
 				, id("MarkerUp")

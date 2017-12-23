@@ -27,7 +27,6 @@
 #include "simpleGenerators/waitForUltrasonicSensorGenerator.h"
 #include "simpleGenerators/waitForFlameSensorGenerator.h"
 #include "simpleGenerators/waitForSoundSensorGenerator.h"
-#include "simpleGenerators/receiveMessageThreadsGenerator.h"
 #include "simpleGenerators/forLoopGenerator.h"
 
 using namespace iotik;
@@ -75,8 +74,6 @@ AbstractSimpleGenerator *IotikGeneratorFactory::simpleGenerator(const qReal::Id 
 	} else if (elementType == "IotikLineDetectorToVariable") {
 		return new LineDetectorToVariableGenerator(mRepo, customizer, id, this);
 
-	} else if (elementType == "IotikReceiveMessageThreads") {
-		return new ReceiveMessageThreadsGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "IotikWaitForTouchSensor") {
 		return new WaitForTouchSensorGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "IotikWaitForIRDistance") {
