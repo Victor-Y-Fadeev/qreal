@@ -281,12 +281,12 @@
     <message>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="192"/>
         <source>Motors Backward</source>
-        <translation>Моторы назад</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="194"/>
         <source>Enables motors on the given ports in reverse mode with the given power. Ports are specified in accordance with Iotik controller notations (for example M1, E2) and divided by commas. The power is specified in percents with the number from -100 to 100, if negative number is specified then the motor is enabled in the usual mode.</source>
-        <translation>Включить моторы в режиме реверса по заданным портам с заданной мощностью. Порты задаются так, как они обозначены на плате (например, M0, M1) и разделяются запятыми. Мощность задается в процентах числом от -100 до 100, если задано отрицательное значение, мотор включается в обычном режиме.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="201"/>
@@ -310,22 +310,22 @@
     <message>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="247"/>
         <source>Motors Forward</source>
-        <translation>Моторы вперёд</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="249"/>
         <source>Enables motors on the given ports with the given power. Ports are specified in accordance with Ioitk controller notations (for example M1, E2) and divided by commas. The power is specified in percents with the number from -100 to 100, if negative number is specified then the motor is enabled in the reverse mode.</source>
-        <translation>Включить моторы по заданным портам с заданной мощностью. Порты задаются так, как они обозначены на плате (например, M0, M1) и разделяются запятыми. Мощность задается в процентах числом от -100 до 100, если задано отрицательное значение, мотор включается в режиме реверса.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="302"/>
         <source>Stop Motors</source>
-        <translation>Моторы стоп</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="304"/>
         <source>Disables motors on the given ports.</source>
-        <translation>Выключить моторы по заданным портам.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="354"/>
