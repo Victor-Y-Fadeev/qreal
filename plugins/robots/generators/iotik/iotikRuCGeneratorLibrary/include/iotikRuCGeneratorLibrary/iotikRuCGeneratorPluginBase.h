@@ -78,7 +78,6 @@ protected:
 
 	void addDeviceVariables(const QFileInfo fileInfo);
 	bool compileCode();
-	void configureSensors();
 };
 
 }

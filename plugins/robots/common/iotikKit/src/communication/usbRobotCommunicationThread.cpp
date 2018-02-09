@@ -53,7 +53,7 @@ bool UsbRobotCommunicationThread::connect()
 {
 	if (mPort) {
 		disconnect();
-		QThread::msleep(1000);  // Give port some time to close
+		QThread::msleep(500);  // Give port some time to close
 	}
 
 	const QString portName = qReal::SettingsManager::value("IotikPortName").toString();
@@ -95,7 +95,7 @@ void UsbRobotCommunicationThread::allowLongJobs(bool allow)
 void UsbRobotCommunicationThread::sendCommand(const QString command)
 {
 	mPort->write(QByteArray::fromStdString(command.toStdString()));
-	QThread::msleep(1000);
+	QThread::msleep(500);
 }
 
 void UsbRobotCommunicationThread::sendFile(const QString filename)
@@ -103,18 +103,13 @@ void UsbRobotCommunicationThread::sendFile(const QString filename)
 	QFile sfile(filename);
 	sfile.open(QIODevice::ReadOnly);
 
-	const int block = 32;
 	int size = sfile.size();
 
-	QString command = "file_receive " +  QString::number(size) + " " + sfile.fileName() + "\n";
+	QString command = "filereceive /fat/" + sfile.fileName() + " " + QString::number(size) + "\n";
 	sendCommand(command);
 
-	while (size > 0) {
-		QByteArray data = sfile.read(size > block ? block : size);
-		send(data);
-		QThread::msleep(25);
-		size -= block;
-	}
+	QByteArray data = sfile.readAll();
+	send(data);
 
 	sfile.close();
 }

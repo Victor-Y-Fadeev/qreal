@@ -154,12 +154,10 @@ void IotikRuCGeneratorPluginBase::wifiUpload()
 	if (!compileCode()) {
 		return;
 	}
-	configureSensors();
 
 	mMainWindowInterface->errorReporter()->addError(tr("Wi-Fi is not released yet"));
 
-	QFile::remove(rootPath + "/sensors");
-	QFile::remove(rootPath + "/export");
+	QFile::remove(rootPath + "/export.txt");
 }
 
 void IotikRuCGeneratorPluginBase::usbUpload()
@@ -171,17 +169,12 @@ void IotikRuCGeneratorPluginBase::usbUpload()
 	if (!compileCode()) {
 		return;
 	}
-	configureSensors();
 
 	mUsbCommunicator->connect();
-	mUsbCommunicator->sendCommand("cd flash\n");
-	mUsbCommunicator->sendFile("sensors");
-	mUsbCommunicator->sendFile("export");
-	mUsbCommunicator->sendCommand("ruc export sensors\n");
+	mUsbCommunicator->sendFile("export.txt");
 	mUsbCommunicator->disconnect();
 
-	QFile::remove(rootPath + "/sensors");
-	QFile::remove(rootPath + "/export");
+	//QFile::remove(rootPath + "/export.txt");
 }
 
 bool IotikRuCGeneratorPluginBase::compileCode()
@@ -198,9 +191,7 @@ bool IotikRuCGeneratorPluginBase::compileCode()
 	QFile::remove(rootPath + "/tree.txt");
 	QFile::remove(rootPath + "/codes.txt");
 
-	if (QFile::exists(rootPath + "/export.txt")) {
-		QFile::rename(rootPath + "/export.txt", rootPath + "/export");
-	} else {
+	if (!QFile::exists(rootPath + "/export.txt")) {
 		mMainWindowInterface->errorReporter()->addError(tr("Code compiling failed, aborting"));
 		return false;
 	}
@@ -256,21 +247,4 @@ void IotikRuCGeneratorPluginBase::addDeviceVariables(const QFileInfo fileInfo)
 	file.open(QIODevice::WriteOnly);
 	file.write(QByteArray::fromStdString((variables + code).toStdString()));
 	file.close();
-}
-
-void IotikRuCGeneratorPluginBase::configureSensors()
-{
-	const QString rootPath = QDir::current().absolutePath();
-
-	QFile sensors(rootPath + "/sensors");
-	sensors.open(QIODevice::WriteOnly);
-	QTextStream out(&sensors);
-
-	out << "servos 5 12 4 13\n";
-	out << "digital 1\n";
-	out << "0 1 14 15\n";
-	out << "analog 1\n";
-	out << "0 1\n";
-
-	sensors.close();
 }
