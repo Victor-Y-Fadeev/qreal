@@ -19,13 +19,14 @@
 #include <QtCore/QThread>
 #include <QtCore/QFile>
 
+#include <QTcpSocket>
+
 #include <qrkernel/settingsManager.h>
-#include <plugins/robots/thirdparty/qextserialport/src/qextserialport.h>
 
 using namespace iotik::communication;
 
 WifiRobotCommunicationThread::WifiRobotCommunicationThread()
-	: mPort(nullptr)
+	: mSocet(nullptr)
 {
 }
 
@@ -36,7 +37,7 @@ WifiRobotCommunicationThread::~WifiRobotCommunicationThread()
 
 bool WifiRobotCommunicationThread::send(const QByteArray &buffer) const
 {
-	return mPort->write(buffer) > 0;
+	return mSocet->write(buffer) > 0;
 }
 
 bool WifiRobotCommunicationThread::send(QObject *addressee, const QByteArray &buffer, int responseSize)
@@ -51,21 +52,16 @@ bool WifiRobotCommunicationThread::send(const QByteArray &buffer, int responseSi
 
 bool WifiRobotCommunicationThread::connect()
 {
-	if (mPort) {
+	if (mSocet) {
 		disconnect();
 		QThread::msleep(500);  // Give port some time to close
 	}
 
-	const QString portName = qReal::SettingsManager::value("IotikPortName").toString();
-	mPort = new QextSerialPort(portName);
-	mPort->setBaudRate(BAUD115200);
-	mPort->setFlowControl(FLOW_OFF);
-	mPort->setParity(PAR_NONE);
-	mPort->setDataBits(DATA_8);
-	mPort->setStopBits(STOP_1);
-	mPort->setTimeout(0);
+	//const QString portName = qReal::SettingsManager::value("IotikPortName").toString();
+	const QString hostName = "192.168.1.1";
+	mSocet = new QTcpSocket();
 
-	mPort->open(QIODevice::WriteOnly | QIODevice::Unbuffered);
+	mSocet->connectToHost(hostName, 3000);
 	emit connected(true, "Error!");
 
 	return true;
@@ -78,10 +74,10 @@ void WifiRobotCommunicationThread::reconnect()
 
 void WifiRobotCommunicationThread::disconnect()
 {
-	if (mPort) {
-		mPort->close();
-		delete mPort;
-		mPort = nullptr;
+	if (mSocet) {
+		mSocet->close();
+		delete mSocet;
+		mSocet = nullptr;
 	}
 
 	emit disconnected();
@@ -92,21 +88,10 @@ void WifiRobotCommunicationThread::allowLongJobs(bool allow)
 	Q_UNUSED(allow)
 }
 
-void WifiRobotCommunicationThread::sendCommand(const QString command)
-{
-	mPort->write(QByteArray::fromStdString(command.toStdString()));
-	QThread::msleep(500);
-}
-
 void WifiRobotCommunicationThread::sendFile(const QString filename)
 {
 	QFile sfile(filename);
 	sfile.open(QIODevice::ReadOnly);
-
-	int size = sfile.size();
-
-	QString command = "filereceive /fat/" + sfile.fileName() + " " + QString::number(size) + "\n";
-	sendCommand(command);
 
 	QByteArray data = sfile.readAll();
 	send(data);
@@ -116,7 +101,7 @@ void WifiRobotCommunicationThread::sendFile(const QString filename)
 
 void WifiRobotCommunicationThread::checkForConnection()
 {
-	if (!mPort || !mPort->isOpen()) {
+	if (!mSocet || !mSocet->isOpen()) {
 		return;
 	}
 

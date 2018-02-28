@@ -162,9 +162,7 @@ void IotikRuCGeneratorPluginBase::wifiUpload()
 	mWifiCommunicator->sendFile("wifi_export.txt");
 	mWifiCommunicator->disconnect();
 
-	//mMainWindowInterface->errorReporter()->addError(tr("Wi-Fi is not released yet"));
-
-	//QFile::remove(rootPath + "/wifi_export.txt");
+	QFile::remove(rootPath + "/wifi_export.txt");
 }
 
 void IotikRuCGeneratorPluginBase::usbUpload()
@@ -181,7 +179,7 @@ void IotikRuCGeneratorPluginBase::usbUpload()
 	mUsbCommunicator->sendFile("export.txt");
 	mUsbCommunicator->disconnect();
 
-	//QFile::remove(rootPath + "/export.txt");
+	QFile::remove(rootPath + "/export.txt");
 }
 
 bool IotikRuCGeneratorPluginBase::compileCode()

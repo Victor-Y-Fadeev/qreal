@@ -13,6 +13,7 @@
 # limitations under the License.
 
 QT += widgets
+QT += network
 
 includes(plugins/robots/common/iotikKit \
 		plugins/robots/common/kitBase \

@@ -16,7 +16,7 @@
 
 #include <utils/robotCommunication/robotCommunicationThreadInterface.h>
 
-class QextSerialPort;
+class QTcpSocket;
 class QTimer;
 
 namespace iotik {
@@ -38,7 +38,6 @@ public slots:
 
 	void allowLongJobs(bool allow = true) override;
 
-	void sendCommand(const QString command);
 	void sendFile(const QString filename);
 
 private slots:
@@ -49,7 +48,7 @@ private:
 	bool send(QObject *addressee, const QByteArray &buffer, int responseSize);
 	bool send(const QByteArray &buffer, int responseSize, QByteArray &outputBuffer);
 
-	QextSerialPort *mPort;
+	QTcpSocket *mSocet;
 
 };
 
