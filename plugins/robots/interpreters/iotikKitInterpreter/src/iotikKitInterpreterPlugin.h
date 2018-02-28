@@ -40,6 +40,7 @@ public:
 	QList<qReal::HotKeyActionInfo> hotKeyActions() override;
 
 	QList<kitBase::AdditionalPreferences *> settingsWidgets() override;
+	QString defaultSettingsFile() const override;
 	QIcon iconForFastSelector(const kitBase::robotModel::RobotModelInterface &robotModel) const override;
 
 private:

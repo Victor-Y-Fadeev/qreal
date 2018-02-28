@@ -21,4 +21,4 @@ CONFIG += plugin
 
 DESTDIR = $$DESTDIR/plugins/tools/kitPlugins/
 
-include(src/iotikKitInterpreter.pri)
+include(iotikKitInterpreter.pri)

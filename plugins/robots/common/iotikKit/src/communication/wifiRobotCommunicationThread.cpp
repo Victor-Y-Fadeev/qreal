@@ -57,8 +57,7 @@ bool WifiRobotCommunicationThread::connect()
 		QThread::msleep(500);  // Give port some time to close
 	}
 
-	//const QString portName = qReal::SettingsManager::value("IotikPortName").toString();
-	const QString hostName = "192.168.1.1";
+	const QString hostName = qReal::SettingsManager::value("IotikTcpServer").toString();
 	mSocet = new QTcpSocket();
 
 	mSocet->connectToHost(hostName, 3000);

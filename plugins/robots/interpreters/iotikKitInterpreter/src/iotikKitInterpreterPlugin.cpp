@@ -59,6 +59,11 @@ QList<qReal::HotKeyActionInfo> IotikKitInterpreterPlugin::hotKeyActions()
 	return {};
 }
 
+QString IotikKitInterpreterPlugin::defaultSettingsFile() const
+{
+	return ":/iotikDefaultSettings.ini";
+}
+
 QIcon IotikKitInterpreterPlugin::iconForFastSelector(
 		const kitBase::robotModel::RobotModelInterface &robotModel) const
 {
