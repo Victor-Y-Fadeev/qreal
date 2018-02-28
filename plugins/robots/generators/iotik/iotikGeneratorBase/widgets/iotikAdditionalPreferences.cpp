@@ -42,6 +42,7 @@ void IotikAdditionalPreferences::save()
 {
 	SettingsManager::setValue("IotikPortName", selectedPortName());
 	SettingsManager::setValue("IotikManualComPortCheckboxChecked", mUi->manualComPortCheckbox->isChecked());
+	SettingsManager::setValue("IotikTcpServer", mUi->tcpServerLineEdit->text());
 	mUi->robotImagePicker->save();
 	emit settingsChanged();
 }
@@ -49,6 +50,7 @@ void IotikAdditionalPreferences::save()
 void IotikAdditionalPreferences::restoreSettings()
 {
 	ui::ComPortPicker::populate(*mUi->comPortComboBox, "IotikPortName");
+	mUi->tcpServerLineEdit->setText(SettingsManager::value("IotikTcpServer").toString());
 	mUi->robotImagePicker->restore();
 
 	if (mUi->comPortComboBox->count() == 0) {
@@ -73,7 +75,10 @@ void IotikAdditionalPreferences::restoreSettings()
 
 void IotikAdditionalPreferences::onRobotModelChanged(kitBase::robotModel::RobotModelInterface * const robotModel)
 {
-	mUi->usbSettingsGroupBox->setVisible(robotModel->name() == mGeneratorRobotName);
+	bool visible = (robotModel->name() == mGeneratorRobotName);
+
+	mUi->usbSettingsGroupBox->setVisible(visible);
+	mUi->tcpSettingsGroupBox->setVisible(visible);
 }
 
 void IotikAdditionalPreferences::manualComPortCheckboxChecked(bool state)
