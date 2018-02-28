@@ -38,6 +38,7 @@ HEADERS += \
 	$$PWD/include/iotikKit/robotModel/parts/iotikSonarSensor.h \
 	$$PWD/include/iotikKit/robotModel/parts/iotikFlameSensor.h \
 	$$PWD/include/iotikKit/communication/usbRobotCommunicationThread.h \
+	$$PWD/include/iotikKit/communication/wifiRobotCommunicationThread.h \
 	$$PWD/src/blocks/details/iotikEnginesBackwardBlock.h \
 	$$PWD/src/blocks/details/iotikEnginesForwardBlock.h \
 	$$PWD/src/blocks/details/mosfetBlock.h \
@@ -68,6 +69,7 @@ SOURCES += \
 	$$PWD/src/blocks/details/lineDetectorToVariable.cpp \
 	$$PWD/src/blocks/details/waitForFlameSensorBlock.cpp \
 	$$PWD/src/communication/usbRobotCommunicationThread.cpp \
+	$$PWD/src/communication/wifiRobotCommunicationThread.cpp \
 
 
 TRANSLATIONS = \

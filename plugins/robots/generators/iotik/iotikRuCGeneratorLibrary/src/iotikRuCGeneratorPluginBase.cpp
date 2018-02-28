@@ -21,9 +21,9 @@
 
 #include <qrkernel/settingsManager.h>
 #include <iotikKit/communication/usbRobotCommunicationThread.h>
+#include <iotikKit/communication/wifiRobotCommunicationThread.h>
 
 #include <iotikGeneratorBase/iotikGeneratorPluginBase.h>
-//#include <iotikGeneratorBase/robotModel/generatorModelExtensionInterface.h>
 #include <iotikKit/robotModel/iotikRobotModelBase.h>
 
 #include "iotikRuCMasterGenerator.h"
@@ -47,6 +47,7 @@ IotikRuCGeneratorPluginBase::IotikRuCGeneratorPluginBase(
 	, mSeparator(new QAction(nullptr))
 	, mActivateAction(new QAction(nullptr))
 	, mUsbCommunicator(new UsbRobotCommunicationThread())
+	, mWifiCommunicator(new WifiRobotCommunicationThread())
 	, mRobotModel(*robotModel)
 	, mPathsToTemplates(pathsToTemplates)
 {
@@ -150,14 +151,20 @@ void IotikRuCGeneratorPluginBase::wifiUpload()
 	const QFileInfo fileInfo = generateCodeForProcessing();
 	const QString rootPath = QDir::current().absolutePath();
 
-	addDeviceVariables(fileInfo);
+	//addDeviceVariables(fileInfo);
 	if (!compileCode()) {
 		return;
 	}
 
-	mMainWindowInterface->errorReporter()->addError(tr("Wi-Fi is not released yet"));
+	QFile::rename(rootPath + "/export.txt", rootPath + "/wifi_export.txt");
 
-	QFile::remove(rootPath + "/export.txt");
+	mWifiCommunicator->connect();
+	mWifiCommunicator->sendFile("wifi_export.txt");
+	mWifiCommunicator->disconnect();
+
+	//mMainWindowInterface->errorReporter()->addError(tr("Wi-Fi is not released yet"));
+
+	//QFile::remove(rootPath + "/wifi_export.txt");
 }
 
 void IotikRuCGeneratorPluginBase::usbUpload()
@@ -165,7 +172,7 @@ void IotikRuCGeneratorPluginBase::usbUpload()
 	const QFileInfo fileInfo = generateCodeForProcessing();
 	const QString rootPath = QDir::current().absolutePath();
 
-	addDeviceVariables(fileInfo);
+	//addDeviceVariables(fileInfo);
 	if (!compileCode()) {
 		return;
 	}
@@ -202,38 +209,39 @@ bool IotikRuCGeneratorPluginBase::compileCode()
 void IotikRuCGeneratorPluginBase::addDeviceVariables(const QFileInfo fileInfo)
 {
 	const QString variables =
-			"int RED_COLOR = 0;\n"
-			"int GREEN_COLOR = 0;\n"
-			"int BLUE_COLOR = 0;\n"
-			"int X_COMPASS = 0;\n"
-			"int Y_COMPASS = 0;\n"
-			"int Z_COMPASS = 0;\n"
+			"#define RED_COLOR 0\n"
+			"#define GREEN_COLOR 1\n"
+			"#define BLUE_COLOR 2\n"
+			"#define X_COMPASS 3\n"
+			"#define Y_COMPASS 4\n"
+			"#define Z_COMPASS 5\n"
+			"#define FI_COMPASS 6\n"
 
-			"int LINE = 0;\n"
-			"int FLAME = 0;\n"
-			"int INFARED = 0;\n"
-			"int SOUND = 0;\n"
-			"int TOUC = 0;\n"
-			"int ULTRASONIC = 0;\n"
+			"#define LINE 7\n"
+			"#define FLAME 8\n"
+			"#define INFARED 9\n"
+			"#define SOUND 10\n"
+			"#define TOUCH 11\n"
+			"#define ULTRASONIC 12\n"
 
-			"int M0 = 0;\n"
-			"int M1 = 1;\n"
-			"int A0 = -1;\n"
-			"int A1 = -2;\n"
-			"int A2 = -3;\n"
-			"int A3 = -4;\n"
-			"int A4 = -5;\n"
-			"int A5 = -6;\n"
-			"int A6 = -7;\n"
-			"int A7 = -8;\n"
-			"int D0 = 0;\n"
-			"int D1 = 1;\n"
-			"int D2 = 2;\n"
-			"int D3 = 3;\n"
-			"int D4 = 4;\n"
-			"int D5 = 5;\n"
-			"int D6 = 6;\n"
-			"int D7 = 7;\n";
+			"#define M0 0\n"
+			"#define M1 1\n"
+			"#define A0 -1\n"
+			"#define A1 -2\n"
+			"#define A2 -3\n"
+			"#define A3 -4\n"
+			"#define A4 -5\n"
+			"#define A5 -6\n"
+			"#define A6 -7\n"
+			"#define A7 -8\n"
+			"#define D0 0\n"
+			"#define D1 1\n"
+			"#define D2 2\n"
+			"#define D3 3\n"
+			"#define D4 4\n"
+			"#define D5 5\n"
+			"#define D6 6\n"
+			"#define D7 7\n";
 
 	const QString rootPath = QDir::current().absolutePath();
 	const QString filePath = fileInfo.absoluteFilePath();

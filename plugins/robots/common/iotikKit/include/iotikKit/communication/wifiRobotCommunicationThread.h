@@ -22,13 +22,13 @@ class QTimer;
 namespace iotik {
 namespace communication {
 
-class UsbRobotCommunicationThread : public utils::robotCommunication::RobotCommunicationThreadInterface
+class WifiRobotCommunicationThread : public utils::robotCommunication::RobotCommunicationThreadInterface
 {
 	Q_OBJECT
 
 public:
-	UsbRobotCommunicationThread();
-	~UsbRobotCommunicationThread();
+	WifiRobotCommunicationThread();
+	~WifiRobotCommunicationThread();
 
 public slots:
 	bool send(const QByteArray &buffer) const;
@@ -48,8 +48,6 @@ private slots:
 private:
 	bool send(QObject *addressee, const QByteArray &buffer, int responseSize);
 	bool send(const QByteArray &buffer, int responseSize, QByteArray &outputBuffer);
-
-	bool response();
 
 	QextSerialPort *mPort;
 

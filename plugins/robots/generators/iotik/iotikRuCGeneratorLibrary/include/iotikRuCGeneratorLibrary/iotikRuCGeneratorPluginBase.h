@@ -17,6 +17,7 @@
 #include <iotikGeneratorBase/iotikGeneratorPluginBase.h>
 
 #include <iotikKit/communication/usbRobotCommunicationThread.h>
+#include <iotikKit/communication/wifiRobotCommunicationThread.h>
 
 namespace iotik {
 
@@ -70,6 +71,7 @@ protected:
 
 	/// Communicator object used to send commands to robot.
 	communication::UsbRobotCommunicationThread *mUsbCommunicator;
+	communication::WifiRobotCommunicationThread *mWifiCommunicator;
 
 	/// Robot model that is used by generator to check config file version on a robot.
 	iotik::robotModel::IotikRobotModelBase &mRobotModel;
