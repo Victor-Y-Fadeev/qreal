@@ -24,10 +24,11 @@ CompassToVariableGenerator::CompassToVariableGenerator(const qrRepo::RepoApi &re
 		, generatorBase::GeneratorCustomizer &customizer
 		, const Id &id
 		, QObject *parent)
-	: BindingGenerator(repo, customizer, id, "sensors/threeVariableTwoDigitalPort.t", QList<Binding *>()
+	: BindingGenerator(repo, customizer, id, "sensors/fourVariableTwoDigitalPort.t", QList<Binding *>()
 			<< Binding::createStatic("@@DRIVER@@", "X_COMPASS")
 			<< Binding::createStatic("@@DRIVER_2@@", "Y_COMPASS")
 			<< Binding::createStatic("@@DRIVER_3@@", "Z_COMPASS")
+			<< Binding::createStatic("@@DRIVER_4@@", "FI_COMPASS")
 			<< Binding::createConverting("@@PORT@@", "SDA", customizer.factory()->portNameConverter())
 			<< Binding::createConverting("@@PORT_2@@", "SCL", customizer.factory()->portNameConverter())
 			<< Binding::createStaticConverting("@@VARIABLE@@"
@@ -38,6 +39,9 @@ CompassToVariableGenerator::CompassToVariableGenerator(const qrRepo::RepoApi &re
 								, customizer.factory()->functionBlockConverter(id, "Variable"))
 			<< Binding::createStaticConverting("@@VARIABLE_3@@"
 								, repo.property(id, "Z").toString()
+								, customizer.factory()->functionBlockConverter(id, "Variable"))
+			<< Binding::createStaticConverting("@@VARIABLE_4@@"
+								, repo.property(id, "Fi").toString()
 								, customizer.factory()->functionBlockConverter(id, "Variable"))
 			, parent)
 {

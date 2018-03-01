@@ -275,6 +275,7 @@
 						<label x="25" y="90" textBinded="X" background="white" prefix="X:"/>
 						<label x="25" y="120" textBinded="Y" background="white" prefix="Y:"/>
 						<label x="25" y="150" textBinded="Z" background="white" prefix="Z:"/>
+						<label x="25" y="180" textBinded="Fi" background="white" prefix="Fi:"/>
 					</labels>
 					<nonResizeable/>
 				</graphics>
@@ -294,6 +295,9 @@
 						</property>
 						<property displayedName="Z" type="string" name="Z">
 							<default>z</default>
+						</property>
+						<property displayedName="Fi" type="string" name="Fi">
+							<default>fi</default>
 						</property>
 					</properties>
 					<generalizations>
