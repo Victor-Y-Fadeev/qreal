@@ -12,7 +12,7 @@
 
 #define MAXREPRTAB   10000
 #define MAXIDENTAB   10000
-#define MAXMEMSIZE   100000
+#define MAXMEMSIZE   1000000
 #define MAXTREESIZE  10000
 #define MAXMODETAB   10000
 #define MAXBOUNDS    1000
@@ -563,14 +563,18 @@
 #define wrong_printf_param_number          347
 #define printf_no_format_placeholder       348
 #define printf_unknown_format_placeholder  349
-#define no_mult_in_cast                    350
-#define no_rightbr_in_cast                 351
-#define not_pointer_in_cast                352
-#define empty_bound_without_init           353
-#define begin_with_notarray                354
-#define string_and_notstring               355
-#define wrong_init_in_actparam             356
-#define no_comma_or_end                    357
+#define too_many_printf_params             350
+
+#define no_mult_in_cast                    351
+#define no_rightbr_in_cast                 352
+#define not_pointer_in_cast                353
+#define empty_bound_without_init           354
+#define begin_with_notarray                355
+#define string_and_notstring               356
+#define wrong_init_in_actparam             357
+#define no_comma_or_end                    358
+#define no_ident_in_define                 359
+#define not_int_in_define                  360
 
 //  коды предупреждений
 

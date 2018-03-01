@@ -5,14 +5,16 @@
 //  Copyright (c) 2014 Andrey Terekhov. All rights reserved.
 //
 
-//#define ROBOT 1
-//#include <unistd.h>
+//#define ROBOT
+#include <unistd.h>
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
 #include <stdlib.h>
+#include <semaphore.h>
+#include <sys/stat.h>
 
 #include "th_static.h"
 
@@ -57,89 +59,14 @@ extern int szof(int);
 #define printf_runtime_crash 18
 #define init_err             19
 
-int g, iniproc, maxdisplg, wasmain;
+int g, xx, iniproc, maxdisplg, wasmain;
 int reprtab[MAXREPRTAB], rp, identab[MAXIDENTAB], id, modetab[MAXMODETAB], md;
 int mem[MAXMEMSIZE], functions[FUNCSIZE], funcnum;
 int threads[NUMOFTHREADS]; //, curthread, upcurthread;
 int procd, iniprocs[INIPROSIZE], base = 0, adinit, NN;
 FILE *input;
-
-#ifdef ROBOT
-FILE *f1, *f2;   // файлы цифровых датчиков
-const char* JD1 = "/sys/devices/platform/da850_trik/sensor_d1";
-const char* JD2 = "/sys/devices/platform/da850_trik/sensor_d2";
-
-int szof(int type)
-{
-    return type == LFLOAT ? 2 :
-    (type > 0 && modetab[type] == MSTRUCT) ? modetab[type + 1] : 1;
-}
-
-int rungetcommand(const char *command)
-{
-    FILE *fp;
-    int x = -1;
-    char path[100] = {'\0'};
-    
-    /* Open the command for reading. */
-    fp = popen(command, "r");
-    if (fp == NULL)
-        runtimeerr(wrong_robot_com, 0,0);
-    
-    /* Read the output a line at a time - output it. */
-    while (fgets(path, sizeof(path)-1, fp) != NULL)
-    {
-        x = strtol(path, NULL, 16);
-        printf("[%s] %d\n", path, x);
-    }
-    pclose(fp);
-    return x;                   // ??????
-}
-
-#endif
-
-void printf_char(int wchar)
-{
-    if (wchar<128)
-        printf("%c", wchar);
-    else
-    {
-        unsigned char first = (wchar >> 6) | /*0b11000000*/ 0xC0;
-        unsigned char second = (wchar & /*0b111111*/ 0x3F) | /*0b10000000*/ 0x80;
-
-        printf("%c%c", first, second);
-    }
-}
-
-void fprintf_char(FILE *f, int wchar)
-{    if (wchar<128)
-    fprintf(f, "%c", wchar);
-    else
-    {
-        unsigned char first = (wchar >> 6) | /*0b11000000*/ 0xC0;
-        unsigned char second = (wchar & /*0b111111*/ 0x3F) | /*0b10000000*/ 0x80;
-
-        fprintf(f, "%c%c", first, second);
-    }
-}
-
-int getf_char()
-{
-    // reads UTF-8
-    
-    unsigned char firstchar, secondchar;
-    
-    if (scanf(" %c", &firstchar) == EOF)
-        return EOF;
-    else
-        if ((firstchar & /*0b11100000*/0xE0) == /*0b11000000*/0xC0)
-        {
-            scanf("%c", &secondchar);
-            return ((int)(firstchar & /*0b11111*/0x1F)) << 6 | (secondchar & /*0b111111*/0x3F);
-        }
-        else
-            return firstchar;
-}
+char sem_print[] = "sem_print", sem_debug[] = "sem_debug";
+sem_t *sempr, *semdeb;
 
 void runtimeerr(int e, int i, int r)
 {
@@ -149,7 +76,7 @@ void runtimeerr(int e, int i, int r)
             printf("индекс %i за пределами границ массива %i\n", i, r-1);
             break;
         case wrong_kop:
-            printf("команду %i я пока не реализовал\n", i);
+            printf("команду %i я пока не реализовал; номер нити = %i\n", i, r);
             break;
         case wrong_arr_init:
             printf("массив с %i элементами инициализируется %i значениями\n", i, r);
@@ -201,7 +128,7 @@ void runtimeerr(int e, int i, int r)
             printf("странно, printf не работает на этапе исполнения; ошибка коммпилятора");
             break;
         case init_err:
-        printf("количество элементов инициализации %i не совпадает с количеством элементов %i массива\n", i, r);
+            printf("количество элементов инициализации %i не совпадает с количеством элементов %i массива\n", i, r);
             break;
             
         default:
@@ -209,6 +136,78 @@ void runtimeerr(int e, int i, int r)
     }
     exit(3);
 }
+
+#ifdef ROBOT
+FILE *f1, *f2;   // файлы цифровых датчиков
+const char* JD1 = "/sys/devices/platform/da850_trik/sensor_d1";
+const char* JD2 = "/sys/devices/platform/da850_trik/sensor_d2";
+
+int rungetcommand(const char *command)
+{
+    FILE *fp;
+    long x = -1;
+    char path[100] = {'\0'};
+    
+    /* Open the command for reading. */
+    fp = popen(command, "r");
+    if (fp == NULL)
+        runtimeerr(wrong_robot_com, 0,0);
+    
+    /* Read the output a line at a time - output it. */
+    while (fgets(path, sizeof(path)-1, fp) != NULL)
+    {
+        x = strtol(path, NULL, 16);
+        printf("[%s] %ld\n", path, x);
+    }
+    pclose(fp);
+    return x;                   // ??????
+}
+
+#endif
+
+void printf_char(int wchar)
+{
+    if (wchar<128)
+        printf("%c", wchar);
+    else
+    {
+        unsigned char first = (wchar >> 6) | /*0b11000000*/ 0xC0;
+        unsigned char second = (wchar & /*0b111111*/ 0x3F) | /*0b10000000*/ 0x80;
+
+        printf("%c%c", first, second);
+    }
+}
+
+void fprintf_char(FILE *f, int wchar)
+{    if (wchar<128)
+    fprintf(f, "%c", wchar);
+    else
+    {
+        unsigned char first = (wchar >> 6) | /*0b11000000*/ 0xC0;
+        unsigned char second = (wchar & /*0b111111*/ 0x3F) | /*0b10000000*/ 0x80;
+
+        fprintf(f, "%c%c", first, second);
+    }
+}
+
+int getf_char()
+{
+    // reads UTF-8
+    
+    unsigned char firstchar, secondchar;
+    
+    if (scanf(" %c", &firstchar) == EOF)
+        return EOF;
+    else
+        if ((firstchar & /*0b11100000*/0xE0) == /*0b11000000*/0xC0)
+        {
+            scanf("%c", &secondchar);
+            return ((int)(firstchar & /*0b11111*/0x1F)) << 6 | (secondchar & /*0b111111*/0x3F);
+        }
+        else
+            return firstchar;
+}
+
 /*
 void prmem()
 {
@@ -223,7 +222,8 @@ void prmem()
 
 void auxprintf(int strbeg, int databeg)
 {
-    int i, curdata = databeg + 1;
+
+    int i, j, curdata = databeg + 1;
     for (i = strbeg; mem[i] != 0; ++i)
     {
         if (mem[i] == '%')
@@ -246,6 +246,13 @@ void auxprintf(int strbeg, int databeg)
                     curdata += 2;
                     break;
 
+                case 's':
+                case 1089:   // с
+                    for (j = mem[curdata]; j - mem[curdata] < mem[mem[curdata] - 1]; ++j)
+                        printf_char(mem[j]);
+                    curdata++;
+                    break;
+
                 case '%':
                     printf("%%");
                     break;
@@ -263,8 +270,8 @@ void auxprintf(int strbeg, int databeg)
 void auxprint(int beg, int t, char before, char after)
 {
     double rf;
-    int r = mem[beg];
-    
+    int r;
+    r = mem[beg];
     if (before)
         printf("%c", before);
     
@@ -379,41 +386,58 @@ int dsp(int di, int l)
 
 void* interpreter(void* pcPnt)
 {
-    int l, x, pc = *((int*) pcPnt), numTh = t_getThNum();
-    int N, bounds[100], d,from, prtype, cur0;
+    int l, x, origpc = *((int*) pcPnt), numTh = t_getThNum();
+    int N, bounds[100], d,from, prtype, cur0, pc = abs(origpc);
     int i,r, flagstop = 1, entry, di, di1, len;
     double lf, rf;
-    threads[numTh] = cur0 = (numTh == 0 ? threads[0] : threads[numTh-1] + MAXMEMTHREAD);
-    // область нити начинается с номера нити, потом идут 3 служебных слова процедуры
-    mem[cur0] = numTh;
-    l = mem[cur0+1];
-    x = mem[cur0+2]+3;
     
-//    printf("interpreter session numTh=%i l=%i x=%i pc=%i\n", numTh, l, x, pc);
-    
+    if (origpc > 0)
+    {
+        if (numTh)
+        {
+            threads[numTh] = cur0 = numTh * MAXMEMTHREAD;
+            l = mem[threads[numTh]] = threads[numTh] + 2;
+            x = mem[threads[numTh]] = l + mem[pc-2];           // l + maxdispl
+            mem[l+2] = -1;
+        }
+        else
+        {
+            l = threads[0] + 2;
+            x = mem[threads[0]+1];
+        }
+    }
+    else
+    {
+        l = mem[threads[numTh]];
+        x = mem[threads[numTh]+1];
+    }
     flagstop = 1;
     while (flagstop)
     {
         memcpy(&rf, &mem[x-1], sizeof(double));
-//        printf("pc=%i mem[pc]=%i\n", pc, mem[pc]);
-//        printf("running th #%i\n", t_getThNum());
+        //printf("pc=%i mem[pc]=%i\n", pc, mem[pc]);
+        //printf("running th #%i\n", t_getThNum());
+
         switch (mem[pc++])
         {
             case STOP:
                 flagstop = 0;
-                threads[numTh+2] = x;
+                xx = x;
                 break;
 
             case CREATEDIRECTC:
-               t_create(interpreter, (void*)&pc);
-                flagstop = 1;
+                i = pc;
+                mem[++x] = t_create_inner(interpreter, (void*)&i);
                 break;
+                
             case CREATEC:
-                i = mem[x--];
+            {
+                int i;
+                i = mem[x];
                 entry = functions[i > 0 ? i : mem[l-i]];
-                pc = entry + 3;
-                t_create(interpreter, (void*)&pc);
-                flagstop = 1;
+                i = entry + 3;                           // новый pc
+                mem[x] = t_create_inner(interpreter, (void*)&i);
+            }
                 break;
  
             case JOINC:
@@ -426,7 +450,6 @@ void* interpreter(void* pcPnt)
                 
             case EXITDIRECTC:
             case EXITC:
-                printf("found exitc thread = %i\n", t_getThNum());
                 t_exit();
                 break;
  
@@ -466,10 +489,16 @@ void* interpreter(void* pcPnt)
                 t_msg_send(m);
             }
                 break;
+                
+            case GETNUMC:
+                mem[++x] = numTh;
+                break;
                
     #ifdef ROBOT
 
             case SETMOTORC:
+            {
+                int n, r;
                 r = mem[x--];
                 n = mem[x--];
                 if (n < 1 || n > 4)
@@ -480,10 +509,12 @@ void* interpreter(void* pcPnt)
                 printf("i2cset -y 2 0x48 0x%x 0x%x b\n", 0x14 + n - 1, r);
                 snprintf(i2ccommand, I2CBUFFERSIZE, "i2cset -y 2 0x48 0x%x 0x%x b", 0x14 + n - 1, r);
                 system(i2ccommand);
+            }
                 break;
                 
             case GETDIGSENSORC:
-                n = mem[x];
+            {
+                int n = mem[x];
                 if (n < 1 || n > 2)
                     runtimeerr(wrong_digsensor_num, n, 0);
                 if (n == 1)
@@ -491,16 +522,19 @@ void* interpreter(void* pcPnt)
                 else
                     fscanf(f2, "%i", &i);
                 mem[x] = i;
+            }
                 break;
                 
             case GETANSENSORC:
-                n = mem[x];
+            {
+                int n = mem[x];
                 if (n < 1 || n > 6)
                     runtimeerr(wrong_ansensor_num, n, 0);
                 memset(i2ccommand, '\0', I2CBUFFERSIZE);
                 printf("i2cget -y 2 0x48 0x%x\n", 0x26 - n);
                 snprintf(i2ccommand, I2CBUFFERSIZE, "i2cget -y 2 0x48 0x%x", 0x26 - n);
                 mem[x] = rungetcommand(i2ccommand);
+            }
                 break;
     #endif
             case FUNCBEG:
@@ -508,12 +542,16 @@ void* interpreter(void* pcPnt)
                 break;
             case PRINT:
             {
-                int t = mem[pc++];
+                int t;
+                sem_wait(sempr);
+                t = mem[pc++];
                 x -= szof(t);
                 auxprint(x+1, t, 0, '\n');
+                sem_post(sempr);
             }
                 break;
             case PRINTID:
+                sem_wait(sempr);
                 i = mem[pc++];              // ссылка на identtab
                 prtype = identab[i+2];
                 r = identab[i+1] + 2;       // ссылка на reprtab
@@ -525,6 +563,7 @@ void* interpreter(void* pcPnt)
                     auxprint(dsp(identab[i+3], l), prtype, '\n', '\n');
                 else
                     auxprint(dsp(identab[i+3], l), prtype, ' ', '\n');
+                sem_post(sempr);
                 break;
 
             /* Ожидает указатель на форматную строку на верхушке стека
@@ -534,13 +573,16 @@ void* interpreter(void* pcPnt)
              */
             case PRINTF:
             {
-                int sumsize = mem[pc++];
-                int strbeg = mem[x--];
-
+                int sumsize, strbeg;
+                sem_wait(sempr);
+                sumsize = mem[pc++];
+                strbeg = mem[x--];
                 auxprintf(strbeg, x -= sumsize);
+                sem_post(sempr);
             }
                 break;
             case GETID:
+                sem_wait(sempr);
                 i = mem[pc++];              // ссылка на identtab
                 prtype = identab[i+2];
                 r = identab[i+1] + 2;       // ссылка на reprtab
@@ -549,6 +591,7 @@ void* interpreter(void* pcPnt)
                 while (reprtab[r] != 0);
                 printf("\n");
                 auxget(dsp(identab[i+3], l), prtype);
+                sem_post(sempr);
                 break;
             case ABSIC:
                 mem[x] = abs(mem[x]);
@@ -605,14 +648,13 @@ void* interpreter(void* pcPnt)
             case STRUCTWITHARR:
             {
                 int oldpc, oldbase = base, procnum;
-                base = (di = mem[pc++], di<0) ? g-di : l+di;
+                base = dsp(mem[pc++], l);
                 procnum = mem[pc++];
                 oldpc = pc;
-                pc = procnum;
-//                mem[threads[numTh]+1] = l;
-                mem[threads[numTh]+2] = x;
+                pc = -procnum;
+                mem[threads[numTh]+1] = x;
                 interpreter((void*) &pc);
-                x = threads[numTh+2];
+                x = xx;
                 pc = oldpc;
                 base = oldbase;
                 flagstop = 1;
@@ -644,6 +686,7 @@ void* interpreter(void* pcPnt)
                     
                     if (x >= threads[numTh] + MAXMEMTHREAD)
                         runtimeerr(mem_overflow, 0, 0);
+
                     if (N == 1)
                     {
                         if (proc)
@@ -651,12 +694,12 @@ void* interpreter(void* pcPnt)
                             int curx = x, oldbase = base, oldpc = pc, i;
                             for (i=stackC0[1]; i<=curx; i+=d)
                             {
-                                pc = proc;   // вычисление границ очередного массива в структуре
+                                pc = -proc;   // вычисление границ очередного массива в структуре
                                 base = i;
-                                mem[threads[numTh]+2] = x;
+                                mem[threads[numTh]+1] = x;
                                 interpreter((void*) &pc);
                                 flagstop = 1;
-                                x = threads[numTh+2];
+                                x = xx;
                             }
                             pc = oldpc;
                             base = oldbase;
@@ -686,10 +729,10 @@ void* interpreter(void* pcPnt)
                             {
                                 pc = proc;   // вычисление границ очередного массива в структуре
                                 base = i;
-                                mem[threads[numTh]+2] = x;
+                                mem[threads[numTh]+1] = x;
                                 interpreter((void*) &pc);
                                 flagstop = 1;
-                                x = threads[numTh+2];
+                                x = xx;
                             }
                             pc = oldpc;
                             base = oldbase;
@@ -838,19 +881,29 @@ void* interpreter(void* pcPnt)
             case RETURNVAL:
                 d = mem[pc++];
                 pc = mem[l+2];
-                r = l;
-                l = mem[l];
-                mem[l+1] = 0;
-                from = x-d;
-                x = r-1;
-                for (i=0; i<d; i++)
-                    mem[++x] = mem[++from];
+                if (pc == -1)         // конец нити
+                    flagstop = 0;
+                else
+                {
+                    r = l;
+                    l = mem[l];
+                    mem[l+1] = 0;
+                    from = x-d;
+                    x = r-1;
+                    for (i=0; i<d; i++)
+                        mem[++x] = mem[++from];
+                }
                 break;
             case RETURNVOID:
                 pc = mem[l+2];
-                x = l-1;
-                l = mem[l];
-                mem[l+1] = 0;
+                if (pc == -1)          // конец нити
+                    flagstop = 0;
+                else
+                {
+                    x = l-1;
+                    l = mem[l];
+                    mem[l+1] = 0;
+                }
                 break;
             case NOP:
                 ;
@@ -1516,10 +1569,9 @@ void* interpreter(void* pcPnt)
                 break;
                 
             default:
-                runtimeerr(wrong_kop, mem[pc-1], 0);
+                runtimeerr(wrong_kop, mem[pc-1], numTh);
         }
     }
-    
     return NULL;
 }
 
@@ -1558,12 +1610,14 @@ void import()
     
     fclose(input);
     
-    l = g = pc;
+    threads[0] = pc;
+    mem[pc] = g = pc + 2;       // это l
     mem[g] = mem[g+1] = 0;
-    threads[0] = x = g + maxdisplg;
-    mem[x+1] = l;
-    mem[x+2] = x;
+    mem[pc+1] = g + maxdisplg;  // это x
     pc = 4;
+    
+    sem_unlink(sem_print);
+    sempr = sem_open(sem_print, O_CREAT, S_IRUSR | S_IWUSR, 1);
     t_init();
     interpreter(&pc);                      // номер нити главной программы 0
     t_destroy();

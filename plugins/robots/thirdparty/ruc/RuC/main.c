@@ -6,9 +6,9 @@
 // http://www.lysator.liu.se/c/ANSI-C-grammar-y.html
 #define _CRT_SECURE_NO_WARNINGS
 
-const char * name = "../../../tests/Fadeev.c";
-             /*"../../../tests/Golovan/dining_philosophers.c";*/
 
+const char * name = "../../../tests/Fadeev.c"; 
+             /* "../../../tests/Golovan/dining_philosophers.c"; */
 
 #include <stdio.h>
 #include <string.h>
@@ -25,7 +25,8 @@ int line=0, charnum=1, cur, next, next1, num, hash, repr, keywordsnum, wasstruct
 struct {int first; int second;} numr;
 int source[SOURCESIZE], lines[LINESSIZE];
 int nextchar, curchar, func_def;
-int hashtab[256], reprtab[MAXREPRTAB], rp = 1, identab[MAXIDENTAB], id = 2, modetab[MAXMODETAB], md = 1, startmode = 1;
+int hashtab[256], reprtab[MAXREPRTAB], rp = 1, identab[MAXIDENTAB], id = 2,
+    modetab[MAXMODETAB], md = 1, startmode = 1;
 int stack[100], stackop[100], stackoperands[100], stacklog[100], ansttype,
     sp=0, sopnd=-1, aux=0, lastid, curid = 2, lg=-1, displ=-3, maxdispl = 3, maxdisplg = 3, type,
     op = 0, inass = 0, firstdecl;
@@ -42,7 +43,7 @@ int g, l, x, iniproc;                                     // anst = ADDR - на 
                                                           // в ansttype всегда тип возвращаемого значения
 // если значение указателя, адрес массива или строки лежит на верхушке стека, то это VAL, а не ADDR
 
-int bad_placeholder = 0;
+int bad_printf_placeholder = 0;
 
 extern void preprocess_file();
 
@@ -197,7 +198,7 @@ int main(int argc, const char * argv[])
     
     fclose(output);
    
-	if (notrobot && (argc < 2))
+    if (notrobot && (argc < 2))
         import();
     
     return 0;

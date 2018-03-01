@@ -156,7 +156,7 @@ void IotikRuCGeneratorPluginBase::wifiUpload()
 	const QFileInfo fileInfo = generateCodeForProcessing();
 	const QString rootPath = QDir::current().absolutePath();
 
-	//addDeviceVariables(fileInfo);
+	addDeviceVariables(fileInfo);
 	if (!compileCode()) {
 		return;
 	}
@@ -175,7 +175,7 @@ void IotikRuCGeneratorPluginBase::usbUpload()
 	const QFileInfo fileInfo = generateCodeForProcessing();
 	const QString rootPath = QDir::current().absolutePath();
 
-	//addDeviceVariables(fileInfo);
+	addDeviceVariables(fileInfo);
 	if (!compileCode()) {
 		return;
 	}

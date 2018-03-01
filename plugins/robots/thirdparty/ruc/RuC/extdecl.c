@@ -1,4 +1,3 @@
-
 #include "global_vars.h"
 
 extern int  getnext();
@@ -7,7 +6,54 @@ extern int  scaner();
 extern void error(int e);
 int onlystrings;
 
-int evaluate_params(int formatstr[], int formattypes[])
+int modeeq(int first_mode, int second_mode)
+{
+    int n, i, flag = 1, mode;
+    if (modetab[first_mode] != modetab[second_mode])
+        return 0;
+    
+    mode = modetab[first_mode];
+    // определяем, сколько полей надо сравнивать для различных типов записей
+    n = mode == MSTRUCT || mode == MFUNCTION ? 2 + modetab[first_mode + 2] : 1;
+    
+    for (i = 1; i <= n && flag; i++)
+        flag = modetab[first_mode + i] == modetab[second_mode + i];
+    
+    return flag;
+}
+
+int check_duplicates()
+{
+    // проверяет, имеется ли в modetab только что внесенный тип.
+    // если да, то возвращает ссылку на старую запись, иначе - на новую.
+    
+    int old = modetab[startmode];
+    
+    while (old)
+    {
+        if (modeeq(startmode + 1, old + 1))
+        {
+            md = startmode;
+            startmode = modetab[startmode];
+            return old + 1;
+        }
+        else
+            old = modetab[old];
+    }
+    return startmode + 1;
+}
+
+int newdecl(int type, int elemtype)
+{
+    modetab[md] = startmode;
+    startmode = md++ ;
+    modetab[md++] = type;
+    modetab[md++] = elemtype;        // ссылка на элемент
+    
+    return check_duplicates();
+}
+
+int evaluate_params(int formatstr[], int formattypes[], int placeholders[])
 {
     int numofparams = 0;
     int i = 0;
@@ -15,7 +61,14 @@ int evaluate_params(int formatstr[], int formattypes[])
     {
         if (formatstr[i] == '%')
         {
-            switch (formatstr[++i])
+            if (formatstr[++i] != '%') {
+                if (numofparams == MAXPRINTFPARAMS) {
+                    error(too_many_printf_params);
+                }
+
+                placeholders[numofparams] = formatstr[i];
+            }
+            switch (formatstr[i]) // Если добавляется новый спецификатор -- не забить внести его в switch в bad_printf_placeholder
             {
                 case 'i':
                 case 1094:   // 'ц'
@@ -31,7 +84,12 @@ int evaluate_params(int formatstr[], int formattypes[])
                 case 1074:   // в
                     formattypes[numofparams++] = LFLOAT;
                     break;
-
+                
+                case 's':
+                case 1089:   // с
+                    formattypes[numofparams++] = newdecl(MARRAY, LCHAR);
+                    break;
+                    
                 case '%':
                     break;
 
@@ -39,7 +97,7 @@ int evaluate_params(int formatstr[], int formattypes[])
                     error(printf_no_format_placeholder);
                     break;
                 default:
-                    bad_placeholder = formatstr[i];
+                    bad_printf_placeholder = formatstr[i];
                     error(printf_unknown_format_placeholder);
                     break;
             }
@@ -123,63 +181,71 @@ int getstatic(int type)
     return olddispl;
 }
 
-int toidentab(int f, int type)       // f = 0, если не ф-ция, f=1, если метка, f=funcnum, если описание ф-ции,
-{                                    // f= -1, если ф-ция-параметр, f>=1000, если это описание типа
+int toidentab(int f, int type)       // f =  0, если не ф-ция, f=1, если метка, f=funcnum, если описание ф-ции,
+{                                    // f = -1, если ф-ция-параметр, f>=1000, если это описание типа
+                                     // f = -2, #define
 //    printf("\n f= %i repr %i rtab[repr] %i rtab[repr+1] %i rtab[repr+2] %i\n", f, repr, reprtab[repr], reprtab[repr+1], reprtab[repr+2]);
 	int pred;
 	lastid = id;
-	if (reprtab[repr + 1] == 0)                  // это может быть только MAIN
+	if (reprtab[repr + 1] == 0)             // это может быть только MAIN
 	{
 		if (wasmain)
 			error(more_than_1_main);
 		wasmain = id;
 	}
 	pred = identab[id] = reprtab[repr + 1]; // ссылка на описание с таким же представлением в предыдущем блоке
-	if (pred)                                    // pred == 0 только для main, эту ссылку портить нельзя
-		reprtab[repr + 1] = id;                  // ссылка на текущее описание с этим представлением (это в reprtab)
+	if (pred)                               // pred == 0 только для main, эту ссылку портить нельзя
+		reprtab[repr + 1] = id;             // ссылка на текущее описание с этим представлением (это в reprtab)
 
-	if (f != 1 && pred >= curid)                // один  и тот же идент м.б. переменной и меткой
+	if (f != 1 && pred >= curid)            // один  и тот же идент м.б. переменной и меткой
         
         if (func_def == 3 ? 1 : identab[pred + 1] > 0 ? 1 : func_def == 1 ? 0 : 1)
             error(repeated_decl);  // только определение функции может иметь 2 описания, т.е. иметь предописание
 
-	identab[id + 1] = repr;                     // ссылка на представление
-	// дальше тип или ссылка на modetab (для функций и структур)
-    
-	identab[id + 2] = type;              // тип -1 int, -2 char, -3 float -4 long -5 double
-	if (f == 1)                          // если тип > 0, то это ссылка на modetab
-	{
-		identab[id + 2] = 0;             // 0, если первым встретился goto, когда встретим метку, поставим 1
-		identab[id + 3] = 0;             // при генерации кода когда встретим метку, поставим pc
-	}
-	else if (f >= 1000)
-		identab[id + 3] = f;             // это описание типа, если f > 1000, то f-1000 - это номер иниц проц
-	else if (f)
+	identab[id + 1] = repr;                 // ссылка на представление
+    if (f == -2)                            // #define
     {
-		if (f < 0)
-        {
-			identab[id + 3] = -(displ++);
-            maxdispl = displ;
-        }
-		else                          // identtab[lastid+3] - номер функции, если < 0, то это функция-параметр
-		{
-			identab[id + 3] = f;
-			if (func_def == 2)
-            {
-				identab[lastid + 1] *= -1;    //это предописание
-                predef[++prdf] = repr;
-            }
-            else
-            {
-                int i;
-                for (i=0; i<=prdf; i++)
-                    if (predef[i] == repr)
-                        predef[i] = 0;
-            }
-		}
+        identab[id+2] = 1;
+        identab[id+3] = type;               // это целое число, определенное по #define
     }
-	else
-        identab[id + 3] = getstatic(type);
+    else
+    {
+                                             // дальше тип или ссылка на modetab (для функций и структур)
+        identab[id + 2] = type;              // тип -1 int, -2 char, -3 float, -4 long, -5 double,
+        if (f == 1)                          // если тип > 0, то это ссылка на modetab
+        {
+            identab[id + 2] = 0;             // 0, если первым встретился goto, когда встретим метку, поставим 1
+            identab[id + 3] = 0;             // при генерации кода когда встретим метку, поставим pc
+        }
+        else if (f >= 1000)
+            identab[id + 3] = f;             // это описание типа, если f > 1000, то f-1000 - это номер иниц проц
+        else if (f)
+        {
+            if (f < 0)
+            {
+                identab[id + 3] = -(displ++);
+                maxdispl = displ;
+            }
+            else                          // identtab[lastid+3] - номер функции, если < 0, то это функция-параметр
+            {
+                identab[id + 3] = f;
+                if (func_def == 2)
+                {
+                    identab[lastid + 1] *= -1;    //это предописание
+                    predef[++prdf] = repr;
+                }
+                else
+                {
+                    int i;
+                    for (i=0; i<=prdf; i++)
+                        if (predef[i] == repr)
+                            predef[i] = 0;
+                }
+            }
+        }
+        else
+            identab[id + 3] = getstatic(type);
+    }
  	id += 4;
 	return lastid;
 }
@@ -229,7 +295,7 @@ void toval()        // надо значение положить на стек,
         {
             if (anst == IDENT)
             {
-                tc -=2;
+                tc -= 2;
                 totree(COPY0ST);
                 totree(anstdispl);
             }
@@ -265,56 +331,33 @@ void applid()
 		error(ident_is_not_declared);
 }
 
-int modeeq(int first_mode, int second_mode)
-{
-    int n, i, flag = 1, mode;
-    if (modetab[first_mode] != modetab[second_mode])
-        return 0;
-    
-    mode = modetab[first_mode];
-    // определяем, сколько полей надо сравнивать для различных типов записей
-    n = mode == MSTRUCT || mode == MFUNCTION ? 2 + modetab[first_mode + 2] : 1;
-    
-    for (i = 1; i <= n && flag; i++)
-        flag = modetab[first_mode + i] == modetab[second_mode + i];
-    
-    return flag;
-}
-
-
-int check_duplicates()
-{
-    // проверяет, имеется ли в modetab только что внесенный тип.
-    // если да, то возвращает ссылку на старую запись, иначе - на новую.
-    
-    int old = modetab[startmode];
-    
-    while (old)
-    {
-        if (modeeq(startmode + 1, old + 1))
-        {
-            md = startmode;
-            startmode = modetab[startmode];
-            return old + 1;
-        }
-        else
-            old = modetab[old];
-    }
-    return startmode + 1;
-}
-
-int newdecl(int type, int elemtype)
-{
-    modetab[md] = startmode;
-    startmode = md++ ;
-    modetab[md++] = type;
-    modetab[md++] = elemtype;        // ссылка на элемент
-
-    return check_duplicates();
-}
 
 void exprval();
 void unarexpr();
+
+void actstring()
+{
+    totree(TString);
+    do
+    {
+        if (scaner() == IDENT)
+        {
+            applid();
+            if (identab[lastid+2] == 1)
+                cur = NUMBER, ansttype = LINT, num = identab[lastid+3];
+        }
+        if (cur == NUMBER && ansttype == LINT)
+            totree(num);
+        else
+            error(wrong_init_in_actparam);
+    }
+    while (scaner() == COMMA);
+    
+    totree(0);
+    if (cur != END)
+        error(no_comma_or_end);
+    anst = VAL;
+}
 
 void primaryexpr()
 {
@@ -351,10 +394,18 @@ void primaryexpr()
 	else if (cur == IDENT)
 	{
 		applid();
-		totree(TIdent);
-		totree(anstdispl = identab[lastid+3]);
-		stackoperands[++sopnd] = ansttype = identab[lastid + 2];
-		anst = IDENT;
+        if (identab[lastid+2] == 1)                  // #define
+        {
+            totree(TConst);
+            totree(identab[lastid+3]);
+        }
+        else
+        {
+            totree(TIdent);
+            totree(anstdispl = identab[lastid+3]);
+            stackoperands[++sopnd] = ansttype = identab[lastid + 2];
+            anst = IDENT;
+        }
 	}
 	else if (cur == LEFTBR)
 	{
@@ -406,11 +457,10 @@ void primaryexpr()
                     if (cur != IDENT)
                         error(act_param_not_ident);
                     applid();
-                    if (identab[lastid+2] != 15) // 15 - это первый аргумент типа void* (void*)
+                    if (identab[lastid+2] != 15) // 15 - это аргумент типа void* (void*)
                         error(wrong_arg_in_create);
-                    mustbe(COMMA, no_comma_in_param_list);
                     
-                    stackoperands[--sopnd] = ansttype = LINT;
+                    stackoperands[sopnd] = ansttype = LINT;
                     dn = identab[lastid+3];
                     if (dn < 0)
                     {
@@ -422,12 +472,10 @@ void primaryexpr()
                         totree(TConst);
                         totree(dn);
                     }
-                    scaner();  // второй параметр процедуры t_create должен быть 0
-                    totree(TExprend);
+                    anst = VAL;
                 }
                 else
                 {
-    //                leftansttype = func == TCREATE || func == TSEMCREATE ? LINT : LVOID;
                     exprassn(1);
                     toval();
 
@@ -442,7 +490,7 @@ void primaryexpr()
                         if (!is_int(ansttype))
                         error(param_threads_not_int);
                         if (func == TSEMCREATE)
-                            ansttype = stackoperands[sopnd] = LINT; // съели 1 параметр, выдали int
+                            anst = VAL, ansttype = stackoperands[sopnd] = LINT; // съели 1 параметр, выдали int
                         else
                             --sopnd;                                // съели 1 параметр, не выдали результата
                     }
@@ -461,7 +509,7 @@ void primaryexpr()
             exprassn(1);
             toval();
            
-            // GETDIGSENSOR и GETANSENSOR int (int port, ???)  SETMOTOR и VOLTAGE void (int port, ???)
+               // GETDIGSENSOR int(int port, int pins[]), GETANSENSOR int (int port, int pin)  SETMOTOR и VOLTAGE void (int port, int volt)
             if (func == GETDIGSENSOR || func == GETANSENSOR || func == SETMOTOR || func == VOLTAGE)
             {
                 notrobot = 0;
@@ -470,29 +518,23 @@ void primaryexpr()
                 mustbe(COMMA, no_comma_in_setmotor);
                 scaner();
                 if (func == GETDIGSENSOR && cur == BEGIN)
-                {
-                    totree(TString);
-                    do
-                    {
-                        if (scaner() == NUMBER && ansttype == LINT)
-                            totree(num);
-                        else
-                            error(wrong_init_in_actparam);
-                    }
-                    while (scaner() == COMMA);
-                    totree(0);
-                    if (cur != END)
-                        error(no_comma_or_end);
-                    totree(TExprend);
-                }
+                    actstring();
                 else
                 {
                     exprassn(1);
                     toval();
                     if (!is_int(ansttype))
                         error(param_setmotor_not_int);
+                    if (func == SETMOTOR || func == VOLTAGE)
+                        sopnd -= 2;
+                    else
+                        --sopnd, anst = VAL;
                 }
                 totree(9500 - func);
+                if (func == SETMOTOR || func == VOLTAGE)
+                    sopnd-=2;
+                else
+                    anst = VAL, --sopnd;
             }
             else if (func == ABS && is_int(ansttype))
                     totree(ABSIC);
@@ -577,7 +619,7 @@ void postexpr()
 
 	if (next == LEFTBR)                // вызов функции
 	{
-		int i, j, n, dn, oldinass = inass, d;
+		int i, j, n, dn, oldinass = inass;
         was_func = 1;
 		scaner();
 		if (!is_function(leftansttyp))
@@ -615,41 +657,7 @@ void postexpr()
 			else
 			{
                 if (cur == BEGIN && is_array(mdj))
-                {
-                    totree(TString);
-                    do
-                    {
-                        if (scaner() == NUMBER && ansttype == LINT)
-                            totree(num);
-                        else
-                            error(wrong_init_in_actparam);
-                    }
-                    while (scaner() == COMMA);
-                    totree(0);
-                    if (cur != END)
-                        error(no_comma_or_end);
-                    totree(TExprend);
-/*                    int adusual;
-                    d = getstatic(mdj);
-                    totree(TIdenttoval);
-                    totree(d);
-
-                    totree(TDeclid);
-                    totree(d);                // displ
-                    totree(modetab[mdj+1]);   // elem_type
-                    totree(Norder(mdj));      // N
-                    totree(1);                // all
-                    totree(0);                // proc
-                    totree(adusual = 0);      // usual
-                    totree(0);                // instruct
-                    
-                    onlystrings = 2;
-                    array_init(mdj);
-                    if (onlystrings == 1)
-                        tree[adusual] = usual + 2;  // только из строк: 2 - без границ, 3 - с границами
-                    totree(TExprend);
- */
-                }
+                    actstring(), totree(TExprend);
                 else
                 {
                     inass = 0;
@@ -1162,6 +1170,7 @@ void array_init(int decl_type)                   // сейчас modetab[decl_ty
     {
         if (cur == STRING)
         {
+//            printf("cur= %i next= %i\n", cur, next);
             if (onlystrings == 0)
                 error(string_and_notstring);
             if (onlystrings == 2)
@@ -1397,59 +1406,63 @@ void statement()
 
             case PRINTF:
             {
-                int formatstr[MAXSTRINGL];
-                int formattypes[MAXPRINTFPARAMS];
-                int paramnum = 0;
-                int sumsize = 0;
-                int i = 0;
+                        int formatstr[MAXSTRINGL];
+                        int formattypes[MAXPRINTFPARAMS];
+                        int placeholders[MAXPRINTFPARAMS];
+                        int paramnum = 0;
+                        int sumsize = 0;
+                        int i = 0;
 
-                mustbe(LEFTBR, no_leftbr_in_printf);
-                if (next != STRING)
-                    error(wrong_first_printf_param);
+                        mustbe(LEFTBR, no_leftbr_in_printf);
+                        if (next != STRING)
+                            error(wrong_first_printf_param);
 
-                do
-                    formatstr[i] = lexstr[i];
-                while (lexstr[i++]);
+                        do
+                            formatstr[i] = lexstr[i];
+                        while (lexstr[i++]);
 
-                paramnum = evaluate_params(formatstr, formattypes);
+                        paramnum = evaluate_params(formatstr, formattypes, placeholders);
 
-                scaner();  //выкушиваем форматную строку
+                        scaner();  //выкушиваем форматную строку
 
-                for (i = 0; scaner() == COMMA; i++)
-                {
-                    if (i >= paramnum)
-                        error(wrong_printf_param_number);
+                        for (i = 0; scaner() == COMMA; i++)
+                        {
+                            if (i >= paramnum)
+                                error(wrong_printf_param_number);
 
-                    scaner();
+                            scaner();
 
-                    exprassn(1);
-                    toval();
-                    totree(TExprend);
+                            exprassn(1);
+                            toval();
+                            totree(TExprend);
 
-                    if (formattypes[i] == LFLOAT && ansttype == LINT)
-                        insertwiden();
-                    else if (formattypes[i] != ansttype)
-                        error(wrong_printf_param_type);
+                            if (formattypes[i] == LFLOAT && ansttype == LINT)
+                                insertwiden();
+                            else if (formattypes[i] != ansttype) {
+                                bad_printf_placeholder = placeholders[i];
+                                error(wrong_printf_param_type);
+                            }
 
-                    sumsize += szof(formattypes[i]);
-                    --sopnd;
-                }
+                            sumsize += szof(formattypes[i]);
+                            --sopnd;
+                        }
 
-                if (i != paramnum)
-                    error(wrong_printf_param_number);
+                        if (cur != RIGHTBR)
+                            error(no_rightbr_in_printf);
 
-                totree(TString);
+                        if (i != paramnum)
+                            error(wrong_printf_param_number);
 
-                i = 0;
-                do
-                    totree(formatstr[i]);
-                while (formatstr[i++]);
-                totree(TExprend);
+                        totree(TString);
 
-                totree(TPrintf);
-                totree(sumsize);
-                if (cur != RIGHTBR)
-                    error(no_rightbr_in_printf);
+                        i = 0;
+                        do
+                            totree(formatstr[i]);
+                        while (formatstr[i++]);
+                        totree(TExprend);
+
+                        totree(TPrintf);
+                        totree(sumsize);
             }
                 break;
 
@@ -2115,9 +2128,19 @@ void ext_decl()
     int i;
 	do            // top level описания переменных и функций до конца файла
 	{
-		int repeat = 1, funrepr, first = 1;
+		int repeat = 1, funrepr, first = 1, k = 1;
 		wasstructdef = 0;
 		scaner();
+        if (cur == SH_DEFINE)
+        {
+            mustbe(IDENT, no_ident_in_define);
+            if (scaner() == LMINUS)
+                scaner(), k = -1;
+            if (cur != NUMBER || ansttype != LINT)
+                error(not_int_in_define);
+            toidentab(-2, k * num);
+            continue;
+        }
 		firstdecl = gettype();
 		if (wasstructdef && next == SEMICOLON)
 		{                                      // struct point {float x, y;};
