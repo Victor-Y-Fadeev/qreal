@@ -41,10 +41,15 @@ HEADERS += \
 	$$PWD/include/iotikRuCGeneratorLibrary/iotikRuCGeneratorPluginBase.h \
 	$$PWD/include/iotikRuCGeneratorLibrary/iotikRuCGeneratorDefs.h \
 	$$PWD/src/iotikRuCMasterGenerator.h \
+	$$PWD/dialogs/iotikActivator.h \
 
 SOURCES += \
 	$$PWD/src/iotikRuCGeneratorPluginBase.cpp \
 	$$PWD/src/iotikRuCMasterGenerator.cpp \
+	$$PWD/dialogs/iotikActivator.cpp \
+
+FORMS += \
+	$$PWD/dialogs/iotikActivator.ui \
 
 RESOURCES += \
 	$$PWD/iotikRuCGeneratorLibrary.qrc \

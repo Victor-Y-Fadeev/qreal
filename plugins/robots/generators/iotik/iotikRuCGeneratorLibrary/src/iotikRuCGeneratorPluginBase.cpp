@@ -27,6 +27,7 @@
 #include <iotikKit/robotModel/iotikRobotModelBase.h>
 
 #include "iotikRuCMasterGenerator.h"
+#include "dialogs/iotikActivator.h"
 
 using namespace iotik::communication;
 using namespace iotik::ruc;
@@ -143,7 +144,11 @@ QString IotikRuCGeneratorPluginBase::generatorName() const
 
 void IotikRuCGeneratorPluginBase::activate()
 {
-	mMainWindowInterface->errorReporter()->addError(tr("Activator is not released yet"));
+	IotikActivator *activator = new IotikActivator(mMainWindowInterface->errorReporter());
+
+	activator->setWindowIcon(mActivateAction->icon());
+	activator->setWindowTitle(mActivateAction->text());
+	activator->show();
 }
 
 void IotikRuCGeneratorPluginBase::wifiUpload()
