@@ -24,7 +24,8 @@ WaitForSoundSensorGenerator::WaitForSoundSensorGenerator(const qrRepo::RepoApi &
 		, const Id &id
 		, QObject *parent)
 	: BindingGenerator(repo, customizer, id,
-					   repo.property(id, "Port").toString().at(0) == 'D' ? "wait/oneDigitalPort.t" : "wait/analogPort.t",
+					   repo.property(id, "Port").toString().at(0) == 'D' ?
+						   "wait/oneDigitalPort.t" : "wait/analogPort.t",
 					   QList<Binding *>()
 			<< Binding::createStatic("@@DRIVER@@", "SOUND")
 			<< Binding::createConverting("@@PORT@@", "Port", customizer.factory()->portNameConverter())

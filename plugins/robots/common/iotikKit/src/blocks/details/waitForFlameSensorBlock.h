@@ -27,7 +27,8 @@ class WaitForFlameSensorBlock : public kitBase::blocksBase::common::WaitForSenso
 
 public:
 	/// Constructor, takes current robot model as parameter.
-	WaitForFlameSensorBlock(kitBase::robotModel::RobotModelInterface &robotModel, const kitBase::robotModel::DeviceInfo &device);
+	WaitForFlameSensorBlock(kitBase::robotModel::RobotModelInterface &robotModel
+			, const kitBase::robotModel::DeviceInfo &device);
 
 protected slots:
 	void responseSlot(int reading) override;

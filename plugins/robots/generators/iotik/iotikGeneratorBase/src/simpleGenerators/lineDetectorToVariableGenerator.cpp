@@ -25,7 +25,8 @@ LineDetectorToVariableGenerator::LineDetectorToVariableGenerator(const qrRepo::R
 		, const Id &id
 		, QObject *parent)
 	: BindingGenerator(repo, customizer, id,
-					   repo.property(id, "Port").toString().at(0) == 'D' ? "sensors/oneVariableOneDigitalPort.t" : "sensors/analogPort.t",
+					   repo.property(id, "Port").toString().at(0) == 'D' ?
+						   "sensors/oneVariableOneDigitalPort.t" : "sensors/analogPort.t",
 					   QList<Binding *>()
 			<< Binding::createStatic("@@DRIVER@@", "LINE")
 			<< Binding::createConverting("@@PORT@@", "Port", customizer.factory()->portNameConverter())
