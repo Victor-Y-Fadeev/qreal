@@ -24,7 +24,7 @@ class IotikGeneratorRobotModel;
 
 namespace ruc {
 
-/// RuC generator specialization for IoTik v1.0 ("new case", with encoders marked as E1 - E4).
+/// RuC generator specialization for IoTik v2.0 ("new case", with encoders marked as E1 - E4).
 class IotikRuCEnglishGeneratorPlugin : public IotikRuCGeneratorPluginBase
 {
 	Q_OBJECT

@@ -82,7 +82,7 @@ QList<qReal::ActionInfo> IotikRuCGeneratorPluginBase::customActions()
 	qReal::ActionInfo separatorActionInfo(mSeparator, "generators", "tools");
 
 	mActivateAction->setObjectName("activate");
-	mActivateAction->setText(tr("Аctivate IoTik v1.0"));
+	mActivateAction->setText(tr("Аctivate IoTik v2.0"));
 	mActivateAction->setIcon(QIcon(":/iotik/ruc/images/activate.svg"));
 	qReal::ActionInfo activateActionInfo(mActivateAction, "generators", "tools");
 	connect(mActivateAction, SIGNAL(triggered()), this, SLOT(activate()), Qt::UniqueConnection);

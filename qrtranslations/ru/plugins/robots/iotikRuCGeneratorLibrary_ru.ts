@@ -46,8 +46,12 @@
     </message>
     <message>
         <location filename="../../../../plugins/robots/generators/iotik/iotikRuCGeneratorLibrary/src/iotikRuCGeneratorPluginBase.cpp" line="85"/>
+        <source>Аctivate IoTik v2.0</source>
+        <translation>Активировать ЙоТик v2.0</translation>
+    </message>
+    <message>
         <source>Аctivate IoTik v1.0</source>
-        <translation>Активировать ЙоТик v1.0</translation>
+        <translation type="vanished">Активировать ЙоТик v1.0</translation>
     </message>
     <message>
         <location filename="../../../../plugins/robots/generators/iotik/iotikRuCGeneratorLibrary/src/iotikRuCGeneratorPluginBase.cpp" line="100"/>
