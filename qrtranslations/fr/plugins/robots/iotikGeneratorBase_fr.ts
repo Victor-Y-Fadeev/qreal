@@ -9,23 +9,33 @@
         <translation>Configuration de Iotik</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/iotik/iotikGeneratorBase/widgets/iotikAdditionalPreferences.ui" line="35"/>
+        <location filename="../../../../plugins/robots/generators/iotik/iotikGeneratorBase/widgets/iotikAdditionalPreferences.ui" line="39"/>
+        <source>TCP Settings</source>
+        <translation>Configuration de TCP</translation>
+    </message>
+    <message>
+        <location filename="../../../../plugins/robots/generators/iotik/iotikGeneratorBase/widgets/iotikAdditionalPreferences.ui" line="45"/>
+        <source>Enter robot IP-address here</source>
+        <translation>Tapez l&apos;adresse IP du robot ici</translation>
+    </message>
+    <message>
+        <location filename="../../../../plugins/robots/generators/iotik/iotikGeneratorBase/widgets/iotikAdditionalPreferences.ui" line="55"/>
         <source>USB Settings</source>
         <translation>Paramètres USB</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/iotik/iotikGeneratorBase/widgets/iotikAdditionalPreferences.ui" line="41"/>
-        <location filename="../../../../plugins/robots/generators/iotik/iotikGeneratorBase/widgets/iotikAdditionalPreferences.ui" line="58"/>
+        <location filename="../../../../plugins/robots/generators/iotik/iotikGeneratorBase/widgets/iotikAdditionalPreferences.ui" line="61"/>
+        <location filename="../../../../plugins/robots/generators/iotik/iotikGeneratorBase/widgets/iotikAdditionalPreferences.ui" line="78"/>
         <source>COM Port:</source>
         <translation>Port série :</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/iotik/iotikGeneratorBase/widgets/iotikAdditionalPreferences.ui" line="68"/>
+        <location filename="../../../../plugins/robots/generators/iotik/iotikGeneratorBase/widgets/iotikAdditionalPreferences.ui" line="88"/>
         <source>No COM ports found. If you have a USB connection with active virtual COM port, please enter its name. Example: COM3</source>
         <translation>Aucu port série n&apos;est détecté. Si vous avez une connexion Bluetooth avec un port série virtuel actif, tapez son nom. Par exemple : COM3</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/iotik/iotikGeneratorBase/widgets/iotikAdditionalPreferences.ui" line="78"/>
+        <location filename="../../../../plugins/robots/generators/iotik/iotikGeneratorBase/widgets/iotikAdditionalPreferences.ui" line="98"/>
         <source>Specify COM port manually</source>
         <translation>Spécifiez le port en série manuellement</translation>
     </message>

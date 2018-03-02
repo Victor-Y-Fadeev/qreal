@@ -9,23 +9,33 @@
         <translation>Настройки IoTik</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/iotik/iotikGeneratorBase/widgets/iotikAdditionalPreferences.ui" line="35"/>
+        <location filename="../../../../plugins/robots/generators/iotik/iotikGeneratorBase/widgets/iotikAdditionalPreferences.ui" line="39"/>
+        <source>TCP Settings</source>
+        <translation>Настройки TCP</translation>
+    </message>
+    <message>
+        <location filename="../../../../plugins/robots/generators/iotik/iotikGeneratorBase/widgets/iotikAdditionalPreferences.ui" line="45"/>
+        <source>Enter robot IP-address here</source>
+        <translation>Введите IP-адрес робота</translation>
+    </message>
+    <message>
+        <location filename="../../../../plugins/robots/generators/iotik/iotikGeneratorBase/widgets/iotikAdditionalPreferences.ui" line="55"/>
         <source>USB Settings</source>
         <translation>Настройки USB</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/iotik/iotikGeneratorBase/widgets/iotikAdditionalPreferences.ui" line="41"/>
-        <location filename="../../../../plugins/robots/generators/iotik/iotikGeneratorBase/widgets/iotikAdditionalPreferences.ui" line="58"/>
+        <location filename="../../../../plugins/robots/generators/iotik/iotikGeneratorBase/widgets/iotikAdditionalPreferences.ui" line="61"/>
+        <location filename="../../../../plugins/robots/generators/iotik/iotikGeneratorBase/widgets/iotikAdditionalPreferences.ui" line="78"/>
         <source>COM Port:</source>
         <translation>COM-Порт:</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/iotik/iotikGeneratorBase/widgets/iotikAdditionalPreferences.ui" line="68"/>
+        <location filename="../../../../plugins/robots/generators/iotik/iotikGeneratorBase/widgets/iotikAdditionalPreferences.ui" line="88"/>
         <source>No COM ports found. If you have a USB connection with active virtual COM port, please enter its name. Example: COM3</source>
         <translation>COM-порты не найдены. Если установлено USB-соединение с активным COM-портом, пожалуйста, укажите его имя. Пример: COM3</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/iotik/iotikGeneratorBase/widgets/iotikAdditionalPreferences.ui" line="78"/>
+        <location filename="../../../../plugins/robots/generators/iotik/iotikGeneratorBase/widgets/iotikAdditionalPreferences.ui" line="98"/>
         <source>Specify COM port manually</source>
         <translation>Указать COM-порт вручную</translation>
     </message>

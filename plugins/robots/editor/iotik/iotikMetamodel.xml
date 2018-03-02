@@ -167,7 +167,7 @@
 				</logic>
 			</node>
 
-			<node displayedName="MOSFET" name="IotikMosfet" description="">
+			<node displayedName="Mosfet" name="IotikMosfet" description="">
 				<graphics>
 					<picture sizex="50" sizey="50">
 						<image y1="0" name="images/mosfetBlock.svg" x1="0" y2="50" x2="50"/>
