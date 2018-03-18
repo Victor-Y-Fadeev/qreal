@@ -16,7 +16,7 @@ TARGET = ruc
 
 include(../../../../global.pri)
 
-copyToDestdir(keywords.txt, NOW)
+copyToDestdir(ruc/keywords.txt, NOW)
 
 TEMPLATE = app
 
@@ -25,20 +25,20 @@ CONFIG(clang) {
 }
 
 HEADERS += \
-	$$PWD/RuC/Defs.h \
-	$$PWD/RuC/global_vars.h \
-	$$PWD/RuC/th_static.h \
+	$$PWD/ruc/RuC/Defs.h \
+	$$PWD/ruc/RuC/global_vars.h \
+	$$PWD/ruc/RuC/th_static.h \
 
 SOURCES += \
-	$$PWD/RuC/codegen.c \
-	$$PWD/RuC/codes.c \
-	$$PWD/RuC/error.c \
-	$$PWD/RuC/extdecl.c \
-	$$PWD/RuC/import.c \
-	$$PWD/RuC/main.c \
-	$$PWD/RuC/preprocessor.c \
-	$$PWD/RuC/scaner.c \
-	$$PWD/RuC/threads.c \
+	$$PWD/ruc/RuC/codegen.c \
+	$$PWD/ruc/RuC/codes.c \
+	$$PWD/ruc/RuC/error.c \
+	$$PWD/ruc/RuC/extdecl.c \
+	$$PWD/ruc/RuC/import.c \
+	$$PWD/ruc/RuC/main.c \
+	$$PWD/ruc/RuC/preprocessor.c \
+	$$PWD/ruc/RuC/scaner.c \
+	$$PWD/ruc/RuC/threads.c \
 
 RESOURCES += \
 	$$PWD/ruc.qrc \

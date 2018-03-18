@@ -1,5 +1,5 @@
 <RCC>
     <qresource prefix="/">
-        <file>keywords.txt</file>
+        <file>ruc/keywords.txt</file>
     </qresource>
 </RCC>
