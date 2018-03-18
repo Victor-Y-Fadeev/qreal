@@ -1,4 +1,6 @@
 [submodule "plugins/robots/thirdparty/trikRuntime"]
 	path = plugins/robots/thirdparty/trikRuntime/trikRuntime
 	url = https://github.com/trikset/trikRuntime.git
-[submodule "plugins/robots/thirdparty/ruc/ruc"]	path = plugins/robots/thirdparty/ruc/ruc	url = https://github.com/andrey-terekhov/RuC.git
+[submodule "plugins/robots/thirdparty/ruc"]
+	path = plugins/robots/thirdparty/ruc/ruc
+	url = https://github.com/andrey-terekhov/RuC.git
