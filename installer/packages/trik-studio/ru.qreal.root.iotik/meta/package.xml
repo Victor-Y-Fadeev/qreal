@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<Package>
+    <DisplayName>IoTik v2.0 support</DisplayName>
+    <DisplayName xml:lang="ru_ru">Поддержка ЙоТик v2.0</DisplayName>
+    <Description>Install it for working with IoTik v2.0 in TRIK Studio</Description>
+    <Description xml:lang="ru_ru">Установите это для программирования ЙоТик v2.0</Description>
+    <Version>3.2.0-4</Version>
+    <ReleaseDate>2018-03-20</ReleaseDate>
+    <SortingPriority>18</SortingPriority>
+    <Default>false</Default>
+    <ForcedInstallation>false</ForcedInstallation>
+</Package>
