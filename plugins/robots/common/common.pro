@@ -20,10 +20,12 @@ SUBDIRS = \
 	nxtKit \
 	trikKit \
 	ev3Kit \
+	pioneerKit \
 	iotikKit \
 
 twoDModel.depends = kitBase
 nxtKit.depends = twoDModel
 trikKit.depends = twoDModel
 ev3Kit.depends = twoDModel
+pioneerKit.depends = kitBase
 iotikKit.depends = twoDModel
