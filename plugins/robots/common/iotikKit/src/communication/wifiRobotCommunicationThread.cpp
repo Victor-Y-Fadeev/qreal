@@ -60,7 +60,7 @@ bool WifiRobotCommunicationThread::connect()
 	const QString hostName = qReal::SettingsManager::value("IotikTcpServer").toString();
 	mSocet = new QTcpSocket();
 
-	mSocet->connectToHost(hostName, 80);
+	mSocet->connectToHost(hostName, 3000);
 	emit connected(true, "Error!");
 
 	return true;

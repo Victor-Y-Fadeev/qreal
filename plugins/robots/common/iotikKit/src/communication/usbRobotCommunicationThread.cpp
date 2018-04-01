@@ -104,7 +104,7 @@ bool UsbRobotCommunicationThread::response()
 
 	mPort->read(answer, 255);
 
-	return answer[strlen(answer) - 3] == '1';
+	return (strlen(answer) >= 3) && (answer[strlen(answer) - 3] == '0');
 }
 
 void UsbRobotCommunicationThread::sendFile(const QString filename)
