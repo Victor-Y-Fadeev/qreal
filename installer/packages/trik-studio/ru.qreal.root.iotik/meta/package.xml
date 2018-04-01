@@ -6,7 +6,7 @@
     <Description xml:lang="ru_ru">Установите это для программирования ЙоТик v2.0</Description>
     <Version>3.2.0-4</Version>
     <ReleaseDate>2018-03-20</ReleaseDate>
-    <SortingPriority>18</SortingPriority>
-    <Default>false</Default>
+    <SortingPriority>17</SortingPriority>
+    <Default>true</Default>
     <ForcedInstallation>false</ForcedInstallation>
 </Package>
