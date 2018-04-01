@@ -17,6 +17,7 @@
 #include <QDialog>
 
 #include <kitBase/kitPluginInterface.h>
+#include <iotikKit/communication/usbRobotCommunicationThread.h>
 
 namespace Ui {
 class IotikActivator;
@@ -38,6 +39,7 @@ private slots:
 
 private:
 	ErrorReporterInterface *mErrorReporter;
+	communication::UsbRobotCommunicationThread *mUsbCommunicator;
 	Ui::IotikActivator *mUi;
 
 	QString keyLine();

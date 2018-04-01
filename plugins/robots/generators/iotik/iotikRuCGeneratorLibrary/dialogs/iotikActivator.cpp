@@ -15,7 +15,10 @@
 #include "iotikActivator.h"
 #include "ui_iotikActivator.h"
 
+#include <iotikKit/communication/usbRobotCommunicationThread.h>
+
 using namespace qReal::gui;
+using namespace iotik::communication;
 using namespace iotik;
 
 IotikActivator::IotikActivator(
@@ -23,6 +26,7 @@ IotikActivator::IotikActivator(
 		, QWidget *parent)
 	: QDialog(parent)
 	, mErrorReporter(errorReporter)
+	, mUsbCommunicator(new UsbRobotCommunicationThread())
 	, mUi(new Ui::IotikActivator)
 {
 	mUi->setupUi(this);
@@ -40,6 +44,8 @@ QString IotikActivator::keyLine()
 
 void IotikActivator::on_activateButton_clicked()
 {
-	mErrorReporter->addError(tr("Activator is not released yet"));
+	mUsbCommunicator->connect();
+	mUsbCommunicator->sendCommand("auth " + keyLine());
+	mUsbCommunicator->disconnect();
 	this->close();
 }
