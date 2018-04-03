@@ -165,6 +165,7 @@ void IotikRuCGeneratorPluginBase::wifiUpload()
 
 	mWifiCommunicator->connect();
 	mWifiCommunicator->sendFile("wifi_export.txt");
+	mWifiCommunicator->sendCommand("ruc /fat/wifi_export.txt");
 	mWifiCommunicator->disconnect();
 
 	QFile::remove(rootPath + "/wifi_export.txt");
@@ -182,6 +183,7 @@ void IotikRuCGeneratorPluginBase::usbUpload()
 
 	mUsbCommunicator->connect();
 	mUsbCommunicator->sendFile("export.txt");
+	mUsbCommunicator->sendCommand("ruc /fat/export.txt");
 	mUsbCommunicator->disconnect();
 
 	QFile::remove(rootPath + "/export.txt");

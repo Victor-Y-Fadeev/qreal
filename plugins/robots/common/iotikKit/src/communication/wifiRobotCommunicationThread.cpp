@@ -87,10 +87,19 @@ void WifiRobotCommunicationThread::allowLongJobs(bool allow)
 	Q_UNUSED(allow)
 }
 
+void WifiRobotCommunicationThread::sendCommand(const QString command)
+{
+	mSocet->write(QByteArray::fromStdString(command.toStdString()));
+	QThread::msleep(500);
+}
+
 void WifiRobotCommunicationThread::sendFile(const QString filename)
 {
 	QFile sfile(filename);
 	sfile.open(QIODevice::ReadOnly);
+
+	QString command = "filereceive /fat/" + sfile.fileName() + " " + QString::number(size) + "\n";
+	sendCommand(command);
 
 	QByteArray data = sfile.readAll();
 	send(data);

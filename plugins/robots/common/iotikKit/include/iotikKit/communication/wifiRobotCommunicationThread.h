@@ -38,6 +38,7 @@ public slots:
 
 	void allowLongJobs(bool allow = true) override;
 
+	void sendCommand(const QString command);
 	void sendFile(const QString filename);
 
 private slots:
