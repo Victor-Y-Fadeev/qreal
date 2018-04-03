@@ -98,6 +98,8 @@ void WifiRobotCommunicationThread::sendFile(const QString filename)
 	QFile sfile(filename);
 	sfile.open(QIODevice::ReadOnly);
 
+	int size = sfile.size();
+
 	QString command = "filereceive /fat/" + sfile.fileName() + " " + QString::number(size) + "\n";
 	sendCommand(command);
 

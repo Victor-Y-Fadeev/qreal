@@ -118,9 +118,9 @@ void UsbRobotCommunicationThread::sendFile(const QString filename)
 	QString command = "filereceive /fat/" + sfile.fileName() + " " + QString::number(size) + "\n";
 	sendCommand(command);
 
-	if (!response()) {
+	/*if (!response()) {
 		block = size;
-	}
+	}*/
 
 	while (size > 0) {
 			QByteArray data = sfile.read(size > block ? block : size);
