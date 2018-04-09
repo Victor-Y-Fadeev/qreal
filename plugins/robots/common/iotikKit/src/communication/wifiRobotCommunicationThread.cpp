@@ -61,6 +61,7 @@ bool WifiRobotCommunicationThread::connect()
 	mSocet = new QTcpSocket();
 
 	mSocet->connectToHost(hostName, 3000);
+	mSocet->waitForConnected();
 	emit connected(true, "Error!");
 
 	return true;
@@ -75,6 +76,7 @@ void WifiRobotCommunicationThread::disconnect()
 {
 	if (mSocet) {
 		mSocet->close();
+		mSocet->waitForDisconnected();
 		delete mSocet;
 		mSocet = nullptr;
 	}
@@ -90,7 +92,7 @@ void WifiRobotCommunicationThread::allowLongJobs(bool allow)
 void WifiRobotCommunicationThread::sendCommand(const QString command)
 {
 	mSocet->write(QByteArray::fromStdString(command.toStdString()));
-	QThread::msleep(500);
+	mSocet->waitForBytesWritten();
 }
 
 void WifiRobotCommunicationThread::sendFile(const QString filename)
@@ -105,6 +107,7 @@ void WifiRobotCommunicationThread::sendFile(const QString filename)
 
 	QByteArray data = sfile.readAll();
 	send(data);
+	mSocet->waitForBytesWritten();
 
 	sfile.close();
 }
