@@ -98,15 +98,6 @@ void UsbRobotCommunicationThread::sendCommand(const QString command)
 	QThread::msleep(500);
 }
 
-bool UsbRobotCommunicationThread::response()
-{
-	char answer[256] = {'\0'};
-
-	mPort->read(answer, 255);
-
-	return (strlen(answer) >= 3) && (answer[strlen(answer) - 3] == '0');
-}
-
 void UsbRobotCommunicationThread::sendFile(const QString filename)
 {
 	QFile sfile(filename);
@@ -117,10 +108,6 @@ void UsbRobotCommunicationThread::sendFile(const QString filename)
 
 	QString command = "filereceive /fat/" + sfile.fileName() + " " + QString::number(size) + "\n";
 	sendCommand(command);
-
-	/*if (!response()) {
-		block = size;
-	}*/
 
 	while (size > 0) {
 			QByteArray data = sfile.read(size > block ? block : size);

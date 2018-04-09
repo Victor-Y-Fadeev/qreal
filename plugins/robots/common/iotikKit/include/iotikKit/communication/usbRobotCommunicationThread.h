@@ -49,8 +49,6 @@ private:
 	bool send(QObject *addressee, const QByteArray &buffer, int responseSize);
 	bool send(const QByteArray &buffer, int responseSize, QByteArray &outputBuffer);
 
-	bool response();
-
 	QextSerialPort *mPort;
 
 };
