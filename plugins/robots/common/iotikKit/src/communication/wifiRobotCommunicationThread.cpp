@@ -93,6 +93,7 @@ void WifiRobotCommunicationThread::sendCommand(const QString command)
 {
 	mSocet->write(QByteArray::fromStdString(command.toStdString()));
 	mSocet->waitForBytesWritten();
+	QThread::msleep(250);
 }
 
 void WifiRobotCommunicationThread::sendFile(const QString filename)
@@ -101,13 +102,18 @@ void WifiRobotCommunicationThread::sendFile(const QString filename)
 	sfile.open(QIODevice::ReadOnly);
 
 	int size = sfile.size();
+	int block = 2048;
 
 	QString command = "filereceive /fat/" + sfile.fileName() + " " + QString::number(size) + "\n";
 	sendCommand(command);
 
-	QByteArray data = sfile.readAll();
-	send(data);
-	mSocet->waitForBytesWritten();
+	while (size > 0) {
+			QByteArray data = sfile.read(size > block ? block : size);
+			send(data);
+			mSocet->waitForBytesWritten();
+			QThread::msleep(25);
+			size -= block;
+	}
 
 	sfile.close();
 }

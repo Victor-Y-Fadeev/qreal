@@ -95,6 +95,7 @@ void UsbRobotCommunicationThread::allowLongJobs(bool allow)
 void UsbRobotCommunicationThread::sendCommand(const QString command)
 {
 	mPort->write(QByteArray::fromStdString(command.toStdString()));
+	mPort->waitForBytesWritten(30000);
 	QThread::msleep(500);
 }
 
@@ -112,6 +113,7 @@ void UsbRobotCommunicationThread::sendFile(const QString filename)
 	while (size > 0) {
 			QByteArray data = sfile.read(size > block ? block : size);
 			send(data);
+			mPort->waitForBytesWritten(30000);
 			QThread::msleep(25);
 			size -= block;
 	}
