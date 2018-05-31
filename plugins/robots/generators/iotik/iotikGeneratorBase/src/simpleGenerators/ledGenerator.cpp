@@ -25,7 +25,8 @@ LedGenerator::LedGenerator(const qrRepo::RepoApi &repo
 		, QObject *parent)
 	: BindingGenerator(repo, customizer, id, "sensors/voltagePort.t", QList<Binding *>()
 			<< Binding::createConverting("@@PORT@@", "Port", customizer.factory()->portNameConverter())
-			<< Binding::createConverting("@@VALUE@@", "Status"
+			<< Binding::createStaticConverting("@@VALUE@@"
+					, repo.property(id, "Status").toString().compare("false") == 0 ? "0" : "255"
 					, customizer.factory()->boolPropertyConverter(id, "Status", false))
 			, parent)
 {

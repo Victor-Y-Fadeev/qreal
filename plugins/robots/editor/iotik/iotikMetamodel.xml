@@ -5,42 +5,64 @@
 	<diagram name="RobotsDiagram">
 		<nonGraphicTypes>
 			<enum name="IotikDigitalSensorPort">
-				<value name="D0"/>
-				<value name="D1"/>
-				<value name="D2"/>
-				<value name="D3"/>
-				<value name="D4"/>
 				<value name="D5"/>
-				<value name="D6"/>
-				<value name="D7"/>
+				<value name="D12"/>
+				<value name="D13"/>
+				<value name="D14"/>
+				<value name="D15"/>
+				<value name="D16"/>
+				<value name="D17"/>
+				<value name="D18"/>
+				<value name="D19"/>
+				<value name="D21"/>
+				<value name="D22"/>
+				<value name="D23"/>
 			</enum>
 			<enum name="IotikAnalogSensorPort">
-				<value name="A0"/>
-				<value name="A1"/>
-				<value name="A2"/>
-				<value name="A3"/>
 				<value name="A4"/>
 				<value name="A5"/>
 				<value name="A6"/>
 				<value name="A7"/>
+				<value name="A18"/>
+				<value name="A19"/>
 			</enum>
 			<enum name="IotikUniversalSensorPort">
-				<value name="A0"/>
-				<value name="A1"/>
-				<value name="A2"/>
-				<value name="A3"/>
-				<value name="A4"/>
-				<value name="A5"/>
-				<value name="A6"/>
-				<value name="A7"/>
-				<value name="D0"/>
-				<value name="D1"/>
-				<value name="D2"/>
-				<value name="D3"/>
-				<value name="D4"/>
-				<value name="D5"/>
-				<value name="D6"/>
-				<value name="D7"/>
+			    <value name="D5"/>
+			    <value name="D12"/>
+			    <value name="D13"/>
+			    <value name="D14"/>
+			    <value name="D15"/>
+			    <value name="D16"/>
+			    <value name="D17"/>
+			    <value name="D18"/>
+			    <value name="D19"/>
+			    <value name="D21"/>
+			    <value name="D22"/>
+			    <value name="D23"/>
+			    <value name="A4"/>
+			    <value name="A5"/>
+			    <value name="A6"/>
+			    <value name="A7"/>
+			    <value name="A18"/>
+			    <value name="A19"/>
+			</enum>
+			<enum name="IotikWritePort">
+			    <value name="D5"/>
+			    <value name="D12"/>
+			    <value name="D13"/>
+			    <value name="D14"/>
+			    <value name="D15"/>
+			    <value name="D16"/>
+			    <value name="D17"/>
+			    <value name="D18"/>
+			    <value name="D19"/>
+			    <value name="D21"/>
+			    <value name="D22"/>
+			    <value name="D23"/>
+			    <value name="A4"/>
+			    <value name="A5"/>
+			    <value name="A18"/>
+			    <value name="A19"/>
 			</enum>
 		</nonGraphicTypes>
 		<graphicTypes>
@@ -50,7 +72,7 @@
 					<container/>
 					<properties>
 						<property displayedName="Ports" type="string" name="Ports" >
-							<default>M0, M1</default>
+							<default>MA, MB</default>
 						</property>
 					</properties>
 					<generalizations>
@@ -111,7 +133,7 @@
 					</generalizations>
 					<properties>
 						<property displayedName="Ports" type="string" name="Ports">
-							<default>M0, M1</default>
+							<default>MA, MB</default>
 						</property>
 					</properties>
 				</logic>
@@ -132,7 +154,7 @@
 					<container/>
 					<properties>
 						<property displayedName="Port" type="IotikAnalogSensorPort" name="Port">
-							<default>A0</default>
+							<default>A4</default>
 						</property>
 					</properties>
 					<generalizations>
@@ -145,7 +167,7 @@
 					<container/>
 					<properties>
 						<property displayedName="Port" type="IotikDigitalSensorPort" name="Port">
-							<default>D0</default>
+							<default>D5</default>
 						</property>
 					</properties>
 					<generalizations>
@@ -158,7 +180,7 @@
 					<container/>
 					<properties>
 						<property displayedName="Port" type="IotikUniversalSensorPort" name="Port">
-							<default>D0</default>
+							<default>D5</default>
 						</property>
 					</properties>
 					<generalizations>
@@ -166,6 +188,20 @@
 					</generalizations>
 				</logic>
 			</node>
+			<node name="IotikWriteBlock">
+				<logic>
+					<container/>
+					<properties>
+						<property displayedName="Port" type="IotikWritePort" name="Port">
+							<default>D5</default>
+						</property>
+					</properties>
+					<generalizations>
+						<parent parentName="IotikSensorBlock"/>
+					</generalizations>
+				</logic>
+			</node>
+
 
 			<node displayedName="Mosfet" name="IotikMosfet" description="">
 				<graphics>
@@ -186,7 +222,7 @@
 					</properties>
 					<container/>
 					<generalizations>
-						<parent parentName="IotikAnalogSensorBlock"/>
+						<parent parentName="IotikWriteBlock"/>
 					</generalizations>
 				</logic>
 			</node>
@@ -209,7 +245,7 @@
 					</properties>
 					<container/>
 					<generalizations>
-						<parent parentName="IotikDigitalSensorBlock"/>
+						<parent parentName="IotikWriteBlock"/>
 					</generalizations>
 				</logic>
 			</node>
@@ -234,19 +270,19 @@
 				<logic>
 					<properties>
 						<property displayedName="S0" type="IotikDigitalSensorPort" name="S0">
-							<default>D0</default>
+							<default>D12</default>
 						</property>
 						<property displayedName="S1" type="IotikDigitalSensorPort" name="S1">
-							<default>D0</default>
+							<default>D13</default>
 						</property>
 						<property displayedName="S2" type="IotikDigitalSensorPort" name="S2">
-							<default>D0</default>
+							<default>D14</default>
 						</property>
 						<property displayedName="S3" type="IotikDigitalSensorPort" name="S3">
-							<default>D0</default>
+							<default>D15</default>
 						</property>
 						<property displayedName="OUT" type="IotikDigitalSensorPort" name="OUT">
-							<default>D0</default>
+							<default>D5</default>
 						</property>
 						<property displayedName="Red" type="string" name="Red">
 							<default>red</default>
@@ -282,10 +318,10 @@
 				<logic>
 					<properties>
 						<property displayedName="SDA" type="IotikDigitalSensorPort" name="SDA">
-							<default>D0</default>
+							<default>D21</default>
 						</property>
 						<property displayedName="SCL" type="IotikDigitalSensorPort" name="SCL">
-							<default>D0</default>
+							<default>D22</default>
 						</property>
 						<property displayedName="X" type="string" name="X">
 							<default>x</default>
@@ -391,10 +427,10 @@
 					<container/>
 					<properties>
 						<property displayedName="Trig" type="IotikDigitalSensorPort" name="Trig">
-							<default>D0</default>
+							<default>D12</default>
 						</property>
 						<property displayedName="Echo" type="IotikDigitalSensorPort" name="Echo">
-							<default>D0</default>
+							<default>D13</default>
 						</property>
 						<property displayedName="Distance" type="string" name="Distance">
 							<default>0</default>
