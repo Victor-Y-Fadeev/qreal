@@ -163,10 +163,11 @@ void IotikRuCGeneratorPluginBase::wifiUpload()
 
 	QFile::rename(rootPath + "/export.txt", rootPath + "/wifi_export.txt");
 
-	mWifiCommunicator->connect();
-	mWifiCommunicator->sendFile("wifi_export.txt");
-	mWifiCommunicator->sendCommand("ruc /fat/wifi_export.txt");
-	mWifiCommunicator->disconnect();
+	if (mWifiCommunicator->connect()) {
+		mWifiCommunicator->sendFile("wifi_export.txt");
+		mWifiCommunicator->sendCommand("ruc /fat/wifi_export.txt\n");
+		mWifiCommunicator->disconnect();
+	}
 
 	QFile::remove(rootPath + "/wifi_export.txt");
 }
@@ -181,10 +182,11 @@ void IotikRuCGeneratorPluginBase::usbUpload()
 		return;
 	}
 
-	mUsbCommunicator->connect();
-	mUsbCommunicator->sendFile("export.txt");
-	mUsbCommunicator->sendCommand("ruc /fat/export.txt");
-	mUsbCommunicator->disconnect();
+	if (mUsbCommunicator->connect()) {
+		mUsbCommunicator->sendFile("export.txt");
+		mUsbCommunicator->sendCommand("ruc /fat/export.txt\n");
+		mUsbCommunicator->disconnect();
+	}
 
 	QFile::remove(rootPath + "/export.txt");
 }

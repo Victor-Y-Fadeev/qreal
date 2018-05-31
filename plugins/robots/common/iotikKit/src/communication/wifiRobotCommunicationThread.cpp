@@ -61,10 +61,10 @@ bool WifiRobotCommunicationThread::connect()
 	mSocet = new QTcpSocket();
 
 	mSocet->connectToHost(hostName, 3000);
-	mSocet->waitForConnected();
+	mSocet->waitForConnected(500);
 	emit connected(true, "Error!");
 
-	return true;
+	return mSocet && mSocet->isOpen();
 }
 
 void WifiRobotCommunicationThread::reconnect()
