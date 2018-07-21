@@ -67,7 +67,7 @@ const QString IotikMasterGeneratorBase::inputCode(const QString &path)
 void IotikMasterGeneratorBase::renameThreads(QString &code)
 {
 	const QString threadName = "thread_";
-	const QRegExp definition("[\\w]{32,32},\\s[\\w]+");
+	const QRegExp definition("[\\w]+,\\s@@[{]?[\\w\\-]+[}]?@@");
 
 	QString name;
 	QStringList parts;
@@ -82,5 +82,12 @@ void IotikMasterGeneratorBase::renameThreads(QString &code)
 		index++;
 	}
 
-	code.replace("(main)", "(0)");
+	const QRegExp lost("@@[{]?[\\w\\-]+[}]?@@");
+	while (lost.indexIn(code) != -1) {
+		name = lost.cap(0);
+		code.replace(name, QString::number(index));
+		index++;
+	}
+
+	code.replace("(@@main@@)", "(0)");
 }
