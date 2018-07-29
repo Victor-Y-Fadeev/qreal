@@ -112,6 +112,32 @@
 					</generalizations>
 				</logic>
 			</node>
+			<node displayedName="Angular Servo" name="IotikAngularServo" description="Manages angular servomotor. Sets up rotation angle on the given port in degrees. Values from 0 to 90 are correspond to a clockwise rotation and values from -90 to 0 correspond to counterclockwise rotation.">
+				<graphics>
+					<picture sizex="50" sizey="50">
+						<image y1="0" name="images/angularServoBlock.png" x1="0" y2="50" x2="50"/>
+					</picture>
+					<labels>
+						<label x="25" y="-35" textBinded="Ports" hard="true" background="white" prefix="Ports:"/>
+						<label x="35" y="60" textBinded="Power" background="white" prefix="Angle:" suffix="°"/>
+					</labels>
+					<nonResizeable/>
+				</graphics>
+				<logic>
+					<container/>
+					<generalizations>
+						<parent parentName="EngineCommand"/>
+					</generalizations>
+					<properties>
+						<property displayedName="Ports" type="string" name="Ports">
+							<default>D5</default>
+						</property>
+						<property displayedName="Angle (degrees)" type="string" name="Power">
+							<default>0</default>
+						</property>
+					</properties>
+				</logic>
+			</node>
 			<node displayedName="Stop Motors" name="IotikEnginesStop" path="49, 117 : 185, 117 :  | 223, 118 : 222, 128 : 221, 138 : 218, 148 : 215, 158 : 211, 167 : 205, 176 : 199, 184 : 192, 192 : 184, 199 : 176, 205 : 167, 211 : 158, 215 : 148, 218 : 138, 221 : 128, 222 : 118, 223 : 108, 222 : 98, 221 : 88, 218 : 78, 215 : 69, 211 : 60, 205 : 52, 199 : 44, 192 : 37, 184 : 31, 176 : 25, 167 : 21, 158 : 18, 148 : 15, 138 : 14, 128 : 13, 118 : 14, 108 : 15, 98 : 18, 88 : 21, 78 : 25, 69 : 31, 60 : 37, 52 : 44, 44 : 52, 37 : 60, 31 : 69, 25 : 78, 21 : 88, 18 : 98, 15 : 108, 14 : 118, 13 : 128, 14 : 138, 15 : 148, 18 : 158, 21 : 167, 25 : 176, 31 : 184, 37 : 192, 44 : 199, 52 : 205, 60 : 211, 69 : 215, 78 : 218, 88 : 221, 98 : 222, 108 : 223, 118 : " description="Disables motors on the given ports.">
 				<graphics>
 					<picture sizex="50" sizey="50">
@@ -360,6 +386,75 @@
 					</generalizations>
 				</logic>
 			</node>
+			<node displayedName="Soil Sensor into Variable" name="IotikSoilSensorToVariable" description="">
+				<graphics>
+					<picture sizex="50" sizey="50">
+						<image y1="0" name="images/soilSensorIntoVariableBlock.svg" x1="0" y2="50" x2="50"/>
+					</picture>
+					<labels>
+						<label x="40" y="-35" textBinded="Port" hard="true" prefix="Port:"/>
+						<label x="-50" y="60" text="Soil Sensor into Variable" background="white"/>
+						<label x="40" y="90" textBinded="Variable" background="white" prefix="Variable:"/>
+					</labels>
+					<nonResizeable/>
+				</graphics>
+				<logic>
+					<properties>
+						<property displayedName="Variable" type="string" name="Variable">
+							<default>moisture</default>
+						</property>
+					</properties>
+					<generalizations>
+						<parent parentName="IotikUniversalSensorBlock"/>
+					</generalizations>
+				</logic>
+			</node>
+			<node displayedName="Water Sensor into Variable" name="IotikWaterSensorToVariable" description="">
+				<graphics>
+					<picture sizex="50" sizey="50">
+						<image y1="0" name="images/waterSensorIntoVariableBlock.svg" x1="0" y2="50" x2="50"/>
+					</picture>
+					<labels>
+						<label x="40" y="-35" textBinded="Port" hard="true" prefix="Port:"/>
+						<label x="-50" y="60" text="Water Sensor into Variable" background="white"/>
+						<label x="40" y="90" textBinded="Variable" background="white" prefix="Variable:"/>
+					</labels>
+					<nonResizeable/>
+				</graphics>
+				<logic>
+					<properties>
+						<property displayedName="Variable" type="string" name="Variable">
+							<default>water</default>
+						</property>
+					</properties>
+					<generalizations>
+						<parent parentName="IotikUniversalSensorBlock"/>
+					</generalizations>
+				</logic>
+			</node>
+			<node displayedName="Flow Sensor into Variable" name="IotikFlowSensorToVariable" description="">
+				<graphics>
+					<picture sizex="50" sizey="50">
+						<image y1="0" name="images/flowSensorIntoVariableBlock.svg" x1="0" y2="50" x2="50"/>
+					</picture>
+					<labels>
+						<label x="40" y="-35" textBinded="Port" hard="true" prefix="Port:"/>
+						<label x="-50" y="60" text="Flow Sensor into Variable" background="white"/>
+						<label x="40" y="90" textBinded="Variable" background="white" prefix="Variable:"/>
+					</labels>
+					<nonResizeable/>
+				</graphics>
+				<logic>
+					<properties>
+						<property displayedName="Variable" type="string" name="Variable">
+							<default>flow</default>
+						</property>
+					</properties>
+					<generalizations>
+						<parent parentName="IotikAnalogSensorBlock"/>
+					</generalizations>
+				</logic>
+			</node>
 
 			<!-- Waiting for sensors blocks -->
 			<node displayedName="Wait for Touch Sensor" name="IotikWaitForTouchSensor" path="12, 123 : 174, 123 :  | 174, 12 : 358, 12 : 358, 234 : 174, 234 : 174, 12 : " description="">
@@ -395,6 +490,33 @@
 					<container/>
 					<properties>
 						<property displayedName="Distance" type="string" name="Distance">
+							<default>0</default>
+						</property>
+						<property displayedName="Sign" type="DistanceSign" name="Sign">
+							<default>greater</default>
+						</property>
+					</properties>
+					<generalizations>
+						<parent parentName="IotikAnalogSensorBlock"/>
+					</generalizations>
+				</logic>
+			</node>
+			<node displayedName="Wait for Temperature Sensor" name="IotikWaitForTemperature" description="">
+				<graphics>
+					<picture sizex="50" sizey="50">
+						<image y1="0" name="images/waitForTemperatureBlock.svg" x1="0" y2="50" x2="50"/>
+					</picture>
+					<labels>
+						<label x="40" y="-35" textBinded="Port" hard="true" prefix="Port:"/>
+						<label x="55" y="60" textBinded="Temperature" prefix="Temperature:"/>
+						<label x="55" y="90" textBinded="Sign" prefix="Sign:"/>
+					</labels>
+					<nonResizeable/>
+				</graphics>
+				<logic>
+					<container/>
+					<properties>
+						<property displayedName="Temperature" type="string" name="Temperature">
 							<default>0</default>
 						</property>
 						<property displayedName="Sign" type="DistanceSign" name="Sign">
@@ -500,16 +622,21 @@
 			<group name="Actions">
 				<element name="IotikEnginesForward"/>
 				<element name="IotikEnginesBackward"/>
+				<element name="IotikAngularServo"/>
 				<element name="IotikEnginesStop"/>
 				<element name="IotikMosfet" />
 				<element name="IotikLed" />
 				<element name="IotikColorSensorToVariable" />
 				<element name="IotikCompassToVariable" />
 				<element name="IotikLineDetectorToVariable" />
+				<element name="IotikSoilSensorToVariable" />
+				<element name="IotikWaterSensorToVariable" />
+				<element name="IotikFlowSensorToVariable" />
 			</group>
 			<group name="Wait">
 				<element name="IotikWaitForTouchSensor"/>
 				<element name="IotikWaitForIRDistance"/>
+				<element name="IotikWaitForTemperature"/>
 				<element name="IotikWaitForSonarDistance" />
 				<element name="IotikWaitForFlame" />
 				<element name="IotikWaitForSound" />
