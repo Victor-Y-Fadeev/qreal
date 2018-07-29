@@ -23,8 +23,6 @@
 				<value name="A5"/>
 				<value name="A6"/>
 				<value name="A7"/>
-				<value name="A18"/>
-				<value name="A19"/>
 			</enum>
 			<enum name="IotikUniversalSensorPort">
 			    <value name="D5"/>
@@ -43,8 +41,6 @@
 			    <value name="A5"/>
 			    <value name="A6"/>
 			    <value name="A7"/>
-			    <value name="A18"/>
-			    <value name="A19"/>
 			</enum>
 			<enum name="IotikWritePort">
 			    <value name="D5"/>
