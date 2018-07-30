@@ -19,7 +19,11 @@
 #include "iotikKit/robotModel/parts/iotikColorSensor.h"
 #include "iotikKit/robotModel/parts/iotikCompass.h"
 #include "iotikKit/robotModel/parts/iotikLineSensor.h"
+#include "iotikKit/robotModel/parts/iotikSoilSensor.h"
+#include "iotikKit/robotModel/parts/iotikWaterSensor.h"
+#include "iotikKit/robotModel/parts/iotikFlowSensor.h"
 #include "iotikKit/robotModel/parts/iotikInfraredSensor.h"
+#include "iotikKit/robotModel/parts/iotikTemperatureSensor.h"
 #include "iotikKit/robotModel/parts/iotikSonarSensor.h"
 #include "iotikKit/robotModel/parts/iotikFlameSensor.h"
 
@@ -38,7 +42,11 @@
 #include "details/colorSensorToVariable.h"
 #include "details/compassToVariable.h"
 #include "details/lineDetectorToVariable.h"
+#include "details/soilSensorToVariable.h"
+#include "details/waterSensorToVariable.h"
+#include "details/flowSensorToVariable.h"
 #include "details/waitForFlameSensorBlock.h"
+#include "details/waitForTemperatureSensorBlock.h"
 
 using namespace iotik::blocks;
 using namespace iotik::blocks::details;
@@ -52,12 +60,21 @@ qReal::interpretation::Block *IotikBlocksFactory::produceBlock(const qReal::Id &
 		return new details::IotikEnginesBackwardBlock(mRobotModelManager->model());
 	} else if (elementMetatypeIs(element, "IotikEnginesStop")) {
 		return new EnginesStopBlock(mRobotModelManager->model());
+	} else if (elementMetatypeIs(element, "IotikAngularServo")) {
+		// AngularServo and EnginesForward are synonyms since angular and radial servos are controlled the same way.
+		return new details::IotikEnginesForwardBlock(mRobotModelManager->model());
 	} else if (elementMetatypeIs(element, "IotikMosfet")) {
 		return new MosfetBlock(mRobotModelManager->model());
 	} else if (elementMetatypeIs(element, "IotikLed")) {
 		return new LedBlock(mRobotModelManager->model());
 	} else if (elementMetatypeIs(element, "IotikColorSensorToVariable")) {
 		return new ColorSensorToVariableBlock();
+	} else if (elementMetatypeIs(element, "IotikSoilSensorToVariable")) {
+		return new SoilSensorToVariableBlock();
+	} else if (elementMetatypeIs(element, "IotikWaterSensorToVariable")) {
+		return new WaterSensorToVariableBlock();
+	} else if (elementMetatypeIs(element, "IotikFlowSensorToVariable")) {
+		return new FlowSensorToVariableBlock();
 	} else if (elementMetatypeIs(element, "IotikCompassToVariable")) {
 		return new CompassToVariableBlock();
 	} else if (elementMetatypeIs(element, "IotikLineDetectorToVariable")) {
@@ -71,6 +88,9 @@ qReal::interpretation::Block *IotikBlocksFactory::produceBlock(const qReal::Id &
 	} else if (elementMetatypeIs(element, "IotikWaitForSonarDistance")) {
 		return new WaitForSonarDistanceBlock(mRobotModelManager->model()
 				, kitBase::robotModel::DeviceInfo::create<robotModel::parts::IotikSonarSensor>());
+	} else if (elementMetatypeIs(element, "IotikWaitForTemperature")) {
+		return new WaitForTemperatureSensorBlock(mRobotModelManager->model()
+				, kitBase::robotModel::DeviceInfo::create<robotModel::parts::IotikTemperatureSensor>());
 	} else if (elementMetatypeIs(element, "IotikWaitForFlame")) {
 		return new WaitForFlameSensorBlock(mRobotModelManager->model()
 				, kitBase::robotModel::DeviceInfo::create<robotModel::parts::IotikFlameSensor>());
@@ -87,15 +107,20 @@ qReal::IdList IotikBlocksFactory::providedBlocks() const
 				id("IotikEnginesBackward")
 				, id("IotikEnginesForward")
 				, id("IotikEnginesStop")
+				, id("IotikAngularServo")
 				, id("IotikMosfet")
 				, id("IotikLed")
 				, id("IotikColorSensorToVariable")
+				, id("IotikSoilSensorToVariable")
+				, id("IotikWaterSensorToVariable")
+				, id("IotikFlowSensorToVariable")
 				, id("IotikCompassToVariable")
 				, id("IotikLineDetectorToVariable")
 
 				, id("IotikWaitForTouchSensor")
 				, id("IotikWaitForIRDistance")
 				, id("IotikWaitForSonarDistance")
+				, id("IotikWaitForTemperature")
 				, id("IotikWaitForFlame")
 				, id("IotikWaitForSound")
 	};

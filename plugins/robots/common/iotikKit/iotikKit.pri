@@ -35,7 +35,11 @@ HEADERS += \
 	$$PWD/include/iotikKit/robotModel/parts/iotikColorSensor.h \
 	$$PWD/include/iotikKit/robotModel/parts/iotikCompass.h \
 	$$PWD/include/iotikKit/robotModel/parts/iotikLineSensor.h \
+	$$PWD/include/iotikKit/robotModel/parts/iotikSoilSensor.h \
+	$$PWD/include/iotikKit/robotModel/parts/iotikWaterSensor.h \
+	$$PWD/include/iotikKit/robotModel/parts/iotikFlowSensor.h \
 	$$PWD/include/iotikKit/robotModel/parts/iotikInfraredSensor.h \
+	$$PWD/include/iotikKit/robotModel/parts/iotikTemperatureSensor.h \
 	$$PWD/include/iotikKit/robotModel/parts/iotikSonarSensor.h \
 	$$PWD/include/iotikKit/robotModel/parts/iotikFlameSensor.h \
 	$$PWD/include/iotikKit/communication/usbRobotCommunicationThread.h \
@@ -47,7 +51,11 @@ HEADERS += \
 	$$PWD/src/blocks/details/colorSensorToVariable.h \
 	$$PWD/src/blocks/details/compassToVariable.h \
 	$$PWD/src/blocks/details/lineDetectorToVariable.h \
+	$$PWD/src/blocks/details/soilSensorToVariable.h \
+	$$PWD/src/blocks/details/waterSensorToVariable.h \
+	$$PWD/src/blocks/details/flowSensorToVariable.h \
 	$$PWD/src/blocks/details/waitForFlameSensorBlock.h \
+	$$PWD/src/blocks/details/waitForTemperatureSensorBlock.h \
 
 SOURCES += \
 	$$PWD/src/robotModel/iotikRobotModelBase.cpp \
@@ -57,7 +65,11 @@ SOURCES += \
 	$$PWD/src/robotModel/parts/iotikColorSensor.cpp \
 	$$PWD/src/robotModel/parts/iotikCompass.cpp \
 	$$PWD/src/robotModel/parts/iotikLineSensor.cpp \
+	$$PWD/src/robotModel/parts/iotikSoilSensor.cpp \
+	$$PWD/src/robotModel/parts/iotikWaterSensor.cpp \
+	$$PWD/src/robotModel/parts/iotikFlowSensor.cpp \
 	$$PWD/src/robotModel/parts/iotikInfraredSensor.cpp \
+	$$PWD/src/robotModel/parts/iotikTemperatureSensor.cpp \
 	$$PWD/src/robotModel/parts/iotikSonarSensor.cpp \
 	$$PWD/src/robotModel/parts/iotikFlameSensor.cpp \
 	$$PWD/src/blocks/iotikBlocksFactory.cpp \
@@ -68,7 +80,11 @@ SOURCES += \
 	$$PWD/src/blocks/details/colorSensorToVariable.cpp \
 	$$PWD/src/blocks/details/compassToVariable.cpp \
 	$$PWD/src/blocks/details/lineDetectorToVariable.cpp \
+	$$PWD/src/blocks/details/soilSensorToVariable.cpp \
+	$$PWD/src/blocks/details/waterSensorToVariable.cpp \
+	$$PWD/src/blocks/details/flowSensorToVariable.cpp \
 	$$PWD/src/blocks/details/waitForFlameSensorBlock.cpp \
+	$$PWD/src/blocks/details/waitForTemperatureSensorBlock.cpp \
 	$$PWD/src/communication/usbRobotCommunicationThread.cpp \
 	$$PWD/src/communication/wifiRobotCommunicationThread.cpp \
 

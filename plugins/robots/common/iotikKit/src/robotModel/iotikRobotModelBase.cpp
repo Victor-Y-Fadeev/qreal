@@ -23,8 +23,8 @@ using namespace kitBase::robotModel;
 IotikRobotModelBase::IotikRobotModelBase(const QString &kitId, const QString &robotId)
 	: CommonRobotModel(kitId, robotId)
 {
-	addAllowedConnection(PortInfo("M0", output, { "М0" }), { motorInfo() });
-	addAllowedConnection(PortInfo("M1", output, { "М1" }), { motorInfo() });
+	addAllowedConnection(PortInfo("MA", output, { "МA" }), { motorInfo() });
+	addAllowedConnection(PortInfo("MB", output, { "МB" }), { motorInfo() });
 }
 
 QList<PortInfo> IotikRobotModelBase::configurablePorts() const
