@@ -235,8 +235,8 @@ void IotikRuCGeneratorPluginBase::addDeviceVariables(const QFileInfo fileInfo)
 			"#define SOIL 15\n"
 			"#define FLOW 16\n"
 
-			"#define MA 0\n"
-			"#define MB 1\n"
+			"#define MA -1\n"
+			"#define MB -2\n"
 			"#define A4 32\n"
 			"#define A5 33\n"
 			"#define A6 34\n"
