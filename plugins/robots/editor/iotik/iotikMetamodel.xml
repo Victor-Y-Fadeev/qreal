@@ -624,13 +624,13 @@
 				<element name="IotikEnginesBackward"/>
 				<element name="IotikEnginesStop"/>
 				<element name="IotikAngularServo"/>
-				<element name="IotikMosfet" />
 				<element name="IotikLed" />
+				<element name="IotikMosfet" />
+				<element name="IotikCompassToVariable" />
 				<element name="IotikColorSensorToVariable" />
 				<element name="IotikSoilSensorToVariable" />
 				<element name="IotikWaterSensorToVariable" />
 				<element name="IotikFlowSensorToVariable" />
-				<element name="IotikCompassToVariable" />
 				<element name="IotikLineDetectorToVariable" />
 			</group>
 			<group name="Wait">

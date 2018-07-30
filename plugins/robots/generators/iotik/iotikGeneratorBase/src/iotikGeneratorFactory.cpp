@@ -67,10 +67,12 @@ AbstractSimpleGenerator *IotikGeneratorFactory::simpleGenerator(const qReal::Id 
 			|| elementType.contains("AngularServo"))
 	{
 		return new IotikEnginesGenerator(mRepo, customizer, id, elementType, this);
-	} else if (elementType == "IotikMosfet") {
-		return new MosfetGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "IotikLed") {
 		return new LedGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikMosfet") {
+		return new MosfetGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikCompassToVariable") {
+		return new CompassToVariableGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "IotikColorSensorToVariable") {
 		return new ColorSensorToVariableGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "IotikSoilSensorToVariable") {
@@ -79,8 +81,6 @@ AbstractSimpleGenerator *IotikGeneratorFactory::simpleGenerator(const qReal::Id 
 		return new WaterSensorToVariableGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "IotikFlowSensorToVariable") {
 		return new FlowSensorToVariableGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "IotikCompassToVariable") {
-		return new CompassToVariableGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "IotikLineDetectorToVariable") {
 		return new LineDetectorToVariableGenerator(mRepo, customizer, id, this);
 

@@ -63,10 +63,12 @@ qReal::interpretation::Block *IotikBlocksFactory::produceBlock(const qReal::Id &
 	} else if (elementMetatypeIs(element, "IotikAngularServo")) {
 		// AngularServo and EnginesForward are synonyms since angular and radial servos are controlled the same way.
 		return new details::IotikEnginesForwardBlock(mRobotModelManager->model());
-	} else if (elementMetatypeIs(element, "IotikMosfet")) {
-		return new MosfetBlock(mRobotModelManager->model());
 	} else if (elementMetatypeIs(element, "IotikLed")) {
 		return new LedBlock(mRobotModelManager->model());
+	} else if (elementMetatypeIs(element, "IotikMosfet")) {
+		return new MosfetBlock(mRobotModelManager->model());
+	} else if (elementMetatypeIs(element, "IotikCompassToVariable")) {
+		return new CompassToVariableBlock();
 	} else if (elementMetatypeIs(element, "IotikColorSensorToVariable")) {
 		return new ColorSensorToVariableBlock();
 	} else if (elementMetatypeIs(element, "IotikSoilSensorToVariable")) {
@@ -75,8 +77,6 @@ qReal::interpretation::Block *IotikBlocksFactory::produceBlock(const qReal::Id &
 		return new WaterSensorToVariableBlock();
 	} else if (elementMetatypeIs(element, "IotikFlowSensorToVariable")) {
 		return new FlowSensorToVariableBlock();
-	} else if (elementMetatypeIs(element, "IotikCompassToVariable")) {
-		return new CompassToVariableBlock();
 	} else if (elementMetatypeIs(element, "IotikLineDetectorToVariable")) {
 		return new LineDetectorToVariableBlock();
 
@@ -108,13 +108,13 @@ qReal::IdList IotikBlocksFactory::providedBlocks() const
 				, id("IotikEnginesForward")
 				, id("IotikEnginesStop")
 				, id("IotikAngularServo")
-				, id("IotikMosfet")
 				, id("IotikLed")
+				, id("IotikMosfet")
+				, id("IotikCompassToVariable")
 				, id("IotikColorSensorToVariable")
 				, id("IotikSoilSensorToVariable")
 				, id("IotikWaterSensorToVariable")
 				, id("IotikFlowSensorToVariable")
-				, id("IotikCompassToVariable")
 				, id("IotikLineDetectorToVariable")
 
 				, id("IotikWaitForTouchSensor")
