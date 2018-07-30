@@ -22,8 +22,12 @@
 #include "simpleGenerators/colorSensorToVariableGenerator.h"
 #include "simpleGenerators/compassToVariableGenerator.h"
 #include "simpleGenerators/lineDetectorToVariableGenerator.h"
+#include "simpleGenerators/soilSensorToVariableGenerator.h"
+#include "simpleGenerators/waterSensorToVariableGenerator.h"
+#include "simpleGenerators/flowSensorToVariableGenerator.h"
 #include "simpleGenerators/waitForTouchSensorGenerator.h"
 #include "simpleGenerators/waitForInfraredSensorGenerator.h"
+#include "simpleGenerators/waitForTemperatureSensorGenerator.h"
 #include "simpleGenerators/waitForUltrasonicSensorGenerator.h"
 #include "simpleGenerators/waitForFlameSensorGenerator.h"
 #include "simpleGenerators/waitForSoundSensorGenerator.h"
@@ -69,6 +73,12 @@ AbstractSimpleGenerator *IotikGeneratorFactory::simpleGenerator(const qReal::Id 
 		return new LedGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "IotikColorSensorToVariable") {
 		return new ColorSensorToVariableGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikSoilSensorToVariable") {
+		return new SoilSensorToVariableGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikWaterSensorToVariable") {
+		return new WaterSensorToVariableGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikFlowSensorToVariable") {
+		return new FlowSensorToVariableGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "IotikCompassToVariable") {
 		return new CompassToVariableGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "IotikLineDetectorToVariable") {
@@ -80,6 +90,8 @@ AbstractSimpleGenerator *IotikGeneratorFactory::simpleGenerator(const qReal::Id 
 		return new WaitForInfraredSensorGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "IotikWaitForSonarDistance") {
 		return new WaitForUltrasonicSensorGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikWaitForTemperature") {
+		return new WaitForTemperatureSensorGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "IotikWaitForFlame") {
 		return new WaitForFlameSensorGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "IotikWaitForSound") {

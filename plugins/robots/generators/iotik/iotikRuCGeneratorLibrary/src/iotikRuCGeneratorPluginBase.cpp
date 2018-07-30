@@ -230,6 +230,10 @@ void IotikRuCGeneratorPluginBase::addDeviceVariables(const QFileInfo fileInfo)
 			"#define SOUND 10\n"
 			"#define TOUCH 11\n"
 			"#define ULTRASONIC 12\n"
+			"#define TEMPERATURE 13\n"
+			"#define WATER 14\n"
+			"#define SOIL 15\n"
+			"#define FLOW 16\n"
 
 			"#define MA 0\n"
 			"#define MB 1\n"
