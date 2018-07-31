@@ -76,7 +76,7 @@ void IotikMasterGeneratorBase::renameThreads(QString &code)
 	while (definition.indexIn(code) != -1) {
 		name = definition.cap(0);
 		parts = name.split(", ");
-		code.replace(name, threadName + QString::number(index) + ", 0");
+		code.replace(name, threadName + QString::number(index));
 		code.replace(parts.at(0), threadName + QString::number(index));
 		code.replace(parts.at(1), QString::number(index));
 		index++;
