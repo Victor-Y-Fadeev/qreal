@@ -13,7 +13,6 @@
 int main()
 {
 @@MAIN_CODE@@
-
 	return 0;
 
 }

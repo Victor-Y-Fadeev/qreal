@@ -1,1 +1,1 @@
-﻿@@VARIABLE@@ = t_msg_recieve().data;
+﻿@@VARIABLE@@ = t_msg_receive().data;
