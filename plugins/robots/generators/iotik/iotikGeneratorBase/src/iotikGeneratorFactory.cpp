@@ -20,7 +20,9 @@
 #include "simpleGenerators/mosfetGenerator.h"
 #include "simpleGenerators/ledGenerator.h"
 #include "simpleGenerators/colorSensorToVariableGenerator.h"
+#include "simpleGenerators/accelerometerToVariableGenerator.h"
 #include "simpleGenerators/compassToVariableGenerator.h"
+#include "simpleGenerators/gyroscopeToVariableGenerator.h"
 #include "simpleGenerators/lineDetectorToVariableGenerator.h"
 #include "simpleGenerators/soilSensorToVariableGenerator.h"
 #include "simpleGenerators/waterSensorToVariableGenerator.h"
@@ -29,6 +31,7 @@
 #include "simpleGenerators/waitForInfraredSensorGenerator.h"
 #include "simpleGenerators/waitForTemperatureSensorGenerator.h"
 #include "simpleGenerators/waitForUltrasonicSensorGenerator.h"
+#include "simpleGenerators/waitForLaserSensorGenerator.h"
 #include "simpleGenerators/waitForFlameSensorGenerator.h"
 #include "simpleGenerators/waitForSoundSensorGenerator.h"
 #include "simpleGenerators/forLoopGenerator.h"
@@ -71,8 +74,12 @@ AbstractSimpleGenerator *IotikGeneratorFactory::simpleGenerator(const qReal::Id 
 		return new LedGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "IotikMosfet") {
 		return new MosfetGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikAccelerometerToVariable") {
+		return new AccelerometerToVariableGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "IotikCompassToVariable") {
 		return new CompassToVariableGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikGyroscopeToVariable") {
+		return new GyroscopeToVariableGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "IotikColorSensorToVariable") {
 		return new ColorSensorToVariableGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "IotikSoilSensorToVariable") {
@@ -90,6 +97,8 @@ AbstractSimpleGenerator *IotikGeneratorFactory::simpleGenerator(const qReal::Id 
 		return new WaitForInfraredSensorGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "IotikWaitForSonarDistance") {
 		return new WaitForUltrasonicSensorGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikWaitForLaserDistance") {
+		return new WaitForLaserSensorGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "IotikWaitForTemperature") {
 		return new WaitForTemperatureSensorGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "IotikWaitForFlame") {

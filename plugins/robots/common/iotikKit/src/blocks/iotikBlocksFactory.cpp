@@ -17,7 +17,9 @@
 #include "iotikKit/robotModel/parts/iotikMosfet.h"
 #include "iotikKit/robotModel/parts/iotikLed.h"
 #include "iotikKit/robotModel/parts/iotikColorSensor.h"
+#include "iotikKit/robotModel/parts/iotikAccelerometer.h"
 #include "iotikKit/robotModel/parts/iotikCompass.h"
+#include "iotikKit/robotModel/parts/iotikGyroscope.h"
 #include "iotikKit/robotModel/parts/iotikLineSensor.h"
 #include "iotikKit/robotModel/parts/iotikSoilSensor.h"
 #include "iotikKit/robotModel/parts/iotikWaterSensor.h"
@@ -25,6 +27,7 @@
 #include "iotikKit/robotModel/parts/iotikInfraredSensor.h"
 #include "iotikKit/robotModel/parts/iotikTemperatureSensor.h"
 #include "iotikKit/robotModel/parts/iotikSonarSensor.h"
+#include "iotikKit/robotModel/parts/iotikLaserSensor.h"
 #include "iotikKit/robotModel/parts/iotikFlameSensor.h"
 
 #include <kitBase/robotModel/robotParts/rangeSensor.h>
@@ -40,7 +43,9 @@
 #include "details/mosfetBlock.h"
 #include "details/ledBlock.h"
 #include "details/colorSensorToVariable.h"
+#include "details/accelerometerToVariable.h"
 #include "details/compassToVariable.h"
+#include "details/gyroscopeToVariable.h"
 #include "details/lineDetectorToVariable.h"
 #include "details/soilSensorToVariable.h"
 #include "details/waterSensorToVariable.h"
@@ -67,8 +72,12 @@ qReal::interpretation::Block *IotikBlocksFactory::produceBlock(const qReal::Id &
 		return new LedBlock(mRobotModelManager->model());
 	} else if (elementMetatypeIs(element, "IotikMosfet")) {
 		return new MosfetBlock(mRobotModelManager->model());
+	} else if (elementMetatypeIs(element, "IotikAccelerometerToVariable")) {
+		return new AccelerometerToVariableBlock();
 	} else if (elementMetatypeIs(element, "IotikCompassToVariable")) {
 		return new CompassToVariableBlock();
+	} else if (elementMetatypeIs(element, "IotikGyroscopeToVariable")) {
+		return new GyroscopeToVariableBlock();
 	} else if (elementMetatypeIs(element, "IotikColorSensorToVariable")) {
 		return new ColorSensorToVariableBlock();
 	} else if (elementMetatypeIs(element, "IotikSoilSensorToVariable")) {
@@ -88,6 +97,9 @@ qReal::interpretation::Block *IotikBlocksFactory::produceBlock(const qReal::Id &
 	} else if (elementMetatypeIs(element, "IotikWaitForSonarDistance")) {
 		return new WaitForSonarDistanceBlock(mRobotModelManager->model()
 				, kitBase::robotModel::DeviceInfo::create<robotModel::parts::IotikSonarSensor>());
+	} else if (elementMetatypeIs(element, "IotikWaitForLaserDistance")) {
+		return new WaitForSonarDistanceBlock(mRobotModelManager->model()
+				, kitBase::robotModel::DeviceInfo::create<robotModel::parts::IotikLaserSensor>());
 	} else if (elementMetatypeIs(element, "IotikWaitForTemperature")) {
 		return new WaitForTemperatureSensorBlock(mRobotModelManager->model()
 				, kitBase::robotModel::DeviceInfo::create<robotModel::parts::IotikTemperatureSensor>());
@@ -110,7 +122,9 @@ qReal::IdList IotikBlocksFactory::providedBlocks() const
 				, id("IotikAngularServo")
 				, id("IotikLed")
 				, id("IotikMosfet")
+				, id("IotikAccelerometerToVariable")
 				, id("IotikCompassToVariable")
+				, id("IotikGyroscopeToVariable")
 				, id("IotikColorSensorToVariable")
 				, id("IotikSoilSensorToVariable")
 				, id("IotikWaterSensorToVariable")
@@ -120,6 +134,7 @@ qReal::IdList IotikBlocksFactory::providedBlocks() const
 				, id("IotikWaitForTouchSensor")
 				, id("IotikWaitForIRDistance")
 				, id("IotikWaitForSonarDistance")
+				, id("IotikWaitForLaserDistance")
 				, id("IotikWaitForTemperature")
 				, id("IotikWaitForFlame")
 				, id("IotikWaitForSound")

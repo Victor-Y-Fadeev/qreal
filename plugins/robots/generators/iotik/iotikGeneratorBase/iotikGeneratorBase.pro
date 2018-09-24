@@ -50,7 +50,9 @@ HEADERS += \
 	$$PWD/src/simpleGenerators/mosfetGenerator.h \
 	$$PWD/src/simpleGenerators/ledGenerator.h \
 	$$PWD/src/simpleGenerators/colorSensorToVariableGenerator.h \
+	$$PWD/src/simpleGenerators/accelerometerToVariableGenerator.h \
 	$$PWD/src/simpleGenerators/compassToVariableGenerator.h \
+	$$PWD/src/simpleGenerators/gyroscopeToVariableGenerator.h \
 	$$PWD/src/simpleGenerators/lineDetectorToVariableGenerator.h \
 	$$PWD/src/simpleGenerators/soilSensorToVariableGenerator.h \
 	$$PWD/src/simpleGenerators/waterSensorToVariableGenerator.h \
@@ -59,6 +61,7 @@ HEADERS += \
 	$$PWD/src/simpleGenerators/waitForInfraredSensorGenerator.h \
 	$$PWD/src/simpleGenerators/waitForTemperatureSensorGenerator.h \
 	$$PWD/src/simpleGenerators/waitForUltrasonicSensorGenerator.h \
+	$$PWD/src/simpleGenerators/waitForLaserSensorGenerator.h \
 	$$PWD/src/simpleGenerators/waitForFlameSensorGenerator.h \
 	$$PWD/src/simpleGenerators/waitForSoundSensorGenerator.h \
 	$$PWD/src/simpleGenerators/forLoopGenerator.h \
@@ -75,7 +78,9 @@ SOURCES += \
 	$$PWD/src/simpleGenerators/mosfetGenerator.cpp \
 	$$PWD/src/simpleGenerators/ledGenerator.cpp \
 	$$PWD/src/simpleGenerators/colorSensorToVariableGenerator.cpp \
+	$$PWD/src/simpleGenerators/accelerometerToVariableGenerator.cpp \
 	$$PWD/src/simpleGenerators/compassToVariableGenerator.cpp \
+	$$PWD/src/simpleGenerators/gyroscopeToVariableGenerator.cpp \
 	$$PWD/src/simpleGenerators/lineDetectorToVariableGenerator.cpp \
 	$$PWD/src/simpleGenerators/soilSensorToVariableGenerator.cpp \
 	$$PWD/src/simpleGenerators/waterSensorToVariableGenerator.cpp \
@@ -84,6 +89,7 @@ SOURCES += \
 	$$PWD/src/simpleGenerators/waitForInfraredSensorGenerator.cpp \
 	$$PWD/src/simpleGenerators/waitForTemperatureSensorGenerator.cpp \
 	$$PWD/src/simpleGenerators/waitForUltrasonicSensorGenerator.cpp \
+	$$PWD/src/simpleGenerators/waitForLaserSensorGenerator.cpp \
 	$$PWD/src/simpleGenerators/waitForFlameSensorGenerator.cpp \
 	$$PWD/src/simpleGenerators/waitForSoundSensorGenerator.cpp \
 	$$PWD/src/simpleGenerators/forLoopGenerator.cpp \

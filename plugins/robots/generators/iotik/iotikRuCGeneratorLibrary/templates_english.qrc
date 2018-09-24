@@ -70,7 +70,7 @@
         <file>templates_english/luaPrinting/unaryMinus.t</file>
         <file>templates_english/sensors/analogPort.t</file>
         <file>templates_english/sensors/oneVariableOneDigitalPort.t</file>
-        <file>templates_english/sensors/fourVariableTwoDigitalPort.t</file>
+        <file>templates_english/sensors/threeVariableTwoDigitalPort.t</file>
         <file>templates_english/sensors/threeVariableFiveDigitalPort.t</file>
         <file>templates_english/sensors/voltagePort.t</file>
         <file>templates_english/signs/equals.t</file>
