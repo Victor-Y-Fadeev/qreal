@@ -44,6 +44,7 @@ graphicsUtils::AbstractView* AbstractScene::mainView()
 void AbstractScene::setEmptyRect(int x, int y, int w, int h)
 {
 	mEmptyRect = addRect(x, y, w, h, QPen(Qt::white));
+	mEmptyRect->setVisible(false);
 }
 
 QRect AbstractScene::realItemsBoundingRect() const
@@ -87,6 +88,7 @@ void AbstractScene::reshapeItem(QGraphicsSceneMouseEvent *event)
 		if (mGraphicsItem->dragState() != graphicsUtils::AbstractItem::None) {
 			mView->setDragMode(QGraphicsView::NoDrag);
 		}
+
 		mGraphicsItem->resizeItem(event);
 	}
 }
@@ -173,6 +175,7 @@ void AbstractScene::forPressResize(QGraphicsSceneMouseEvent *event)
 			mView->setDragMode(QGraphicsView::NoDrag);
 		}
 	}
+
 	update();
 }
 
@@ -237,6 +240,7 @@ QString AbstractScene::convertPenToString(const QPen &pen)
 	default:
 		break;
 	}
+
 	return penStyle;
 }
 

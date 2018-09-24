@@ -21,17 +21,27 @@
 #include "src/engine/constraints/constraintsChecker.h"
 #include "src/robotModel/nullTwoDRobotModel.h"
 
+#include "physics/simplePhysicsEngine.h"
+#include "physics/box2DPhysicsEngine.h"
+
 using namespace twoDModel::model;
 
 Model::Model(QObject *parent)
 	: QObject(parent)
 	, mChecker(nullptr)
 	, mErrorReporter(nullptr)
+	, mRealisticPhysicsEngine(nullptr)
+	, mSimplePhysicsEngine(nullptr)
 {
+	initPhysics();
+	connect(&mSettings, &Settings::physicsChanged, this, &Model::resetPhysics);
+	resetPhysics();
 }
 
 Model::~Model()
 {
+	delete mRealisticPhysicsEngine;
+	delete mSimplePhysicsEngine;
 }
 
 void Model::init(qReal::ErrorReporterInterface &errorReporter
@@ -88,7 +98,7 @@ QDomDocument Model::serialize() const
 	QDomDocument save;
 	QDomElement root = save.createElement("root");
 	save.appendChild(root);
-	mWorldModel.serialize(root);
+	mWorldModel.serializeWorld(root);
 
 	QDomElement robots = save.createElement("robots");
 	for (RobotModel *robotModel : mRobotModels) {
@@ -101,11 +111,11 @@ QDomDocument Model::serialize() const
 	return save;
 }
 
-void Model::deserialize(const QDomDocument &xml)
+void Model::deserialize(const QDomDocument &wordModel, const QDomDocument &blobs)
 {
-	const QDomNodeList worldList = xml.elementsByTagName("world");
-	const QDomNodeList robotsList = xml.elementsByTagName("robots");
-	const QDomElement constraints = xml.documentElement().firstChildElement("constraints");
+	const QDomNodeList worldList = wordModel.elementsByTagName("world");
+	const QDomNodeList robotsList = wordModel.elementsByTagName("robots");
+	const QDomElement constraints = wordModel.documentElement().firstChildElement("constraints");
 
 	if (mChecker) {
 		/// @todo: should we handle if it returned false?
@@ -116,11 +126,11 @@ void Model::deserialize(const QDomDocument &xml)
 		return;
 	}
 
-	mWorldModel.deserialize(worldList.at(0).toElement());
+	mWorldModel.deserialize(worldList.at(0).toElement(), blobs.documentElement().firstChildElement("blobs"));
 
 	if (robotsList.count() != 1) {
 		// need for backward compatibility with old format
-		const QDomNodeList robotList = xml.elementsByTagName("robot");
+		const QDomNodeList robotList = wordModel.elementsByTagName("robot");
 
 		if (robotList.count() != 1) {
 			/// @todo Report error
@@ -181,13 +191,13 @@ void Model::addRobotModel(robotModel::TwoDRobotModel &robotModel, const QPointF 
 
 	connect(&mTimeline, &Timeline::started, robot, &RobotModel::reinit);
 	connect(&mTimeline, &Timeline::stopped, robot, &RobotModel::stopRobot);
+	connect(&mTimeline, &Timeline::stopped, mRealisticPhysicsEngine, &physics::PhysicsEngineBase::clearForcesAndStop);
 
 	connect(&mTimeline, &Timeline::tick, robot, &RobotModel::recalculateParams);
 	connect(&mTimeline, &Timeline::nextFrame, robot, &RobotModel::nextFragment);
+	connect(&mTimeline, &Timeline::nextFrame, mRealisticPhysicsEngine, &physics::PhysicsEngineBase::nextFrame);
 
-	auto resetPhysics = [this, robot]() { robot->resetPhysics(mWorldModel, mTimeline); };
-	connect(&mSettings, &Settings::physicsChanged, resetPhysics);
-	resetPhysics();
+	robot->setPhysicalEngine(mSettings.realisticPhysics() ? *mRealisticPhysicsEngine : *mSimplePhysicsEngine);
 
 	mRobotModels.append(robot);
 
@@ -232,6 +242,16 @@ void Model::setConstraintsEnabled(bool enabled)
 	mChecker->setEnabled(enabled);
 }
 
+void Model::resetPhysics()
+{
+	auto engine = mSettings.realisticPhysics() ? mRealisticPhysicsEngine : mSimplePhysicsEngine;
+	for (RobotModel * const robot : mRobotModels) {
+		robot->setPhysicalEngine(*engine);
+	}
+
+	engine->wakeUp();
+}
+
 int Model::findModel(const twoDModel::robotModel::TwoDRobotModel &robotModel)
 {
 	for (int i = 0; i < mRobotModels.count(); i++) {
@@ -241,4 +261,26 @@ int Model::findModel(const twoDModel::robotModel::TwoDRobotModel &robotModel)
 	}
 
 	return -1;
+}
+
+void Model::initPhysics()
+{
+	mRealisticPhysicsEngine = new physics::Box2DPhysicsEngine(mWorldModel, mRobotModels);
+	mSimplePhysicsEngine = new physics::SimplePhysicsEngine(mWorldModel, mRobotModels);
+	connect(this, &model::Model::robotAdded, mRealisticPhysicsEngine, &physics::PhysicsEngineBase::addRobot);
+	connect(this, &model::Model::robotRemoved, mRealisticPhysicsEngine, &physics::PhysicsEngineBase::removeRobot);
+	connect(this, &model::Model::robotAdded, mSimplePhysicsEngine, &physics::PhysicsEngineBase::addRobot);
+	connect(this, &model::Model::robotRemoved, mSimplePhysicsEngine, &physics::PhysicsEngineBase::removeRobot);
+
+	connect(&mTimeline, &Timeline::tick, this, &Model::recalculatePhysicsParams);
+	connect(&mTimeline, &Timeline::nextFrame, this, [this](){ mRealisticPhysicsEngine->nextFrame();	});
+}
+
+void Model::recalculatePhysicsParams()
+{
+	if (mSettings.realisticPhysics()) {
+		mRealisticPhysicsEngine->recalculateParameters(Timeline::timeInterval);
+	} else {
+		mSimplePhysicsEngine->recalculateParameters(Timeline::timeInterval);
+	}
 }
