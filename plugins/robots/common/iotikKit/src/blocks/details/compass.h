@@ -1,4 +1,4 @@
-/* Copyright 2018 QReal Research Group
+/* Copyright 2017 QReal Research Group
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,11 +20,11 @@ namespace iotik {
 namespace blocks {
 namespace details {
 
-/// Interpreter implementation for "Gyroscope into Variable" block.
-class GyroscopeToVariableBlock : public qReal::interpretation::Block
+/// Interpreter implementation for "Compass" block.
+class CompassBlock : public qReal::interpretation::Block
 {
 public:
-	GyroscopeToVariableBlock();
+	CompassBlock();
 
 	void run() override;
 };

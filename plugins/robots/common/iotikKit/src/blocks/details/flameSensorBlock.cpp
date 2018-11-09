@@ -12,30 +12,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. */
 
-#include "waitForFlameSensorBlock.h"
+#include "flameSensorBlock.h"
 
 #include "kitBase/robotModel/robotParts/rangeSensor.h"
 
-using namespace iotik;
-using namespace blocks::details;
-using namespace kitBase::robotModel;
 
-WaitForFlameSensorBlock::WaitForFlameSensorBlock(kitBase::robotModel::RobotModelInterface &robotModel
-		, const kitBase::robotModel::DeviceInfo &device)
-	: WaitForSensorBlock(robotModel)
-	, mDevice(device)
+using namespace iotik::blocks::details;
+
+FlameSensorBlock::FlameSensorBlock()
 {
 }
 
-void WaitForFlameSensorBlock::responseSlot(int reading)
+void FlameSensorBlock::run()
 {
-	const int targetValue = eval<int>("Value");
-	if (!errorsOccured()) {
-		processResponce(reading, targetValue);
-	}
-}
-
-kitBase::robotModel::DeviceInfo WaitForFlameSensorBlock::device() const
-{
-	return mDevice;
+	//evalCode(stringProperty("Variable") + " = flameSensor[0]");
+	emit done(mNextBlockId);
 }

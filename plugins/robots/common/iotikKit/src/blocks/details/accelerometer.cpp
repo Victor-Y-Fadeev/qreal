@@ -12,15 +12,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. */
 
-#include "accelerometerToVariable.h"
+#include "accelerometer.h"
 
 using namespace iotik::blocks::details;
 
-AccelerometerToVariableBlock::AccelerometerToVariableBlock()
+AccelerometerBlock::AccelerometerBlock()
 {
 }
 
-void AccelerometerToVariableBlock::run()
+void AccelerometerBlock::run()
 {
 	//evalCode(stringProperty("Variable") + " = accelerometer[0]");
 	emit done(mNextBlockId);

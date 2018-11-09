@@ -1,4 +1,4 @@
-/* Copyright 2017 QReal Research Group
+/* Copyright 2018 QReal Research Group
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,16 +12,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. */
 
-#include "colorSensorToVariable.h"
+#pragma once
 
-using namespace iotik::blocks::details;
+#include <qrutils/interpreter/block.h>
 
-ColorSensorToVariableBlock::ColorSensorToVariableBlock()
+namespace iotik {
+namespace blocks {
+namespace details {
+
+/// Interpreter implementation for "Gyroscope" block.
+class GyroscopeBlock : public qReal::interpretation::Block
 {
+public:
+	GyroscopeBlock();
+
+	void run() override;
+};
+
 }
-
-void ColorSensorToVariableBlock::run()
-{
-	//evalCode(stringProperty("Variable") + " = colorSensor[0]");
-	emit done(mNextBlockId);
+}
 }

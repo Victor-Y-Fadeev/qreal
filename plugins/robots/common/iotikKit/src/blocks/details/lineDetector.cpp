@@ -12,23 +12,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. */
 
-#pragma once
+#include "lineDetector.h"
 
-#include <qrutils/interpreter/block.h>
+using namespace iotik::blocks::details;
 
-namespace iotik {
-namespace blocks {
-namespace details {
-
-/// Interpreter implementation for "Compass into Variable" block.
-class CompassToVariableBlock : public qReal::interpretation::Block
+LineDetectorBlock::LineDetectorBlock()
 {
-public:
-	CompassToVariableBlock();
-
-	void run() override;
-};
-
 }
-}
+
+void LineDetectorBlock::run()
+{
+	//evalCode(stringProperty("Variable") + " = lineSensor[0]");
+	emit done(mNextBlockId);
 }

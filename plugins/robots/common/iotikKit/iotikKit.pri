@@ -51,16 +51,18 @@ HEADERS += \
 	$$PWD/src/blocks/details/iotikEnginesForwardBlock.h \
 	$$PWD/src/blocks/details/mosfetBlock.h \
 	$$PWD/src/blocks/details/ledBlock.h \
-	$$PWD/src/blocks/details/colorSensorToVariable.h \
-	$$PWD/src/blocks/details/accelerometerToVariable.h \
-	$$PWD/src/blocks/details/compassToVariable.h \
-	$$PWD/src/blocks/details/gyroscopeToVariable.h \
-	$$PWD/src/blocks/details/lineDetectorToVariable.h \
 	$$PWD/src/blocks/details/soilSensorToVariable.h \
 	$$PWD/src/blocks/details/waterSensorToVariable.h \
 	$$PWD/src/blocks/details/flowSensorToVariable.h \
-	$$PWD/src/blocks/details/waitForFlameSensorBlock.h \
 	$$PWD/src/blocks/details/waitForTemperatureSensorBlock.h \
+	$$PWD/src/blocks/details/colorSensor.h \
+	$$PWD/src/blocks/details/accelerometer.h \
+	$$PWD/src/blocks/details/compass.h \
+	$$PWD/src/blocks/details/gyroscope.h \
+	$$PWD/src/blocks/details/lineDetector.h \
+	$$PWD/src/blocks/details/flameSensorBlock.h \
+	$$PWD/src/blocks/details/soundSensorBlock.h \
+	$$PWD/src/blocks/details/laserDistanceBlock.h \
 
 SOURCES += \
 	$$PWD/src/robotModel/iotikRobotModelBase.cpp \
@@ -85,16 +87,18 @@ SOURCES += \
 	$$PWD/src/blocks/details/iotikEnginesForwardBlock.cpp \
 	$$PWD/src/blocks/details/mosfetBlock.cpp \
 	$$PWD/src/blocks/details/ledBlock.cpp \
-	$$PWD/src/blocks/details/colorSensorToVariable.cpp \
-	$$PWD/src/blocks/details/accelerometerToVariable.cpp \
-	$$PWD/src/blocks/details/compassToVariable.cpp \
-	$$PWD/src/blocks/details/gyroscopeToVariable.cpp \
-	$$PWD/src/blocks/details/lineDetectorToVariable.cpp \
 	$$PWD/src/blocks/details/soilSensorToVariable.cpp \
 	$$PWD/src/blocks/details/waterSensorToVariable.cpp \
 	$$PWD/src/blocks/details/flowSensorToVariable.cpp \
-	$$PWD/src/blocks/details/waitForFlameSensorBlock.cpp \
 	$$PWD/src/blocks/details/waitForTemperatureSensorBlock.cpp \
+	$$PWD/src/blocks/details/colorSensor.cpp \
+	$$PWD/src/blocks/details/accelerometer.cpp \
+	$$PWD/src/blocks/details/compass.cpp \
+	$$PWD/src/blocks/details/gyroscope.cpp \
+	$$PWD/src/blocks/details/lineDetector.cpp \
+	$$PWD/src/blocks/details/flameSensorBlock.cpp \
+	$$PWD/src/blocks/details/soundSensorBlock.cpp \
+	$$PWD/src/blocks/details/laserDistanceBlock.cpp \
 	$$PWD/src/communication/usbRobotCommunicationThread.cpp \
 	$$PWD/src/communication/wifiRobotCommunicationThread.cpp \
 

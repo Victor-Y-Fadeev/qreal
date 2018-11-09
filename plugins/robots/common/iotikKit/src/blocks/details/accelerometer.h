@@ -1,4 +1,4 @@
-/* Copyright 2017 QReal Research Group
+/* Copyright 2018 QReal Research Group
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,16 +12,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. */
 
-#include "lineDetectorToVariable.h"
+#pragma once
 
-using namespace iotik::blocks::details;
+#include <qrutils/interpreter/block.h>
 
-LineDetectorToVariableBlock::LineDetectorToVariableBlock()
+namespace iotik {
+namespace blocks {
+namespace details {
+
+/// Interpreter implementation for "Accelerometer" block.
+class AccelerometerBlock : public qReal::interpretation::Block
 {
+public:
+	AccelerometerBlock();
+
+	void run() override;
+};
+
 }
-
-void LineDetectorToVariableBlock::run()
-{
-	//evalCode(stringProperty("Variable") + " = lineSensor[0]");
-	emit done(mNextBlockId);
+}
 }

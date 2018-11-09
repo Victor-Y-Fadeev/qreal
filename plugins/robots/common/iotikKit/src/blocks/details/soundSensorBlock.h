@@ -20,11 +20,11 @@ namespace iotik {
 namespace blocks {
 namespace details {
 
-/// Interpreter implementation for "Accelerometer into Variable" block.
-class AccelerometerToVariableBlock : public qReal::interpretation::Block
+/// Interpreter implementation for "Sound Sensor" block.
+class SoundSensorBlock : public qReal::interpretation::Block
 {
 public:
-	AccelerometerToVariableBlock();
+	SoundSensorBlock();
 
 	void run() override;
 };

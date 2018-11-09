@@ -14,30 +14,19 @@
 
 #pragma once
 
-#include "kitBase/blocksBase/common/waitForSensorBlock.h"
+#include <qrutils/interpreter/block.h>
 
 namespace iotik {
 namespace blocks {
 namespace details {
 
-/// An interpreter`s implementation for "wait for flame sensor" block.
-class WaitForFlameSensorBlock : public kitBase::blocksBase::common::WaitForSensorBlock
+/// Interpreter implementation for "Flame Sensor" block.
+class FlameSensorBlock : public qReal::interpretation::Block
 {
-	Q_OBJECT
-
 public:
-	/// Constructor, takes current robot model as parameter.
-	WaitForFlameSensorBlock(kitBase::robotModel::RobotModelInterface &robotModel
-			, const kitBase::robotModel::DeviceInfo &device);
+	FlameSensorBlock();
 
-protected slots:
-	void responseSlot(int reading) override;
-
-protected:
-	kitBase::robotModel::DeviceInfo device() const override;
-
-private:
-	const kitBase::robotModel::DeviceInfo mDevice;
+	void run() override;
 };
 
 }

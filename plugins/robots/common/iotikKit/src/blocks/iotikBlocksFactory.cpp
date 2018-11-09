@@ -42,16 +42,18 @@
 #include "details/iotikEnginesForwardBlock.h"
 #include "details/mosfetBlock.h"
 #include "details/ledBlock.h"
-#include "details/colorSensorToVariable.h"
-#include "details/accelerometerToVariable.h"
-#include "details/compassToVariable.h"
-#include "details/gyroscopeToVariable.h"
-#include "details/lineDetectorToVariable.h"
 #include "details/soilSensorToVariable.h"
 #include "details/waterSensorToVariable.h"
 #include "details/flowSensorToVariable.h"
-#include "details/waitForFlameSensorBlock.h"
 #include "details/waitForTemperatureSensorBlock.h"
+#include "details/colorSensor.h"
+#include "details/accelerometer.h"
+#include "details/compass.h"
+#include "details/gyroscope.h"
+#include "details/lineDetector.h"
+#include "details/flameSensorBlock.h"
+#include "details/soundSensorBlock.h"
+#include "details/laserDistanceBlock.h"
 
 using namespace iotik::blocks;
 using namespace iotik::blocks::details;
@@ -92,23 +94,21 @@ qReal::interpretation::Block *IotikBlocksFactory::produceBlock(const qReal::Id &
 				, kitBase::robotModel::DeviceInfo::create<robotModel::parts::IotikTemperatureSensor>());
 
 	} else if (elementMetatypeIs(element, "IotikAccelerometer")) {
-		return new AccelerometerToVariableBlock();
+		return new AccelerometerBlock();
 	} else if (elementMetatypeIs(element, "IotikCompass")) {
-		return new CompassToVariableBlock();
+		return new CompassBlock();
 	} else if (elementMetatypeIs(element, "IotikGyroscope")) {
-		return new GyroscopeToVariableBlock();
+		return new GyroscopeBlock();
 	} else if (elementMetatypeIs(element, "IotikColorSensor")) {
-		return new ColorSensorToVariableBlock();
+		return new ColorSensorBlock();
 	} else if (elementMetatypeIs(element, "IotikLineDetector")) {
-		return new LineDetectorToVariableBlock();
+		return new LineDetectorBlock();
 	} else if (elementMetatypeIs(element, "IotikLaserDistance")) {
-		return new WaitForSonarDistanceBlock(mRobotModelManager->model()
-				, kitBase::robotModel::DeviceInfo::create<robotModel::parts::IotikLaserSensor>());
+		return new LaserDistanceBlock();
 	} else if (elementMetatypeIs(element, "IotikFlame")) {
-		return new WaitForFlameSensorBlock(mRobotModelManager->model()
-				, kitBase::robotModel::DeviceInfo::create<robotModel::parts::IotikFlameSensor>());
+		return new FlameSensorBlock();
 	} else if (elementMetatypeIs(element, "IotikSound")) {
-		return new WaitForSoundSensorBlock(mRobotModelManager->model());
+		return new SoundSensorBlock();
 	}
 
 	return nullptr;

@@ -958,7 +958,7 @@
         <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="135"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="136"/>
         <source>Sensors (MgBot)</source>
-        <translation type="unfinished"></translation>
+        <translation>Датчики (MgBot)</translation>
     </message>
 </context>
 </TS>

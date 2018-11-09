@@ -1,4 +1,4 @@
-/* Copyright 2017 QReal Research Group
+/* Copyright 2008 QReal Research Group
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,11 +20,11 @@ namespace iotik {
 namespace blocks {
 namespace details {
 
-/// Interpreter implementation for "Color Sensor into Variable" block.
-class ColorSensorToVariableBlock : public qReal::interpretation::Block
+/// Interpreter implementation for "Laser Distance" block.
+class LaserDistanceBlock : public qReal::interpretation::Block
 {
 public:
-	ColorSensorToVariableBlock();
+	LaserDistanceBlock();
 
 	void run() override;
 };

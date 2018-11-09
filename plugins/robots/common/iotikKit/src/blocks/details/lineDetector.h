@@ -20,11 +20,11 @@ namespace iotik {
 namespace blocks {
 namespace details {
 
-/// Interpreter implementation for "Line Detector into Variable" block.
-class LineDetectorToVariableBlock : public qReal::interpretation::Block
+/// Interpreter implementation for "Line Detector" block.
+class LineDetectorBlock : public qReal::interpretation::Block
 {
 public:
-	LineDetectorToVariableBlock();
+	LineDetectorBlock();
 
 	void run() override;
 };

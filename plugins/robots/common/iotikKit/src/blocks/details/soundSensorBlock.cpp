@@ -12,16 +12,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. */
 
-#include "gyroscopeToVariable.h"
+#include "soundSensorBlock.h"
+
+#include "kitBase/robotModel/robotParts/rangeSensor.h"
+
 
 using namespace iotik::blocks::details;
 
-GyroscopeToVariableBlock::GyroscopeToVariableBlock()
+SoundSensorBlock::SoundSensorBlock()
 {
 }
 
-void GyroscopeToVariableBlock::run()
+void SoundSensorBlock::run()
 {
-	//evalCode(stringProperty("Variable") + " = gyroscope[0]");
+	//evalCode(stringProperty("Variable") + " = sound[0]");
 	emit done(mNextBlockId);
 }
