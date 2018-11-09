@@ -72,22 +72,12 @@ qReal::interpretation::Block *IotikBlocksFactory::produceBlock(const qReal::Id &
 		return new LedBlock(mRobotModelManager->model());
 	} else if (elementMetatypeIs(element, "IotikMosfet")) {
 		return new MosfetBlock(mRobotModelManager->model());
-	} else if (elementMetatypeIs(element, "IotikAccelerometerToVariable")) {
-		return new AccelerometerToVariableBlock();
-	} else if (elementMetatypeIs(element, "IotikCompassToVariable")) {
-		return new CompassToVariableBlock();
-	} else if (elementMetatypeIs(element, "IotikGyroscopeToVariable")) {
-		return new GyroscopeToVariableBlock();
-	} else if (elementMetatypeIs(element, "IotikColorSensorToVariable")) {
-		return new ColorSensorToVariableBlock();
 	} else if (elementMetatypeIs(element, "IotikSoilSensorToVariable")) {
 		return new SoilSensorToVariableBlock();
 	} else if (elementMetatypeIs(element, "IotikWaterSensorToVariable")) {
 		return new WaterSensorToVariableBlock();
 	} else if (elementMetatypeIs(element, "IotikFlowSensorToVariable")) {
 		return new FlowSensorToVariableBlock();
-	} else if (elementMetatypeIs(element, "IotikLineDetectorToVariable")) {
-		return new LineDetectorToVariableBlock();
 
 	} else if (elementMetatypeIs(element, "IotikWaitForTouchSensor")) {
 		return new WaitForTouchSensorBlock(mRobotModelManager->model());
@@ -97,16 +87,27 @@ qReal::interpretation::Block *IotikBlocksFactory::produceBlock(const qReal::Id &
 	} else if (elementMetatypeIs(element, "IotikWaitForSonarDistance")) {
 		return new WaitForSonarDistanceBlock(mRobotModelManager->model()
 				, kitBase::robotModel::DeviceInfo::create<robotModel::parts::IotikSonarSensor>());
-	} else if (elementMetatypeIs(element, "IotikWaitForLaserDistance")) {
-		return new WaitForSonarDistanceBlock(mRobotModelManager->model()
-				, kitBase::robotModel::DeviceInfo::create<robotModel::parts::IotikLaserSensor>());
 	} else if (elementMetatypeIs(element, "IotikWaitForTemperature")) {
 		return new WaitForTemperatureSensorBlock(mRobotModelManager->model()
 				, kitBase::robotModel::DeviceInfo::create<robotModel::parts::IotikTemperatureSensor>());
-	} else if (elementMetatypeIs(element, "IotikWaitForFlame")) {
+
+	} else if (elementMetatypeIs(element, "IotikAccelerometer")) {
+		return new AccelerometerToVariableBlock();
+	} else if (elementMetatypeIs(element, "IotikCompass")) {
+		return new CompassToVariableBlock();
+	} else if (elementMetatypeIs(element, "IotikGyroscope")) {
+		return new GyroscopeToVariableBlock();
+	} else if (elementMetatypeIs(element, "IotikColorSensor")) {
+		return new ColorSensorToVariableBlock();
+	} else if (elementMetatypeIs(element, "IotikLineDetector")) {
+		return new LineDetectorToVariableBlock();
+	} else if (elementMetatypeIs(element, "IotikLaserDistance")) {
+		return new WaitForSonarDistanceBlock(mRobotModelManager->model()
+				, kitBase::robotModel::DeviceInfo::create<robotModel::parts::IotikLaserSensor>());
+	} else if (elementMetatypeIs(element, "IotikFlame")) {
 		return new WaitForFlameSensorBlock(mRobotModelManager->model()
 				, kitBase::robotModel::DeviceInfo::create<robotModel::parts::IotikFlameSensor>());
-	} else if (elementMetatypeIs(element, "IotikWaitForSound")) {
+	} else if (elementMetatypeIs(element, "IotikSound")) {
 		return new WaitForSoundSensorBlock(mRobotModelManager->model());
 	}
 
@@ -122,22 +123,23 @@ qReal::IdList IotikBlocksFactory::providedBlocks() const
 				, id("IotikAngularServo")
 				, id("IotikLed")
 				, id("IotikMosfet")
-				, id("IotikAccelerometerToVariable")
-				, id("IotikCompassToVariable")
-				, id("IotikGyroscopeToVariable")
-				, id("IotikColorSensorToVariable")
 				, id("IotikSoilSensorToVariable")
 				, id("IotikWaterSensorToVariable")
 				, id("IotikFlowSensorToVariable")
-				, id("IotikLineDetectorToVariable")
 
 				, id("IotikWaitForTouchSensor")
 				, id("IotikWaitForIRDistance")
 				, id("IotikWaitForSonarDistance")
-				, id("IotikWaitForLaserDistance")
 				, id("IotikWaitForTemperature")
-				, id("IotikWaitForFlame")
-				, id("IotikWaitForSound")
+
+				, id("IotikAccelerometer")
+				, id("IotikCompass")
+				, id("IotikGyroscope")
+				, id("IotikColorSensor")
+				, id("IotikLineDetector")
+				, id("IotikLaserDistance")
+				, id("IotikFlame")
+				, id("IotikSound")
 	};
 }
 
