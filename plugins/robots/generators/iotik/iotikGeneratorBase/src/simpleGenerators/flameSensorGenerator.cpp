@@ -12,26 +12,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. */
 
-#include "waitForSoundSensorGenerator.h"
+#include "flameSensorGenerator.h"
 #include "generatorBase/generatorCustomizer.h"
 
 using namespace iotik::simple;
 using namespace generatorBase::simple;
 using namespace qReal;
 
-WaitForSoundSensorGenerator::WaitForSoundSensorGenerator(const qrRepo::RepoApi &repo
+FlameSensorGenerator::FlameSensorGenerator(const qrRepo::RepoApi &repo
 		, generatorBase::GeneratorCustomizer &customizer
 		, const Id &id
 		, QObject *parent)
 	: BindingGenerator(repo, customizer, id,
 					   repo.property(id, "Port").toString().at(0) == 'D' ?
-						   "wait/oneDigitalPort.t" : "wait/analogPort.t",
+						   "sensors/oneVariableOneDigitalPort.t" : "sensors/analogPort.t",
 					   QList<Binding *>()
-			<< Binding::createStatic("@@DRIVER@@", "SOUND")
+			<< Binding::createStatic("@@DRIVER@@", "FLAME")
 			<< Binding::createConverting("@@PORT@@", "Port", customizer.factory()->portNameConverter())
-			<< Binding::createConverting("@@VALUE@@", "Volume"
-					, customizer.factory()->intPropertyConverter(id, "Volume"))
-			<< Binding::createConverting("@@SIGN@@", "Sign", customizer.factory()->inequalitySignConverter())
+			<< Binding::createStaticConverting("@@VARIABLE@@"
+								, repo.property(id, "Variable").toString()
+								, customizer.factory()->functionBlockConverter(id, "Variable"))
 			, parent)
 {
 }

@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. */
 
-#include "accelerometerToVariableGenerator.h"
+#include "accelerometerGenerator.h"
 
 #include <generatorBase/generatorCustomizer.h>
 
@@ -20,7 +20,7 @@ using namespace iotik::simple;
 using namespace generatorBase::simple;
 using namespace qReal;
 
-AccelerometerToVariableGenerator::AccelerometerToVariableGenerator(const qrRepo::RepoApi &repo
+AccelerometerGenerator::AccelerometerGenerator(const qrRepo::RepoApi &repo
 		, generatorBase::GeneratorCustomizer &customizer
 		, const Id &id
 		, QObject *parent)

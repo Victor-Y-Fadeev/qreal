@@ -19,11 +19,6 @@
 #include "simpleGenerators/iotikEnginesGenerator.h"
 #include "simpleGenerators/mosfetGenerator.h"
 #include "simpleGenerators/ledGenerator.h"
-#include "simpleGenerators/colorSensorToVariableGenerator.h"
-#include "simpleGenerators/accelerometerToVariableGenerator.h"
-#include "simpleGenerators/compassToVariableGenerator.h"
-#include "simpleGenerators/gyroscopeToVariableGenerator.h"
-#include "simpleGenerators/lineDetectorToVariableGenerator.h"
 #include "simpleGenerators/soilSensorToVariableGenerator.h"
 #include "simpleGenerators/waterSensorToVariableGenerator.h"
 #include "simpleGenerators/flowSensorToVariableGenerator.h"
@@ -31,9 +26,14 @@
 #include "simpleGenerators/waitForInfraredSensorGenerator.h"
 #include "simpleGenerators/waitForTemperatureSensorGenerator.h"
 #include "simpleGenerators/waitForUltrasonicSensorGenerator.h"
-#include "simpleGenerators/waitForLaserSensorGenerator.h"
-#include "simpleGenerators/waitForFlameSensorGenerator.h"
-#include "simpleGenerators/waitForSoundSensorGenerator.h"
+#include "simpleGenerators/colorSensorGenerator.h"
+#include "simpleGenerators/accelerometerGenerator.h"
+#include "simpleGenerators/compassGenerator.h"
+#include "simpleGenerators/gyroscopeGenerator.h"
+#include "simpleGenerators/lineDetectorGenerator.h"
+#include "simpleGenerators/laserSensorGenerator.h"
+#include "simpleGenerators/flameSensorGenerator.h"
+#include "simpleGenerators/soundSensorGenerator.h"
 #include "simpleGenerators/forLoopGenerator.h"
 
 using namespace iotik;
@@ -74,22 +74,12 @@ AbstractSimpleGenerator *IotikGeneratorFactory::simpleGenerator(const qReal::Id 
 		return new LedGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "IotikMosfet") {
 		return new MosfetGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "IotikAccelerometerToVariable") {
-		return new AccelerometerToVariableGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "IotikCompassToVariable") {
-		return new CompassToVariableGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "IotikGyroscopeToVariable") {
-		return new GyroscopeToVariableGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "IotikColorSensorToVariable") {
-		return new ColorSensorToVariableGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "IotikSoilSensorToVariable") {
 		return new SoilSensorToVariableGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "IotikWaterSensorToVariable") {
 		return new WaterSensorToVariableGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "IotikFlowSensorToVariable") {
 		return new FlowSensorToVariableGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "IotikLineDetectorToVariable") {
-		return new LineDetectorToVariableGenerator(mRepo, customizer, id, this);
 
 	} else if (elementType == "IotikWaitForTouchSensor") {
 		return new WaitForTouchSensorGenerator(mRepo, customizer, id, this);
@@ -97,14 +87,25 @@ AbstractSimpleGenerator *IotikGeneratorFactory::simpleGenerator(const qReal::Id 
 		return new WaitForInfraredSensorGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "IotikWaitForSonarDistance") {
 		return new WaitForUltrasonicSensorGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "IotikWaitForLaserDistance") {
-		return new WaitForLaserSensorGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "IotikWaitForTemperature") {
 		return new WaitForTemperatureSensorGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "IotikWaitForFlame") {
-		return new WaitForFlameSensorGenerator(mRepo, customizer, id, this);
-	} else if (elementType == "IotikWaitForSound") {
-		return new WaitForSoundSensorGenerator(mRepo, customizer, id, this);
+
+	} else if (elementType == "IotikAccelerometer") {
+		return new AccelerometerGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikCompass") {
+		return new CompassGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikGyroscope") {
+		return new GyroscopeGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikColorSensor") {
+		return new ColorSensorGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikLineDetector") {
+		return new LineDetectorGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikLaserDistance") {
+		return new LaserSensorGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikFlame") {
+		return new FlameSensorGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikSound") {
+		return new SoundSensorGenerator(mRepo, customizer, id, this);
 	}
 
 	return GeneratorFactoryBase::simpleGenerator(id, customizer);

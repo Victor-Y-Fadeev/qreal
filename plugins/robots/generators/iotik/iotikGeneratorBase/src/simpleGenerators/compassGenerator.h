@@ -19,11 +19,11 @@
 namespace iotik {
 namespace simple {
 
-/// Generator for "line detector reading to variable" block.
-class LineDetectorToVariableGenerator : public generatorBase::simple::BindingGenerator
+/// Generator for "compass" block.
+class CompassGenerator : public generatorBase::simple::BindingGenerator
 {
 public:
-	LineDetectorToVariableGenerator(const qrRepo::RepoApi &repo
+	CompassGenerator(const qrRepo::RepoApi &repo
 			, generatorBase::GeneratorCustomizer &customizer
 			, const qReal::Id &id
 			, QObject *parent = 0);

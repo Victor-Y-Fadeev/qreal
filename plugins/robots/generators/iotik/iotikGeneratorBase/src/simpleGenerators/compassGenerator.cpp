@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. */
 
-#include "colorSensorToVariableGenerator.h"
+#include "compassGenerator.h"
 
 #include <generatorBase/generatorCustomizer.h>
 
@@ -20,27 +20,24 @@ using namespace iotik::simple;
 using namespace generatorBase::simple;
 using namespace qReal;
 
-ColorSensorToVariableGenerator::ColorSensorToVariableGenerator(const qrRepo::RepoApi &repo
+CompassGenerator::CompassGenerator(const qrRepo::RepoApi &repo
 		, generatorBase::GeneratorCustomizer &customizer
 		, const Id &id
 		, QObject *parent)
-	: BindingGenerator(repo, customizer, id, "sensors/threeVariableFiveDigitalPort.t", QList<Binding *>()
-			<< Binding::createStatic("@@DRIVER@@", "RED_COLOR")
-			<< Binding::createStatic("@@DRIVER_2@@", "GREEN_COLOR")
-			<< Binding::createStatic("@@DRIVER_3@@", "BLUE_COLOR")
-			<< Binding::createConverting("@@PORT@@", "S0", customizer.factory()->portNameConverter())
-			<< Binding::createConverting("@@PORT_2@@", "S1", customizer.factory()->portNameConverter())
-			<< Binding::createConverting("@@PORT_3@@", "S2", customizer.factory()->portNameConverter())
-			<< Binding::createConverting("@@PORT_4@@", "S3", customizer.factory()->portNameConverter())
-			<< Binding::createConverting("@@PORT_5@@", "OUT", customizer.factory()->portNameConverter())
+	: BindingGenerator(repo, customizer, id, "sensors/threeVariableTwoDigitalPort.t", QList<Binding *>()
+			<< Binding::createStatic("@@DRIVER@@", "X_COMPASS")
+			<< Binding::createStatic("@@DRIVER_2@@", "Y_COMPASS")
+			<< Binding::createStatic("@@DRIVER_3@@", "Z_COMPASS")
+			<< Binding::createConverting("@@PORT@@", "SDA", customizer.factory()->portNameConverter())
+			<< Binding::createConverting("@@PORT_2@@", "SCL", customizer.factory()->portNameConverter())
 			<< Binding::createStaticConverting("@@VARIABLE@@"
-								, repo.property(id, "Red").toString()
+								, repo.property(id, "X").toString()
 								, customizer.factory()->functionBlockConverter(id, "Variable"))
 			<< Binding::createStaticConverting("@@VARIABLE_2@@"
-								, repo.property(id, "Green").toString()
+								, repo.property(id, "Y").toString()
 								, customizer.factory()->functionBlockConverter(id, "Variable"))
 			<< Binding::createStaticConverting("@@VARIABLE_3@@"
-								, repo.property(id, "Blue").toString()
+								, repo.property(id, "Z").toString()
 								, customizer.factory()->functionBlockConverter(id, "Variable"))
 			, parent)
 {

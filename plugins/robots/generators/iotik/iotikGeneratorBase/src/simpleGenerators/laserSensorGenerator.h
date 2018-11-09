@@ -1,4 +1,4 @@
-/* Copyright 2017 QReal Research Group
+/* Copyright 2018 QReal Research Group
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,11 +19,11 @@
 namespace iotik {
 namespace simple {
 
-/// Generator for "color sensor reading to variable" block.
-class ColorSensorToVariableGenerator : public generatorBase::simple::BindingGenerator
+/// Generator for 'LaserDistance' block
+class LaserSensorGenerator : public generatorBase::simple::BindingGenerator
 {
 public:
-	ColorSensorToVariableGenerator(const qrRepo::RepoApi &repo
+	LaserSensorGenerator(const qrRepo::RepoApi &repo
 			, generatorBase::GeneratorCustomizer &customizer
 			, const qReal::Id &id
 			, QObject *parent = 0);

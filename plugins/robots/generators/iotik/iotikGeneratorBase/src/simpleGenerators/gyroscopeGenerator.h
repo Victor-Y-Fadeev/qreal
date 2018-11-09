@@ -19,11 +19,11 @@
 namespace iotik {
 namespace simple {
 
-/// Generator for "accelerometer reading to variable" block.
-class AccelerometerToVariableGenerator : public generatorBase::simple::BindingGenerator
+/// Generator for "gyroscope" block.
+class GyroscopeGenerator : public generatorBase::simple::BindingGenerator
 {
 public:
-	AccelerometerToVariableGenerator(const qrRepo::RepoApi &repo
+	GyroscopeGenerator(const qrRepo::RepoApi &repo
 			, generatorBase::GeneratorCustomizer &customizer
 			, const qReal::Id &id
 			, QObject *parent = 0);

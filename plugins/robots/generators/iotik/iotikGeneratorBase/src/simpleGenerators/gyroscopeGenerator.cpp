@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. */
 
-#include "gyroscopeToVariableGenerator.h"
+#include "gyroscopeGenerator.h"
 
 #include <generatorBase/generatorCustomizer.h>
 
@@ -20,7 +20,7 @@ using namespace iotik::simple;
 using namespace generatorBase::simple;
 using namespace qReal;
 
-GyroscopeToVariableGenerator::GyroscopeToVariableGenerator(const qrRepo::RepoApi &repo
+GyroscopeGenerator::GyroscopeGenerator(const qrRepo::RepoApi &repo
 		, generatorBase::GeneratorCustomizer &customizer
 		, const Id &id
 		, QObject *parent)

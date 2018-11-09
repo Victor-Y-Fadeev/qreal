@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. */
 
-#include "compassToVariableGenerator.h"
+#include "lineDetectorGenerator.h"
 
 #include <generatorBase/generatorCustomizer.h>
 
@@ -20,24 +20,18 @@ using namespace iotik::simple;
 using namespace generatorBase::simple;
 using namespace qReal;
 
-CompassToVariableGenerator::CompassToVariableGenerator(const qrRepo::RepoApi &repo
+LineDetectorGenerator::LineDetectorGenerator(const qrRepo::RepoApi &repo
 		, generatorBase::GeneratorCustomizer &customizer
 		, const Id &id
 		, QObject *parent)
-	: BindingGenerator(repo, customizer, id, "sensors/threeVariableTwoDigitalPort.t", QList<Binding *>()
-			<< Binding::createStatic("@@DRIVER@@", "X_COMPASS")
-			<< Binding::createStatic("@@DRIVER_2@@", "Y_COMPASS")
-			<< Binding::createStatic("@@DRIVER_3@@", "Z_COMPASS")
-			<< Binding::createConverting("@@PORT@@", "SDA", customizer.factory()->portNameConverter())
-			<< Binding::createConverting("@@PORT_2@@", "SCL", customizer.factory()->portNameConverter())
+	: BindingGenerator(repo, customizer, id,
+					   repo.property(id, "Port").toString().at(0) == 'D' ?
+						   "sensors/oneVariableOneDigitalPort.t" : "sensors/analogPort.t",
+					   QList<Binding *>()
+			<< Binding::createStatic("@@DRIVER@@", "LINE")
+			<< Binding::createConverting("@@PORT@@", "Port", customizer.factory()->portNameConverter())
 			<< Binding::createStaticConverting("@@VARIABLE@@"
-								, repo.property(id, "X").toString()
-								, customizer.factory()->functionBlockConverter(id, "Variable"))
-			<< Binding::createStaticConverting("@@VARIABLE_2@@"
-								, repo.property(id, "Y").toString()
-								, customizer.factory()->functionBlockConverter(id, "Variable"))
-			<< Binding::createStaticConverting("@@VARIABLE_3@@"
-								, repo.property(id, "Z").toString()
+								, repo.property(id, "Variable").toString()
 								, customizer.factory()->functionBlockConverter(id, "Variable"))
 			, parent)
 {

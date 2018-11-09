@@ -1,4 +1,4 @@
-/* Copyright 2018 QReal Research Group
+/* Copyright 2017 QReal Research Group
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,11 +19,11 @@
 namespace iotik {
 namespace simple {
 
-/// Generator for 'WaitForLaserDistance' block
-class WaitForLaserSensorGenerator : public generatorBase::simple::BindingGenerator
+/// Generator for "line detector" block.
+class LineDetectorGenerator : public generatorBase::simple::BindingGenerator
 {
 public:
-	WaitForLaserSensorGenerator(const qrRepo::RepoApi &repo
+	LineDetectorGenerator(const qrRepo::RepoApi &repo
 			, generatorBase::GeneratorCustomizer &customizer
 			, const qReal::Id &id
 			, QObject *parent = 0);

@@ -19,11 +19,11 @@
 namespace iotik {
 namespace simple {
 
-/// Generator for 'IotikWaitForSound' block
-class WaitForSoundSensorGenerator : public generatorBase::simple::BindingGenerator
+/// Generator for 'IotikFlame' block
+class FlameSensorGenerator : public generatorBase::simple::BindingGenerator
 {
 public:
-	WaitForSoundSensorGenerator(const qrRepo::RepoApi &repo
+	FlameSensorGenerator(const qrRepo::RepoApi &repo
 			, generatorBase::GeneratorCustomizer &customizer
 			, const qReal::Id &id
 			, QObject *parent = 0);
