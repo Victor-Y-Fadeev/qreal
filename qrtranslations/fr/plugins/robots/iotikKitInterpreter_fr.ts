@@ -38,9 +38,13 @@
         <translation type="vanished">IoTik v1.0</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/interpreters/iotikKitInterpreter/src/iotikKitInterpreterPlugin.cpp" line="32"/>
         <source>IoTik v2.0</source>
-        <translation>IoTik v2.0</translation>
+        <translation type="vanished">IoTik v2.0</translation>
+    </message>
+    <message>
+        <location filename="../../../../plugins/robots/interpreters/iotikKitInterpreter/src/iotikKitInterpreterPlugin.cpp" line="32"/>
+        <source>IoTik 32 v2.0</source>
+        <translation>IoTik 32 v2.0</translation>
     </message>
 </context>
 <context>

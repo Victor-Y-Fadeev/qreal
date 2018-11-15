@@ -22,9 +22,8 @@
 <context>
     <name>iotik::IotikActivator</name>
     <message>
-        <location filename="../../../../plugins/robots/generators/iotik/iotikRuCGeneratorLibrary/dialogs/iotikActivator.cpp" line="43"/>
         <source>Activator is not released yet</source>
-        <translation>Activator n&apos;est pas encore sorti</translation>
+        <translation type="vanished">Activator n&apos;est pas encore sorti</translation>
     </message>
 </context>
 <context>
@@ -46,8 +45,12 @@
     </message>
     <message>
         <location filename="../../../../plugins/robots/generators/iotik/iotikRuCGeneratorLibrary/src/iotikRuCGeneratorPluginBase.cpp" line="85"/>
+        <source>Аctivate IoTik 32 v2.0</source>
+        <translation>Аctiver IoTik 32 v2.0</translation>
+    </message>
+    <message>
         <source>Аctivate IoTik v2.0</source>
-        <translation>Аctiver IoTik v2.0</translation>
+        <translation type="vanished">Аctiver IoTik v2.0</translation>
     </message>
     <message>
         <source>Аctivate IoTik v1.0</source>
@@ -77,7 +80,7 @@
         <translation type="vanished">Le Wi-Fi n&apos;est pas encore disponible</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/iotik/iotikRuCGeneratorLibrary/src/iotikRuCGeneratorPluginBase.cpp" line="205"/>
+        <location filename="../../../../plugins/robots/generators/iotik/iotikRuCGeneratorLibrary/src/iotikRuCGeneratorPluginBase.cpp" line="206"/>
         <source>Code compiling failed, aborting</source>
         <translation>La compilation du code a échoué, a annulé</translation>
     </message>

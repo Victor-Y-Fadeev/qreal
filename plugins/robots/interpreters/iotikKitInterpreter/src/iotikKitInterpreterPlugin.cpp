@@ -29,7 +29,7 @@ QString IotikKitInterpreterPlugin::kitId() const
 
 QString IotikKitInterpreterPlugin::friendlyKitName() const
 {
-	return tr("IoTik v2.0");
+	return tr("IoTik 32 v2.0");
 }
 
 QList<kitBase::robotModel::RobotModelInterface *> IotikKitInterpreterPlugin::robotModels()
