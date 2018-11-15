@@ -28,8 +28,8 @@ GyroscopeGenerator::GyroscopeGenerator(const qrRepo::RepoApi &repo
 			<< Binding::createStatic("@@DRIVER@@", "X_GYROSCOPE")
 			<< Binding::createStatic("@@DRIVER_2@@", "Y_GYROSCOPE")
 			<< Binding::createStatic("@@DRIVER_3@@", "Z_GYROSCOPE")
-			<< Binding::createConverting("@@PORT@@", "SDA", customizer.factory()->portNameConverter())
-			<< Binding::createConverting("@@PORT_2@@", "SCL", customizer.factory()->portNameConverter())
+			<< Binding::createConverting("@@PORT@@", "SCL", customizer.factory()->portNameConverter())
+			<< Binding::createConverting("@@PORT_2@@", "SDA", customizer.factory()->portNameConverter())
 			<< Binding::createStaticConverting("@@VARIABLE@@"
 								, repo.property(id, "X").toString()
 								, customizer.factory()->functionBlockConverter(id, "Variable"))

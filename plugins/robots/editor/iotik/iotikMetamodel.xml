@@ -5,8 +5,10 @@
 	<diagram name="RobotsDiagram">
 		<nonGraphicTypes>
 			<enum name="IotikDigitalSensorPort">
+				<value name="TXD"/>
+				<value name="RXD"/>
+				<value name="D4"/>
 				<value name="D5"/>
-				<value name="D12"/>
 				<value name="D13"/>
 				<value name="D14"/>
 				<value name="D15"/>
@@ -25,8 +27,10 @@
 				<value name="A7"/>
 			</enum>
 			<enum name="IotikUniversalSensorPort">
+			    <value name="TXD"/>
+			    <value name="RXD"/>
+			    <value name="D4"/>
 			    <value name="D5"/>
-			    <value name="D12"/>
 			    <value name="D13"/>
 			    <value name="D14"/>
 			    <value name="D15"/>
@@ -43,8 +47,10 @@
 			    <value name="A7"/>
 			</enum>
 			<enum name="IotikWritePort">
+			    <value name="TXD"/>
+			    <value name="RXD"/>
+			    <value name="D4"/>
 			    <value name="D5"/>
-			    <value name="D12"/>
 			    <value name="D13"/>
 			    <value name="D14"/>
 			    <value name="D15"/>
@@ -130,7 +136,7 @@
 					</generalizations>
 					<properties>
 						<property displayedName="Ports" type="string" name="Ports">
-							<default>D5</default>
+							<default>D4</default>
 						</property>
 						<property displayedName="Angle (degrees)" type="string" name="Power">
 							<default>0</default>
@@ -189,7 +195,7 @@
 					<container/>
 					<properties>
 						<property displayedName="Port" type="IotikDigitalSensorPort" name="Port">
-							<default>D5</default>
+							<default>D4</default>
 						</property>
 					</properties>
 					<generalizations>
@@ -202,7 +208,7 @@
 					<container/>
 					<properties>
 						<property displayedName="Port" type="IotikUniversalSensorPort" name="Port">
-							<default>D5</default>
+							<default>D4</default>
 						</property>
 					</properties>
 					<generalizations>
@@ -214,11 +220,11 @@
 				<logic>
 					<container/>
 					<properties>
-						<property displayedName="SDA" type="IotikDigitalSensorPort" name="SDA">
-							<default>D21</default>
-						</property>
 						<property displayedName="SCL" type="IotikDigitalSensorPort" name="SCL">
 							<default>D22</default>
+						</property>
+						<property displayedName="SDA" type="IotikDigitalSensorPort" name="SDA">
+							<default>D21</default>
 						</property>
 					</properties>
 					<generalizations>
@@ -231,7 +237,7 @@
 					<container/>
 					<properties>
 						<property displayedName="Port" type="IotikWritePort" name="Port">
-							<default>D5</default>
+							<default>D4</default>
 						</property>
 					</properties>
 					<generalizations>
@@ -446,10 +452,10 @@
 					<container/>
 					<properties>
 						<property displayedName="Trig" type="IotikDigitalSensorPort" name="Trig">
-							<default>D12</default>
+							<default>D4</default>
 						</property>
 						<property displayedName="Echo" type="IotikDigitalSensorPort" name="Echo">
-							<default>D13</default>
+							<default>D5</default>
 						</property>
 						<property displayedName="Distance" type="string" name="Distance">
 							<default>0</default>
@@ -475,7 +481,7 @@
 						<label x="25" y="-65" textBinded="S1" hard="true" prefix="S1:"/>
 						<label x="85" y="-65" textBinded="S2" hard="true" prefix="S2:"/>
 						<label x="-15" y="-35" textBinded="S3" hard="true" prefix="S3:"/>
-						<label x="60" y="-35" textBinded="OUT" hard="true" prefix="OUT:"/>
+						<label x="65" y="-35" textBinded="OUT" hard="true" prefix="OUT:"/>
 						<label x="25" y="60" textBinded="Red" background="white" prefix="Red:"/>
 						<label x="25" y="90" textBinded="Green" background="white" prefix="Green:"/>
 						<label x="25" y="120" textBinded="Blue" background="white" prefix="Blue:"/>
@@ -485,7 +491,7 @@
 				<logic>
 					<properties>
 						<property displayedName="S0" type="IotikDigitalSensorPort" name="S0">
-							<default>D12</default>
+							<default>D5</default>
 						</property>
 						<property displayedName="S1" type="IotikDigitalSensorPort" name="S1">
 							<default>D13</default>
@@ -497,7 +503,7 @@
 							<default>D15</default>
 						</property>
 						<property displayedName="OUT" type="IotikDigitalSensorPort" name="OUT">
-							<default>D5</default>
+							<default>D4</default>
 						</property>
 						<property displayedName="Red" type="string" name="Red">
 							<default>red</default>
@@ -520,8 +526,8 @@
 						<image y1="0" name="images/accelerometerBlock.svg" x1="0" y2="50" x2="50"/>
 					</picture>
 					<labels>
-						<label x="0" y="-35" textBinded="SDA" hard="true" prefix="SDA:"/>
-						<label x="70" y="-35" textBinded="SCL" hard="true" prefix="SCL:"/>
+						<label x="-5" y="-35" textBinded="SCL" hard="true" prefix="SCL:"/>
+						<label x="70" y="-35" textBinded="SDA" hard="true" prefix="SDA:"/>
 						<label x="25" y="60" textBinded="X" background="white" prefix="X:"/>
 						<label x="25" y="90" textBinded="Y" background="white" prefix="Y:"/>
 						<label x="25" y="120" textBinded="Z" background="white" prefix="Z:"/>
@@ -551,8 +557,8 @@
 						<image y1="0" name="images/compassBlock.svg" x1="0" y2="50" x2="50"/>
 					</picture>
 					<labels>
-						<label x="0" y="-35" textBinded="SDA" hard="true" prefix="SDA:"/>
-						<label x="70" y="-35" textBinded="SCL" hard="true" prefix="SCL:"/>
+						<label x="-5" y="-35" textBinded="SCL" hard="true" prefix="SCL:"/>
+						<label x="70" y="-35" textBinded="SDA" hard="true" prefix="SDA:"/>
 						<label x="25" y="60" textBinded="X" background="white" prefix="X:"/>
 						<label x="25" y="90" textBinded="Y" background="white" prefix="Y:"/>
 						<label x="25" y="120" textBinded="Z" background="white" prefix="Z:"/>
@@ -582,8 +588,8 @@
 						<image y1="0" name="images/gyroscopeBlock.svg" x1="0" y2="50" x2="50"/>
 					</picture>
 					<labels>
-						<label x="0" y="-35" textBinded="SDA" hard="true" prefix="SDA:"/>
-						<label x="70" y="-35" textBinded="SCL" hard="true" prefix="SCL:"/>
+						<label x="-5" y="-35" textBinded="SCL" hard="true" prefix="SCL:"/>
+						<label x="70" y="-35" textBinded="SDA" hard="true" prefix="SDA:"/>
 						<label x="25" y="60" textBinded="X" background="white" prefix="X:"/>
 						<label x="25" y="90" textBinded="Y" background="white" prefix="Y:"/>
 						<label x="25" y="120" textBinded="Z" background="white" prefix="Z:"/>
@@ -635,8 +641,8 @@
 						<image y1="0" name="images/laserDistanceBlock.svg" x1="0" y2="50" x2="50"/>
 					</picture>
 					<labels>
-						<label x="0" y="-35" textBinded="SDA" hard="true" prefix="SDA:"/>
-						<label x="70" y="-35" textBinded="SCL" hard="true" prefix="SCL:"/>
+						<label x="-5" y="-35" textBinded="SCL" hard="true" prefix="SCL:"/>
+						<label x="70" y="-35" textBinded="SDA" hard="true" prefix="SDA:"/>
 						<label x="40" y="60" textBinded="Variable" background="white" prefix="Variable:"/>
 					</labels>
 					<nonResizeable/>

@@ -250,8 +250,11 @@ void IotikRuCGeneratorPluginBase::addDeviceVariables(const QFileInfo fileInfo)
 			"#define A7 35\n"
 			"#define A18 25\n"
 			"#define A19 26\n"
+
+			"#define TXD 1\n"
+			"#define RXD 3\n"
+			"#define D4 4\n"
 			"#define D5 5\n"
-			"#define D12 12\n"
 			"#define D13 13\n"
 			"#define D14 14\n"
 			"#define D15 15\n"

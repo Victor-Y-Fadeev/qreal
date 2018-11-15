@@ -25,8 +25,8 @@ LaserSensorGenerator::LaserSensorGenerator(const qrRepo::RepoApi &repo
 		, QObject *parent)
 	: BindingGenerator(repo, customizer, id, "sensors/oneVariableTwoDigitalPort.t", QList<Binding *>()
 			<< Binding::createStatic("@@DRIVER@@", "LASER")
-			<< Binding::createConverting("@@PORT@@", "SDA", customizer.factory()->portNameConverter())
-			<< Binding::createConverting("@@PORT_2@@", "SCL", customizer.factory()->portNameConverter())
+			<< Binding::createConverting("@@PORT@@", "SCL", customizer.factory()->portNameConverter())
+			<< Binding::createConverting("@@PORT_2@@", "SDA", customizer.factory()->portNameConverter())
 			<< Binding::createStaticConverting("@@VARIABLE@@"
 								, repo.property(id, "Variable").toString()
 								, customizer.factory()->functionBlockConverter(id, "Variable"))
