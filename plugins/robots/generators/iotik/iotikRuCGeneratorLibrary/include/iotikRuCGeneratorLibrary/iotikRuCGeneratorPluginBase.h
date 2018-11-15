@@ -77,6 +77,7 @@ protected:
 	iotik::robotModel::IotikRobotModelBase &mRobotModel;
 
 	QStringList mPathsToTemplates;
+	const QString mRootPath;
 
 	void addDeviceVariables(const QFileInfo fileInfo);
 	bool compileCode();

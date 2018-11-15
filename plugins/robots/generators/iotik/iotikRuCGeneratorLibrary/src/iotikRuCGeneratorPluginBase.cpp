@@ -15,7 +15,6 @@
 #include "include/iotikRuCGeneratorLibrary/iotikRuCGeneratorPluginBase.h"
 #include "include/iotikRuCGeneratorLibrary/iotikRuCGeneratorDefs.h"
 
-#include <QtCore/QDir>
 #include <QtCore/QFile>
 #include <QtCore/QProcess>
 
@@ -51,6 +50,7 @@ IotikRuCGeneratorPluginBase::IotikRuCGeneratorPluginBase(
 	, mWifiCommunicator(new WifiRobotCommunicationThread())
 	, mRobotModel(*robotModel)
 	, mPathsToTemplates(pathsToTemplates)
+	, mRootPath(QCoreApplication::applicationDirPath())
 {
 }
 
@@ -154,14 +154,13 @@ void IotikRuCGeneratorPluginBase::activate()
 void IotikRuCGeneratorPluginBase::wifiUpload()
 {
 	const QFileInfo fileInfo = generateCodeForProcessing();
-	const QString rootPath = QDir::current().absolutePath();
 
 	addDeviceVariables(fileInfo);
 	if (!compileCode()) {
 		return;
 	}
 
-	QFile::rename(rootPath + "/export.txt", rootPath + "/wifi_export.txt");
+	QFile::rename(mRootPath + "/export.txt", mRootPath + "/wifi_export.txt");
 
 	if (mWifiCommunicator->connect()) {
 		mWifiCommunicator->sendFile("wifi_export.txt");
@@ -169,13 +168,13 @@ void IotikRuCGeneratorPluginBase::wifiUpload()
 		mWifiCommunicator->disconnect();
 	}
 
-	QFile::remove(rootPath + "/wifi_export.txt");
+	QFile::remove(mRootPath + "/wifi_export.txt");
 }
 
 void IotikRuCGeneratorPluginBase::usbUpload()
 {
 	const QFileInfo fileInfo = generateCodeForProcessing();
-	const QString rootPath = QDir::current().absolutePath();
+	const QString mRootPath = QCoreApplication::applicationDirPath();
 
 	addDeviceVariables(fileInfo);
 	if (!compileCode()) {
@@ -188,24 +187,22 @@ void IotikRuCGeneratorPluginBase::usbUpload()
 		mUsbCommunicator->disconnect();
 	}
 
-	QFile::remove(rootPath + "/export.txt");
+	QFile::remove(mRootPath + "/export.txt");
 }
 
 bool IotikRuCGeneratorPluginBase::compileCode()
 {
-	const QString rootPath = QDir::current().absolutePath();
-
 	if (QFile::exists(RUC_COMPILER)) {
-		QProcess::execute(RUC_COMPILER, {rootPath + "/import.c"});
+		QProcess::execute(RUC_COMPILER, {mRootPath + "/import.c"});
 	} else {
-		QProcess::execute(RUC_DEBUG_COMPILER, {rootPath + "/import.c"});
+		QProcess::execute(RUC_DEBUG_COMPILER, {mRootPath + "/import.c"});
 	}
 
-	QFile::remove(rootPath + "/import.c");
-	QFile::remove(rootPath + "/tree.txt");
-	QFile::remove(rootPath + "/codes.txt");
+	QFile::remove(mRootPath + "/import.c");
+	QFile::remove(mRootPath + "/tree.txt");
+	QFile::remove(mRootPath + "/codes.txt");
 
-	if (!QFile::exists(rootPath + "/export.txt")) {
+	if (!QFile::exists(mRootPath + "/export.txt")) {
 		mMainWindowInterface->errorReporter()->addError(tr("Code compiling failed, aborting"));
 		return false;
 	}
@@ -266,7 +263,6 @@ void IotikRuCGeneratorPluginBase::addDeviceVariables(const QFileInfo fileInfo)
 			"#define D22 22\n"
 			"#define D23 23\n";
 
-	const QString rootPath = QDir::current().absolutePath();
 	const QString filePath = fileInfo.absoluteFilePath();
 
 	QFile file(filePath);
@@ -274,7 +270,7 @@ void IotikRuCGeneratorPluginBase::addDeviceVariables(const QFileInfo fileInfo)
 	QString code = file.readAll();
 	file.close();
 
-	file.setFileName(rootPath + "/import.c");
+	file.setFileName(mRootPath + "/import.c");
 	file.open(QIODevice::WriteOnly);
 	file.write(QByteArray::fromStdString((variables + code).toStdString()));
 	file.close();
