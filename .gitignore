@@ -42,6 +42,8 @@ umlDocumentation/*\~*
 .*.swp
 thirdparty/**/lib*.dylib
 .qmake.stash
+/installer/trik-studio-online-win32-installer.exe
+/installer/trik-studio-offline-win32-installer.exe
 /installer/trik-studio-online-linux-gnu64-installer
 /installer/trik-studio-offline-linux-gnu64-installer
 /installer/packages/*/ru.qreal.root*/meta/*-license.txt
@@ -50,6 +52,7 @@ thirdparty/**/lib*.dylib
 /installer/packages/qreal-base/ru.qreal.root/meta/QScintilla-GPL-exception.txt
 /installer/packages/qreal-base/ru.qreal.root/meta/gpl-3.0.txt
 /installer/packages/qreal-base/ru.qreal.root/meta/DejaVu_Fonts_License.txt
+/installer/packages/trik-studio/ru.qreal.root.trik.gamepad/meta/gamepad-build/
 /installer/misc/trik-studio-offline-linux-gnu64-installer
 /installer/trik-studio-offline-mac-installer.app/
 /installer/trik-studio-online-mac-installer.app/

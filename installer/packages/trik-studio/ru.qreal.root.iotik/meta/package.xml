@@ -1,9 +1,9 @@
-<?xml version="1.0"?>
+п»ї<?xml version="1.0"?>
 <Package>
     <DisplayName>IoTik v2.0 support</DisplayName>
-    <DisplayName xml:lang="ru_ru">Поддержка ЙоТик 32 v2.0</DisplayName>
+    <DisplayName xml:lang="ru_ru">РџРѕРґРґРµСЂР¶РєР° Р™РѕРўРёРє 32 v2.0</DisplayName>
     <Description>Install it for working with IoTik 32 v2.0 in TRIK Studio</Description>
-    <Description xml:lang="ru_ru">Установите это для программирования ЙоТик 32 v2.0</Description>
+    <Description xml:lang="ru_ru">РЈСЃС‚Р°РЅРѕРІРёС‚Рµ СЌС‚Рѕ РґР»СЏ РїСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёСЏ Р™РѕРўРёРє 32 v2.0</Description>
     <Version>3.2.0-4</Version>
     <ReleaseDate>2018-11-16</ReleaseDate>
     <SortingPriority>17</SortingPriority>
