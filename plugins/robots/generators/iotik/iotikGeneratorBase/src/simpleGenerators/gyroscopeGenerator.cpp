@@ -24,7 +24,7 @@ GyroscopeGenerator::GyroscopeGenerator(const qrRepo::RepoApi &repo
 		, generatorBase::GeneratorCustomizer &customizer
 		, const Id &id
 		, QObject *parent)
-	: BindingGenerator(repo, customizer, id, "sensors/threeVariableTwoDigitalPort.t", QList<Binding *>()
+	: BindingGenerator(repo, customizer, id, "sensors/threeVariableTwoDigitalPortWithDivision.t", QList<Binding *>()
 			<< Binding::createStatic("@@DRIVER@@", "X_GYROSCOPE")
 			<< Binding::createStatic("@@DRIVER_2@@", "Y_GYROSCOPE")
 			<< Binding::createStatic("@@DRIVER_3@@", "Z_GYROSCOPE")
