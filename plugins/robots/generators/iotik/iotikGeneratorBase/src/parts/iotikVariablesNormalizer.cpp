@@ -26,9 +26,9 @@ IotikVariablesNormalizer::IotikVariablesNormalizer(QString &code):
 
 void IotikVariablesNormalizer::normalizeArrays()
 {
-	const QRegExp definition("[\\w]+(\\s\\*)+\\s[\\w]+;");
+	const QRegExp definition("\\n[\\w]+(\\s\\*)+\\s[\\w]+;");
 
-	for (const QString name : findExpression(mCode, definition)) {
+	for (QString name : findExpression(mCode, definition)) {
 		normalizeArray(name);
 	}
 }
@@ -46,7 +46,7 @@ const QStringList IotikVariablesNormalizer::findExpression(const QString text, c
 	return list;
 }
 
-const int IotikVariablesNormalizer::countDimension(const QString definition)
+int IotikVariablesNormalizer::countDimension(const QString definition)
 {
 	int number = 0;
 	int lastPos = 0;
@@ -63,12 +63,12 @@ void IotikVariablesNormalizer::normalizeArray(const QString definition)
 {
 	const int dimension = countDimension(definition);
 
-	const QRegExp findType("[\\w]+");
+	const QRegExp findType("\\n[\\w]+");
 	findType.indexIn(definition);
 	QString type = findType.cap(0);
 
 	QString name = definition;
-	name.replace(QRegExp("[\\w]+(\\s\\*)+\\s"), "");
+	name.replace(QRegExp("\\n[\\w]+(\\s\\*)+\\s"), "");
 	name.replace(";", "");
 
 	QString newDefinition = type + " " + name;
@@ -86,11 +86,11 @@ void IotikVariablesNormalizer::normalizeArray(const QString definition)
 		concrete[i] = 1;
 	}
 
-	for (const QString use : applying) {
+	for (QString use : applying) {
 		updateConcrete(concrete, use);
 	}
 
-	for (const QString use : applying) {
+	for (QString use : applying) {
 		updateUse(concrete, use);
 	}
 

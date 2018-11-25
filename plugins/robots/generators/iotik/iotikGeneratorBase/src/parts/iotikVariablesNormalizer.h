@@ -28,7 +28,7 @@ public:
 
 private:
 	const QStringList findExpression(const QString text, const QRegExp expression);
-	const int countDimension(const QString definition);
+	int countDimension(const QString definition);
 	const QString getElement(const QVector<int> concrete, const int current, const QString simple);
 
 	void normalizeArray(const QString definition);
