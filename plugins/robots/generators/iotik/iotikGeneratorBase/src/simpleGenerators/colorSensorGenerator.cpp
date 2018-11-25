@@ -33,15 +33,27 @@ ColorSensorGenerator::ColorSensorGenerator(const qrRepo::RepoApi &repo
 			<< Binding::createConverting("@@PORT_3@@", "S2", customizer.factory()->portNameConverter())
 			<< Binding::createConverting("@@PORT_4@@", "S3", customizer.factory()->portNameConverter())
 			<< Binding::createConverting("@@PORT_5@@", "OUT", customizer.factory()->portNameConverter())
+
+			<< Binding::createStaticConverting("@@JUST_FOR_VAR_INIT@@"
+							, repo.property(id, "Red").toString() + " = 0"
+							, customizer.factory()->functionBlockConverter(id, "Red"))
 			<< Binding::createStaticConverting("@@VARIABLE@@"
 								, repo.property(id, "Red").toString()
-								, customizer.factory()->functionBlockConverter(id, "Variable"))
+								, customizer.factory()->functionBlockConverter(id, "Red"))
+
+			<< Binding::createStaticConverting("@@JUST_FOR_VAR_INIT@@"
+							, repo.property(id, "Green").toString() + " = 0"
+							, customizer.factory()->functionBlockConverter(id, "Green"))
 			<< Binding::createStaticConverting("@@VARIABLE_2@@"
 								, repo.property(id, "Green").toString()
-								, customizer.factory()->functionBlockConverter(id, "Variable"))
+								, customizer.factory()->functionBlockConverter(id, "Green"))
+
+			<< Binding::createStaticConverting("@@JUST_FOR_VAR_INIT@@"
+							, repo.property(id, "Blue").toString() + " = 0"
+							, customizer.factory()->functionBlockConverter(id, "Blue"))
 			<< Binding::createStaticConverting("@@VARIABLE_3@@"
 								, repo.property(id, "Blue").toString()
-								, customizer.factory()->functionBlockConverter(id, "Variable"))
+								, customizer.factory()->functionBlockConverter(id, "Blue"))
 			, parent)
 {
 }

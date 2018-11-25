@@ -29,6 +29,10 @@ FlameSensorGenerator::FlameSensorGenerator(const qrRepo::RepoApi &repo
 					   QList<Binding *>()
 			<< Binding::createStatic("@@DRIVER@@", "FLAME")
 			<< Binding::createConverting("@@PORT@@", "Port", customizer.factory()->portNameConverter())
+
+			<< Binding::createStaticConverting("@@JUST_FOR_VAR_INIT@@"
+							, repo.property(id, "Variable").toString() + " = 0"
+							, customizer.factory()->functionBlockConverter(id, "Variable"))
 			<< Binding::createStaticConverting("@@VARIABLE@@"
 								, repo.property(id, "Variable").toString()
 								, customizer.factory()->functionBlockConverter(id, "Variable"))

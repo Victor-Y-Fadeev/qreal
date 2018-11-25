@@ -27,6 +27,10 @@ FlowSensorToVariableGenerator::FlowSensorToVariableGenerator(const qrRepo::RepoA
 	: BindingGenerator(repo, customizer, id, "sensors/analogPort.t", QList<Binding *>()
 			<< Binding::createStatic("@@DRIVER@@", "FLOW")
 			<< Binding::createConverting("@@PORT@@", "Port", customizer.factory()->portNameConverter())
+
+			<< Binding::createStaticConverting("@@JUST_FOR_VAR_INIT@@"
+							, repo.property(id, "Variable").toString() + " = 0"
+							, customizer.factory()->functionBlockConverter(id, "Variable"))
 			<< Binding::createStaticConverting("@@VARIABLE@@"
 								, repo.property(id, "Variable").toString()
 								, customizer.factory()->functionBlockConverter(id, "Variable"))

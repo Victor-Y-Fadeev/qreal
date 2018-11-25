@@ -30,15 +30,27 @@ GyroscopeGenerator::GyroscopeGenerator(const qrRepo::RepoApi &repo
 			<< Binding::createStatic("@@DRIVER_3@@", "Z_GYROSCOPE")
 			<< Binding::createConverting("@@PORT@@", "SCL", customizer.factory()->portNameConverter())
 			<< Binding::createConverting("@@PORT_2@@", "SDA", customizer.factory()->portNameConverter())
+
+			<< Binding::createStaticConverting("@@JUST_FOR_VAR_INIT@@"
+							, repo.property(id, "X").toString() + " = 0.0"
+							, customizer.factory()->functionBlockConverter(id, "X"))
 			<< Binding::createStaticConverting("@@VARIABLE@@"
 								, repo.property(id, "X").toString()
-								, customizer.factory()->functionBlockConverter(id, "Variable"))
+								, customizer.factory()->functionBlockConverter(id, "X"))
+
+			<< Binding::createStaticConverting("@@JUST_FOR_VAR_INIT@@"
+							, repo.property(id, "Y").toString() + " = 0.0"
+							, customizer.factory()->functionBlockConverter(id, "Y"))
 			<< Binding::createStaticConverting("@@VARIABLE_2@@"
 								, repo.property(id, "Y").toString()
-								, customizer.factory()->functionBlockConverter(id, "Variable"))
+								, customizer.factory()->functionBlockConverter(id, "Y"))
+
+			<< Binding::createStaticConverting("@@JUST_FOR_VAR_INIT@@"
+							, repo.property(id, "Z").toString() + " = 0.0"
+							, customizer.factory()->functionBlockConverter(id, "Z"))
 			<< Binding::createStaticConverting("@@VARIABLE_3@@"
 								, repo.property(id, "Z").toString()
-								, customizer.factory()->functionBlockConverter(id, "Variable"))
+								, customizer.factory()->functionBlockConverter(id, "Z"))
 			, parent)
 {
 }

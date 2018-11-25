@@ -27,6 +27,10 @@ LaserSensorGenerator::LaserSensorGenerator(const qrRepo::RepoApi &repo
 			<< Binding::createStatic("@@DRIVER@@", "LASER")
 			<< Binding::createConverting("@@PORT@@", "SCL", customizer.factory()->portNameConverter())
 			<< Binding::createConverting("@@PORT_2@@", "SDA", customizer.factory()->portNameConverter())
+
+			<< Binding::createStaticConverting("@@JUST_FOR_VAR_INIT@@"
+							, repo.property(id, "Variable").toString() + " = 0"
+							, customizer.factory()->functionBlockConverter(id, "Variable"))
 			<< Binding::createStaticConverting("@@VARIABLE@@"
 								, repo.property(id, "Variable").toString()
 								, customizer.factory()->functionBlockConverter(id, "Variable"))
