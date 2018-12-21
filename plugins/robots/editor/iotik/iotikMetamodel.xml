@@ -328,7 +328,7 @@
 				<value name="green" displayedName="green"/>
 				<value name="black" displayedName="black"/>
 				<value name="blue" displayedName="blue"/>
-				<value name="yellow" displayedName="yellow"/>
+				<value name="orange" displayedName="orange"/>
 				<value name="red" displayedName="red"/>
 				<value name="violet" displayedName="violet"/>
 				<value name="off" displayedName="off"/>
@@ -1160,9 +1160,9 @@
 					</picture>
 					<labels>
 						<label x="40" y="-35" textBinded="Port" hard="true" prefix="Port:"/>
-						<label x="25" y="60" textBinded="X" background="white" prefix="X:"/>
-						<label x="25" y="60" textBinded="Y" background="white" prefix="Y:"/>
-						<label x="40" y="120" textBinded="Message" background="white" prefix="Message:"/>
+						<label x="40" y="60" textBinded="Message" background="white" prefix="Message:"/>
+						<label x="25" y="90" textBinded="X" background="white" prefix="X:"/>
+						<label x="25" y="120" textBinded="Y" background="white" prefix="Y:"/>
 					</labels>
 					<nonResizeable/>
 				</graphics>
