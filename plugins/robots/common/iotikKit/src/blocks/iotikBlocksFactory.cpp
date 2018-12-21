@@ -30,6 +30,16 @@
 #include "iotikKit/robotModel/parts/iotikLaserSensor.h"
 #include "iotikKit/robotModel/parts/iotikFlameSensor.h"
 
+#include "iotikKit/robotModel/parts/iotikWifi.h"
+#include "iotikKit/robotModel/parts/iotikBlynkAuthorization.h"
+#include "iotikKit/robotModel/parts/iotikBlynkLCD.h"
+#include "iotikKit/robotModel/parts/iotikBlynkLed.h"
+#include "iotikKit/robotModel/parts/iotikBlynkNotification.h"
+#include "iotikKit/robotModel/parts/iotikBlynkProperty.h"
+#include "iotikKit/robotModel/parts/iotikBlynkReceive.h"
+#include "iotikKit/robotModel/parts/iotikBlynkSend.h"
+#include "iotikKit/robotModel/parts/iotikBlynkTerminal.h"
+
 #include <kitBase/robotModel/robotParts/rangeSensor.h>
 #include <kitBase/blocksBase/common/enginesStopBlock.h>
 #include <kitBase/blocksBase/common/waitForTouchSensorBlock.h>
@@ -54,6 +64,16 @@
 #include "details/flameSensorBlock.h"
 #include "details/soundSensorBlock.h"
 #include "details/laserDistanceBlock.h"
+
+#include "details/wifi.h"
+#include "details/blynkAuthorization.h"
+#include "details/blynkLCD.h"
+#include "details/blynkLed.h"
+#include "details/blynkNotification.h"
+#include "details/blynkProperty.h"
+#include "details/blynkReceive.h"
+#include "details/blynkSend.h"
+#include "details/blynkTerminal.h"
 
 using namespace iotik::blocks;
 using namespace iotik::blocks::details;
@@ -109,6 +129,25 @@ qReal::interpretation::Block *IotikBlocksFactory::produceBlock(const qReal::Id &
 		return new FlameSensorBlock();
 	} else if (elementMetatypeIs(element, "IotikSound")) {
 		return new SoundSensorBlock();
+
+	} else if (elementMetatypeIs(element, "IotikWifi")) {
+		return new WifiBlock();
+	} else if (elementMetatypeIs(element, "IotikBlynkAuthorization")) {
+		return new BlynkAuthorizationBlock();
+	} else if (elementMetatypeIs(element, "IotikBlynkLed")) {
+		return new BlynkLedBlock();
+	} else if (elementMetatypeIs(element, "IotikBlynkSend")) {
+		return new BlynkSendBlock();
+	} else if (elementMetatypeIs(element, "IotikBlynkReceive")) {
+		return new BlynkReceiveBlock();
+	} else if (elementMetatypeIs(element, "IotikBlynkNotification")) {
+		return new BlynkNotificationBlock();
+	} else if (elementMetatypeIs(element, "IotikBlynkProperty")) {
+		return new BlynkPropertyBlock();
+	} else if (elementMetatypeIs(element, "IotikBlynkLCD")) {
+		return new BlynkLCDBlock();
+	} else if (elementMetatypeIs(element, "IotikBlynkTerminal")) {
+		return new BlynkTerminalBlock();
 	}
 
 	return nullptr;
@@ -140,6 +179,16 @@ qReal::IdList IotikBlocksFactory::providedBlocks() const
 				, id("IotikLaserDistance")
 				, id("IotikFlame")
 				, id("IotikSound")
+
+				, id("IotikWifi")
+				, id("IotikBlynkAuthorization")
+				, id("IotikBlynkLed")
+				, id("IotikBlynkSend")
+				, id("IotikBlynkReceive")
+				, id("IotikBlynkNotification")
+				, id("IotikBlynkProperty")
+				, id("IotikBlynkLCD")
+				, id("IotikBlynkTerminal")
 	};
 }
 

@@ -66,6 +66,273 @@
 			    <value name="A18"/>
 			    <value name="A19"/>
 			</enum>
+			<enum name="IotikBlynkPort">
+			    <value name="V0"/>
+			    <value name="V1"/>
+			    <value name="V2"/>
+			    <value name="V3"/>
+			    <value name="V4"/>
+			    <value name="V5"/>
+			    <value name="V6"/>
+			    <value name="V7"/>
+			    <value name="V8"/>
+			    <value name="V9"/>
+			    <value name="V10"/>
+			    <value name="V11"/>
+			    <value name="V12"/>
+			    <value name="V13"/>
+			    <value name="V14"/>
+			    <value name="V15"/>
+			    <value name="V16"/>
+			    <value name="V17"/>
+			    <value name="V18"/>
+			    <value name="V19"/>
+			    <value name="V20"/>
+			    <value name="V21"/>
+			    <value name="V22"/>
+			    <value name="V23"/>
+			    <value name="V24"/>
+			    <value name="V25"/>
+			    <value name="V26"/>
+			    <value name="V27"/>
+			    <value name="V28"/>
+			    <value name="V29"/>
+			    <value name="V30"/>
+			    <value name="V31"/>
+			    <value name="V32"/>
+			    <value name="V33"/>
+			    <value name="V34"/>
+			    <value name="V35"/>
+			    <value name="V36"/>
+			    <value name="V37"/>
+			    <value name="V38"/>
+			    <value name="V39"/>
+			    <value name="V40"/>
+			    <value name="V41"/>
+			    <value name="V42"/>
+			    <value name="V43"/>
+			    <value name="V44"/>
+			    <value name="V45"/>
+			    <value name="V46"/>
+			    <value name="V47"/>
+			    <value name="V48"/>
+			    <value name="V49"/>
+			    <value name="V50"/>
+			    <value name="V51"/>
+			    <value name="V52"/>
+			    <value name="V53"/>
+			    <value name="V54"/>
+			    <value name="V55"/>
+			    <value name="V56"/>
+			    <value name="V57"/>
+			    <value name="V58"/>
+			    <value name="V59"/>
+			    <value name="V60"/>
+			    <value name="V61"/>
+			    <value name="V62"/>
+			    <value name="V63"/>
+			    <value name="V64"/>
+			    <value name="V65"/>
+			    <value name="V66"/>
+			    <value name="V67"/>
+			    <value name="V68"/>
+			    <value name="V69"/>
+			    <value name="V70"/>
+			    <value name="V71"/>
+			    <value name="V72"/>
+			    <value name="V73"/>
+			    <value name="V74"/>
+			    <value name="V75"/>
+			    <value name="V76"/>
+			    <value name="V77"/>
+			    <value name="V78"/>
+			    <value name="V79"/>
+			    <value name="V80"/>
+			    <value name="V81"/>
+			    <value name="V82"/>
+			    <value name="V83"/>
+			    <value name="V84"/>
+			    <value name="V85"/>
+			    <value name="V86"/>
+			    <value name="V87"/>
+			    <value name="V88"/>
+			    <value name="V89"/>
+			    <value name="V90"/>
+			    <value name="V91"/>
+			    <value name="V92"/>
+			    <value name="V93"/>
+			    <value name="V94"/>
+			    <value name="V95"/>
+			    <value name="V96"/>
+			    <value name="V97"/>
+			    <value name="V98"/>
+			    <value name="V99"/>
+			    <value name="V100"/>
+			    <value name="V101"/>
+			    <value name="V102"/>
+			    <value name="V103"/>
+			    <value name="V104"/>
+			    <value name="V105"/>
+			    <value name="V106"/>
+			    <value name="V107"/>
+			    <value name="V108"/>
+			    <value name="V109"/>
+			    <value name="V110"/>
+			    <value name="V111"/>
+			    <value name="V112"/>
+			    <value name="V113"/>
+			    <value name="V114"/>
+			    <value name="V115"/>
+			    <value name="V116"/>
+			    <value name="V117"/>
+			    <value name="V118"/>
+			    <value name="V119"/>
+			    <value name="V120"/>
+			    <value name="V121"/>
+			    <value name="V122"/>
+			    <value name="V123"/>
+			    <value name="V124"/>
+			    <value name="V125"/>
+			    <value name="V126"/>
+			    <value name="V127"/>
+			    <value name="V128"/>
+			    <value name="V129"/>
+			    <value name="V130"/>
+			    <value name="V131"/>
+			    <value name="V132"/>
+			    <value name="V133"/>
+			    <value name="V134"/>
+			    <value name="V135"/>
+			    <value name="V136"/>
+			    <value name="V137"/>
+			    <value name="V138"/>
+			    <value name="V139"/>
+			    <value name="V140"/>
+			    <value name="V141"/>
+			    <value name="V142"/>
+			    <value name="V143"/>
+			    <value name="V144"/>
+			    <value name="V145"/>
+			    <value name="V146"/>
+			    <value name="V147"/>
+			    <value name="V148"/>
+			    <value name="V149"/>
+			    <value name="V150"/>
+			    <value name="V151"/>
+			    <value name="V152"/>
+			    <value name="V153"/>
+			    <value name="V154"/>
+			    <value name="V155"/>
+			    <value name="V156"/>
+			    <value name="V157"/>
+			    <value name="V158"/>
+			    <value name="V159"/>
+			    <value name="V160"/>
+			    <value name="V161"/>
+			    <value name="V162"/>
+			    <value name="V163"/>
+			    <value name="V164"/>
+			    <value name="V165"/>
+			    <value name="V166"/>
+			    <value name="V167"/>
+			    <value name="V168"/>
+			    <value name="V169"/>
+			    <value name="V170"/>
+			    <value name="V171"/>
+			    <value name="V172"/>
+			    <value name="V173"/>
+			    <value name="V174"/>
+			    <value name="V175"/>
+			    <value name="V176"/>
+			    <value name="V177"/>
+			    <value name="V178"/>
+			    <value name="V179"/>
+			    <value name="V180"/>
+			    <value name="V181"/>
+			    <value name="V182"/>
+			    <value name="V183"/>
+			    <value name="V184"/>
+			    <value name="V185"/>
+			    <value name="V186"/>
+			    <value name="V187"/>
+			    <value name="V188"/>
+			    <value name="V189"/>
+			    <value name="V190"/>
+			    <value name="V191"/>
+			    <value name="V192"/>
+			    <value name="V193"/>
+			    <value name="V194"/>
+			    <value name="V195"/>
+			    <value name="V196"/>
+			    <value name="V197"/>
+			    <value name="V198"/>
+			    <value name="V199"/>
+			    <value name="V200"/>
+			    <value name="V201"/>
+			    <value name="V202"/>
+			    <value name="V203"/>
+			    <value name="V204"/>
+			    <value name="V205"/>
+			    <value name="V206"/>
+			    <value name="V207"/>
+			    <value name="V208"/>
+			    <value name="V209"/>
+			    <value name="V210"/>
+			    <value name="V211"/>
+			    <value name="V212"/>
+			    <value name="V213"/>
+			    <value name="V214"/>
+			    <value name="V215"/>
+			    <value name="V216"/>
+			    <value name="V217"/>
+			    <value name="V218"/>
+			    <value name="V219"/>
+			    <value name="V220"/>
+			    <value name="V221"/>
+			    <value name="V222"/>
+			    <value name="V223"/>
+			    <value name="V224"/>
+			    <value name="V225"/>
+			    <value name="V226"/>
+			    <value name="V227"/>
+			    <value name="V228"/>
+			    <value name="V229"/>
+			    <value name="V230"/>
+			    <value name="V231"/>
+			    <value name="V232"/>
+			    <value name="V233"/>
+			    <value name="V234"/>
+			    <value name="V235"/>
+			    <value name="V236"/>
+			    <value name="V237"/>
+			    <value name="V238"/>
+			    <value name="V239"/>
+			    <value name="V240"/>
+			    <value name="V241"/>
+			    <value name="V242"/>
+			    <value name="V243"/>
+			    <value name="V244"/>
+			    <value name="V245"/>
+			    <value name="V246"/>
+			    <value name="V247"/>
+			    <value name="V248"/>
+			    <value name="V249"/>
+			    <value name="V250"/>
+			    <value name="V251"/>
+			    <value name="V252"/>
+			    <value name="V253"/>
+			    <value name="V254"/>
+			    <value name="V255"/>
+			</enum>
+			<enum name="IotikLedColor">
+				<value name="green" displayedName="green"/>
+				<value name="black" displayedName="black"/>
+				<value name="blue" displayedName="blue"/>
+				<value name="yellow" displayedName="yellow"/>
+				<value name="red" displayedName="red"/>
+				<value name="violet" displayedName="violet"/>
+				<value name="off" displayedName="off"/>
+			</enum>
 		</nonGraphicTypes>
 		<graphicTypes>
 			<!-- Algorithms -->
@@ -238,6 +505,19 @@
 					<properties>
 						<property displayedName="Port" type="IotikWritePort" name="Port">
 							<default>D4</default>
+						</property>
+					</properties>
+					<generalizations>
+						<parent parentName="IotikSensorBlock"/>
+					</generalizations>
+				</logic>
+			</node>
+			<node name="IotikBlynkBlock">
+				<logic>
+					<container/>
+					<properties>
+						<property displayedName="Port" type="IotikBlynkPort" name="Port">
+							<default>V0</default>
 						</property>
 					</properties>
 					<generalizations>
@@ -706,6 +986,228 @@
 				</logic>
 			</node>
 
+			<!-- Blynk sensors blocks -->
+			<node displayedName="Connect Wi-Fi" name="IotikWifi" description="">
+				<graphics>
+					<picture sizex="50" sizey="50">
+						<image y1="0" name="images/wifiBlock.svg" x1="0" y2="50" x2="50"/>
+					</picture>
+					<labels>
+						<label x="25" y="-35" textBinded="SSID" hard="true" prefix="SSID:"/>
+						<label x="25" y="60" textBinded="Password" background="white" prefix="Password:"/>
+					</labels>
+					<nonResizeable/>
+				</graphics>
+				<logic>
+					<properties>
+						<property displayedName="SSID" type="string" name="SSID">
+							<default>Network</default>
+						</property>
+						<property displayedName="Password" type="string" name="Password">
+							<default>pass</default>
+						</property>
+					</properties>
+					<container/>
+					<generalizations>
+						<parent parentName="IotikSensorBlock"/>
+					</generalizations>
+				</logic>
+			</node>
+			<node displayedName="Authorization" name="IotikBlynkAuthorization" description="">
+				<graphics>
+					<picture sizex="50" sizey="50">
+						<image y1="0" name="images/blynkInitBlock.svg" x1="0" y2="50" x2="50"/>
+					</picture>
+					<labels>
+						<label x="25" y="60" textBinded="Auth" background="white" prefix="Auth:"/>
+					</labels>
+					<nonResizeable/>
+				</graphics>
+				<logic>
+					<properties>
+						<property displayedName="Auth" type="string" name="Auth">
+							<default>auth</default>
+						</property>
+					</properties>
+					<container/>
+					<generalizations>
+						<parent parentName="IotikSensorBlock"/>
+					</generalizations>
+				</logic>
+			</node>
+			<node displayedName="Led" name="IotikBlynkLed" description="">
+				<graphics>
+					<picture sizex="50" sizey="50">
+						<image y1="0" name="images/blynkLedBlock.svg" x1="0" y2="50" x2="50"/>
+					</picture>
+					<labels>
+						<label x="40" y="-35" textBinded="Port" hard="true" prefix="Port:"/>
+						<label x="25" y="60" textBinded="Color" background="white" prefix="Color:"/>
+					</labels>
+					<nonResizeable/>
+				</graphics>
+				<logic>
+					<properties>
+						<property displayedName="Color" type="IotikLedColor" name="Color">
+							<default>red</default>
+						</property>
+					</properties>
+					<container/>
+					<generalizations>
+						<parent parentName="IotikBlynkBlock"/>
+					</generalizations>
+				</logic>
+			</node>
+			<node displayedName="Send Value" name="IotikBlynkSend" description="">
+				<graphics>
+					<picture sizex="50" sizey="50">
+						<image y1="0" name="images/blynkSendBlock.svg" x1="0" y2="50" x2="50"/>
+					</picture>
+					<labels>
+						<label x="40" y="-35" textBinded="Port" hard="true" prefix="Port:"/>
+						<label x="40" y="60" textBinded="Value" background="white" prefix="Value:"/>
+					</labels>
+					<nonResizeable/>
+				</graphics>
+				<logic>
+					<properties>
+						<property displayedName="Value" type="string" name="Value">
+							<default>0</default>
+						</property>
+					</properties>
+					<container/>
+					<generalizations>
+						<parent parentName="IotikBlynkBlock"/>
+					</generalizations>
+				</logic>
+			</node>
+			<node displayedName="Receive Value" name="IotikBlynkReceive" description="">
+				<graphics>
+					<picture sizex="50" sizey="50">
+						<image y1="0" name="images/blynkReceiveBlock.svg" x1="0" y2="50" x2="50"/>
+					</picture>
+					<labels>
+						<label x="40" y="-35" textBinded="Port" hard="true" prefix="Port:"/>
+						<label x="40" y="60" textBinded="Variable" background="white" prefix="Variable:"/>
+					</labels>
+					<nonResizeable/>
+				</graphics>
+				<logic>
+					<properties>
+						<property displayedName="Variable" type="string" name="Variable">
+							<default>receive</default>
+						</property>
+					</properties>
+					<container/>
+					<generalizations>
+						<parent parentName="IotikBlynkBlock"/>
+					</generalizations>
+				</logic>
+			</node>
+			<node displayedName="Notification" name="IotikBlynkNotification" description="">
+				<graphics>
+					<picture sizex="50" sizey="50">
+						<image y1="0" name="images/blynkNotificationBlock.svg" x1="0" y2="50" x2="50"/>
+					</picture>
+					<labels>
+						<label x="40" y="60" textBinded="Message" background="white" prefix="Message:"/>
+					</labels>
+					<nonResizeable/>
+				</graphics>
+				<logic>
+					<properties>
+						<property displayedName="Message" type="string" name="Message">
+							<default>Hello world!</default>
+						</property>
+					</properties>
+					<container/>
+					<generalizations>
+						<parent parentName="IotikBlynkBlock"/>
+					</generalizations>
+				</logic>
+			</node>
+			<node displayedName="Set Property" name="IotikBlynkProperty" description="">
+				<graphics>
+					<picture sizex="50" sizey="50">
+						<image y1="0" name="images/blynkPropertyBlock.svg" x1="0" y2="50" x2="50"/>
+					</picture>
+					<labels>
+						<label x="40" y="-35" textBinded="Port" hard="true" prefix="Port:"/>
+						<label x="40" y="60" textBinded="Property" background="white" prefix="Property:"/>
+						<label x="40" y="90" textBinded="Value" background="white" prefix="Value:"/>
+					</labels>
+					<nonResizeable/>
+				</graphics>
+				<logic>
+					<properties>
+						<property displayedName="Property" type="string" name="Property">
+							<default>color</default>
+						</property>
+						<property displayedName="Value" type="string" name="Value">
+							<default>#000000</default>
+						</property>
+					</properties>
+					<container/>
+					<generalizations>
+						<parent parentName="IotikBlynkBlock"/>
+					</generalizations>
+				</logic>
+			</node>
+			<node displayedName="LCD" name="IotikBlynkLCD" description="">
+				<graphics>
+					<picture sizex="50" sizey="50">
+						<image y1="0" name="images/blynkLCDBlock.svg" x1="0" y2="50" x2="50"/>
+					</picture>
+					<labels>
+						<label x="40" y="-35" textBinded="Port" hard="true" prefix="Port:"/>
+						<label x="25" y="60" textBinded="X" background="white" prefix="X:"/>
+						<label x="25" y="60" textBinded="Y" background="white" prefix="Y:"/>
+						<label x="40" y="120" textBinded="Message" background="white" prefix="Message:"/>
+					</labels>
+					<nonResizeable/>
+				</graphics>
+				<logic>
+					<properties>
+						<property displayedName="X" type="string" name="X">
+							<default>0</default>
+						</property>
+						<property displayedName="Y" type="string" name="Y">
+							<default>0</default>
+						</property>
+						<property displayedName="Message" type="string" name="Message">
+							<default>Hello world!</default>
+						</property>
+					</properties>
+					<container/>
+					<generalizations>
+						<parent parentName="IotikBlynkBlock"/>
+					</generalizations>
+				</logic>
+			</node>
+			<node displayedName="Terminal" name="IotikBlynkTerminal" description="">
+				<graphics>
+					<picture sizex="50" sizey="50">
+						<image y1="0" name="images/blynkTerminalBlock.svg" x1="0" y2="50" x2="50"/>
+					</picture>
+					<labels>
+						<label x="40" y="-35" textBinded="Port" hard="true" prefix="Port:"/>
+						<label x="40" y="60" textBinded="Message" background="white" prefix="Message:"/>
+					</labels>
+					<nonResizeable/>
+				</graphics>
+				<logic>
+					<properties>
+						<property displayedName="Message" type="string" name="Message">
+							<default>Hello world!</default>
+						</property>
+					</properties>
+					<container/>
+					<generalizations>
+						<parent parentName="IotikBlynkBlock"/>
+					</generalizations>
+				</logic>
+			</node>
+
 		</graphicTypes>
 		<palette sorted="false">
 			<group name="Actions">
@@ -734,6 +1236,17 @@
 				<element name="IotikLaserDistance" />
 				<element name="IotikFlame" />
 				<element name="IotikSound" />
+			</group>
+			<group name="Network (Blynk)">
+				<element name="IotikWifi" />
+				<element name="IotikBlynkAuthorization" />
+				<element name="IotikBlynkSend" />
+				<element name="IotikBlynkReceive" />
+				<element name="IotikBlynkLed" />
+				<element name="IotikBlynkNotification" />
+				<element name="IotikBlynkProperty" />
+				<element name="IotikBlynkLCD" />
+				<element name="IotikBlynkTerminal" />
 			</group>
 		</palette>
 	</diagram>

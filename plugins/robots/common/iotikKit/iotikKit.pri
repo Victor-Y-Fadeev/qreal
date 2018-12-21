@@ -45,6 +45,15 @@ HEADERS += \
 	$$PWD/include/iotikKit/robotModel/parts/iotikSonarSensor.h \
 	$$PWD/include/iotikKit/robotModel/parts/iotikLaserSensor.h \
 	$$PWD/include/iotikKit/robotModel/parts/iotikFlameSensor.h \
+	$$PWD/include/iotikKit/robotModel/parts/iotikWifi.h \
+	$$PWD/include/iotikKit/robotModel/parts/iotikBlynkAuthorization.h \
+	$$PWD/include/iotikKit/robotModel/parts/iotikBlynkLed.h \
+	$$PWD/include/iotikKit/robotModel/parts/iotikBlynkSend.h \
+	$$PWD/include/iotikKit/robotModel/parts/iotikBlynkReceive.h \
+	$$PWD/include/iotikKit/robotModel/parts/iotikBlynkNotification.h \
+	$$PWD/include/iotikKit/robotModel/parts/iotikBlynkProperty.h \
+	$$PWD/include/iotikKit/robotModel/parts/iotikBlynkLCD.h \
+	$$PWD/include/iotikKit/robotModel/parts/iotikBlynkTerminal.h \
 	$$PWD/include/iotikKit/communication/usbRobotCommunicationThread.h \
 	$$PWD/include/iotikKit/communication/wifiRobotCommunicationThread.h \
 	$$PWD/src/blocks/details/iotikEnginesBackwardBlock.h \
@@ -63,6 +72,15 @@ HEADERS += \
 	$$PWD/src/blocks/details/flameSensorBlock.h \
 	$$PWD/src/blocks/details/soundSensorBlock.h \
 	$$PWD/src/blocks/details/laserDistanceBlock.h \
+	$$PWD/src/blocks/details/wifi.h \
+	$$PWD/src/blocks/details/blynkAuthorization.h \
+	$$PWD/src/blocks/details/blynkLed.h \
+	$$PWD/src/blocks/details/blynkSend.h \
+	$$PWD/src/blocks/details/blynkReceive.h \
+	$$PWD/src/blocks/details/blynkNotification.h \
+	$$PWD/src/blocks/details/blynkProperty.h \
+	$$PWD/src/blocks/details/blynkLCD.h \
+	$$PWD/src/blocks/details/blynkTerminal.h \
 
 SOURCES += \
 	$$PWD/src/robotModel/iotikRobotModelBase.cpp \
@@ -82,6 +100,15 @@ SOURCES += \
 	$$PWD/src/robotModel/parts/iotikSonarSensor.cpp \
 	$$PWD/src/robotModel/parts/iotikLaserSensor.cpp \
 	$$PWD/src/robotModel/parts/iotikFlameSensor.cpp \
+	$$PWD/src/robotModel/parts/iotikWifi.cpp \
+	$$PWD/src/robotModel/parts/iotikBlynkAuthorization.cpp \
+	$$PWD/src/robotModel/parts/iotikBlynkLed.cpp \
+	$$PWD/src/robotModel/parts/iotikBlynkSend.cpp \
+	$$PWD/src/robotModel/parts/iotikBlynkReceive.cpp \
+	$$PWD/src/robotModel/parts/iotikBlynkNotification.cpp \
+	$$PWD/src/robotModel/parts/iotikBlynkProperty.cpp \
+	$$PWD/src/robotModel/parts/iotikBlynkLCD.cpp \
+	$$PWD/src/robotModel/parts/iotikBlynkTerminal.cpp \
 	$$PWD/src/blocks/iotikBlocksFactory.cpp \
 	$$PWD/src/blocks/details/iotikEnginesBackwardBlock.cpp \
 	$$PWD/src/blocks/details/iotikEnginesForwardBlock.cpp \
@@ -99,6 +126,15 @@ SOURCES += \
 	$$PWD/src/blocks/details/flameSensorBlock.cpp \
 	$$PWD/src/blocks/details/soundSensorBlock.cpp \
 	$$PWD/src/blocks/details/laserDistanceBlock.cpp \
+	$$PWD/src/blocks/details/wifi.cpp \
+	$$PWD/src/blocks/details/blynkAuthorization.cpp \
+	$$PWD/src/blocks/details/blynkLed.cpp \
+	$$PWD/src/blocks/details/blynkSend.cpp \
+	$$PWD/src/blocks/details/blynkReceive.cpp \
+	$$PWD/src/blocks/details/blynkNotification.cpp \
+	$$PWD/src/blocks/details/blynkProperty.cpp \
+	$$PWD/src/blocks/details/blynkLCD.cpp \
+	$$PWD/src/blocks/details/blynkTerminal.cpp \
 	$$PWD/src/communication/usbRobotCommunicationThread.cpp \
 	$$PWD/src/communication/wifiRobotCommunicationThread.cpp \
 
