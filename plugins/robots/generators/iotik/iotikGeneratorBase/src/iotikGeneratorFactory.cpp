@@ -36,6 +36,17 @@
 #include "simpleGenerators/soundSensorGenerator.h"
 #include "simpleGenerators/forLoopGenerator.h"
 
+#include "simpleGenerators/forLoopGenerator.h"
+#include "simpleGenerators/wifiGenerator.h"
+#include "simpleGenerators/blynkAuthorizationGenerator.h"
+#include "simpleGenerators/blynkLedGenerator.h"
+#include "simpleGenerators/blynkSendGenerator.h"
+#include "simpleGenerators/blynkReceiveGenerator.h"
+#include "simpleGenerators/blynkNotificationGenerator.h"
+#include "simpleGenerators/blynkPropertyGenerator.h"
+#include "simpleGenerators/blynkLCDGenerator.h"
+#include "simpleGenerators/blynkTerminalGenerator.h"
+
 using namespace iotik;
 using namespace iotik::simple;
 using namespace generatorBase;
@@ -106,6 +117,25 @@ AbstractSimpleGenerator *IotikGeneratorFactory::simpleGenerator(const qReal::Id 
 		return new FlameSensorGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "IotikSound") {
 		return new SoundSensorGenerator(mRepo, customizer, id, this);
+
+	} else if (elementType == "IotikWifi") {
+		return new WifiGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikBlynkAuthorization") {
+		return new BlynkAuthorizationGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikBlynkLed") {
+		return new BlynkLedGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikBlynkSend") {
+		return new BlynkSendGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikBlynkReceive") {
+		return new BlynkReceiveGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikBlynkNotification") {
+		return new BlynkNotificationGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikBlynkProperty") {
+		return new BlynkPropertyGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikBlynkLCD") {
+		return new BlynkLCDGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikBlynkTerminal") {
+		return new BlynkTerminalGenerator(mRepo, customizer, id, this);
 	}
 
 	return GeneratorFactoryBase::simpleGenerator(id, customizer);

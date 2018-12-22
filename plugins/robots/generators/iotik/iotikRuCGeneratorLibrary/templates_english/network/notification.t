@@ -1,0 +1,1 @@
+﻿blynk_notification(@@MESSAGE@@);

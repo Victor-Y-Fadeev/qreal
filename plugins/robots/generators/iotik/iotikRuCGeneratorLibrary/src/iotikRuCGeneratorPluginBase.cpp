@@ -212,7 +212,7 @@ bool IotikRuCGeneratorPluginBase::compileCode()
 
 void IotikRuCGeneratorPluginBase::addDeviceVariables(const QFileInfo fileInfo)
 {
-	const QString variables =
+	QString variables =
 			"#define RED_COLOR 0\n"
 			"#define GREEN_COLOR 1\n"
 			"#define BLUE_COLOR 2\n"
@@ -262,6 +262,11 @@ void IotikRuCGeneratorPluginBase::addDeviceVariables(const QFileInfo fileInfo)
 			"#define D21 21\n"
 			"#define D22 22\n"
 			"#define D23 23\n";
+
+	for (int i = 0; i < 256; i++)
+	{
+		variables += "#define V" + QString::number(i) + " " + QString::number(i) + "\n";
+	}
 
 	const QString filePath = fileInfo.absoluteFilePath();
 

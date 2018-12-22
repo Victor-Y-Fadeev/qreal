@@ -1001,10 +1001,10 @@
 				<logic>
 					<properties>
 						<property displayedName="SSID" type="string" name="SSID">
-							<default>Network</default>
+							<default>\"Network\"</default>
 						</property>
 						<property displayedName="Password" type="string" name="Password">
-							<default>pass</default>
+							<default>\"password\"</default>
 						</property>
 					</properties>
 					<container/>
@@ -1026,7 +1026,7 @@
 				<logic>
 					<properties>
 						<property displayedName="Auth" type="string" name="Auth">
-							<default>auth</default>
+							<default>\"token\"</default>
 						</property>
 					</properties>
 					<container/>
@@ -1117,7 +1117,7 @@
 				<logic>
 					<properties>
 						<property displayedName="Message" type="string" name="Message">
-							<default>Hello world!</default>
+							<default>\"Hello world!\"</default>
 						</property>
 					</properties>
 					<container/>
@@ -1141,10 +1141,10 @@
 				<logic>
 					<properties>
 						<property displayedName="Property" type="string" name="Property">
-							<default>color</default>
+							<default>\"color\"</default>
 						</property>
 						<property displayedName="Value" type="string" name="Value">
-							<default>#000000</default>
+							<default>\"#000000\"</default>
 						</property>
 					</properties>
 					<container/>
@@ -1175,7 +1175,7 @@
 							<default>0</default>
 						</property>
 						<property displayedName="Message" type="string" name="Message">
-							<default>Hello world!</default>
+							<default>\"Hello world!\"</default>
 						</property>
 					</properties>
 					<container/>
@@ -1198,7 +1198,7 @@
 				<logic>
 					<properties>
 						<property displayedName="Message" type="string" name="Message">
-							<default>Hello world!</default>
+							<default>\"Hello world!\"</default>
 						</property>
 					</properties>
 					<container/>

@@ -74,6 +74,15 @@
         <file>templates_english/sensors/threeVariableTwoDigitalPortWithDivision.t</file>
         <file>templates_english/sensors/threeVariableFiveDigitalPort.t</file>
         <file>templates_english/sensors/voltagePort.t</file>
+        <file>templates_english/network/wifi.t</file>
+        <file>templates_english/network/authorization.t</file>
+        <file>templates_english/network/send.t</file>
+        <file>templates_english/network/receive.t</file>
+        <file>templates_english/network/led.t</file>
+        <file>templates_english/network/notification.t</file>
+        <file>templates_english/network/property.t</file>
+        <file>templates_english/network/lcd.t</file>
+        <file>templates_english/network/terminal.t</file>
         <file>templates_english/signs/equals.t</file>
         <file>templates_english/signs/greater.t</file>
         <file>templates_english/signs/less.t</file>

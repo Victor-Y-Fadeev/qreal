@@ -65,6 +65,15 @@ HEADERS += \
 	$$PWD/src/simpleGenerators/flameSensorGenerator.h \
 	$$PWD/src/simpleGenerators/soundSensorGenerator.h \
 	$$PWD/src/simpleGenerators/forLoopGenerator.h \
+	$$PWD/src/simpleGenerators/wifiGenerator.h \
+	$$PWD/src/simpleGenerators/blynkAuthorizationGenerator.h \
+	$$PWD/src/simpleGenerators/blynkLedGenerator.h \
+	$$PWD/src/simpleGenerators/blynkSendGenerator.h \
+	$$PWD/src/simpleGenerators/blynkReceiveGenerator.h \
+	$$PWD/src/simpleGenerators/blynkNotificationGenerator.h \
+	$$PWD/src/simpleGenerators/blynkPropertyGenerator.h \
+	$$PWD/src/simpleGenerators/blynkLCDGenerator.h \
+	$$PWD/src/simpleGenerators/blynkTerminalGenerator.h \
 	$$PWD/widgets/iotikAdditionalPreferences.h \
 
 SOURCES += \
@@ -93,6 +102,15 @@ SOURCES += \
 	$$PWD/src/simpleGenerators/flameSensorGenerator.cpp \
 	$$PWD/src/simpleGenerators/soundSensorGenerator.cpp \
 	$$PWD/src/simpleGenerators/forLoopGenerator.cpp \
+	$$PWD/src/simpleGenerators/wifiGenerator.cpp \
+	$$PWD/src/simpleGenerators/blynkAuthorizationGenerator.cpp \
+	$$PWD/src/simpleGenerators/blynkLedGenerator.cpp \
+	$$PWD/src/simpleGenerators/blynkSendGenerator.cpp \
+	$$PWD/src/simpleGenerators/blynkReceiveGenerator.cpp \
+	$$PWD/src/simpleGenerators/blynkNotificationGenerator.cpp \
+	$$PWD/src/simpleGenerators/blynkPropertyGenerator.cpp \
+	$$PWD/src/simpleGenerators/blynkLCDGenerator.cpp \
+	$$PWD/src/simpleGenerators/blynkTerminalGenerator.cpp \
 	$$PWD/widgets/iotikAdditionalPreferences.cpp \
 
 FORMS += \
