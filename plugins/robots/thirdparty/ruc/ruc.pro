@@ -36,7 +36,9 @@ SOURCES += \
 	$$PWD/ruc/RuC/extdecl.c \
 	$$PWD/ruc/RuC/import.c \
 	$$PWD/ruc/RuC/main.c \
-	$$PWD/ruc/RuC/preprocessor.c \
+	$$PWD/ruc/RuC/mipsgen.c \
+	$$PWD/ruc/RuC/mipsopt.c \
+	$$PWD/ruc/RuC/preprocess.c \
 	$$PWD/ruc/RuC/scaner.c \
 	$$PWD/ruc/RuC/threads.c \
 
