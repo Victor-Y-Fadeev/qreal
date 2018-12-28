@@ -199,6 +199,7 @@ bool IotikRuCGeneratorPluginBase::compileCode()
 	}
 
 	QFile::remove(mRootPath + "/import.c");
+	QFile::remove(mRootPath + "/macro.txt");
 	QFile::remove(mRootPath + "/tree.txt");
 	QFile::remove(mRootPath + "/codes.txt");
 
