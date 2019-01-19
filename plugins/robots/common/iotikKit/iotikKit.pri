@@ -45,6 +45,11 @@ HEADERS += \
 	$$PWD/include/iotikKit/robotModel/parts/iotikSonarSensor.h \
 	$$PWD/include/iotikKit/robotModel/parts/iotikLaserSensor.h \
 	$$PWD/include/iotikKit/robotModel/parts/iotikFlameSensor.h \
+	$$PWD/include/iotikKit/robotModel/parts/iotikLightSensor.h \
+	$$PWD/include/iotikKit/robotModel/parts/iotikHumiditySensor.h \
+	$$PWD/include/iotikKit/robotModel/parts/iotikPressureSensor.h \
+	$$PWD/include/iotikKit/robotModel/parts/iotikUltravioletSensor.h \
+	$$PWD/include/iotikKit/robotModel/parts/iotikRelay.h \
 	$$PWD/include/iotikKit/robotModel/parts/iotikWifi.h \
 	$$PWD/include/iotikKit/robotModel/parts/iotikBlynkAuthorization.h \
 	$$PWD/include/iotikKit/robotModel/parts/iotikBlynkLed.h \
@@ -72,6 +77,12 @@ HEADERS += \
 	$$PWD/src/blocks/details/flameSensorBlock.h \
 	$$PWD/src/blocks/details/soundSensorBlock.h \
 	$$PWD/src/blocks/details/laserDistanceBlock.h \
+	$$PWD/src/blocks/details/lightSensor.h \
+	$$PWD/src/blocks/details/temperature.h \
+	$$PWD/src/blocks/details/humidity.h \
+	$$PWD/src/blocks/details/pressure.h \
+	$$PWD/src/blocks/details/ultraviolet.h \
+	$$PWD/src/blocks/details/relay.h \
 	$$PWD/src/blocks/details/wifi.h \
 	$$PWD/src/blocks/details/blynkAuthorization.h \
 	$$PWD/src/blocks/details/blynkLed.h \
@@ -100,6 +111,11 @@ SOURCES += \
 	$$PWD/src/robotModel/parts/iotikSonarSensor.cpp \
 	$$PWD/src/robotModel/parts/iotikLaserSensor.cpp \
 	$$PWD/src/robotModel/parts/iotikFlameSensor.cpp \
+	$$PWD/src/robotModel/parts/iotikLightSensor.cpp \
+	$$PWD/src/robotModel/parts/iotikHumiditySensor.cpp \
+	$$PWD/src/robotModel/parts/iotikPressureSensor.cpp \
+	$$PWD/src/robotModel/parts/iotikUltravioletSensor.cpp \
+	$$PWD/src/robotModel/parts/iotikRelay.cpp \
 	$$PWD/src/robotModel/parts/iotikWifi.cpp \
 	$$PWD/src/robotModel/parts/iotikBlynkAuthorization.cpp \
 	$$PWD/src/robotModel/parts/iotikBlynkLed.cpp \
@@ -126,6 +142,12 @@ SOURCES += \
 	$$PWD/src/blocks/details/flameSensorBlock.cpp \
 	$$PWD/src/blocks/details/soundSensorBlock.cpp \
 	$$PWD/src/blocks/details/laserDistanceBlock.cpp \
+	$$PWD/src/blocks/details/lightSensor.cpp \
+	$$PWD/src/blocks/details/temperature.cpp \
+	$$PWD/src/blocks/details/humidity.cpp \
+	$$PWD/src/blocks/details/pressure.cpp \
+	$$PWD/src/blocks/details/ultraviolet.cpp \
+	$$PWD/src/blocks/details/relay.cpp \
 	$$PWD/src/blocks/details/wifi.cpp \
 	$$PWD/src/blocks/details/blynkAuthorization.cpp \
 	$$PWD/src/blocks/details/blynkLed.cpp \

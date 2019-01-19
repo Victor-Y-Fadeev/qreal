@@ -750,7 +750,7 @@
 				</logic>
 			</node>
 
-			<!-- MgBot sensors blocks -->
+			<!-- MgBot blocks -->
 			<node displayedName="Color Sensor" name="IotikColorSensor" description="">
 				<graphics>
 					<picture sizex="50" sizey="50">
@@ -982,6 +982,170 @@
 					</properties>
 					<generalizations>
 						<parent parentName="IotikUniversalSensorBlock"/>
+					</generalizations>
+				</logic>
+			</node>
+			<node displayedName="Humidity Sensor" name="IotikHumidity" description="">
+				<graphics>
+					<picture sizex="50" sizey="50">
+						<image y1="0" name="images/humidityBlock.svg" x1="0" y2="50" x2="50"/>
+					</picture>
+					<labels>
+						<label x="-5" y="-35" textBinded="SCL" hard="true" prefix="SCL:"/>
+						<label x="70" y="-35" textBinded="SDA" hard="true" prefix="SDA:"/>
+						<label x="40" y="60" textBinded="Variable" background="white" prefix="Variable:"/>
+					</labels>
+					<nonResizeable/>
+				</graphics>
+				<logic>
+					<container/>
+					<properties>
+						<property displayedName="Variable" type="string" name="Variable">
+							<default>humidity</default>
+						</property>
+					</properties>
+					<generalizations>
+						<parent parentName="IotikI2CSensorBlock"/>
+					</generalizations>
+				</logic>
+			</node>
+			<node displayedName="Light Sensor" name="IotikLightSensor" description="">
+				<graphics>
+					<picture sizex="50" sizey="50">
+						<image y1="0" name="images/lightBlock.svg" x1="0" y2="50" x2="50"/>
+					</picture>
+					<labels>
+						<label x="-5" y="-35" textBinded="SCL" hard="true" prefix="SCL:"/>
+						<label x="70" y="-35" textBinded="SDA" hard="true" prefix="SDA:"/>
+						<label x="40" y="60" textBinded="Variable" background="white" prefix="Variable:"/>
+					</labels>
+					<nonResizeable/>
+				</graphics>
+				<logic>
+					<container/>
+					<properties>
+						<property displayedName="Variable" type="string" name="Variable">
+							<default>light</default>
+						</property>
+					</properties>
+					<generalizations>
+						<parent parentName="IotikI2CSensorBlock"/>
+					</generalizations>
+				</logic>
+			</node>
+			<node displayedName="Pressure Sensor" name="IotikPressure" description="">
+				<graphics>
+					<picture sizex="50" sizey="50">
+						<image y1="0" name="images/pressureBlock.svg" x1="0" y2="50" x2="50"/>
+					</picture>
+					<labels>
+						<label x="-5" y="-35" textBinded="SCL" hard="true" prefix="SCL:"/>
+						<label x="70" y="-35" textBinded="SDA" hard="true" prefix="SDA:"/>
+						<label x="40" y="60" textBinded="Variable" background="white" prefix="Variable:"/>
+					</labels>
+					<nonResizeable/>
+				</graphics>
+				<logic>
+					<container/>
+					<properties>
+						<property displayedName="Variable" type="string" name="Variable">
+							<default>pressure</default>
+						</property>
+					</properties>
+					<generalizations>
+						<parent parentName="IotikI2CSensorBlock"/>
+					</generalizations>
+				</logic>
+			</node>
+			<node displayedName="Temperature Sensor" name="IotikTemperature" description="">
+				<graphics>
+					<picture sizex="50" sizey="50">
+						<image y1="0" name="images/temperatureBlock.svg" x1="0" y2="50" x2="50"/>
+					</picture>
+					<labels>
+						<label x="-5" y="-35" textBinded="SCL" hard="true" prefix="SCL:"/>
+						<label x="70" y="-35" textBinded="SDA" hard="true" prefix="SDA:"/>
+						<label x="40" y="60" textBinded="Variable" background="white" prefix="Variable:"/>
+					</labels>
+					<nonResizeable/>
+				</graphics>
+				<logic>
+					<container/>
+					<properties>
+						<property displayedName="Variable" type="string" name="Variable">
+							<default>temperature</default>
+						</property>
+					</properties>
+					<generalizations>
+						<parent parentName="IotikI2CSensorBlock"/>
+					</generalizations>
+				</logic>
+			</node>
+			<node displayedName="Ultraviolet Sensor" name="IotikUltraviolet" description="">
+				<graphics>
+					<picture sizex="50" sizey="50">
+						<image y1="0" name="images/ultravioletBlock.svg" x1="0" y2="50" x2="50"/>
+					</picture>
+					<labels>
+						<label x="-5" y="-35" textBinded="SCL" hard="true" prefix="SCL:"/>
+						<label x="70" y="-35" textBinded="SDA" hard="true" prefix="SDA:"/>
+						<label x="25" y="60" textBinded="UVA" background="white" prefix="UVA:"/>
+						<label x="25" y="90" textBinded="UVB" background="white" prefix="UVB:"/>
+						<label x="25" y="120" textBinded="UVI" background="white" prefix="UVI:"/>
+					</labels>
+					<nonResizeable/>
+				</graphics>
+				<logic>
+					<container/>
+					<properties>
+						<property displayedName="UVA" type="string" name="UVA">
+							<default>uva</default>
+						</property>
+						<property displayedName="UVB" type="string" name="UVB">
+							<default>uvb</default>
+						</property>
+						<property displayedName="UVI" type="string" name="UVI">
+							<default>uvi</default>
+						</property>
+					</properties>
+					<generalizations>
+						<parent parentName="IotikI2CSensorBlock"/>
+					</generalizations>
+				</logic>
+			</node>
+			<node displayedName="Relay" name="IotikRelay" description="">
+				<graphics>
+					<picture sizex="50" sizey="50">
+						<image y1="0" name="images/relayBlock.svg" x1="0" y2="50" x2="50"/>
+					</picture>
+					<labels>
+						<label x="-5" y="-35" textBinded="SCL" hard="true" prefix="SCL:"/>
+						<label x="70" y="-35" textBinded="SDA" hard="true" prefix="SDA:"/>
+						<label x="25" y="60" textBinded="First" hard="false" prefix="First:"/>
+						<label x="25" y="90" textBinded="Second" hard="false" prefix="Second:"/>
+						<label x="25" y="120" textBinded="Third" hard="false" prefix="Third:"/>
+						<label x="25" y="150" textBinded="Fourth" hard="false" prefix="Fourth:"/>
+					</labels>
+					<nonResizeable/>
+				</graphics>
+				<logic>
+					<properties>
+						<property displayedName="First" type="bool" name="First">
+							<default>true</default>
+						</property>
+						<property displayedName="Second" type="bool" name="Second">
+							<default>false</default>
+						</property>
+						<property displayedName="Third" type="bool" name="Third">
+							<default>false</default>
+						</property>
+						<property displayedName="Fourth" type="bool" name="Fourth">
+							<default>false</default>
+						</property>
+					</properties>
+					<container/>
+					<generalizations>
+						<parent parentName="IotikI2CSensorBlock"/>
 					</generalizations>
 				</logic>
 			</node>
@@ -1227,15 +1391,21 @@
 				<element name="IotikWaitForSonarDistance" />
 				<element name="IotikWaitForTemperature"/>
 			</group>
-			<group name="Sensors (MgBot)">
+			<group name="Modules (MgBot)">
 				<element name="IotikAccelerometer" />
 				<element name="IotikCompass" />
 				<element name="IotikGyroscope" />
+				<element name="IotikLightSensor" />
 				<element name="IotikColorSensor" />
 				<element name="IotikLineDetector" />
 				<element name="IotikLaserDistance" />
-				<element name="IotikFlame" />
 				<element name="IotikSound" />
+				<element name="IotikFlame" />
+				<element name="IotikTemperature" />
+				<element name="IotikHumidity" />
+				<element name="IotikPressure" />
+				<element name="IotikUltraviolet" />
+				<element name="IotikRelay" />
 			</group>
 			<group name="Network (Blynk)">
 				<element name="IotikWifi" />

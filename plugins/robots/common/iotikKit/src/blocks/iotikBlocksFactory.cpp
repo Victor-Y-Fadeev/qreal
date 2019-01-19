@@ -29,6 +29,11 @@
 #include "iotikKit/robotModel/parts/iotikSonarSensor.h"
 #include "iotikKit/robotModel/parts/iotikLaserSensor.h"
 #include "iotikKit/robotModel/parts/iotikFlameSensor.h"
+#include "iotikKit/robotModel/parts/iotikLightSensor.h"
+#include "iotikKit/robotModel/parts/iotikHumiditySensor.h"
+#include "iotikKit/robotModel/parts/iotikPressureSensor.h"
+#include "iotikKit/robotModel/parts/iotikUltravioletSensor.h"
+#include "iotikKit/robotModel/parts/iotikRelay.h"
 
 #include "iotikKit/robotModel/parts/iotikWifi.h"
 #include "iotikKit/robotModel/parts/iotikBlynkAuthorization.h"
@@ -64,6 +69,12 @@
 #include "details/flameSensorBlock.h"
 #include "details/soundSensorBlock.h"
 #include "details/laserDistanceBlock.h"
+#include "details/lightSensor.h"
+#include "details/temperature.h"
+#include "details/humidity.h"
+#include "details/pressure.h"
+#include "details/ultraviolet.h"
+#include "details/relay.h"
 
 #include "details/wifi.h"
 #include "details/blynkAuthorization.h"
@@ -119,16 +130,28 @@ qReal::interpretation::Block *IotikBlocksFactory::produceBlock(const qReal::Id &
 		return new CompassBlock();
 	} else if (elementMetatypeIs(element, "IotikGyroscope")) {
 		return new GyroscopeBlock();
+	} else if (elementMetatypeIs(element, "IotikLightSensor")) {
+		return new LightSensorBlock();
 	} else if (elementMetatypeIs(element, "IotikColorSensor")) {
 		return new ColorSensorBlock();
 	} else if (elementMetatypeIs(element, "IotikLineDetector")) {
 		return new LineDetectorBlock();
 	} else if (elementMetatypeIs(element, "IotikLaserDistance")) {
 		return new LaserDistanceBlock();
-	} else if (elementMetatypeIs(element, "IotikFlame")) {
-		return new FlameSensorBlock();
 	} else if (elementMetatypeIs(element, "IotikSound")) {
 		return new SoundSensorBlock();
+	} else if (elementMetatypeIs(element, "IotikFlame")) {
+		return new FlameSensorBlock();
+	} else if (elementMetatypeIs(element, "IotikTemperature")) {
+		return new TemperatureSensorBlock();
+	} else if (elementMetatypeIs(element, "IotikHumidity")) {
+		return new HumiditySensorBlock();
+	} else if (elementMetatypeIs(element, "IotikPressure")) {
+		return new PressureSensorBlock();
+	} else if (elementMetatypeIs(element, "IotikUltraviolet")) {
+		return new UltravioletSensorBlock();
+	} else if (elementMetatypeIs(element, "IotikRelay")) {
+		return new RelayBlock();
 
 	} else if (elementMetatypeIs(element, "IotikWifi")) {
 		return new WifiBlock();
@@ -174,11 +197,17 @@ qReal::IdList IotikBlocksFactory::providedBlocks() const
 				, id("IotikAccelerometer")
 				, id("IotikCompass")
 				, id("IotikGyroscope")
+				, id("IotikLightSensor")
 				, id("IotikColorSensor")
 				, id("IotikLineDetector")
 				, id("IotikLaserDistance")
-				, id("IotikFlame")
 				, id("IotikSound")
+				, id("IotikFlame")
+				, id("IotikTemperature")
+				, id("IotikHumidity")
+				, id("IotikPressure")
+				, id("IotikUltraviolet")
+				, id("IotikRelay")
 
 				, id("IotikWifi")
 				, id("IotikBlynkAuthorization")
