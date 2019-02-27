@@ -240,6 +240,16 @@ void IotikRuCGeneratorPluginBase::addDeviceVariables(const QFileInfo fileInfo)
 			"#define Y_COMPASS 21\n"
 			"#define Z_COMPASS 22\n"
 
+			"#define HEATING 23\n"
+			"#define HUMIDITY 24\n"
+			"#define PRESSURE 25\n"
+			"#define LIGHT 26\n"
+			"#define UVA_ULTRAVIOLET 27\n"
+			"#define UVB_ULTRAVIOLET 28\n"
+			"#define UVI_ULTRAVIOLET 29\n"
+
+			"#define RELAY 1\n"
+
 			"#define MA -1\n"
 			"#define MB -2\n"
 			"#define A4 32\n"

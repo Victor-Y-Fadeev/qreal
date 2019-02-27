@@ -64,6 +64,12 @@ HEADERS += \
 	$$PWD/src/simpleGenerators/laserSensorGenerator.h \
 	$$PWD/src/simpleGenerators/flameSensorGenerator.h \
 	$$PWD/src/simpleGenerators/soundSensorGenerator.h \
+	$$PWD/src/simpleGenerators/heatingSensorGenerator.h \
+	$$PWD/src/simpleGenerators/humiditySensorGenerator.h \
+	$$PWD/src/simpleGenerators/pressureSensorGenerator.h \
+	$$PWD/src/simpleGenerators/lightSensorGenerator.h \
+	$$PWD/src/simpleGenerators/ultravioletGenerator.h \
+	$$PWD/src/simpleGenerators/relayGenerator.h \
 	$$PWD/src/simpleGenerators/forLoopGenerator.h \
 	$$PWD/src/simpleGenerators/wifiGenerator.h \
 	$$PWD/src/simpleGenerators/blynkAuthorizationGenerator.h \
@@ -101,6 +107,12 @@ SOURCES += \
 	$$PWD/src/simpleGenerators/laserSensorGenerator.cpp \
 	$$PWD/src/simpleGenerators/flameSensorGenerator.cpp \
 	$$PWD/src/simpleGenerators/soundSensorGenerator.cpp \
+	$$PWD/src/simpleGenerators/heatingSensorGenerator.cpp \
+	$$PWD/src/simpleGenerators/humiditySensorGenerator.cpp \
+	$$PWD/src/simpleGenerators/pressureSensorGenerator.cpp \
+	$$PWD/src/simpleGenerators/lightSensorGenerator.cpp \
+	$$PWD/src/simpleGenerators/ultravioletGenerator.cpp \
+	$$PWD/src/simpleGenerators/relayGenerator.cpp \
 	$$PWD/src/simpleGenerators/forLoopGenerator.cpp \
 	$$PWD/src/simpleGenerators/wifiGenerator.cpp \
 	$$PWD/src/simpleGenerators/blynkAuthorizationGenerator.cpp \

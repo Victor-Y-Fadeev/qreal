@@ -26,6 +26,7 @@
 #include "simpleGenerators/waitForInfraredSensorGenerator.h"
 #include "simpleGenerators/waitForTemperatureSensorGenerator.h"
 #include "simpleGenerators/waitForUltrasonicSensorGenerator.h"
+#include "simpleGenerators/lightSensorGenerator.h"
 #include "simpleGenerators/colorSensorGenerator.h"
 #include "simpleGenerators/accelerometerGenerator.h"
 #include "simpleGenerators/compassGenerator.h"
@@ -34,7 +35,12 @@
 #include "simpleGenerators/laserSensorGenerator.h"
 #include "simpleGenerators/flameSensorGenerator.h"
 #include "simpleGenerators/soundSensorGenerator.h"
-#include "simpleGenerators/forLoopGenerator.h"
+#include "simpleGenerators/heatingSensorGenerator.h"
+#include "simpleGenerators/humiditySensorGenerator.h"
+#include "simpleGenerators/pressureSensorGenerator.h"
+#include "simpleGenerators/ultravioletGenerator.h"
+
+#include "simpleGenerators/relayGenerator.h"
 
 #include "simpleGenerators/forLoopGenerator.h"
 #include "simpleGenerators/wifiGenerator.h"
@@ -107,6 +113,8 @@ AbstractSimpleGenerator *IotikGeneratorFactory::simpleGenerator(const qReal::Id 
 		return new CompassGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "IotikGyroscope") {
 		return new GyroscopeGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikLightSensor") {
+		return new LightSensorGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "IotikColorSensor") {
 		return new ColorSensorGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "IotikLineDetector") {
@@ -117,6 +125,17 @@ AbstractSimpleGenerator *IotikGeneratorFactory::simpleGenerator(const qReal::Id 
 		return new FlameSensorGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "IotikSound") {
 		return new SoundSensorGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikTemperature") {
+		return new HeatingSensorGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikHumidity") {
+		return new HumiditySensorGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikPressure") {
+		return new PressureSensorGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikUltraviolet") {
+		return new UltravioletGenerator(mRepo, customizer, id, this);
+
+	} else if (elementType == "IotikRelay") {
+		return new RelayGenerator(mRepo, customizer, id, this);
 
 	} else if (elementType == "IotikWifi") {
 		return new WifiGenerator(mRepo, customizer, id, this);
