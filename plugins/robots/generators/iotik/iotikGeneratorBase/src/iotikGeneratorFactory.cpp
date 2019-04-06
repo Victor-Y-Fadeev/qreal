@@ -39,7 +39,10 @@
 #include "simpleGenerators/humiditySensorGenerator.h"
 #include "simpleGenerators/pressureSensorGenerator.h"
 #include "simpleGenerators/ultravioletGenerator.h"
+#include "simpleGenerators/capacitiveGenerator.h"
 
+#include "simpleGenerators/rgbGenerator.h"
+#include "simpleGenerators/matrixGenerator.h"
 #include "simpleGenerators/relayGenerator.h"
 
 #include "simpleGenerators/forLoopGenerator.h"
@@ -133,7 +136,13 @@ AbstractSimpleGenerator *IotikGeneratorFactory::simpleGenerator(const qReal::Id 
 		return new PressureSensorGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "IotikUltraviolet") {
 		return new UltravioletGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikCapacitive") {
+		return new CapacitiveGenerator(mRepo, customizer, id, this);
 
+	} else if (elementType == "IotikRgb") {
+		return new RgbGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikMatrix") {
+		return new MatrixGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "IotikRelay") {
 		return new RelayGenerator(mRepo, customizer, id, this);
 

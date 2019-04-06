@@ -75,6 +75,7 @@
         <file>templates_english/sensors/threeVariableFiveDigitalPort.t</file>
         <file>templates_english/sensors/voltagePort.t</file>
         <file>templates_english/sensors/signalForFourParameters.t</file>
+        <file>templates_english/sensors/signalForSevenParameters.t</file>
         <file>templates_english/network/wifi.t</file>
         <file>templates_english/network/authorization.t</file>
         <file>templates_english/network/send.t</file>
@@ -108,6 +109,13 @@
         <file>templates_english/threads/killThread.t</file>
         <file>templates_english/threads/receiveMessage.t</file>
         <file>templates_english/threads/sendMessage.t</file>
+        <file>templates_english/drawing/printString.t</file>
+        <file>templates_english/drawing/printNumber.t</file>
+        <file>templates_english/drawing/clearScreen.t</file>
+        <file>templates_english/drawing/drawPixel.t</file>
+        <file>templates_english/drawing/drawRect.t</file>
+        <file>templates_english/drawing/drawEllipse.t</file>
+        <file>templates_english/drawing/drawIcon.t</file>
         <file>templates_english/types/array.t</file>
         <file>templates_english/types/bool.t</file>
         <file>templates_english/types/cast.t</file>

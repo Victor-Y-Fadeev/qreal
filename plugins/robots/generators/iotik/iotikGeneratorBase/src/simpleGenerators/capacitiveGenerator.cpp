@@ -12,34 +12,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. */
 
-#include "relayGenerator.h"
-
-#include <generatorBase/generatorCustomizer.h>
+#include "capacitiveGenerator.h"
+#include "generatorBase/generatorCustomizer.h"
 
 using namespace iotik::simple;
 using namespace generatorBase::simple;
 using namespace qReal;
 
-RelayGenerator::RelayGenerator(const qrRepo::RepoApi &repo
+CapacitiveGenerator::CapacitiveGenerator(const qrRepo::RepoApi &repo
 		, generatorBase::GeneratorCustomizer &customizer
 		, const Id &id
 		, QObject *parent)
-	: BindingGenerator(repo, customizer, id, "sensors/signalForFourParameters.t", QList<Binding *>()
-			<< Binding::createStatic("@@DRIVER@@", "RELAY")
+	: BindingGenerator(repo, customizer, id, "sensors/oneVariableTwoDigitalPort.t", QList<Binding *>()
+			<< Binding::createStatic("@@DRIVER@@", "CAPACITIVE")
 			<< Binding::createConverting("@@PORT@@", "SCL", customizer.factory()->portNameConverter())
 			<< Binding::createConverting("@@PORT_2@@", "SDA", customizer.factory()->portNameConverter())
 
-			<< Binding::createConverting("@@PARAM@@", "First"
-					, customizer.factory()->boolPropertyConverter(id, "First", false))
-
-			<< Binding::createConverting("@@PARAM_2@@", "Second"
-					, customizer.factory()->boolPropertyConverter(id, "Second", false))
-
-			<< Binding::createConverting("@@PARAM_3@@", "Third"
-					, customizer.factory()->boolPropertyConverter(id, "Third", false))
-
-			<< Binding::createConverting("@@PARAM_4@@", "Fourth"
-					, customizer.factory()->boolPropertyConverter(id, "Fourth", false))
+			<< Binding::createStaticConverting("@@JUST_FOR_VAR_INIT@@"
+							, repo.property(id, "Variable").toString() + " = 0"
+							, customizer.factory()->functionBlockConverter(id, "Variable"))
+			<< Binding::createStaticConverting("@@VARIABLE@@"
+								, repo.property(id, "Variable").toString()
+								, customizer.factory()->functionBlockConverter(id, "Variable"))
 			, parent)
 {
 }

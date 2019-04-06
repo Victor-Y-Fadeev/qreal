@@ -1,0 +1,1 @@
+﻿draw_number({ @@PORT@@, @@PORT_2@@ }, @@X@@, @@Y@@, @@STRING@@);

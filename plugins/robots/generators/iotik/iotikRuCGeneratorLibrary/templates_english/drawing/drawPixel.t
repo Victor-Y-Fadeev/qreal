@@ -1,0 +1,1 @@
+﻿pixel({ @@PORT@@, @@PORT_2@@ }, @@XCoordinatePix@@, @@YCoordinatePix@@);

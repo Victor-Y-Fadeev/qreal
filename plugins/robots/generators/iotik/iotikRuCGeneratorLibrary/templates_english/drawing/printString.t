@@ -1,0 +1,1 @@
+﻿draw_string({ @@PORT@@, @@PORT_2@@ }, @@X@@, @@Y@@, @@STRING@@);

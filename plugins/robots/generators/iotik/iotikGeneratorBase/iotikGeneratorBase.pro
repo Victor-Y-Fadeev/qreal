@@ -69,8 +69,16 @@ HEADERS += \
 	$$PWD/src/simpleGenerators/pressureSensorGenerator.h \
 	$$PWD/src/simpleGenerators/lightSensorGenerator.h \
 	$$PWD/src/simpleGenerators/ultravioletGenerator.h \
+	$$PWD/src/simpleGenerators/capacitiveGenerator.h \
+	$$PWD/src/simpleGenerators/matrixGenerator.h \
+	$$PWD/src/simpleGenerators/rgbGenerator.h \
 	$$PWD/src/simpleGenerators/relayGenerator.h \
 	$$PWD/src/simpleGenerators/forLoopGenerator.h \
+	#$$PWD/src/simpleGenerators/drawPixelGenerator.h \
+	#$$PWD/src/simpleGenerators/drawLineGenerator.h \
+	#$$PWD/src/simpleGenerators/drawRectGenerator.h \
+	#$$PWD/src/simpleGenerators/drawEllipseGenerator.h \
+	#$$PWD/src/simpleGenerators/drawIconGenerator.h \
 	$$PWD/src/simpleGenerators/wifiGenerator.h \
 	$$PWD/src/simpleGenerators/blynkAuthorizationGenerator.h \
 	$$PWD/src/simpleGenerators/blynkLedGenerator.h \
@@ -112,8 +120,16 @@ SOURCES += \
 	$$PWD/src/simpleGenerators/pressureSensorGenerator.cpp \
 	$$PWD/src/simpleGenerators/lightSensorGenerator.cpp \
 	$$PWD/src/simpleGenerators/ultravioletGenerator.cpp \
+	$$PWD/src/simpleGenerators/capacitiveGenerator.cpp \
+	$$PWD/src/simpleGenerators/matrixGenerator.cpp \
+	$$PWD/src/simpleGenerators/rgbGenerator.cpp \
 	$$PWD/src/simpleGenerators/relayGenerator.cpp \
 	$$PWD/src/simpleGenerators/forLoopGenerator.cpp \
+	#$$PWD/src/simpleGenerators/drawPixelGenerator.cpp \
+	#$$PWD/src/simpleGenerators/drawLineGenerator.cpp \
+	#$$PWD/src/simpleGenerators/drawRectGenerator.cpp \
+	#$$PWD/src/simpleGenerators/drawEllipseGenerator.cpp \
+	#$$PWD/src/simpleGenerators/drawIconGenerator.cpp \
 	$$PWD/src/simpleGenerators/wifiGenerator.cpp \
 	$$PWD/src/simpleGenerators/blynkAuthorizationGenerator.cpp \
 	$$PWD/src/simpleGenerators/blynkLedGenerator.cpp \

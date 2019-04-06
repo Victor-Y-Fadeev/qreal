@@ -75,6 +75,7 @@
         <file>templates_russian/sensors/threeVariableFiveDigitalPort.t</file>
         <file>templates_russian/sensors/voltagePort.t</file>
         <file>templates_russian/sensors/signalForFourParameters.t</file>
+        <file>templates_russian/sensors/signalForSevenParameters.t</file>
         <file>templates_russian/network/wifi.t</file>
         <file>templates_russian/network/authorization.t</file>
         <file>templates_russian/network/send.t</file>
@@ -108,6 +109,13 @@
         <file>templates_russian/threads/killThread.t</file>
         <file>templates_russian/threads/receiveMessage.t</file>
         <file>templates_russian/threads/sendMessage.t</file>
+        <file>templates_russian/drawing/printString.t</file>
+        <file>templates_russian/drawing/printNumber.t</file>
+        <file>templates_russian/drawing/clearScreen.t</file>
+        <file>templates_russian/drawing/drawPixel.t</file>
+        <file>templates_russian/drawing/drawRect.t</file>
+        <file>templates_russian/drawing/drawEllipse.t</file>
+        <file>templates_russian/drawing/drawIcon.t</file>
         <file>templates_russian/types/array.t</file>
         <file>templates_russian/types/bool.t</file>
         <file>templates_russian/types/cast.t</file>
