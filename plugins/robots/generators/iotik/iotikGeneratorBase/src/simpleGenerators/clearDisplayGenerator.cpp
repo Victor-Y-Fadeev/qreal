@@ -12,22 +12,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. */
 
-#pragma once
+#include "clearDisplayGenerator.h"
+#include <generatorBase/generatorCustomizer.h>
 
-#include <generatorBase/simpleGenerators/bindingGenerator.h>
+using namespace iotik::simple;
+using namespace generatorBase::simple;
 
-namespace iotik {
-namespace simple {
-
-/// Generator for Draw Ellipse block.
-class DrawEllipseGenerator : public generatorBase::simple::BindingGenerator
+ClearDisplayGenerator::ClearDisplayGenerator(const qrRepo::RepoApi &repo
+		, generatorBase::GeneratorCustomizer &customizer
+		, const qReal::Id &id
+		, QObject *parent)
+	: BindingGenerator(repo, customizer, id, "drawing/clearScreen.t"
+			, {
+					Binding::createConverting("@@PORT@@", "SCL", customizer.factory()->portNameConverter())
+					, Binding::createConverting("@@PORT_2@@", "SDA", customizer.factory()->portNameConverter())
+			}
+			, parent)
 {
-public:
-	DrawEllipseGenerator(const qrRepo::RepoApi &repo
-			, generatorBase::GeneratorCustomizer &customizer
-			, const qReal::Id &id
-			, QObject *parent);
-};
-
-}
 }

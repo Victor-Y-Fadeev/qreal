@@ -1,1 +1,1 @@
-﻿иконка({ @@PORT@@, @@PORT_2@@ }, @@XCoordinateIcon@@, @@YCoordinateIcon@@);
+﻿иконка({ @@PORT@@, @@PORT_2@@ }, @@XCoordinateIcon@@, @@YCoordinateIcon@@, @@Icon@@);

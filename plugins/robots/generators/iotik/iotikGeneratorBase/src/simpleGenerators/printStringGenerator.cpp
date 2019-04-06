@@ -12,31 +12,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. */
 
-#include "drawEllipseGenerator.h"
+#include "printStringGenerator.h"
 #include <generatorBase/generatorCustomizer.h>
 
 using namespace iotik::simple;
 using namespace generatorBase::simple;
 
-DrawEllipseGenerator::DrawEllipseGenerator(const qrRepo::RepoApi &repo
+PrintStringGenerator::PrintStringGenerator(const qrRepo::RepoApi &repo
 		, generatorBase::GeneratorCustomizer &customizer
 		, const qReal::Id &id
 		, QObject *parent)
-	: BindingGenerator(repo, customizer, id, "drawing/drawEllipse.t"
+	: BindingGenerator(repo, customizer, id, repo.property(id, "Numeric").toString().compare("false") == 0
+						? "drawing/printString.t" : "drawing/printNumber.t"
 			, {
 					Binding::createConverting("@@PORT@@", "SCL", customizer.factory()->portNameConverter())
 					, Binding::createConverting("@@PORT_2@@", "SDA", customizer.factory()->portNameConverter())
 
-					, Binding::createConverting("@@XCoordinateEllipse@@", "XCoordinateEllipse"
-							, customizer.factory()->intPropertyConverter(id, "XCoordinateEllipse"))
-					, Binding::createConverting("@@YCoordinateEllipse@@", "YCoordinateEllipse"
-							, customizer.factory()->intPropertyConverter(id, "YCoordinateEllipse"))
-					, Binding::createConverting("@@WidthEllipse@@", "WidthEllipse"
-							, customizer.factory()->intPropertyConverter(id, "WidthEllipse"))
-					, Binding::createConverting("@@HeightEllipse@@", "HeightEllipse"
-							, customizer.factory()->intPropertyConverter(id, "HeightEllipse"))
-					, Binding::createConverting("@@FilledEllipse@@", "Filled"
-						, customizer.factory()->boolPropertyConverter(id, "Filled", false))
+					, Binding::createConverting("@@X@@", "XCoordinateString"
+							, customizer.factory()->intPropertyConverter(id, "XCoordinateString"))
+					, Binding::createConverting("@@Y@@", "YCoordinateString"
+							, customizer.factory()->intPropertyConverter(id, "YCoordinateString"))
+
+					, Binding::createConverting("@@STRING@@", "PrintString"
+							, customizer.factory()->stringPropertyConverter(id, "PrintString"))
 			}
 			, parent)
 {

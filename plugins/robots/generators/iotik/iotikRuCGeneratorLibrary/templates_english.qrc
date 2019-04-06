@@ -113,6 +113,7 @@
         <file>templates_english/drawing/printNumber.t</file>
         <file>templates_english/drawing/clearScreen.t</file>
         <file>templates_english/drawing/drawPixel.t</file>
+        <file>templates_english/drawing/drawLine.t</file>
         <file>templates_english/drawing/drawRect.t</file>
         <file>templates_english/drawing/drawEllipse.t</file>
         <file>templates_english/drawing/drawIcon.t</file>

@@ -1,4 +1,4 @@
-/* Copyright 2007-2015 QReal Research Group
+/* Copyright 2019 QReal Research Group
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
 #include "drawPixelGenerator.h"
 #include <generatorBase/generatorCustomizer.h>
 
-using namespace trik::simple;
+using namespace iotik::simple;
 using namespace generatorBase::simple;
 
 DrawPixelGenerator::DrawPixelGenerator(const qrRepo::RepoApi &repo
@@ -24,14 +24,14 @@ DrawPixelGenerator::DrawPixelGenerator(const qrRepo::RepoApi &repo
 		, QObject *parent)
 	: BindingGenerator(repo, customizer, id, "drawing/drawPixel.t"
 			, {
-			Binding::createConverting("@@XCoordinatePix@@", "XCoordinatePix"
-					, customizer.factory()->intPropertyConverter(id, "XCoordinatePix"))
-			, Binding::createConverting("@@YCoordinatePix@@", "YCoordinatePix"
-					, customizer.factory()->intPropertyConverter(id, "YCoordinatePix"))
+					Binding::createConverting("@@PORT@@", "SCL", customizer.factory()->portNameConverter())
+					, Binding::createConverting("@@PORT_2@@", "SDA", customizer.factory()->portNameConverter())
+
+					, Binding::createConverting("@@XCoordinatePix@@", "XCoordinatePix"
+							, customizer.factory()->intPropertyConverter(id, "XCoordinatePix"))
+					, Binding::createConverting("@@YCoordinatePix@@", "YCoordinatePix"
+							, customizer.factory()->intPropertyConverter(id, "YCoordinatePix"))
 			}
 			, parent)
 {
-	// Calling virtual readTemplate() before base class constructor will cause segfault.
-	addBinding(Binding::createStatic("@@REDRAW@@", repo.property(id, "Redraw").toBool()
-			? readTemplate("drawing/redraw.t") : QString()));
 }

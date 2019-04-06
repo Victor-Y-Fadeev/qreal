@@ -14,21 +14,20 @@
 
 #pragma once
 
-#include <kitBase/blocksBase/common/displayBlock.h>
+#include <generatorBase/simpleGenerators/bindingGenerator.h>
 
 namespace iotik {
-namespace blocks {
-namespace details {
+namespace simple {
 
-class ClearScreen : public kitBase::blocksBase::common::DisplayBlock
+/// Generator for Clear Display block.
+class ClearDisplayGenerator : public generatorBase::simple::BindingGenerator
 {
 public:
-	ClearScreen(kitBase::robotModel::RobotModelInterface &robotModel);
-
-private:
-	void doJob(kitBase::robotModel::robotParts::Display &display) override;
+	ClearDisplayGenerator(const qrRepo::RepoApi &repo
+			, generatorBase::GeneratorCustomizer &customizer
+			, const qReal::Id &id
+			, QObject *parent);
 };
 
-}
 }
 }

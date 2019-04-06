@@ -25,7 +25,7 @@ RgbGenerator::RgbGenerator(const qrRepo::RepoApi &repo
 		, const Id &id
 		, QObject *parent)
 	: BindingGenerator(repo, customizer, id, "sensors/signalForSevenParameters.t", QList<Binding *>()
-			<< Binding::createStatic("@@DRIVER@@", "RELAY")
+			<< Binding::createStatic("@@DRIVER@@", "RGB")
 			<< Binding::createConverting("@@PORT@@", "SCL", customizer.factory()->portNameConverter())
 			<< Binding::createConverting("@@PORT_2@@", "SDA", customizer.factory()->portNameConverter())
 

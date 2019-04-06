@@ -29,11 +29,11 @@ MatrixGenerator::MatrixGenerator(const qrRepo::RepoApi &repo
 			<< Binding::createConverting("@@PORT@@", "SCL", customizer.factory()->portNameConverter())
 			<< Binding::createConverting("@@PORT_2@@", "SDA", customizer.factory()->portNameConverter())
 
-			<< Binding::createStaticConverting("@@PARAM@@"
+			<< Binding::createStatic("@@PARAM@@"
 					, repo.property(id, "Print").toString().compare("false") == 0 ? "'\\0'"
-						: "'" + (repo.property(id, "Symbol").toString()[0] == '\'' || repo.property(id, "Symbol").toString()[0] == '"' ?
-							repo.property(id, "Symbol").toString()[1] : repo.property(id, "Symbol").toString()[0]) + "'"
-					, customizer.factory()->portNameConverter())
+						: "'" + (repo.property(id, "Symbol").toString()[0] == '\'' ||
+							repo.property(id, "Symbol").toString()[0] == '"' ? repo.property(id, "Symbol").toString()[1]
+							: repo.property(id, "Symbol").toString()[0]) + "'")
 
 			<< Binding::createStaticConverting("@@PARAM_2@@"
 					, ColorConverter(repo.property(id, "Color").toString(), repo.property(id, "Intensity").toInt(), 'r')
@@ -78,7 +78,8 @@ QString MatrixGenerator::ColorConverter(QString color, int intensity, char rgb)
 			}
 			break;
 		case 'b':
-				if (color.compare("red") == 0 || color.compare("orange") == 0 || color.compare("yellow") == 0 || color.compare("green") == 0) {
+				if (color.compare("red") == 0 || color.compare("orange") == 0 || color.compare("yellow") == 0
+						|| color.compare("green") == 0) {
 					value = 0;
 				} else {
 					value = 255;

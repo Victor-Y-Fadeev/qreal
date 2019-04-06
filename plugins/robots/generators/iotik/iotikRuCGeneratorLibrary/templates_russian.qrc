@@ -113,6 +113,7 @@
         <file>templates_russian/drawing/printNumber.t</file>
         <file>templates_russian/drawing/clearScreen.t</file>
         <file>templates_russian/drawing/drawPixel.t</file>
+        <file>templates_russian/drawing/drawLine.t</file>
         <file>templates_russian/drawing/drawRect.t</file>
         <file>templates_russian/drawing/drawEllipse.t</file>
         <file>templates_russian/drawing/drawIcon.t</file>

@@ -19,11 +19,11 @@
 namespace iotik {
 namespace simple {
 
-/// Generator for Draw Ellipse block.
-class DrawEllipseGenerator : public generatorBase::simple::BindingGenerator
+/// Generator for Print String block.
+class PrintStringGenerator : public generatorBase::simple::BindingGenerator
 {
 public:
-	DrawEllipseGenerator(const qrRepo::RepoApi &repo
+	PrintStringGenerator(const qrRepo::RepoApi &repo
 			, generatorBase::GeneratorCustomizer &customizer
 			, const qReal::Id &id
 			, QObject *parent);

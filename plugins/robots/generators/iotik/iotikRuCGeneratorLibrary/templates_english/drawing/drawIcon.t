@@ -1,1 +1,1 @@
-﻿icon({ @@PORT@@, @@PORT_2@@ }, @@XCoordinateIcon@@, @@YCoordinateIcon@@);
+﻿icon({ @@PORT@@, @@PORT_2@@ }, @@XCoordinateIcon@@, @@YCoordinateIcon@@, @@Icon@@);

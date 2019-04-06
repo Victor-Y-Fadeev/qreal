@@ -90,7 +90,7 @@ HEADERS += \
 	$$PWD/src/blocks/details/matrix.h \
 	$$PWD/src/blocks/details/relay.h \
 	$$PWD/src/blocks/details/printString.h \
-	$$PWD/src/blocks/details/clearScreen.h \
+	$$PWD/src/blocks/details/clearDisplay.h \
 	$$PWD/src/blocks/details/drawPixelBlock.h \
 	$$PWD/src/blocks/details/drawLineBlock.h \
 	$$PWD/src/blocks/details/drawRectBlock.h \
@@ -168,7 +168,7 @@ SOURCES += \
 	$$PWD/src/blocks/details/matrix.cpp \
 	$$PWD/src/blocks/details/relay.cpp \
 	$$PWD/src/blocks/details/printString.cpp \
-	$$PWD/src/blocks/details/clearScreen.cpp \
+	$$PWD/src/blocks/details/clearDisplay.cpp \
 	$$PWD/src/blocks/details/drawPixelBlock.cpp \
 	$$PWD/src/blocks/details/drawLineBlock.cpp \
 	$$PWD/src/blocks/details/drawRectBlock.cpp \

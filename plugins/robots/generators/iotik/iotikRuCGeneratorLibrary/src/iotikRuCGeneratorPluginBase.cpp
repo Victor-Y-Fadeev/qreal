@@ -247,11 +247,16 @@ void IotikRuCGeneratorPluginBase::addDeviceVariables(const QFileInfo fileInfo)
 			"#define UVA_ULTRAVIOLET 27\n"
 			"#define UVB_ULTRAVIOLET 28\n"
 			"#define UVI_ULTRAVIOLET 29\n"
+			"#define CAPACITIVE 30\n"
 
-			"#define RELAY 1\n"
+			"#define RELAY 0\n"
+			"#define RGB 1\n"
+			"#define MATRIX 2\n"
+
 
 			"#define MA -1\n"
 			"#define MB -2\n"
+
 			"#define A4 32\n"
 			"#define A5 33\n"
 			"#define A6 34\n"
@@ -272,7 +277,17 @@ void IotikRuCGeneratorPluginBase::addDeviceVariables(const QFileInfo fileInfo)
 			"#define D19 19\n"
 			"#define D21 21\n"
 			"#define D22 22\n"
-			"#define D23 23\n";
+			"#define D23 23\n"
+
+			"#define SUN 0\n"
+			"#define LAMP 1\n"
+			"#define CLOCK 2\n"
+			"#define BATTERY 3\n"
+			"#define WIFI 4\n"
+			"#define LEFT 5\n"
+			"#define RIGHT 6\n"
+			"#define UP 7\n"
+			"#define DOWN 8\n";
 
 	for (int i = 0; i < 256; i++)
 	{

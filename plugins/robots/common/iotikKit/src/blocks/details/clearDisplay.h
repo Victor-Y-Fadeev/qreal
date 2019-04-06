@@ -14,20 +14,21 @@
 
 #pragma once
 
-#include <generatorBase/simpleGenerators/bindingGenerator.h>
+#include <kitBase/blocksBase/common/displayBlock.h>
 
 namespace iotik {
-namespace simple {
+namespace blocks {
+namespace details {
 
-/// Generator for Draw Ellipse block.
-class DrawEllipseGenerator : public generatorBase::simple::BindingGenerator
+class ClearDisplay : public kitBase::blocksBase::common::DisplayBlock
 {
 public:
-	DrawEllipseGenerator(const qrRepo::RepoApi &repo
-			, generatorBase::GeneratorCustomizer &customizer
-			, const qReal::Id &id
-			, QObject *parent);
+	ClearDisplay(kitBase::robotModel::RobotModelInterface &robotModel);
+
+private:
+	void doJob(kitBase::robotModel::robotParts::Display &display) override;
 };
 
+}
 }
 }

@@ -1272,7 +1272,7 @@
 			</node>
 
 			<!-- Display drawing blocks -->
-			<node displayedName="Clear Screen" name="IotikClearScreen" description="Clears everything drawn on the robot`s screen.">
+			<node displayedName="Clear Screen" name="IotikClearDisplay" description="Clears everything drawn on the robot`s screen.">
 				<graphics>
 					<picture sizex="50" sizey="50">
 						<image y1="0" name="images/clearScreenBlock.png" x1="0" y2="50" x2="50"/>
@@ -1745,7 +1745,7 @@
 			</group>
 			<group name="Drawing">
 				<element name="IotikPrintString"/>
-				<element name="IotikClearScreen"/>
+				<element name="IotikClearDisplay"/>
 				<element name="IotikDrawPixel"/>
 				<element name="IotikDrawLine"/>
 				<element name="IotikDrawRect"/>

@@ -45,6 +45,14 @@
 #include "simpleGenerators/matrixGenerator.h"
 #include "simpleGenerators/relayGenerator.h"
 
+#include "simpleGenerators/printStringGenerator.h"
+#include "simpleGenerators/clearDisplayGenerator.h"
+#include "simpleGenerators/drawPixelGenerator.h"
+#include "simpleGenerators/drawLineGenerator.h"
+#include "simpleGenerators/drawRectGenerator.h"
+#include "simpleGenerators/drawEllipseGenerator.h"
+#include "simpleGenerators/drawIconGenerator.h"
+
 #include "simpleGenerators/forLoopGenerator.h"
 #include "simpleGenerators/wifiGenerator.h"
 #include "simpleGenerators/blynkAuthorizationGenerator.h"
@@ -145,6 +153,21 @@ AbstractSimpleGenerator *IotikGeneratorFactory::simpleGenerator(const qReal::Id 
 		return new MatrixGenerator(mRepo, customizer, id, this);
 	} else if (elementType == "IotikRelay") {
 		return new RelayGenerator(mRepo, customizer, id, this);
+
+	} else if (elementType == "IotikPrintString") {
+		return new PrintStringGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikClearDisplay") {
+		return new ClearDisplayGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikDrawLine") {
+		return new DrawLineGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikDrawPixel") {
+		return new DrawPixelGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikDrawRect") {
+		return new DrawRectGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikDrawEllipse") {
+		return new DrawEllipseGenerator(mRepo, customizer, id, this);
+	} else if (elementType == "IotikDrawIcon") {
+		return new DrawIconGenerator(mRepo, customizer, id, this);
 
 	} else if (elementType == "IotikWifi") {
 		return new WifiGenerator(mRepo, customizer, id, this);

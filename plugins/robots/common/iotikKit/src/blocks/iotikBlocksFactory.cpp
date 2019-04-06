@@ -83,7 +83,7 @@
 #include "details/relay.h"
 
 #include "details/printString.h"
-#include "details/clearScreen.h"
+#include "details/clearDisplay.h"
 #include "details/drawPixelBlock.h"
 #include "details/drawLineBlock.h"
 #include "details/drawRectBlock.h"
@@ -175,8 +175,8 @@ qReal::interpretation::Block *IotikBlocksFactory::produceBlock(const qReal::Id &
 
 	} else if (elementMetatypeIs(element, "IotikPrintString")) {
 		return new PrintString(mRobotModelManager->model());
-	} else if (elementMetatypeIs(element, "IotikClearScreen")) {
-		return new ClearScreen(mRobotModelManager->model());
+	} else if (elementMetatypeIs(element, "IotikClearDisplay")) {
+		return new ClearDisplay(mRobotModelManager->model());
 	} else if (elementMetatypeIs(element, "IotikDrawPixel")) {
 		return new DrawPixelBlock(mRobotModelManager->model());
 	} else if (elementMetatypeIs(element, "IotikDrawLine")) {
@@ -248,7 +248,7 @@ qReal::IdList IotikBlocksFactory::providedBlocks() const
 				, id("IotikRelay")
 
 				, id("IotikPrintString")
-				, id("IotikClearScreen")
+				, id("IotikClearDisplay")
 				, id("IotikDrawPixel")
 				, id("IotikDrawLine")
 				, id("IotikDrawRect")

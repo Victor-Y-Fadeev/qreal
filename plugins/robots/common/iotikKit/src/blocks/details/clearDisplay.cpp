@@ -12,16 +12,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. */
 
-#include "clearScreen.h"
+#include "clearDisplay.h"
 
 using namespace iotik::blocks::details;
 
-ClearScreen::ClearScreen(kitBase::robotModel::RobotModelInterface &robotModel)
+ClearDisplay::ClearDisplay(kitBase::robotModel::RobotModelInterface &robotModel)
 	: kitBase::blocksBase::common::DisplayBlock(robotModel)
 {
 }
 
-void ClearScreen::doJob(kitBase::robotModel::robotParts::Display &display)
+void ClearDisplay::doJob(kitBase::robotModel::robotParts::Display &display)
 {
 	if (!errorsOccured()) {
 		emit done(mNextBlockId);
