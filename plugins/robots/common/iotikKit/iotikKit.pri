@@ -89,6 +89,13 @@ HEADERS += \
 	$$PWD/src/blocks/details/rgb.h \
 	$$PWD/src/blocks/details/matrix.h \
 	$$PWD/src/blocks/details/relay.h \
+	$$PWD/src/blocks/details/printString.h \
+	$$PWD/src/blocks/details/clearScreen.h \
+	$$PWD/src/blocks/details/drawPixelBlock.h \
+	$$PWD/src/blocks/details/drawLineBlock.h \
+	$$PWD/src/blocks/details/drawRectBlock.h \
+	$$PWD/src/blocks/details/drawEllipseBlock.h \
+	$$PWD/src/blocks/details/drawIconBlock.h \
 	$$PWD/src/blocks/details/wifi.h \
 	$$PWD/src/blocks/details/blynkAuthorization.h \
 	$$PWD/src/blocks/details/blynkLed.h \
@@ -160,6 +167,13 @@ SOURCES += \
 	$$PWD/src/blocks/details/rgb.cpp \
 	$$PWD/src/blocks/details/matrix.cpp \
 	$$PWD/src/blocks/details/relay.cpp \
+	$$PWD/src/blocks/details/printString.cpp \
+	$$PWD/src/blocks/details/clearScreen.cpp \
+	$$PWD/src/blocks/details/drawPixelBlock.cpp \
+	$$PWD/src/blocks/details/drawLineBlock.cpp \
+	$$PWD/src/blocks/details/drawRectBlock.cpp \
+	$$PWD/src/blocks/details/drawEllipseBlock.cpp \
+	$$PWD/src/blocks/details/drawIconBlock.cpp \
 	$$PWD/src/blocks/details/wifi.cpp \
 	$$PWD/src/blocks/details/blynkAuthorization.cpp \
 	$$PWD/src/blocks/details/blynkLed.cpp \

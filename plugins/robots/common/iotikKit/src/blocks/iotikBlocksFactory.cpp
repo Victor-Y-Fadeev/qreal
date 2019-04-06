@@ -82,6 +82,14 @@
 #include "details/matrix.h"
 #include "details/relay.h"
 
+#include "details/printString.h"
+#include "details/clearScreen.h"
+#include "details/drawPixelBlock.h"
+#include "details/drawLineBlock.h"
+#include "details/drawRectBlock.h"
+#include "details/drawEllipseBlock.h"
+#include "details/drawIconBlock.h"
+
 #include "details/wifi.h"
 #include "details/blynkAuthorization.h"
 #include "details/blynkLCD.h"
@@ -165,6 +173,21 @@ qReal::interpretation::Block *IotikBlocksFactory::produceBlock(const qReal::Id &
 	} else if (elementMetatypeIs(element, "IotikRelay")) {
 		return new RelayBlock();
 
+	} else if (elementMetatypeIs(element, "IotikPrintString")) {
+		return new PrintString(mRobotModelManager->model());
+	} else if (elementMetatypeIs(element, "IotikClearScreen")) {
+		return new ClearScreen(mRobotModelManager->model());
+	} else if (elementMetatypeIs(element, "IotikDrawPixel")) {
+		return new DrawPixelBlock(mRobotModelManager->model());
+	} else if (elementMetatypeIs(element, "IotikDrawLine")) {
+		return new DrawLineBlock(mRobotModelManager->model());
+	} else if (elementMetatypeIs(element, "IotikDrawRect")) {
+		return new DrawRectBlock(mRobotModelManager->model());
+	} else if (elementMetatypeIs(element, "IotikDrawEllipse")) {
+		return new DrawEllipseBlock(mRobotModelManager->model());
+	} else if (elementMetatypeIs(element, "IotikDrawIcon")) {
+		return new DrawIconBlock(mRobotModelManager->model());
+
 	} else if (elementMetatypeIs(element, "IotikWifi")) {
 		return new WifiBlock();
 	} else if (elementMetatypeIs(element, "IotikBlynkAuthorization")) {
@@ -223,15 +246,15 @@ qReal::IdList IotikBlocksFactory::providedBlocks() const
 				, id("IotikRgb")
 				, id("IotikMatrix")
 				, id("IotikRelay")
-/*
-				, id("IotikPrintText")
+
+				, id("IotikPrintString")
 				, id("IotikClearScreen")
 				, id("IotikDrawPixel")
 				, id("IotikDrawLine")
 				, id("IotikDrawRect")
 				, id("IotikDrawEllipse")
 				, id("IotikDrawIcon")
-*/
+
 				, id("IotikWifi")
 				, id("IotikBlynkAuthorization")
 				, id("IotikBlynkLed")

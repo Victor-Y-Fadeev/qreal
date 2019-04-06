@@ -1291,7 +1291,7 @@
 					</generalizations>
 				</logic>
 			</node>
-			<node displayedName="Print Text" name="IotikPrintText" description="Prints a given line in the specified coordinates on the robot`s screen.">
+			<node displayedName="Print String" name="IotikPrintString" description="Prints a given line in the specified coordinates on the robot`s screen.">
 				<graphics>
 					<picture sizex="50" sizey="50">
 						<image y1="0" name="images/printTextBlock.png" x1="0" y2="50" x2="50"/>
@@ -1299,25 +1299,25 @@
 					<labels>
 						<label x="-5" y="-35" textBinded="SCL" hard="true" prefix="SCL:"/>
 						<label x="70" y="-35" textBinded="SDA" hard="true" prefix="SDA:"/>
-						<label x="50" y="60" textBinded="XCoordinateText" prefix="X:"/>
-						<label x="50" y="90" textBinded="YCoordinateText" prefix="Y:"/>
-						<label x="50" y="120" textBinded="PrintText" prefix="Number:"/>
+						<label x="25" y="60" textBinded="XCoordinateString" prefix="X:"/>
+						<label x="25" y="90" textBinded="YCoordinateString" prefix="Y:"/>
+						<label x="25" y="120" textBinded="PrintString" prefix="String:"/>
 					</labels>
 					<nonResizeable/>
 				</graphics>
 				<logic>
 					<container/>
 					<properties>
-						<property displayedName="X" type="string" name="XCoordinateText">
+						<property displayedName="X" type="string" name="XCoordinateString">
 							<default>0</default>
 						</property>
-						<property displayedName="Y" type="string" name="YCoordinateText">
+						<property displayedName="Y" type="string" name="YCoordinateString">
 							<default>0</default>
 						</property>
-						<property displayedName="String" type="string" name="PrintText">
+						<property displayedName="String" type="string" name="PrintString">
 							<default>\"Hello world!\"</default>
 						</property>
-						<property displayedName="Number" type="bool" name="Number">
+						<property displayedName="Numeric" type="bool" name="Numeric">
 							<default>false</default>
 						</property>
 					</properties>
@@ -1334,8 +1334,8 @@
 					<labels>
 						<label x="-5" y="-35" textBinded="SCL" hard="true" prefix="SCL:"/>
 						<label x="70" y="-35" textBinded="SDA" hard="true" prefix="SDA:"/>
-						<label x="36" y="60" textBinded="XCoordinatePix" prefix="X:"/>
-						<label x="36" y="90" textBinded="YCoordinatePix" prefix="Y:"/>
+						<label x="25" y="60" textBinded="XCoordinatePix" prefix="X:"/>
+						<label x="25" y="90" textBinded="YCoordinatePix" prefix="Y:"/>
 					</labels>
 					<nonResizeable/>
 				</graphics>
@@ -1362,10 +1362,10 @@
 					<labels>
 						<label x="-5" y="-35" textBinded="SCL" hard="true" prefix="SCL:"/>
 						<label x="70" y="-35" textBinded="SDA" hard="true" prefix="SDA:"/>
-						<label x="36" y="60" textBinded="X1CoordinateLine" prefix="X1:"/>
-						<label x="36" y="90" textBinded="Y1CoordinateLine" prefix="Y1:"/>
-						<label x="36" y="120" textBinded="X2CoordinateLine" prefix="X2:"/>
-						<label x="36" y="150" textBinded="Y2CoordinateLine" prefix="Y2:"/>
+						<label x="25" y="60" textBinded="X1CoordinateLine" prefix="X1:"/>
+						<label x="25" y="90" textBinded="Y1CoordinateLine" prefix="Y1:"/>
+						<label x="25" y="120" textBinded="X2CoordinateLine" prefix="X2:"/>
+						<label x="25" y="150" textBinded="Y2CoordinateLine" prefix="Y2:"/>
 					</labels>
 					<nonResizeable/>
 				</graphics>
@@ -1398,10 +1398,10 @@
 					<labels>
 						<label x="-5" y="-35" textBinded="SCL" hard="true" prefix="SCL:"/>
 						<label x="70" y="-35" textBinded="SDA" hard="true" prefix="SDA:"/>
-						<label x="50" y="60" textBinded="XCoordinateRect" prefix="X:"/>
-						<label x="50" y="90" textBinded="YCoordinateRect" prefix="Y:"/>
-						<label x="50" y="120" textBinded="WidthRect" prefix="Width:"/>
-						<label x="50" y="150" textBinded="HeightRect" prefix="Height:"/>
+						<label x="25" y="60" textBinded="XCoordinateRect" prefix="X:"/>
+						<label x="25" y="90" textBinded="YCoordinateRect" prefix="Y:"/>
+						<label x="25" y="120" textBinded="WidthRect" prefix="Width:"/>
+						<label x="25" y="150" textBinded="HeightRect" prefix="Height:"/>
 					</labels>
 					<nonResizeable/>
 				</graphics>
@@ -1437,10 +1437,10 @@
 					<labels>
 						<label x="-5" y="-35" textBinded="SCL" hard="true" prefix="SCL:"/>
 						<label x="70" y="-35" textBinded="SDA" hard="true" prefix="SDA:"/>
-						<label x="50" y="60" textBinded="XCoordinateEllipse" prefix="X:"/>
-						<label x="50" y="90" textBinded="YCoordinateEllipse" prefix="Y:"/>
-						<label x="50" y="120" textBinded="WidthEllipse" prefix="Width:"/>
-						<label x="50" y="150" textBinded="HeightEllipse" prefix="Height:"/>
+						<label x="25" y="60" textBinded="XCoordinateEllipse" prefix="X:"/>
+						<label x="25" y="90" textBinded="YCoordinateEllipse" prefix="Y:"/>
+						<label x="25" y="120" textBinded="WidthEllipse" prefix="Width:"/>
+						<label x="25" y="150" textBinded="HeightEllipse" prefix="Height:"/>
 					</labels>
 					<nonResizeable/>
 				</graphics>
@@ -1476,19 +1476,19 @@
 					<labels>
 						<label x="-5" y="-35" textBinded="SCL" hard="true" prefix="SCL:"/>
 						<label x="70" y="-35" textBinded="SDA" hard="true" prefix="SDA:"/>
-						<label x="36" y="60" textBinded="XCoordinatePix" prefix="X:"/>
-						<label x="36" y="90" textBinded="YCoordinatePix" prefix="Y:"/>
-						<label x="25" y="60" textBinded="Icon" background="white" prefix="Icon:"/>
+						<label x="25" y="120" textBinded="Icon" background="white" prefix="Icon:"/>
+						<label x="25" y="60" textBinded="XCoordinateIcon" prefix="X:"/>
+						<label x="25" y="90" textBinded="YCoordinateIcon" prefix="Y:"/>
 					</labels>
 					<nonResizeable/>
 				</graphics>
 				<logic>
 					<container/>
 					<properties>
-						<property displayedName="X" type="string" name="XCoordinatePix">
+						<property displayedName="X" type="string" name="XCoordinateIcon">
 							<default>5</default>
 						</property>
-						<property displayedName="Y" type="string" name="YCoordinatePix">
+						<property displayedName="Y" type="string" name="YCoordinateIcon">
 							<default>5</default>
 						</property>
 						<property displayedName="Icon" type="IotikIcons" name="Icon">
@@ -1743,6 +1743,15 @@
 				<element name="IotikWaitForSonarDistance" />
 				<element name="IotikWaitForTemperature"/>
 			</group>
+			<group name="Drawing">
+				<element name="IotikPrintString"/>
+				<element name="IotikClearScreen"/>
+				<element name="IotikDrawPixel"/>
+				<element name="IotikDrawLine"/>
+				<element name="IotikDrawRect"/>
+				<element name="IotikDrawEllipse"/>
+				<element name="IotikDrawIcon"/>
+			</group>
 			<group name="Modules (MgBot)">
 				<element name="IotikAccelerometer" />
 				<element name="IotikCompass" />
@@ -1761,15 +1770,6 @@
 				<element name="IotikRgb" />
 				<element name="IotikMatrix" />
 				<element name="IotikRelay" />
-			</group>
-			<group name="Drawing">
-				<element name="IotikPrintText"/>
-				<element name="IotikClearScreen"/>
-				<element name="IotikDrawPixel"/>
-				<element name="IotikDrawLine"/>
-				<element name="IotikDrawRect"/>
-				<element name="IotikDrawEllipse"/>
-				<element name="IotikDrawIcon"/>
 			</group>
 			<group name="Network (Blynk)">
 				<element name="IotikWifi" />
