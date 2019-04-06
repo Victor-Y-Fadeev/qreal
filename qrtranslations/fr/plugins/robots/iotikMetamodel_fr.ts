@@ -4,1647 +4,1660 @@
 <context>
     <name>IotikMetamodelPlugin</name>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="239"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="257"/>
         <source>Package</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="239"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="257"/>
         <source>Private</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="239"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="257"/>
         <source>Protected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="239"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="257"/>
         <source>Public</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="229"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="237"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="245"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="233"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="251"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="263"/>
         <source>A4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="229"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="237"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="245"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="233"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="251"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="263"/>
         <source>A5</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="229"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="245"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="233"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="263"/>
         <source>A6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="229"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="245"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="233"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="263"/>
         <source>A7</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="237"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="245"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="241"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="251"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="263"/>
         <source>D5</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="241"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="245"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="249"/>
         <source>black</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="241"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="245"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="249"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="259"/>
         <source>blue</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="241"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="245"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="249"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="259"/>
         <source>green</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="241"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="245"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="249"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="259"/>
         <source>red</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="241"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="245"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="259"/>
         <source>white</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="241"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="245"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="259"/>
         <source>yellow</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="249"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="255"/>
         <source>norm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="249"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="255"/>
         <source>x-axis</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="249"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="255"/>
         <source>y-axis</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="249"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="255"/>
         <source>z-axis</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="249"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="259"/>
         <source>off</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="249"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="259"/>
         <source>violet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V10</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V100</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V101</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V102</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V103</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V104</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V105</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V106</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V107</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V108</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V109</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V11</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V110</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V111</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V112</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V113</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V114</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V115</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V116</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V117</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V118</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V119</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V12</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V120</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V121</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V122</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V123</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V124</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V125</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V126</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V127</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V128</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V129</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V13</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V130</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V131</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V132</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V133</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V134</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V135</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V136</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V137</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V138</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V139</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V14</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V140</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V141</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V142</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V143</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V144</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V145</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V146</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V147</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V148</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V149</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V15</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V150</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V151</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V152</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V153</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V154</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V155</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V156</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V157</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V158</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V159</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V16</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V160</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V161</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V162</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V163</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V164</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V165</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V166</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V167</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V168</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V169</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V17</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V170</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V171</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V172</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V173</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V174</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V175</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V176</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V177</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V178</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V179</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V18</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V180</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V181</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V182</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V183</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V184</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V185</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V186</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V187</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V188</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V189</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V19</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V190</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V191</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V192</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V193</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V194</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V195</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V196</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V197</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V198</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V199</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V20</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V200</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V201</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V202</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V203</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V204</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V205</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V206</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V207</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V208</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V209</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V21</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V210</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V211</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V212</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V213</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V214</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V215</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V216</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V217</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V218</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V219</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V22</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V220</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V221</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V222</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V223</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V224</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V225</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V226</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V227</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V228</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V229</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V23</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V230</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V231</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V232</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V233</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V234</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V235</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V236</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V237</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V238</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V239</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V24</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V240</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V241</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V242</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V243</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V244</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V245</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V246</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V247</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V248</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V249</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V25</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V250</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V251</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V252</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V253</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V254</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V255</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V26</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V27</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V28</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V29</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V30</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V31</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V32</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V33</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V34</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V35</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V36</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V37</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V38</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V39</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V40</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V41</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V42</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V43</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V44</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V45</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V46</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V47</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V48</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V49</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V5</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V50</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V51</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V52</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V53</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V54</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V55</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V56</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V57</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V58</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V59</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V60</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V61</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V62</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V63</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V64</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V65</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V66</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V67</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V68</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V69</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V7</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V70</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V71</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V72</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V73</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V74</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V75</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V76</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V77</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V78</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V79</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V8</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V80</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V81</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V82</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V83</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V84</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V85</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V86</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V87</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V88</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V89</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V9</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V90</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V91</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V92</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V93</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V94</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V95</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V96</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V97</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V98</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
         <source>V99</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="237"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="245"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="241"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="251"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="263"/>
         <source>D4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="237"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="245"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="241"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="251"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="263"/>
         <source>RXD</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="237"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="245"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="241"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="251"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="263"/>
         <source>TXD</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="243"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="247"/>
         <source>battery</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="243"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="247"/>
         <source>clock</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="243"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="247"/>
         <source>down</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="243"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="247"/>
         <source>lamp</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="243"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="247"/>
         <source>left</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="243"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="247"/>
         <source>right</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="243"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="247"/>
         <source>sun</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="243"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="247"/>
         <source>up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="243"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="247"/>
         <source>wi-fi</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="255"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="229"/>
         <source>Composite</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="255"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="229"/>
         <source>None</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="255"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="229"/>
         <source>Shared</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="247"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
         <source>break</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="247"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="231"/>
         <source>float</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="233"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="259"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="235"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="237"/>
         <source>false</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="233"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="235"/>
         <source>body</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="233"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="259"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="235"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="237"/>
         <source>true</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="237"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="245"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="241"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="251"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="263"/>
         <source>D13</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="237"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="245"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="241"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="251"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="263"/>
         <source>D14</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="237"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="245"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="241"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="251"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="263"/>
         <source>D15</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="237"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="245"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="241"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="251"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="263"/>
         <source>D16</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="237"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="245"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="241"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="251"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="263"/>
         <source>D17</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="237"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="245"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="241"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="251"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="263"/>
         <source>D18</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="237"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="245"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="241"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="251"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="263"/>
         <source>D19</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="237"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="245"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="241"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="251"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="263"/>
         <source>D21</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="237"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="245"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="241"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="251"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="263"/>
         <source>D22</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="237"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="245"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="241"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="251"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="263"/>
         <source>D23</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="235"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="239"/>
         <source>Concurrent</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="235"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="239"/>
         <source>Guarded</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="235"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="239"/>
         <source>Sequential</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="253"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="249"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="259"/>
         <source>orange</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="257"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="259"/>
+        <source>turquoise</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="261"/>
         <source>In</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="257"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="261"/>
         <source>Inout</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="257"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="261"/>
         <source>Out</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="257"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="261"/>
         <source>Return</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="237"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="251"/>
         <source>A18</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="237"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="251"/>
         <source>A19</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="261"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="243"/>
         <source>greater</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="261"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="243"/>
         <source>less</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="261"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="243"/>
         <source>not greater</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="261"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/pluginInterface.cpp" line="243"/>
         <source>not less</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1671,15 +1684,15 @@
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="1720"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2014"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2129"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2244"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2660"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2714"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2892"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2955"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3087"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3134"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3193"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3282"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2264"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2688"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2742"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2920"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2983"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3115"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3162"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3221"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3310"/>
         <source>Port</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1729,11 +1742,13 @@
     </message>
     <message>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="362"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2166"/>
         <source>Color:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="386"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2207"/>
         <source>Color</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1841,19 +1856,19 @@
     </message>
     <message>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="828"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2513"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2533"/>
         <source>Red:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="836"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2521"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2541"/>
         <source>Green:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="844"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2529"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2549"/>
         <source>Blue:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1864,7 +1879,7 @@
     </message>
     <message>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="868"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2561"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2589"/>
         <source>Blue</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1875,7 +1890,7 @@
     </message>
     <message>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="869"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2562"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2590"/>
         <source>Green</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1891,7 +1906,7 @@
     </message>
     <message>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="871"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2563"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2591"/>
         <source>Red</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2084,250 +2099,270 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2166"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2174"/>
+        <source>Intensity:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2183"/>
         <source>Symbol:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2192"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2208"/>
+        <source>Intensity (%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2209"/>
+        <source>Print</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2212"/>
         <source>&quot;A&quot;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2192"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2212"/>
         <source>Symbol</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2256"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2276"/>
         <source>Pressure Sensor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2307"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2327"/>
         <source>pressure</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2318"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2338"/>
         <source>Print Text</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2320"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2340"/>
         <source>Prints a given line in the specified coordinates on the robot`s screen.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2359"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2379"/>
         <source>Number:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2383"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2403"/>
         <source>Number</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2384"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2404"/>
         <source>String</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2399"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2419"/>
         <source>Relay</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2424"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2444"/>
         <source>First:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2432"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2452"/>
         <source>Second:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2440"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2460"/>
         <source>Third:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2448"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2468"/>
         <source>Fourth:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2472"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2492"/>
         <source>First</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2473"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2493"/>
         <source>Fourth</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2476"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2496"/>
         <source>Second</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2477"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2497"/>
         <source>Third</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2488"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2508"/>
         <source>RGB led</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2537"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2557"/>
         <source>White:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2561"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2562"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2563"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2565"/>
+        <source>UV:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2589"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2590"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2591"/>
         <source>255</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2566"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2594"/>
         <source>UV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2567"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2595"/>
         <source>White</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2726"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2754"/>
         <source>Temperature Sensor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2777"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2805"/>
         <source>temperature</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2788"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2816"/>
         <source>Ultraviolet Sensor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2813"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2841"/>
         <source>UVA:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2821"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2849"/>
         <source>UVB:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2829"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2857"/>
         <source>UVI:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2855"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2883"/>
         <source>uva</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2855"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2883"/>
         <source>UVA</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2856"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2884"/>
         <source>uvb</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2856"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2884"/>
         <source>UVB</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2857"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2885"/>
         <source>uvi</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2857"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2885"/>
         <source>UVI</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3038"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3066"/>
         <source>Wait for Temperature Sensor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3055"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3083"/>
         <source>Temperature:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3089"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3117"/>
         <source>Temperature</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3145"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3156"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3173"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3184"/>
         <source>Water Sensor into Variable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3194"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3222"/>
         <source>water</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3205"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3233"/>
         <source>Connect Wi-Fi</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3214"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3242"/>
         <source>SSID:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3222"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3250"/>
         <source>Password:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3246"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3274"/>
         <source>&quot;password&quot;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3246"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3274"/>
         <source>Password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3247"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3275"/>
         <source>SSID</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3247"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3275"/>
         <source>&quot;Network&quot;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3258"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3286"/>
         <source>IotikWriteBlock</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2346,12 +2381,12 @@
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="1927"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2043"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2158"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2273"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2335"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2416"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2505"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2743"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2805"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2293"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2355"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2436"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2525"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2771"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2833"/>
         <source>SDA:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2370,12 +2405,12 @@
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="1919"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2035"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2150"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2265"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2327"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2408"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2497"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2735"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2797"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2285"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2347"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2428"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2517"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2763"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2825"/>
         <source>SCL:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2388,7 +2423,7 @@
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="1285"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="1356"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="1757"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2343"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2363"/>
         <source>X:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2401,7 +2436,7 @@
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="1293"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="1364"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="1765"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2351"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2371"/>
         <source>Y:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2427,13 +2462,13 @@
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="1898"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="1959"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2075"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2190"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2305"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2385"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2474"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2564"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2775"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2853"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2210"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2325"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2405"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2494"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2592"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2803"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2881"/>
         <source>SCL</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2452,13 +2487,13 @@
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="1899"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="1960"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2076"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2191"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2306"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2386"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2475"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2565"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2776"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2854"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2211"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2326"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2406"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2495"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2593"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2804"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2882"/>
         <source>SDA</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2478,7 +2513,7 @@
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="1319"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="1409"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="1799"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2387"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2407"/>
         <source>X</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2498,7 +2533,7 @@
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="1320"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="1410"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="1800"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2388"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2408"/>
         <source>Y</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2525,7 +2560,7 @@
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="331"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="431"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="652"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2384"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2404"/>
         <source>&quot;Hello world!&quot;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2542,38 +2577,38 @@
     </message>
     <message>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="1989"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2220"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2240"/>
         <source>Status:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2015"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2245"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2265"/>
         <source>Status</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2976"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3004"/>
         <source>Trig:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2984"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3012"/>
         <source>Echo:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3025"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3053"/>
         <source>Echo</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3027"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3055"/>
         <source>Trig</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3100"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3128"/>
         <source>Wait for Touch Sensor</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2588,13 +2623,13 @@
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="1681"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="1981"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2097"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2212"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2621"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2681"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2912"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3047"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3109"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3154"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2232"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2649"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2709"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2940"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3075"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3137"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3182"/>
         <source>Port:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2607,11 +2642,11 @@
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="1935"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2051"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2105"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2281"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2636"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2689"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2751"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3169"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2301"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2664"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2717"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2779"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3197"/>
         <source>Variable:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2624,11 +2659,11 @@
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="1961"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2077"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2130"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2307"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2661"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2715"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2777"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3194"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2327"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2689"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2743"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2805"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3222"/>
         <source>Variable</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2703,6 +2738,7 @@
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="1446"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="1501"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="1556"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2208"/>
         <source>100</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2740,6 +2776,7 @@
     <message>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="1475"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="1530"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2175"/>
         <source>%</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2764,35 +2801,35 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2203"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2223"/>
         <source>Mosfet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2578"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2606"/>
         <source>IotikSensorBlock</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2868"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2896"/>
         <source>IotikUniversalSensorBlock</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2903"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2931"/>
         <source>Wait for Infrared Distance</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2920"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2992"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2948"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3020"/>
         <source>Distance:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2928"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3000"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3063"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2956"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3028"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3091"/>
         <source>Sign:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2807,13 +2844,13 @@
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="1248"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="1409"/>
         <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="1410"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2245"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2387"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2388"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2567"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2954"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3024"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3089"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2265"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2407"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2408"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2595"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2982"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3052"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3117"/>
         <source>0</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2869,41 +2906,41 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2612"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2623"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2640"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2651"/>
         <source>Soil Sensor into Variable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2661"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2689"/>
         <source>moisture</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2672"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2700"/>
         <source>Sound Sensor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2715"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2743"/>
         <source>sound</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2954"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3024"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2982"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3052"/>
         <source>Distance</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2956"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3026"/>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3088"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2984"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3054"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="3116"/>
         <source>Sign</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2967"/>
+        <location filename="../../../../plugins/robots/editor/iotik/generated/elements.h" line="2995"/>
         <source>Wait for Ultrasonic Distance</source>
         <translation type="unfinished"></translation>
     </message>

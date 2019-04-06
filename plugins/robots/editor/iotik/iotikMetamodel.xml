@@ -333,6 +333,17 @@
 				<value name="violet" displayedName="violet"/>
 				<value name="off" displayedName="off"/>
 			</enum>
+			<enum name="IotikMatrixColor">
+				<value name="white" displayedName="white"/>
+				<value name="red" displayedName="red"/>
+				<value name="orange" displayedName="orange"/>
+				<value name="yellow" displayedName="yellow"/>
+				<value name="green" displayedName="green"/>
+				<value name="turquoise" displayedName="turquoise"/>
+				<value name="blue" displayedName="blue"/>
+				<value name="violet" displayedName="violet"/>
+				<value name="off" displayedName="off"/>
+			</enum>
 			<enum name="IotikIcons">
 				<value name="sun" displayedName="sun"/>
 				<value name="lamp" displayedName="lamp"/>
@@ -1196,14 +1207,25 @@
 					<labels>
 						<label x="-5" y="-35" textBinded="SCL" hard="true" prefix="SCL:"/>
 						<label x="70" y="-35" textBinded="SDA" hard="true" prefix="SDA:"/>
-						<label x="25" y="60" textBinded="Symbol" background="white" prefix="Symbol:"/>
+						<label x="25" y="60" textBinded="Color" background="white" prefix="Color:"/>
+						<label x="25" y="90" textBinded="Intensity" background="white" prefix="Intensity:" suffix="%"/>
+						<label x="25" y="120" textBinded="Symbol" background="white" prefix="Symbol:"/>
 					</labels>
 					<nonResizeable/>
 				</graphics>
 				<logic>
 					<properties>
+						<property displayedName="Color" type="IotikMatrixColor" name="Color">
+							<default>white</default>
+						</property>
+						<property displayedName="Intensity (%)" type="string" name="Intensity">
+							<default>100</default>
+						</property>
 						<property displayedName="Symbol" type="string" name="Symbol">
 							<default>\"A\"</default>
+						</property>
+						<property displayedName="Print" type="bool" name="Print">
+							<default>true</default>
 						</property>
 					</properties>
 					<container/>
