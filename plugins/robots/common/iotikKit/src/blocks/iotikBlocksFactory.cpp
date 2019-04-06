@@ -33,6 +33,9 @@
 #include "iotikKit/robotModel/parts/iotikHumiditySensor.h"
 #include "iotikKit/robotModel/parts/iotikPressureSensor.h"
 #include "iotikKit/robotModel/parts/iotikUltravioletSensor.h"
+#include "iotikKit/robotModel/parts/iotikCapacitiveSensor.h"
+#include "iotikKit/robotModel/parts/iotikRgb.h"
+#include "iotikKit/robotModel/parts/iotikMatrix.h"
 #include "iotikKit/robotModel/parts/iotikRelay.h"
 
 #include "iotikKit/robotModel/parts/iotikWifi.h"
@@ -74,6 +77,9 @@
 #include "details/humidity.h"
 #include "details/pressure.h"
 #include "details/ultraviolet.h"
+#include "details/capacitive.h"
+#include "details/rgb.h"
+#include "details/matrix.h"
 #include "details/relay.h"
 
 #include "details/wifi.h"
@@ -150,6 +156,12 @@ qReal::interpretation::Block *IotikBlocksFactory::produceBlock(const qReal::Id &
 		return new PressureSensorBlock();
 	} else if (elementMetatypeIs(element, "IotikUltraviolet")) {
 		return new UltravioletSensorBlock();
+	} else if (elementMetatypeIs(element, "IotikCapacitive")) {
+		return new CapacitiveSensorBlock();
+	} else if (elementMetatypeIs(element, "IotikRgb")) {
+		return new RgbBlock();
+	} else if (elementMetatypeIs(element, "IotikMatrix")) {
+		return new MatrixBlock();
 	} else if (elementMetatypeIs(element, "IotikRelay")) {
 		return new RelayBlock();
 
@@ -207,8 +219,19 @@ qReal::IdList IotikBlocksFactory::providedBlocks() const
 				, id("IotikHumidity")
 				, id("IotikPressure")
 				, id("IotikUltraviolet")
+				, id("IotikCapacitive")
+				, id("IotikRgb")
+				, id("IotikMatrix")
 				, id("IotikRelay")
-
+/*
+				, id("IotikPrintText")
+				, id("IotikClearScreen")
+				, id("IotikDrawPixel")
+				, id("IotikDrawLine")
+				, id("IotikDrawRect")
+				, id("IotikDrawEllipse")
+				, id("IotikDrawIcon")
+*/
 				, id("IotikWifi")
 				, id("IotikBlynkAuthorization")
 				, id("IotikBlynkLed")

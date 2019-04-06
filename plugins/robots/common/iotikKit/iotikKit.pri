@@ -49,6 +49,9 @@ HEADERS += \
 	$$PWD/include/iotikKit/robotModel/parts/iotikHumiditySensor.h \
 	$$PWD/include/iotikKit/robotModel/parts/iotikPressureSensor.h \
 	$$PWD/include/iotikKit/robotModel/parts/iotikUltravioletSensor.h \
+	$$PWD/include/iotikKit/robotModel/parts/iotikCapacitiveSensor.h \
+	$$PWD/include/iotikKit/robotModel/parts/iotikRgb.h \
+	$$PWD/include/iotikKit/robotModel/parts/iotikMatrix.h \
 	$$PWD/include/iotikKit/robotModel/parts/iotikRelay.h \
 	$$PWD/include/iotikKit/robotModel/parts/iotikWifi.h \
 	$$PWD/include/iotikKit/robotModel/parts/iotikBlynkAuthorization.h \
@@ -82,6 +85,9 @@ HEADERS += \
 	$$PWD/src/blocks/details/humidity.h \
 	$$PWD/src/blocks/details/pressure.h \
 	$$PWD/src/blocks/details/ultraviolet.h \
+	$$PWD/src/blocks/details/capacitive.h \
+	$$PWD/src/blocks/details/rgb.h \
+	$$PWD/src/blocks/details/matrix.h \
 	$$PWD/src/blocks/details/relay.h \
 	$$PWD/src/blocks/details/wifi.h \
 	$$PWD/src/blocks/details/blynkAuthorization.h \
@@ -115,6 +121,9 @@ SOURCES += \
 	$$PWD/src/robotModel/parts/iotikHumiditySensor.cpp \
 	$$PWD/src/robotModel/parts/iotikPressureSensor.cpp \
 	$$PWD/src/robotModel/parts/iotikUltravioletSensor.cpp \
+	$$PWD/src/robotModel/parts/iotikCapacitiveSensor.cpp \
+	$$PWD/src/robotModel/parts/iotikRgb.cpp \
+	$$PWD/src/robotModel/parts/iotikMatrix.cpp \
 	$$PWD/src/robotModel/parts/iotikRelay.cpp \
 	$$PWD/src/robotModel/parts/iotikWifi.cpp \
 	$$PWD/src/robotModel/parts/iotikBlynkAuthorization.cpp \
@@ -147,6 +156,9 @@ SOURCES += \
 	$$PWD/src/blocks/details/humidity.cpp \
 	$$PWD/src/blocks/details/pressure.cpp \
 	$$PWD/src/blocks/details/ultraviolet.cpp \
+	$$PWD/src/blocks/details/capacitive.cpp \
+	$$PWD/src/blocks/details/rgb.cpp \
+	$$PWD/src/blocks/details/matrix.cpp \
 	$$PWD/src/blocks/details/relay.cpp \
 	$$PWD/src/blocks/details/wifi.cpp \
 	$$PWD/src/blocks/details/blynkAuthorization.cpp \
