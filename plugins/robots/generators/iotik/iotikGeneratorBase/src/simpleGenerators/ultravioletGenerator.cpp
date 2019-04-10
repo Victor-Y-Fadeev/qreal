@@ -24,7 +24,7 @@ UltravioletGenerator::UltravioletGenerator(const qrRepo::RepoApi &repo
 		, generatorBase::GeneratorCustomizer &customizer
 		, const Id &id
 		, QObject *parent)
-	: BindingGenerator(repo, customizer, id, "sensors/threeVariableTwoDigitalPortWithDivision.t", QList<Binding *>()
+	: BindingGenerator(repo, customizer, id, "sensors/twoVariableTwoDigitalPort.t", QList<Binding *>()
 			<< Binding::createStatic("@@DRIVER@@", "UVA_ULTRAVIOLET")
 			<< Binding::createStatic("@@DRIVER_2@@", "UVB_ULTRAVIOLET")
 			<< Binding::createStatic("@@DRIVER_3@@", "UVI_ULTRAVIOLET")
@@ -32,25 +32,18 @@ UltravioletGenerator::UltravioletGenerator(const qrRepo::RepoApi &repo
 			<< Binding::createConverting("@@PORT_2@@", "SDA", customizer.factory()->portNameConverter())
 
 			<< Binding::createStaticConverting("@@JUST_FOR_VAR_INIT@@"
-							, repo.property(id, "UVA").toString() + " = 0.0"
+							, repo.property(id, "UVA").toString() + " = 0"
 							, customizer.factory()->functionBlockConverter(id, "UVA"))
 			<< Binding::createStaticConverting("@@VARIABLE@@"
 								, repo.property(id, "UVA").toString()
 								, customizer.factory()->functionBlockConverter(id, "UVA"))
 
 			<< Binding::createStaticConverting("@@JUST_FOR_VAR_INIT@@"
-							, repo.property(id, "UVB").toString() + " = 0.0"
+							, repo.property(id, "UVB").toString() + " = 0"
 							, customizer.factory()->functionBlockConverter(id, "UVB"))
 			<< Binding::createStaticConverting("@@VARIABLE_2@@"
 								, repo.property(id, "UVB").toString()
 								, customizer.factory()->functionBlockConverter(id, "UVB"))
-
-			<< Binding::createStaticConverting("@@JUST_FOR_VAR_INIT@@"
-							, repo.property(id, "UVI").toString() + " = 0.0"
-							, customizer.factory()->functionBlockConverter(id, "UVI"))
-			<< Binding::createStaticConverting("@@VARIABLE_3@@"
-								, repo.property(id, "UVI").toString()
-								, customizer.factory()->functionBlockConverter(id, "UVI"))
 			, parent)
 {
 }

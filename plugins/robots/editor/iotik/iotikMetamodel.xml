@@ -1113,7 +1113,6 @@
 						<label x="70" y="-35" textBinded="SDA" hard="true" prefix="SDA:"/>
 						<label x="25" y="60" textBinded="UVA" background="white" prefix="UVA:"/>
 						<label x="25" y="90" textBinded="UVB" background="white" prefix="UVB:"/>
-						<label x="25" y="120" textBinded="UVI" background="white" prefix="UVI:"/>
 					</labels>
 					<nonResizeable/>
 				</graphics>
@@ -1125,9 +1124,6 @@
 						</property>
 						<property displayedName="UVB" type="string" name="UVB">
 							<default>uvb</default>
-						</property>
-						<property displayedName="UVI" type="string" name="UVI">
-							<default>uvi</default>
 						</property>
 					</properties>
 					<generalizations>
@@ -1222,7 +1218,7 @@
 							<default>100</default>
 						</property>
 						<property displayedName="Symbol" type="string" name="Symbol">
-							<default>\"A\"</default>
+							<default>'A'</default>
 						</property>
 						<property displayedName="Print" type="bool" name="Print">
 							<default>true</default>

@@ -20,25 +20,29 @@ copyToDestdir(ruc/keywords.txt, NOW)
 
 TEMPLATE = app
 
+includes(plugins/robots/thirdparty/ruc/ruc/util)
+
 CONFIG(clang) {
-	QMAKE_CXXFLAGS += -c -Wall -DROBOTS -lm -lpthread
+	QMAKE_CXXFLAGS += -c -Wall -DROBOTS -lm -lpthread -Iutil
 }
 
 HEADERS += \
-	$$PWD/ruc/RuC/Defs.h \
 	$$PWD/ruc/RuC/global_vars.h \
-	$$PWD/ruc/RuC/th_static.h \
+	$$PWD/ruc/util/Defs.h \
+	$$PWD/ruc/util/util.h \
+	#$$PWD/ruc/RuCVM/th_static.h \
 
 SOURCES += \
 	$$PWD/ruc/RuC/codegen.c \
 	$$PWD/ruc/RuC/codes.c \
 	$$PWD/ruc/RuC/error.c \
 	$$PWD/ruc/RuC/extdecl.c \
-	$$PWD/ruc/RuC/import.c \
 	$$PWD/ruc/RuC/main.c \
-	$$PWD/ruc/RuC/preprocessor.c \
+	$$PWD/ruc/RuC/preprocess.c \
 	$$PWD/ruc/RuC/scaner.c \
-	$$PWD/ruc/RuC/threads.c \
+	$$PWD/ruc/util/util.c \
+	#$$PWD/ruc/RuCVM/import.c \
+	#$$PWD/ruc/RuCVM/threads.c \
 
 RESOURCES += \
 	$$PWD/ruc.qrc \

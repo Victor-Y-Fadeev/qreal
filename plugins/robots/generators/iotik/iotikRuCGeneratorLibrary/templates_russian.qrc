@@ -71,6 +71,7 @@
         <file>templates_russian/sensors/analogPort.t</file>
         <file>templates_russian/sensors/oneVariableOneDigitalPort.t</file>
         <file>templates_russian/sensors/oneVariableTwoDigitalPort.t</file>
+        <file>templates_russian/sensors/twoVariableTwoDigitalPort.t</file>
         <file>templates_russian/sensors/threeVariableTwoDigitalPortWithDivision.t</file>
         <file>templates_russian/sensors/threeVariableFiveDigitalPort.t</file>
         <file>templates_russian/sensors/voltagePort.t</file>
