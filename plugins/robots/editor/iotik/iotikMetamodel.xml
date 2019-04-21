@@ -1656,7 +1656,7 @@
 							<default>\"color\"</default>
 						</property>
 						<property displayedName="Value" type="string" name="Value">
-							<default>\"000000\"</default>
+							<default>\"#000000\"</default>
 						</property>
 					</properties>
 					<container/>

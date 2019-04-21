@@ -30,11 +30,11 @@ BlynkLedGenerator::BlynkLedGenerator(const qrRepo::RepoApi &repo
 					, repo.property(id, "Color").toString().compare("off") == 0 ? "0" : "255"
 					, customizer.factory()->stringPropertyConverter(id, "Color"))
 			<< Binding::createStaticConverting("@@COLOR@@"
-					, repo.property(id, "Color").toString().compare("green") == 0 ? "\"23C48E\"" :
-						repo.property(id, "Color").toString().compare("blue") == 0 ? "\"04C0F8\"" :
-						repo.property(id, "Color").toString().compare("orange") == 0 ? "\"ED9D00\"" :
-						repo.property(id, "Color").toString().compare("red") == 0 ? "\"D3435C\"" :
-						repo.property(id, "Color").toString().compare("violet") == 0 ? "\"5F7CD8\"" : "\"000000\""
+					, repo.property(id, "Color").toString().compare("green") == 0 ? "\"#23C48E\"" :
+						repo.property(id, "Color").toString().compare("blue") == 0 ? "\"#04C0F8\"" :
+						repo.property(id, "Color").toString().compare("orange") == 0 ? "\"#ED9D00\"" :
+						repo.property(id, "Color").toString().compare("red") == 0 ? "\"#D3435C\"" :
+						repo.property(id, "Color").toString().compare("violet") == 0 ? "\"#5F7CD8\"" : "\"#000000\""
 					, customizer.factory()->stringPropertyConverter(id, "Color"))
 			, parent)
 {
