@@ -24,7 +24,7 @@ RelayGenerator::RelayGenerator(const qrRepo::RepoApi &repo
 		, generatorBase::GeneratorCustomizer &customizer
 		, const Id &id
 		, QObject *parent)
-	: BindingGenerator(repo, customizer, id, "sensors/signalForFourParameters.t", QList<Binding *>()
+	: BindingGenerator(repo, customizer, id, "sensors/signalForTwoPortFourParameters.t", QList<Binding *>()
 			<< Binding::createStatic("@@DRIVER@@", "RELAY")
 			<< Binding::createConverting("@@PORT@@", "SCL", customizer.factory()->portNameConverter())
 			<< Binding::createConverting("@@PORT_2@@", "SDA", customizer.factory()->portNameConverter())

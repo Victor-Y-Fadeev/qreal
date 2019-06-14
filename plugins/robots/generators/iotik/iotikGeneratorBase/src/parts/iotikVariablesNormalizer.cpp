@@ -59,6 +59,19 @@ int IotikVariablesNormalizer::countDimension(const QString definition)
 	return number;
 }
 
+int IotikVariablesNormalizer::checkConventionalUse(const QString name)
+{
+	const QStringList usage = findExpression(mCode, QRegExp(name + "\\[[\\d]+"));
+
+	int max = -1;
+	for (QString use : usage) {
+		use = use.remove(0, name.length() + 1);
+		max = use.toInt() > max ? use.toInt() : max;
+	}
+
+	return max + 1;
+}
+
 void IotikVariablesNormalizer::normalizeArray(const QString definition)
 {
 	const int dimension = countDimension(definition);
@@ -74,7 +87,14 @@ void IotikVariablesNormalizer::normalizeArray(const QString definition)
 	QString newDefinition = type + " " + name;
 
 	if (dimension == 1) {
-		mCode.replace(definition, newDefinition + "[];");
+		int check = checkConventionalUse(name);
+
+		if (check == 0) {
+			mCode.replace(definition, newDefinition + "[];");
+		} else {
+			mCode.replace(definition, newDefinition + "[" + QString::number(check) + "];");
+		}
+
 		return;
 	}
 

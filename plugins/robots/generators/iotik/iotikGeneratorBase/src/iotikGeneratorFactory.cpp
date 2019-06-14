@@ -148,9 +148,9 @@ AbstractSimpleGenerator *IotikGeneratorFactory::simpleGenerator(const qReal::Id 
 		return new CapacitiveGenerator(mRepo, customizer, id, this);
 
 	} else if (elementType == "IotikRgb") {
-		return new RgbGenerator(mRepo, customizer, id, this);
+		return new RgbGenerator(++mRgbIndex, mRepo, customizer, id, this);
 	} else if (elementType == "IotikMatrix") {
-		return new MatrixGenerator(mRepo, customizer, id, this);
+		return new MatrixGenerator(++mMatrixIndex, mRepo, customizer, id, this);
 	} else if (elementType == "IotikRelay") {
 		return new RelayGenerator(mRepo, customizer, id, this);
 

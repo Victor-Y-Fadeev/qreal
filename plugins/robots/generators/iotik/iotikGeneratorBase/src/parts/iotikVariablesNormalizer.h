@@ -31,6 +31,8 @@ private:
 	int countDimension(const QString definition);
 	const QString getElement(const QVector<int> concrete, const int current, const QString simple);
 
+	int checkConventionalUse(const QString name);
+
 	void normalizeArray(const QString definition);
 
 	void updateConcrete(QVector<int> &concrete, QString use);

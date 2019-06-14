@@ -1201,8 +1201,7 @@
 						<image y1="0" name="images/matrixBlock.svg" x1="0" y2="50" x2="50"/>
 					</picture>
 					<labels>
-						<label x="-5" y="-35" textBinded="SCL" hard="true" prefix="SCL:"/>
-						<label x="70" y="-35" textBinded="SDA" hard="true" prefix="SDA:"/>
+						<label x="40" y="-35" textBinded="Port" hard="true" prefix="Port:"/>
 						<label x="25" y="60" textBinded="Color" background="white" prefix="Color:"/>
 						<label x="25" y="90" textBinded="Intensity" background="white" prefix="Intensity:" suffix="%"/>
 						<label x="25" y="120" textBinded="Symbol" background="white" prefix="Symbol:"/>
@@ -1226,7 +1225,7 @@
 					</properties>
 					<container/>
 					<generalizations>
-						<parent parentName="IotikI2CSensorBlock"/>
+						<parent parentName="IotikUniversalSensorBlock"/>
 					</generalizations>
 				</logic>
 			</node>

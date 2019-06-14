@@ -75,8 +75,9 @@
         <file>templates_russian/sensors/threeVariableTwoDigitalPortWithDivision.t</file>
         <file>templates_russian/sensors/threeVariableFiveDigitalPort.t</file>
         <file>templates_russian/sensors/voltagePort.t</file>
-        <file>templates_russian/sensors/signalForFourParameters.t</file>
-        <file>templates_russian/sensors/signalForSevenParameters.t</file>
+        <file>templates_russian/sensors/signalForOnePortFourParameters.t</file>
+        <file>templates_russian/sensors/signalForTwoPortFourParameters.t</file>
+        <file>templates_russian/sensors/signalForTwoPortSevenParameters.t</file>
         <file>templates_russian/network/wifi.t</file>
         <file>templates_russian/network/authorization.t</file>
         <file>templates_russian/network/send.t</file>

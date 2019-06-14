@@ -23,7 +23,8 @@ namespace simple {
 class RgbGenerator : public generatorBase::simple::BindingGenerator
 {
 public:
-	RgbGenerator(const qrRepo::RepoApi &repo
+	RgbGenerator(int index
+			, const qrRepo::RepoApi &repo
 			, generatorBase::GeneratorCustomizer &customizer
 			, const qReal::Id &id
 			, QObject *parent = 0);

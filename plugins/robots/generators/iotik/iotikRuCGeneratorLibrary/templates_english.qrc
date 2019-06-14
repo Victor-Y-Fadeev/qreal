@@ -75,8 +75,9 @@
         <file>templates_english/sensors/threeVariableTwoDigitalPortWithDivision.t</file>
         <file>templates_english/sensors/threeVariableFiveDigitalPort.t</file>
         <file>templates_english/sensors/voltagePort.t</file>
-        <file>templates_english/sensors/signalForFourParameters.t</file>
-        <file>templates_english/sensors/signalForSevenParameters.t</file>
+        <file>templates_english/sensors/signalForOnePortFourParameters.t</file>
+        <file>templates_english/sensors/signalForTwoPortFourParameters.t</file>
+        <file>templates_english/sensors/signalForTwoPortSevenParameters.t</file>
         <file>templates_english/network/wifi.t</file>
         <file>templates_english/network/authorization.t</file>
         <file>templates_english/network/send.t</file>

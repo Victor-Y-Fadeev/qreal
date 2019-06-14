@@ -15,19 +15,29 @@
 #include "matrixGenerator.h"
 
 #include <generatorBase/generatorCustomizer.h>
+#include "iotikGeneratorBase/iotikMasterGeneratorBase.h"
 
 using namespace iotik::simple;
 using namespace generatorBase::simple;
 using namespace qReal;
 
-MatrixGenerator::MatrixGenerator(const qrRepo::RepoApi &repo
+const QString arrayName = "matrix_";
+
+MatrixGenerator::MatrixGenerator(int index
+		, const qrRepo::RepoApi &repo
 		, generatorBase::GeneratorCustomizer &customizer
 		, const Id &id
 		, QObject *parent)
-	: BindingGenerator(repo, customizer, id, "sensors/signalForFourParameters.t", QList<Binding *>()
+	: BindingGenerator(repo, customizer, id, "sensors/signalForOnePortFourParameters.t", QList<Binding *>()
 			<< Binding::createStatic("@@DRIVER@@", "MATRIX")
-			<< Binding::createConverting("@@PORT@@", "SCL", customizer.factory()->portNameConverter())
-			<< Binding::createConverting("@@PORT_2@@", "SDA", customizer.factory()->portNameConverter())
+			<< Binding::createConverting("@@PORT@@", "Port", customizer.factory()->portNameConverter())
+
+			<< Binding::createStaticConverting("@@JUST_FOR_ARRAY_INIT@@"
+							, arrayName + QString::number(index) + " = { 0 }"
+							, customizer.factory()->functionBlockConverter(id, "Variable"))
+			<< Binding::createStaticConverting("@@ARRAY@@"
+								, arrayName + QString::number(index)
+								, customizer.factory()->functionBlockConverter(id, "Variable"))
 
 			<< Binding::createStatic("@@PARAM@@"
 					, repo.property(id, "Print").toString().compare("false") == 0 ? "'\\0'"
@@ -36,21 +46,21 @@ MatrixGenerator::MatrixGenerator(const qrRepo::RepoApi &repo
 							: repo.property(id, "Symbol").toString()[0]) + "'")
 
 			<< Binding::createStaticConverting("@@PARAM_2@@"
-					, ColorConverter(repo.property(id, "Color").toString(), repo.property(id, "Intensity").toInt(), 'r')
+					, ColorConverter(repo.property(id, "Color").toString(), repo.property(id, "Intensity").toString(), 'r')
 					, customizer.factory()->stringPropertyConverter(id, "Color"))
 
 			<< Binding::createStaticConverting("@@PARAM_3@@"
-					, ColorConverter(repo.property(id, "Color").toString(), repo.property(id, "Intensity").toInt(), 'g')
+					, ColorConverter(repo.property(id, "Color").toString(), repo.property(id, "Intensity").toString(), 'g')
 					, customizer.factory()->stringPropertyConverter(id, "Color"))
 
 			<< Binding::createStaticConverting("@@PARAM_4@@"
-					, ColorConverter(repo.property(id, "Color").toString(), repo.property(id, "Intensity").toInt(), 'b')
+					, ColorConverter(repo.property(id, "Color").toString(), repo.property(id, "Intensity").toString(), 'b')
 					, customizer.factory()->stringPropertyConverter(id, "Color"))
 			, parent)
 {
 }
 
-QString MatrixGenerator::ColorConverter(QString color, int intensity, char rgb)
+QString MatrixGenerator::ColorConverter(QString color, QString intensity, char rgb)
 {
 	if (color.compare("off") == 0) {
 		return "0";
@@ -87,8 +97,14 @@ QString MatrixGenerator::ColorConverter(QString color, int intensity, char rgb)
 			break;
 	}
 
-	value *= intensity;
-	value /= 100;
+	bool ok = false;
+	int i = intensity.toInt(&ok);
 
-	return QString::number(value);
+	if (ok) {
+		value *= i;
+		value /= 100;
+		return QString::number(value);
+	}
+
+	return QString::number(value) + " * " + intensity + " / 100";
 }

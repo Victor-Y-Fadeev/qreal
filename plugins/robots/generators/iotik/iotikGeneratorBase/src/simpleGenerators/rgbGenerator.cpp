@@ -20,15 +20,24 @@ using namespace iotik::simple;
 using namespace generatorBase::simple;
 using namespace qReal;
 
-RgbGenerator::RgbGenerator(const qrRepo::RepoApi &repo
+const QString arrayName = "rgb_";
+
+RgbGenerator::RgbGenerator(int index
+		, const qrRepo::RepoApi &repo
 		, generatorBase::GeneratorCustomizer &customizer
 		, const Id &id
 		, QObject *parent)
-	: BindingGenerator(repo, customizer, id, "sensors/signalForSevenParameters.t", QList<Binding *>()
+	: BindingGenerator(repo, customizer, id, "sensors/signalForTwoPortSevenParameters.t", QList<Binding *>()
 			<< Binding::createStatic("@@DRIVER@@", "RGB")
 			<< Binding::createConverting("@@PORT@@", "SCL", customizer.factory()->portNameConverter())
 			<< Binding::createConverting("@@PORT_2@@", "SDA", customizer.factory()->portNameConverter())
 
+			<< Binding::createStaticConverting("@@JUST_FOR_ARRAY_INIT@@"
+							, arrayName + QString::number(index) + " = { 0 }"
+							, customizer.factory()->functionBlockConverter(id, "Variable"))
+			<< Binding::createStaticConverting("@@ARRAY@@"
+								, arrayName + QString::number(index)
+								, customizer.factory()->functionBlockConverter(id, "Variable"))
 
 			<< Binding::createConverting("@@PARAM@@", "Red"
 					, customizer.factory()->intPropertyConverter(id, "Red"))

@@ -23,12 +23,13 @@ namespace simple {
 class MatrixGenerator : public generatorBase::simple::BindingGenerator
 {
 public:
-	MatrixGenerator(const qrRepo::RepoApi &repo
+	MatrixGenerator(int index
+			, const qrRepo::RepoApi &repo
 			, generatorBase::GeneratorCustomizer &customizer
 			, const qReal::Id &id
 			, QObject *parent = 0);
 
-	static QString ColorConverter(QString color, int intensity, char rgb);
+	static QString ColorConverter(QString color, QString intensity, char rgb);
 };
 
 }
