@@ -16,12 +16,14 @@
 #include <QtWidgets/QGraphicsSceneMouseEvent>
 #include <QtGui/QKeyEvent>
 #include <QtGui/QPainter>
+#include <QtWidgets/QApplication>
 
 #include <qrkernel/settingsManager.h>
 #include <qrkernel/platformInfo.h>
 #include <qrutils/graphicsUtils/gridDrawer.h>
 #include <qrutils/deleteLaterHelper.h>
 #include <qrutils/widgets/qRealFileDialog.h>
+#include <qrutils/widgets/qRealMessageBox.h>
 #include <qrgui/controller/controllerInterface.h>
 
 #include <kitBase/robotModel/robotParts/touchSensor.h>
@@ -76,8 +78,10 @@ TwoDModelScene::TwoDModelScene(model::Model &model
 	connect(&mModel.worldModel(), &model::WorldModel::ballAdded, this, &TwoDModelScene::onBallAdded);
 	connect(&mModel.worldModel(), &model::WorldModel::colorItemAdded, this, &TwoDModelScene::onColorItemAdded);
 	connect(&mModel.worldModel(), &model::WorldModel::imageItemAdded, this, &TwoDModelScene::onImageItemAdded);
-	connect(&mModel.worldModel(), &model::WorldModel::regionItemAdded, [=](items::RegionItem *item) { addItem(item); });
-	connect(&mModel.worldModel(), &model::WorldModel::traceItemAdded, [=](QGraphicsLineItem *item) { addItem(item); });
+	connect(&mModel.worldModel(), &model::WorldModel::regionItemAdded
+			, this, [=](items::RegionItem *item) { addItem(item); });
+	connect(&mModel.worldModel(), &model::WorldModel::traceItemAdded
+			, this, [=](QGraphicsLineItem *item) { addItem(item); });
 	connect(&mModel.worldModel(), &model::WorldModel::itemRemoved, this, &TwoDModelScene::onItemRemoved);
 
 	connect(&mModel.worldModel(), &model::WorldModel::backgroundImageItemAdded
@@ -638,6 +642,15 @@ void TwoDModelScene::addImage()
 			, tr("Graphics (*.*)"));
 	if (loadFileName.isEmpty()) {
 		return;
+	}
+
+	QFile imageFile(loadFileName);
+	if (imageFile.size() >  5 * 1024 * 1024) {
+		if (utils::QRealMessageBox::question(QApplication::focusWidget(), tr("Warning")
+				, tr("You are trying to load to big image, it may freeze execution for some time. Continue?"))
+						!= QMessageBox::Yes) {
+			return;
+		}
 	}
 
 	mDrawingAction = image;

@@ -16,8 +16,8 @@
 
 #include <QtWidgets/QPushButton>
 
-#include "thirdparty/qtpropertybrowser/src/qtvariantproperty.h"
-#include "thirdparty/qtpropertybrowser/src/qteditorfactory.h"
+#include "thirdparty/qt-solutions/qtpropertybrowser/src/qtvariantproperty.h"
+#include "thirdparty/qt-solutions/qtpropertybrowser/src/qteditorfactory.h"
 
 namespace qReal {
 namespace gui {
@@ -29,7 +29,7 @@ class PushButtonPropertyManager : public QtAbstractPropertyManager
 	friend class PushButtonFactory;
 	Q_OBJECT
 public:
-	PushButtonPropertyManager(QObject *parent = 0);
+	PushButtonPropertyManager(QObject *parent = nullptr);
 	~PushButtonPropertyManager();
 
 	bool value(const QtProperty *property) const;
@@ -56,7 +56,7 @@ class PushButtonFactory : public QtAbstractEditorFactory<PushButtonPropertyManag
 	Q_OBJECT
 
 public:
-	PushButtonFactory(QObject *parent = 0);
+	PushButtonFactory(QObject *parent = nullptr);
 	~PushButtonFactory();
 
 protected:

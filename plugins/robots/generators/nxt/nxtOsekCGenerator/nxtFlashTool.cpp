@@ -81,6 +81,12 @@ bool NxtFlashTool::flashRobot()
 		return false;
 	}
 
+#ifdef Q_OS_LINUX
+	QProcess configureProcess;
+	configureProcess.start("sh", { path("configureForFlash.sh") });
+	configureProcess.waitForFinished(-1);
+#endif
+
 	auto const usbCommunicator = dynamic_cast<nxt::communication::UsbRobotCommunicationThread *>(&mCommunicator);
 	if (!usbCommunicator) {
 		QLOG_ERROR() << "Attempted to flash robot in bluetooth mode";
@@ -220,11 +226,10 @@ bool NxtFlashTool::uploadProgram(const QFileInfo &fileInfo)
 #ifdef Q_OS_WIN
 	mCompileProcess.setWorkingDirectory(path());
 	mCompileProcess.start("cmd", { "/c", path("compile.bat")
-						+ " " + fileInfo.completeBaseName()
-						+ " " + fileInfo.absolutePath() });
+			+ " " + fileInfo.completeBaseName()
+			+ " " + fileInfo.absolutePath() });
 #else
-	Q_UNUSED(fileInfo)
-	mCompileProcess.start("sh", { path("compile.sh") });
+	mCompileProcess.start("sh", { path("compile.sh") , fileInfo.absolutePath()});
 #endif
 
 	information(tr("Uploading program started. Please don't disconnect robot during the process"));

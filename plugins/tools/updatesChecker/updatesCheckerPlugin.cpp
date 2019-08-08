@@ -33,7 +33,7 @@ UpdatesCheckerPlugin::UpdatesCheckerPlugin()
 	, mCheckForUpdatesAction(new QAction(tr("Check for updates"), nullptr))
 {
 	mSeparator->setSeparator(true);
-	connect(mCheckForUpdatesAction, &QAction::triggered, this, &UpdatesCheckerPlugin::checkForUpdates);
+	connect(mCheckForUpdatesAction, &QAction::triggered, [this](){ checkForUpdates(); });
 }
 
 QList<qReal::ActionInfo> UpdatesCheckerPlugin::actions()
@@ -62,6 +62,12 @@ void UpdatesCheckerPlugin::checkForUpdates(bool reportNoUpdates)
 		connect(updater, &Updater::newVersionAvailable, this, &UpdatesCheckerPlugin::showUpdatesDialog);
 		if (reportNoUpdates) {
 			connect(updater, &Updater::noNewVersionAvailable, this, &UpdatesCheckerPlugin::reportNoUpdates);
+			connect(updater, &Updater::networkError, this, [this](){
+				mErrorReporter->addInformation(tr("There is some connection problem, may be network is disabled"));
+			});
+			connect(updater, &Updater::unidentifiedError, this, [this](){
+				mErrorReporter->addInformation(tr("There is some unrecognized error with updating process"));
+			});
 		}
 
 		QLOG_INFO() << "Starting updater...";
@@ -84,10 +90,10 @@ void UpdatesCheckerPlugin::initSettingsUi(qReal::gui::PreferencesPage &behaviour
 
 	QCheckBox * const box = new QCheckBox(tr("Check for updates on start"), automaticsLayout->widget());
 	automaticsLayout->addWidget(box, automaticsLayout->rowCount(), 0, 1, automaticsLayout->columnCount());
-	connect(&behaviourPage, &qReal::gui::PreferencesPage::saved, [box]() {
+	connect(&behaviourPage, &qReal::gui::PreferencesPage::saved, this, [box]() {
 		qReal::SettingsManager::setValue("updaterActive", box->isChecked());
 	});
-	connect(&behaviourPage, &qReal::gui::PreferencesPage::restored, [box]() {
+	connect(&behaviourPage, &qReal::gui::PreferencesPage::restored, this, [box]() {
 		box->setChecked(qReal::SettingsManager::value("updaterActive").toBool());
 	});
 }

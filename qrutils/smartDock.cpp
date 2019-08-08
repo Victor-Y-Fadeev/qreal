@@ -232,7 +232,6 @@ void SmartDock::initDock()
 
 	setWindowTitle(mInnerWidget->windowTitle());
 	setWidget(mInnerWidget);
-	setFeatures(QDockWidget::DockWidgetMovable | QDockWidget::DockWidgetFloatable);
 	connect(this, &QDockWidget::topLevelChanged, this, &SmartDock::checkFloating);
 	connect(this, &QDockWidget::dockLocationChanged, this, &SmartDock::checkCentralWidget);
 }
@@ -248,7 +247,7 @@ void SmartDock::initDialog()
 	layout->setContentsMargins(0, 0, 0, 0);
 	mDialog->setLayout(layout);
 	mDialog->setVisible(false);
-	connect(mDialog, &QDialog::finished, [=]() {
+	connect(mDialog, &QDialog::finished, this, [=]() {
 		if (mMainWindow) {
 			switchToDocked();
 		} else {

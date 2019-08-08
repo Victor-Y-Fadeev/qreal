@@ -20,12 +20,13 @@ TEMPLATE = lib
 
 DEFINES += QRGUI_THIRDPARTY_LIBRARY
 
+QT += widgets
+
 TRANSLATIONS = \
 	$$PWD/../../qrtranslations/ru/qrgui_thirdparty_ru.ts \
 	$$PWD/../../qrtranslations/fr/qrgui_thirdparty_fr.ts \
 
 # Some warnings are turned off because of problems specific to thirdparty code.
-QMAKE_CXXFLAGS += -Wno-switch
 
 win32 {
 	HEADERS += \
@@ -42,4 +43,5 @@ HEADERS += \
 SOURCES += \
 	$$PWD/qsKineticScroller.cpp \
 
-include($$PWD/qtpropertybrowser/src/qtpropertybrowser.pri)
+include($$PWD/qt-solutions/qtpropertybrowser/src/qtpropertybrowser.pri)
+INCLUDEPATH+=$$MOC_DIR

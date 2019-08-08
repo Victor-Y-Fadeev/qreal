@@ -42,7 +42,7 @@ void ZoneNode::appendChild(SemanticNode *node)
 
 void ZoneNode::appendChildren(QLinkedList<SemanticNode *> const &nodes)
 {
-	foreach (SemanticNode * const node, nodes) {
+	for (SemanticNode * const node : nodes) {
 		appendChild(node);
 	}
 }
@@ -72,7 +72,7 @@ QLinkedList<SemanticNode *> ZoneNode::removeStartingFrom(SemanticNode *node)
 	QLinkedList<SemanticNode *> result;
 	bool foundNode = node == nullptr;
 
-	foreach (SemanticNode * const current, mChildren) {
+	for (SemanticNode * const current : mChildren) {
 		if (!foundNode) {
 			foundNode = current == node;
 		}

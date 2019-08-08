@@ -41,6 +41,7 @@
 #include "trikKitInterpreterCommon/robotModel/twoD/parts/twoDLineSensor.h"
 #include "trikKitInterpreterCommon/robotModel/twoD/parts/twoDObjectSensor.h"
 #include "trikKitInterpreterCommon/robotModel/twoD/parts/twoDColorSensor.h"
+#include "trikKitInterpreterCommon/robotModel/twoD/parts/twoDLightSensor.h"
 
 using namespace trik::robotModel;
 using namespace trik::robotModel::twoD;
@@ -74,11 +75,15 @@ robotParts::Device *TrikTwoDRobotModel::createDevice(const PortInfo &port, const
 		return new parts::TwoDSpeaker(deviceInfo, port, *engine());
 	}
 
+	if (deviceInfo.isA<robotParts::LightSensor>()) {
+		return new parts::TwoDLightSensor(deviceInfo, port, *engine());
+	}
+
 	if (deviceInfo.isA<robotModel::parts::TrikShell>()) {
 		parts::Shell * const shell = new parts::Shell(deviceInfo, port, *engine());
 		// Error reporter will come only after global plugin init() is called. Shell is however
 		// configured even later. So setting error reporter only when everything will be ready.
-		connect(shell, &parts::Shell::configured, [=]() { shell->setErrorReporter(*mErrorReporter); });
+		connect(shell, &parts::Shell::configured, this, [=]() { shell->setErrorReporter(*mErrorReporter); });
 		return shell;
 	}
 

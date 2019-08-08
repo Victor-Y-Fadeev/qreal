@@ -58,6 +58,10 @@ Ev3RbfGeneratorPlugin::Ev3RbfGeneratorPlugin()
 			, tr("EV3 Source Code language")
 			, true
 			, 4
+			, "//"
+			, QString()
+			, "/*"
+			, "*/"
 			, nullptr
 			, {}
 	});
@@ -224,7 +228,11 @@ bool Ev3RbfGeneratorPlugin::compile(const QFileInfo &lmsFile)
 	QProcess java;
 	java.setEnvironment(QProcess::systemEnvironment());
 	java.setWorkingDirectory(lmsFile.absolutePath());
+#ifdef Q_OS_WIN
 	java.start("cmd /c java -jar assembler.jar " + lmsFile.absolutePath() + "/" + lmsFile.baseName());
+#else
+	java.start("java -jar assembler.jar " + lmsFile.absolutePath() + "/" + lmsFile.baseName());
+#endif
 	connect(&java, &QProcess::readyRead, this, [&java]() { QLOG_INFO() << java.readAll(); });
 	java.waitForFinished();
 	return true;
@@ -232,7 +240,9 @@ bool Ev3RbfGeneratorPlugin::compile(const QFileInfo &lmsFile)
 
 QString Ev3RbfGeneratorPlugin::upload(const QFileInfo &lmsFile)
 {
-	const QString targetPath = "../prjs/" + lmsFile.baseName();
+	const QString folderName = SettingsManager::value("Ev3CommonFolderChecboxChecked", false).toBool()
+			? SettingsManager::value("Ev3CommonFolderName", "ts").toString() : lmsFile.baseName();
+	const QString targetPath = "../prjs/" + folderName;
 	const QString rbfPath = lmsFile.absolutePath() + "/" + lmsFile.baseName() + ".rbf";
 	bool connected = false;
 	communication::Ev3RobotCommunicationThread *communicator = currentCommunicator();

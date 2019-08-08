@@ -4,12 +4,12 @@
     <DisplayName xml:lang="ru_ru">Обязательные файлы</DisplayName>
     <Description>Enables support of Lego NXT in TRIK Studio</Description>
     <Description xml:lang="ru_ru">Поддержка конструктора Lego NXT</Description>
-    <Version>3.2.0-4</Version>
+    <Version>3.3.0-2</Version>
     <ReleaseDate>2017-11-14</ReleaseDate>
     <Licenses>
         <License name="QextSerialPort Component License" file="QextSerialPort-license.txt" />
     </Licenses>
     <SortingPriority>9</SortingPriority>
-    <Default>true</Default>
+    <Default>false</Default>
     <ForcedInstallation>false</ForcedInstallation>
 </Package>

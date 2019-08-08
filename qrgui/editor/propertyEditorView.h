@@ -23,7 +23,7 @@
 
 #include <qrgui/controller/controller.h>
 
-#include <qrgui/thirdparty/qtpropertybrowser/src/qttreepropertybrowser.h>
+#include <qrgui/thirdparty/qt-solutions/qtpropertybrowser/src/qttreepropertybrowser.h>
 
 #include "qrgui/editor/editorDeclSpec.h"
 #include "qrgui/editor/private/pushButtonProperty.h"
@@ -38,7 +38,7 @@ class QRGUI_EDITOR_EXPORT PropertyEditorView : public QWidget
 	Q_OBJECT
 
 public:
-	explicit PropertyEditorView(QWidget *parent = 0);
+	explicit PropertyEditorView(QWidget *parent = nullptr);
 	~PropertyEditorView();
 
 	// QAbstractItemView's methods
