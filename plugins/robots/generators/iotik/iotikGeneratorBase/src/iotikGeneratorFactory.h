@@ -42,6 +42,7 @@ public:
 private:
 	const QStringList mPathsToTemplates;
 	int mRgbIndex = 0;
+	int mRelayIndex = 0;
 	int mMatrixIndex = 0;
 };
 

@@ -23,7 +23,8 @@ namespace simple {
 class RelayGenerator : public generatorBase::simple::BindingGenerator
 {
 public:
-	RelayGenerator(const qrRepo::RepoApi &repo
+	RelayGenerator(int index
+			, const qrRepo::RepoApi &repo
 			, generatorBase::GeneratorCustomizer &customizer
 			, const qReal::Id &id
 			, QObject *parent = 0);

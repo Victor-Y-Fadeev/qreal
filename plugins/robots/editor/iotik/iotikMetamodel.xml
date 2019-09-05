@@ -1246,17 +1246,17 @@
 				</graphics>
 				<logic>
 					<properties>
-						<property displayedName="First" type="bool" name="First">
-							<default>true</default>
+                                                <property displayedName="First" type="string" name="First">
+                                                        <default>1</default>
 						</property>
-						<property displayedName="Second" type="bool" name="Second">
-							<default>false</default>
+                                                <property displayedName="Second" type="string" name="Second">
+                                                        <default>0</default>
 						</property>
-						<property displayedName="Third" type="bool" name="Third">
-							<default>false</default>
+                                                <property displayedName="Third" type="string" name="Third">
+                                                        <default>0</default>
 						</property>
-						<property displayedName="Fourth" type="bool" name="Fourth">
-							<default>false</default>
+                                                <property displayedName="Fourth" type="string" name="Fourth">
+                                                        <default>0</default>
 						</property>
 					</properties>
 					<container/>
@@ -1633,7 +1633,7 @@
 					</properties>
 					<container/>
 					<generalizations>
-						<parent parentName="IotikBlynkBlock"/>
+                                                <parent parentName="IotikSensorBlock"/>
 					</generalizations>
 				</logic>
 			</node>

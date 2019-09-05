@@ -152,7 +152,7 @@ AbstractSimpleGenerator *IotikGeneratorFactory::simpleGenerator(const qReal::Id 
 	} else if (elementType == "IotikMatrix") {
 		return new MatrixGenerator(++mMatrixIndex, mRepo, customizer, id, this);
 	} else if (elementType == "IotikRelay") {
-		return new RelayGenerator(mRepo, customizer, id, this);
+		return new RelayGenerator(++mRelayIndex, mRepo, customizer, id, this);
 
 	} else if (elementType == "IotikPrintString") {
 		return new PrintStringGenerator(mRepo, customizer, id, this);
