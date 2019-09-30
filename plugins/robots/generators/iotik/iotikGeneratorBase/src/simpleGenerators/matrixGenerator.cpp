@@ -46,15 +46,18 @@ MatrixGenerator::MatrixGenerator(int index
 							: repo.property(id, "Symbol").toString()[0]) + "'")
 
 			<< Binding::createStaticConverting("@@PARAM_2@@"
-					, ColorConverter(repo.property(id, "Color").toString(), repo.property(id, "Intensity").toString(), 'r')
+					, ColorConverter(repo.property(id, "Color").toString()
+					, repo.property(id, "Intensity").toString(), 'r')
 					, customizer.factory()->stringPropertyConverter(id, "Color"))
 
 			<< Binding::createStaticConverting("@@PARAM_3@@"
-					, ColorConverter(repo.property(id, "Color").toString(), repo.property(id, "Intensity").toString(), 'g')
+					, ColorConverter(repo.property(id, "Color").toString()
+					, repo.property(id, "Intensity").toString(), 'g')
 					, customizer.factory()->stringPropertyConverter(id, "Color"))
 
 			<< Binding::createStaticConverting("@@PARAM_4@@"
-					, ColorConverter(repo.property(id, "Color").toString(), repo.property(id, "Intensity").toString(), 'b')
+					, ColorConverter(repo.property(id, "Color").toString()
+					, repo.property(id, "Intensity").toString(), 'b')
 					, customizer.factory()->stringPropertyConverter(id, "Color"))
 			, parent)
 {
