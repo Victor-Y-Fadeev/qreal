@@ -1,1 +1,1 @@
-﻿@@ARGUMENT@@
+﻿round(@@ARGUMENT@@)

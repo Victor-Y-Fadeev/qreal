@@ -1,1 +1,1 @@
-﻿@@ARGUMENT@@
+﻿округл(@@ARGUMENT@@)
