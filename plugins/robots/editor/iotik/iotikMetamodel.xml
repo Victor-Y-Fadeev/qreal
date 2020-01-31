@@ -1265,6 +1265,34 @@
 					</generalizations>
 				</logic>
 			</node>
+			<node displayedName="Engines" name="IotikEngines" description="">
+				<graphics>
+					<picture sizex="50" sizey="50">
+						<image y1="0" name="images/enginesBlock.svg" x1="0" y2="50" x2="50"/>
+					</picture>
+					<labels>
+						<label x="-5" y="-35" textBinded="SCL" hard="true" prefix="SCL:"/>
+						<label x="70" y="-35" textBinded="SDA" hard="true" prefix="SDA:"/>
+						<label x="25" y="60" textBinded="M1" hard="false" prefix="M1:"/>
+						<label x="25" y="90" textBinded="M2" hard="false" prefix="M2:"/>
+					</labels>
+					<nonResizeable/>
+				</graphics>
+				<logic>
+					<properties>
+						<property displayedName="M1" type="string" name="M1">
+							<default>0</default>
+						</property>
+						<property displayedName="M2" type="string" name="M2">
+							<default>0</default>
+						</property>
+					</properties>
+					<container/>
+					<generalizations>
+						<parent parentName="IotikI2CSensorBlock"/>
+					</generalizations>
+				</logic>
+			</node>
 
 			<!-- Display drawing blocks -->
 			<node displayedName="Clear Screen" name="IotikClearDisplay" description="Clears everything drawn on the robot`s screen.">
@@ -1765,6 +1793,7 @@
 				<element name="IotikRgb" />
 				<element name="IotikMatrix" />
 				<element name="IotikRelay" />
+				<element name="IotikEngines" />
 			</group>
 			<group name="Network (Blynk)">
 				<element name="IotikWifi" />

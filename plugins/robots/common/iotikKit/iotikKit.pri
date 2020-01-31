@@ -53,6 +53,7 @@ HEADERS += \
 	$$PWD/include/iotikKit/robotModel/parts/iotikRgb.h \
 	$$PWD/include/iotikKit/robotModel/parts/iotikMatrix.h \
 	$$PWD/include/iotikKit/robotModel/parts/iotikRelay.h \
+	$$PWD/include/iotikKit/robotModel/parts/iotikEngines.h \
 	$$PWD/include/iotikKit/robotModel/parts/iotikWifi.h \
 	$$PWD/include/iotikKit/robotModel/parts/iotikBlynkAuthorization.h \
 	$$PWD/include/iotikKit/robotModel/parts/iotikBlynkLed.h \
@@ -89,6 +90,7 @@ HEADERS += \
 	$$PWD/src/blocks/details/rgb.h \
 	$$PWD/src/blocks/details/matrix.h \
 	$$PWD/src/blocks/details/relay.h \
+	$$PWD/src/blocks/details/engines.h \
 	$$PWD/src/blocks/details/printString.h \
 	$$PWD/src/blocks/details/clearDisplay.h \
 	$$PWD/src/blocks/details/drawPixelBlock.h \
@@ -132,6 +134,7 @@ SOURCES += \
 	$$PWD/src/robotModel/parts/iotikRgb.cpp \
 	$$PWD/src/robotModel/parts/iotikMatrix.cpp \
 	$$PWD/src/robotModel/parts/iotikRelay.cpp \
+	$$PWD/src/robotModel/parts/iotikEngines.cpp \
 	$$PWD/src/robotModel/parts/iotikWifi.cpp \
 	$$PWD/src/robotModel/parts/iotikBlynkAuthorization.cpp \
 	$$PWD/src/robotModel/parts/iotikBlynkLed.cpp \
@@ -167,6 +170,7 @@ SOURCES += \
 	$$PWD/src/blocks/details/rgb.cpp \
 	$$PWD/src/blocks/details/matrix.cpp \
 	$$PWD/src/blocks/details/relay.cpp \
+	$$PWD/src/blocks/details/engines.cpp \
 	$$PWD/src/blocks/details/printString.cpp \
 	$$PWD/src/blocks/details/clearDisplay.cpp \
 	$$PWD/src/blocks/details/drawPixelBlock.cpp \
