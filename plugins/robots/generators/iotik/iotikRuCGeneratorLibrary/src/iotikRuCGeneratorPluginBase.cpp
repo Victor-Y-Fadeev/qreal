@@ -15,6 +15,7 @@
 #include "include/iotikRuCGeneratorLibrary/iotikRuCGeneratorPluginBase.h"
 #include "include/iotikRuCGeneratorLibrary/iotikRuCGeneratorDefs.h"
 
+#include <QtCore/QDir>
 #include <QtCore/QFile>
 #include <QtCore/QProcess>
 
@@ -192,6 +193,8 @@ void IotikRuCGeneratorPluginBase::usbUpload()
 
 bool IotikRuCGeneratorPluginBase::compileCode()
 {
+	QDir::setCurrent(mRootPath);
+
 	if (QFile::exists(RUC_COMPILER)) {
 		QProcess::execute(RUC_COMPILER, {mRootPath + "/import.c"});
 	} else {
