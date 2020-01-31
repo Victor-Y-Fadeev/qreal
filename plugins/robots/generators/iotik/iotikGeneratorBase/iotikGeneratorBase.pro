@@ -73,6 +73,7 @@ HEADERS += \
 	$$PWD/src/simpleGenerators/matrixGenerator.h \
 	$$PWD/src/simpleGenerators/rgbGenerator.h \
 	$$PWD/src/simpleGenerators/relayGenerator.h \
+	$$PWD/src/simpleGenerators/enginesGenerator.h \
 	$$PWD/src/simpleGenerators/forLoopGenerator.h \
 	$$PWD/src/simpleGenerators/printStringGenerator.h \
 	$$PWD/src/simpleGenerators/clearDisplayGenerator.h \
@@ -126,6 +127,7 @@ SOURCES += \
 	$$PWD/src/simpleGenerators/matrixGenerator.cpp \
 	$$PWD/src/simpleGenerators/rgbGenerator.cpp \
 	$$PWD/src/simpleGenerators/relayGenerator.cpp \
+	$$PWD/src/simpleGenerators/enginesGenerator.cpp \
 	$$PWD/src/simpleGenerators/forLoopGenerator.cpp \
 	$$PWD/src/simpleGenerators/printStringGenerator.cpp \
 	$$PWD/src/simpleGenerators/clearDisplayGenerator.cpp \

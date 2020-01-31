@@ -44,6 +44,7 @@
 #include "simpleGenerators/rgbGenerator.h"
 #include "simpleGenerators/matrixGenerator.h"
 #include "simpleGenerators/relayGenerator.h"
+#include "simpleGenerators/enginesGenerator.h"
 
 #include "simpleGenerators/printStringGenerator.h"
 #include "simpleGenerators/clearDisplayGenerator.h"
@@ -153,6 +154,8 @@ AbstractSimpleGenerator *IotikGeneratorFactory::simpleGenerator(const qReal::Id 
 		return new MatrixGenerator(++mMatrixIndex, mRepo, customizer, id, this);
 	} else if (elementType == "IotikRelay") {
 		return new RelayGenerator(++mRelayIndex, mRepo, customizer, id, this);
+	} else if (elementType == "IotikEngines") {
+		return new EnginesGenerator(++mEnginesIndex, mRepo, customizer, id, this);
 
 	} else if (elementType == "IotikPrintString") {
 		return new PrintStringGenerator(mRepo, customizer, id, this);

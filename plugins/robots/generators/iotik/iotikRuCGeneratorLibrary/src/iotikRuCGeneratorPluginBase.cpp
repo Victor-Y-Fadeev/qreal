@@ -251,6 +251,7 @@ void IotikRuCGeneratorPluginBase::addDeviceVariables(const QFileInfo fileInfo)
 			"#define RELAY 0\n"
 			"#define RGB 1\n"
 			"#define MATRIX 2\n"
+			"#define ENGINES 3\n"
 
 
 			"#define MA -1\n"
