@@ -50,7 +50,7 @@ private:
 
 	const unsigned long waitDisconnected = 250;
 
-	const int blockSize = 32;
+	const int blockSize = 128;
 
 	const unsigned long writeCommand = 50;
 	const unsigned long writeBlock = 25;
