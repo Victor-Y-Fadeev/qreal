@@ -26,18 +26,31 @@
 using namespace iotik::communication;
 
 WifiRobotCommunicationThread::WifiRobotCommunicationThread()
-	: mSocet(nullptr)
+	: isConnected(false)
 {
+	mSocket = new QTcpSocket(this);
+
+	QObject::connect(mSocket, SIGNAL(connected()), this, SLOT(onConnected()));
+	QObject::connect(mSocket, SIGNAL(disconnected()), this, SLOT(onDisconnected()));
 }
 
 WifiRobotCommunicationThread::~WifiRobotCommunicationThread()
 {
 	disconnect();
+	delete mSocket;
 }
 
 bool WifiRobotCommunicationThread::send(const QByteArray &buffer) const
 {
-	return mSocet->write(buffer) > 0;
+	if (!isConnected) {
+		return false;
+	}
+
+	if (mSocket->write(buffer) == -1) {
+		return false;
+	}
+
+	return mSocket->waitForBytesWritten(waitBytes);
 }
 
 bool WifiRobotCommunicationThread::send(QObject *addressee, const QByteArray &buffer, int responseSize)
@@ -52,19 +65,14 @@ bool WifiRobotCommunicationThread::send(const QByteArray &buffer, int responseSi
 
 bool WifiRobotCommunicationThread::connect()
 {
-	if (mSocet) {
+	if (isConnected) {
 		disconnect();
-		QThread::msleep(500);  // Give port some time to close
 	}
 
 	const QString hostName = qReal::SettingsManager::value("IotikTcpServer").toString();
-	mSocet = new QTcpSocket();
+	mSocket->connectToHost(hostName, 3000);
 
-	mSocet->connectToHost(hostName, 3000);
-	mSocet->waitForConnected(500);
-	emit connected(true, "Error!");
-
-	return mSocet && mSocet->isOpen();
+	return mSocket->waitForConnected(waitConnected);
 }
 
 void WifiRobotCommunicationThread::reconnect()
@@ -74,14 +82,10 @@ void WifiRobotCommunicationThread::reconnect()
 
 void WifiRobotCommunicationThread::disconnect()
 {
-	if (mSocet) {
-		mSocet->close();
-		mSocet->waitForDisconnected();
-		delete mSocet;
-		mSocet = nullptr;
+	if (isConnected) {
+		mSocket->close();
+		mSocket->waitForDisconnected(waitDisconnected);  // Give port some time to close
 	}
-
-	emit disconnected();
 }
 
 void WifiRobotCommunicationThread::allowLongJobs(bool allow)
@@ -89,40 +93,52 @@ void WifiRobotCommunicationThread::allowLongJobs(bool allow)
 	Q_UNUSED(allow)
 }
 
-void WifiRobotCommunicationThread::sendCommand(const QString command)
+bool WifiRobotCommunicationThread::sendCommand(const QString command)
 {
-	mSocet->write(QByteArray::fromStdString(command.toStdString()));
-	mSocet->waitForBytesWritten();
-	QThread::msleep(250);
+	bool result = send(QByteArray::fromStdString(command.toStdString()));
+	QThread::msleep(50);
+
+	return result;
 }
 
-void WifiRobotCommunicationThread::sendFile(const QString filename)
+bool WifiRobotCommunicationThread::sendFile(const QString filename)
 {
 	QFile sfile(filename);
 	sfile.open(QIODevice::ReadOnly);
 
 	int size = sfile.size();
-	int block = 2048;
+	int block = 1024;
 
 	QString command = "filereceive /fat/" + sfile.fileName() + " " + QString::number(size) + "\n";
-	sendCommand(command);
+	if (!sendCommand(command))
+	{
+		sfile.close();
+		return false;
+	}
 
 	while (size > 0) {
 			QByteArray data = sfile.read(size > block ? block : size);
-			send(data);
-			mSocet->waitForBytesWritten();
+
+			if (!send(data))
+			{
+				sfile.close();
+				return false;
+			}
+
 			QThread::msleep(25);
 			size -= block;
 	}
 
 	sfile.close();
+	return true;
 }
 
-void WifiRobotCommunicationThread::checkForConnection()
+void WifiRobotCommunicationThread::onConnected()
 {
-	if (!mSocet || !mSocet->isOpen()) {
-		return;
-	}
+	isConnected = true;
+}
 
-	emit disconnected();
+void WifiRobotCommunicationThread::onDisconnected()
+{
+	isConnected = false;
 }

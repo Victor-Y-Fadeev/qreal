@@ -163,9 +163,17 @@ void IotikRuCGeneratorPluginBase::wifiUpload()
 
 	QFile::rename(mRootPath + "/export.txt", mRootPath + "/wifi_export.txt");
 
-	if (mWifiCommunicator->connect()) {
-		mWifiCommunicator->sendFile("wifi_export.txt");
-		mWifiCommunicator->sendCommand("ruc /fat/wifi_export.txt\n");
+	if (!mWifiCommunicator->connect()) {
+		mMainWindowInterface->errorReporter()->addError(tr("Device connection failed, aborting"));
+	} else {
+		if (!mWifiCommunicator->sendFile("wifi_export.txt")) {
+			mMainWindowInterface->errorReporter()->addError(tr("File sending failed, aborting"));
+		} else {
+			if (!mWifiCommunicator->sendCommand("ruc /fat/wifi_export.txt\n")) {
+				mMainWindowInterface->errorReporter()->addError(tr("Program interpreting failed, aborting"));
+			}
+		}
+
 		mWifiCommunicator->disconnect();
 	}
 
@@ -186,6 +194,8 @@ void IotikRuCGeneratorPluginBase::usbUpload()
 		mUsbCommunicator->sendFile("export.txt");
 		mUsbCommunicator->sendCommand("ruc /fat/export.txt\n");
 		mUsbCommunicator->disconnect();
+	} else {
+		mMainWindowInterface->errorReporter()->addError(tr("File sending failed, aborting"));
 	}
 
 	QFile::remove(mRootPath + "/export.txt");

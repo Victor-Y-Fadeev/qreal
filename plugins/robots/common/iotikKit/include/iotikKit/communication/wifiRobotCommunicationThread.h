@@ -38,18 +38,23 @@ public slots:
 
 	void allowLongJobs(bool allow = true) override;
 
-	void sendCommand(const QString command);
-	void sendFile(const QString filename);
+	bool sendCommand(const QString command);
+	bool sendFile(const QString filename);
 
 private slots:
-	/// Checks if robot is connected
-	void checkForConnection();
+	void onConnected();
+	void onDisconnected();
 
 private:
-	bool send(QObject *addressee, const QByteArray &buffer, int responseSize);
-	bool send(const QByteArray &buffer, int responseSize, QByteArray &outputBuffer);
+	bool send(QObject *addressee, const QByteArray &buffer, int responseSize) override;
+	bool send(const QByteArray &buffer, int responseSize, QByteArray &outputBuffer) override;
 
-	QTcpSocket *mSocet;
+	QTcpSocket *mSocket;
+	bool isConnected;
+
+	const int waitConnected = 500;
+	const int waitDisconnected = 500;
+	const int waitBytes = 30000;
 
 };
 
