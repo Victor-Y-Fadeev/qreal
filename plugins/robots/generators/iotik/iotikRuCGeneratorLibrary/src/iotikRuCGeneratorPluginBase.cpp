@@ -190,12 +190,18 @@ void IotikRuCGeneratorPluginBase::usbUpload()
 		return;
 	}
 
-	if (mUsbCommunicator->connect()) {
-		mUsbCommunicator->sendFile("export.txt");
-		mUsbCommunicator->sendCommand("ruc /fat/export.txt\n");
-		mUsbCommunicator->disconnect();
+	if (!mUsbCommunicator->connect()) {
+		mMainWindowInterface->errorReporter()->addError(tr("Device connection failed, aborting"));
 	} else {
-		mMainWindowInterface->errorReporter()->addError(tr("File sending failed, aborting"));
+		if (!mUsbCommunicator->sendFile("export.txt")) {
+			mMainWindowInterface->errorReporter()->addError(tr("File sending failed, aborting"));
+		} else {
+			if (!mUsbCommunicator->sendCommand("ruc /fat/export.txt\n")) {
+				mMainWindowInterface->errorReporter()->addError(tr("Program interpreting failed, aborting"));
+			}
+		}
+
+		mUsbCommunicator->disconnect();
 	}
 
 	QFile::remove(mRootPath + "/export.txt");

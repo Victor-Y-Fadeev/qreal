@@ -38,19 +38,22 @@ public slots:
 
 	void allowLongJobs(bool allow = true) override;
 
-	void sendCommand(const QString command);
-	void sendFile(const QString filename);
-
-private slots:
-	/// Checks if robot is connected
-	void checkForConnection();
+	bool sendCommand(const QString command);
+	bool sendFile(const QString filename);
 
 private:
-	bool send(QObject *addressee, const QByteArray &buffer, int responseSize);
-	bool send(const QByteArray &buffer, int responseSize, QByteArray &outputBuffer);
+	bool send(QObject *addressee, const QByteArray &buffer, int responseSize) override;
+	bool send(const QByteArray &buffer, int responseSize, QByteArray &outputBuffer) override;
 
 	QextSerialPort *mPort;
+	bool isConnected;
 
+	const unsigned long waitDisconnected = 250;
+
+	const int blockSize = 32;
+
+	const unsigned long writeCommand = 50;
+	const unsigned long writeBlock = 25;
 };
 
 }

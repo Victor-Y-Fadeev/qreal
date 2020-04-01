@@ -52,9 +52,14 @@ private:
 	QTcpSocket *mSocket;
 	bool isConnected;
 
+	const int waitBytes = 30000;
 	const int waitConnected = 500;
 	const int waitDisconnected = 500;
-	const int waitBytes = 30000;
+
+	const int blockSize = 1024;
+
+	const unsigned long writeCommand = 50;
+	const unsigned long writeBlock = 25;
 
 };
 

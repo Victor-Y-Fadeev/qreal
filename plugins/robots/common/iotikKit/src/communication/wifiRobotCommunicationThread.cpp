@@ -67,6 +67,7 @@ bool WifiRobotCommunicationThread::connect()
 {
 	if (isConnected) {
 		disconnect();
+		mSocket->waitForDisconnected(waitDisconnected);  // Give port some time to close
 	}
 
 	const QString hostName = qReal::SettingsManager::value("IotikTcpServer").toString();
@@ -84,7 +85,6 @@ void WifiRobotCommunicationThread::disconnect()
 {
 	if (isConnected) {
 		mSocket->close();
-		mSocket->waitForDisconnected(waitDisconnected);  // Give port some time to close
 	}
 }
 
@@ -96,7 +96,7 @@ void WifiRobotCommunicationThread::allowLongJobs(bool allow)
 bool WifiRobotCommunicationThread::sendCommand(const QString command)
 {
 	bool result = send(QByteArray::fromStdString(command.toStdString()));
-	QThread::msleep(50);
+	QThread::msleep(writeCommand);
 
 	return result;
 }
@@ -106,8 +106,8 @@ bool WifiRobotCommunicationThread::sendFile(const QString filename)
 	QFile sfile(filename);
 	sfile.open(QIODevice::ReadOnly);
 
-	int size = sfile.size();
-	int block = 1024;
+	long long size = sfile.size();
+	int block = blockSize;
 
 	QString command = "filereceive /fat/" + sfile.fileName() + " " + QString::number(size) + "\n";
 	if (!sendCommand(command))
@@ -125,7 +125,7 @@ bool WifiRobotCommunicationThread::sendFile(const QString filename)
 				return false;
 			}
 
-			QThread::msleep(25);
+			QThread::msleep(writeBlock);
 			size -= block;
 	}
 

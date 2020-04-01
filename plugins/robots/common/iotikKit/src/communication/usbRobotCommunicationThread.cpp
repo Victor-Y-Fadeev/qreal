@@ -25,18 +25,20 @@
 using namespace iotik::communication;
 
 UsbRobotCommunicationThread::UsbRobotCommunicationThread()
-	: mPort(nullptr)
+	: isConnected(false)
 {
+	mPort = new QextSerialPort();
 }
 
 UsbRobotCommunicationThread::~UsbRobotCommunicationThread()
 {
 	disconnect();
+	delete mPort;
 }
 
 bool UsbRobotCommunicationThread::send(const QByteArray &buffer) const
 {
-	return mPort->write(buffer) > 0;
+	return isConnected && mPort->write(buffer) != -1;
 }
 
 bool UsbRobotCommunicationThread::send(QObject *addressee, const QByteArray &buffer, int responseSize)
@@ -51,13 +53,12 @@ bool UsbRobotCommunicationThread::send(const QByteArray &buffer, int responseSiz
 
 bool UsbRobotCommunicationThread::connect()
 {
-	if (mPort) {
+	if (isConnected) {
 		disconnect();
-		QThread::msleep(500);  // Give port some time to close
 	}
 
 	const QString portName = qReal::SettingsManager::value("IotikPortName").toString();
-	mPort = new QextSerialPort(portName);
+	mPort->setPortName(portName);
 	mPort->setBaudRate(BAUD115200);
 	mPort->setFlowControl(FLOW_OFF);
 	mPort->setParity(PAR_NONE);
@@ -65,10 +66,13 @@ bool UsbRobotCommunicationThread::connect()
 	mPort->setStopBits(STOP_1);
 	mPort->setTimeout(0);
 
-	mPort->open(QIODevice::ReadWrite | QIODevice::Unbuffered);
-	emit connected(true, "Error!");
+	if (mPort->open(QIODevice::ReadWrite | QIODevice::Unbuffered) && mPort->isOpen())
+	{
+		isConnected = true;
+		return true;
+	}
 
-	return mPort && mPort->isOpen();
+	return false;
 }
 
 void UsbRobotCommunicationThread::reconnect()
@@ -78,13 +82,12 @@ void UsbRobotCommunicationThread::reconnect()
 
 void UsbRobotCommunicationThread::disconnect()
 {
-	if (mPort) {
+	if (isConnected) {
 		mPort->close();
-		delete mPort;
-		mPort = nullptr;
-	}
+		QThread::msleep(waitDisconnected);  // Give port some time to close
 
-	emit disconnected();
+		isConnected = false;
+	}
 }
 
 void UsbRobotCommunicationThread::allowLongJobs(bool allow)
@@ -92,38 +95,42 @@ void UsbRobotCommunicationThread::allowLongJobs(bool allow)
 	Q_UNUSED(allow)
 }
 
-void UsbRobotCommunicationThread::sendCommand(const QString command)
+bool UsbRobotCommunicationThread::sendCommand(const QString command)
 {
-	mPort->write(QByteArray::fromStdString(command.toStdString()));
-	QThread::msleep(500);
+	bool result = send(QByteArray::fromStdString(command.toStdString()));
+	QThread::msleep(writeCommand);
+
+	return result;
 }
 
-void UsbRobotCommunicationThread::sendFile(const QString filename)
+bool UsbRobotCommunicationThread::sendFile(const QString filename)
 {
 	QFile sfile(filename);
 	sfile.open(QIODevice::ReadOnly);
 
-	int size = sfile.size();
-	int block = 32;
+	long long size = sfile.size();
+	int block = blockSize;
 
 	QString command = "filereceive /fat/" + sfile.fileName() + " " + QString::number(size) + "\n";
-	sendCommand(command);
+	if (!sendCommand(command))
+	{
+		sfile.close();
+		return false;
+	}
 
 	while (size > 0) {
 			QByteArray data = sfile.read(size > block ? block : size);
-			send(data);
-			QThread::msleep(25);
+
+			if (!send(data))
+			{
+				sfile.close();
+				return false;
+			}
+
+			QThread::msleep(writeBlock);
 			size -= block;
 	}
 
 	sfile.close();
-}
-
-void UsbRobotCommunicationThread::checkForConnection()
-{
-	if (!mPort || !mPort->isOpen()) {
-		return;
-	}
-
-	emit disconnected();
+	return true;
 }
