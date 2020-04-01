@@ -79,6 +79,7 @@ QList<qReal::ActionInfo> IotikRuCGeneratorPluginBase::customActions()
 	qReal::ActionInfo wifiUploadActionInfo(mWifiUploadAction, "generators", "tools");
 	connect(mWifiUploadAction, SIGNAL(triggered()), this, SLOT(wifiUpload()), Qt::UniqueConnection);
 
+	/*
 	mSeparator->setSeparator(true);
 	qReal::ActionInfo separatorActionInfo(mSeparator, "generators", "tools");
 
@@ -87,9 +88,14 @@ QList<qReal::ActionInfo> IotikRuCGeneratorPluginBase::customActions()
 	mActivateAction->setIcon(QIcon(":/iotik/ruc/images/activate.svg"));
 	qReal::ActionInfo activateActionInfo(mActivateAction, "generators", "tools");
 	connect(mActivateAction, SIGNAL(triggered()), this, SLOT(activate()), Qt::UniqueConnection);
+	*/
 
-	return {generateCodeActionInfo, usbUploadActionInfo, wifiUploadActionInfo,
-				separatorActionInfo, activateActionInfo};
+	return {generateCodeActionInfo
+				, usbUploadActionInfo
+				, wifiUploadActionInfo
+				/*,	separatorActionInfo
+				, activateActionInfo*/
+				};
 }
 
 QList<qReal::HotKeyActionInfo> IotikRuCGeneratorPluginBase::hotKeyActions()
@@ -164,7 +170,7 @@ void IotikRuCGeneratorPluginBase::wifiUpload()
 	QFile::rename(mRootPath + "/export.txt", mRootPath + "/wifi_export.txt");
 
 	if (!mWifiCommunicator->connect()) {
-		mMainWindowInterface->errorReporter()->addError(tr("Device connection failed, aborting"));
+		mMainWindowInterface->errorReporter()->addError(tr("Device not found, aborting"));
 	} else {
 		if (!mWifiCommunicator->sendFile("wifi_export.txt")) {
 			mMainWindowInterface->errorReporter()->addError(tr("File sending failed, aborting"));
@@ -175,6 +181,7 @@ void IotikRuCGeneratorPluginBase::wifiUpload()
 		}
 
 		mWifiCommunicator->disconnect();
+		mMainWindowInterface->errorReporter()->addInformation(tr("Program loaded"));
 	}
 
 	QFile::remove(mRootPath + "/wifi_export.txt");
@@ -191,7 +198,7 @@ void IotikRuCGeneratorPluginBase::usbUpload()
 	}
 
 	if (!mUsbCommunicator->connect()) {
-		mMainWindowInterface->errorReporter()->addError(tr("Device connection failed, aborting"));
+		mMainWindowInterface->errorReporter()->addError(tr("Device not found, aborting"));
 	} else {
 		if (!mUsbCommunicator->sendFile("export.txt")) {
 			mMainWindowInterface->errorReporter()->addError(tr("File sending failed, aborting"));
@@ -202,6 +209,7 @@ void IotikRuCGeneratorPluginBase::usbUpload()
 		}
 
 		mUsbCommunicator->disconnect();
+		mMainWindowInterface->errorReporter()->addInformation(tr("Program loaded"));
 	}
 
 	QFile::remove(mRootPath + "/export.txt");
