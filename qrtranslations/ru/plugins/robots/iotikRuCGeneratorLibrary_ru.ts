@@ -29,47 +29,61 @@
 <context>
     <name>iotik::ruc::IotikRuCGeneratorPluginBase</name>
     <message>
-        <location filename="../../../../plugins/robots/generators/iotik/iotikRuCGeneratorLibrary/src/iotikRuCGeneratorPluginBase.cpp" line="65"/>
+        <location filename="../../../../plugins/robots/generators/iotik/iotikRuCGeneratorLibrary/src/iotikRuCGeneratorPluginBase.cpp" line="66"/>
         <source>Generate RuC code</source>
         <translation>Сгенерировать код на RuC</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/iotik/iotikRuCGeneratorLibrary/src/iotikRuCGeneratorPluginBase.cpp" line="71"/>
+        <location filename="../../../../plugins/robots/generators/iotik/iotikRuCGeneratorLibrary/src/iotikRuCGeneratorPluginBase.cpp" line="72"/>
         <source>Upload program by USB</source>
         <translation>Загрузить программу по USB</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/iotik/iotikRuCGeneratorLibrary/src/iotikRuCGeneratorPluginBase.cpp" line="77"/>
+        <location filename="../../../../plugins/robots/generators/iotik/iotikRuCGeneratorLibrary/src/iotikRuCGeneratorPluginBase.cpp" line="78"/>
         <source>Upload program by Wi-Fi</source>
         <translation>Загрузить программу по Wi-Fi</translation>
+    </message>
+    <message>
+        <location filename="../../../../plugins/robots/generators/iotik/iotikRuCGeneratorLibrary/src/iotikRuCGeneratorPluginBase.cpp" line="174"/>
+        <location filename="../../../../plugins/robots/generators/iotik/iotikRuCGeneratorLibrary/src/iotikRuCGeneratorPluginBase.cpp" line="204"/>
+        <source>Device not connected, aborting</source>
+        <translation>Контроллер не подключен, ошибка</translation>
     </message>
     <message>
         <source>Аctivate IoTik 32 v2.0</source>
         <translation type="vanished">Активировать ЙоТик 32 v2.0</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/iotik/iotikRuCGeneratorLibrary/src/iotikRuCGeneratorPluginBase.cpp" line="173"/>
-        <location filename="../../../../plugins/robots/generators/iotik/iotikRuCGeneratorLibrary/src/iotikRuCGeneratorPluginBase.cpp" line="201"/>
         <source>Device not found, aborting</source>
-        <translation>Контроллер не найден, отмена</translation>
+        <translation type="vanished">Контроллер не найден, отмена</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/iotik/iotikRuCGeneratorLibrary/src/iotikRuCGeneratorPluginBase.cpp" line="176"/>
-        <location filename="../../../../plugins/robots/generators/iotik/iotikRuCGeneratorLibrary/src/iotikRuCGeneratorPluginBase.cpp" line="204"/>
+        <location filename="../../../../plugins/robots/generators/iotik/iotikRuCGeneratorLibrary/src/iotikRuCGeneratorPluginBase.cpp" line="177"/>
+        <location filename="../../../../plugins/robots/generators/iotik/iotikRuCGeneratorLibrary/src/iotikRuCGeneratorPluginBase.cpp" line="207"/>
         <source>File sending failed, aborting</source>
         <translation>Ошибка отправки файла, отмена</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/iotik/iotikRuCGeneratorLibrary/src/iotikRuCGeneratorPluginBase.cpp" line="179"/>
-        <location filename="../../../../plugins/robots/generators/iotik/iotikRuCGeneratorLibrary/src/iotikRuCGeneratorPluginBase.cpp" line="207"/>
+        <location filename="../../../../plugins/robots/generators/iotik/iotikRuCGeneratorLibrary/src/iotikRuCGeneratorPluginBase.cpp" line="180"/>
+        <location filename="../../../../plugins/robots/generators/iotik/iotikRuCGeneratorLibrary/src/iotikRuCGeneratorPluginBase.cpp" line="210"/>
+        <source>The program has been uploaded</source>
+        <translation>Загрузка программы завершена</translation>
+    </message>
+    <message>
+        <location filename="../../../../plugins/robots/generators/iotik/iotikRuCGeneratorLibrary/src/iotikRuCGeneratorPluginBase.cpp" line="180"/>
+        <location filename="../../../../plugins/robots/generators/iotik/iotikRuCGeneratorLibrary/src/iotikRuCGeneratorPluginBase.cpp" line="210"/>
+        <source>Do you want to run it?</source>
+        <translation>Хотите ли вы запустить эту программу?</translation>
+    </message>
+    <message>
+        <location filename="../../../../plugins/robots/generators/iotik/iotikRuCGeneratorLibrary/src/iotikRuCGeneratorPluginBase.cpp" line="182"/>
+        <location filename="../../../../plugins/robots/generators/iotik/iotikRuCGeneratorLibrary/src/iotikRuCGeneratorPluginBase.cpp" line="212"/>
         <source>Program interpreting failed, aborting</source>
         <translation>Ошибка запуска программы, отмена</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/iotik/iotikRuCGeneratorLibrary/src/iotikRuCGeneratorPluginBase.cpp" line="184"/>
-        <location filename="../../../../plugins/robots/generators/iotik/iotikRuCGeneratorLibrary/src/iotikRuCGeneratorPluginBase.cpp" line="212"/>
         <source>Program loaded</source>
-        <translation>Программа загружена</translation>
+        <translation type="vanished">Программа загружена</translation>
     </message>
     <message>
         <source>Аctivate IoTik v2.0</source>
@@ -80,17 +94,17 @@
         <translation type="vanished">Активировать ЙоТик v1.0</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/iotik/iotikRuCGeneratorLibrary/src/iotikRuCGeneratorPluginBase.cpp" line="107"/>
+        <location filename="../../../../plugins/robots/generators/iotik/iotikRuCGeneratorLibrary/src/iotikRuCGeneratorPluginBase.cpp" line="108"/>
         <source>Generate RuC Code</source>
         <translation>Сгенерировать код на RuC</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/iotik/iotikRuCGeneratorLibrary/src/iotikRuCGeneratorPluginBase.cpp" line="110"/>
+        <location filename="../../../../plugins/robots/generators/iotik/iotikRuCGeneratorLibrary/src/iotikRuCGeneratorPluginBase.cpp" line="111"/>
         <source>Upload RuC Program by USB</source>
         <translation>Загрузить программу на RuC по USB</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/iotik/iotikRuCGeneratorLibrary/src/iotikRuCGeneratorPluginBase.cpp" line="113"/>
+        <location filename="../../../../plugins/robots/generators/iotik/iotikRuCGeneratorLibrary/src/iotikRuCGeneratorPluginBase.cpp" line="114"/>
         <source>Upload RuC Program by Wi-Fi</source>
         <translation>Загрузить программу на RuC по Wi-Fi</translation>
     </message>
@@ -103,7 +117,7 @@
         <translation type="vanished">Wi-Fi еще не реализован</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/iotik/iotikRuCGeneratorLibrary/src/iotikRuCGeneratorPluginBase.cpp" line="234"/>
+        <location filename="../../../../plugins/robots/generators/iotik/iotikRuCGeneratorLibrary/src/iotikRuCGeneratorPluginBase.cpp" line="239"/>
         <source>Code compiling failed, aborting</source>
         <translation>Ошибка компиляции кода, отмена</translation>
     </message>

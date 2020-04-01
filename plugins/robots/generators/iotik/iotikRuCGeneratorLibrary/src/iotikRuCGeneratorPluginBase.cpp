@@ -19,6 +19,7 @@
 #include <QtCore/QFile>
 #include <QtCore/QProcess>
 
+#include <qrutils/widgets/qRealMessageBox.h>
 #include <qrkernel/settingsManager.h>
 #include <iotikKit/communication/usbRobotCommunicationThread.h>
 #include <iotikKit/communication/wifiRobotCommunicationThread.h>
@@ -170,18 +171,20 @@ void IotikRuCGeneratorPluginBase::wifiUpload()
 	QFile::rename(mRootPath + "/export.txt", mRootPath + "/wifi_export.txt");
 
 	if (!mWifiCommunicator->connect()) {
-		mMainWindowInterface->errorReporter()->addError(tr("Device not found, aborting"));
+		mMainWindowInterface->errorReporter()->addError(tr("Device not connected, aborting"));
 	} else {
 		if (!mWifiCommunicator->sendFile("wifi_export.txt")) {
 			mMainWindowInterface->errorReporter()->addError(tr("File sending failed, aborting"));
 		} else {
-			if (!mWifiCommunicator->sendCommand("ruc /fat/wifi_export.txt\n")) {
-				mMainWindowInterface->errorReporter()->addError(tr("Program interpreting failed, aborting"));
+			if (utils::QRealMessageBox::question(mMainWindowInterface->windowWidget()
+					, tr("The program has been uploaded"), tr("Do you want to run it?")) == QMessageBox::Yes) {
+				if (!mWifiCommunicator->sendCommand("ruc /fat/wifi_export.txt\n")) {
+					mMainWindowInterface->errorReporter()->addError(tr("Program interpreting failed, aborting"));
+				}
 			}
 		}
 
 		mWifiCommunicator->disconnect();
-		mMainWindowInterface->errorReporter()->addInformation(tr("Program loaded"));
 	}
 
 	QFile::remove(mRootPath + "/wifi_export.txt");
@@ -198,18 +201,20 @@ void IotikRuCGeneratorPluginBase::usbUpload()
 	}
 
 	if (!mUsbCommunicator->connect()) {
-		mMainWindowInterface->errorReporter()->addError(tr("Device not found, aborting"));
+		mMainWindowInterface->errorReporter()->addError(tr("Device not connected, aborting"));
 	} else {
 		if (!mUsbCommunicator->sendFile("export.txt")) {
 			mMainWindowInterface->errorReporter()->addError(tr("File sending failed, aborting"));
 		} else {
-			if (!mUsbCommunicator->sendCommand("ruc /fat/export.txt\n")) {
-				mMainWindowInterface->errorReporter()->addError(tr("Program interpreting failed, aborting"));
+			if (utils::QRealMessageBox::question(mMainWindowInterface->windowWidget()
+					, tr("The program has been uploaded"), tr("Do you want to run it?")) == QMessageBox::Yes) {
+				if (!mUsbCommunicator->sendCommand("ruc /fat/export.txt\n")) {
+					mMainWindowInterface->errorReporter()->addError(tr("Program interpreting failed, aborting"));
+				}
 			}
 		}
 
 		mUsbCommunicator->disconnect();
-		mMainWindowInterface->errorReporter()->addInformation(tr("Program loaded"));
 	}
 
 	QFile::remove(mRootPath + "/export.txt");
