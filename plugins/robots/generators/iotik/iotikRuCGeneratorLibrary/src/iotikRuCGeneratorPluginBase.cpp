@@ -171,15 +171,15 @@ void IotikRuCGeneratorPluginBase::wifiUpload()
 	QFile::rename(mRootPath + "/export.txt", mRootPath + "/wifi_export.txt");
 
 	if (!mWifiCommunicator->connect()) {
-		mMainWindowInterface->errorReporter()->addError(tr("Device not connected, aborting"));
+		mMainWindowInterface->errorReporter()->addWarning(tr("Device switched off or not connected yet"));
 	} else {
 		if (!mWifiCommunicator->sendFile("wifi_export.txt")) {
-			mMainWindowInterface->errorReporter()->addError(tr("File sending failed, aborting"));
+			mMainWindowInterface->errorReporter()->addError(tr("Could not upload file to robot"));
 		} else {
 			if (utils::QRealMessageBox::question(mMainWindowInterface->windowWidget()
 					, tr("The program has been uploaded"), tr("Do you want to run it?")) == QMessageBox::Yes) {
 				if (!mWifiCommunicator->sendCommand("ruc /fat/wifi_export.txt\n")) {
-					mMainWindowInterface->errorReporter()->addError(tr("Program interpreting failed, aborting"));
+					mMainWindowInterface->errorReporter()->addError(tr("Program interpreting failed"));
 				}
 			}
 		}
@@ -201,15 +201,15 @@ void IotikRuCGeneratorPluginBase::usbUpload()
 	}
 
 	if (!mUsbCommunicator->connect()) {
-		mMainWindowInterface->errorReporter()->addError(tr("Device not connected, aborting"));
+		mMainWindowInterface->errorReporter()->addWarning(tr("Device switched off or not connected yet"));
 	} else {
 		if (!mUsbCommunicator->sendFile("export.txt")) {
-			mMainWindowInterface->errorReporter()->addError(tr("File sending failed, aborting"));
+			mMainWindowInterface->errorReporter()->addError(tr("Could not upload file to robot"));
 		} else {
 			if (utils::QRealMessageBox::question(mMainWindowInterface->windowWidget()
 					, tr("The program has been uploaded"), tr("Do you want to run it?")) == QMessageBox::Yes) {
 				if (!mUsbCommunicator->sendCommand("ruc /fat/export.txt\n")) {
-					mMainWindowInterface->errorReporter()->addError(tr("Program interpreting failed, aborting"));
+					mMainWindowInterface->errorReporter()->addError(tr("Program interpreting failed"));
 				}
 			}
 		}
@@ -236,7 +236,7 @@ bool IotikRuCGeneratorPluginBase::compileCode()
 	QFile::remove(mRootPath + "/codes.txt");
 
 	if (!QFile::exists(mRootPath + "/export.txt")) {
-		mMainWindowInterface->errorReporter()->addError(tr("Code compiling failed, aborting"));
+		mMainWindowInterface->errorReporter()->addError(tr("Compilation error occured"));
 		return false;
 	}
 
