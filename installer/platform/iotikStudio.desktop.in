@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=iotikStudio
+Name[ru]=iotikStudio
+Comment=Intuitive robots programming environment
+Comment[ru]=Интуитивно понятная среда программирования роботов
+Exec=iotikStudio
+Icon=iotikStudio
+Terminal=false
+Type=Application
+Categories=Education;
+Keywords=robot;trik;iotik;
+Keywords[ru]=робот;трик;йотик;

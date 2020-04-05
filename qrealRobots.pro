@@ -19,4 +19,5 @@ plugins.file = $$PWD/plugins/robots.pro
 RESOURCES += \
 	qrgui/mainwindow/qrgui.qrc
 
-include (installer/platform/install-trik-studio.pri)
+# include (installer/platform/install-trik-studio.pri)
+include (installer/platform/install-iotik-studio.pri)
