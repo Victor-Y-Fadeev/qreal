@@ -44,8 +44,12 @@ thirdparty/**/lib*.dylib
 .qmake.stash
 /installer/trik-studio-online-win32-installer.exe
 /installer/trik-studio-offline-win32-installer.exe
+/installer/iotik-studio-online-win32-installer.exe
+/installer/iotik-studio-offline-win32-installer.exe
 /installer/trik-studio-online-linux-gnu64-installer
 /installer/trik-studio-offline-linux-gnu64-installer
+/installer/iotik-studio-online-linux-gnu64-installer
+/installer/iotik-studio-offline-linux-gnu64-installer
 /installer/packages/*/ru.qreal.root*/meta/*-license.txt
 /installer/packages/qreal-base/ru.qreal.root/meta/ApacheLicense-v2.0.txt
 /installer/packages/qreal-base/ru.qreal.root/meta/OFL.txt
@@ -56,4 +60,6 @@ thirdparty/**/lib*.dylib
 /installer/misc/trik-studio-offline-linux-gnu64-installer
 /installer/trik-studio-offline-mac-installer.app/
 /installer/trik-studio-online-mac-installer.app/
+/installer/iotik-studio-offline-mac-installer.app/
+/installer/iotik-studio-online-mac-installer.app/
 /installer/trik-studio-repository/

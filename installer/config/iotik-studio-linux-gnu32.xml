@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Installer>
+    <Name>IoTik Studio</Name>
+    <Version>v1.0</Version>
+    <Title>IoTik Studio</Title>
+    <Publisher>MGBot Ltd.</Publisher>
+    <ProductUrl>https://mgbot.ru</ProductUrl>
+
+    <InstallerWindowIcon>../images/iotik-studio.ico</InstallerWindowIcon>
+    <InstallerApplicationIcon>../images/iotik-studio.ico</InstallerApplicationIcon>
+    <Logo>../images/iotik-studio-logo.png</Logo>
+    <Watermark>../images/iotik-studio-watermark.png</Watermark>
+
+    <StartMenuDir>TRIK Studio</StartMenuDir>
+    <MaintenanceToolName>maintenance</MaintenanceToolName>
+    <RemoveTargetDir>true</RemoveTargetDir>
+    <AllowSpaceInPath>false</AllowSpaceInPath>
+    <AllowNonAsciiCharacters>false</AllowNonAsciiCharacters>
+
+    <TargetDir>@HomeDir@/IoTikStudio</TargetDir>
+    <AdminTargetDir>@HomeDir@/IoTikStudio</AdminTargetDir>
+
+    <RunProgram>bash</RunProgram>
+    <RunProgramArguments>
+        <Argument>-c</Argument>
+        <Argument>export LD_LIBRARY_PATH=@TargetDir@ &amp;&amp; @TargetDir@/iotik-studio</Argument>
+    </RunProgramArguments>
+</Installer>
