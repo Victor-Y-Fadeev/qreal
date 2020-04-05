@@ -19,8 +19,8 @@ include(../../../../global.pri)
 TEMPLATE = lib
 CONFIG += plugin
 
-DESTDIR = $$DESTDIR/plugins/tools/kitPlugins/
-
 copyToDestdir($$PWD/icons/splashscreen.png)
+
+DESTDIR = $$DESTDIR/plugins/tools/kitPlugins/
 
 include(iotikKitInterpreter.pri)
