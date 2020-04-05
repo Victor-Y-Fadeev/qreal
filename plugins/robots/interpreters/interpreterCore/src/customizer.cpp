@@ -23,7 +23,7 @@ using namespace interpreterCore;
 
 QString Customizer::windowTitle() const
 {
-	return QObject::tr("TRIK Studio") + " " + productVersion();
+	return QObject::tr("IoTik Studio");
 }
 
 QIcon Customizer::applicationIcon() const
@@ -33,7 +33,7 @@ QIcon Customizer::applicationIcon() const
 
 QImage Customizer::applicationLogo() const
 {
-	return QImage(":/icons/TRIKStudioLogo.png");
+	return QImage(":/icons/IoTikStudioLogo.png");
 }
 
 QString Customizer::productVersion() const
@@ -44,7 +44,7 @@ QString Customizer::productVersion() const
 
 QString Customizer::aboutText() const
 {
-	return "<b>" + windowTitle() + "<b><br><br><a href=\"http://robots.qreal.ru/\">http://robots.qreal.ru/</a>";
+	return "<b>" + windowTitle() + "<br>based on <br>TRIK Studio " + productVersion() + "<b><br><br><a href=\"https://mgbot.ru/\">https://mgbot.ru/</a>";
 }
 
 QString Customizer::examplesDirectory() const

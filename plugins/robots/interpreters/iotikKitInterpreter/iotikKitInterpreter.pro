@@ -21,4 +21,6 @@ CONFIG += plugin
 
 DESTDIR = $$DESTDIR/plugins/tools/kitPlugins/
 
+copyToDestdir($$PWD/icons/splashscreen.png)
+
 include(iotikKitInterpreter.pri)
