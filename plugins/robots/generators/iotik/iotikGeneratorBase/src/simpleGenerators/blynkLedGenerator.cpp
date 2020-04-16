@@ -24,7 +24,10 @@ BlynkLedGenerator::BlynkLedGenerator(const qrRepo::RepoApi &repo
 		, generatorBase::GeneratorCustomizer &customizer
 		, const Id &id
 		, QObject *parent)
-	: BindingGenerator(repo, customizer, id, "network/led.t", QList<Binding *>()
+	: BindingGenerator(repo, customizer, id,
+					   repo.property(id, "Color").toString().compare("off") == 0 ?
+						   "network/send.t" : "network/led.t",
+					   QList<Binding *>()
 			<< Binding::createConverting("@@PORT@@", "Port", customizer.factory()->portNameConverter())
 			<< Binding::createStaticConverting("@@VALUE@@"
 					, repo.property(id, "Color").toString().compare("off") == 0 ? "0" : "255"
