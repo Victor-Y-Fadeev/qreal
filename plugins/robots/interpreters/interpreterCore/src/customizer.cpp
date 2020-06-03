@@ -44,7 +44,9 @@ QString Customizer::productVersion() const
 
 QString Customizer::aboutText() const
 {
-	return "<b>" + windowTitle() + "<br>based on <br>TRIK Studio " + productVersion() + "<b><br><br><a href=\"https://mgbot.ru/\">https://mgbot.ru/</a>";
+	return "<b>" + windowTitle()
+			+ "<br>based on <br>TRIK Studio " + productVersion()
+			+ "<b><br><br><a href=\"https://mgbot.ru/\">https://mgbot.ru/</a>";
 }
 
 QString Customizer::examplesDirectory() const
