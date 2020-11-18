@@ -60,7 +60,7 @@ bool UsbRobotCommunicationThread::connect()
 	const QString portName = qReal::SettingsManager::value("IotikPortName").toString();
 	mPort->setPortName(portName);
 	mPort->setBaudRate(BAUD115200);
-	mPort->setFlowControl(FLOW_OFF);
+	mPort->setFlowControl(FLOW_XONXOFF);
 	mPort->setParity(PAR_NONE);
 	mPort->setDataBits(DATA_8);
 	mPort->setStopBits(STOP_1);

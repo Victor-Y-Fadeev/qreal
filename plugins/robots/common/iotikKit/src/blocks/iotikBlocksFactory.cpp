@@ -38,6 +38,7 @@
 #include "iotikKit/robotModel/parts/iotikMatrix.h"
 #include "iotikKit/robotModel/parts/iotikRelay.h"
 #include "iotikKit/robotModel/parts/iotikEngines.h"
+#include "iotikKit/robotModel/parts/iotikSoilTHSensor.h"
 
 #include "iotikKit/robotModel/parts/iotikWifi.h"
 #include "iotikKit/robotModel/parts/iotikBlynkAuthorization.h"
@@ -83,6 +84,7 @@
 #include "details/matrix.h"
 #include "details/relay.h"
 #include "details/engines.h"
+#include "details/soilTHSensor.h"
 
 #include "details/printString.h"
 #include "details/clearDisplay.h"
@@ -176,6 +178,8 @@ qReal::interpretation::Block *IotikBlocksFactory::produceBlock(const qReal::Id &
 		return new RelayBlock();
 	} else if (elementMetatypeIs(element, "IotikEngines")) {
 		return new EnginesBlock();
+	} else if (elementMetatypeIs(element, "IotikSoilTH")) {
+		return new SoilTHSensorBlock();
 
 	} else if (elementMetatypeIs(element, "IotikPrintString")) {
 		return new PrintString(mRobotModelManager->model());
@@ -251,6 +255,7 @@ qReal::IdList IotikBlocksFactory::providedBlocks() const
 				, id("IotikMatrix")
 				, id("IotikRelay")
 				, id("IotikEngines")
+				, id("IotikSoilTH")
 
 				, id("IotikPrintString")
 				, id("IotikClearDisplay")

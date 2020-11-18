@@ -53,7 +53,7 @@ private:
 	const int blockSize = 128;
 
 	const unsigned long writeCommand = 50;
-	const unsigned long writeBlock = 25;
+	const unsigned long writeBlock = 50;
 };
 
 }

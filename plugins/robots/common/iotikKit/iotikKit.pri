@@ -54,6 +54,7 @@ HEADERS += \
 	$$PWD/include/iotikKit/robotModel/parts/iotikMatrix.h \
 	$$PWD/include/iotikKit/robotModel/parts/iotikRelay.h \
 	$$PWD/include/iotikKit/robotModel/parts/iotikEngines.h \
+	$$PWD/include/iotikKit/robotModel/parts/iotikSoilTHSensor.h \
 	$$PWD/include/iotikKit/robotModel/parts/iotikWifi.h \
 	$$PWD/include/iotikKit/robotModel/parts/iotikBlynkAuthorization.h \
 	$$PWD/include/iotikKit/robotModel/parts/iotikBlynkLed.h \
@@ -107,6 +108,8 @@ HEADERS += \
 	$$PWD/src/blocks/details/blynkProperty.h \
 	$$PWD/src/blocks/details/blynkLCD.h \
 	$$PWD/src/blocks/details/blynkTerminal.h \
+	$$PWD/src/blocks/details/soilTHSensor.h \
+
 
 SOURCES += \
 	$$PWD/src/robotModel/iotikRobotModelBase.cpp \
@@ -144,6 +147,7 @@ SOURCES += \
 	$$PWD/src/robotModel/parts/iotikBlynkProperty.cpp \
 	$$PWD/src/robotModel/parts/iotikBlynkLCD.cpp \
 	$$PWD/src/robotModel/parts/iotikBlynkTerminal.cpp \
+	$$PWD/src/robotModel/parts/iotikSoilTHSensor.cpp \
 	$$PWD/src/blocks/iotikBlocksFactory.cpp \
 	$$PWD/src/blocks/details/iotikEnginesBackwardBlock.cpp \
 	$$PWD/src/blocks/details/iotikEnginesForwardBlock.cpp \
@@ -187,6 +191,7 @@ SOURCES += \
 	$$PWD/src/blocks/details/blynkProperty.cpp \
 	$$PWD/src/blocks/details/blynkLCD.cpp \
 	$$PWD/src/blocks/details/blynkTerminal.cpp \
+	$$PWD/src/blocks/details/soilTHSensor.cpp \
 	$$PWD/src/communication/usbRobotCommunicationThread.cpp \
 	$$PWD/src/communication/wifiRobotCommunicationThread.cpp \
 
