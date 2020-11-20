@@ -13,7 +13,6 @@
  * limitations under the License. */
 
 #include "lineDetectorGenerator.h"
-
 #include <generatorBase/generatorCustomizer.h>
 
 using namespace iotik::simple;

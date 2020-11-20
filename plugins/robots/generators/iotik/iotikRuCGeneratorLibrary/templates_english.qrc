@@ -79,6 +79,7 @@
         <file>templates_english/sensors/signalForTwoPortTwoParameters.t</file>
         <file>templates_english/sensors/signalForTwoPortFourParameters.t</file>
         <file>templates_english/sensors/signalForTwoPortSevenParameters.t</file>
+        <file>templates_english/sensors/twoVariablesTwoAnalogPorts.t</file>
         <file>templates_english/network/wifi.t</file>
         <file>templates_english/network/authorization.t</file>
         <file>templates_english/network/send.t</file>

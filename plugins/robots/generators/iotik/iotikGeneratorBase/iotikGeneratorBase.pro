@@ -91,6 +91,7 @@ HEADERS += \
 	$$PWD/src/simpleGenerators/blynkPropertyGenerator.h \
 	$$PWD/src/simpleGenerators/blynkLCDGenerator.h \
 	$$PWD/src/simpleGenerators/blynkTerminalGenerator.h \
+	$$PWD/src/simpleGenerators/soilTHSensorGenerator.h \
 	$$PWD/widgets/iotikAdditionalPreferences.h \
 
 SOURCES += \
@@ -145,6 +146,7 @@ SOURCES += \
 	$$PWD/src/simpleGenerators/blynkPropertyGenerator.cpp \
 	$$PWD/src/simpleGenerators/blynkLCDGenerator.cpp \
 	$$PWD/src/simpleGenerators/blynkTerminalGenerator.cpp \
+	$$PWD/src/simpleGenerators/soilTHSensorGenerator.cpp \
 	$$PWD/widgets/iotikAdditionalPreferences.cpp \
 
 FORMS += \

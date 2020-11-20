@@ -13,7 +13,6 @@
  * limitations under the License. */
 
 #include "gyroscopeGenerator.h"
-
 #include <generatorBase/generatorCustomizer.h>
 
 using namespace iotik::simple;

@@ -1299,25 +1299,31 @@
 						<image y1="0" name="images/enginesBlock.svg" x1="0" y2="50" x2="50"/>
 					</picture>
 					<labels>
-						<label x="-5" y="-35" textBinded="Port1" hard="true" prefix="Port 1:"/>
-						<label x="70" y="-35" textBinded="Port2" hard="true" prefix="Port 2:"/>
-						<label x="25" y="60" textBinded="T" background="white" prefix="T:"/>
-						<label x="25" y="90" textBinded="H" background="white" prefix="H:"/>
+						<label x="-5" y="-35" textBinded="A" hard="true" prefix="A:"/>
+						<label x="70" y="-35" textBinded="B" hard="true" prefix="B:"/>
+						<label x="25" y="60" textBinded="Temperature" background="white" prefix="Temperature:"/>
+						<label x="25" y="90" textBinded="Humidity" background="white" prefix="Humidity:"/>
 					</labels>
 					<nonResizeable/>
 				</graphics>
 				<logic>
 					<properties>
-						<property displayedName="M1" type="string" name="M1">
-							<default>temp</default>
+						<property displayedName="A" type="IotikAnalogSensorPort" name="A">
+							<default>A4</default>
 						</property>
-						<property displayedName="M2" type="string" name="M2">
+						<property displayedName="B" type="IotikAnalogSensorPort" name="B">
+							<default>A4</default>
+						</property>
+						<property displayedName="Temperature" type="string" name="Temperature">
+							<default>temperature</default>
+						</property>
+						<property displayedName="Humidity" type="string" name="Humidity">
 							<default>humidity</default>
 						</property>
 					</properties>
 					<container/>
 					<generalizations>
-						<parent parentName="IoTikAnalogSensorBlock"/>
+						<parent parentName="IotikSensorBlock"/>
 					</generalizations>
 				</logic>
 			</node>
