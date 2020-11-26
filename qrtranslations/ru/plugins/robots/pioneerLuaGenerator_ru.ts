@@ -404,37 +404,37 @@
         <translation type="vanished">На данный момент генерация кода, в котором цикл заканчивается на блоке, последнем в своей структурной конструкции, не поддержана. Измените структуру программы.</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/pioneer/pioneerLuaGenerator/generators/pioneerStateMachineGenerator.cpp" line="140"/>
+        <location filename="../../../../plugins/robots/generators/pioneer/pioneerLuaGenerator/generators/pioneerStateMachineGenerator.cpp" line="142"/>
         <source>Generation internal error, failed to create a node.</source>
         <translation>Внутренняя ошибка генерации. Дополнительная информация: не удалось создать узел семантического дерева.</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/pioneer/pioneerLuaGenerator/generators/pioneerStateMachineGenerator.cpp" line="163"/>
+        <location filename="../../../../plugins/robots/generators/pioneer/pioneerLuaGenerator/generators/pioneerStateMachineGenerator.cpp" line="165"/>
         <source>Can not find end of an If statement, generation internal error or too complex algorithmic construction.</source>
         <translation>Не удалось найти конец блока оператора &quot;Если&quot;, внутренняя ошибка генерации или слишком сложная алгоритмическая конструкция. Попробуйте записать программу по-другому.</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/pioneer/pioneerLuaGenerator/generators/pioneerStateMachineGenerator.cpp" line="279"/>
+        <location filename="../../../../plugins/robots/generators/pioneer/pioneerLuaGenerator/generators/pioneerStateMachineGenerator.cpp" line="281"/>
         <source>Generation internal error, zone node corresponds to a block in a diagram.</source>
         <translation>Внутренняя ошибка генерации. Дополнительная информация: узел-зона семантического дерева соответствует блоку на диаграмме. Узел-зона может быть только частью представления блока.</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/pioneer/pioneerLuaGenerator/generators/pioneerStateMachineGenerator.cpp" line="294"/>
+        <location filename="../../../../plugins/robots/generators/pioneer/pioneerLuaGenerator/generators/pioneerStateMachineGenerator.cpp" line="296"/>
         <source>Generation internal error, non-zone node is a start of a fragment.</source>
         <translation>Внутренняя ошибка генерации. Дополнительная информация: синхронный фрагмент начинается с узла-зоны.</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/pioneer/pioneerLuaGenerator/generators/pioneerStateMachineGenerator.cpp" line="346"/>
+        <location filename="../../../../plugins/robots/generators/pioneer/pioneerLuaGenerator/generators/pioneerStateMachineGenerator.cpp" line="348"/>
         <source>Generation internal error, program ends abruptly.</source>
         <translation>Внутренняя ошибка генерации. Дополнительная информация: программа неожиданно закончилась. Такие ошибки должны ловиться при предварительной проверке программы.</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/pioneer/pioneerLuaGenerator/generators/pioneerStateMachineGenerator.cpp" line="372"/>
+        <location filename="../../../../plugins/robots/generators/pioneer/pioneerLuaGenerator/generators/pioneerStateMachineGenerator.cpp" line="374"/>
         <source>Generation internal error, asynchronous node does not have target node.</source>
         <translation>Внутренняя ошибка генерации. Дополнительная информация: асинхронный узел не имеет узла, которому надо передать управления после асинхронной операции.</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/generators/pioneer/pioneerLuaGenerator/generators/pioneerStateMachineGenerator.cpp" line="394"/>
+        <location filename="../../../../plugins/robots/generators/pioneer/pioneerLuaGenerator/generators/pioneerStateMachineGenerator.cpp" line="396"/>
         <source>Purely synchronous loops or If branches are not supported yet.</source>
         <translation>Чисто синхронные циклы или ветки оператора If на данный момент не поддержаны. Добавьте какой-нибудь асинхронный блок внутрь тела цикла или ветки If (например, &quot;лететь в точку&quot;).</translation>
     </message>

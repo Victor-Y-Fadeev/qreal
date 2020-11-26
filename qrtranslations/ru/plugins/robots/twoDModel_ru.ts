@@ -832,27 +832,27 @@
 <context>
     <name>twoDModel::view::ImageItemPopup</name>
     <message>
-        <location filename="../../../../plugins/robots/common/twoDModel/src/engine/view/parts/imageItemPopup.cpp" line="52"/>
+        <location filename="../../../../plugins/robots/common/twoDModel/src/engine/view/parts/imageItemPopup.cpp" line="54"/>
         <source>Image will be packed into save file. Warning: this will increase save file size.</source>
         <translation>Картинка будет запакована в проект. Внимание: это значительно увеличит размер файла сохранения.</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/common/twoDModel/src/engine/view/parts/imageItemPopup.cpp" line="53"/>
+        <location filename="../../../../plugins/robots/common/twoDModel/src/engine/view/parts/imageItemPopup.cpp" line="55"/>
         <source>Image will not be packed into a save file. Warning: if will use save file on other machine or rename file this image will disappear from 2D model.</source>
         <translation>Картинка не будет включена в файл сохранения. Внимание: при открытии текущего проекта на другой машине или переименовании файла с картинкой изображение в 2D модели пропадет.</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/common/twoDModel/src/engine/view/parts/imageItemPopup.cpp" line="118"/>
+        <location filename="../../../../plugins/robots/common/twoDModel/src/engine/view/parts/imageItemPopup.cpp" line="120"/>
         <source>Change image...</source>
         <translation>Изменить картинку...</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/common/twoDModel/src/engine/view/parts/imageItemPopup.cpp" line="122"/>
+        <location filename="../../../../plugins/robots/common/twoDModel/src/engine/view/parts/imageItemPopup.cpp" line="124"/>
         <source>Select image</source>
         <translation>Выберите картинку</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/common/twoDModel/src/engine/view/parts/imageItemPopup.cpp" line="122"/>
+        <location filename="../../../../plugins/robots/common/twoDModel/src/engine/view/parts/imageItemPopup.cpp" line="126"/>
         <source>Graphics (*.*)</source>
         <translation>Графика (*.*)</translation>
     </message>
@@ -904,12 +904,12 @@
 <context>
     <name>twoDModel::view::TwoDModelScene</name>
     <message>
-        <location filename="../../../../plugins/robots/common/twoDModel/src/engine/view/scene/twoDModelScene.cpp" line="557"/>
+        <location filename="../../../../plugins/robots/common/twoDModel/src/engine/view/scene/twoDModelScene.cpp" line="558"/>
         <source>Select image</source>
         <translation>Выберите картинку</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/common/twoDModel/src/engine/view/scene/twoDModelScene.cpp" line="557"/>
+        <location filename="../../../../plugins/robots/common/twoDModel/src/engine/view/scene/twoDModelScene.cpp" line="560"/>
         <source>Graphics (*.*)</source>
         <translation>Графика (*.*)</translation>
     </message>
@@ -917,24 +917,22 @@
 <context>
     <name>twoDModel::view::TwoDModelWidget</name>
     <message>
-        <location filename="../../../../plugins/robots/common/twoDModel/src/engine/view/twoDModelWidget.cpp" line="256"/>
+        <location filename="../../../../plugins/robots/common/twoDModel/src/engine/view/twoDModelWidget.cpp" line="258"/>
         <source>Warning</source>
         <translation>Предупреждение</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/common/twoDModel/src/engine/view/twoDModelWidget.cpp" line="257"/>
+        <location filename="../../../../plugins/robots/common/twoDModel/src/engine/view/twoDModelWidget.cpp" line="259"/>
         <source>Do you really want to clear scene?</source>
         <translation>Вы действительно хотите очистить сцену?</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/common/twoDModel/src/engine/view/twoDModelWidget.cpp" line="259"/>
         <source>Yes</source>
-        <translation>Да</translation>
+        <translation type="vanished">Да</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/common/twoDModel/src/engine/view/twoDModelWidget.cpp" line="260"/>
         <source>Cancel</source>
-        <translation>Отмена</translation>
+        <translation type="vanished">Отмена</translation>
     </message>
     <message>
         <location filename="../../../../plugins/robots/common/twoDModel/src/engine/view/twoDModelWidget.cpp" line="343"/>
@@ -963,33 +961,33 @@
         <translation>Загрузка модели мира</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/common/twoDModel/src/engine/view/twoDModelWidget.cpp" line="450"/>
+        <location filename="../../../../plugins/robots/common/twoDModel/src/engine/view/twoDModelWidget.cpp" line="451"/>
         <source>Select background image</source>
         <translation>Выберите фоновое изображение</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/common/twoDModel/src/engine/view/twoDModelWidget.cpp" line="450"/>
+        <location filename="../../../../plugins/robots/common/twoDModel/src/engine/view/twoDModelWidget.cpp" line="453"/>
         <source>Graphics (*.*)</source>
         <translation>Графика (*.*)</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/common/twoDModel/src/engine/view/twoDModelWidget.cpp" line="742"/>
+        <location filename="../../../../plugins/robots/common/twoDModel/src/engine/view/twoDModelWidget.cpp" line="745"/>
         <source>Hide details</source>
         <translation>Скрыть детали</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/common/twoDModel/src/engine/view/twoDModelWidget.cpp" line="742"/>
+        <location filename="../../../../plugins/robots/common/twoDModel/src/engine/view/twoDModelWidget.cpp" line="745"/>
         <source>Show details</source>
         <translation>Показать детали</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/common/twoDModel/src/engine/view/twoDModelWidget.cpp" line="881"/>
-        <location filename="../../../../plugins/robots/common/twoDModel/src/engine/view/twoDModelWidget.cpp" line="882"/>
+        <location filename="../../../../plugins/robots/common/twoDModel/src/engine/view/twoDModelWidget.cpp" line="884"/>
+        <location filename="../../../../plugins/robots/common/twoDModel/src/engine/view/twoDModelWidget.cpp" line="885"/>
         <source>No wheel</source>
         <translation>Отсутствует</translation>
     </message>
     <message>
-        <location filename="../../../../plugins/robots/common/twoDModel/src/engine/view/twoDModelWidget.cpp" line="887"/>
+        <location filename="../../../../plugins/robots/common/twoDModel/src/engine/view/twoDModelWidget.cpp" line="890"/>
         <source>%1 (port %2)</source>
         <translation>%1 (порт %2)</translation>
     </message>
